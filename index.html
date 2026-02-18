@@ -29,8 +29,8 @@
 <link rel="canonical" href="https://rafiqapp.me/">
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" href="/icon.png">
-<link rel="apple-touch-icon" href="/icon.png">
+<link rel="icon" type="image/png" href="./icon.png">
+<link rel="apple-touch-icon" href="./icon.png">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -196,26 +196,19 @@ ul, ol { list-style: none; }
   padding: var(--space-24) 0;
 }
 
-/* Reveal animation — visible by default, hidden only when JS is ready */
+/* Reveal animation — pure CSS, no JS dependency */
 .reveal {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity var(--duration-slow) var(--ease-out),
-              transform var(--duration-slow) var(--ease-out);
+  animation: revealUp 0.8s var(--ease-out) both;
 }
-.js-ready .reveal {
-  opacity: 0;
-  transform: translateY(30px);
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-.js-ready .reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-delay-1 { transition-delay: 100ms; }
-.reveal-delay-2 { transition-delay: 200ms; }
-.reveal-delay-3 { transition-delay: 300ms; }
-.reveal-delay-4 { transition-delay: 400ms; }
-.reveal-delay-5 { transition-delay: 500ms; }
+.reveal-delay-1 { animation-delay: 100ms; }
+.reveal-delay-2 { animation-delay: 200ms; }
+.reveal-delay-3 { animation-delay: 300ms; }
+.reveal-delay-4 { animation-delay: 400ms; }
+.reveal-delay-5 { animation-delay: 500ms; }
 
 /* Section label */
 .section-label {
@@ -1565,7 +1558,7 @@ ul, ol { list-style: none; }
 <nav class="navbar" id="navbar" role="navigation" aria-label="التنقل الرئيسي">
   <div class="container">
     <a href="/" class="nav-logo" aria-label="رفيق المسلم - الصفحة الرئيسية">
-      <span class="nav-logo-icon"><img src="/icon.png" alt="" width="38" height="38" loading="eager"></span>
+      <span class="nav-logo-icon"><img src="./icon.png" alt="" width="38" height="38" loading="eager"></span>
       رفيق المسلم
     </a>
 
@@ -1594,7 +1587,7 @@ ul, ol { list-style: none; }
   <a href="#adhkar" class="mobile-link" onclick="closeMobile()">الأذكار</a>
   <a href="#download" class="mobile-link" onclick="closeMobile()">تحميل التطبيق</a>
   <div style="flex:1"></div>
-  <a href="/privacy.html" class="mobile-link" style="color:var(--slate-400); font-size:var(--text-sm);">سياسة الخصوصية</a>
+  <a href="./privacy.html" class="mobile-link" style="color:var(--slate-400); font-size:var(--text-sm);">سياسة الخصوصية</a>
 </div>
 
 
@@ -2138,7 +2131,7 @@ ul, ol { list-style: none; }
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logo">
-          <span class="footer-logo-icon"><img src="/icon.png" alt="" width="36" height="36" loading="lazy"></span>
+          <span class="footer-logo-icon"><img src="./icon.png" alt="" width="36" height="36" loading="lazy"></span>
           رفيق المسلم
         </div>
         <p class="footer-desc">رفيقك في الطاعة — القرآن الكريم والحديث الشريف والأذكار ومواقيت الصلاة في تطبيق واحد مجاني لوجه الله تعالى</p>
@@ -2157,7 +2150,7 @@ ul, ol { list-style: none; }
       <div>
         <h4 class="footer-col-title">روابط</h4>
         <div class="footer-links">
-          <a href="/privacy.html" class="footer-link">سياسة الخصوصية</a>
+          <a href="./privacy.html" class="footer-link">سياسة الخصوصية</a>
           <a href="/cdn-cgi/l/email-protection#1f6c6a6f6f706d6b5f6d7e79766e7e6f6f31727a" class="footer-link">تواصل معنا</a>
         </div>
       </div>
@@ -2175,9 +2168,6 @@ ul, ol { list-style: none; }
 
 <!-- ==================== SCRIPTS ==================== -->
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Enable reveal animations (content is visible by default if JS fails)
-document.documentElement.classList.add('js-ready');
-
 // Navbar scroll effect
 const navbar = document.getElementById('navbar');
 let lastScroll = 0;
@@ -2226,30 +2216,6 @@ document.querySelectorAll('.faq-question').forEach(btn => {
     }
   });
 });
-
-// Scroll reveal with IntersectionObserver
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.1,
-  rootMargin: '0px 0px -40px 0px'
-});
-
-document.querySelectorAll('.reveal').forEach(el => {
-  revealObserver.observe(el);
-});
-
-// Safety fallback — reveal everything after 2s if observer didn't fire
-setTimeout(() => {
-  document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
-    el.classList.add('visible');
-  });
-}, 2000);
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
