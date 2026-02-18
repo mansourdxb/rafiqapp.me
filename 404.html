@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+  // GitHub Pages doesn't support server-side routing.
+  // This 404 page redirects /quran/27/43 → /?/quran/27/43
+  // Then index.html picks up the path and handles the deep link.
+  var seg = 0; // 0 for username.github.io, 1 for project pages
+  var l = window.location;
+  l.replace(
+    l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+    l.pathname.split('/').slice(0, 1 + seg).join('/') + '/?/' +
+    l.pathname.slice(1).split('/').slice(seg).join('/').replace(/&/g, '~and~') +
+    (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+    l.hash
+  );
+</script>
+</head>
+<body></body>
+</html>

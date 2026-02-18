@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رفيق - رفيقك في الطاعة</title>
+<meta name="description" content="رفيق - تطبيق إسلامي شامل: القرآن الكريم، مواقيت الصلاة، الحديث الشريف، الأذكار، المساجد القريبة وأكثر">
+<meta name="theme-color" content="#1A3C2A">
+<meta property="og:type" content="website">
+<meta property="og:title" content="رفيق - رفيقك في الطاعة">
+<meta property="og:description" content="القرآن الكريم • مواقيت الصلاة • الحديث الشريف • الأذكار">
+<meta property="og:image" content="https://rafiqapp.me/og-image.png">
+<meta property="og:url" content="https://rafiqapp.me">
+<meta property="og:site_name" content="رفيق">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="رفيق - رفيقك في الطاعة">
+<meta name="twitter:description" content="القرآن الكريم • مواقيت الصلاة • الحديث الشريف • الأذكار">
+<meta name="twitter:image" content="https://rafiqapp.me/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--gd:#1A3C2A;--gr:#2F6E52;--gl:#4A9B6F;--glt:#7BBF94;--gold:#D4A853;--goldl:#E8CC8A;--cream:#F7F2E9;--parch:#FBF8F3;--txt:#1A1612;--txs:#6B6058;--txm:#8B7D6B}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Cairo',sans-serif;background:var(--parch);color:var(--txt);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;transition:all .35s}
+.nav.scrolled{background:rgba(26,60,42,.95);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.15)}
+.nav-brand{font-family:'Amiri',serif;font-size:22px;font-weight:700;color:#FFF;text-decoration:none}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:14px;font-weight:600;transition:color .2s}
+.nav-links a:hover{color:#FFF}
+.nav-cta{padding:8px 20px!important;border-radius:10px;background:rgba(255,255,255,.12)!important;border:1px solid rgba(255,255,255,.2);color:#FFF!important}
+.nav-cta:hover{background:rgba(255,255,255,.2)!important}
+@media(max-width:640px){.nav-links a:not(.nav-cta){display:none}}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 24px 100px;background:linear-gradient(170deg,#0F261A 0%,#1A3C2A 35%,#2A5E42 70%,#1A3C2A 100%);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(212,168,83,.08) 0%,transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(75,155,111,.1) 0%,transparent 50%)}
+.hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:120px;background:linear-gradient(to top,var(--parch),transparent)}
+.arch{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:380px;height:480px;border:1px solid rgba(212,168,83,.1);border-radius:190px 190px 0 0;pointer-events:none}
+.arch-in{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:310px;height:410px;border:1px solid rgba(212,168,83,.06);border-radius:155px 155px 0 0;pointer-events:none}
+.hero-c{position:relative;z-index:2;text-align:center;max-width:640px}
+.app-icon{width:100px;height:100px;border-radius:26px;background:linear-gradient(135deg,var(--gr),var(--gl));margin:0 auto 28px;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(0,0,0,.3),0 0 0 1px rgba(255,255,255,.08);animation:floatIn 1s ease-out}
+.app-icon span{font-family:'Amiri',serif;font-size:32px;font-weight:700;color:#FFF;text-shadow:0 2px 4px rgba(0,0,0,.2)}
+.hero-t{font-family:'Amiri',serif;font-size:clamp(52px,9vw,80px);font-weight:700;color:#FFF;line-height:1.1;margin-bottom:12px;animation:fadeUp .8s ease-out .15s both}
+.hero-s{font-size:clamp(18px,3vw,24px);font-weight:700;color:rgba(255,255,255,.65);margin-bottom:28px;animation:fadeUp .8s ease-out .3s both}
+.pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;animation:fadeUp .8s ease-out .42s both}
+.pill{padding:8px 18px;border-radius:50px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:var(--goldl);font-size:14px;font-weight:600}
+.hero-q{font-family:'Amiri',serif;font-size:clamp(17px,2.5vw,21px);color:var(--goldl);line-height:1.9;margin-bottom:40px;opacity:.8;max-width:480px;margin-left:auto;margin-right:auto;animation:fadeUp .8s ease-out .55s both}
+.dl-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s ease-out .65s both}
+.dl-b{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:14px;background:rgba(255,255,255,.1);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.15);color:#FFF;text-decoration:none;font-weight:700;font-size:15px;transition:all .3s}
+.dl-b:hover{background:rgba(255,255,255,.18);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.dl-b svg{width:20px;height:20px}
+
+/* Sections */
+.sh{text-align:center;margin-bottom:56px}
+.sh .ol{font-size:14px;font-weight:700;color:var(--gold);letter-spacing:1px;margin-bottom:8px}
+.sh h2{font-family:'Amiri',serif;font-size:clamp(28px,5vw,42px);font-weight:700;color:var(--gd);line-height:1.3}
+.sh h2 span{color:var(--gold)}
+.sh p{font-size:16px;color:var(--txs);margin-top:10px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7}
+.blk{position:relative;padding:80px 24px 90px}
+.blk:nth-child(even){background:var(--cream)}
+.geo{position:absolute;inset:0;opacity:.03;background-image:radial-gradient(circle at 25% 25%,var(--gold) 1px,transparent 1px),radial-gradient(circle at 75% 75%,var(--gold) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+
+/* Feature grid */
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;max-width:960px;margin:0 auto}
+.fc{background:#FFF;border-radius:20px;padding:30px 26px;position:relative;overflow:hidden;transition:all .35s;border:1px solid rgba(0,0,0,.04)}
+.fc::before{content:'';position:absolute;top:0;right:0;width:80px;height:80px;border-radius:0 0 0 80px;pointer-events:none}
+.fc:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(26,60,42,.07);border-color:rgba(47,110,82,.1)}
+.fi{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:24px}
+.fi.g{background:rgba(47,110,82,.08)}.fi.o{background:rgba(212,168,83,.1)}.fi.c{background:var(--cream)}.fi.b{background:rgba(91,125,190,.08)}
+.fc h3{font-size:17px;font-weight:800;color:var(--gd);margin-bottom:6px}
+.fc p{font-size:13.5px;color:var(--txs);line-height:1.8}
+
+/* Big feature */
+.bf{display:flex;align-items:center;gap:56px;max-width:960px;margin:0 auto 80px}
+.bf.rev{flex-direction:row-reverse}
+.bf-v{flex:1;min-height:320px;border-radius:24px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.bf-vt{font-family:'Amiri',serif;font-size:28px;color:rgba(255,255,255,.9);text-align:center;padding:40px;line-height:2}
+.bf-ve{font-size:64px;margin-bottom:12px;display:block}
+.bf-t{flex:1}
+.bf-t .ol{font-size:13px;font-weight:700;color:var(--gold);margin-bottom:8px}
+.bf-t h3{font-family:'Amiri',serif;font-size:clamp(24px,4vw,32px);font-weight:700;color:var(--gd);margin-bottom:14px;line-height:1.3}
+.bf-t p{font-size:15px;color:var(--txs);line-height:1.9;margin-bottom:16px}
+.fl{list-style:none;display:flex;flex-direction:column;gap:10px}
+.fl li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--txt);font-weight:600}
+.fl li::before{content:'✓';width:24px;height:24px;border-radius:8px;background:rgba(47,110,82,.08);color:var(--gr);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+@media(max-width:768px){.bf,.bf.rev{flex-direction:column;gap:28px}.bf-v{width:100%;min-height:240px}}
+
+/* Verse */
+.vs{background:var(--cream);padding:80px 24px;text-align:center}
+.vc{max-width:640px;margin:0 auto;background:#FFF;border-radius:24px;padding:48px 40px;box-shadow:0 8px 40px rgba(26,60,42,.05);position:relative;overflow:hidden}
+.vc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gr),var(--gold))}
+.vc-b{font-family:'Amiri',serif;font-size:26px;color:var(--gold);margin-bottom:20px}
+.vc-t{font-family:'Amiri',serif;font-size:clamp(22px,4vw,30px);color:var(--txt);line-height:2;margin-bottom:14px}
+.vc-r{font-size:14px;color:var(--txs)}
+@media(max-width:640px){.vc{padding:32px 24px}}
+
+/* Stats */
+.stats{padding:60px 24px;background:var(--gd);text-align:center}
+.stats-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:24px;max-width:800px;margin:0 auto}
+.stats-g h3{font-family:'Amiri',serif;font-size:clamp(28px,5vw,40px);font-weight:700;color:var(--goldl);margin-bottom:4px}
+.stats-g p{font-size:14px;color:rgba(255,255,255,.6);font-weight:600}
+
+/* CTA */
+.cta{padding:80px 24px 100px;text-align:center}
+.cta h2{font-size:clamp(24px,4vw,38px);font-weight:900;color:var(--gd);margin-bottom:12px}
+.cta>p{font-size:16px;color:var(--txs);margin-bottom:36px}
+.cta-b{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.bp{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:14px;background:var(--gd);color:#FFF;text-decoration:none;font-weight:700;font-size:16px;transition:all .3s;border:none;cursor:pointer}
+.bp:hover{background:var(--gr);transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,60,42,.2)}
+.bp svg,.bs svg{width:20px;height:20px}
+.bs{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:14px;background:transparent;color:var(--gd);text-decoration:none;font-weight:700;font-size:16px;border:2px solid var(--gd);transition:all .3s;cursor:pointer}
+.bs:hover{background:var(--gd);color:#FFF;transform:translateY(-2px)}
+
+/* Footer */
+footer{background:var(--gd);padding:40px 24px 32px}
+.fi-inner{max-width:960px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;margin-bottom:28px}
+.f-brand{font-family:'Amiri',serif;font-size:24px;font-weight:700;color:#FFF;margin-bottom:6px}
+.f-brand-s{font-size:13px;color:rgba(255,255,255,.45);max-width:240px;line-height:1.6}
+.f-col h4{font-size:14px;font-weight:700;color:rgba(255,255,255,.7);margin-bottom:12px}
+.f-col a{display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:8px;transition:color .2s}
+.f-col a:hover{color:rgba(255,255,255,.8)}
+.f-bot{text-align:center;border-top:1px solid rgba(255,255,255,.08);padding-top:20px;font-size:12px;color:rgba(255,255,255,.35)}
+
+/* Redirect */
+.redir{display:none;position:fixed;inset:0;z-index:1000;background:var(--gd);flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:24px;text-align:center}
+.redir.active{display:flex}
+.redir-i{width:80px;height:80px;border-radius:20px;background:linear-gradient(135deg,var(--gr),var(--gl));display:flex;align-items:center;justify-content:center;box-shadow:0 12px 40px rgba(0,0,0,.3);animation:pulse 2s ease-in-out infinite;font-family:'Amiri',serif;font-size:28px;color:#FFF;font-weight:700}
+.redir h3{font-size:24px;font-weight:800;color:#FFF}
+.redir-q{font-family:'Amiri',serif;font-size:22px;color:var(--goldl);line-height:1.8;max-width:400px}
+.redir-s{font-size:15px;color:rgba(255,255,255,.6)}
+
+@keyframes floatIn{from{opacity:0;transform:translateY(20px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{box-shadow:0 12px 40px rgba(0,0,0,.3)}50%{box-shadow:0 12px 40px rgba(0,0,0,.3),0 0 0 12px rgba(75,155,111,.15)}}
+.rv{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.22,1,.36,1)}.rv.vis{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
+@media(max-width:640px){.hero{padding:60px 20px 80px}.arch{width:280px;height:360px;border-radius:140px 140px 0 0}.arch-in{width:230px;height:310px;border-radius:115px 115px 0 0}.fg{grid-template-columns:1fr}.dl-b{padding:12px 20px;font-size:14px}.blk{padding:60px 20px 70px}}
+</style>
+</head>
+<body>
+
+<!-- Deep Link Redirect -->
+<div class="redir" id="redirect">
+  <div class="redir-i">رفيق</div>
+  <h3>جارِ فتح الآية...</h3>
+  <div class="redir-q" id="redir-q"></div>
+  <div class="redir-s" id="redir-s"></div>
+  <a href="#" class="bp" id="redir-dl" style="margin-top:8px">تحميل تطبيق رفيق</a>
+</div>
+
+<!-- Nav -->
+<nav class="nav" id="nav">
+  <a href="/" class="nav-brand">رفيق</a>
+  <div class="nav-links">
+    <a href="#quran">القرآن</a>
+    <a href="#salah">الصلاة</a>
+    <a href="#hadith">الحديث</a>
+    <a href="#adhkar">الأذكار</a>
+    <a href="#download" class="nav-cta">تحميل</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="arch"></div>
+  <div class="arch-in"></div>
+  <div class="hero-c">
+    <div class="app-icon"><span>رفيق</span></div>
+    <h1 class="hero-t">رفيق</h1>
+    <p class="hero-s">رفيقك في الطاعة</p>
+    <div class="pills">
+      <span class="pill">📖 القرآن</span>
+      <span class="pill">🕌 الصلاة</span>
+      <span class="pill">📚 الحديث</span>
+      <span class="pill">🤲 الأذكار</span>
+    </div>
+    <p class="hero-q">﴿ إِنَّ هَـٰذَا ٱلْقُرْآنَ يَهْدِى لِلَّتِى هِىَ أَقْوَمُ ﴾</p>
+    <div class="dl-row">
+      <a href="#" class="dl-b"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>App Store</a>
+      <a href="#" class="dl-b"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302a1 1 0 010 1.38l-2.302 2.302L15.395 12l2.302-2.492zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ القرآن ═══ -->
+<section class="blk" id="quran">
+  <div class="geo"></div>
+  <div class="sh rv">
+    <div class="ol">القرآن الكريم</div>
+    <h2>تلاوة وتدبّر <span>كتاب الله</span></h2>
+    <p>مصحف المدينة المنورة بأعلى جودة مع تفاسير متعددة وتلاوات مباركة</p>
+  </div>
+  <div class="fg">
+    <div class="fc rv d1"><div class="fi g">📖</div><h3>مصحف المدينة</h3><p>خط واضح وجميل بالرسم العثماني مع دعم كامل للتشكيل وعلامات الوقف</p></div>
+    <div class="fc rv d2"><div class="fi o">🎧</div><h3>تلاوات القرّاء</h3><p>مكتبة واسعة من القرّاء والمرتّلين مع التشغيل المتواصل والتكرار والتحميل</p></div>
+    <div class="fc rv d3"><div class="fi c">📝</div><h3>التفسير والمعاني</h3><p>تفاسير متعددة لفهم الآيات وتدبّرها مع إمكانية البحث والمقارنة</p></div>
+    <div class="fc rv d4"><div class="fi g">🔖</div><h3>فواصل ملوّنة</h3><p>أربعة فواصل بألوان مختلفة لحفظ مواضع قراءتك والعودة إليها بسهولة</p></div>
+    <div class="fc rv d5"><div class="fi o">🔍</div><h3>البحث في القرآن</h3><p>بحث سريع ودقيق في الآيات بالنص أو رقم السورة والآية</p></div>
+    <div class="fc rv d5"><div class="fi c">🌙</div><h3>الوضع الليلي</h3><p>قراءة مريحة في جميع ظروف الإضاءة مع حماية العينين</p></div>
+  </div>
+</section>
+
+<!-- ═══ الصلاة ═══ -->
+<section class="blk" id="salah">
+  <div class="bf rv">
+    <div class="bf-v" style="background:linear-gradient(135deg,#1B3A5C,#2B6090)">
+      <div class="bf-vt"><span class="bf-ve">🕌</span>الفجر ٤:٥٢<br>الظهر ١٢:١٥<br>العصر ٣:٣٠<br>المغرب ٥:٤٨<br>العشاء ٧:١٢</div>
+    </div>
+    <div class="bf-t">
+      <div class="ol">الصلاة</div>
+      <h3>مواقيت دقيقة وتنبيهات ذكية</h3>
+      <p>مواقيت صلاة دقيقة حسب موقعك الجغرافي مع طريقة الحساب المناسبة لمنطقتك. لن تفوتك صلاة بإذن الله.</p>
+      <ul class="fl">
+        <li>مواقيت الصلوات الخمس والشروق</li>
+        <li>حساب تلقائي حسب المنطقة (أم القرى، رابطة العالم الإسلامي، وغيرها)</li>
+        <li>تنبيهات قبل دخول الوقت</li>
+        <li>اتجاه القبلة بالبوصلة</li>
+      </ul>
+    </div>
+  </div>
+  <div class="bf rev rv">
+    <div class="bf-v" style="background:linear-gradient(135deg,#2A4A5C,#4A8AAA)">
+      <div class="bf-vt"><span class="bf-ve">📍</span>المساجد القريبة منك</div>
+    </div>
+    <div class="bf-t">
+      <div class="ol">المساجد</div>
+      <h3>اعثر على أقرب مسجد</h3>
+      <p>خريطة تفاعلية تعرض المساجد القريبة من موقعك مع المسافة واتجاه الوصول.</p>
+      <ul class="fl">
+        <li>عرض المساجد على الخريطة</li>
+        <li>المسافة والتنقّل المباشر</li>
+        <li>معلومات المسجد وأوقات الإقامة</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ الحديث ═══ -->
+<section class="blk" id="hadith">
+  <div class="geo"></div>
+  <div class="sh rv">
+    <div class="ol">الحديث الشريف</div>
+    <h2>كتب الحديث <span>التسعة</span></h2>
+    <p>مكتبة حديثية شاملة تضم أهم المصادر الحديثية مع البحث والتصفّح</p>
+  </div>
+  <div class="fg">
+    <div class="fc rv d1"><div class="fi o">📕</div><h3>صحيح البخاري</h3><p>أصح كتاب بعد كتاب الله، يضم ٧٥٦٣ حديثاً مصنّفة في أبواب الفقه</p></div>
+    <div class="fc rv d2"><div class="fi o">📗</div><h3>صحيح مسلم</h3><p>ثاني أصح كتب الحديث، يتميّز بدقة الترتيب وجمع طرق الرواية</p></div>
+    <div class="fc rv d3"><div class="fi o">📘</div><h3>سنن أبي داود</h3><p>من أمهات كتب السنن، يُعنى بأحاديث الأحكام الفقهية</p></div>
+    <div class="fc rv d4"><div class="fi c">📙</div><h3>جامع الترمذي</h3><p>يتميّز ببيان درجة الحديث والفقه المقارن بين المذاهب</p></div>
+    <div class="fc rv d5"><div class="fi c">📒</div><h3>سنن النسائي</h3><p>أقل كتب السنن ضعفاً، يُعنى بفقه الحديث واختلاف الألفاظ</p></div>
+    <div class="fc rv d5"><div class="fi c">📓</div><h3>سنن ابن ماجه</h3><p>يتميّز بزيادات ليست في الكتب الخمسة الأخرى</p></div>
+    <div class="fc rv d1"><div class="fi g">📔</div><h3>مسند أحمد</h3><p>أكبر دواوين السنّة، يضم أكثر من ٢٧ ألف حديث مرتّبة بالمسانيد</p></div>
+    <div class="fc rv d2"><div class="fi g">📖</div><h3>موطأ مالك</h3><p>أقدم كتب الحديث المصنّفة، يجمع بين الحديث وفقه أهل المدينة</p></div>
+    <div class="fc rv d3"><div class="fi g">📚</div><h3>سنن الدارمي</h3><p>يتميّز بتراجم أبوابه الفقهية وسلاسل الإسناد العالية</p></div>
+  </div>
+  <div style="text-align:center;margin-top:36px" class="rv">
+    <p style="font-size:15px;color:var(--txs);max-width:520px;margin:0 auto;line-height:1.8">بحث متقدّم في جميع الكتب التسعة بالنص أو الراوي أو رقم الحديث مع إمكانية النسخ والمشاركة</p>
+  </div>
+</section>
+
+<!-- ═══ الأذكار ═══ -->
+<section class="blk" id="adhkar">
+  <div class="bf rv">
+    <div class="bf-v" style="background:linear-gradient(135deg,#2A4A3A,#4A8A6A)">
+      <div class="bf-vt"><span class="bf-ve">🤲</span>سُبْحَانَ اللهِ وَبِحَمْدِهِ<br>سُبْحَانَ اللهِ العَظِيمِ</div>
+    </div>
+    <div class="bf-t">
+      <div class="ol">الأذكار والتسبيح</div>
+      <h3>أذكار الصباح والمساء وأكثر</h3>
+      <p>مجموعة شاملة من الأذكار والأدعية المأثورة عن النبي ﷺ مع عدّاد التسبيح الذكي.</p>
+      <ul class="fl">
+        <li>أذكار الصباح والمساء</li>
+        <li>أذكار النوم والاستيقاظ</li>
+        <li>أذكار بعد الصلاة</li>
+        <li>أدعية من القرآن والسنّة</li>
+        <li>عدّاد تسبيح بالاهتزاز</li>
+        <li>تنبيهات يومية للأذكار</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats">
+  <div class="stats-g">
+    <div class="rv d1"><h3>٦٢٣٦</h3><p>آية قرآنية</p></div>
+    <div class="rv d2"><h3>+٦٠</h3><p>قارئ ومرتّل</p></div>
+    <div class="rv d3"><h3>+٦٠,٠٠٠</h3><p>حديث شريف</p></div>
+    <div class="rv d4"><h3>+١٠٠</h3><p>ذكر ودعاء</p></div>
+  </div>
+</section>
+
+<!-- Verse -->
+<section class="vs">
+  <div class="vc rv">
+    <div class="vc-b">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
+    <div class="vc-t">﴿ ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ ﴾</div>
+    <div class="vc-r">سورة العلق - الآية ١</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="download">
+  <h2 class="rv">حمّل رفيق الآن مجاناً</h2>
+  <p class="rv">بدون إعلانات — بدون اشتراكات — لوجه الله تعالى</p>
+  <div class="cta-b rv">
+    <a href="#" class="bp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>App Store</a>
+    <a href="#" class="bs"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302a1 1 0 010 1.38l-2.302 2.302L15.395 12l2.302-2.492zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="fi-inner">
+    <div>
+      <div class="f-brand">رفيق</div>
+      <div class="f-brand-s">رفيقك في الطاعة — القرآن الكريم والحديث الشريف والأذكار ومواقيت الصلاة في تطبيق واحد</div>
+    </div>
+    <div class="f-col">
+      <h4>التطبيق</h4>
+      <a href="#quran">القرآن الكريم</a>
+      <a href="#salah">مواقيت الصلاة</a>
+      <a href="#hadith">الحديث الشريف</a>
+      <a href="#adhkar">الأذكار</a>
+    </div>
+    <div class="f-col">
+      <h4>روابط</h4>
+      <a href="/privacy.html">سياسة الخصوصية</a>
+      <a href="mailto:support@rafiqapp.me">تواصل معنا</a>
+    </div>
+  </div>
+  <div class="f-bot">© ٢٠٢٥ رفيق - لوجه الله تعالى</div>
+</footer>
+
+<script>
+(function(){var q=window.location.search;if(q.indexOf('?/')===0){var d=q.slice(2).split('&').map(function(s){return s.replace(/~and~/g,'&')}).join('?');history.replaceState(null,null,'/'+d+window.location.hash)}})();
+(function(){var m=window.location.pathname.match(/^\/quran\/(\d+)\/(\d+)\/?$/);if(!m)return;var s=parseInt(m[1],10),a=parseInt(m[2],10);document.title='سورة '+s+' - الآية '+a+' | رفيق';var o=document.getElementById('redirect');o.classList.add('active');document.getElementById('redir-s').textContent='سورة '+s+' - الآية '+a;document.getElementById('redir-q').textContent='جارِ توجيهك إلى التطبيق...';var i=document.createElement('iframe');i.style.display='none';i.src='rafiq://quran/'+s+'/'+a;document.body.appendChild(i);var t=Date.now();setTimeout(function(){if(Date.now()-t<4e3){document.getElementById('redir-q').textContent='التطبيق غير مثبّت على جهازك';document.getElementById('redir-s').textContent='حمّل رفيق لقراءة سورة '+s+' - الآية '+a}if(i.parentNode)i.parentNode.removeChild(i)},2500)})();
+window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60)});
+var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('vis');obs.unobserve(en.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
+</script>
+</body>
+</html>
