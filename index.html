@@ -196,14 +196,18 @@ ul, ol { list-style: none; }
   padding: var(--space-24) 0;
 }
 
-/* Reveal animation */
+/* Reveal animation — visible by default, hidden only when JS is ready */
 .reveal {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity var(--duration-slow) var(--ease-out),
               transform var(--duration-slow) var(--ease-out);
 }
-.reveal.visible {
+.js-ready .reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.js-ready .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -2171,6 +2175,9 @@ ul, ol { list-style: none; }
 
 <!-- ==================== SCRIPTS ==================== -->
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Enable reveal animations (content is visible by default if JS fails)
+document.documentElement.classList.add('js-ready');
+
 // Navbar scroll effect
 const navbar = document.getElementById('navbar');
 let lastScroll = 0;
@@ -2236,6 +2243,13 @@ const revealObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => {
   revealObserver.observe(el);
 });
+
+// Safety fallback — reveal everything after 2s if observer didn't fire
+setTimeout(() => {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+    el.classList.add('visible');
+  });
+}, 2000);
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
