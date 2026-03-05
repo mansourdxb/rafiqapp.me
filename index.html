@@ -37,28 +37,155 @@
 .phone-sm{width:220px}.phone-sm .phone-frame{border-radius:30px;padding:8px}.phone-sm .phone-frame::before{width:60px;height:20px;border-radius:0 0 10px 10px;top:8px}.phone-sm .phone-screen{border-radius:24px}
 .phone-float{animation:pf 6s ease-in-out infinite}@keyframes pf{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}.phone-float-alt{animation:pfa 6s ease-in-out infinite}@keyframes pfa{0%,100%{transform:translateY(-12px)}50%{transform:translateY(0)}}
 .navbar{position:fixed;top:0;right:0;left:0;z-index:100;padding:1rem 0;transition:all .4s var(--ease)}.navbar.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--s100);padding:.75rem 0}.navbar .container{display:flex;align-items:center;justify-content:space-between}.nav-logo{display:flex;align-items:center;gap:.75rem;font-size:1.25rem;font-weight:800;color:var(--white);transition:color .2s}.navbar.scrolled .nav-logo{color:var(--e800)}.nav-logo-icon{width:38px;height:38px;border-radius:10px;overflow:hidden}.nav-logo-icon img{width:100%;height:100%;object-fit:cover}.nav-links{display:flex;align-items:center;gap:.25rem}.nav-link{padding:.5rem 1rem;font-size:.875rem;font-weight:600;color:rgba(255,255,255,.85);border-radius:8px;transition:all .2s}.nav-link:hover{background:rgba(255,255,255,.12);color:var(--white)}.navbar.scrolled .nav-link{color:var(--s600)}.navbar.scrolled .nav-link:hover{background:var(--s50);color:var(--s900)}.nav-cta{padding:.5rem 1.25rem;font-size:.875rem;font-weight:700;background:rgba(255,255,255,.15);color:var(--white);border-radius:999px;border:1px solid rgba(255,255,255,.3);transition:all .2s}.nav-cta:hover{background:rgba(255,255,255,.25)}.navbar.scrolled .nav-cta{background:var(--e800);color:var(--white);border-color:var(--e800)}.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem;color:var(--white)}.navbar.scrolled .nav-toggle{color:var(--s800)}.nav-toggle svg{width:24px;height:24px}
-.mobile-menu{display:none;position:fixed;inset:0;background:var(--white);z-index:99;padding:5rem 1.5rem 1.5rem;flex-direction:column;gap:.5rem}.mobile-menu.open{display:flex}.mobile-link{display:block;padding:1rem;font-size:1.125rem;font-weight:600;color:var(--s800);border-radius:12px;transition:background .2s}.mobile-link:hover{background:var(--s50)}.mobile-close{position:absolute;top:1rem;left:1rem;background:none;border:none;cursor:pointer;padding:.5rem;color:var(--s600)}.mobile-close svg{width:28px;height:28px}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--white);z-index:99;padding:5rem 1.5rem 1.5rem;flex-direction:column;gap:.5rem;overflow-y:auto}.mobile-menu.open{display:flex}.mobile-link{display:block;padding:1rem;font-size:1.125rem;font-weight:600;color:var(--s800);border-radius:12px;transition:background .2s}.mobile-link:hover{background:var(--s50)}.mobile-close{position:absolute;top:1rem;left:1rem;background:none;border:none;cursor:pointer;padding:.5rem;color:var(--s600)}.mobile-close svg{width:28px;height:28px}
+/* Mobile store buttons in menu */
+.mobile-store-btns{display:flex;flex-direction:column;gap:.75rem;padding:1rem 0;margin-top:.5rem;border-top:1px solid var(--s100)}.mobile-store-btn{display:flex;align-items:center;gap:.75rem;padding:.875rem 1.25rem;background:var(--e800);color:var(--white);border-radius:14px;font-weight:700;font-size:.9375rem;transition:all .2s}.mobile-store-btn:hover{background:var(--e700)}.mobile-store-btn svg{width:20px;height:20px;flex-shrink:0}.mobile-store-btn-text{line-height:1.2}.mobile-store-btn-small{display:block;font-size:.7rem;font-weight:400;opacity:.7}
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(160deg,var(--e900) 0%,var(--e800) 40%,#0B5838 70%,var(--e700) 100%);overflow:hidden;padding-top:5rem}.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 80%,rgba(201,168,76,.06) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(201,168,76,.04) 0%,transparent 50%);pointer-events:none}.hero .container{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:3rem;padding:4rem 1.5rem}.hero-content{max-width:560px}
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.25rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:999px;font-size:.875rem;font-weight:500;color:var(--g300);margin-bottom:2rem;backdrop-filter:blur(10px)}.hero-badge-dot{width:6px;height:6px;background:var(--g400);border-radius:50%;animation:pulse 2s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:.2;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)}}
 .hero h1{font-size:3.5rem;font-weight:900;color:var(--white);line-height:1.15;margin-bottom:1.5rem}.hero h1 .gold{background:linear-gradient(135deg,var(--g400),var(--g300));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.hero-sub{font-size:1.125rem;color:rgba(255,255,255,.7);margin-bottom:2rem;line-height:1.8}
 .hero-pills{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2.5rem}.hero-pill{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.25rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:999px;font-size:.875rem;font-weight:500;color:rgba(255,255,255,.85);backdrop-filter:blur(8px)}
-.hero-ctas{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2rem}.btn-store{display:inline-flex;align-items:center;gap:.75rem;padding:1rem 1.5rem;background:var(--white);color:var(--s900);border-radius:16px;font-weight:700;font-size:1rem;transition:all .2s var(--ease);box-shadow:0 4px 20px rgba(0,0,0,.15)}.btn-store:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.2)}.btn-store svg{width:22px;height:22px;flex-shrink:0}.btn-store-text{text-align:start;line-height:1.2}.btn-store-small{display:block;font-size:.75rem;font-weight:400;color:var(--s500)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2rem}.btn-store{display:inline-flex;align-items:center;gap:.75rem;padding:1rem 1.5rem;background:var(--white);color:var(--s900);border-radius:16px;font-weight:700;font-size:1rem;transition:all .2s var(--ease);box-shadow:0 4px 20px rgba(0,0,0,.15)}.btn-store:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.2)}.btn-store:active{transform:translateY(0)}.btn-store svg{width:22px;height:22px;flex-shrink:0}.btn-store-text{text-align:start;line-height:1.2}.btn-store-small{display:block;font-size:.75rem;font-weight:400;color:var(--s500)}
 .hero-phones{display:flex;justify-content:center;align-items:center;gap:1.5rem;position:relative}
 .hero-trust{display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.06)}.hero-trust-item{text-align:center}.hero-trust-val{display:block;font-size:.875rem;font-weight:700;color:var(--g400);margin-bottom:.25rem}.hero-trust-lbl{font-size:.75rem;color:rgba(255,255,255,.45)}
 .feat-section{position:relative;overflow:hidden}.feat-section:nth-child(odd){background:var(--cream)}.feat-section:nth-child(even){background:var(--white)}.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}.feat-grid.reverse .feat-content{order:2}.feat-grid.reverse .feat-phones{order:1}.feat-content{max-width:500px}.feat-list{margin-top:2rem;display:flex;flex-direction:column;gap:1rem}.feat-item{display:flex;align-items:flex-start;gap:1rem}.feat-check{width:28px;height:28px;display:flex;align-items:center;justify-content:center;background:var(--e50);color:var(--e600);border-radius:50%;flex-shrink:0;margin-top:2px;font-size:.875rem;font-weight:700}.feat-text{font-size:1rem;color:var(--s600);line-height:1.7}.feat-phones{display:flex;justify-content:center;align-items:center;gap:1.25rem;position:relative;padding:2rem 0}
 .stats-section{background:linear-gradient(160deg,var(--e900),var(--e800));position:relative;overflow:hidden}.stats-section::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(201,168,76,.06) 0%,transparent 50%);pointer-events:none}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative}.stat{text-align:center;padding:2rem;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);transition:all .4s}.stat:hover{background:rgba(255,255,255,.07);transform:translateY(-4px)}.stat-val{display:block;font-size:2.25rem;font-weight:900;background:linear-gradient(135deg,var(--g400),var(--g300));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.5rem;direction:ltr}.stat-lbl{font-size:.875rem;color:rgba(255,255,255,.55);font-weight:500}
 .how-section{background:var(--cream)}.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;position:relative}.how-steps::before{content:'';position:absolute;top:28px;right:calc(16.67% + 20px);left:calc(16.67% + 20px);height:2px;background:linear-gradient(90deg,var(--e100),var(--g300),var(--e100))}.how-step{text-align:center;position:relative}.how-num{width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:var(--white);border:2px solid var(--e100);border-radius:50%;font-size:1.25rem;font-weight:800;color:var(--e700);margin:0 auto 1.5rem;position:relative;z-index:1;transition:all .4s}.how-step:hover .how-num{background:var(--e800);color:var(--white);border-color:var(--e800)}.how-step h3{font-size:1.125rem;font-weight:700;color:var(--s900);margin-bottom:.75rem}.how-step p{font-size:.875rem;color:var(--s500);line-height:1.8;max-width:280px;margin:0 auto}
-.faq-section{background:var(--white)}.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:1rem}.faq-item{border:1px solid var(--s100);border-radius:16px;overflow:hidden;transition:border-color .2s}.faq-item.open{border-color:var(--e100)}.faq-q{display:flex;align-items:center;justify-content:space-between;width:100%;padding:1.25rem 1.5rem;background:none;border:none;cursor:pointer;font-family:var(--font);font-size:1rem;font-weight:700;color:var(--s800);text-align:start;gap:1rem}.faq-q:hover{color:var(--e800)}.faq-chevron{width:20px;height:20px;flex-shrink:0;color:var(--s400);transition:transform .2s var(--ease)}.faq-item.open .faq-chevron{transform:rotate(180deg);color:var(--e600)}.faq-a{display:none;padding:0 1.5rem 1.25rem;font-size:.875rem;color:var(--s500);line-height:1.9}.faq-item.open .faq-a{display:block}
+.faq-section{background:var(--white)}.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:1rem}.faq-item{border:1px solid var(--s100);border-radius:16px;overflow:hidden;transition:border-color .2s}.faq-item.open{border-color:var(--e100)}.faq-q{display:flex;align-items:center;justify-content:space-between;width:100%;padding:1.25rem 1.5rem;background:none;border:none;cursor:pointer;font-family:var(--font);font-size:1rem;font-weight:700;color:var(--s800);text-align:start;gap:1rem;-webkit-tap-highlight-color:transparent}.faq-q:hover{color:var(--e800)}.faq-chevron{width:20px;height:20px;flex-shrink:0;color:var(--s400);transition:transform .2s var(--ease)}.faq-item.open .faq-chevron{transform:rotate(180deg);color:var(--e600)}.faq-a{display:none;padding:0 1.5rem 1.25rem;font-size:.875rem;color:var(--s500);line-height:1.9}.faq-item.open .faq-a{display:block}
 .final-cta{background:linear-gradient(160deg,var(--e900),var(--e800));position:relative;overflow:hidden;text-align:center}.final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(201,168,76,.06) 0%,transparent 50%),radial-gradient(circle at 70% 50%,rgba(255,255,255,.03) 0%,transparent 50%);pointer-events:none}.final-cta .container{position:relative;z-index:1}.final-verse{font-family:var(--quran);font-size:1.875rem;color:var(--g300);line-height:1.8;margin-bottom:.5rem;max-width:500px;margin-left:auto;margin-right:auto}.final-ref{font-size:.75rem;color:rgba(255,255,255,.35);margin-bottom:2.5rem}.final-cta h2{font-size:2.25rem;font-weight:900;color:var(--white);margin-bottom:1rem}.final-cta-desc{font-size:1.125rem;color:rgba(255,255,255,.6);margin-bottom:2.5rem}.final-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:2rem}.final-badge{padding:.5rem 1rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:999px;font-size:.75rem;color:rgba(255,255,255,.55)}
 .footer{background:var(--s900);color:var(--white);padding:4rem 0 2rem}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:3rem}.footer-logo{display:flex;align-items:center;gap:.75rem;font-size:1.25rem;font-weight:800;margin-bottom:1rem}.footer-logo-icon{width:36px;height:36px;border-radius:8px;overflow:hidden}.footer-logo-icon img{width:100%;height:100%;object-fit:cover}.footer-desc{font-size:.875rem;color:var(--s400);line-height:1.8;max-width:340px}.footer-col-title{font-size:.875rem;font-weight:700;color:var(--s300);margin-bottom:1.25rem}.footer-links{display:flex;flex-direction:column;gap:.75rem}.footer-link{font-size:.875rem;color:var(--s400);transition:color .2s}.footer-link:hover{color:var(--white)}.footer-divider{height:1px;background:var(--s800);margin-bottom:1.5rem}.footer-bottom{display:flex;align-items:center;justify-content:space-between}.footer-copy,.footer-made{font-size:.75rem;color:var(--s500)}
-@media(max-width:1024px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:768px){.nav-links{display:none}.nav-toggle{display:block}.hero .container{grid-template-columns:1fr;text-align:center;padding:3rem 1.25rem 2rem}.hero h1{font-size:2.5rem}.hero-pills{justify-content:center}.hero-ctas{justify-content:center;flex-direction:column;align-items:center}.btn-store{width:100%;max-width:280px;justify-content:center}.hero-phones{margin-top:2rem}.hero-trust{justify-content:center;flex-wrap:wrap;gap:1.5rem}.feat-grid,.feat-grid.reverse{grid-template-columns:1fr}.feat-grid .feat-content,.feat-grid.reverse .feat-content{order:1!important}.feat-grid .feat-phones,.feat-grid.reverse .feat-phones{order:2!important}.feat-content{max-width:100%;text-align:center}.feat-content .section-desc{margin:0 auto}.feat-list{align-items:center}.stats-grid{grid-template-columns:1fr 1fr;gap:1rem}.stat-val{font-size:1.875rem}.how-steps{grid-template-columns:1fr;gap:2.5rem}.how-steps::before{display:none}.section-title{font-size:1.875rem}.phone{width:200px}.phone-sm{width:170px}.footer-grid{grid-template-columns:1fr;gap:2rem}.footer-bottom{flex-direction:column;gap:.75rem;text-align:center}.section-pad{padding:4rem 0}}
-@media(max-width:480px){.hero-phones{gap:.75rem}.phone{width:160px}.phone-sm{width:130px}.hero h1{font-size:2rem}.feat-phones .phone{width:180px}.feat-phones .phone-sm{width:150px}}
+
+/* ─── IMPROVED MOBILE STYLES ─── */
+@media(max-width:1024px){
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  /* Navbar */
+  .nav-links{display:none}
+  .nav-toggle{display:block}
+
+  /* Hero */
+  .hero{min-height:auto;padding-bottom:3rem}
+  .hero .container{grid-template-columns:1fr;text-align:center;padding:3rem 1.25rem 2rem;gap:2rem}
+  .hero h1{font-size:2.5rem}
+  .hero-badge{margin-left:auto;margin-right:auto}
+  .hero-pills{justify-content:center}
+  .hero-ctas{justify-content:center;flex-direction:column;align-items:center}
+  .btn-store{width:100%;max-width:300px;justify-content:center}
+  .hero-phones{margin-top:1rem}
+  .hero-trust{justify-content:center;flex-wrap:wrap;gap:1.5rem}
+
+  /* Feature sections */
+  .feat-grid,.feat-grid.reverse{grid-template-columns:1fr;gap:2rem}
+  .feat-grid .feat-content,.feat-grid.reverse .feat-content{order:1!important}
+  .feat-grid .feat-phones,.feat-grid.reverse .feat-phones{order:2!important}
+  .feat-content{max-width:100%;text-align:center}
+  .feat-content .section-desc{margin:0 auto}
+  .feat-list{align-items:flex-start;text-align:start}
+  .feat-item{text-align:start}
+  .feat-phones{padding:1rem 0}
+
+  /* Stats */
+  .stats-grid{grid-template-columns:1fr 1fr;gap:1rem}
+  .stat{padding:1.5rem 1rem}
+  .stat-val{font-size:1.875rem}
+
+  /* How steps */
+  .how-steps{grid-template-columns:1fr;gap:2rem}
+  .how-steps::before{display:none}
+
+  /* FAQ */
+  .faq-q{padding:1rem 1.25rem;font-size:.9375rem}
+  .faq-a{padding:0 1.25rem 1rem}
+
+  /* Final CTA */
+  .final-verse{font-size:1.5rem}
+  .final-cta h2{font-size:1.875rem}
+
+  /* Phones */
+  .phone{width:200px}
+  .phone-sm{width:170px}
+
+  /* Footer */
+  .footer-grid{grid-template-columns:1fr;gap:2rem}
+  .footer-bottom{flex-direction:column;gap:.75rem;text-align:center}
+
+  /* Section */
+  .section-pad{padding:4rem 0}
+  .section-title{font-size:1.875rem}
+}
+@media(max-width:480px){
+  /* Hero */
+  .hero h1{font-size:1.875rem}
+  .hero-sub{font-size:1rem}
+  .hero-pills{gap:.5rem}
+  .hero-pill{padding:.4rem 1rem;font-size:.8rem}
+  .hero-phones{gap:.75rem}
+
+  /* Phones smaller on very small screens */
+  .phone{width:155px}
+  .phone-sm{width:128px}
+  .phone-frame{border-radius:28px;padding:7px}
+  .phone-sm .phone-frame{border-radius:24px;padding:6px}
+  .phone-screen{border-radius:23px}
+  .phone-sm .phone-screen{border-radius:19px}
+
+  /* Feature phones */
+  .feat-phones .phone{width:170px}
+  .feat-phones .phone-sm{width:142px}
+
+  /* Buttons */
+  .btn-store{padding:.875rem 1.25rem;font-size:.9375rem;border-radius:14px}
+
+  /* Stats */
+  .stat{padding:1.25rem .75rem}
+  .stat-val{font-size:1.625rem}
+  .stat-lbl{font-size:.8rem}
+
+  /* Section label smaller */
+  .section-label{font-size:.8rem}
+  .section-title{font-size:1.625rem}
+  .section-desc{font-size:1rem}
+
+  /* FAQ */
+  .faq-q{font-size:.875rem;padding:.875rem 1rem}
+  .faq-a{padding:0 1rem .875rem;font-size:.8125rem}
+
+  /* Footer */
+  .footer{padding:3rem 0 1.5rem}
+  .footer-grid{gap:1.5rem}
+}
+
+/* Safe area support for notched devices */
+@supports(padding:max(0px)){
+  .navbar .container{padding-left:max(1.5rem,env(safe-area-inset-left));padding-right:max(1.5rem,env(safe-area-inset-right))}
+  .hero .container{padding-left:max(1.25rem,env(safe-area-inset-left));padding-right:max(1.25rem,env(safe-area-inset-right))}
+  .footer .container{padding-left:max(1.5rem,env(safe-area-inset-left));padding-right:max(1.5rem,env(safe-area-inset-right))}
+}
 </style>
 </head>
 <body>
-<nav class="navbar" id="navbar" role="navigation" aria-label="التنقل الرئيسي"><div class="container"><a href="/" class="nav-logo" aria-label="رفيق المسلم"><span class="nav-logo-icon"><img src="./og-image.png" alt="" width="38" height="38"></span>رفيق المسلم</a><div class="nav-links"><a href="#quran" class="nav-link">القرآن</a><a href="#salah" class="nav-link">الصلاة</a><a href="#hadith" class="nav-link">الحديث</a><a href="#adhkar" class="nav-link">الأذكار</a><a href="#download" class="nav-cta">تحميل التطبيق</a></div><button class="nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button></div></nav>
-<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="القائمة"><button class="mobile-close" id="mobileClose" aria-label="إغلاق القائمة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button><a href="#quran" class="mobile-link" onclick="closeMobile()">القرآن الكريم</a><a href="#salah" class="mobile-link" onclick="closeMobile()">مواقيت الصلاة</a><a href="#hadith" class="mobile-link" onclick="closeMobile()">الحديث الشريف</a><a href="#adhkar" class="mobile-link" onclick="closeMobile()">الأذكار</a><a href="#download" class="mobile-link" onclick="closeMobile()">تحميل التطبيق</a><div style="flex:1"></div><a href="./privacy.html" class="mobile-link" style="color:var(--s400);font-size:.875rem">سياسة الخصوصية</a></div>
+<nav class="navbar" id="navbar" role="navigation" aria-label="التنقل الرئيسي"><div class="container"><a href="/" class="nav-logo" aria-label="رفيق المسلم"><span class="nav-logo-icon"><img src="./og-image.png" alt="" width="38" height="38"></span>رفيق المسلم</a><div class="nav-links"><a href="#quran" class="nav-link">القرآن</a><a href="#salah" class="nav-link">الصلاة</a><a href="#hadith" class="nav-link">الحديث</a><a href="#adhkar" class="nav-link">الأذكار</a><a href="#search" class="nav-link">البحث</a><a href="#download" class="nav-cta">تحميل التطبيق</a></div><button class="nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button></div></nav>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="القائمة">
+  <button class="mobile-close" id="mobileClose" aria-label="إغلاق القائمة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  <a href="#quran" class="mobile-link" onclick="closeMobile()">القرآن الكريم</a>
+  <a href="#salah" class="mobile-link" onclick="closeMobile()">مواقيت الصلاة</a>
+  <a href="#hadith" class="mobile-link" onclick="closeMobile()">الحديث الشريف</a>
+  <a href="#adhkar" class="mobile-link" onclick="closeMobile()">الأذكار</a>
+  <a href="#search" class="mobile-link" onclick="closeMobile()">البحث الذكي</a>
+  <div class="mobile-store-btns">
+    <a href="https://apps.apple.com/us/app/%D8%B1%D9%81%D9%8A%D9%82-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D9%85-rafiq-al-muslim/id6759387456" class="mobile-store-btn" onclick="closeMobile()" aria-label="تحميل من متجر آبل">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      <span class="mobile-store-btn-text"><span class="mobile-store-btn-small">حمّل من</span>App Store</span>
+    </a>
+    <a href="#" class="mobile-store-btn" onclick="closeMobile()" aria-label="تحميل من جوجل بلاي" style="background:var(--s700)">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.67c-.2-.11-.38-.3-.38-.63V.96c0-.33.18-.52.38-.63L13.54 12 3.18 23.67zm1.38-24.3L16.73 6.1l-3.03 2.83L4.56-.63zM20.16 10.33l-2.62 1.52L14.5 12l3.04-2.19 2.62-1.52c.83.48.83 1.57 0 2.04zm-3.66 2.14L13.46 12l3.04 2.83 3.03-2.83-3.03-2.53z"/></svg>
+      <span class="mobile-store-btn-text"><span class="mobile-store-btn-small">حمّل من</span>Google Play <span style="font-size:.7rem;opacity:.6">(قريباً)</span></span>
+    </a>
+  </div>
+  <div style="flex:1"></div>
+  <a href="./privacy.html" class="mobile-link" style="color:var(--s400);font-size:.875rem">سياسة الخصوصية</a>
+</div>
 
 <!-- HERO -->
 <section class="hero" id="hero"><div class="container">
@@ -66,9 +193,9 @@
 <div class="hero-badge"><span class="hero-badge-dot"></span>مجاني بالكامل —</div>
 <h1>رفيق المسلم<br><span class="gold">رفيقك في الطاعة</span></h1>
 <p class="hero-sub">القرآن الكريم بالرسم العثماني، ومواقيت الصلاة، وكتب الحديث التسعة، والأذكار — كل ما يحتاجه المسلم في تطبيق واحد</p>
-<div class="hero-pills"><span class="hero-pill">📖 القرآن</span><span class="hero-pill">🕌 الصلاة</span><span class="hero-pill">📚 الحديث</span><span class="hero-pill">🤲 الأذكار</span></div>
+<div class="hero-pills"><span class="hero-pill">📖 القرآن</span><span class="hero-pill">🕌 الصلاة</span><span class="hero-pill">📚 الحديث</span><span class="hero-pill">🤲 الأذكار</span><span class="hero-pill">🔍 البحث الذكي</span><span class="hero-pill">🎙️ تراتيل</span></div>
 <div class="hero-ctas" id="download">
-<a href="#" class="btn-store" aria-label="تحميل من متجر آبل"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><span class="btn-store-text"><span class="btn-store-small">حمّل من</span>App Store</span></a>
+<a href="https://apps.apple.com/us/app/%D8%B1%D9%81%D9%8A%D9%82-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D9%85-rafiq-al-muslim/id6759387456" class="btn-store" aria-label="تحميل من متجر آبل"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><span class="btn-store-text"><span class="btn-store-small">حمّل من</span>App Store</span></a>
 <a href="#" class="btn-store" aria-label="تحميل من جوجل بلاي"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.67c-.2-.11-.38-.3-.38-.63V.96c0-.33.18-.52.38-.63L13.54 12 3.18 23.67zm1.38-24.3L16.73 6.1l-3.03 2.83L4.56-.63zM20.16 10.33l-2.62 1.52L14.5 12l3.04-2.19 2.62-1.52c.83.48.83 1.57 0 2.04zm-3.66 2.14L13.46 12l3.04 2.83 3.03-2.83-3.03-2.53z"/></svg><span class="btn-store-text"><span class="btn-store-small">حمّل من</span>Google Play</span></a>
 </div>
 <div class="hero-trust"><div class="hero-trust-item"><span class="hero-trust-val">بدون إعلانات</span><span class="hero-trust-lbl">تجربة نقية</span></div><div class="hero-trust-item"><span class="hero-trust-val">بدون اشتراكات</span><span class="hero-trust-lbl">مجاني للأبد</span></div><div class="hero-trust-item"><span class="hero-trust-lbl">صدقة جارية</span></div></div>
@@ -85,12 +212,19 @@
 <div class="feat-content reveal">
 <span class="section-label">📖 القرآن الكريم</span>
 <h2 class="section-title">تلاوة وتدبّر كتاب الله</h2>
-<p class="section-desc">مصحف المدينة المنورة بأعلى جودة مع تفاسير متعددة وتلاوات مباركة وفواصل ملوّنة</p>
-<div class="feat-list"><div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">مصحف المدينة بالرسم العثماني مع التشكيل الكامل</span></div><div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">أكثر من ٦٠ قارئ ومرتّل مع التشغيل المتواصل</span></div><div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">تفاسير متعددة مع البحث والمقارنة</span></div><div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">أربعة فواصل ملوّنة وبحث سريع ووضع ليلي</span></div></div>
+<p class="section-desc">مصحف المدينة المنورة بأعلى جودة مع تفاسير متعددة وتلاوات مباركة — واستمع بصوتك مع ميزة تراتيل</p>
+<div class="feat-list">
+<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">مصحف المدينة بالرسم العثماني مع التشكيل الكامل</span></div>
+<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">أكثر من ٦٠ قارئ ومرتّل مع التشغيل المتواصل</span></div>
+<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">تفاسير متعددة مع البحث والمقارنة</span></div>
+<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">أربعة فواصل ملوّنة وبحث سريع ووضع ليلي</span></div>
+<div class="feat-item"><span class="feat-check">🎙️</span><span class="feat-text"><strong>تراتيل</strong> — اقرأ سورة الكهف، اختر القارئ والآيات بصوتك</span></div>
+</div>
 </div>
 <div class="feat-phones reveal d2">
 <div class="phone phone-sm phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/quran-index.jpeg" alt="فهرس القرآن" loading="lazy"></div></div></div>
 <div class="phone phone-float" style="z-index:2"><div class="phone-frame"><div class="phone-screen"><img src="./screens/quran-audio.jpeg" alt="تلاوة القرآن" loading="lazy"></div></div></div>
+<div class="phone phone-sm phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/quran-voice-commands.jpeg" alt="الأوامر الصوتية للقرآن" loading="lazy"></div></div></div>
 </div>
 </div></div></section>
 
@@ -128,19 +262,47 @@
 <div class="feat-content reveal">
 <span class="section-label">🤲 الأذكار والتسبيح</span>
 <h2 class="section-title">أذكار الصباح والمساء وأكثر</h2>
-<p class="section-desc">مجموعة شاملة من الأذكار والأدعية المأثورة عن النبي ﷺ مع عدّاد التسبيح الذكي</p>
-<div class="feat-list"><div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">أذكار الصباح والمساء</span></div><div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">أذكار النوم والصلاة والاستيقاظ</span></div><div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">أدعية من القرآن والسنّة</span></div><div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">عدّاد تسبيح ذكي بالاهتزاز</span></div><div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">تنبيهات يومية للأذكار</span></div></div>
+<p class="section-desc">مجموعة شاملة من الأذكار والأدعية المأثورة عن النبي ﷺ مع عدّاد تسبيح ذكي يعدّ بصوتك</p>
+<div class="feat-list">
+<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">أذكار الصباح والمساء وأذكار النوم والاستيقاظ</span></div>
+<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">حصن المسلم — ١٣٢ ذكراً ودعاءً مأثوراً</span></div>
+<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">أدعية من القرآن والسنّة النبوية</span></div>
+<div class="feat-item"><span class="feat-check">🎙️</span><span class="feat-text"><strong>العد الصوتي</strong> — سبّح بصوتك ويعدّ التطبيق تلقائياً دون لمس الشاشة</span></div>
+<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">مسبحة إلكترونية باللمس + تنبيهات يومية للأذكار</span></div>
+</div>
 </div>
 <div class="feat-phones reveal d2">
+<div class="phone phone-sm phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/adhkar-home.jpeg" alt="الأذكار اليومية" loading="lazy"></div></div></div>
 <div class="phone phone-float" style="z-index:2"><div class="phone-frame"><div class="phone-screen"><img src="./screens/adhkar-main.jpeg" alt="الأذكار" loading="lazy"></div></div></div>
+<div class="phone phone-sm phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/adhkar-tasbeeh.jpeg" alt="عداد التسبيح الصوتي" loading="lazy"></div></div></div>
+</div>
+</div></div></section>
+
+<!-- SEARCH -->
+<section class="feat-section section-pad" id="search"><div class="container"><div class="feat-grid">
+<div class="feat-content reveal">
+<span class="section-label">🔍 البحث الذكي</span>
+<h2 class="section-title">ابحث في كل شيء دفعة واحدة</h2>
+<p class="section-desc">بحث شامل وذكي يجمع نتائج القرآن والحديث والأذكار ومواقيت الصلاة في مكان واحد — بالنص أو بالصوت</p>
+<div class="feat-list">
+<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">بحث موحّد في القرآن والحديث والأذكار والصلاة معاً</span></div>
+<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">نتائج فورية مع تصنيف تلقائي حسب المصدر</span></div>
+<div class="feat-item"><span class="feat-check">🎙️</span><span class="feat-text"><strong>البحث الصوتي</strong> — قل "موعد صلاة الفجر" أو "آيات الصبر" ويجيبك التطبيق</span></div>
+<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">يعمل عبر كل الأقسام: القرآن، الحديث، الأذكار، الصلاة</span></div>
+</div>
+</div>
+<div class="feat-phones reveal d2">
+<div class="phone phone-sm phone-float"><div class="phone-frame"><div class="phone-screen"><img src="./screens/search-prayer.jpeg" alt="البحث في مواقيت الصلاة" loading="lazy"></div></div></div>
+<div class="phone phone-float-alt" style="z-index:2"><div class="phone-frame"><div class="phone-screen"><img src="./screens/search-quran.jpeg" alt="البحث في القرآن" loading="lazy"></div></div></div>
 </div>
 </div></div></section>
 
 <!-- STATS -->
 <section class="stats-section section-pad"><div class="container"><div class="stats-grid">
-<div class="stat reveal d2"><span class="stat-val">+٦٠</span><span class="stat-lbl">قارئ ومرتّل</span></div>
-<div class="stat reveal d3"><span class="stat-val">+٦٠,٠٠٠</span><span class="stat-lbl">حديث شريف</span></div>
-<div class="stat reveal d4"><span class="stat-val">+١٠٠</span><span class="stat-lbl">ذكر ودعاء</span></div>
+<div class="stat reveal d1"><span class="stat-val">+٦٠</span><span class="stat-lbl">قارئ ومرتّل</span></div>
+<div class="stat reveal d2"><span class="stat-val">+٦٠,٠٠٠</span><span class="stat-lbl">حديث شريف</span></div>
+<div class="stat reveal d3"><span class="stat-val">+١٣٢</span><span class="stat-lbl">ذكر ودعاء</span></div>
+<div class="stat reveal d4"><span class="stat-val">٤</span><span class="stat-lbl">أقسام بحث ذكي</span></div>
 </div></div></section>
 
 <!-- HOW -->
@@ -169,7 +331,7 @@
 <h2 class="reveal">حمّل رفيق المسلم الآن مجاناً</h2>
 <p class="final-cta-desc reveal">بدون إعلانات — بدون اشتراكات — لوجه الله تعالى</p>
 <div class="hero-ctas reveal" style="justify-content:center">
-<a href="#" class="btn-store" aria-label="تحميل من متجر آبل"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><span class="btn-store-text"><span class="btn-store-small">حمّل من</span>App Store</span></a>
+<a href="https://apps.apple.com/us/app/%D8%B1%D9%81%D9%8A%D9%82-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D9%85-rafiq-al-muslim/id6759387456" class="btn-store" aria-label="تحميل من متجر آبل"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><span class="btn-store-text"><span class="btn-store-small">حمّل من</span>App Store</span></a>
 <a href="#" class="btn-store" aria-label="تحميل من جوجل بلاي"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.67c-.2-.11-.38-.3-.38-.63V.96c0-.33.18-.52.38-.63L13.54 12 3.18 23.67zm1.38-24.3L16.73 6.1l-3.03 2.83L4.56-.63zM20.16 10.33l-2.62 1.52L14.5 12l3.04-2.19 2.62-1.52c.83.48.83 1.57 0 2.04zm-3.66 2.14L13.46 12l3.04 2.83 3.03-2.83-3.03-2.53z"/></svg><span class="btn-store-text"><span class="btn-store-small">حمّل من</span>Google Play</span></a>
 </div>
 <div class="final-badges reveal"><span class="final-badge">بدون إعلانات</span><span class="final-badge">بدون اشتراكات</span><span class="final-badge">صدقة جارية</span><span class="final-badge">يعمل بدون إنترنت</span></div>
@@ -180,16 +342,16 @@
 <div class="footer-grid">
 <div><div class="footer-logo"><span class="footer-logo-icon"><img src="./og-image.png" alt="" width="36" height="36"></span>رفيق المسلم</div><p class="footer-desc">رفيقك في الطاعة — القرآن الكريم والحديث الشريف والأذكار ومواقيت الصلاة في تطبيق واحد مجاني لوجه الله تعالى</p></div>
 <div><h4 class="footer-col-title">التطبيق</h4><div class="footer-links"><a href="#quran" class="footer-link">القرآن الكريم</a><a href="#salah" class="footer-link">مواقيت الصلاة</a><a href="#hadith" class="footer-link">الحديث الشريف</a><a href="#adhkar" class="footer-link">الأذكار</a></div></div>
-<div><h4 class="footer-col-title">روابط</h4><div class="footer-links"><a href="./privacy.html" class="footer-link">سياسة الخصوصية</a><a href="mailto:support@rafiqapp.me" class="footer-link">تواصل معنا</a></div></div>
+<div><h4 class="footer-col-title">روابط</h4><div class="footer-links"><a href="./privacy.html" class="footer-link">سياسة الخصوصية</a><a href="/cdn-cgi/l/email-protection#61121411110e13152113000708100011114f0c04" class="footer-link">تواصل معنا</a><a href="https://apps.apple.com/us/app/%D8%B1%D9%81%D9%8A%D9%82-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D9%85-rafiq-al-muslim/id6759387456" class="footer-link">App Store</a></div></div>
 </div>
 <div class="footer-divider"></div>
 <div class="footer-bottom"><span class="footer-copy">© 2026 رفيق المسلم — لوجه الله تعالى</span></div>
 </div></footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const navbar=document.getElementById('navbar');window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>50)},{passive:true});navbar.classList.toggle('scrolled',window.scrollY>50);
-const navToggle=document.getElementById('navToggle'),mobileMenu=document.getElementById('mobileMenu'),mobileClose=document.getElementById('mobileClose');navToggle.addEventListener('click',()=>{mobileMenu.classList.add('open');document.body.style.overflow='hidden'});function closeMobile(){mobileMenu.classList.remove('open');document.body.style.overflow=''}mobileClose.addEventListener('click',closeMobile);
+const navToggle=document.getElementById('navToggle'),mobileMenu=document.getElementById('mobileMenu'),mobileClose=document.getElementById('mobileClose');navToggle.addEventListener('click',()=>{mobileMenu.classList.add('open');document.body.style.overflow='hidden';navToggle.setAttribute('aria-expanded','true')});function closeMobile(){mobileMenu.classList.remove('open');document.body.style.overflow='';navToggle.setAttribute('aria-expanded','false')}mobileClose.addEventListener('click',closeMobile);
+// Close mobile menu on outside click
+mobileMenu.addEventListener('click',function(e){if(e.target===mobileMenu)closeMobile()});
 document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item'),w=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false')});if(!w){item.classList.add('open');btn.setAttribute('aria-expanded','true')}})});
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){const t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}})});
-</script>
-</body></html>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){const t=document
