@@ -109,6 +109,10 @@
   /* Phones */
   .phone{width:200px}
   .phone-sm{width:170px}
+  /* On mobile show max 2 phones to give text enough room */
+  .feat-phones .phone:nth-child(3),.feat-phones .phone:nth-child(4){display:none}
+  /* Prevent section titles from breaking into single characters */
+  .section-title{word-break:keep-all;overflow-wrap:break-word}
 
   /* Footer */
   .footer-grid{grid-template-columns:1fr;gap:2rem}
@@ -134,9 +138,11 @@
   .phone-screen{border-radius:23px}
   .phone-sm .phone-screen{border-radius:19px}
 
-  /* Feature phones */
-  .feat-phones .phone{width:170px}
-  .feat-phones .phone-sm{width:142px}
+  /* Feature phones - limit size on small screens */
+  .feat-phones .phone{width:130px}
+  .feat-phones .phone-sm{width:108px}
+  /* Hide 3rd and 4th phones on very small screens to prevent text squeeze */
+  .feat-phones .phone:nth-child(3),.feat-phones .phone:nth-child(4){display:none}
 
   /* Buttons */
   .btn-store{padding:.875rem 1.25rem;font-size:.9375rem;border-radius:14px}
@@ -368,7 +374,7 @@
 <div class="phone phone-sm phone-float"><div class="phone-frame"><div class="phone-screen"><img src="./screens/adhkar-tasbeeh.jpeg" alt="عداد التسبيح الصوتي" loading="lazy"></div></div></div>
 <div class="phone phone-float-alt" style="z-index:2"><div class="phone-frame"><div class="phone-screen"><img src="./screens/adhkar-main.jpeg" alt="الأذكار" loading="lazy"></div></div></div>
 <div class="phone phone-float" style="z-index:2"><div class="phone-frame"><div class="phone-screen"><img src="./screens/adhkar-home.jpeg" alt="الأذكار اليومية" loading="lazy"></div></div></div>
-
+<div class="phone phone-sm phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/adhkar-main.jpeg" alt="حصن المسلم" loading="lazy"></div></div></div>
 </div>
 </div></div></section>
 
