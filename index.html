@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,38 +21,181 @@
 <meta name="twitter:description" content="القرآن الكريم والحديث الشريف والأذكار ومواقيت الصلاة في تطبيق واحد مجاني">
 <meta name="twitter:image" content="https://rafiqapp.me/og-image.png">
 <link rel="canonical" href="https://rafiqapp.me/">
+<meta name="robots" content="index, follow">
+<link rel="alternate" hreflang="ar" href="https://rafiqapp.me/">
+<link rel="alternate" hreflang="en" href="https://rafiqapp.me/">
+<link rel="alternate" hreflang="fr" href="https://rafiqapp.me/">
+<link rel="alternate" hreflang="ur" href="https://rafiqapp.me/">
+<link rel="alternate" hreflang="fa" href="https://rafiqapp.me/">
+<link rel="alternate" hreflang="ru" href="https://rafiqapp.me/">
+<link rel="alternate" hreflang="tr" href="https://rafiqapp.me/">
+<link rel="alternate" hreflang="id" href="https://rafiqapp.me/">
+<link rel="alternate" hreflang="x-default" href="https://rafiqapp.me/">
 <link rel="icon" type="image/png" href="./og-image.png">
 <link rel="apple-touch-icon" href="./og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <script>(function(){var r=sessionStorage.redirect;delete sessionStorage.redirect;if(r&&r!==location.href){history.replaceState(null,null,r)}})();</script>
+
 <style>
-:root{--e900:#052E1F;--e800:#0A4D34;--e700:#0D6B47;--e600:#10835A;--e500:#149B6C;--e400:#3DB88A;--e100:#D1F5E4;--e50:#EDFCF4;--g500:#C9A84C;--g400:#D4BA6A;--g300:#E0CC8C;--g200:#EDE0B4;--s900:#0F1117;--s800:#1A1D2B;--s700:#2A2D3D;--s600:#3E4155;--s500:#5A5D72;--s400:#7E8196;--s300:#A8ABB9;--s200:#D1D3DB;--s100:#ECEDF0;--s50:#F7F7F8;--white:#fff;--cream:#FAFAF7;--font:'Cairo',sans-serif;--quran:'Amiri',serif;--ease:cubic-bezier(.16,1,.3,1)}
+:root{--e900:#052E1F;--e800:#0A4D34;--e700:#0D6B47;--e600:#10835A;--e500:#149B6C;--e400:#3DB88A;--e100:#D1F5E4;--e50:#EDFCF4;--g500:#C9A84C;--g400:#D4BA6A;--g300:#E0CC8C;--g200:#EDE0B4;--s900:#0F1117;--s800:#1A1D2B;--s700:#2A2D3D;--s600:#3E4155;--s500:#5A5D72;--s400:#7E8196;--s300:#A8ABB9;--s200:#D1D3DB;--s100:#ECEDF0;--s50:#F7F7F8;--white:#fff;--cream:#FAFAF7;--font:'Cairo',sans-serif;--quran:'Amiri',serif;--ease:cubic-bezier(.16,1,.3,1);--phone-lg:260px;--phone-sm:220px}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font);font-size:1rem;line-height:1.7;color:var(--s800);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul,ol{list-style:none}:focus-visible{outline:2px solid var(--e500);outline-offset:2px;border-radius:4px}::selection{background:var(--e100);color:var(--e900)}
 .container{width:100%;max-width:1200px;margin:0 auto;padding:0 1.5rem}.section-pad{padding:6rem 0}.text-center{text-align:center}
-.reveal{animation:revealUp .8s var(--ease) both}@keyframes revealUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.4s}.d5{animation-delay:.5s}
+.reveal{opacity:0;transform:translateY(30px)}.reveal.visible{animation:revealUp .8s var(--ease) both}.no-js .reveal{opacity:1;transform:none}@keyframes revealUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.4s}.d5{animation-delay:.5s}
 .section-label{display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;font-weight:600;color:var(--e600);padding:.5rem 1rem;background:var(--e50);border:1px solid var(--e100);border-radius:999px;margin-bottom:1rem}.section-title{font-size:2.25rem;font-weight:800;color:var(--s900);line-height:1.25;margin-bottom:1rem}.section-desc{font-size:1.125rem;color:var(--s500);max-width:600px;line-height:1.8}
-.phone{position:relative;width:260px;flex-shrink:0}.phone-frame{position:relative;background:#111;border-radius:36px;padding:10px;box-shadow:0 25px 70px rgba(0,0,0,.3),0 0 0 1px rgba(255,255,255,.08) inset}.phone-frame::before{content:'';position:absolute;top:10px;left:50%;transform:translateX(-50%);width:80px;height:24px;background:#111;border-radius:0 0 14px 14px;z-index:2}.phone-screen{border-radius:28px;overflow:hidden;aspect-ratio:9/19.5;background:var(--cream)}.phone-screen img{width:100%;height:100%;object-fit:cover;object-position:top}
-.phone-sm{width:220px}.phone-sm .phone-frame{border-radius:30px;padding:8px}.phone-sm .phone-frame::before{width:60px;height:20px;border-radius:0 0 10px 10px;top:8px}.phone-sm .phone-screen{border-radius:24px}
-.phone-float{animation:pf 6s ease-in-out infinite}@keyframes pf{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}.phone-float-alt{animation:pfa 6s ease-in-out infinite}@keyframes pfa{0%,100%{transform:translateY(-12px)}50%{transform:translateY(0)}}
+
+.phone{position:relative;width:var(--phone-lg);flex-shrink:1;min-width:0}
+.phone-frame{position:relative;background:#111;border-radius:36px;padding:10px;box-shadow:0 25px 70px rgba(0,0,0,.3),0 0 0 1px rgba(255,255,255,.08) inset}
+.phone-frame::before{content:'';position:absolute;top:10px;left:50%;transform:translateX(-50%);width:80px;height:24px;background:#111;border-radius:0 0 14px 14px;z-index:2}
+.phone-screen{border-radius:28px;overflow:hidden;aspect-ratio:9/19.5;background:var(--cream)}
+.phone-screen img{width:100%;height:100%;object-fit:cover;object-position:top}
+.phone-sm{width:var(--phone-sm)}
+.phone-sm .phone-frame{border-radius:30px;padding:8px}
+.phone-sm .phone-frame::before{width:60px;height:20px;border-radius:0 0 10px 10px;top:8px}
+.phone-sm .phone-screen{border-radius:24px}
+.phone-float{animation:pf 6s ease-in-out infinite}@keyframes pf{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.phone-float-alt{animation:pfa 6s ease-in-out infinite}@keyframes pfa{0%,100%{transform:translateY(-12px)}50%{transform:translateY(0)}}
+
 .navbar{position:fixed;top:0;right:0;left:0;z-index:100;padding:1rem 0;transition:all .4s var(--ease)}.navbar.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--s100);padding:.75rem 0}.navbar .container{display:flex;align-items:center;justify-content:space-between}.nav-logo{display:flex;align-items:center;gap:.75rem;font-size:1.25rem;font-weight:800;color:var(--white);transition:color .2s}.navbar.scrolled .nav-logo{color:var(--e800)}.nav-logo-icon{width:38px;height:38px;border-radius:10px;overflow:hidden}.nav-logo-icon img{width:100%;height:100%;object-fit:cover}.nav-links{display:flex;align-items:center;gap:.25rem}.nav-link{padding:.5rem 1rem;font-size:.875rem;font-weight:600;color:rgba(255,255,255,.85);border-radius:8px;transition:all .2s}.nav-link:hover{background:rgba(255,255,255,.12);color:var(--white)}.navbar.scrolled .nav-link{color:var(--s600)}.navbar.scrolled .nav-link:hover{background:var(--s50);color:var(--s900)}.nav-cta{padding:.5rem 1.25rem;font-size:.875rem;font-weight:700;background:rgba(255,255,255,.15);color:var(--white);border-radius:999px;border:1px solid rgba(255,255,255,.3);transition:all .2s}.nav-cta:hover{background:rgba(255,255,255,.25)}.navbar.scrolled .nav-cta{background:var(--e800);color:var(--white);border-color:var(--e800)}.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem;color:var(--white)}.navbar.scrolled .nav-toggle{color:var(--s800)}.nav-toggle svg{width:24px;height:24px}
+
 .mobile-menu{display:none;position:fixed;inset:0;background:var(--white);z-index:99;padding:5rem 1.5rem 1.5rem;flex-direction:column;gap:.5rem;overflow-y:auto}.mobile-menu.open{display:flex}.mobile-link{display:block;padding:1rem;font-size:1.125rem;font-weight:600;color:var(--s800);border-radius:12px;transition:background .2s}.mobile-link:hover{background:var(--s50)}.mobile-close{position:absolute;top:1rem;left:1rem;background:none;border:none;cursor:pointer;padding:.5rem;color:var(--s600)}.mobile-close svg{width:28px;height:28px}
+
 /* Mobile store buttons in menu */
 .mobile-store-btns{display:flex;flex-direction:column;gap:.75rem;padding:1rem 0;margin-top:.5rem;border-top:1px solid var(--s100)}.mobile-store-btn{display:flex;align-items:center;gap:.75rem;padding:.875rem 1.25rem;background:var(--e800);color:var(--white);border-radius:14px;font-weight:700;font-size:.9375rem;transition:all .2s}.mobile-store-btn:hover{background:var(--e700)}.mobile-store-btn svg{width:20px;height:20px;flex-shrink:0}.mobile-store-btn-text{line-height:1.2}.mobile-store-btn-small{display:block;font-size:.7rem;font-weight:400;opacity:.7}
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(160deg,var(--e900) 0%,var(--e800) 40%,#0B5838 70%,var(--e700) 100%);overflow:hidden;padding-top:5rem}.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 80%,rgba(201,168,76,.06) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(201,168,76,.04) 0%,transparent 50%);pointer-events:none}.hero .container{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:3rem;padding:4rem 1.5rem}.hero-content{max-width:560px}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.25rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:999px;font-size:.875rem;font-weight:500;color:var(--g300);margin-bottom:2rem;backdrop-filter:blur(10px)}.hero-badge-dot{width:6px;height:6px;background:var(--g400);border-radius:50%;animation:pulse 2s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:.2;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)}}
-.hero h1{font-size:2.25rem;font-weight:900;color:var(--white);line-height:1.3;margin-bottom:1.5rem;white-space:nowrap}.hero h1 .gold{background:linear-gradient(135deg,var(--g400),var(--g300));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.hero-sub{font-size:1.125rem;color:rgba(255,255,255,.7);margin-bottom:2rem;line-height:1.8}
-.hero-pills{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2.5rem}.hero-pill{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.25rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:999px;font-size:.875rem;font-weight:500;color:rgba(255,255,255,.85);backdrop-filter:blur(8px)}
-.hero-ctas{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2rem}.btn-store{display:inline-flex;align-items:center;gap:.75rem;padding:1rem 1.5rem;background:var(--white);color:var(--s900);border-radius:16px;font-weight:700;font-size:1rem;transition:all .2s var(--ease);box-shadow:0 4px 20px rgba(0,0,0,.15)}.btn-store:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.2)}.btn-store:active{transform:translateY(0)}.btn-store svg{width:22px;height:22px;flex-shrink:0}.btn-store-text{text-align:start;line-height:1.2}.btn-store-small{display:block;font-size:.75rem;font-weight:400;color:var(--s500)}
+
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(160deg,var(--e900) 0%,var(--e800) 40%,#0B5838 70%,var(--e700) 100%);overflow:hidden;padding-top:5rem}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 80%,rgba(201,168,76,.06) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(201,168,76,.04) 0%,transparent 50%);pointer-events:none}
+.hero .container{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.3fr;align-items:center;gap:2rem;padding:4rem 1.5rem}
+.hero-content{max-width:560px}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.25rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:999px;font-size:.875rem;font-weight:500;color:var(--g300);margin-bottom:2rem;backdrop-filter:blur(10px)}
+.hero-badge-dot{width:6px;height:6px;background:var(--g400);border-radius:50%;animation:pulse 2s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:.2;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)}}
+.hero h1{font-size:2.25rem;font-weight:900;color:var(--white);line-height:1.3;margin-bottom:1.5rem}
+.hero h1 .gold{background:linear-gradient(135deg,var(--g400),var(--g300));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.125rem;color:rgba(255,255,255,.7);margin-bottom:2rem;line-height:1.8}
+.hero-pills{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2.5rem}
+.hero-pill{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.25rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:999px;font-size:.875rem;font-weight:500;color:rgba(255,255,255,.85);backdrop-filter:blur(8px)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2rem}
+.btn-store{display:inline-flex;align-items:center;gap:.75rem;padding:1rem 1.5rem;background:var(--white);color:var(--s900);border-radius:16px;font-weight:700;font-size:1rem;transition:all .2s var(--ease);box-shadow:0 4px 20px rgba(0,0,0,.15);min-width:220px;justify-content:center}
+.btn-store:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.btn-store:active{transform:translateY(0)}
+.btn-store svg{width:22px;height:22px;flex-shrink:0}
+.btn-store-text{text-align:start;line-height:1.2}
+.btn-store-small{display:block;font-size:.75rem;font-weight:400;color:var(--s500)}
 .hero-phones{display:flex;justify-content:center;align-items:center;gap:1.5rem;position:relative}
-.hero-trust{display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.06)}.hero-trust-item{text-align:center}.hero-trust-val{display:block;font-size:.875rem;font-weight:700;color:var(--g400);margin-bottom:.25rem}.hero-trust-lbl{font-size:.75rem;color:rgba(255,255,255,.45)}
-.feat-section{position:relative;overflow:hidden}.feat-section:nth-child(odd){background:var(--cream)}.feat-section:nth-child(even){background:var(--white)}.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}.feat-grid.reverse .feat-content{order:2}.feat-grid.reverse .feat-phones{order:1}.feat-content{max-width:500px}.feat-list{margin-top:2rem;display:flex;flex-direction:column;gap:1rem}.feat-item{display:flex;align-items:flex-start;gap:1rem}.feat-check{width:28px;height:28px;display:flex;align-items:center;justify-content:center;background:var(--e50);color:var(--e600);border-radius:50%;flex-shrink:0;margin-top:2px;font-size:.875rem;font-weight:700}.feat-text{font-size:1rem;color:var(--s600);line-height:1.7}.feat-phones{display:flex;justify-content:center;align-items:center;gap:1.25rem;position:relative;padding:2rem 0}.phones-3{gap:.6rem}.phones-3 .phone{width:175px}.phones-3 .phone-sm{width:145px}.phones-3 .phone .phone-frame{border-radius:28px;padding:8px}.phones-3 .phone-sm .phone-frame{border-radius:24px;padding:6px}.phones-3 .phone .phone-screen{border-radius:22px}.phones-3 .phone-sm .phone-screen{border-radius:18px}.phones-4{gap:.4rem;overflow:visible}.phones-4 .phone{width:148px}.phones-4 .phone-sm{width:122px}.phones-4 .phone .phone-frame{border-radius:24px;padding:7px}.phones-4 .phone-sm .phone-frame{border-radius:20px;padding:5px}.phones-4 .phone .phone-screen{border-radius:19px}.phones-4 .phone-sm .phone-screen{border-radius:16px}
-.stats-section{background:linear-gradient(160deg,var(--e900),var(--e800));position:relative;overflow:hidden}.stats-section::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(201,168,76,.06) 0%,transparent 50%);pointer-events:none}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative}.stat{text-align:center;padding:2rem;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);transition:all .4s}.stat:hover{background:rgba(255,255,255,.07);transform:translateY(-4px)}.stat-val{display:block;font-size:2.25rem;font-weight:900;background:linear-gradient(135deg,var(--g400),var(--g300));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.5rem;direction:ltr}.stat-lbl{font-size:.875rem;color:rgba(255,255,255,.55);font-weight:500}
-.how-section{background:var(--cream)}.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;position:relative}.how-steps::before{content:'';position:absolute;top:28px;right:calc(16.67% + 20px);left:calc(16.67% + 20px);height:2px;background:linear-gradient(90deg,var(--e100),var(--g300),var(--e100))}.how-step{text-align:center;position:relative}.how-num{width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:var(--white);border:2px solid var(--e100);border-radius:50%;font-size:1.25rem;font-weight:800;color:var(--e700);margin:0 auto 1.5rem;position:relative;z-index:1;transition:all .4s}.how-step:hover .how-num{background:var(--e800);color:var(--white);border-color:var(--e800)}.how-step h3{font-size:1.125rem;font-weight:700;color:var(--s900);margin-bottom:.75rem}.how-step p{font-size:.875rem;color:var(--s500);line-height:1.8;max-width:280px;margin:0 auto}
-.faq-section{background:var(--white)}.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:1rem}.faq-item{border:1px solid var(--s100);border-radius:16px;overflow:hidden;transition:border-color .2s}.faq-item.open{border-color:var(--e100)}.faq-q{display:flex;align-items:center;justify-content:space-between;width:100%;padding:1.25rem 1.5rem;background:none;border:none;cursor:pointer;font-family:var(--font);font-size:1rem;font-weight:700;color:var(--s800);text-align:start;gap:1rem;-webkit-tap-highlight-color:transparent}.faq-q:hover{color:var(--e800)}.faq-chevron{width:20px;height:20px;flex-shrink:0;color:var(--s400);transition:transform .2s var(--ease)}.faq-item.open .faq-chevron{transform:rotate(180deg);color:var(--e600)}.faq-a{display:none;padding:0 1.5rem 1.25rem;font-size:.875rem;color:var(--s500);line-height:1.9}.faq-item.open .faq-a{display:block}
-.final-cta{background:linear-gradient(160deg,var(--e900),var(--e800));position:relative;overflow:hidden;text-align:center}.final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(201,168,76,.06) 0%,transparent 50%),radial-gradient(circle at 70% 50%,rgba(255,255,255,.03) 0%,transparent 50%);pointer-events:none}.final-cta .container{position:relative;z-index:1}.final-verse{font-family:var(--quran);font-size:1.875rem;color:var(--g300);line-height:1.8;margin-bottom:.5rem;max-width:500px;margin-left:auto;margin-right:auto}.final-ref{font-size:.75rem;color:rgba(255,255,255,.35);margin-bottom:2.5rem}.final-cta h2{font-size:2.25rem;font-weight:900;color:var(--white);margin-bottom:1rem}.final-cta-desc{font-size:1.125rem;color:rgba(255,255,255,.6);margin-bottom:2.5rem}.final-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:2rem}.final-badge{padding:.5rem 1rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:999px;font-size:.75rem;color:rgba(255,255,255,.55)}
-.footer{background:var(--s900);color:var(--white);padding:4rem 0 2rem}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:3rem}.footer-logo{display:flex;align-items:center;gap:.75rem;font-size:1.25rem;font-weight:800;margin-bottom:1rem}.footer-logo-icon{width:36px;height:36px;border-radius:8px;overflow:hidden}.footer-logo-icon img{width:100%;height:100%;object-fit:cover}.footer-desc{font-size:.875rem;color:var(--s400);line-height:1.8;max-width:340px}.footer-col-title{font-size:.875rem;font-weight:700;color:var(--s300);margin-bottom:1.25rem}.footer-links{display:flex;flex-direction:column;gap:.75rem}.footer-link{font-size:.875rem;color:var(--s400);transition:color .2s}.footer-link:hover{color:var(--white)}.footer-divider{height:1px;background:var(--s800);margin-bottom:1.5rem}.footer-bottom{display:flex;align-items:center;justify-content:space-between}.footer-copy,.footer-made{font-size:.75rem;color:var(--s500)}
+.hero-trust{display:flex;justify-content:center;flex-wrap:wrap;gap:1.5rem 2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.06);grid-column:1/-1}
+.hero-trust-item{font-size:.875rem;font-weight:600;color:var(--g400);white-space:nowrap}
+.btn-store-disabled{opacity:.55;pointer-events:none;cursor:default}
+.btn-store-disabled:hover{transform:none;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+
+.feat-section{position:relative;overflow:hidden}
+.feat-section:nth-child(odd){background:var(--cream)}
+.feat-section:nth-child(even){background:var(--white)}
+.feat-section+.feat-section{border-top:1px solid var(--s100)}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.feat-grid.reverse .feat-content{order:2}
+.feat-grid.reverse .feat-phones{order:1}
+/* RTL: natural grid flow already puts col-1 on right, col-2 on left — undo reverse overrides */
+html[dir="rtl"] .feat-grid.reverse .feat-content,
+html[dir="rtl"] .feat-grid.reverse .feat-phones{order:unset}
+/* LTR: always text left then images right — undo reverse overrides */
+html[dir="ltr"] .feat-grid.reverse .feat-content,
+html[dir="ltr"] .feat-grid.reverse .feat-phones{order:unset}
+.feat-content{max-width:500px}
+.feat-list{margin-top:2rem;display:flex;flex-direction:column;gap:1rem}
+.feat-item{display:flex;align-items:flex-start;gap:1rem}
+.feat-check{width:28px;height:28px;display:flex;align-items:center;justify-content:center;background:var(--e50);color:var(--e600);border-radius:50%;flex-shrink:0;margin-top:2px;font-size:.875rem;font-weight:700}
+.feat-text{font-size:1rem;color:var(--s600);line-height:1.7}
+.feat-phones{display:flex;justify-content:center;align-items:center;gap:1.25rem;position:relative;padding:2rem 0}
+
+/* ---------- FIXED phones-3 (NO overlap + consistent sizing) ---------- */
+.phones-3{
+  gap: 1.5rem;        /* more breathing room so shadows don't sit on top */
+  flex-wrap: nowrap;
+  overflow: visible;
+  isolation: isolate; /* makes z-index layering predictable */
+}
+
+/* Use the shared variables instead of hardcoded 190/160px */
+.feat-phones.phones-3 .phone{
+  width: var(--phone-lg) !important;
+  position: relative;
+  z-index: 1;
+}
+.feat-phones.phones-3 .phone.phone-sm{
+  width: var(--phone-sm) !important;
+}
+
+/* Always keep the middle phone above the others */
+.feat-phones.phones-3 .phone:nth-child(2){
+  z-index: 10 !important;
+}
+
+/* The last phone (appears on the LEFT in RTL) stays behind */
+.feat-phones.phones-3 .phone:nth-child(3){
+  z-index: 0 !important;
+}
+/* --------------------------------------------------------------- */
+
+.phones-4{gap:.4rem;overflow:visible}
+.phones-4 .phone{width:148px}
+.phones-4 .phone-sm{width:122px}
+.phones-4 .phone .phone-frame{border-radius:24px;padding:7px}
+.phones-4 .phone-sm .phone-frame{border-radius:20px;padding:5px}
+.phones-4 .phone .phone-screen{border-radius:19px}
+.phones-4 .phone-sm .phone-screen{border-radius:16px}
+
+.stats-section{background:linear-gradient(160deg,var(--e900),var(--e800));position:relative;overflow:hidden}
+.stats-section::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(201,168,76,.06) 0%,transparent 50%);pointer-events:none}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative}
+.stat{text-align:center;padding:2rem;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);transition:all .4s}
+.stat:hover{background:rgba(255,255,255,.07);transform:translateY(-4px)}
+.stat-val{display:block;font-size:2.25rem;font-weight:900;background:linear-gradient(135deg,var(--g400),var(--g300));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.5rem;direction:ltr}
+.stat-lbl{font-size:.875rem;color:rgba(255,255,255,.55);font-weight:500}
+
+.how-section{background:var(--cream)}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;position:relative}
+.how-steps::before{content:'';position:absolute;top:28px;right:calc(16.67% + 20px);left:calc(16.67% + 20px);height:2px;background:linear-gradient(90deg,var(--e100),var(--g300),var(--e100))}
+.how-step{text-align:center;position:relative}
+.how-num{width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:var(--white);border:2px solid var(--e100);border-radius:50%;font-size:1.25rem;font-weight:800;color:var(--e700);margin:0 auto 1.5rem;position:relative;z-index:1;transition:all .4s}
+.how-step:hover .how-num{background:var(--e800);color:var(--white);border-color:var(--e800)}
+.how-step h3{font-size:1.125rem;font-weight:700;color:var(--s900);margin-bottom:.75rem}
+.how-step p{font-size:.875rem;color:var(--s500);line-height:1.8;max-width:280px;margin:0 auto}
+
+.faq-section{background:var(--white)}
+.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:1rem}
+.faq-item{border:1px solid var(--s100);border-radius:16px;overflow:hidden;transition:border-color .2s}
+.faq-item.open{border-color:var(--e100)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;width:100%;padding:1.25rem 1.5rem;background:none;border:none;cursor:pointer;font-family:var(--font);font-size:1rem;font-weight:700;color:var(--s800);text-align:start;gap:1rem;-webkit-tap-highlight-color:transparent}
+.faq-q:hover{color:var(--e800)}
+.faq-chevron{width:20px;height:20px;flex-shrink:0;color:var(--s400);transition:transform .2s var(--ease)}
+.faq-item.open .faq-chevron{transform:rotate(180deg);color:var(--e600)}
+.faq-a{display:none;padding:0 1.5rem 1.25rem;font-size:.875rem;color:var(--s500);line-height:1.9}
+.faq-item.open .faq-a{display:block}
+
+.final-cta{background:linear-gradient(160deg,var(--e900),var(--e800));position:relative;overflow:hidden;text-align:center}
+.final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(201,168,76,.06) 0%,transparent 50%),radial-gradient(circle at 70% 50%,rgba(255,255,255,.03) 0%,transparent 50%);pointer-events:none}
+.final-cta .container{position:relative;z-index:1}
+.final-verse{font-family:var(--quran);font-size:1.875rem;color:var(--g300);line-height:1.8;margin-bottom:.5rem;max-width:500px;margin-left:auto;margin-right:auto;direction:rtl;unicode-bidi:isolate}
+.final-ref{font-size:.75rem;color:rgba(255,255,255,.35);margin-bottom:2.5rem}
+.final-cta h2{font-size:2.25rem;font-weight:900;color:var(--white);margin-bottom:1rem}
+.final-cta-desc{font-size:1.125rem;color:rgba(255,255,255,.6);margin-bottom:2.5rem}
+.final-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:2rem}
+.final-badge{padding:.5rem 1rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:999px;font-size:.75rem;color:rgba(255,255,255,.55)}
+
+.footer{background:var(--s900);color:var(--white);padding:4rem 0 2rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-logo{display:flex;align-items:center;gap:.75rem;font-size:1.25rem;font-weight:800;margin-bottom:1rem}
+.footer-logo-icon{width:36px;height:36px;border-radius:8px;overflow:hidden}
+.footer-logo-icon img{width:100%;height:100%;object-fit:cover}
+.footer-desc{font-size:.875rem;color:var(--s400);line-height:1.8;max-width:340px}
+.footer-col-title{font-size:.875rem;font-weight:700;color:var(--s300);margin-bottom:1.25rem}
+.footer-links{display:flex;flex-direction:column;gap:.75rem}
+.footer-link{font-size:.875rem;color:var(--s400);transition:color .2s}
+.footer-link:hover{color:var(--white)}
+.footer-divider{height:1px;background:var(--s800);margin-bottom:1.5rem}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between}
+.footer-copy,.footer-made{font-size:.75rem;color:var(--s500)}
 
 /* ─── IMPROVED MOBILE STYLES ─── */
 @media(max-width:1024px){
@@ -66,7 +209,7 @@
   /* Hero */
   .hero{min-height:auto;padding-bottom:3rem}
   .hero .container{grid-template-columns:1fr;text-align:center;padding:3rem 1.25rem 2rem;gap:2rem}
-  .hero h1{font-size:1.75rem;white-space:nowrap}
+  .hero h1{font-size:1.75rem}
   .hero-badge{margin-left:auto;margin-right:auto}
   .hero-pills{justify-content:center}
   .hero-ctas{justify-content:center;flex-direction:column;align-items:center}
@@ -83,27 +226,10 @@
   .feat-list{align-items:flex-start;text-align:start}
   .feat-item{text-align:start}
   .feat-phones{padding:1rem 0}
-
-  /* Stats */
-  .stats-grid{grid-template-columns:1fr 1fr;gap:1rem}
-  .stat{padding:1.5rem 1rem}
-  .stat-val{font-size:1.875rem}
-
-  /* How steps */
-  .how-steps{grid-template-columns:1fr;gap:2rem}
-  .how-steps::before{display:none}
-
-  /* FAQ */
-  .faq-q{padding:1rem 1.25rem;font-size:.9375rem}
-  .faq-a{padding:0 1.25rem 1rem}
-
-  /* Final CTA */
-  .final-verse{font-size:1.5rem}
-  .final-cta h2{font-size:1.875rem}
+  .hero-trust{gap:1rem 2rem}
 
   /* Phones */
-  .phone{width:200px}
-  .phone-sm{width:170px}
+  :root{--phone-lg:200px;--phone-sm:170px}
 
   /* Footer */
   .footer-grid{grid-template-columns:1fr;gap:2rem}
@@ -122,16 +248,9 @@
   .hero-phones{gap:.75rem}
 
   /* Phones smaller on very small screens */
-  .phone{width:155px}
-  .phone-sm{width:128px}
+  :root{--phone-lg:150px;--phone-sm:125px}
   .phone-frame{border-radius:28px;padding:7px}
-  .phone-sm .phone-frame{border-radius:24px;padding:6px}
   .phone-screen{border-radius:23px}
-  .phone-sm .phone-screen{border-radius:19px}
-
-  /* Feature phones */
-  .feat-phones .phone{width:170px}
-  .feat-phones .phone-sm{width:142px}
 
   /* Buttons */
   .btn-store{padding:.875rem 1.25rem;font-size:.9375rem;border-radius:14px}
@@ -154,6 +273,18 @@
   .footer{padding:3rem 0 1.5rem}
   .footer-grid{gap:1.5rem}
 }
+@media(max-width:380px){
+  :root{--phone-lg:120px;--phone-sm:100px}
+}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1!important;transform:none!important;animation:none!important}
+  .reveal.visible{animation:none!important}
+  .phone-float,.phone-float-alt{animation:none!important}
+  .hero-badge-dot{animation:none!important}
+  html{scroll-behavior:auto}
+}
 
 /* Safe area support for notched devices */
 @supports(padding:max(0px)){
@@ -161,26 +292,103 @@
   .hero .container{padding-left:max(1.25rem,env(safe-area-inset-left));padding-right:max(1.25rem,env(safe-area-inset-right))}
   .footer .container{padding-left:max(1.5rem,env(safe-area-inset-left));padding-right:max(1.5rem,env(safe-area-inset-right))}
 }
+
+/* ── Language Switcher ── */
+.lang-switcher{position:relative;display:inline-block}
+.lang-btn{display:flex;align-items:center;gap:5px;padding:6px 12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:8px;color:rgba(255,255,255,.85);font-family:var(--font);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap}
+.navbar.scrolled .lang-btn{background:#fff;border-color:var(--s200);color:var(--s700)}
+.lang-btn:hover{border-color:rgba(255,255,255,.5);color:#fff}
+.navbar.scrolled .lang-btn:hover{border-color:var(--e500);color:var(--e800)}
+.lang-dropdown{position:absolute;top:calc(100% + 8px);min-width:170px;background:#fff;border:1px solid #e5e5e5;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.12);overflow:hidden;display:none;z-index:200}
+html[dir="ltr"] .lang-dropdown{left:0}html[dir="rtl"] .lang-dropdown{right:0}
+.lang-switcher.open .lang-dropdown{display:block}
+.lang-option{display:flex;align-items:center;gap:8px;width:100%;padding:8px 14px;background:none;border:none;font-family:var(--font);font-size:14px;color:#555;cursor:pointer;text-align:start;transition:background .15s}
+.lang-option:hover{background:#f5f5f5}
+.lang-option.active{color:var(--e700);font-weight:700}
+.lang-chevron{width:12px;height:12px;transition:transform .2s;flex-shrink:0}
+.lang-switcher.open .lang-chevron{transform:rotate(180deg)}
+
+/* ── Stats Bar ── */
+.stats-bar{background:var(--e900);border-bottom:1px solid rgba(255,255,255,.06)}
+.stats-bar-inner{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.5rem 1.5rem;padding:.75rem 0;font-size:.8125rem;font-weight:600;color:var(--g300)}
+.stats-bar-sep{color:rgba(255,255,255,.2);font-size:.75rem}
+
+/* ── Languages Section ── */
+.langs-section{background:var(--cream)}
+.langs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;max-width:800px;margin:0 auto}
+.lang-card{display:flex;flex-direction:column;align-items:center;gap:.625rem;padding:1.5rem 1rem;background:var(--white);border:1px solid var(--s100);border-radius:16px;font-size:1rem;font-weight:600;color:var(--s700);transition:all .3s;cursor:default;text-align:center}
+.lang-card:hover{border-color:var(--e300);background:var(--e50);color:var(--e800);transform:translateY(-3px);box-shadow:0 6px 20px rgba(20,155,108,.1)}
+.lang-card .lang-flag{font-size:2rem;line-height:1}
+@media(max-width:768px){.langs-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.langs-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ── 99 Names & Calendar Visual ── */
+.feat-names-visual{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;padding:3rem 2rem;background:linear-gradient(135deg,var(--e900),var(--e800));border-radius:24px;min-height:340px}
+.names-ornament{font-family:var(--quran);font-size:3rem;color:var(--g300);line-height:1;text-align:center}
+.names-list-preview{display:flex;flex-wrap:wrap;justify-content:center;gap:.625rem}
+.names-list-preview span{font-family:var(--quran);font-size:1.125rem;color:rgba(255,255,255,.75);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.25rem .875rem}
+.feat-calendar-visual{display:flex;flex-direction:column;align-items:center;gap:1rem;padding:2.5rem 2rem;background:var(--white);border:1px solid var(--s100);border-radius:24px;min-height:300px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.cal-header{font-family:var(--quran);font-size:1.5rem;font-weight:700;color:var(--e800);text-align:center}
+.cal-days-header,.cal-grid-preview{display:grid;grid-template-columns:repeat(7,1fr);gap:.5rem;width:100%}
+.cal-days-header span{font-size:.7rem;font-weight:700;color:var(--s400);text-align:center}
+.cal-grid-preview span{font-size:.9rem;font-weight:600;color:var(--s700);text-align:center;padding:.375rem .25rem;border-radius:8px}
+.cal-grid-preview span.today{background:var(--e800);color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;margin:0 auto}
 </style>
 </head>
+
 <body>
-<nav class="navbar" id="navbar" role="navigation" aria-label="التنقل الرئيسي"><div class="container"><a href="/" class="nav-logo" aria-label="رفيق المسلم"><span class="nav-logo-icon"><img src="./og-image.png" alt="" width="38" height="38"></span>رفيق المسلم</a><div class="nav-links"><a href="#quran" class="nav-link">القرآن</a><a href="#salah" class="nav-link">الصلاة</a><a href="#hadith" class="nav-link">الحديث</a><a href="#adhkar" class="nav-link">الأذكار</a><a href="#search" class="nav-link">البحث</a><a href="#download" class="nav-cta">تحميل التطبيق</a></div><button class="nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button></div></nav>
+<nav class="navbar" id="navbar" role="navigation" aria-label="التنقل الرئيسي">
+  <div class="container">
+    <a href="/" class="nav-logo" aria-label="رفيق المسلم">
+      <span class="nav-logo-icon"><img src="./og-image.png" alt="" width="38" height="38"></span>رفيق المسلم
+    </a>
+    <div class="nav-links">
+      <a href="#quran" class="nav-link" data-i18n="navQuran">القرآن</a>
+      <a href="#salah" class="nav-link" data-i18n="navSalah">الصلاة</a>
+      <a href="#hadith" class="nav-link" data-i18n="navHadith">الحديث</a>
+      <a href="#adhkar" class="nav-link" data-i18n="navAdhkar">الأذكار</a>
+      <a href="#search" class="nav-link" data-i18n="navSearch">البحث</a>
+      <a href="#download" class="nav-cta" data-i18n="navDownload">تحميل التطبيق</a>
+    </div>
+    <div class="lang-switcher" id="langSwitcher">
+      <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+        <span id="langCurrent">🇸🇦 العربية</span>
+        <svg class="lang-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m2 4 4 4 4-4"/></svg>
+      </button>
+      <div class="lang-dropdown" id="langDropdown" role="listbox">
+        <button class="lang-option active" onclick="setLang('ar')" data-lang="ar">🇸🇦 العربية</button>
+        <button class="lang-option" onclick="setLang('en')" data-lang="en">🇬🇧 English</button>
+        <button class="lang-option" onclick="setLang('fr')" data-lang="fr">🇫🇷 Français</button>
+        <button class="lang-option" onclick="setLang('ur')" data-lang="ur">🇵🇰 اردو</button>
+        <button class="lang-option" onclick="setLang('fa')" data-lang="fa">🇮🇷 فارسی</button>
+        <button class="lang-option" onclick="setLang('ru')" data-lang="ru">🇷🇺 Русский</button>
+        <button class="lang-option" onclick="setLang('tr')" data-lang="tr">🇹🇷 Türkçe</button>
+        <button class="lang-option" onclick="setLang('id')" data-lang="id">🇮🇩 Indonesia</button>
+      </div>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
 
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="القائمة">
-  <button class="mobile-close" id="mobileClose" aria-label="إغلاق القائمة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  <button class="mobile-close" id="mobileClose" aria-label="إغلاق القائمة">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
   <a href="#quran" class="mobile-link" onclick="closeMobile()">القرآن الكريم</a>
   <a href="#salah" class="mobile-link" onclick="closeMobile()">مواقيت الصلاة</a>
   <a href="#hadith" class="mobile-link" onclick="closeMobile()">الحديث الشريف</a>
   <a href="#adhkar" class="mobile-link" onclick="closeMobile()">الأذكار</a>
   <a href="#search" class="mobile-link" onclick="closeMobile()">البحث الذكي</a>
   <div class="mobile-store-btns">
-    <a href="https://apps.apple.com/us/app/%D8%B1%D9%81%D9%8A%D9%82-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D9%85-rafiq-al-muslim/id6759387456" class="mobile-store-btn" onclick="closeMobile()" aria-label="تحميل من متجر آبل">
+    <a href="https://apps.apple.com/app/rafiq-al-muslim/id6738739115" class="mobile-store-btn" onclick="closeMobile()" aria-label="تحميل من متجر آبل">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
       <span class="mobile-store-btn-text"><span class="mobile-store-btn-small">حمّل من</span>App Store</span>
     </a>
-    <a href="#" class="mobile-store-btn" onclick="closeMobile()" aria-label="تحميل من جوجل بلاي" style="background:var(--s700)">
+    <a href="https://play.google.com/store/apps/details?id=com.mansour.rafiqalmuslim" class="mobile-store-btn" onclick="closeMobile()" aria-label="تحميل من Google Play">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.67c-.2-.11-.38-.3-.38-.63V.96c0-.33.18-.52.38-.63L13.54 12 3.18 23.67zm1.38-24.3L16.73 6.1l-3.03 2.83L4.56-.63zM20.16 10.33l-2.62 1.52L14.5 12l3.04-2.19 2.62-1.52c.83.48.83 1.57 0 2.04zm-3.66 2.14L13.46 12l3.04 2.83 3.03-2.83-3.03-2.53z"/></svg>
-      <span class="mobile-store-btn-text"><span class="mobile-store-btn-small">حمّل من</span>Google Play <span style="font-size:.7rem;opacity:.6">(قريباً)</span></span>
+      <span class="mobile-store-btn-text"><span class="mobile-store-btn-small" data-i18n="dlDownload">حمّل من</span>Google Play</span>
     </a>
   </div>
   <div style="flex:1"></div>
@@ -188,173 +396,481 @@
 </div>
 
 <!-- HERO -->
-<section class="hero" id="hero"><div class="container">
-<div class="hero-content reveal">
-<div class="hero-badge"><span class="hero-badge-dot"></span>مجاني بالكامل —</div>
-<h1>رفيق المسلم — <span class="gold">رفيقك في الطاعة</span></h1>
-<p class="hero-sub">القرآن الكريم بالرسم العثماني مع التفسير، واستمع بصوت أكثر من ٥٠ قارئاً مرتّلاً، وكتب الحديث التسعة، وأذكار حصن المسلم، ومواقيت الصلاة، واتجاه القبلة، وعدّاد التسبيح الصوتي، والبحث الذكي بالصوت — كل ما يحتاجه المسلم في تطبيق واحد مجاني</p>
-<div class="hero-pills"><span class="hero-pill">📖 القرآن</span><span class="hero-pill">🕌 الصلاة</span><span class="hero-pill">📚 الحديث</span><span class="hero-pill">🤲 الأذكار</span><span class="hero-pill">🔍 البحث الذكي</span><span class="hero-pill">🎙️ تراتيل — تشغيل وبحث في القرآن بأوامر صوتية</span></div>
-<div class="hero-ctas" id="download">
-<a href="https://apps.apple.com/us/app/%D8%B1%D9%81%D9%8A%D9%82-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D9%85-rafiq-al-muslim/id6759387456" class="btn-store" aria-label="تحميل من متجر آبل"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><span class="btn-store-text"><span class="btn-store-small">حمّل من</span>App Store</span></a>
-<a href="#" class="btn-store" aria-label="تحميل من جوجل بلاي"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.67c-.2-.11-.38-.3-.38-.63V.96c0-.33.18-.52.38-.63L13.54 12 3.18 23.67zm1.38-24.3L16.73 6.1l-3.03 2.83L4.56-.63zM20.16 10.33l-2.62 1.52L14.5 12l3.04-2.19 2.62-1.52c.83.48.83 1.57 0 2.04zm-3.66 2.14L13.46 12l3.04 2.83 3.03-2.83-3.03-2.53z"/></svg><span class="btn-store-text"><span class="btn-store-small">حمّل من</span>Google Play</span></a>
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-content reveal">
+      <div class="hero-badge"><span class="hero-badge-dot"></span><span data-i18n="heroBadge">مجاني بالكامل —</span></div>
+      <h1 data-i18n-html="heroTitle">رفيق المسلم — <span class="gold">رفيقك في الطاعة</span></h1>
+      <p class="hero-sub" data-i18n="heroSub">القرآن الكريم بالرسم العثماني مع التفسير، واستمع بصوت أكثر من ٦٠ قارئاً مرتّلاً، وكتب الحديث التسعة، وأذكار حصن المسلم، ومواقيت الصلاة، واتجاه القبلة، وعدّاد التسبيح الصوتي، والبحث الذكي بالصوت — كل ما يحتاجه المسلم في تطبيق واحد مجاني</p>
+      <div class="hero-pills">
+        <span class="hero-pill">📖 القرآن</span><span class="hero-pill">🕌 الصلاة</span><span class="hero-pill">📚 الحديث</span><span class="hero-pill">🤲 الأذكار</span><span class="hero-pill">🔍 البحث الذكي</span><span class="hero-pill">🎙️ تراتيل — تشغيل وبحث في القرآن بأوامر صوتية</span>
+      </div>
+
+      <div class="hero-ctas" id="download">
+        <a href="https://apps.apple.com/app/rafiq-al-muslim/id6738739115" class="btn-store" aria-label="تحميل من متجر آبل">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <span class="btn-store-text"><span class="btn-store-small">حمّل من</span>App Store</span>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.mansour.rafiqalmuslim" class="btn-store" aria-label="تحميل من Google Play">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.67c-.2-.11-.38-.3-.38-.63V.96c0-.33.18-.52.38-.63L13.54 12 3.18 23.67zm1.38-24.3L16.73 6.1l-3.03 2.83L4.56-.63zM20.16 10.33l-2.62 1.52L14.5 12l3.04-2.19 2.62-1.52c.83.48.83 1.57 0 2.04zm-3.66 2.14L13.46 12l3.04 2.83 3.03-2.83-3.03-2.53z"/></svg>
+          <span class="btn-store-text"><span class="btn-store-small" data-i18n="dlDownload">حمّل من</span>Google Play</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-phones reveal d2">
+      <div class="phone phone-sm phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/prayer-main.jpeg" alt="مواقيت الصلاة" loading="eager"></div></div></div>
+      <div class="phone phone-float"><div class="phone-frame"><div class="phone-screen"><img src="./screens/quran-mushaf.jpeg" alt="المصحف الشريف" loading="eager"></div></div></div>
+      <div class="phone phone-sm phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/adhkar-main.jpeg" alt="الأذكار" loading="eager"></div></div></div>
+    </div>
+
+    <div class="hero-trust">
+      <span class="hero-trust-item">بدون إعلانات — تجربة نقية</span>
+      <span class="hero-trust-item">بدون اشتراكات</span>
+      <span class="hero-trust-item">مجاني للأبد</span>
+      <span class="hero-trust-item">صدقة جارية</span>
+      <span class="hero-trust-item">لوجه الله</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-bar-inner">
+      <span data-i18n="barFree">مجاني</span>
+      <span class="stats-bar-sep">•</span>
+      <span data-i18n="barNoAds">بدون إعلانات</span>
+      <span class="stats-bar-sep">•</span>
+      <span data-i18n="barNoSub">بدون اشتراك</span>
+      <span class="stats-bar-sep">•</span>
+      <span data-i18n="barLangs">٨ لغات</span>
+    </div>
+  </div>
 </div>
-<div class="hero-trust"><div class="hero-trust-item"><span class="hero-trust-val">بدون إعلانات</span><span class="hero-trust-lbl">تجربة نقية</span></div><div class="hero-trust-item"><span class="hero-trust-val">بدون اشتراكات</span><span class="hero-trust-lbl">مجاني للأبد</span></div><div class="hero-trust-item"><span class="hero-trust-lbl">صدقة جارية</span></div></div>
-</div>
-<div class="hero-phones reveal d2">
-<div class="phone phone-sm phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/prayer-main.jpeg" alt="مواقيت الصلاة" loading="eager"></div></div></div>
-<div class="phone phone-float" style="z-index:2"><div class="phone-frame"><div class="phone-screen"><img src="./screens/quran-mushaf.jpeg" alt="المصحف الشريف" loading="eager"></div></div></div>
-<div class="phone phone-sm phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/adhkar-main.jpeg" alt="الأذكار" loading="eager"></div></div></div>
-</div>
-</div></section>
 
 <!-- QURAN -->
-<section class="feat-section section-pad" id="quran"><div class="container"><div class="feat-grid">
-<div class="feat-content reveal">
-<span class="section-label">📖 القرآن الكريم</span>
-<h2 class="section-title">تلاوة وتدبّر كتاب الله</h2>
-<p class="section-desc">مصحف المدينة المنورة بأعلى جودة مع تفاسير متعددة وتلاوات مباركة — واستمع بصوتك مع ميزة تراتيل</p>
-<div class="feat-list">
-<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">مصحف المدينة بالرسم العثماني مع التشكيل الكامل</span></div>
-<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">أكثر من ٦٠ قارئ ومرتّل مع التشغيل المتواصل</span></div>
-<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">تفاسير متعددة مع البحث والمقارنة</span></div>
-<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">أربعة فواصل ملوّنة وبحث سريع ووضع ليلي</span></div>
-<div class="feat-item"><span class="feat-check">🎙️</span><span class="feat-text"><strong>تراتيل</strong> — تشغيل وبحث في القرآن بأوامر صوتية</span></div>
-</div>
-</div>
-<div class="feat-phones phones-3 reveal d2">
-<div class="phone phone-sm phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/quran-index.jpeg" alt="فهرس القرآن" loading="lazy"></div></div></div>
-<div class="phone phone-float" style="z-index:2"><div class="phone-frame"><div class="phone-screen"><img src="./screens/quran-audio.jpeg" alt="تلاوة القرآن" loading="lazy"></div></div></div>
-<div class="phone phone-sm phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/quran-voice-commands.jpeg" alt="الأوامر الصوتية للقرآن" loading="lazy"></div></div></div>
-</div>
-</div></div></section>
+<section class="feat-section section-pad" id="quran">
+  <div class="container">
+    <div class="feat-grid">
+      <div class="feat-content reveal">
+        <span class="section-label" data-i18n="quranLabel">📖 القرآن الكريم</span>
+        <h2 class="section-title" data-i18n="quranTitle">تلاوة وتدبّر كتاب الله</h2>
+        <p class="section-desc" data-i18n="quranDesc">مصحف المدينة المنورة بأعلى جودة مع تفاسير متعددة وتلاوات مباركة — واستمع بصوتك مع ميزة تراتيل</p>
+        <div class="feat-list">
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="quranFeat1">مصحف المدينة بالرسم العثماني مع التشكيل الكامل</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="quranFeat2">أكثر من ٦٠ قارئ ومرتّل مع التشغيل المتواصل</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="quranFeat3">تفاسير متعددة مع البحث والمقارنة</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="quranFeat4">أربعة فواصل ملوّنة وبحث سريع ووضع ليلي</span></div>
+          <div class="feat-item"><span class="feat-check">🎙️</span><span class="feat-text" data-i18n-html="quranFeat5"><strong>تراتيل</strong> — تشغيل وبحث في القرآن بأوامر صوتية</span></div>
+        </div>
+      </div>
+
+      <div class="feat-phones phones-3 reveal d2">
+        <div class="phone phone-sm phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/quran-index.jpeg" alt="فهرس القرآن" loading="lazy"></div></div></div>
+        <div class="phone phone-float"><div class="phone-frame"><div class="phone-screen"><img src="./screens/quran-audio.jpeg" alt="تلاوة القرآن" loading="lazy"></div></div></div>
+        <div class="phone phone-sm phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/quran-voice-commands.jpeg" alt="الأوامر الصوتية للقرآن" loading="lazy"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- PRAYER -->
-<section class="feat-section section-pad" id="salah"><div class="container"><div class="feat-grid">
-<div class="feat-content reveal">
-<span class="section-label">🕌 الصلاة</span>
-<h2 class="section-title">مواقيت دقيقة وتنبيهات ذكية</h2>
-<p class="section-desc">مواقيت صلاة دقيقة حسب موقعك الجغرافي مع طريقة الحساب المناسبة لمنطقتك. لن تفوتك صلاة بإذن الله.</p>
-<div class="feat-list"><div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">مواقيت الصلوات الخمس والشروق</span></div><div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">حساب تلقائي (أم القرى، رابطة العالم الإسلامي، وغيرها)</span></div><div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">اتجاه القبلة بالبوصلة الدقيقة</span></div><div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">خريطة المساجد القريبة مع اتجاه الوصول</span></div></div>
-</div>
-<div class="feat-phones reveal d2">
-<div class="phone phone-sm phone-float"><div class="phone-frame"><div class="phone-screen"><img src="./screens/prayer-qibla.jpeg" alt="اتجاه القبلة" loading="lazy"></div></div></div>
-<div class="phone phone-float-alt" style="z-index:2"><div class="phone-frame"><div class="phone-screen"><img src="./screens/prayer-main.jpeg" alt="مواقيت الصلاة" loading="lazy"></div></div></div>
-<div class="phone phone-sm phone-float"><div class="phone-frame"><div class="phone-screen"><img src="./screens/prayer-mosques.jpeg" alt="المساجد القريبة" loading="lazy"></div></div></div>
-</div>
-</div></div></section>
+<section class="feat-section section-pad" id="salah">
+  <div class="container">
+    <div class="feat-grid">
+      <div class="feat-content reveal">
+        <span class="section-label" data-i18n="salahLabel">🕌 الصلاة</span>
+        <h2 class="section-title" data-i18n="salahTitle">مواقيت دقيقة وتنبيهات ذكية</h2>
+        <p class="section-desc" data-i18n="salahDesc">مواقيت صلاة دقيقة حسب موقعك الجغرافي مع طريقة الحساب المناسبة لمنطقتك. لن تفوتك صلاة بإذن الله.</p>
+        <div class="feat-list">
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="salahFeat1">مواقيت الصلوات الخمس والشروق</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="salahFeat2">حساب تلقائي (أم القرى، رابطة العالم الإسلامي، وغيرها)</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="salahFeat3">اتجاه القبلة بالبوصلة الدقيقة</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="salahFeat4">خريطة المساجد القريبة مع اتجاه الوصول</span></div>
+        </div>
+      </div>
+
+      <div class="feat-phones phones-3 reveal d2">
+        <div class="phone phone-sm phone-float"><div class="phone-frame"><div class="phone-screen"><img src="./screens/prayer-qibla.jpeg" alt="اتجاه القبلة" loading="lazy"></div></div></div>
+        <div class="phone phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/prayer-main.jpeg" alt="مواقيت الصلاة" loading="lazy"></div></div></div>
+        <div class="phone phone-sm phone-float"><div class="phone-frame"><div class="phone-screen"><img src="./screens/prayer-mosques.jpeg" alt="المساجد القريبة" loading="lazy"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- HADITH -->
-<section class="feat-section section-pad" id="hadith"><div class="container"><div class="feat-grid">
-<div class="feat-content reveal">
-<span class="section-label">📚 الحديث الشريف</span>
-<h2 class="section-title">كتب الحديث التسعة</h2>
-<p class="section-desc">مكتبة حديثية شاملة تضم أهم المصادر الحديثية مع البحث المتقدّم والتصفّح</p>
-<div class="feat-list"><div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">صحيح البخاري، صحيح مسلم، السنن الأربعة</span></div><div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">مسند أحمد، موطأ مالك، سنن الدارمي</span></div><div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">بحث متقدّم بالنص أو الراوي أو رقم الحديث</span></div><div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">نسخ ومشاركة وحفظ الأحاديث المفضلة</span></div></div>
-</div>
-<div class="feat-phones reveal d2">
-<div class="phone phone-sm phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/hadith-search.jpeg" alt="بحث الحديث" loading="lazy"></div></div></div>
-<div class="phone phone-float" style="z-index:2"><div class="phone-frame"><div class="phone-screen"><img src="./screens/hadith-books.jpeg" alt="كتب الحديث" loading="lazy"></div></div></div>
-</div>
-</div></div></section>
+<section class="feat-section section-pad" id="hadith">
+  <div class="container">
+    <div class="feat-grid">
+      <div class="feat-content reveal">
+        <span class="section-label" data-i18n="hadithLabel">📚 الحديث الشريف</span>
+        <h2 class="section-title" data-i18n="hadithTitle">كتب الحديث التسعة</h2>
+        <p class="section-desc" data-i18n="hadithDesc">مكتبة حديثية شاملة تضم أهم المصادر الحديثية مع البحث المتقدّم والتصفّح</p>
+        <div class="feat-list">
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="hadithFeat1">صحيح البخاري، صحيح مسلم، السنن الأربعة</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="hadithFeat2">مسند أحمد، موطأ مالك، سنن الدارمي</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="hadithFeat3">بحث متقدّم بالنص أو الراوي أو رقم الحديث</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="hadithFeat4">نسخ ومشاركة وحفظ الأحاديث المفضلة</span></div>
+        </div>
+      </div>
+
+      <div class="feat-phones reveal d2">
+        <div class="phone phone-sm phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/hadith-search.jpeg" alt="بحث الحديث" loading="lazy"></div></div></div>
+        <div class="phone phone-float"><div class="phone-frame"><div class="phone-screen"><img src="./screens/hadith-books.jpeg" alt="كتب الحديث" loading="lazy"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ADHKAR -->
-<section class="feat-section section-pad" id="adhkar"><div class="container"><div class="feat-grid reverse">
-<div class="feat-content reveal">
-<span class="section-label">🤲 الأذكار والتسبيح</span>
-<h2 class="section-title">أذكار الصباح والمساء وأكثر</h2>
-<p class="section-desc">مجموعة شاملة من الأذكار والأدعية المأثورة عن النبي ﷺ مع عدّاد تسبيح ذكي يعدّ بصوتك</p>
-<div class="feat-list">
-<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">أذكار الصباح والمساء وأذكار النوم والاستيقاظ</span></div>
-<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">حصن المسلم — ١٣٢ ذكراً ودعاءً مأثوراً</span></div>
-<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">أدعية من القرآن والسنّة النبوية</span></div>
-<div class="feat-item"><span class="feat-check">🎙️</span><span class="feat-text"><strong>العد الصوتي</strong> — سبّح بصوتك ويعدّ التطبيق تلقائياً دون لمس الشاشة</span></div>
-<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">مسبحة إلكترونية باللمس + تنبيهات يومية للأذكار</span></div>
-</div>
-</div>
-<div class="feat-phones phones-4 reveal d2">
-<div class="phone phone-sm phone-float"><div class="phone-frame"><div class="phone-screen"><img src="./screens/adhkar-tasbeeh.jpeg" alt="عداد التسبيح الصوتي" loading="lazy"></div></div></div>
-<div class="phone phone-float-alt" style="z-index:2"><div class="phone-frame"><div class="phone-screen"><img src="./screens/adhkar-main.jpeg" alt="الأذكار" loading="lazy"></div></div></div>
-<div class="phone phone-float" style="z-index:2"><div class="phone-frame"><div class="phone-screen"><img src="./screens/adhkar-home.jpeg" alt="الأذكار اليومية" loading="lazy"></div></div></div>
-<div class="phone phone-sm phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/adhkar-main.jpeg" alt="حصن المسلم" loading="lazy"></div></div></div>
-</div>
-</div></div></section>
+<section class="feat-section section-pad" id="adhkar">
+  <div class="container">
+    <div class="feat-grid reverse">
+      <div class="feat-content reveal">
+        <span class="section-label" data-i18n="adhkarLabel">🤲 الأذكار والتسبيح</span>
+        <h2 class="section-title" data-i18n="adhkarTitle">أذكار الصباح والمساء وأكثر</h2>
+        <p class="section-desc" data-i18n="adhkarDesc">مجموعة شاملة من الأذكار والأدعية المأثورة عن النبي ﷺ مع عدّاد تسبيح ذكي يعدّ بصوتك</p>
+        <div class="feat-list">
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="adhkarFeat1">أذكار الصباح والمساء وأذكار النوم والاستيقاظ</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="adhkarFeat2">حصن المسلم — ١٣٢ ذكراً ودعاءً مأثوراً</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="adhkarFeat3">أدعية من القرآن والسنّة النبوية</span></div>
+          <div class="feat-item"><span class="feat-check">🎙️</span><span class="feat-text" data-i18n-html="adhkarFeat4"><strong>العد الصوتي</strong> — سبّح بصوتك ويعدّ التطبيق تلقائياً دون لمس الشاشة</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="adhkarFeat5">مسبحة إلكترونية باللمس + تنبيهات يومية للأذكار</span></div>
+        </div>
+      </div>
+
+      <div class="feat-phones phones-3 reveal d2">
+               <div class="phone phone-sm phone-float"><div class="phone-frame"><div class="phone-screen"><img src="./screens/adhkar-home.jpeg" alt="الأذكار اليومية" loading="lazy"></div></div></div>
+        <div class="phone phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/adhkar-main.jpeg" alt="الأذكار" loading="lazy"></div></div></div>
+
+         <div class="phone phone-sm phone-float"><div class="phone-frame"><div class="phone-screen"><img src="./screens/adhkar-tasbeeh.jpeg" alt="عداد التسبيح الصوتي" loading="lazy"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- SEARCH -->
-<section class="feat-section section-pad" id="search"><div class="container"><div class="feat-grid reverse">
-<div class="feat-content reveal">
-<span class="section-label">🔍 البحث الذكي</span>
-<h2 class="section-title">ابحث في كل شيء دفعة واحدة</h2>
-<p class="section-desc">بحث شامل وذكي يجمع نتائج القرآن والحديث والأذكار ومواقيت الصلاة في مكان واحد — بالنص أو بالصوت</p>
-<div class="feat-list">
-<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">بحث موحّد في القرآن والحديث والأذكار والصلاة معاً</span></div>
-<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">نتائج فورية مع تصنيف تلقائي حسب المصدر</span></div>
-<div class="feat-item"><span class="feat-check">🎙️</span><span class="feat-text"><strong>البحث الصوتي</strong> — قل "موعد صلاة الفجر" أو "آيات الصبر" ويجيبك التطبيق</span></div>
-<div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">يعمل عبر كل الأقسام: القرآن، الحديث، الأذكار، الصلاة</span></div>
-</div>
-</div>
-<div class="feat-phones phones-4 reveal d2">
-<div class="phone phone-sm phone-float"><div class="phone-frame"><div class="phone-screen"><img src="./screens/quran-home.jpeg" alt="القرآن الكريم" loading="lazy"></div></div></div>
-<div class="phone phone-float-alt" style="z-index:2"><div class="phone-frame"><div class="phone-screen"><img src="./screens/search-quran.jpeg" alt="البحث في القرآن" loading="lazy"></div></div></div>
-<div class="phone phone-float" style="z-index:2"><div class="phone-frame"><div class="phone-screen"><img src="./screens/search-prayer.jpeg" alt="البحث في الصلاة" loading="lazy"></div></div></div>
-<div class="phone phone-sm phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/quran-voice-mic.jpeg" alt="البحث الصوتي" loading="lazy"></div></div></div>
-</div>
-</div></div></section>
+<section class="feat-section section-pad" id="search">
+  <div class="container">
+    <div class="feat-grid reverse">
+      <div class="feat-content reveal">
+        <span class="section-label" data-i18n="searchLabel">🔍 البحث الذكي</span>
+        <h2 class="section-title" data-i18n="searchTitle">ابحث في كل شيء دفعة واحدة</h2>
+        <p class="section-desc" data-i18n="searchDesc">بحث شامل وذكي يجمع نتائج القرآن والحديث والأذكار ومواقيت الصلاة في مكان واحد — بالنص أو بالصوت</p>
+        <div class="feat-list">
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="searchFeat1">بحث موحّد في القرآن والحديث والأذكار والصلاة معاً</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="searchFeat2">نتائج فورية مع تصنيف تلقائي حسب المصدر</span></div>
+          <div class="feat-item"><span class="feat-check">🎙️</span><span class="feat-text" data-i18n-html="searchFeat3"><strong>البحث الصوتي</strong> — قل "موعد صلاة الفجر" أو "آيات الصبر" ويجيبك التطبيق</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="searchFeat4">يعمل عبر كل الأقسام: القرآن، الحديث، الأذكار، الصلاة</span></div>
+        </div>
+      </div>
+
+      <div class="feat-phones phones-3 reveal d2">
+        <div class="phone phone-sm phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/quran-home.jpeg" alt="القرآن الكريم" loading="lazy"></div></div></div>
+        <div class="phone phone-float"><div class="phone-frame"><div class="phone-screen"><img src="./screens/search-quran.jpeg" alt="البحث في القرآن" loading="lazy"></div></div></div>
+        <div class="phone phone-sm phone-float-alt"><div class="phone-frame"><div class="phone-screen"><img src="./screens/search-prayer.jpeg" alt="البحث في الصلاة" loading="lazy"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 99 NAMES OF ALLAH -->
+<section class="feat-section section-pad" id="asmaalhusna">
+  <div class="container">
+    <div class="feat-grid">
+      <div class="feat-content reveal">
+        <span class="section-label" data-i18n="namesLabel">✨ أسماء الله الحسنى</span>
+        <h2 class="section-title" data-i18n="namesTitle">تعرّف على أسماء الله الحسنى</h2>
+        <p class="section-desc" data-i18n="namesDesc">استكشف أسماء الله الحسنى التسعة والتسعين مع معانيها ودلالاتها لتقوية صلتك بربّك</p>
+        <div class="feat-list">
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="names1">التسعة والتسعون اسماً مع معانيها وشرحها</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="names2">تأملات وأذكار مرتبطة بكل اسم من أسماء الله</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="names3">بحث سريع وحفظ المفضّلة للرجوع إليها</span></div>
+        </div>
+      </div>
+      <div class="feat-phones reveal d2">
+        <div class="feat-names-visual">
+          <div class="names-ornament">اللَّـهُ</div>
+          <div class="names-list-preview">
+            <span>الرَّحْمَـٰنُ</span><span>الرَّحِيمُ</span><span>الْمَلِكُ</span>
+            <span>الْقُدُّوسُ</span><span>السَّلَامُ</span><span>الْمُؤْمِنُ</span>
+            <span>الْعَزِيزُ</span><span>الْجَبَّارُ</span><span>الْخَالِقُ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ISLAMIC CALENDAR -->
+<section class="feat-section section-pad" id="calendar">
+  <div class="container">
+    <div class="feat-grid reverse">
+      <div class="feat-content reveal">
+        <span class="section-label" data-i18n="calLabel">📅 التقويم الإسلامي</span>
+        <h2 class="section-title" data-i18n="calTitle">التقويم الهجري والمناسبات الإسلامية</h2>
+        <p class="section-desc" data-i18n="calDesc">تابع التقويم الهجري والمناسبات الإسلامية المهمة طوال العام لا تفوّت موسماً من مواسم الخير</p>
+        <div class="feat-list">
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="cal1">تحويل فوري بين التاريخ الهجري والميلادي</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="cal2">المناسبات الإسلامية: رمضان، العيدان، المحرّم، ذو الحجة</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text" data-i18n="cal3">تنبيهات مسبقة بالمواسم والمناسبات الدينية</span></div>
+        </div>
+      </div>
+      <div class="feat-phones reveal d2">
+        <div class="feat-calendar-visual">
+          <div class="cal-header">رجب ١٤٤٦ هـ</div>
+          <div class="cal-days-header">
+            <span>أح</span><span>إث</span><span>ث</span><span>أر</span><span>خ</span><span>ج</span><span>س</span>
+          </div>
+          <div class="cal-grid-preview">
+            <span></span><span>١</span><span>٢</span><span>٣</span><span>٤</span><span>٥</span><span>٦</span>
+            <span>٧</span><span>٨</span><span>٩</span><span class="today">١٠</span><span>١١</span><span>١٢</span><span>١٣</span>
+            <span>١٤</span><span>١٥</span><span>١٦</span><span>١٧</span><span>١٨</span><span>١٩</span><span>٢٠</span>
+            <span>٢١</span><span>٢٢</span><span>٢٣</span><span>٢٤</span><span>٢٥</span><span>٢٦</span><span>٢٧</span>
+            <span>٢٨</span><span>٢٩</span><span>٣٠</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- STATS -->
-<section class="stats-section section-pad"><div class="container"><div class="stats-grid">
-<div class="stat reveal d1"><span class="stat-val">+٦٠</span><span class="stat-lbl">قارئ ومرتّل</span></div>
-<div class="stat reveal d2"><span class="stat-val">+٦٠,٠٠٠</span><span class="stat-lbl">حديث شريف</span></div>
-<div class="stat reveal d3"><span class="stat-val">+١٣٢</span><span class="stat-lbl">ذكر ودعاء</span></div>
-<div class="stat reveal d4"><span class="stat-val">٤</span><span class="stat-lbl">أقسام بحث ذكي</span></div>
-</div></div></section>
+<section class="stats-section section-pad">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat reveal d1"><span class="stat-val">+60</span><span class="stat-lbl" data-i18n="stat1lbl">قارئ ومرتّل</span></div>
+      <div class="stat reveal d2"><span class="stat-val">+60,000</span><span class="stat-lbl" data-i18n="stat2lbl">حديث شريف</span></div>
+      <div class="stat reveal d3"><span class="stat-val">+132</span><span class="stat-lbl" data-i18n="stat3lbl">ذكر ودعاء</span></div>
+      <div class="stat reveal d4"><span class="stat-val">8</span><span class="stat-lbl" data-i18n="stat4lbl">لغات مدعومة</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- HOW -->
-<section class="how-section section-pad"><div class="container">
-<div class="text-center reveal" style="margin-bottom:4rem"><span class="section-label">✨ كيف تبدأ</span><h2 class="section-title">ثلاث خطوات فقط</h2><p class="section-desc" style="margin:0 auto">ابدأ رحلتك مع رفيق المسلم في أقل من دقيقة</p></div>
-<div class="how-steps">
-<div class="how-step reveal d1"><div class="how-num">١</div><h3>حمّل التطبيق</h3><p>حمّل رفيق المسلم مجاناً من App Store أو Google Play</p></div>
-<div class="how-step reveal d2"><div class="how-num">٢</div><h3>اختر ما يناسبك</h3><p>تصفّح القرآن أو الحديث أو الأذكار أو اضبط مواقيت الصلاة</p></div>
-<div class="how-step reveal d3"><div class="how-num">٣</div><h3>واظب على الطاعة</h3><p>فعّل التنبيهات ليكون رفيق المسلم معك كل يوم</p></div>
-</div></div></section>
+<section class="how-section section-pad">
+  <div class="container">
+    <div class="text-center reveal" style="margin-bottom:4rem">
+      <span class="section-label">✨ كيف تبدأ</span>
+      <h2 class="section-title" data-i18n="howTitle">ثلاث خطوات فقط</h2>
+      <p class="section-desc" style="margin:0 auto" data-i18n="howDesc">ابدأ رحلتك مع رفيق المسلم في أقل من دقيقة</p>
+    </div>
+    <div class="how-steps">
+      <div class="how-step reveal d1"><div class="how-num">١</div><h3 data-i18n="step1h">حمّل التطبيق</h3><p data-i18n="step1p">حمّل رفيق المسلم مجاناً من App Store أو Google Play</p></div>
+      <div class="how-step reveal d2"><div class="how-num">٢</div><h3 data-i18n="step2h">اختر ما يناسبك</h3><p data-i18n="step2p">تصفّح القرآن أو الحديث أو الأذكار أو اضبط مواقيت الصلاة</p></div>
+      <div class="how-step reveal d3"><div class="how-num">٣</div><h3 data-i18n="step3h">واظب على الطاعة</h3><p data-i18n="step3p">فعّل التنبيهات ليكون رفيق المسلم معك كل يوم</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGES -->
+<section class="langs-section section-pad">
+  <div class="container">
+    <div class="text-center reveal" style="margin-bottom:3rem">
+      <span class="section-label" data-i18n="langsLabel">🌍 اللغات المدعومة</span>
+      <h2 class="section-title" data-i18n="langsTitle">٨ لغات للمسلمين حول العالم</h2>
+      <p class="section-desc" style="margin:0 auto" data-i18n="langsDesc">رفيق المسلم يتكلّم لغتك</p>
+    </div>
+    <div class="langs-grid reveal">
+      <div class="lang-card"><span class="lang-flag">🇸🇦</span><span>العربية</span></div>
+      <div class="lang-card"><span class="lang-flag">🇬🇧</span><span>English</span></div>
+      <div class="lang-card"><span class="lang-flag">🇫🇷</span><span>Français</span></div>
+      <div class="lang-card"><span class="lang-flag">🇵🇰</span><span>اردو</span></div>
+      <div class="lang-card"><span class="lang-flag">🇮🇷</span><span>فارسی</span></div>
+      <div class="lang-card"><span class="lang-flag">🇷🇺</span><span>Русский</span></div>
+      <div class="lang-card"><span class="lang-flag">🇹🇷</span><span>Türkçe</span></div>
+      <div class="lang-card"><span class="lang-flag">🇮🇩</span><span>Indonesia</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- FAQ -->
-<section class="faq-section section-pad" id="faq"><div class="container">
-<div class="text-center reveal" style="margin-bottom:3rem"><span class="section-label">❓ أسئلة شائعة</span><h2 class="section-title">الأسئلة المتكررة</h2></div>
-<div class="faq-list">
-<div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span>هل التطبيق مجاني بالكامل؟</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button><div class="faq-a">نعم، التطبيق مجاني بالكامل ولن يكون فيه أي إعلانات أو اشتراكات مدفوعة. تم تطويره لوجه الله تعالى كصدقة جارية.</div></div>
-<div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span>ما هي طرق حساب مواقيت الصلاة المتاحة؟</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button><div class="faq-a">يدعم التطبيق عدة طرق حساب منها: أم القرى، رابطة العالم الإسلامي، الجمعية الإسلامية لأمريكا الشمالية، وغيرها. يتم اختيار الطريقة تلقائياً حسب موقعك.</div></div>
-<div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span>هل يمكنني الاستماع للقرآن بدون إنترنت؟</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button><div class="faq-a">نعم، يمكنك تحميل التلاوات المفضلة للاستماع بدون اتصال. كذلك يعمل المصحف والأذكار بدون إنترنت بعد التحميل الأول.</div></div>
-<div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span>كم عدد القرّاء المتاحين في التطبيق؟</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button><div class="faq-a">يتوفر أكثر من ٦٠ قارئاً ومرتّلاً بتلاوات متنوعة. يتم تحديث المكتبة بشكل دوري.</div></div>
-<div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span>هل يتوفر التطبيق على iOS و Android؟</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button><div class="faq-a">نعم، التطبيق متوفر على App Store لأجهزة آبل و Google Play لأجهزة أندرويد.</div></div>
-</div></div></section>
+<section class="faq-section section-pad" id="faq">
+  <div class="container">
+    <div class="text-center reveal" style="margin-bottom:3rem"><span class="section-label" data-i18n="faqLabel">❓ أسئلة شائعة</span><h2 class="section-title" data-i18n="faqTitle">الأسئلة المتكررة</h2></div>
+    <div class="faq-list">
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span data-i18n="faqQ1">هل التطبيق مجاني بالكامل؟</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button><div class="faq-a" data-i18n="faqA1">نعم، التطبيق مجاني بالكامل ولن يكون فيه أي إعلانات أو اشتراكات مدفوعة. تم تطويره لوجه الله تعالى كصدقة جارية.</div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span data-i18n="faqQ2">ما هي طرق حساب مواقيت الصلاة المتاحة؟</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button><div class="faq-a" data-i18n="faqA2">يدعم التطبيق عدة طرق حساب منها: أم القرى، رابطة العالم الإسلامي، الجمعية الإسلامية لأمريكا الشمالية، وغيرها. يتم اختيار الطريقة تلقائياً حسب موقعك.</div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span data-i18n="faqQ3">هل يمكنني الاستماع للقرآن بدون إنترنت؟</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button><div class="faq-a" data-i18n="faqA3">نعم، يمكنك تحميل التلاوات المفضلة للاستماع بدون اتصال. كذلك يعمل المصحف والأذكار بدون إنترنت بعد التحميل الأول.</div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span data-i18n="faqQ4">كم عدد القرّاء المتاحين في التطبيق؟</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button><div class="faq-a" data-i18n="faqA4">يتوفر أكثر من ٦٠ قارئاً ومرتّلاً بتلاوات متنوعة. يتم تحديث المكتبة بشكل دوري.</div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span data-i18n="faqQ5">هل يتوفر التطبيق على iOS و Android؟</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button><div class="faq-a" data-i18n="faqA5">نعم، التطبيق متوفر على App Store لأجهزة آبل و Google Play لأجهزة أندرويد.</div></div>
+    </div>
+  </div>
+</section>
 
 <!-- FINAL CTA -->
-<section class="final-cta section-pad"><div class="container">
-<div class="reveal"><div style="font-family:var(--quran);font-size:1.125rem;color:var(--g300);opacity:.7;margin-bottom:1rem">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="final-verse">﴿ ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ ﴾</div><div class="final-ref">سورة العلق — الآية ١</div></div>
-<h2 class="reveal">حمّل رفيق المسلم الآن مجاناً</h2>
-<p class="final-cta-desc reveal">بدون إعلانات — بدون اشتراكات — لوجه الله تعالى</p>
-<div class="hero-ctas reveal" style="justify-content:center">
-<a href="https://apps.apple.com/us/app/%D8%B1%D9%81%D9%8A%D9%82-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D9%85-rafiq-al-muslim/id6759387456" class="btn-store" aria-label="تحميل من متجر آبل"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><span class="btn-store-text"><span class="btn-store-small">حمّل من</span>App Store</span></a>
-<a href="#" class="btn-store" aria-label="تحميل من جوجل بلاي"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.67c-.2-.11-.38-.3-.38-.63V.96c0-.33.18-.52.38-.63L13.54 12 3.18 23.67zm1.38-24.3L16.73 6.1l-3.03 2.83L4.56-.63zM20.16 10.33l-2.62 1.52L14.5 12l3.04-2.19 2.62-1.52c.83.48.83 1.57 0 2.04zm-3.66 2.14L13.46 12l3.04 2.83 3.03-2.83-3.03-2.53z"/></svg><span class="btn-store-text"><span class="btn-store-small">حمّل من</span>Google Play</span></a>
-</div>
-<div class="final-badges reveal"><span class="final-badge">بدون إعلانات</span><span class="final-badge">بدون اشتراكات</span><span class="final-badge">صدقة جارية</span><span class="final-badge">يعمل بدون إنترنت</span></div>
-</div></section>
+<section class="final-cta section-pad">
+  <div class="container">
+    <div class="reveal">
+      <div style="font-family:var(--quran);font-size:1.125rem;color:var(--g300);opacity:.7;margin-bottom:1rem">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
+      <div class="final-verse">﴿ ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ ﴾</div>
+      <div class="final-ref">سورة العلق — الآية ١</div>
+    </div>
+    <h2 class="reveal" data-i18n="finalTitle">حمّل رفيق المسلم الآن مجاناً</h2>
+    <p class="final-cta-desc reveal" data-i18n="finalDesc">بدون إعلانات — بدون اشتراكات — لوجه الله تعالى</p>
+    <div class="hero-ctas reveal" style="justify-content:center">
+      <a href="https://apps.apple.com/app/rafiq-al-muslim/id6738739115" class="btn-store" aria-label="تحميل من متجر آبل"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><span class="btn-store-text"><span class="btn-store-small">حمّل من</span>App Store</span></a>
+      <a href="https://play.google.com/store/apps/details?id=com.mansour.rafiqalmuslim" class="btn-store" aria-label="تحميل من Google Play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.67c-.2-.11-.38-.3-.38-.63V.96c0-.33.18-.52.38-.63L13.54 12 3.18 23.67zm1.38-24.3L16.73 6.1l-3.03 2.83L4.56-.63zM20.16 10.33l-2.62 1.52L14.5 12l3.04-2.19 2.62-1.52c.83.48.83 1.57 0 2.04zm-3.66 2.14L13.46 12l3.04 2.83 3.03-2.83-3.03-2.53z"/></svg><span class="btn-store-text"><span class="btn-store-small" data-i18n="dlDownload">حمّل من</span>Google Play</span></a>
+    </div>
+    <div class="final-badges reveal"><span class="final-badge">بدون إعلانات</span><span class="final-badge">بدون اشتراكات</span><span class="final-badge">صدقة جارية</span><span class="final-badge">يعمل بدون إنترنت</span></div>
+  </div>
+</section>
 
 <!-- FOOTER -->
-<footer class="footer" role="contentinfo"><div class="container">
-<div class="footer-grid">
-<div><div class="footer-logo"><span class="footer-logo-icon"><img src="./og-image.png" alt="" width="36" height="36"></span>رفيق المسلم</div><p class="footer-desc">رفيقك في الطاعة — القرآن الكريم والحديث الشريف والأذكار ومواقيت الصلاة في تطبيق واحد مجاني لوجه الله تعالى</p></div>
-<div><h4 class="footer-col-title">التطبيق</h4><div class="footer-links"><a href="#quran" class="footer-link">القرآن الكريم</a><a href="#salah" class="footer-link">مواقيت الصلاة</a><a href="#hadith" class="footer-link">الحديث الشريف</a><a href="#adhkar" class="footer-link">الأذكار</a></div></div>
-<div><h4 class="footer-col-title">روابط</h4><div class="footer-links"><a href="./privacy.html" class="footer-link">سياسة الخصوصية</a><a href="/cdn-cgi/l/email-protection#61121411110e13152113000708100011114f0c04" class="footer-link">تواصل معنا</a><a href="https://apps.apple.com/us/app/%D8%B1%D9%81%D9%8A%D9%82-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D9%85-rafiq-al-muslim/id6759387456" class="footer-link">App Store</a></div></div>
-</div>
-<div class="footer-divider"></div>
-<div class="footer-bottom"><span class="footer-copy">© 2026 رفيق المسلم — لوجه الله تعالى</span></div>
-</div></footer>
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><span class="footer-logo-icon"><img src="./og-image.png" alt="" width="36" height="36"></span><span data-i18n="footerLogoName">رفيق المسلم</span></div>
+        <p class="footer-desc" data-i18n="footerDesc">رفيقك في الطاعة — القرآن الكريم والحديث الشريف والأذكار ومواقيت الصلاة في تطبيق واحد مجاني لوجه الله تعالى</p>
+      </div>
+      <div>
+        <h4 class="footer-col-title" data-i18n="footerAppCol">التطبيق</h4>
+        <div class="footer-links">
+          <a href="#quran" class="footer-link" data-i18n="footerLinkQuran">القرآن الكريم</a>
+          <a href="#salah" class="footer-link" data-i18n="footerLinkSalah">مواقيت الصلاة</a>
+          <a href="#hadith" class="footer-link" data-i18n="footerLinkHadith">الحديث الشريف</a>
+          <a href="#adhkar" class="footer-link" data-i18n="footerLinkAdhkar">الأذكار</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col-title" data-i18n="footerLinksCol">روابط</h4>
+        <div class="footer-links">
+          <a href="./privacy.html" class="footer-link" data-i18n="footerLinkPrivacy">سياسة الخصوصية</a>
+          <a href="mailto:support@rafiqapp.me" class="footer-link" data-i18n="footerLinkContact">تواصل معنا</a>
+          <a href="https://apps.apple.com/app/rafiq-al-muslim/id6738739115" class="footer-link">App Store</a>
+          <a href="https://play.google.com/store/apps/details?id=com.mansour.rafiqalmuslim" class="footer-link">Google Play</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom"><span class="footer-copy" data-i18n="footerCopy">© 2026 رفيق المسلم — لوجه الله تعالى</span></div>
+  </div>
+</footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-const navbar=document.getElementById('navbar');window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>50)},{passive:true});navbar.classList.toggle('scrolled',window.scrollY>50);
-const navToggle=document.getElementById('navToggle'),mobileMenu=document.getElementById('mobileMenu'),mobileClose=document.getElementById('mobileClose');navToggle.addEventListener('click',()=>{mobileMenu.classList.add('open');document.body.style.overflow='hidden';navToggle.setAttribute('aria-expanded','true')});function closeMobile(){mobileMenu.classList.remove('open');document.body.style.overflow='';navToggle.setAttribute('aria-expanded','false')}mobileClose.addEventListener('click',closeMobile);
+<script>
+document.documentElement.classList.remove('no-js');
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>50)},{passive:true});
+navbar.classList.toggle('scrolled',window.scrollY>50);
+
+const navToggle=document.getElementById('navToggle'),
+      mobileMenu=document.getElementById('mobileMenu'),
+      mobileClose=document.getElementById('mobileClose');
+
+navToggle.addEventListener('click',()=>{
+  mobileMenu.classList.add('open');
+  document.body.style.overflow='hidden';
+  navToggle.setAttribute('aria-expanded','true')
+});
+function closeMobile(){
+  mobileMenu.classList.remove('open');
+  document.body.style.overflow='';
+  navToggle.setAttribute('aria-expanded','false')
+}
+mobileClose.addEventListener('click',closeMobile);
+
 // Close mobile menu on outside click
 mobileMenu.addEventListener('click',function(e){if(e.target===mobileMenu)closeMobile()});
-document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item'),w=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false')});if(!w){item.classList.add('open');btn.setAttribute('aria-expanded','true')}})});
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){const t=document
+
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.closest('.faq-item'),w=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>{
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded','false')
+    });
+    if(!w){
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded','true')
+    }
+  })
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    const id=this.getAttribute('href');
+    if(id&&id.length>1){
+      const t=document.querySelector(id);
+      if(t){
+        e.preventDefault();
+        t.scrollIntoView({behavior:'smooth',block:'start'})
+      }
+    }
+  })
+});
+
+// ── i18n ──
+const LANGS={ar:{dir:'rtl',name:'العربية',flag:'🇸🇦'},en:{dir:'ltr',name:'English',flag:'🇬🇧'},fr:{dir:'ltr',name:'Français',flag:'🇫🇷'},ur:{dir:'rtl',name:'اردو',flag:'🇵🇰'},fa:{dir:'rtl',name:'فارسی',flag:'🇮🇷'},ru:{dir:'ltr',name:'Русский',flag:'🇷🇺'},tr:{dir:'ltr',name:'Türkçe',flag:'🇹🇷'},id:{dir:'ltr',name:'Indonesia',flag:'🇮🇩'}};
+const T={
+ar:{faqLabel:'❓ أسئلة شائعة',faqQ1:'هل التطبيق مجاني بالكامل؟',faqA1:'نعم، التطبيق مجاني بالكامل ولن يكون فيه أي إعلانات أو اشتراكات مدفوعة. تم تطويره لوجه الله تعالى كصدقة جارية.',faqQ2:'ما هي طرق حساب مواقيت الصلاة المتاحة؟',faqA2:'يدعم التطبيق عدة طرق حساب منها: أم القرى، رابطة العالم الإسلامي، الجمعية الإسلامية لأمريكا الشمالية، وغيرها. يتم اختيار الطريقة تلقائياً حسب موقعك.',faqQ3:'هل يمكنني الاستماع للقرآن بدون إنترنت؟',faqA3:'نعم، يمكنك تحميل التلاوات المفضلة للاستماع بدون اتصال. كذلك يعمل المصحف والأذكار بدون إنترنت بعد التحميل الأول.',faqQ4:'كم عدد القرّاء المتاحين في التطبيق؟',faqA4:'يتوفر أكثر من ٦٠ قارئاً ومرتّلاً بتلاوات متنوعة. يتم تحديث المكتبة بشكل دوري.',faqQ5:'هل يتوفر التطبيق على iOS و Android؟',faqA5:'نعم، التطبيق متوفر على App Store لأجهزة آبل و Google Play لأجهزة أندرويد.',footerLogoName:'رفيق المسلم',footerAppCol:'التطبيق',footerLinkQuran:'القرآن الكريم',footerLinkSalah:'مواقيت الصلاة',footerLinkHadith:'الحديث الشريف',footerLinkAdhkar:'الأذكار',footerLinksCol:'روابط',footerLinkPrivacy:'سياسة الخصوصية',footerLinkContact:'تواصل معنا',quranFeat1:'مصحف المدينة بالرسم العثماني مع التشكيل الكامل',quranFeat2:'أكثر من ٦٠ قارئ ومرتّل مع التشغيل المتواصل',quranFeat3:'تفاسير متعددة مع البحث والمقارنة',quranFeat4:'أربعة فواصل ملوّنة وبحث سريع ووضع ليلي',quranFeat5:'<strong>تراتيل</strong> — تشغيل وبحث في القرآن بأوامر صوتية',salahFeat1:'مواقيت الصلوات الخمس والشروق',salahFeat2:'حساب تلقائي (أم القرى، رابطة العالم الإسلامي، وغيرها)',salahFeat3:'اتجاه القبلة بالبوصلة الدقيقة',salahFeat4:'خريطة المساجد القريبة مع اتجاه الوصول',hadithFeat1:'صحيح البخاري، صحيح مسلم، السنن الأربعة',hadithFeat2:'مسند أحمد، موطأ مالك، سنن الدارمي',hadithFeat3:'بحث متقدّم بالنص أو الراوي أو رقم الحديث',hadithFeat4:'نسخ ومشاركة وحفظ الأحاديث المفضلة',adhkarFeat1:'أذكار الصباح والمساء وأذكار النوم والاستيقاظ',adhkarFeat2:'حصن المسلم — ١٣٢ ذكراً ودعاءً مأثوراً',adhkarFeat3:'أدعية من القرآن والسنّة النبوية',adhkarFeat4:'<strong>العد الصوتي</strong> — سبّح بصوتك ويعدّ التطبيق تلقائياً دون لمس الشاشة',adhkarFeat5:'مسبحة إلكترونية باللمس + تنبيهات يومية للأذكار',searchFeat1:'بحث موحّد في القرآن والحديث والأذكار والصلاة معاً',searchFeat2:'نتائج فورية مع تصنيف تلقائي حسب المصدر',searchFeat3:'<strong>البحث الصوتي</strong> — قل "موعد صلاة الفجر" أو "آيات الصبر" ويجيبك التطبيق',searchFeat4:'يعمل عبر كل الأقسام: القرآن، الحديث، الأذكار، الصلاة',pageTitle:'رفيق المسلم — رفيقك في الطاعة | القرآن والحديث والأذكار والصلاة',navQuran:'القرآن',navSalah:'الصلاة',navHadith:'الحديث',navAdhkar:'الأذكار',navSearch:'البحث',navDownload:'تحميل التطبيق',heroBadge:'مجاني بالكامل —',heroTitle:'رفيق المسلم — <span class="gold">رفيقك في الطاعة</span>',heroSub:'القرآن الكريم بالرسم العثماني مع التفسير، واستمع بصوت أكثر من ٦٠ قارئاً مرتّلاً، وكتب الحديث التسعة، وأذكار حصن المسلم، ومواقيت الصلاة، واتجاه القبلة، وعدّاد التسبيح الصوتي، والبحث الذكي بالصوت — كل ما يحتاجه المسلم في تطبيق واحد مجاني',barFree:'مجاني',barNoAds:'بدون إعلانات',barNoSub:'بدون اشتراك',barLangs:'٨ لغات',quranLabel:'📖 القرآن الكريم',quranTitle:'تلاوة وتدبّر كتاب الله',quranDesc:'مصحف المدينة المنورة بأعلى جودة مع تفاسير متعددة وتلاوات مباركة — واستمع بصوتك مع ميزة تراتيل',salahLabel:'🕌 الصلاة',salahTitle:'مواقيت دقيقة وتنبيهات ذكية',salahDesc:'مواقيت صلاة دقيقة حسب موقعك الجغرافي مع طريقة الحساب المناسبة لمنطقتك. لن تفوتك صلاة بإذن الله.',hadithLabel:'📚 الحديث الشريف',hadithTitle:'كتب الحديث التسعة',hadithDesc:'مكتبة حديثية شاملة تضم أهم المصادر الحديثية مع البحث المتقدّم والتصفّح',adhkarLabel:'🤲 الأذكار والتسبيح',adhkarTitle:'أذكار الصباح والمساء وأكثر',adhkarDesc:'مجموعة شاملة من الأذكار والأدعية المأثورة عن النبي ﷺ مع عدّاد تسبيح ذكي يعدّ بصوتك',searchLabel:'🔍 البحث الذكي',searchTitle:'ابحث في كل شيء دفعة واحدة',searchDesc:'بحث شامل وذكي يجمع نتائج القرآن والحديث والأذكار ومواقيت الصلاة في مكان واحد — بالنص أو بالصوت',namesLabel:'✨ أسماء الله الحسنى',namesTitle:'تعرّف على أسماء الله الحسنى',namesDesc:'استكشف أسماء الله الحسنى التسعة والتسعين مع معانيها ودلالاتها لتقوية صلتك بربّك',names1:'التسعة والتسعون اسماً مع معانيها وشرحها',names2:'تأملات وأذكار مرتبطة بكل اسم من أسماء الله',names3:'بحث سريع وحفظ المفضّلة للرجوع إليها',calLabel:'📅 التقويم الإسلامي',calTitle:'التقويم الهجري والمناسبات الإسلامية',calDesc:'تابع التقويم الهجري والمناسبات الإسلامية المهمة طوال العام لا تفوّت موسماً من مواسم الخير',cal1:'تحويل فوري بين التاريخ الهجري والميلادي',cal2:'المناسبات الإسلامية: رمضان، العيدان، المحرّم، ذو الحجة',cal3:'تنبيهات مسبقة بالمواسم والمناسبات الدينية',stat1lbl:'قارئ ومرتّل',stat2lbl:'حديث شريف',stat3lbl:'ذكر ودعاء',stat4lbl:'لغات مدعومة',howTitle:'ثلاث خطوات فقط',howDesc:'ابدأ رحلتك مع رفيق المسلم في أقل من دقيقة',step1h:'حمّل التطبيق',step1p:'حمّل رفيق المسلم مجاناً من App Store أو Google Play',step2h:'اختر ما يناسبك',step2p:'تصفّح القرآن أو الحديث أو الأذكار أو اضبط مواقيت الصلاة',step3h:'واظب على الطاعة',step3p:'فعّل التنبيهات ليكون رفيق المسلم معك كل يوم',langsLabel:'🌍 اللغات المدعومة',langsTitle:'٨ لغات للمسلمين حول العالم',langsDesc:'رفيق المسلم يتكلّم لغتك',faqTitle:'الأسئلة المتكررة',finalTitle:'حمّل رفيق المسلم الآن مجاناً',finalDesc:'بدون إعلانات — بدون اشتراكات — لوجه الله تعالى',dlDownload:'حمّل من',footerDesc:'رفيقك في الطاعة — القرآن الكريم والحديث الشريف والأذكار ومواقيت الصلاة في تطبيق واحد مجاني لوجه الله تعالى',footerCopy:'© 2026 رفيق المسلم — لوجه الله تعالى'},
+en:{faqLabel:'❓ Frequently Asked Questions',faqQ1:'Is the app completely free?',faqA1:'Yes, the app is completely free and will never have ads or paid subscriptions. It was developed for the sake of Allah as a form of ongoing charity.',faqQ2:'What prayer time calculation methods are available?',faqA2:'The app supports several calculation methods including: Umm al-Qura, Muslim World League, Islamic Society of North America, and more. The method is selected automatically based on your location.',faqQ3:'Can I listen to the Quran without internet?',faqA3:'Yes, you can download your favourite recitations to listen offline. The Mushaf and adhkar also work without internet after the first download.',faqQ4:'How many reciters are available in the app?',faqA4:'Over 60 reciters are available with diverse recitation styles. The library is updated periodically.',faqQ5:'Is the app available on iOS and Android?',faqA5:'Yes, the app is available on the App Store for Apple devices and Google Play for Android devices.',footerLogoName:'Rafiq Al-Muslim',footerAppCol:'App Features',footerLinkQuran:'Quran',footerLinkSalah:'Prayer Times',footerLinkHadith:'Hadith',footerLinkAdhkar:'Adhkar',footerLinksCol:'Links',footerLinkPrivacy:'Privacy Policy',footerLinkContact:'Contact Us',quranFeat1:'Madinah Mushaf in Uthmani script with full diacritics',quranFeat2:'60+ reciters with continuous playback',quranFeat3:'Multiple tafsirs with search and comparison',quranFeat4:'4 colour-coded bookmarks, quick search, night mode',quranFeat5:'<strong>Tarateel</strong> — play and search the Quran by voice commands',salahFeat1:'Five daily prayer times and sunrise',salahFeat2:'Auto calculation (Umm al-Qura, MWL, ISNA and more)',salahFeat3:'Qibla direction with accurate compass',salahFeat4:'Nearby mosques map with directions',hadithFeat1:'Sahih al-Bukhari, Sahih Muslim, the Four Sunan',hadithFeat2:'Musnad Ahmad, Muwatta Malik, Sunan al-Darimi',hadithFeat3:'Advanced search by text, narrator or hadith number',hadithFeat4:'Copy, share and save favourite hadiths',adhkarFeat1:'Morning, evening, sleep and waking adhkar',adhkarFeat2:'Hisn al-Muslim — 132 authentic adhkar and duas',adhkarFeat3:'Duas from the Quran and the Prophetic Sunnah',adhkarFeat4:'<strong>Voice counting</strong> — do tasbeeh by voice, the app counts automatically without touching the screen',adhkarFeat5:'Digital tasbeeh by touch + daily adhkar reminders',searchFeat1:'Unified search across Quran, Hadith, Adhkar and Prayer',searchFeat2:'Instant results with automatic categorisation by source',searchFeat3:'<strong>Voice search</strong> — say "Fajr prayer time" or "patience verses" and the app responds',searchFeat4:'Works across all sections: Quran, Hadith, Adhkar, Prayer',pageTitle:'Rafiq Al-Muslim — Your Islamic Companion | Quran, Hadith, Adhkar & Prayer',navQuran:'Quran',navSalah:'Prayer',navHadith:'Hadith',navAdhkar:'Adhkar',navSearch:'Search',navDownload:'Download',heroBadge:'Completely Free —',heroTitle:'Rafiq Al-Muslim — <span class="gold">Your Islamic Companion</span>',heroSub:'The Noble Quran with tafsir, listen to 60+ reciters, the Nine Books of Hadith, morning & evening adhkar, accurate prayer times, Qibla direction, voice tasbeeh counter, and smart voice search — everything a Muslim needs in one free app',barFree:'Free',barNoAds:'Ad-Free',barNoSub:'No Subscription',barLangs:'8 Languages',quranLabel:'📖 Quran',quranTitle:'Recite & Reflect on the Book of Allah',quranDesc:'Madinah Mushaf in highest quality with multiple tafsirs and blessed recitations — listen with your voice using Tarateel',salahLabel:'🕌 Prayer',salahTitle:'Accurate Times & Smart Alerts',salahDesc:'Accurate prayer times based on your location with the right calculation method for your region. Never miss a prayer, inshallah.',hadithLabel:'📚 Hadith',hadithTitle:'The Nine Books of Hadith',hadithDesc:'A comprehensive hadith library featuring the most important sources with advanced search and browsing',adhkarLabel:'🤲 Adhkar & Tasbeeh',adhkarTitle:'Morning, Evening & More',adhkarDesc:'A comprehensive collection of prophetic adhkar and duas, with a smart tasbeeh counter that counts your voice',searchLabel:'🔍 Smart Search',searchTitle:'Search Everything at Once',searchDesc:'A comprehensive smart search combining Quran, Hadith, Adhkar and Prayer results in one place — by text or voice',namesLabel:'✨ 99 Names of Allah',namesTitle:'Explore the 99 Names of Allah',namesDesc:'Discover the 99 Beautiful Names of Allah with their meanings and significance to deepen your connection with your Lord',names1:'All 99 names with meanings and detailed explanation',names2:'Reflections and adhkar linked to each name of Allah',names3:'Quick search and save favourites for easy reference',calLabel:'📅 Islamic Calendar',calTitle:'Hijri Calendar & Islamic Events',calDesc:'Follow the Hijri calendar and important Islamic occasions throughout the year — never miss a blessed season',cal1:'Instant conversion between Hijri and Gregorian dates',cal2:'Islamic events: Ramadan, Eid, Muharram, Dhul-Hijja',cal3:'Advance reminders for religious seasons and occasions',stat1lbl:'Reciters',stat2lbl:'Hadiths',stat3lbl:'Adhkar & Duas',stat4lbl:'Supported Languages',howTitle:'Just Three Steps',howDesc:'Start your journey with Rafiq Al-Muslim in less than a minute',step1h:'Download the App',step1p:'Download Rafiq Al-Muslim for free from the App Store or Google Play',step2h:'Choose What Suits You',step2p:'Browse the Quran, Hadith, Adhkar or set your prayer times',step3h:'Stay Consistent',step3p:'Enable notifications to have Rafiq with you every day',langsLabel:'🌍 Supported Languages',langsTitle:'8 Languages for Muslims Worldwide',langsDesc:'Rafiq Al-Muslim speaks your language',faqTitle:'Frequently Asked Questions',finalTitle:'Download Rafiq Al-Muslim Now — Free',finalDesc:'No ads — No subscriptions — For the sake of Allah',dlDownload:'Download on',footerDesc:'Your Islamic companion — Quran, Hadith, Adhkar and Prayer Times in one free app, for the sake of Allah',footerCopy:'© 2026 Rafiq Al-Muslim — For the sake of Allah'},
+fr:{faqLabel:'❓ Questions fréquentes',faqQ1:"L'application est-elle entièrement gratuite ?",faqA1:"Oui, l'application est entièrement gratuite et n'aura jamais de publicités ni d'abonnements payants. Elle a été développée pour l'amour d'Allah comme une aumône continue.",faqQ2:'Quelles méthodes de calcul des horaires de prière sont disponibles ?',faqA2:"L'application prend en charge plusieurs méthodes de calcul, notamment : Oum al-Qura, Ligue Islamique Mondiale, Société Islamique d'Amérique du Nord, et d'autres. La méthode est sélectionnée automatiquement en fonction de votre position.",faqQ3:'Puis-je écouter le Coran sans connexion internet ?',faqA3:"Oui, vous pouvez télécharger vos récitations préférées pour les écouter hors ligne. Le Mushaf et les adhkars fonctionnent également sans internet après le premier téléchargement.",faqQ4:"Combien de récitants sont disponibles dans l'application ?",faqA4:'Plus de 60 récitants sont disponibles avec des styles de récitation variés. La bibliothèque est mise à jour régulièrement.',faqQ5:"L'application est-elle disponible sur iOS et Android ?",faqA5:"Oui, l'application est disponible sur l'App Store pour les appareils Apple et Google Play pour les appareils Android.",footerLogoName:'Rafiq Al-Muslim',footerAppCol:"Fonctionnalités",footerLinkQuran:'Coran',footerLinkSalah:'Heures de Prière',footerLinkHadith:'Hadith',footerLinkAdhkar:'Adhkar',footerLinksCol:'Liens',footerLinkPrivacy:'Politique de confidentialité',footerLinkContact:'Contactez-nous',quranFeat1:'Mushaf de Médine en écriture ottomane avec vocalisation complète',quranFeat2:'Plus de 60 récitants avec lecture continue',quranFeat3:'Plusieurs tafsirs avec recherche et comparaison',quranFeat4:'4 signets colorés, recherche rapide, mode nuit',quranFeat5:'<strong>Tarateel</strong> — jouez et recherchez dans le Coran par commandes vocales',salahFeat1:'Les cinq prières quotidiennes et le lever du soleil',salahFeat2:'Calcul automatique (Oum al-Qura, LIM, ISNA et plus)',salahFeat3:'Direction de la Qibla avec boussole précise',salahFeat4:'Carte des mosquées proches avec itinéraires',hadithFeat1:'Sahih al-Boukhari, Sahih Muslim, les quatre Sunan',hadithFeat2:'Mousnad Ahmad, Mouwatta Malik, Sounan al-Darimi',hadithFeat3:'Recherche avancée par texte, narrateur ou numéro de hadith',hadithFeat4:'Copier, partager et enregistrer les hadiths favoris',adhkarFeat1:'Adhkars du matin, du soir, du sommeil et du réveil',adhkarFeat2:'Hisn al-Muslim — 132 adhkars et douaas authentiques',adhkarFeat3:'Douaas du Coran et de la Sunna prophétique',adhkarFeat4:'<strong>Comptage vocal</strong> — faites le tasbih à voix haute, l\'application compte automatiquement sans toucher l\'écran',adhkarFeat5:'Tasbih numérique tactile + rappels quotidiens d\'adhkars',searchFeat1:'Recherche unifiée dans le Coran, les Hadiths, les Adhkars et la Prière',searchFeat2:'Résultats instantanés avec catégorisation automatique par source',searchFeat3:'<strong>Recherche vocale</strong> — dites "heure de la prière de Fajr" ou "versets de la patience" et l\'application répond',searchFeat4:'Fonctionne dans toutes les sections : Coran, Hadith, Adhkars, Prière',pageTitle:'Rafiq Al-Muslim — Votre compagnon islamique | Coran, Hadith, Adhkar et Prière',navQuran:'Coran',navSalah:'Prière',navHadith:'Hadith',navAdhkar:'Adhkar',navSearch:'Recherche',navDownload:'Télécharger',heroBadge:'Entièrement gratuit —',heroTitle:'Rafiq Al-Muslim — <span class="gold">Votre compagnon islamique</span>',heroSub:'Le Noble Coran avec tafsir, écoutez plus de 60 récitants, les neuf livres de hadiths, les adhkars du matin et du soir, les heures de prière précises, la direction de la Qibla, un compteur de tasbih vocal et la recherche intelligente — tout ce dont un musulman a besoin dans une application gratuite',barFree:'Gratuit',barNoAds:'Sans publicité',barNoSub:'Sans abonnement',barLangs:'8 langues',quranLabel:'📖 Coran',quranTitle:'Réciter et méditer le Livre d\'Allah',quranDesc:'Mushaf de Médine en haute qualité avec plusieurs tafsirs et récitations bénies — écoutez avec votre voix via Tarateel',salahLabel:'🕌 Prière',salahTitle:'Horaires précis et alertes intelligentes',salahDesc:'Horaires de prière précis selon votre position avec la méthode de calcul adaptée à votre région. Ne manquez plus jamais une prière, inchallah.',hadithLabel:'📚 Hadith',hadithTitle:'Les neuf livres de hadiths',hadithDesc:'Bibliothèque hadith complète avec les sources les plus importantes, recherche avancée et navigation',adhkarLabel:'🤲 Adhkar et Tasbih',adhkarTitle:'Matin, soir et plus encore',adhkarDesc:'Collection complète d\'adhkars et douaas prophétiques avec un compteur de tasbih intelligent qui compte votre voix',searchLabel:'🔍 Recherche intelligente',searchTitle:'Cherchez tout à la fois',searchDesc:'Recherche intelligente et complète combinant les résultats du Coran, des Hadiths, des Adhkars et de la Prière en un seul endroit',namesLabel:'✨ 99 Noms d\'Allah',namesTitle:'Explorez les 99 Noms d\'Allah',namesDesc:'Découvrez les 99 Beaux Noms d\'Allah avec leurs significations pour approfondir votre relation avec votre Seigneur',names1:'Les 99 noms avec leurs significations et explications détaillées',names2:'Réflexions et adhkars liés à chaque nom d\'Allah',names3:'Recherche rapide et sauvegarde des favoris',calLabel:'📅 Calendrier islamique',calTitle:'Calendrier hégirien et événements islamiques',calDesc:'Suivez le calendrier hégirien et les occasions islamiques importantes tout au long de l\'année',cal1:'Conversion instantanée entre les dates hégiriennes et grégoriennes',cal2:'Événements islamiques : Ramadan, Aïd, Mouharram, Dhou al-Hijja',cal3:'Rappels anticipés pour les saisons et occasions religieuses',stat1lbl:'Récitants',stat2lbl:'Hadiths',stat3lbl:'Adhkars et Douaas',stat4lbl:'Langues prises en charge',howTitle:'Seulement trois étapes',howDesc:'Commencez votre voyage avec Rafiq Al-Muslim en moins d\'une minute',step1h:'Téléchargez l\'application',step1p:'Téléchargez Rafiq Al-Muslim gratuitement depuis l\'App Store ou Google Play',step2h:'Choisissez ce qui vous convient',step2p:'Parcourez le Coran, les Hadiths, les Adhkars ou réglez vos heures de prière',step3h:'Restez constant',step3p:'Activez les notifications pour avoir Rafiq avec vous chaque jour',langsLabel:'🌍 Langues prises en charge',langsTitle:'8 langues pour les musulmans du monde entier',langsDesc:'Rafiq Al-Muslim parle votre langue',faqTitle:'Questions fréquentes',finalTitle:'Téléchargez Rafiq Al-Muslim maintenant — Gratuit',finalDesc:'Sans publicité — Sans abonnement — Pour l\'amour d\'Allah',dlDownload:'Télécharger sur',footerDesc:'Votre compagnon islamique — Coran, Hadith, Adhkar et Heures de prière dans une application gratuite',footerCopy:'© 2026 Rafiq Al-Muslim — Pour l\'amour d\'Allah'},
+ur:{faqLabel:'❓ اکثر پوچھے جانے والے سوالات',faqQ1:'کیا ایپ مکمل طور پر مجانی ہے؟',faqA1:'جی ہاں، ایپ مکمل طور پر مجانی ہے اور اس میں کبھی اشتہارات یا مدفوع سبسکرپشن نہیں ہوں گے۔ اسے اللہ کی رضا کے لیے صدقہ جاریہ کے طور پر بنایا گیا ہے۔',faqQ2:'نماز کے اوقات کے حساب کے کون سے طریقے دستیاب ہیں؟',faqA2:'ایپ کئی حساب کے طریقے سپورٹ کرتی ہے جن میں: ام القریٰ، رابطہ عالم اسلامی، اسلامک سوسائٹی آف نارتھ امریکہ، اور دیگر شامل ہیں۔ طریقہ آپ کے مقام کے مطابق خودکار طور پر منتخب ہوتا ہے۔',faqQ3:'کیا میں انٹرنیٹ کے بغیر قرآن سن سکتا ہوں؟',faqA3:'جی ہاں، آپ آف لائن سننے کے لیے پسندیدہ تلاوتیں ڈاؤنلوڈ کر سکتے ہیں۔ مصحف اور اذکار بھی پہلی ڈاؤنلوڈ کے بعد انٹرنیٹ کے بغیر کام کرتے ہیں۔',faqQ4:'ایپ میں کتنے قاری دستیاب ہیں؟',faqA4:'60 سے زائد قاری متنوع تلاوت کے انداز کے ساتھ دستیاب ہیں۔ لائبریری وقتاً فوقتاً اپ ڈیٹ ہوتی ہے۔',faqQ5:'کیا ایپ iOS اور Android پر دستیاب ہے؟',faqA5:'جی ہاں، ایپ ایپل آلات کے لیے App Store اور اینڈرائیڈ آلات کے لیے Google Play پر دستیاب ہے۔',footerLogoName:'رفیق المسلم',footerAppCol:'ایپ کی خصوصیات',footerLinkQuran:'قرآن کریم',footerLinkSalah:'نماز کے اوقات',footerLinkHadith:'حدیث',footerLinkAdhkar:'اذکار',footerLinksCol:'روابط',footerLinkPrivacy:'رازداری پالیسی',footerLinkContact:'ہم سے رابطہ',quranFeat1:'مدینہ مصحف عثمانی رسم میں مکمل اعراب کے ساتھ',quranFeat2:'60+ قاریوں کی مسلسل تلاوت',quranFeat3:'متعدد تفاسیر بحث اور موازنے کے ساتھ',quranFeat4:'4 رنگین بک مارکس، تیز تلاش، نائٹ موڈ',quranFeat5:'<strong>تراتیل</strong> — آواز کے احکامات سے قرآن چلائیں اور تلاش کریں',salahFeat1:'پانچ نمازوں کے اوقات اور طلوع آفتاب',salahFeat2:'خودکار حساب (ام القریٰ، رابطہ عالم اسلامی، ISNA وغیرہ)',salahFeat3:'درست کمپاس کے ساتھ قبلہ کی سمت',salahFeat4:'قریبی مساجد کا نقشہ رہنمائی کے ساتھ',hadithFeat1:'صحیح البخاری، صحیح مسلم، چار سنن',hadithFeat2:'مسند احمد، موطأ مالک، سنن الدارمی',hadithFeat3:'متن، راوی یا حدیث نمبر سے اعلی تلاش',hadithFeat4:'پسندیدہ احادیث کاپی، شیئر اور محفوظ کریں',adhkarFeat1:'صبح، شام، نیند اور بیداری کے اذکار',adhkarFeat2:'حصن المسلم — 132 مستند اذکار و دعائیں',adhkarFeat3:'قرآن اور سنت نبوی سے دعائیں',adhkarFeat4:'<strong>آواز سے گنتی</strong> — آواز سے تسبیح کریں، ایپ خود بخود گنے بغیر اسکرین چھوئے',adhkarFeat5:'لمس سے ڈیجیٹل تسبیح + روزانہ اذکار کی یادآوری',searchFeat1:'قرآن، حدیث، اذکار اور نماز میں یکجا تلاش',searchFeat2:'ماخذ کے مطابق خودکار تصنیف کے ساتھ فوری نتائج',searchFeat3:'<strong>آواز سے تلاش</strong> — کہیں "فجر کا وقت" یا "صبر کی آیات" اور ایپ جواب دے',searchFeat4:'تمام حصوں میں کام کرتا ہے: قرآن، حدیث، اذکار، نماز',pageTitle:'رفیق المسلم — آپ کا اسلامی ساتھی | قرآن، حدیث، اذکار اور نماز',navQuran:'قرآن',navSalah:'نماز',navHadith:'حدیث',navAdhkar:'اذکار',navSearch:'تلاش',navDownload:'ڈاؤنلوڈ',heroBadge:'مکمل مجانی —',heroTitle:'رفیق المسلم — <span class="gold">آپ کا اسلامی ساتھی</span>',heroSub:'قرآن کریم تفسیر کے ساتھ، 60+ قاریوں کی تلاوت سنیں، نو حدیث کتب، صبح و شام کے اذکار، نماز کے اوقات، قبلہ کی سمت، آواز سے تسبیح — ایک مسلمان کو جو کچھ چاہیے سب ایک مجانی ایپ میں',barFree:'مجانی',barNoAds:'اشتہارات کے بغیر',barNoSub:'بغیر سبسکرپشن',barLangs:'٨ زبانیں',quranLabel:'📖 قرآن کریم',quranTitle:'اللہ کی کتاب کی تلاوت اور غور و فکر',quranDesc:'مدینہ مصحف اعلیٰ معیار کے ساتھ متعدد تفاسیر اور بابرکت تلاوتیں',salahLabel:'🕌 نماز',salahTitle:'درست اوقات اور ذہین اطلاعات',salahDesc:'آپ کے مقام کے مطابق درست نماز کے اوقات۔ ان شاء اللہ کوئی نماز نہیں چھوٹے گی۔',hadithLabel:'📚 حدیث',hadithTitle:'نو حدیث کتب',hadithDesc:'جامع حدیث لائبریری اہم ترین مصادر کے ساتھ، اعلیٰ تلاش اور براؤزنگ',adhkarLabel:'🤲 اذکار اور تسبیح',adhkarTitle:'صبح، شام اور مزید',adhkarDesc:'نبوی اذکار اور دعاؤں کا جامع مجموعہ آواز سے گنتی کرنے والے ذہین تسبیح کاؤنٹر کے ساتھ',searchLabel:'🔍 ذہین تلاش',searchTitle:'سب کچھ ایک ساتھ تلاش کریں',searchDesc:'جامع ذہین تلاش جو قرآن، حدیث، اذکار اور نماز کے نتائج ایک جگہ جمع کرتی ہے',namesLabel:'✨ اللہ کے ۹۹ نام',namesTitle:'اللہ کے ۹۹ اسماء حسنیٰ جانیں',namesDesc:'اللہ کے ۹۹ خوبصورت ناموں کو ان کے معانی کے ساتھ دریافت کریں اپنے رب سے رشتہ مضبوط کریں',names1:'تمام ۹۹ نام معانی اور تفصیلی وضاحت کے ساتھ',names2:'ہر نام سے متعلق تأملات اور اذکار',names3:'تیز تلاش اور پسندیدہ محفوظ کریں',calLabel:'📅 اسلامی کیلنڈر',calTitle:'ہجری کیلنڈر اور اسلامی مناسبات',calDesc:'سال بھر ہجری کیلنڈر اور اہم اسلامی مناسبات کا خیال رکھیں',cal1:'ہجری اور عیسوی تاریخوں کا فوری تبادلہ',cal2:'اسلامی مناسبات: رمضان، عیدین، محرم، ذوالحجہ',cal3:'دینی مواسم کی پیشگی اطلاعات',stat1lbl:'قاری',stat2lbl:'حدیث',stat3lbl:'اذکار و دعائیں',stat4lbl:'معاون زبانیں',howTitle:'صرف تین مراحل',howDesc:'رفیق المسلم کے ساتھ ایک منٹ سے کم میں شروع کریں',step1h:'ایپ ڈاؤنلوڈ کریں',step1p:'رفیق المسلم مجاناً App Store یا Google Play سے ڈاؤنلوڈ کریں',step2h:'اپنی پسند کا انتخاب کریں',step2p:'قرآن، حدیث، اذکار براؤز کریں یا نماز کے اوقات سیٹ کریں',step3h:'مستقل رہیں',step3p:'اطلاعات فعال کریں تاکہ رفیق ہر روز آپ کے ساتھ رہے',langsLabel:'🌍 معاون زبانیں',langsTitle:'دنیا بھر کے مسلمانوں کے لیے ٨ زبانیں',langsDesc:'رفیق المسلم آپ کی زبان بولتا ہے',faqTitle:'اکثر پوچھے جانے والے سوالات',finalTitle:'ابھی رفیق المسلم مجاناً ڈاؤنلوڈ کریں',finalDesc:'بغیر اشتہارات — بغیر سبسکرپشن — اللہ کی رضا کے لیے',dlDownload:'ڈاؤنلوڈ',footerDesc:'آپ کا اسلامی ساتھی — قرآن، حدیث، اذکار اور نماز کے اوقات ایک مجانی ایپ میں',footerCopy:'© 2026 رفیق المسلم — اللہ کی رضا کے لیے'},
+fa:{faqLabel:'❓ سوالات متداول',faqQ1:'آیا اپ کاملاً رایگان است؟',faqA1:'بله، اپ کاملاً رایگان است و هرگز تبلیغات یا اشتراک پولی نخواهد داشت. برای رضای خدا به عنوان صدقه جاریه توسعه یافته است.',faqQ2:'چه روش‌های محاسبه اوقات نماز در دسترس هستند؟',faqA2:'اپ از چندین روش محاسبه پشتیبانی می‌کند از جمله: ام‌القری، رابطه عالم اسلامی، انجمن اسلامی آمریکای شمالی و موارد دیگر. روش بر اساس موقعیت شما به‌طور خودکار انتخاب می‌شود.',faqQ3:'آیا می‌توانم بدون اینترنت به قرآن گوش دهم؟',faqA3:'بله، می‌توانید تلاوت‌های مورد علاقه‌تان را برای گوش دادن آفلاین دانلود کنید. مصحف و اذکار نیز پس از اولین دانلود بدون اینترنت کار می‌کنند.',faqQ4:'چند قاری در اپ موجود است؟',faqA4:'بیش از ۶۰ قاری با سبک‌های تلاوت متنوع در دسترس هستند. کتابخانه به‌طور دوره‌ای بروزرسانی می‌شود.',faqQ5:'آیا اپ در iOS و Android موجود است؟',faqA5:'بله، اپ در App Store برای دستگاه‌های اپل و Google Play برای دستگاه‌های اندروید موجود است.',footerLogoName:'رفیق المسلم',footerAppCol:'ویژگی‌های اپ',footerLinkQuran:'قرآن کریم',footerLinkSalah:'اوقات نماز',footerLinkHadith:'حدیث',footerLinkAdhkar:'اذکار',footerLinksCol:'پیوندها',footerLinkPrivacy:'سیاست حریم خصوصی',footerLinkContact:'تماس با ما',quranFeat1:'مصحف مدینه به خط عثمانی با اعراب کامل',quranFeat2:'بیش از ۶۰ قاری با پخش مداوم',quranFeat3:'تفاسیر متعدد با جستجو و مقایسه',quranFeat4:'۴ نشانک رنگی، جستجوی سریع، حالت شب',quranFeat5:'<strong>تراتیل</strong> — پخش و جستجو در قرآن با دستورات صوتی',salahFeat1:'اوقات پنج نماز روزانه و طلوع آفتاب',salahFeat2:'محاسبه خودکار (ام‌القری، رابطه عالم اسلامی، ISNA و غیره)',salahFeat3:'جهت قبله با قطب‌نمای دقیق',salahFeat4:'نقشه مساجد نزدیک با مسیریابی',hadithFeat1:'صحیح البخاری، صحیح مسلم، سنن اربعه',hadithFeat2:'مسند احمد، موطأ مالک، سنن الدارمی',hadithFeat3:'جستجوی پیشرفته بر اساس متن، راوی یا شماره حدیث',hadithFeat4:'کپی، اشتراک‌گذاری و ذخیره احادیث مورد علاقه',adhkarFeat1:'اذکار صبح، شام، خواب و بیداری',adhkarFeat2:'حصن المسلم — ۱۳۲ ذکر و دعای معتبر',adhkarFeat3:'دعاهایی از قرآن و سنت نبوی',adhkarFeat4:'<strong>شمارش صوتی</strong> — تسبیح با صدا بگویید، اپ به‌طور خودکار بدون لمس صفحه می‌شمرد',adhkarFeat5:'تسبیح دیجیتال لمسی + یادآوری روزانه اذکار',searchFeat1:'جستجوی یکپارچه در قرآن، حدیث، اذکار و نماز',searchFeat2:'نتایج فوری با دسته‌بندی خودکار بر اساس منبع',searchFeat3:'<strong>جستجوی صوتی</strong> — بگویید "وقت نماز فجر" یا "آیات صبر" و اپ پاسخ می‌دهد',searchFeat4:'در همه بخش‌ها کار می‌کند: قرآن، حدیث، اذکار، نماز',pageTitle:'رفیق المسلم — همراه اسلامی شما | قرآن، حدیث، اذکار و نماز',navQuran:'قرآن',navSalah:'نماز',navHadith:'حدیث',navAdhkar:'اذکار',navSearch:'جستجو',navDownload:'دانلود',heroBadge:'کاملاً رایگان —',heroTitle:'رفیق المسلم — <span class="gold">همراه اسلامی شما</span>',heroSub:'قرآن کریم با تفسیر، بیش از ۶۰ قاری، نه کتاب حدیث، اذکار صبح و شام، اوقات نماز، جهت قبله، شمارنده تسبیح صوتی — همه آنچه یک مسلمان نیاز دارد در یک اپ رایگان',barFree:'رایگان',barNoAds:'بدون تبلیغات',barNoSub:'بدون اشتراک',barLangs:'٨ زبان',quranLabel:'📖 قرآن کریم',quranTitle:'تلاوت و تدبر در کلام الله',quranDesc:'مصحف مدینه با بالاترین کیفیت همراه تفاسیر متعدد و تلاوت‌های مبارک',salahLabel:'🕌 نماز',salahTitle:'اوقات دقیق و هشدارهای هوشمند',salahDesc:'اوقات دقیق نماز بر اساس موقعیت شما با روش محاسبه مناسب منطقه‌تان. ان‌شاءالله هیچ نمازی از دست نمی‌رود.',hadithLabel:'📚 حدیث',hadithTitle:'نه کتاب حدیث',hadithDesc:'کتابخانه جامع حدیث با مهم‌ترین منابع، جستجوی پیشرفته و مرور',adhkarLabel:'🤲 اذکار و تسبیح',adhkarTitle:'صبح، شام و بیشتر',adhkarDesc:'مجموعه جامع اذکار و دعاهای نبوی همراه شمارنده تسبیح هوشمند که صدای شما را می‌شمرد',searchLabel:'🔍 جستجوی هوشمند',searchTitle:'همه چیز را یکجا جستجو کنید',searchDesc:'جستجوی جامع و هوشمند که نتایج قرآن، حدیث، اذکار و نماز را در یک مکان جمع می‌کند',namesLabel:'✨ ۹۹ نام الله',namesTitle:'اسماء الحسنای الله را کشف کنید',namesDesc:'۹۹ نام زیبای الله را با معانی و مفاهیم‌شان کشف کنید تا رابطه‌تان با پروردگارتان عمیق‌تر شود',names1:'همه ۹۹ نام با معانی و توضیحات کامل',names2:'تأملات و اذکار مرتبط با هر نام الله',names3:'جستجوی سریع و ذخیره موارد دلخواه',calLabel:'📅 تقویم اسلامی',calTitle:'تقویم هجری و رویدادهای اسلامی',calDesc:'تقویم هجری و مناسبت‌های مهم اسلامی را در طول سال دنبال کنید',cal1:'تبدیل فوری بین تاریخ‌های هجری و میلادی',cal2:'رویدادهای اسلامی: رمضان، عیدین، محرم، ذی‌الحجه',cal3:'یادآوری‌های پیشرفته برای فصل‌ها و مناسبت‌های دینی',stat1lbl:'قاری',stat2lbl:'حدیث',stat3lbl:'اذکار و دعا',stat4lbl:'زبان‌های پشتیبانی شده',howTitle:'فقط سه مرحله',howDesc:'سفر خود با رفیق المسلم را در کمتر از یک دقیقه شروع کنید',step1h:'اپ را دانلود کنید',step1p:'رفیق المسلم را به‌رایگان از App Store یا Google Play دانلود کنید',step2h:'آنچه مناسب شماست انتخاب کنید',step2p:'قرآن، حدیث، اذکار مرور کنید یا اوقات نماز را تنظیم کنید',step3h:'مداومت داشته باشید',step3p:'اعلان‌ها را فعال کنید تا رفیق هر روز با شما باشد',langsLabel:'🌍 زبان‌های پشتیبانی شده',langsTitle:'٨ زبان برای مسلمانان سراسر جهان',langsDesc:'رفیق المسلم به زبان شما صحبت می‌کند',faqTitle:'سوالات متداول',finalTitle:'رفیق المسلم را اکنون رایگان دانلود کنید',finalDesc:'بدون تبلیغات — بدون اشتراک — برای رضای خدا',dlDownload:'دانلود در',footerDesc:'همراه اسلامی شما — قرآن، حدیث، اذکار و اوقات نماز در یک اپ رایگان',footerCopy:'© 2026 رفیق المسلم — برای رضای خدا'},
+ru:{faqLabel:'❓ Часто задаваемые вопросы',faqQ1:'Приложение полностью бесплатное?',faqA1:'Да, приложение полностью бесплатное и никогда не будет содержать рекламу или платные подписки. Оно разработано ради Аллаха как непрерывная садака.',faqQ2:'Какие методы расчёта времени намаза доступны?',faqA2:'Приложение поддерживает несколько методов расчёта, включая: Умм аль-Кура, Лигу исламского мира, Исламское общество Северной Америки и другие. Метод выбирается автоматически в зависимости от вашего местоположения.',faqQ3:'Могу ли я слушать Коран без интернета?',faqA3:'Да, вы можете загрузить любимые рецитации для прослушивания без подключения. Мусхаф и зикры также работают без интернета после первой загрузки.',faqQ4:'Сколько чтецов доступно в приложении?',faqA4:'Доступно более 60 чтецов с разнообразными стилями рецитации. Библиотека периодически обновляется.',faqQ5:'Доступно ли приложение на iOS и Android?',faqA5:'Да, приложение доступно в App Store для устройств Apple и в Google Play для устройств Android.',footerLogoName:'Рафик аль-Муслим',footerAppCol:'Функции',footerLinkQuran:'Коран',footerLinkSalah:'Время намаза',footerLinkHadith:'Хадисы',footerLinkAdhkar:'Зикры',footerLinksCol:'Ссылки',footerLinkPrivacy:'Политика конфиденциальности',footerLinkContact:'Связаться с нами',quranFeat1:'Мединский Мусхаф в письме Усмана с полной огласовкой',quranFeat2:'60+ чтецов с непрерывным воспроизведением',quranFeat3:'Несколько тафсиров с поиском и сравнением',quranFeat4:'4 цветные закладки, быстрый поиск, ночной режим',quranFeat5:'<strong>Таратил</strong> — воспроизведение и поиск в Коране голосовыми командами',salahFeat1:'Пять ежедневных намазов и время восхода солнца',salahFeat2:'Автоматический расчёт (Умм аль-Кура, ЛМИ, ISNA и другие)',salahFeat3:'Направление Киблы с точным компасом',salahFeat4:'Карта ближайших мечетей с маршрутами',hadithFeat1:'Сахих аль-Бухари, Сахих Муслим, четыре Сунан',hadithFeat2:'Муснад Ахмад, Муватта Малик, Сунан ад-Дарими',hadithFeat3:'Расширенный поиск по тексту, передатчику или номеру хадиса',hadithFeat4:'Копирование, обмен и сохранение избранных хадисов',adhkarFeat1:'Зикры утра, вечера, сна и пробуждения',adhkarFeat2:'Хисн аль-Муслим — 132 достоверных зикра и дуа',adhkarFeat3:'Дуа из Корана и Пророческой Сунны',adhkarFeat4:'<strong>Голосовой счёт</strong> — делайте тасбих голосом, приложение считает автоматически без касания экрана',adhkarFeat5:'Цифровые чётки на касание + ежедневные напоминания зикров',searchFeat1:'Единый поиск по Корану, Хадисам, Зикрам и Намазу',searchFeat2:'Мгновенные результаты с автоматической сортировкой по источнику',searchFeat3:'<strong>Голосовой поиск</strong> — скажите "время намаза Фаджр" или "аяты о терпении" и приложение ответит',searchFeat4:'Работает во всех разделах: Коран, Хадисы, Зикры, Намаз',pageTitle:'Рафик аль-Муслим — Ваш исламский компаньон | Коран, Хадисы, Зикры и Намаз',navQuran:'Коран',navSalah:'Намаз',navHadith:'Хадисы',navAdhkar:'Зикры',navSearch:'Поиск',navDownload:'Скачать',heroBadge:'Полностью бесплатно —',heroTitle:'Рафик аль-Муслим — <span class="gold">Ваш исламский компаньон</span>',heroSub:'Благородный Коран с тафсиром, слушайте более 60 чтецов, девять книг хадисов, зикры утра и вечера, точное время намаза, направление Киблы и голосовой тасбих — всё, что нужно мусульманину, в одном бесплатном приложении',barFree:'Бесплатно',barNoAds:'Без рекламы',barNoSub:'Без подписки',barLangs:'8 языков',quranLabel:'📖 Коран',quranTitle:'Чтение и размышление над Книгой Аллаха',quranDesc:'Мединский Мусхаф высшего качества с несколькими тафсирами и благословенными рецитациями',salahLabel:'🕌 Намаз',salahTitle:'Точное время и умные уведомления',salahDesc:'Точное время намаза по вашему местоположению с подходящим методом расчёта для вашего региона. Ин ша Аллах, вы не пропустите ни одного намаза.',hadithLabel:'📚 Хадисы',hadithTitle:'Девять книг хадисов',hadithDesc:'Обширная библиотека хадисов с важнейшими источниками, расширенный поиск и навигация',adhkarLabel:'🤲 Зикры и тасбих',adhkarTitle:'Утро, вечер и многое другое',adhkarDesc:'Полный сборник пророческих зикров и дуа с умным счётчиком тасбиха, считающим ваш голос',searchLabel:'🔍 Умный поиск',searchTitle:'Ищите всё сразу',searchDesc:'Комплексный умный поиск, объединяющий результаты Корана, Хадисов, Зикров и Намаза в одном месте',namesLabel:'✨ 99 имён Аллаха',namesTitle:'Познайте 99 имён Аллаха',namesDesc:'Откройте для себя 99 прекрасных имён Аллаха с их значениями, чтобы укрепить связь с вашим Господом',names1:'Все 99 имён со значениями и подробными пояснениями',names2:'Размышления и зикры, связанные с каждым именем Аллаха',names3:'Быстрый поиск и сохранение избранного',calLabel:'📅 Исламский календарь',calTitle:'Календарь Хиджры и исламские события',calDesc:'Следите за календарём Хиджры и важными исламскими праздниками в течение всего года',cal1:'Мгновенное преобразование между датами Хиджры и григорианскими',cal2:'Исламские события: Рамадан, Ид аль-Фитр, Мухаррам, Зуль-Хиджа',cal3:'Предупреждения о религиозных сезонах и праздниках',stat1lbl:'Чтецов',stat2lbl:'Хадисов',stat3lbl:'Зикров и дуа',stat4lbl:'Поддерживаемых языков',howTitle:'Всего три шага',howDesc:'Начните свой путь с Рафик аль-Муслим менее чем за минуту',step1h:'Скачайте приложение',step1p:'Скачайте Рафик аль-Муслим бесплатно из App Store или Google Play',step2h:'Выберите нужное',step2p:'Просматривайте Коран, Хадисы, Зикры или настройте время намаза',step3h:'Оставайтесь последовательными',step3p:'Включите уведомления, чтобы Рафик был с вами каждый день',langsLabel:'🌍 Поддерживаемые языки',langsTitle:'8 языков для мусульман всего мира',langsDesc:'Рафик аль-Муслим говорит на вашем языке',faqTitle:'Часто задаваемые вопросы',finalTitle:'Скачайте Рафик аль-Муслим сейчас — Бесплатно',finalDesc:'Без рекламы — Без подписки — Ради Аллаха',dlDownload:'Загрузить в',footerDesc:'Ваш исламский компаньон — Коран, Хадисы, Зикры и время намаза в одном бесплатном приложении',footerCopy:'© 2026 Рафик аль-Муслим — Ради Аллаха'},
+tr:{faqLabel:'❓ Sıkça Sorulan Sorular',faqQ1:'Uygulama tamamen ücretsiz mi?',faqA1:"Evet, uygulama tamamen ücretsizdir ve asla reklam veya ücretli abonelik içermeyecektir. Allah rızası için süregelen bir sadaka olarak geliştirilmiştir.",faqQ2:'Hangi namaz vakti hesaplama yöntemleri mevcut?',faqA2:"Uygulama; Ümmü'l-Kurra, İslam Dünyası Birliği, Kuzey Amerika İslam Derneği ve daha fazlası dahil olmak üzere çeşitli hesaplama yöntemlerini destekler. Yöntem konumunuza göre otomatik olarak seçilir.",faqQ3:"Kuran'ı internetsiz dinleyebilir miyim?",faqA3:"Evet, çevrimdışı dinlemek için favori tilavetlerinizi indirebilirsiniz. Mushaf ve zikirler de ilk indirmeden sonra internetsiz çalışır.",faqQ4:'Uygulamada kaç hafız mevcut?',faqA4:"60'tan fazla hafız çeşitli kıraat stilleriyle mevcuttur. Kütüphane periyodik olarak güncellenmektedir.",faqQ5:'Uygulama iOS ve Android\'de mevcut mu?',faqA5:"Evet, uygulama Apple cihazlar için App Store'da ve Android cihazlar için Google Play'de mevcuttur.",footerLogoName:'Rafiq Al-Muslim',footerAppCol:'Özellikler',footerLinkQuran:"Kur'an",footerLinkSalah:'Namaz Vakitleri',footerLinkHadith:'Hadis',footerLinkAdhkar:'Zikir',footerLinksCol:'Bağlantılar',footerLinkPrivacy:'Gizlilik Politikası',footerLinkContact:'Bize Ulaşın',quranFeat1:'Medine Mushafı Osmanlı hattıyla tam harekelidir',quranFeat2:'Sürekli oynatmayla 60\'tan fazla hafız',quranFeat3:'Arama ve karşılaştırmayla birden fazla tefsir',quranFeat4:'4 renkli yer imi, hızlı arama, gece modu',quranFeat5:'<strong>Tarateel</strong> — sesli komutlarla Kur\'an\'ı oynatın ve arayın',salahFeat1:'Beş vakit namaz ve güneş doğuşu',salahFeat2:'Otomatik hesaplama (Ümmü\'l-Kurra, İslam Dünyası Birliği, ISNA vb.)',salahFeat3:'Hassas pusulasıyla kıble yönü',salahFeat4:'Güzergahlarla birlikte yakın camiler haritası',hadithFeat1:'Sahih el-Buhari, Sahih Müslim, Dört Sünen',hadithFeat2:'Müsned Ahmed, Muvatta Malik, Sünen el-Darimî',hadithFeat3:'Metin, ravî veya hadis numarasıyla gelişmiş arama',hadithFeat4:'Favori hadisleri kopyala, paylaş ve kaydet',adhkarFeat1:'Sabah, akşam, uyku ve uyanış zikirleri',adhkarFeat2:'Hisn el-Müslim — 132 sahih zikir ve dua',adhkarFeat3:'Kuran ve Peygamber Sünneti\'nden dualar',adhkarFeat4:'<strong>Sesli sayım</strong> — sesle tesbih yapın, uygulama ekrana dokunmadan otomatik sayar',adhkarFeat5:'Dokunmatik dijital tesbih + günlük zikir hatırlatmaları',searchFeat1:'Kur\'an, Hadis, Zikir ve Namaz\'da birleşik arama',searchFeat2:'Kaynağa göre otomatik sınıflandırmayla anlık sonuçlar',searchFeat3:'<strong>Sesli arama</strong> — "Fecr namazı vakti" veya "sabır ayetleri" deyin, uygulama yanıtlasın',searchFeat4:'Tüm bölümlerde çalışır: Kuran, Hadis, Zikir, Namaz',pageTitle:'Rafiq Al-Muslim — İslami Arkadaşınız | Kur\'an, Hadis, Zikir ve Namaz',navQuran:'Kur\'an',navSalah:'Namaz',navHadith:'Hadis',navAdhkar:'Zikir',navSearch:'Arama',navDownload:'İndir',heroBadge:'Tamamen Ücretsiz —',heroTitle:'Rafiq Al-Muslim — <span class="gold">İslami Arkadaşınız</span>',heroSub:'Tefsirli Kur\'an-ı Kerim, 60\'tan fazla hafız, dokuz hadis kitabı, sabah-akşam zikirleri, namaz vakitleri, kıble yönü ve sesli tesbih sayacı — bir Müslümanın ihtiyacı olan her şey tek ücretsiz uygulamada',barFree:'Ücretsiz',barNoAds:'Reklamsız',barNoSub:'Abonelisksiz',barLangs:'8 Dil',quranLabel:'📖 Kur\'an',quranTitle:'Allah\'ın Kitabını Okuma ve Tefekkür',quranDesc:'Medine Mushafı en yüksek kalitede, çoklu tefsir ve mübarek tilavetlerle — Tarateel özelliğiyle sesle dinleyin',salahLabel:'🕌 Namaz',salahTitle:'Hassas Vakitler ve Akıllı Uyarılar',salahDesc:'Konumunuza ve bölgenize uygun hesaplama yöntemiyle hassas namaz vakitleri. İnşallah hiçbir namazı kaçırmayacaksınız.',hadithLabel:'📚 Hadis',hadithTitle:'Dokuz Hadis Kitabı',hadithDesc:'En önemli kaynakları, gelişmiş arama ve gezinmeyi içeren kapsamlı hadis kütüphanesi',adhkarLabel:'🤲 Zikir ve Tesbih',adhkarTitle:'Sabah, Akşam ve Daha Fazlası',adhkarDesc:'Sesinizi sayan akıllı tesbih sayacıyla nebevî zikir ve duaların kapsamlı koleksiyonu',searchLabel:'🔍 Akıllı Arama',searchTitle:'Her Şeyi Aynı Anda Arayın',searchDesc:'Kur\'an, Hadis, Zikir ve Namaz sonuçlarını tek bir yerde birleştiren kapsamlı akıllı arama',namesLabel:'✨ Allah\'ın 99 İsmi',namesTitle:'Allah\'ın 99 Güzel İsmini Keşfedin',namesDesc:'Rabbinizle bağınızı güçlendirmek için Allah\'ın 99 güzel ismini anlamlarıyla keşfedin',names1:'Tüm 99 isim, anlamları ve ayrıntılı açıklamalarıyla',names2:'Her Allah ismiyle bağlantılı tefekkür ve zikirler',names3:'Hızlı arama ve favorileri kaydetme',calLabel:'📅 İslam Takvimi',calTitle:'Hicri Takvim ve İslami Etkinlikler',calDesc:'Hicri takvimi ve önemli İslami mevsimleri tüm yıl boyunca takip edin',cal1:'Hicri ve Miladi tarihler arasında anında dönüşüm',cal2:'İslami etkinlikler: Ramazan, Bayramlar, Muharrem, Zilhicce',cal3:'Dini mevsimler ve etkinlikler için önceden bildirimler',stat1lbl:'Hafız',stat2lbl:'Hadis',stat3lbl:'Zikir ve Dua',stat4lbl:'Desteklenen Dil',howTitle:'Sadece Üç Adım',howDesc:'Rafiq Al-Muslim ile yolculuğunuza bir dakikadan kısa sürede başlayın',step1h:'Uygulamayı İndirin',step1p:'Rafiq Al-Muslim\'i App Store veya Google Play\'den ücretsiz indirin',step2h:'Size Uygun Olanı Seçin',step2p:'Kur\'an, Hadis, Zikirlere göz atın veya namaz vakitlerini ayarlayın',step3h:'Devam Edin',step3p:'Bildirimleri etkinleştirin, Rafiq her gün yanınızda olsun',langsLabel:'🌍 Desteklenen Diller',langsTitle:'Dünya genelindeki Müslümanlar için 8 dil',langsDesc:'Rafiq Al-Muslim sizin dilinizi konuşuyor',faqTitle:'Sıkça Sorulan Sorular',finalTitle:'Rafiq Al-Muslim\'i Şimdi Ücretsiz İndirin',finalDesc:'Reklamsız — Abonelisksiz — Allah rızası için',dlDownload:'İndir',footerDesc:'İslami arkadaşınız — Kur\'an, Hadis, Zikir ve Namaz Vakitleri tek ücretsiz uygulamada',footerCopy:'© 2026 Rafiq Al-Muslim — Allah rızası için'},
+id:{faqLabel:'❓ Pertanyaan yang Sering Diajukan',faqQ1:'Apakah aplikasinya sepenuhnya gratis?',faqA1:'Ya, aplikasinya sepenuhnya gratis dan tidak akan pernah ada iklan atau langganan berbayar. Dikembangkan karena Allah sebagai bentuk sedekah jariyah.',faqQ2:'Metode perhitungan waktu shalat apa saja yang tersedia?',faqA2:'Aplikasi mendukung beberapa metode perhitungan termasuk: Umm al-Qura, Liga Dunia Islam, Islamic Society of North America, dan lainnya. Metode dipilih secara otomatis berdasarkan lokasi Anda.',faqQ3:'Bisakah saya mendengarkan Quran tanpa internet?',faqA3:'Ya, Anda dapat mengunduh tilawat favorit untuk mendengarkan secara offline. Mushaf dan dzikir juga berfungsi tanpa internet setelah unduhan pertama.',faqQ4:'Berapa banyak qari yang tersedia di aplikasi?',faqA4:'Lebih dari 60 qari tersedia dengan berbagai gaya bacaan. Perpustakaan diperbarui secara berkala.',faqQ5:'Apakah aplikasi tersedia di iOS dan Android?',faqA5:'Ya, aplikasi tersedia di App Store untuk perangkat Apple dan Google Play untuk perangkat Android.',footerLogoName:'Rafiq Al-Muslim',footerAppCol:'Fitur Aplikasi',footerLinkQuran:'Quran',footerLinkSalah:'Waktu Shalat',footerLinkHadith:'Hadis',footerLinkAdhkar:'Dzikir',footerLinksCol:'Tautan',footerLinkPrivacy:'Kebijakan Privasi',footerLinkContact:'Hubungi Kami',quranFeat1:'Mushaf Madinah dengan tulisan Utsmani dan harakat lengkap',quranFeat2:'60+ qari dengan pemutaran berkesinambungan',quranFeat3:'Banyak tafsir dengan pencarian dan perbandingan',quranFeat4:'4 penanda berwarna, pencarian cepat, mode malam',quranFeat5:'<strong>Tarateel</strong> — putar dan cari Quran dengan perintah suara',salahFeat1:'Lima waktu shalat harian dan terbit matahari',salahFeat2:'Perhitungan otomatis (Umm al-Qura, MWL, ISNA dan lainnya)',salahFeat3:'Arah kiblat dengan kompas yang akurat',salahFeat4:'Peta masjid terdekat dengan petunjuk arah',hadithFeat1:'Sahih al-Bukhari, Sahih Muslim, Empat Sunan',hadithFeat2:'Musnad Ahmad, Muwatta Malik, Sunan al-Darimi',hadithFeat3:'Pencarian canggih berdasarkan teks, perawi atau nomor hadis',hadithFeat4:'Salin, bagikan dan simpan hadis favorit',adhkarFeat1:'Dzikir pagi, petang, tidur dan bangun',adhkarFeat2:'Hisn al-Muslim — 132 dzikir dan doa shahih',adhkarFeat3:'Doa dari Al-Quran dan Sunnah Nabi',adhkarFeat4:'<strong>Penghitung suara</strong> — bertasbih dengan suara, aplikasi menghitung otomatis tanpa menyentuh layar',adhkarFeat5:'Tasbih digital sentuh + pengingat dzikir harian',searchFeat1:'Pencarian terpadu di Quran, Hadis, Dzikir dan Shalat',searchFeat2:'Hasil instan dengan kategorisasi otomatis berdasarkan sumber',searchFeat3:'<strong>Pencarian suara</strong> — katakan "waktu shalat Subuh" atau "ayat kesabaran" dan aplikasi menjawab',searchFeat4:'Berfungsi di semua bagian: Quran, Hadis, Dzikir, Shalat',pageTitle:'Rafiq Al-Muslim — Teman Islam Anda | Quran, Hadis, Dzikir dan Shalat',navQuran:'Quran',navSalah:'Shalat',navHadith:'Hadis',navAdhkar:'Dzikir',navSearch:'Cari',navDownload:'Unduh',heroBadge:'Sepenuhnya Gratis —',heroTitle:'Rafiq Al-Muslim — <span class="gold">Teman Islam Anda</span>',heroSub:'Al-Quran dengan tafsir, dengarkan 60+ qari, sembilan kitab hadis, dzikir pagi dan petang, waktu shalat akurat, arah kiblat, penghitung tasbih suara, dan pencarian pintar — semua yang dibutuhkan seorang Muslim dalam satu aplikasi gratis',barFree:'Gratis',barNoAds:'Tanpa Iklan',barNoSub:'Tanpa Langganan',barLangs:'8 Bahasa',quranLabel:'📖 Quran',quranTitle:'Membaca dan Merenungkan Kitab Allah',quranDesc:'Mushaf Madinah kualitas terbaik dengan banyak tafsir dan bacaan yang berkah — dengarkan dengan suara Anda via Tarateel',salahLabel:'🕌 Shalat',salahTitle:'Waktu Akurat & Pengingat Cerdas',salahDesc:'Waktu shalat akurat berdasarkan lokasi Anda dengan metode perhitungan yang sesuai untuk wilayah Anda. InsyaAllah tidak ada shalat yang terlewat.',hadithLabel:'📚 Hadis',hadithTitle:'Sembilan Kitab Hadis',hadithDesc:'Perpustakaan hadis lengkap dengan sumber terpenting, pencarian canggih dan penelusuran',adhkarLabel:'🤲 Dzikir & Tasbih',adhkarTitle:'Pagi, Petang & Lebih Banyak Lagi',adhkarDesc:'Koleksi lengkap dzikir dan doa Nabawi dengan penghitung tasbih cerdas yang menghitung suara Anda',searchLabel:'🔍 Pencarian Cerdas',searchTitle:'Cari Semua Sekaligus',searchDesc:'Pencarian cerdas komprehensif menggabungkan hasil Quran, Hadis, Dzikir dan Shalat dalam satu tempat',namesLabel:'✨ 99 Nama Allah',namesTitle:'Jelajahi 99 Nama Allah',namesDesc:'Temukan 99 Nama Indah Allah beserta maknanya untuk memperdalam hubungan Anda dengan Rabb Anda',names1:'Semua 99 nama dengan makna dan penjelasan lengkap',names2:'Renungan dan dzikir yang terkait dengan setiap nama Allah',names3:'Pencarian cepat dan simpan favorit',calLabel:'📅 Kalender Islam',calTitle:'Kalender Hijriyah & Acara Islami',calDesc:'Ikuti kalender Hijriyah dan momen-momen penting Islam sepanjang tahun',cal1:'Konversi instan antara tanggal Hijriyah dan Masehi',cal2:'Acara Islam: Ramadan, Idul Fitri, Muharram, Dzulhijjah',cal3:'Pengingat awal untuk musim dan acara keagamaan',stat1lbl:'Qari',stat2lbl:'Hadis',stat3lbl:'Dzikir & Doa',stat4lbl:'Bahasa Didukung',howTitle:'Hanya Tiga Langkah',howDesc:'Mulai perjalanan Anda dengan Rafiq Al-Muslim dalam waktu kurang dari satu menit',step1h:'Unduh Aplikasi',step1p:'Unduh Rafiq Al-Muslim gratis dari App Store atau Google Play',step2h:'Pilih yang Sesuai',step2p:'Telusuri Quran, Hadis, Dzikir atau atur waktu shalat Anda',step3h:'Tetap Konsisten',step3p:'Aktifkan notifikasi agar Rafiq selalu menemani Anda setiap hari',langsLabel:'🌍 Bahasa yang Didukung',langsTitle:'8 bahasa untuk Muslim di seluruh dunia',langsDesc:'Rafiq Al-Muslim berbicara dalam bahasa Anda',faqTitle:'Pertanyaan yang Sering Diajukan',finalTitle:'Unduh Rafiq Al-Muslim Sekarang — Gratis',finalDesc:'Tanpa iklan — Tanpa langganan — Karena Allah',dlDownload:'Unduh di',footerDesc:'Teman Islam Anda — Quran, Hadis, Dzikir dan Waktu Shalat dalam satu aplikasi gratis',footerCopy:'© 2026 Rafiq Al-Muslim — Karena Allah'}
+};
+
+function setLang(code){
+  if(!T[code])return;
+  const lang=LANGS[code];
+  document.documentElement.lang=code;
+  document.documentElement.dir=lang.dir;
+  localStorage.setItem('rafiq_lang',code);
+  document.title=T[code].pageTitle||document.title;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.dataset.i18n;
+    if(T[code][k]!==undefined)el.textContent=T[code][k];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const k=el.dataset.i18nHtml;
+    if(T[code][k]!==undefined)el.innerHTML=T[code][k];
+  });
+  const cur=document.getElementById('langCurrent');
+  if(cur)cur.textContent=lang.flag+' '+lang.name;
+  document.querySelectorAll('.lang-option').forEach(btn=>{
+    btn.classList.toggle('active',btn.dataset.lang===code);
+  });
+}
+
+// Language switcher toggle
+const langSwitcher=document.getElementById('langSwitcher');
+const langBtn=document.getElementById('langBtn');
+if(langSwitcher&&langBtn){
+  langBtn.addEventListener('click',function(e){
+    e.stopPropagation();
+    const open=langSwitcher.classList.toggle('open');
+    langBtn.setAttribute('aria-expanded',open);
+  });
+  document.addEventListener('click',function(){
+    langSwitcher.classList.remove('open');
+    langBtn.setAttribute('aria-expanded','false');
+  });
+}
+
+// Init language from localStorage or browser
+(function(){
+  const stored=localStorage.getItem('rafiq_lang');
+  const browser=navigator.language.slice(0,2).toLowerCase();
+  const supported=Object.keys(LANGS);
+  const lang=stored||(supported.includes(browser)?browser:'ar');
+  setLang(lang);
+})();
+
+// Scroll-triggered reveal animations
+const ro=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      ro.unobserve(e.target)
+    }
+  })
+},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+</script>
+</body>
+</html>
