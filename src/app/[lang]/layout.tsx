@@ -48,8 +48,9 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+// Always https (phones only allow location on secure pages; the domain also answers on http).
 // Light like the reference; dark only when the visitor picked it.
-const THEME_SCRIPT = `try{if(localStorage.getItem("theme")==="dark")document.documentElement.classList.add("dark")}catch(e){}`;
+const THEME_SCRIPT = `if(location.protocol==="http:"&&!/^(localhost|127\\.|192\\.168\\.)/.test(location.hostname))location.replace("https://"+location.host+location.pathname+location.search+location.hash);try{if(localStorage.getItem("theme")==="dark")document.documentElement.classList.add("dark")}catch(e){}`;
 
 export default async function LangLayout({ children, params }: LayoutProps<"/[lang]">) {
   const { lang } = await params;

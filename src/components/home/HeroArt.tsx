@@ -3,7 +3,7 @@ import Image from "next/image";
 /** Hero illustration: two app screens on a soft blue shape with stars, moon and dots (reference style). */
 export function HeroArt({ front, back, alt, priority = false }: { front: string; back: string; alt: string; priority?: boolean }) {
   return (
-    <div className="relative mx-auto aspect-[1.35] w-full max-w-[560px]">
+    <div className="relative mx-auto mb-2 aspect-[1.15] w-full max-w-[560px]">
       <svg viewBox="0 0 540 400" className="absolute inset-0 h-full w-full" aria-hidden>
         <path d="M120 70c60-60 190-70 270-20s120 140 90 220-130 120-230 110S40 330 40 240 60 130 120 70z" fill="#DFEDF2" />
         <path d="M150 110c40-40 140-50 200-10s80 110 50 170-110 80-180 70-110-50-110-120 10-80 40-110z" fill="#BAE4F0" opacity=".55" />
