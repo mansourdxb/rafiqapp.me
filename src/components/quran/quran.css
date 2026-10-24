@@ -1,0 +1,172 @@
+/* Mushaf reader fonts + page frame (artwork and fonts copied from the app by scripts/data/10-quran.mjs). */
+@font-face {
+  font-family: "KFGQPCHafs";
+  src: url("/data/quran/fonts/kfgqpc-hafs.otf") format("opentype");
+  font-display: block;
+}
+@font-face {
+  font-family: "SuraNames";
+  src: url("/data/quran/fonts/sura-names.ttf") format("truetype");
+  font-display: block;
+}
+@font-face {
+  font-family: "QcfBasmala";
+  src: url("/data/quran/fonts/qcf-basmala.ttf") format("truetype");
+  font-display: block;
+}
+
+.mushaf {
+  --m-outer: #efe8dd;
+  --m-page: #fff8f1;
+  --m-text: #000000;
+  --m-marker: #98765a;
+  --m-basmala: #000000;
+  --m-band: rgba(30, 139, 90, 0.18);
+  --m-label: #000000;
+}
+.dark .mushaf {
+  --m-outer: #141008;
+  --m-page: #1a1209;
+  --m-text: #c8b89a;
+  --m-marker: #b8a080;
+  --m-basmala: #b8a080;
+  --m-band: rgba(120, 200, 150, 0.16);
+  --m-label: #c8b89a;
+}
+
+/* ── ornate page frame (MushafPageFrame): side strips 24 wide, top/bottom line art 30 tall ── */
+.mf {
+  position: relative;
+  background: var(--m-page);
+  padding: 30px 24px;
+}
+.mf-side,
+.mf-cap,
+.mf-corner {
+  position: absolute;
+  pointer-events: none;
+  background-repeat: no-repeat;
+}
+.mf-side {
+  top: 30px;
+  bottom: 30px;
+  width: 24px;
+  background-repeat: round;
+  background-size: 24px 157px;
+}
+.mf-side.l { left: 0; background-image: url("/data/quran/frame/page_background_left_item_brown.png"); }
+.mf-side.r { right: 0; background-image: url("/data/quran/frame/page_background_right_item_brown.png"); }
+.mf-cap {
+  left: 24px;
+  right: 24px;
+  height: 30px;
+  background-repeat: round;
+  background-size: 139px 30px;
+  background-image: url("/data/quran/frame/bottom_frame_line_brown.png");
+}
+.mf-cap.t { top: 0; transform: scaleY(-1); }
+.mf-cap.b { bottom: 0; }
+.mf-corner { width: 26px; height: 30px; background-size: 100% 100%; }
+.mf-corner.tl, .mf-corner.bl { left: 0; background-image: url("/data/quran/frame/bottom_frame_left_corner_brown.png"); }
+.mf-corner.tr, .mf-corner.br { right: 0; background-image: url("/data/quran/frame/bottom_frame_right_corner_brown.png"); }
+.mf-corner.tl, .mf-corner.tr { top: 0; transform: scaleY(-1); }
+.mf-corner.bl, .mf-corner.br { bottom: 0; }
+.mf-cart {
+  position: absolute;
+  top: 3px;
+  width: 113px;
+  height: 23px;
+  display: flex;
+  justify-content: center;
+  background: var(--m-page);
+}
+.mf-cart > span {
+  display: block;
+  width: 105px;
+  height: 23px;
+  background: url("/data/quran/frame/chapter_frame_in_header_brown.png") center / 100% 100% no-repeat;
+  color: var(--m-label);
+  font-family: "KFGQPCHafs", var(--font-quran);
+  font-size: 13px;
+  line-height: 21px;
+  text-align: center;
+  direction: rtl;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.mf-badge {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 58px;
+  height: 30px;
+  margin-left: -29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--m-page);
+}
+.dark .mf-side.l { background-image: url("/data/quran/frame/page_background_left_item_night_mode.png"); }
+.dark .mf-side.r { background-image: url("/data/quran/frame/page_background_right_item_night_mode.png"); }
+.dark .mf-cap { background-image: url("/data/quran/frame/bottom_frame_line_night_mode.png"); }
+.dark .mf-corner.tl, .dark .mf-corner.bl { background-image: url("/data/quran/frame/bottom_frame_left_corner_night_mode.png"); }
+.dark .mf-corner.tr, .dark .mf-corner.br { background-image: url("/data/quran/frame/bottom_frame_right_corner_night_mode.png"); }
+.dark .mf-cart > span { background-image: url("/data/quran/frame/chapter_frame_in_header_night_mode.png"); }
+
+/* ── page text: sizes follow the text box width (container units), as the app sizes by width ── */
+.mp {
+  container-type: inline-size;
+  position: relative;
+  direction: rtl;
+  color: var(--m-text);
+}
+.mp-line {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+}
+.mp-w {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  border-radius: 4px;
+}
+.mp-w:hover { background: color-mix(in srgb, var(--m-band) 60%, transparent); }
+.mp-mark {
+  font-family: "KFGQPCHafs", var(--font-quran);
+  color: var(--m-marker);
+  text-shadow: 0 0 0.8px var(--m-marker);
+}
+.mp-band {
+  position: absolute;
+  top: 12%;
+  bottom: 12%;
+  border-radius: 6px;
+  background: var(--m-band);
+  pointer-events: none;
+}
+.mp-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mp-title > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("/data/quran/frame/sorah_name_brown.png") center / contain no-repeat;
+}
+.dark .mp-title > div { background-image: url("/data/quran/frame/sorah_name_night_mode.png"); }
+.mp-calli {
+  font-family: "SuraNames";
+  direction: ltr;
+  color: var(--m-text);
+  font-feature-settings: "liga" 1;
+}
+@keyframes mp-pulse { 50% { opacity: 0.45; } }
+.mp-skel { animation: mp-pulse 1.4s ease-in-out infinite; }
