@@ -144,11 +144,8 @@ export function HomeView({ lang }: { lang: Locale }) {
                 </p>
                 <div className="mt-auto flex items-center gap-3 pt-6">
                   <Image src="/images/ref/ellipse_76-3x.webp" alt="" width={50} height={50} className="size-12 rounded-full" />
-                  <span className="text-xs font-bold text-section" dir="auto">
-                    {r.name}
-                    <span className="block font-normal text-ink-2">
-                      {r.store} · {localDigits(lang, r.date.replaceAll("-", "/"))}
-                    </span>
+                  <span className="text-sm font-bold text-section" dir="auto">
+                    {r.name.split(" ")[0].replace(/^\p{Ll}/u, (c) => c.toUpperCase())}
                   </span>
                 </div>
               </li>

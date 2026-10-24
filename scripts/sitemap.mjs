@@ -17,7 +17,9 @@ function pages(dir, rel = "") {
 }
 
 // Paths under /ar/ stand for the same page in every language.
-const paths = pages(join(OUT, "ar")).sort();
+const paths = pages(join(OUT, "ar"))
+  .filter((p) => !/^(login|profile)\//.test(p))
+  .sort();
 const today = new Date().toISOString().slice(0, 10);
 const urls = paths.flatMap((p) =>
   LANGS.map((l) => {

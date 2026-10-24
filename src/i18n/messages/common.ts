@@ -9,6 +9,7 @@ export type Common = {
   nav: {
     home: string;
     quran: string;
+    listen: string;
     hadith: string;
     athkar: string;
     prayer: string;
@@ -52,6 +53,7 @@ const en: Common = {
   nav: {
     home: "Home",
     quran: "Qur'an",
+    listen: "Listen to the Qur'an",
     hadith: "Hadith",
     athkar: "Adhkar",
     prayer: "Prayer times",
@@ -106,6 +108,7 @@ const ar: Common = {
   nav: {
     home: "الرئيسية",
     quran: "القرآن",
+    listen: "الاستماع للقرآن",
     hadith: "الحديث",
     athkar: "الأذكار",
     prayer: "مواقيت الصلاة",

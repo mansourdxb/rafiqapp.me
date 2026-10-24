@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useSyncExternalStore } from "react";
+import { AuthButton } from "@/components/auth/AuthButton";
 import { Icon } from "@/components/ui/Icon";
 import { locales, localePath, nativeName, type Locale } from "@/i18n/config";
 import { common } from "@/i18n/messages/common";
@@ -166,6 +167,7 @@ export function Navbar({ lang }: { lang: Locale }) {
             </li>
           </ul>
           <div className="flex shrink-0 items-center gap-4">
+            <AuthButton lang={lang} variant="desktop" />
             {langMenu}
             <button onClick={toggleTheme} className="text-white/80 hover:text-white" aria-label={dark ? t.theme.light : t.theme.dark}>
               <Icon name={dark ? "sun" : "moon"} className="size-4.5" />
@@ -176,9 +178,12 @@ export function Navbar({ lang }: { lang: Locale }) {
 
       {/* mobile bar: logo + menu */}
       <div className="flex h-16 items-center justify-between bg-white px-4 shadow-[0_4px_16px_-10px_rgba(0,0,0,0.25)] lg:hidden dark:bg-card">
-        <button onClick={() => setOpen((v) => !v)} aria-label={open ? t.close : t.menu} aria-expanded={open} className="text-navy dark:text-white">
-          <Icon name={open ? "close" : "menu"} className="size-8" />
-        </button>
+        <div className="flex items-center gap-3">
+          <button onClick={() => setOpen((v) => !v)} aria-label={open ? t.close : t.menu} aria-expanded={open} className="text-navy dark:text-white">
+            <Icon name={open ? "close" : "menu"} className="size-8" />
+          </button>
+          <AuthButton lang={lang} variant="mobile" />
+        </div>
         <Link href={localePath(lang)} className="flex items-center gap-2">
           <span className="text-base font-extrabold text-navy-2 dark:text-white">{t.siteName}</span>
           <Image src="/logo-512.png" alt="" width={44} height={44} className="rounded-xl" priority />

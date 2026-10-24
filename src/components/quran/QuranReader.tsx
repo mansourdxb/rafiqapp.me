@@ -15,6 +15,9 @@ import { fetchPage, saveLastRead, TWO_UP_KEY, usePref, writePref } from "@/lib/q
 import { ensureQcf, useQcfFont } from "@/lib/quran/qcfFonts";
 import { pageTitle } from "@/lib/quran/title";
 import { quranPageHref } from "@/lib/quran/href";
+import { usePlayer } from "@/lib/player/usePlayer";
+import { PIcon } from "@/components/player/PlayerIcons";
+import { player } from "@/i18n/messages/player";
 import { MushafPage } from "./MushafPage";
 import { AyahPanel, type AyahSel } from "./AyahPanel";
 
@@ -30,6 +33,7 @@ export function QuranReader({ lang, initialPage, initialData }: { lang: Locale; 
   const [failedPage, setFailedPage] = useState<number | null>(null);
   const [retry, setRetry] = useState(0);
   const topRef = useRef<HTMLDivElement>(null);
+  const audio = usePlayer();
 
   const right = page % 2 === 1 ? page : page - 1;
   const left = Math.min(PAGE_COUNT, right + 1);
@@ -181,6 +185,21 @@ export function QuranReader({ lang, initialPage, initialData }: { lang: Locale; 
             className="hidden h-9 shrink-0 items-center rounded-full px-3.5 text-sm font-bold text-primary ring-1 ring-primary hover:bg-tint min-[1100px]:inline-flex"
           >
             {twoUp ? t.onePage : t.twoPages}
+          </button>
+          <button
+            type="button"
+            disabled={!pages[page] && !audio.playing}
+            onClick={() => {
+              if (audio.playing) return audio.toggle(false);
+              const first = Object.keys(pages[page]?.ayahs ?? {})[0]?.split(":").map(Number);
+              if (first) audio.playSurah(audio.reciter, first[0], first[1], { continuous: true });
+            }}
+            aria-label={audio.playing ? player[lang].pause : player[lang].listenPage}
+            title={audio.playing ? player[lang].pause : player[lang].listenPage}
+            className="inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-sm font-bold text-primary ring-1 ring-primary hover:bg-tint disabled:opacity-40"
+          >
+            <PIcon name={audio.playing ? "pause" : "play"} className="size-4" />
+            <span className="hidden sm:inline">{audio.playing ? player[lang].pause : player[lang].listen}</span>
           </button>
           <button type="button" onClick={() => setGotoOpen((v) => !v)} aria-expanded={gotoOpen} className="inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full bg-navy px-4 text-sm font-bold text-white shadow-sm hover:bg-section">
             <Icon name="search" className="size-4" />

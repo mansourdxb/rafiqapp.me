@@ -1,0 +1,304 @@
+// Qur'an audio player wording (listen page, mini player, now-playing sheet). The app's own wording
+// (reciter categories, "Listen to Quran", "Continue listening", "Play all", "Your reciter", …) comes from appT.
+import type { Locale } from "../config";
+
+export type PlayerMessages = {
+  description: string;
+  subtitle: string;
+  play: string;
+  pause: string;
+  prevAyah: string;
+  nextAyah: string;
+  expand: string;
+  collapse: string;
+  close: string;
+  repeat: string;
+  repeatOff: string;
+  repeatSurah: string;
+  repeatAyah: string;
+  speed: string;
+  playSurah: string;
+  playFromHere: string;
+  favourites: string;
+  addFavourite: string;
+  removeFavourite: string;
+  allReciters: string;
+  nowPlaying: string;
+  loadError: string;
+  listen: string;
+  /** "{surah}" */
+  listenSurah: string;
+  listenPage: string;
+  ended: string;
+  changeReciter: string;
+  goToAyah: string;
+  surahs: string;
+  /** spoken language of the translation recitations */
+  langNames: Record<"en" | "fa" | "az" | "bs" | "ur", string>;
+};
+
+const en: PlayerMessages = {
+  description: "Listen to the Holy Qur'an recited by more than fifty reciters, verse by verse, while you browse the site.",
+  subtitle: "Choose a reciter, then play a whole surah or carry on from any surah — it keeps playing while you browse.",
+  play: "Play",
+  pause: "Pause",
+  prevAyah: "Previous ayah",
+  nextAyah: "Next ayah",
+  expand: "Open the player",
+  collapse: "Minimise the player",
+  close: "Stop and close",
+  repeat: "Repeat",
+  repeatOff: "Repeat off",
+  repeatSurah: "Repeat the surah",
+  repeatAyah: "Repeat the ayah",
+  speed: "Playback speed",
+  playSurah: "Play the surah",
+  playFromHere: "Play all from here",
+  favourites: "Favourites",
+  addFavourite: "Add to favourites",
+  removeFavourite: "Remove from favourites",
+  allReciters: "All reciters",
+  nowPlaying: "Now playing",
+  loadError: "This ayah could not be played. Check your connection and try again.",
+  listen: "Listen",
+  listenSurah: "Listen to {surah}",
+  listenPage: "Listen from this page",
+  ended: "Recitation finished",
+  changeReciter: "Change reciter",
+  goToAyah: "Go to ayah",
+  surahs: "Surahs",
+  langNames: { en: "English", fa: "Persian", az: "Azerbaijani", bs: "Bosnian", ur: "Urdu" },
+};
+
+const ar: PlayerMessages = {
+  description: "استمع إلى القرآن الكريم بأصوات أكثر من خمسين قارئًا، آيةً آية، وأنت تتصفح الموقع.",
+  subtitle: "اختر القارئ، ثم شغّل سورة كاملة أو تابع من أي سورة — يستمر التشغيل وأنت تتنقل في الموقع.",
+  play: "تشغيل",
+  pause: "إيقاف مؤقت",
+  prevAyah: "الآية السابقة",
+  nextAyah: "الآية التالية",
+  expand: "فتح المشغّل",
+  collapse: "تصغير المشغّل",
+  close: "إيقاف وإغلاق",
+  repeat: "التكرار",
+  repeatOff: "بدون تكرار",
+  repeatSurah: "تكرار السورة",
+  repeatAyah: "تكرار الآية",
+  speed: "سرعة التشغيل",
+  playSurah: "تشغيل السورة",
+  playFromHere: "تشغيل الكل من هنا",
+  favourites: "المفضلة",
+  addFavourite: "إضافة إلى المفضلة",
+  removeFavourite: "إزالة من المفضلة",
+  allReciters: "كل القراء",
+  nowPlaying: "قيد التشغيل",
+  loadError: "تعذّر تشغيل هذه الآية. تحقّق من اتصالك وحاول مرة أخرى.",
+  listen: "استماع",
+  listenSurah: "استمع إلى سورة {surah}",
+  listenPage: "استمع من هذه الصفحة",
+  ended: "انتهت التلاوة",
+  changeReciter: "تغيير القارئ",
+  goToAyah: "انتقل إلى آية",
+  surahs: "السور",
+  langNames: { en: "الإنجليزية", fa: "الفارسية", az: "الأذربيجانية", bs: "البوسنية", ur: "الأردية" },
+};
+
+const ur: PlayerMessages = {
+  description: "قرآنِ کریم پچاس سے زیادہ قاریوں کی آواز میں آیت بہ آیت سنیں، سائٹ دیکھتے ہوئے بھی۔",
+  subtitle: "قاری منتخب کریں، پھر پوری سورت چلائیں یا کسی بھی سورت سے آگے سنتے رہیں — سائٹ پر گھومتے ہوئے بھی تلاوت جاری رہتی ہے۔",
+  play: "چلائیں",
+  pause: "روکیں",
+  prevAyah: "پچھلی آیت",
+  nextAyah: "اگلی آیت",
+  expand: "پلیئر کھولیں",
+  collapse: "پلیئر چھوٹا کریں",
+  close: "بند کریں",
+  repeat: "دہرائیں",
+  repeatOff: "دہرانا بند",
+  repeatSurah: "سورت دہرائیں",
+  repeatAyah: "آیت دہرائیں",
+  speed: "رفتار",
+  playSurah: "سورت چلائیں",
+  playFromHere: "یہاں سے سب چلائیں",
+  favourites: "پسندیدہ",
+  addFavourite: "پسندیدہ میں شامل کریں",
+  removeFavourite: "پسندیدہ سے ہٹائیں",
+  allReciters: "تمام قاری",
+  nowPlaying: "اب چل رہا ہے",
+  loadError: "یہ آیت نہیں چل سکی۔ اپنا کنکشن چیک کریں اور دوبارہ کوشش کریں۔",
+  listen: "سنیں",
+  listenSurah: "سورۂ {surah} سنیں",
+  listenPage: "اس صفحے سے سنیں",
+  ended: "تلاوت مکمل ہوئی",
+  changeReciter: "قاری بدلیں",
+  goToAyah: "آیت پر جائیں",
+  surahs: "سورتیں",
+  langNames: { en: "انگریزی", fa: "فارسی", az: "آذربائیجانی", bs: "بوسنیائی", ur: "اردو" },
+};
+
+const fa: PlayerMessages = {
+  description: "قرآن کریم را با صدای بیش از پنجاه قاری، آیه به آیه بشنوید، حتی هنگام گشت‌وگذار در سایت.",
+  subtitle: "قاری را انتخاب کنید، سپس یک سوره کامل را پخش کنید یا از هر سوره‌ای ادامه دهید — پخش هنگام جابه‌جایی در سایت ادامه می‌یابد.",
+  play: "پخش",
+  pause: "توقف",
+  prevAyah: "آیه قبلی",
+  nextAyah: "آیه بعدی",
+  expand: "باز کردن پخش‌کننده",
+  collapse: "کوچک کردن پخش‌کننده",
+  close: "توقف و بستن",
+  repeat: "تکرار",
+  repeatOff: "بدون تکرار",
+  repeatSurah: "تکرار سوره",
+  repeatAyah: "تکرار آیه",
+  speed: "سرعت پخش",
+  playSurah: "پخش سوره",
+  playFromHere: "پخش همه از اینجا",
+  favourites: "علاقه‌مندی‌ها",
+  addFavourite: "افزودن به علاقه‌مندی‌ها",
+  removeFavourite: "حذف از علاقه‌مندی‌ها",
+  allReciters: "همه قاریان",
+  nowPlaying: "در حال پخش",
+  loadError: "این آیه پخش نشد. اتصال خود را بررسی کنید و دوباره تلاش کنید.",
+  listen: "شنیدن",
+  listenSurah: "شنیدن سوره {surah}",
+  listenPage: "شنیدن از این صفحه",
+  ended: "تلاوت به پایان رسید",
+  changeReciter: "تغییر قاری",
+  goToAyah: "رفتن به آیه",
+  surahs: "سوره‌ها",
+  langNames: { en: "انگلیسی", fa: "فارسی", az: "آذربایجانی", bs: "بوسنیایی", ur: "اردو" },
+};
+
+const ru: PlayerMessages = {
+  description: "Слушайте Священный Коран в исполнении более пятидесяти чтецов, аят за аятом, не прерываясь при переходах по сайту.",
+  subtitle: "Выберите чтеца и включите суру целиком или слушайте подряд с любой суры — чтение продолжается, пока вы ходите по сайту.",
+  play: "Слушать",
+  pause: "Пауза",
+  prevAyah: "Предыдущий аят",
+  nextAyah: "Следующий аят",
+  expand: "Открыть плеер",
+  collapse: "Свернуть плеер",
+  close: "Остановить и закрыть",
+  repeat: "Повтор",
+  repeatOff: "Без повтора",
+  repeatSurah: "Повторять суру",
+  repeatAyah: "Повторять аят",
+  speed: "Скорость",
+  playSurah: "Слушать суру",
+  playFromHere: "Слушать всё отсюда",
+  favourites: "Избранное",
+  addFavourite: "Добавить в избранное",
+  removeFavourite: "Убрать из избранного",
+  allReciters: "Все чтецы",
+  nowPlaying: "Сейчас звучит",
+  loadError: "Не удалось воспроизвести этот аят. Проверьте подключение и попробуйте снова.",
+  listen: "Слушать",
+  listenSurah: "Слушать суру «{surah}»",
+  listenPage: "Слушать с этой страницы",
+  ended: "Чтение завершено",
+  changeReciter: "Сменить чтеца",
+  goToAyah: "Перейти к аяту",
+  surahs: "Суры",
+  langNames: { en: "английский", fa: "персидский", az: "азербайджанский", bs: "боснийский", ur: "урду" },
+};
+
+const ms: PlayerMessages = {
+  description: "Dengar Al-Quran dibacakan oleh lebih lima puluh qari, ayat demi ayat, sambil anda melayari laman ini.",
+  subtitle: "Pilih qari, kemudian mainkan satu surah penuh atau teruskan dari mana-mana surah — bacaan terus dimainkan semasa anda melayari laman.",
+  play: "Main",
+  pause: "Jeda",
+  prevAyah: "Ayat sebelumnya",
+  nextAyah: "Ayat seterusnya",
+  expand: "Buka pemain",
+  collapse: "Kecilkan pemain",
+  close: "Henti dan tutup",
+  repeat: "Ulang",
+  repeatOff: "Tanpa ulangan",
+  repeatSurah: "Ulang surah",
+  repeatAyah: "Ulang ayat",
+  speed: "Kelajuan main",
+  playSurah: "Mainkan surah",
+  playFromHere: "Mainkan semua dari sini",
+  favourites: "Kegemaran",
+  addFavourite: "Tambah ke kegemaran",
+  removeFavourite: "Buang dari kegemaran",
+  allReciters: "Semua qari",
+  nowPlaying: "Sedang dimainkan",
+  loadError: "Ayat ini tidak dapat dimainkan. Semak sambungan anda dan cuba lagi.",
+  listen: "Dengar",
+  listenSurah: "Dengar Surah {surah}",
+  listenPage: "Dengar dari halaman ini",
+  ended: "Bacaan selesai",
+  changeReciter: "Tukar qari",
+  goToAyah: "Pergi ke ayat",
+  surahs: "Surah",
+  langNames: { en: "Inggeris", fa: "Parsi", az: "Azerbaijan", bs: "Bosnia", ur: "Urdu" },
+};
+
+const tr: PlayerMessages = {
+  description: "Kur'an-ı Kerim'i elliden fazla kârînin sesinden, ayet ayet dinleyin; site içinde gezinirken de devam etsin.",
+  subtitle: "Bir kârî seçin, ardından bir sureyi baştan sona dinleyin ya da herhangi bir sureden itibaren devam edin — sitede gezinirken okuma sürer.",
+  play: "Oynat",
+  pause: "Duraklat",
+  prevAyah: "Önceki ayet",
+  nextAyah: "Sonraki ayet",
+  expand: "Oynatıcıyı aç",
+  collapse: "Oynatıcıyı küçült",
+  close: "Durdur ve kapat",
+  repeat: "Tekrar",
+  repeatOff: "Tekrar kapalı",
+  repeatSurah: "Sureyi tekrarla",
+  repeatAyah: "Ayeti tekrarla",
+  speed: "Oynatma hızı",
+  playSurah: "Sureyi oynat",
+  playFromHere: "Buradan itibaren tümünü oynat",
+  favourites: "Favoriler",
+  addFavourite: "Favorilere ekle",
+  removeFavourite: "Favorilerden çıkar",
+  allReciters: "Tüm kârîler",
+  nowPlaying: "Şimdi çalıyor",
+  loadError: "Bu ayet oynatılamadı. Bağlantınızı kontrol edip tekrar deneyin.",
+  listen: "Dinle",
+  listenSurah: "{surah} Suresi'ni dinle",
+  listenPage: "Bu sayfadan dinle",
+  ended: "Okuma tamamlandı",
+  changeReciter: "Kârîyi değiştir",
+  goToAyah: "Ayete git",
+  surahs: "Sureler",
+  langNames: { en: "İngilizce", fa: "Farsça", az: "Azerbaycanca", bs: "Boşnakça", ur: "Urduca" },
+};
+
+const id: PlayerMessages = {
+  description: "Dengarkan Al-Qur'an dibacakan oleh lebih dari lima puluh qari, ayat demi ayat, sambil menjelajahi situs.",
+  subtitle: "Pilih qari, lalu putar satu surah penuh atau lanjutkan dari surah mana pun — bacaan tetap diputar saat Anda berpindah halaman.",
+  play: "Putar",
+  pause: "Jeda",
+  prevAyah: "Ayat sebelumnya",
+  nextAyah: "Ayat berikutnya",
+  expand: "Buka pemutar",
+  collapse: "Perkecil pemutar",
+  close: "Hentikan dan tutup",
+  repeat: "Ulangi",
+  repeatOff: "Tanpa pengulangan",
+  repeatSurah: "Ulangi surah",
+  repeatAyah: "Ulangi ayat",
+  speed: "Kecepatan putar",
+  playSurah: "Putar surah",
+  playFromHere: "Putar semua dari sini",
+  favourites: "Favorit",
+  addFavourite: "Tambahkan ke favorit",
+  removeFavourite: "Hapus dari favorit",
+  allReciters: "Semua qari",
+  nowPlaying: "Sedang diputar",
+  loadError: "Ayat ini tidak dapat diputar. Periksa koneksi Anda lalu coba lagi.",
+  listen: "Dengarkan",
+  listenSurah: "Dengarkan Surah {surah}",
+  listenPage: "Dengarkan dari halaman ini",
+  ended: "Bacaan selesai",
+  changeReciter: "Ganti qari",
+  goToAyah: "Pergi ke ayat",
+  surahs: "Surah",
+  langNames: { en: "Inggris", fa: "Persia", az: "Azerbaijan", bs: "Bosnia", ur: "Urdu" },
+};
+
+export const player: Record<Locale, PlayerMessages> = { ar, en, ur, fa, ru, ms, tr, id };

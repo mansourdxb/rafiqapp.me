@@ -9,6 +9,7 @@ const ur: Common = {
   nav: {
     home: "ہوم",
     quran: "قرآن",
+    listen: "قرآن سنیں",
     hadith: "حدیث",
     athkar: "اذکار",
     prayer: "نماز کے اوقات",
@@ -63,6 +64,7 @@ const fa: Common = {
   nav: {
     home: "خانه",
     quran: "قرآن",
+    listen: "شنیدن قرآن",
     hadith: "حدیث",
     athkar: "اذکار",
     prayer: "اوقات نماز",
@@ -117,6 +119,7 @@ const ru: Common = {
   nav: {
     home: "Главная",
     quran: "Коран",
+    listen: "Слушать Коран",
     hadith: "Хадисы",
     athkar: "Азкары",
     prayer: "Время намаза",
@@ -171,6 +174,7 @@ const ms: Common = {
   nav: {
     home: "Utama",
     quran: "Al-Quran",
+    listen: "Dengar Al-Quran",
     hadith: "Hadis",
     athkar: "Azkar",
     prayer: "Waktu solat",
@@ -225,6 +229,7 @@ const tr: Common = {
   nav: {
     home: "Ana sayfa",
     quran: "Kur'an",
+    listen: "Kur'an dinle",
     hadith: "Hadis",
     athkar: "Zikirler",
     prayer: "Namaz vakitleri",
@@ -279,6 +284,7 @@ const id: Common = {
   nav: {
     home: "Beranda",
     quran: "Al-Quran",
+    listen: "Dengarkan Al-Quran",
     hadith: "Hadis",
     athkar: "Azkar",
     prayer: "Jadwal shalat",
