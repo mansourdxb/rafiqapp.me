@@ -1,7 +1,7 @@
 "use client";
 // Live compass: DeviceOrientationEvent (iOS: webkitCompassHeading after requestPermission on a tap;
 // Android/Chrome: deviceorientationabsolute). Without a sensor the dial stays north-up.
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import type { Locale } from "@/i18n/config";
 import { appT } from "@/i18n/app";
 import { qiblaMsg } from "@/i18n/messages/qibla";
@@ -11,6 +11,11 @@ import { Dial } from "./Dial";
 type Status = "idle" | "waiting" | "on" | "nosensor" | "denied";
 type OrientationEv = DeviceOrientationEvent & { webkitCompassHeading?: number };
 type DOEStatic = { requestPermission?: () => Promise<"granted" | "denied"> };
+
+const noSub = () => () => {};
+/** Phone/tablet with an orientation sensor API (computers with a mouse have no compass). */
+const isMobileSensor = () =>
+  (window.matchMedia("(pointer: coarse)").matches || navigator.maxTouchPoints > 1) && typeof window.DeviceOrientationEvent !== "undefined";
 
 export function CompassTab({ lang, qibla }: { lang: Locale; qibla: number }) {
   const t = qiblaMsg[lang];
@@ -24,14 +29,15 @@ export function CompassTab({ lang, qibla }: { lang: Locale; qibla: number }) {
 
   useEffect(() => () => cleanup.current?.(), []);
 
-  const start = async () => {
+  /** `auto`: tried on page load — iPhone refuses without a tap, so failure just leaves the button. */
+  const start = async (auto = false) => {
     const DOE = (typeof window !== "undefined" ? window.DeviceOrientationEvent : undefined) as unknown as DOEStatic | undefined;
     cleanup.current?.();
     if (!DOE) return setStatus("nosensor");
     try {
-      if (typeof DOE.requestPermission === "function" && (await DOE.requestPermission()) !== "granted") return setStatus("denied");
+      if (typeof DOE.requestPermission === "function" && (await DOE.requestPermission()) !== "granted") return setStatus(auto ? "idle" : "denied");
     } catch {
-      return setStatus("denied");
+      return setStatus(auto ? "idle" : "denied");
     }
     setStatus("waiting");
     const screenAngle = () => (typeof screen !== "undefined" && screen.orientation ? screen.orientation.angle : 0);
@@ -54,13 +60,27 @@ export function CompassTab({ lang, qibla }: { lang: Locale; qibla: number }) {
     const absName = "ondeviceorientationabsolute" in window ? "deviceorientationabsolute" : null;
     if (absName) window.addEventListener(absName, onAbs as EventListener);
     else window.addEventListener("deviceorientation", onRel as EventListener);
-    const timer = setTimeout(() => setStatus((s) => (s === "waiting" ? "nosensor" : s)), 3000);
+    const timer = setTimeout(() => setStatus((s) => (s === "waiting" ? (auto ? "idle" : "nosensor") : s)), 3000);
     cleanup.current = () => {
       clearTimeout(timer);
       if (absName) window.removeEventListener(absName, onAbs as EventListener);
       else window.removeEventListener("deviceorientation", onRel as EventListener);
     };
   };
+
+  // A live compass needs a phone/tablet sensor. Computers get no start/calibrate buttons — the dial
+  // already shows the angle from north. Phones without a permission prompt (Android) start by
+  // themselves; iPhone needs the tap.
+  const mobile = useSyncExternalStore(noSub, isMobileSensor, () => null);
+  const autoStarted = useRef(false);
+  useEffect(() => {
+    if (!mobile || autoStarted.current) return;
+    const id = setTimeout(() => {
+      autoStarted.current = true;
+      void start(true);
+    }, 0);
+    return () => clearTimeout(id);
+  });
 
   const diff = heading == null ? null : angleDiff(heading, qibla); // + → qibla is to the right
   const aligned = diff != null && Math.abs(diff) <= 5;
@@ -78,18 +98,20 @@ export function CompassTab({ lang, qibla }: { lang: Locale; qibla: number }) {
       )}
 
       <div className="flex flex-wrap items-center justify-center gap-2">
-        {status !== "on" && (
-          <button type="button" onClick={start} disabled={status === "waiting"} className="h-11 rounded-lg bg-primary px-8 text-sm font-bold text-white hover:bg-primary-deep disabled:opacity-70">
+        {mobile && status !== "on" && (
+          <button type="button" onClick={() => void start()} disabled={status === "waiting"} className="h-11 rounded-lg bg-primary px-8 text-sm font-bold text-white hover:bg-primary-deep disabled:opacity-70">
             {t.startCompass}
           </button>
         )}
-        <button type="button" onClick={() => setCalib((c) => !c)} className="h-11 rounded-full px-6 text-sm font-bold text-navy-2 ring-1 ring-primary hover:bg-tint dark:text-white">
-          {t.calibrate}
-        </button>
+        {mobile && (
+          <button type="button" onClick={() => setCalib((c) => !c)} className="h-11 rounded-full px-6 text-sm font-bold text-navy-2 ring-1 ring-primary hover:bg-tint dark:text-white">
+            {t.calibrate}
+          </button>
+        )}
       </div>
 
       <p className="max-w-md text-center text-sm text-ink-2">
-        {status === "on" ? t.compassOn : status === "nosensor" ? t.noSensor : status === "denied" ? t.denied : t.desktopHint}
+        {mobile === false ? t.desktopHint : status === "on" ? t.compassOn : status === "nosensor" ? t.noSensor : status === "denied" ? t.denied : t.desktopHint}
       </p>
       {status === "on" && <p className="max-w-md text-center text-xs text-ink-2">{appT(lang, "alm.qibla.holdFlat")}</p>}
 
