@@ -26,7 +26,7 @@ const ur: Home = {
     stats: [
       { value: "9", label: "حدیث کی کتابیں" },
       { value: "8", label: "زبانیں" },
-      { value: "0", label: "اشتہارات — ہمیشہ مفت" },
+      { value: "بغیر اشتہارات", label: "ہمیشہ مفت" },
     ],
   },
   reviews: {
@@ -62,7 +62,7 @@ const fa: Home = {
     stats: [
       { value: "9", label: "کتاب حدیث" },
       { value: "8", label: "زبان" },
-      { value: "0", label: "تبلیغات — همیشه رایگان" },
+      { value: "بدون تبلیغات", label: "همیشه رایگان" },
     ],
   },
   reviews: {
@@ -98,7 +98,7 @@ const ru: Home = {
     stats: [
       { value: "9", label: "Сборников хадисов" },
       { value: "8", label: "Языков" },
-      { value: "0", label: "Рекламы — всегда бесплатно" },
+      { value: "Без рекламы", label: "Всегда бесплатно" },
     ],
   },
   reviews: {
@@ -134,7 +134,7 @@ const ms: Home = {
     stats: [
       { value: "9", label: "Kitab hadis" },
       { value: "8", label: "Bahasa" },
-      { value: "0", label: "Iklan — percuma selamanya" },
+      { value: "Tanpa iklan", label: "Percuma selamanya" },
     ],
   },
   reviews: {
@@ -170,7 +170,7 @@ const tr: Home = {
     stats: [
       { value: "9", label: "Hadis kitabı" },
       { value: "8", label: "Dil" },
-      { value: "0", label: "Reklam — her zaman ücretsiz" },
+      { value: "Reklamsız", label: "Her zaman ücretsiz" },
     ],
   },
   reviews: {
@@ -206,7 +206,7 @@ const id: Home = {
     stats: [
       { value: "9", label: "Kitab hadis" },
       { value: "8", label: "Bahasa" },
-      { value: "0", label: "Iklan — gratis selamanya" },
+      { value: "Tanpa iklan", label: "Gratis selamanya" },
     ],
   },
   reviews: {

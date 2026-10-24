@@ -40,7 +40,7 @@ const en: Home = {
     stats: [
       { value: "9", label: "Books of hadith" },
       { value: "8", label: "Languages" },
-      { value: "0", label: "Ads — free forever" },
+      { value: "No ads", label: "Free forever" },
     ],
   },
   reviews: {
@@ -81,7 +81,7 @@ const ar: Home = {
     stats: [
       { value: "9", label: "كتب حديث" },
       { value: "8", label: "لغات" },
-      { value: "0", label: "إعلانات — مجاني دائمًا" },
+      { value: "بلا إعلانات", label: "مجاني دائمًا" },
     ],
   },
   reviews: {
