@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState, useSyncExternalStore } from "react";
 import { AuthButton } from "@/components/auth/AuthButton";
 import { Icon } from "@/components/ui/Icon";
-import { locales, localePath, nativeName, type Locale } from "@/i18n/config";
+import { isRtl, locales, localePath, nativeName, type Locale } from "@/i18n/config";
 import { common } from "@/i18n/messages/common";
 import { home } from "@/i18n/messages/home";
 import { STORES } from "@/lib/stores";
@@ -98,18 +98,21 @@ export function Navbar({ lang }: { lang: Locale }) {
   );
 
   return (
-    <header className="sticky top-0 z-40 lg:static">
+    <header className="sticky top-0 z-40 min-[1180px]:static">
       {/* top strip: banner + store links (desktop) */}
-      <div className="hidden bg-white shadow-[0_6px_20px_-12px_rgba(0,0,0,0.18)] lg:block dark:bg-card">
+      <div className="hidden bg-white shadow-[0_6px_20px_-12px_rgba(0,0,0,0.18)] min-[1180px]:block dark:bg-card">
         <div className="mx-auto flex h-[90px] max-w-7xl items-center justify-between px-6">
           <span className="w-40" />
+          {/* like the reference banner in every language: photo on the left, logo at the far right,
+              the words beside it in the page's own direction */}
           <Link
             href={`${localePath(lang)}#download`}
-            className="relative flex h-[72px] w-[728px] max-w-full items-center justify-between overflow-hidden rounded-md bg-gradient-to-r from-tint via-white to-white px-6 ring-1 ring-line rtl:bg-gradient-to-l"
+            dir="ltr"
+            className="relative flex h-[72px] w-[728px] max-w-full items-center justify-end overflow-hidden rounded-md bg-gradient-to-r from-tint via-white to-white px-6 ring-1 ring-line"
           >
-            <Image src="/images/ref/catHeader3.webp" alt="" width={300} height={72} className="absolute start-0 top-0 h-full w-60 object-cover opacity-90 [mask-image:linear-gradient(to_right,black,transparent)] rtl:[mask-image:linear-gradient(to_left,black,transparent)]" />
-            <span className="relative ms-auto flex items-center gap-4">
-              <span className="text-end">
+            <Image src="/images/ref/catHeader3.webp" alt="" width={300} height={72} className="absolute left-0 top-0 h-full w-60 object-cover opacity-90 [mask-image:linear-gradient(to_right,black,transparent)]" />
+            <span className="relative flex items-center gap-4">
+              <span dir={isRtl(lang) ? "rtl" : "ltr"} className="text-right">
                 <span className="block text-xl font-extrabold text-navy-2">{h.strip.tagline}</span>
                 <span className="block text-sm font-bold text-orange">{h.strip.sub}</span>
               </span>
@@ -129,12 +132,12 @@ export function Navbar({ lang }: { lang: Locale }) {
       </div>
 
       {/* navy menu bar (desktop) */}
-      <nav className="hidden bg-navy lg:block">
-        <div className="mx-auto flex h-[87px] max-w-7xl items-center gap-8 px-6">
+      <nav className="hidden bg-navy min-[1180px]:block">
+        <div className="mx-auto flex h-[87px] max-w-7xl items-center gap-5 px-4">
           <Link href={localePath(lang)} className="shrink-0 rounded-2xl bg-white p-1 shadow-md">
             <Image src="/logo-512.png" alt={t.siteName} width={72} height={72} className="rounded-xl" priority />
           </Link>
-          <ul className="mx-auto flex items-center gap-5 xl:gap-7">
+          <ul className="mx-auto flex items-center gap-4 2xl:gap-6">
             <li>
               <Link href={localePath(lang)} className={link(isHome)}>
                 {t.nav.home}
@@ -166,7 +169,7 @@ export function Navbar({ lang }: { lang: Locale }) {
               )}
             </li>
           </ul>
-          <div className="flex shrink-0 items-center gap-4">
+          <div className="flex shrink-0 items-center gap-3">
             <AuthButton lang={lang} variant="desktop" />
             {langMenu}
             <button onClick={toggleTheme} className="text-white/80 hover:text-white" aria-label={dark ? t.theme.light : t.theme.dark}>
@@ -177,7 +180,7 @@ export function Navbar({ lang }: { lang: Locale }) {
       </nav>
 
       {/* mobile bar: logo + menu */}
-      <div className="flex h-16 items-center justify-between bg-white px-4 shadow-[0_4px_16px_-10px_rgba(0,0,0,0.25)] lg:hidden dark:bg-card">
+      <div className="flex h-16 items-center justify-between bg-white px-4 shadow-[0_4px_16px_-10px_rgba(0,0,0,0.25)] min-[1180px]:hidden dark:bg-card">
         <div className="flex items-center gap-3">
           <button onClick={() => setOpen((v) => !v)} aria-label={open ? t.close : t.menu} aria-expanded={open} className="text-navy dark:text-white">
             <Icon name={open ? "close" : "menu"} className="size-8" />
@@ -190,7 +193,7 @@ export function Navbar({ lang }: { lang: Locale }) {
         </Link>
       </div>
       {open && (
-        <div className="max-h-[calc(100dvh-4rem)] overflow-y-auto bg-navy px-4 pb-6 pt-3 text-white lg:hidden">
+        <div className="max-h-[calc(100dvh-4rem)] overflow-y-auto bg-navy px-4 pb-6 pt-3 text-white min-[1180px]:hidden">
           <ul className="grid gap-1">
             <li>
               <Link href={localePath(lang)} className={`block rounded-xl px-3 py-3 font-bold ${isHome ? "bg-white/10" : ""}`}>

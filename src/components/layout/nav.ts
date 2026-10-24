@@ -22,11 +22,11 @@ export const NAV_MAIN: NavItem[] = [
   NAV[2],
   NAV[3],
   { key: "articles", href: "/articles/", icon: "bookmark" },
+  { key: "listen", href: "/quran/listen/", icon: "play" },
+  NAV[4],
 ];
 
 export const NAV_MORE: NavItem[] = [
-  { key: "listen", href: "/quran/listen/", icon: "play" },
-  NAV[4],
   NAV[5],
   NAV[6],
   NAV[7],

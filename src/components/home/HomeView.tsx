@@ -62,9 +62,8 @@ export function HomeView({ lang }: { lang: Locale }) {
         </div>
       </section>
 
-      {/* prayer times, with the books image at the page edge like the reference */}
+      {/* prayer times */}
       <div className="relative pb-6 pt-4">
-        <Image src="/images/ref/books.webp" alt="" width={120} height={354} className="pointer-events-none absolute end-0 top-24 -z-0 hidden w-14 opacity-90 min-[1440px]:block" />
         <HomePrayer lang={lang} />
       </div>
 
