@@ -14,10 +14,12 @@ export function NamesGrid({ lang, list, labels }: { lang: Locale; list: Item[]; 
   const shown = useMemo(() => {
     const k = normalize(q);
     if (!k) return list;
+    // transliteration: no spaces / hyphens / apostrophes, long vowels as short ("Ar-Rahmaan" ~ "rahman")
+    const tl = (v: string) => normalize(v).replace(/[\s'’-]/g, "").replace(/aa/g, "a").replace(/ee|ii/g, "i").replace(/oo|uu|ou/g, "u");
     return list.filter(
       (x) =>
         normalize(x.ar).includes(k) ||
-        normalize(x.tl).replace(/[\s'-]/g, "").includes(k.replace(/[\s'-]/g, "")) ||
+        tl(x.tl).includes(tl(k)) ||
         normalize(x.m).includes(k) ||
         normalize(x.en).includes(k) ||
         String(x.n) === k,

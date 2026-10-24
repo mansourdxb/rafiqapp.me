@@ -1,4 +1,5 @@
 // Build-time Qur'an data (scripts/data/10-quran.mjs) + helpers shared by the index and the reader.
+import { searchFold } from "@/lib/searchFold";
 import surahsJson from "@/generated/quran-surahs.json";
 import metaJson from "@/generated/quran-meta.json";
 import type { Locale } from "@/i18n/config";
@@ -77,12 +78,8 @@ export const arabicIndic = (n: number | string) => String(n).replace(/\d/g, (d) 
 
 /** Lower-case, no diacritics / tashkeel / spaces / hyphens / apostrophes (AlMosalyQuranIndex.norm). */
 export function norm(s: string): string {
-  return s
-    .normalize("NFD")
-    .replace(/[̀-ًͯ-ٰٟۖ-ۭ]/g, "")
+  return searchFold(s)
     .replace(/[\s\-'’`ʿʾ‘.]/g, "")
-    .replace(/ٱ/g, "ا")
-    .toLowerCase()
     .replace(/aa/g, "a")
     .replace(/ee/g, "i")
     .replace(/oo|ou/g, "u");
