@@ -32,7 +32,7 @@ const ur: Home = {
   },
   reviews: {
     title: "ہمارے صارفین کی رائے",
-    body: "رفیق المسلم آپ کو نماز کے اوقات یاد دلاتا ہے، اللہ کے ذکر میں مدد کرتا ہے اور قرآن سے جوڑتا ہے۔ App Store پر صارفین کی رائے۔",
+    body: "رفیق المسلم آپ کو نماز کے اوقات یاد دلاتا ہے، اللہ کے ذکر میں مدد کرتا ہے اور قرآن سے جوڑتا ہے۔ App Store اور Google Play پر صارفین کی رائے۔",
     write: "اپنی رائے لکھیں",
   },
   contact: { title: "رابطہ کریں", body: "کوئی سوال، تجویز یا مسئلہ؟ ہمیں لکھیں — ہم ہر پیغام پڑھتے ہیں۔", message: "ہمیں آپ کی بات سن کر خوشی ہوگی", send: "بھیجیں" },
@@ -69,7 +69,7 @@ const fa: Home = {
   },
   reviews: {
     title: "نظر کاربران ما",
-    body: "رفیق المسلم اوقات نماز را یادآوری می‌کند، در ذکر خدا یاری می‌دهد و شما را با قرآن پیوند می‌دهد. نظر کاربران در App Store.",
+    body: "رفیق المسلم اوقات نماز را یادآوری می‌کند، در ذکر خدا یاری می‌دهد و شما را با قرآن پیوند می‌دهد. نظر کاربران در App Store و Google Play.",
     write: "نظر خود را بنویسید",
   },
   contact: { title: "تماس با ما", body: "پرسش، پیشنهاد یا مشکلی دارید؟ برای ما بنویسید — همهٔ پیام‌ها را می‌خوانیم.", message: "از شنیدن نظر شما خوشحال می‌شویم", send: "ارسال" },
@@ -106,7 +106,7 @@ const ru: Home = {
   },
   reviews: {
     title: "Мнения наших пользователей",
-    body: "Рафик Аль-Муслим напоминает о намазе, помогает поминать Аллаха и связывает с Кораном. Вот что пишут пользователи в App Store.",
+    body: "Рафик Аль-Муслим напоминает о намазе, помогает поминать Аллаха и связывает с Кораном. Вот что пишут пользователи в App Store и Google Play.",
     write: "Оставить отзыв",
   },
   contact: { title: "Связаться с нами", body: "Вопрос, предложение или проблема? Напишите нам — мы читаем каждое сообщение.", message: "Будем рады вашему сообщению", send: "Отправить" },
@@ -143,7 +143,7 @@ const ms: Home = {
   },
   reviews: {
     title: "Pendapat pengguna kami",
-    body: "Rafiq Al-Muslim mengingatkan waktu solat, membantu berzikir dan menghubungkan anda dengan Al-Quran. Ini kata pengguna di App Store.",
+    body: "Rafiq Al-Muslim mengingatkan waktu solat, membantu berzikir dan menghubungkan anda dengan Al-Quran. Ini kata pengguna di App Store dan Google Play.",
     write: "Tulis ulasan anda",
   },
   contact: { title: "Hubungi kami", body: "Ada soalan, cadangan atau masalah? Tulis kepada kami — kami membaca setiap mesej.", message: "Kami gembira mendengar daripada anda", send: "Hantar" },
@@ -180,7 +180,7 @@ const tr: Home = {
   },
   reviews: {
     title: "Kullanıcılarımızın görüşleri",
-    body: "Rafiq Al-Muslim namaz vakitlerini hatırlatır, zikre yardım eder ve sizi Kur'an'la buluşturur. App Store'da kullanıcıların yorumları.",
+    body: "Rafiq Al-Muslim namaz vakitlerini hatırlatır, zikre yardım eder ve sizi Kur'an'la buluşturur. App Store ve Google Play'deki kullanıcı yorumları.",
     write: "Yorumunuzu yazın",
   },
   contact: { title: "Bize ulaşın", body: "Sorunuz, öneriniz ya da bir sorununuz mu var? Bize yazın — her mesajı okuyoruz.", message: "Sizden haber almaktan mutluluk duyarız", send: "Gönder" },
@@ -217,7 +217,7 @@ const id: Home = {
   },
   reviews: {
     title: "Pendapat pengguna kami",
-    body: "Rafiq Al-Muslim mengingatkan waktu shalat, membantu berzikir dan menghubungkan Anda dengan Al-Quran. Inilah kata pengguna di App Store.",
+    body: "Rafiq Al-Muslim mengingatkan waktu shalat, membantu berzikir dan menghubungkan Anda dengan Al-Quran. Inilah kata pengguna di App Store dan Google Play.",
     write: "Tulis ulasan Anda",
   },
   contact: { title: "Hubungi kami", body: "Ada pertanyaan, saran atau masalah? Kirimi kami pesan — kami membaca setiap pesan.", message: "Kami senang mendengar dari Anda", send: "Kirim" },
