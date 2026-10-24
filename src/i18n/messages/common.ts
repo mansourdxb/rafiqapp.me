@@ -28,13 +28,14 @@ export type Common = {
   menu: string;
   close: string;
   getApp: string;
+  getAppNow: string;
   appStore: string;
   googlePlay: string;
   appGallery: string;
   downloadOn: string;
   getItOn: string;
   exploreOn: string;
-  footer: { about: string; services: string; legal: string; privacy: string; contact: string; rights: string; free: string };
+  footer: { about: string; services: string; legal: string; privacy: string; contact: string; rights: string; free: string; features: string; categories: string; website: string };
   loading: string;
   error: string;
   retry: string;
@@ -70,6 +71,7 @@ const en: Common = {
   menu: "Menu",
   close: "Close",
   getApp: "Get the app",
+  getAppNow: "Get Rafiq Al-Muslim now!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -84,6 +86,9 @@ const en: Common = {
     contact: "Contact us",
     rights: "All rights reserved.",
     free: "Free, without ads",
+    features: "Features",
+    categories: "Categories",
+    website: "Website",
   },
   loading: "Loading…",
   error: "Something went wrong. Check your connection.",
@@ -120,6 +125,7 @@ const ar: Common = {
   menu: "القائمة",
   close: "إغلاق",
   getApp: "حمّل التطبيق",
+  getAppNow: "حمّل رفيق المسلم الآن!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -134,6 +140,9 @@ const ar: Common = {
     contact: "تواصل معنا",
     rights: "جميع الحقوق محفوظة.",
     free: "مجاني وبلا إعلانات",
+    features: "المميزات",
+    categories: "التصنيفات",
+    website: "الموقع",
   },
   loading: "جارٍ التحميل…",
   error: "حدث خطأ. تحقق من اتصالك.",

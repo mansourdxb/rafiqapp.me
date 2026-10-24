@@ -1,17 +1,18 @@
 @import "tailwindcss";
 
-/* Colours of the app's new design ("sky" theme, client/context/appColors.ts + almosalyTheme.ts). */
+/* Colours and type of the reference design (navy bar, white pages, sky-blue + orange accents). */
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --color-primary: #029CCD;
-  --color-primary-light: #29ABE2;
-  --color-primary-deep: #1E93C9;
-  --color-section: #12608F;
-  --color-orange: #F47A1F;
-  --color-navy: #0D245E;
-  --color-navy-2: #15294D;
+  --color-primary: #00B0E9;       /* sky: buttons, links, icons */
+  --color-primary-light: #29C0F0;
+  --color-primary-deep: #029BCC;
+  --color-section: #174D92;       /* section headings */
+  --color-orange: #FF8711;        /* highlight words, footer bar */
+  --color-navy: #0F1C50;          /* menu bar, dark sections */
+  --color-navy-2: #14234E;        /* body text navy */
   --color-gold: #E8B84B;
+  --color-edge: #7CB4C8;          /* outlined pills and prayer cards */
 
   --color-canvas: var(--canvas);
   --color-card: var(--card);
@@ -20,17 +21,17 @@
   --color-ink-2: var(--ink-2);
   --color-line: var(--line);
 
-  --font-sans: var(--font-cairo), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-roboto), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
   --font-quran: "UthmanicHafs", "Amiri Quran", serif;
 }
 
 :root {
-  --canvas: #EDEFF2;
-  --card: #FFFFFF;
-  --tint: #EAF6FC;
-  --ink: #16202B;
-  --ink-2: #7C8A99;
-  --line: #E7EBEF;
+  --canvas: #FFFFFF;
+  --card: #F9F9FF;
+  --tint: #DFEDF2;
+  --ink: #14234E;
+  --ink-2: #5E6D84;
+  --line: #E3EEF2;
   color-scheme: light;
 }
 .dark {
@@ -41,6 +42,11 @@
   --ink-2: #8A98A6;
   --line: #283440;
   color-scheme: dark;
+}
+
+/* Arabic-script pages use the Arabic face first. */
+html[lang="ar"] body, html[lang="fa"] body, html[lang="ur"] body {
+  font-family: var(--font-almarai), var(--font-noto-ar), var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
 }
 
 @font-face {

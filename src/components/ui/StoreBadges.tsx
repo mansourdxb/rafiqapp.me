@@ -14,21 +14,21 @@ export function StoreBadges({ lang, className = "" }: { lang: Locale; className?
     { href: STORES.appGallery, path: HUAWEI, small: t.exploreOn, big: t.appGallery },
   ];
   return (
-    <div className={`flex flex-wrap gap-2.5 sm:gap-3 ${className}`}>
+    <div className={`flex flex-wrap gap-2 ${className}`}>
       {items.map((s) => (
         <a
           key={s.big}
           href={s.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-12 items-center gap-2.5 rounded-xl bg-black px-3.5 sm:h-14 sm:min-w-44 sm:gap-3 sm:rounded-2xl sm:px-4 text-white ring-1 ring-white/15 transition hover:-translate-y-0.5 hover:bg-black/85"
+          className="flex h-10 items-center gap-2 rounded-md bg-white px-2.5 text-black ring-1 ring-black/60 transition hover:-translate-y-0.5 hover:shadow-md"
         >
-          <svg viewBox="0 0 24 24" className="size-6 shrink-0 sm:size-7" fill="currentColor" aria-hidden>
+          <svg viewBox="0 0 24 24" className="size-6 shrink-0" fill="currentColor" aria-hidden>
             <path d={s.path} />
           </svg>
-          <span className="flex flex-col leading-tight">
-            <span className="text-[10px] opacity-80 sm:text-[11px]">{s.small}</span>
-            <span className="text-base font-bold sm:text-lg" dir="ltr">
+          <span className="flex flex-col leading-none">
+            <span className="text-[9px] uppercase">{s.small}</span>
+            <span className="text-[17px] font-semibold tracking-tight" dir="ltr">
               {s.big}
             </span>
           </span>

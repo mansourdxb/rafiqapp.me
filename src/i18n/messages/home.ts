@@ -1,147 +1,101 @@
-// Home page copy. Sections follow the page top to bottom. The other six languages are in home.more.ts.
+// Home page copy, in the order of the page. The other six languages are in home.more.ts.
 import type { Locale } from "../config";
 import { more } from "./home.more";
 
+type Slide = { before: string; highlight: string; after: string; body: string };
+
 export type Home = {
-  hero: { title: string; subtitle: string; getApp: string };
-  services: {
-    title: string;
-    subtitle: string;
-    open: string;
-    items: { quran: string; hadith: string; athkar: string; prayer: string; qibla: string; tasbeeh: string; names: string; calendar: string };
-  };
-  articles: { title: string; viewMore: string };
-  qibla: { before: string; highlight: string; after: string; methods: { compass: string; sunMoon: string; shadow: string; map: string }; open: string };
-  about: { title: string; body: string; stats: { pages: string; books: string; languages: string; ads: string } };
-  showcase: { title: string; items: { title: string; body: string }[] };
+  strip: { tagline: string; sub: string };
+  hero: { slides: [Slide, Slide, Slide, Slide]; getApp: string };
+  prayer: { title: string; more: string; method: string; next: string };
+  articles: { recent: string; mostRead: string; viewMore: string };
+  qibla: { before: string; highlight: string; after: string; methods: { compass: string; sunMoon: string; shadow: string; map: string } };
+  about: { title: string; body: string; stats: { value: string; label: string }[] };
   reviews: { title: string; body: string; write: string };
-  contact: { title: string; body: string; name: string; email: string; message: string; send: string };
-  download: { title: string; body: string; platforms: string };
+  contact: { title: string; body: string; message: string; send: string };
 };
 
 const en: Home = {
+  strip: { tagline: "Your companion in worship", sub: "Qur'an · Hadith · Adhkar · Prayer — free, without ads" },
   hero: {
-    title: "Know your prayer times for the day and the month, wherever you are",
-    subtitle: "Accurate prayer times for your location, the Qur'an in the Madinah Mushaf, hadith and your daily adhkar — free, with Rafiq Al-Muslim.",
+    slides: [
+      { before: "Know ", highlight: "prayer times", after: " according to your location, for the day and the month, with complete accuracy", body: "Know the exact prayer times for your city, with the athan at every prayer — with Rafiq Al-Muslim." },
+      { before: "Browse authentic ", highlight: "adhkar and duas", after: " from the Qur'an and Sunnah that every Muslim needs", body: "Morning and evening adhkar, Hisn al-Muslim and the tasbih, with audio and a counter." },
+      { before: "Read the Qur'an in the ", highlight: "Madinah Mushaf", after: ", with tafsir, translation and recitation", body: "Every page as printed in Madinah, with the meanings of the verses in your language." },
+      { before: "Find the ", highlight: "Qibla", after: " and hear the athan wherever you are", body: "Compass, sun and moon and map — and a full-screen athan at every prayer time." },
+    ],
     getApp: "Get Rafiq Al-Muslim now",
   },
-  services: {
-    title: "Use it right here",
-    subtitle: "Everything below works in your browser, with no sign-up.",
-    open: "Open",
-    items: {
-      quran: "The Madinah Mushaf, page by page, with translation, tafsir and recitation.",
-      hadith: "Bukhari, Muslim and the other seven books, chapter by chapter.",
-      athkar: "Morning, evening, after prayer and before sleep — with a counter.",
-      prayer: "Accurate times for your city, with the next prayer and a monthly table.",
-      qibla: "The direction of the Kaaba and your distance from it.",
-      tasbeeh: "A simple tasbih counter with your own adhkar and goals.",
-      names: "The 99 Names of Allah with their meanings.",
-      calendar: "The Hijri month at a glance, with the Islamic occasions.",
-    },
-  },
-  articles: { title: "Recent articles", viewMore: "View more" },
+  prayer: { title: "Prayer time", more: "More", method: "Method", next: "Next prayer" },
+  articles: { recent: "Recent articles", mostRead: "Most read", viewMore: "View more" },
   qibla: {
     before: "Know the ",
     highlight: "Qibla direction",
     after: " wherever you are, using different methods",
-    methods: { compass: "Compass", sunMoon: "Sun & moon", shadow: "Shadow", map: "Map" },
-    open: "Find the Qibla",
+    methods: { compass: "compass", sunMoon: "sun & moon", shadow: "shadow", map: "map" },
   },
   about: {
     title: "Everything a Muslim needs, in one free app",
-    body: "Rafiq Al-Muslim reminds you of prayer times, helps you remember Allah, connects you with the Qur'an and encourages you to do more good. Your companion in worship, every day.",
-    stats: { pages: "Mushaf pages", books: "Hadith books", languages: "Languages", ads: "Ads, ever" },
-  },
-  showcase: {
-    title: "Even more in the app",
-    items: [
-      { title: "The Madinah Mushaf", body: "Every page as printed in Madinah, with recitation by famous reciters, tafsir and word meanings." },
-      { title: "Prayer times and athan", body: "Athan at every prayer with a full-screen reminder, home-screen widgets and a monthly timetable." },
-      { title: "Adhkar and tasbih", body: "Hisn al-Muslim and the daily adhkar with audio, plus a tasbih that remembers your progress." },
-      { title: "Qibla anywhere", body: "A compass, a map and the sun and moon to find the Qibla wherever you are." },
+    body: "Rafiq Al-Muslim reminds you of prayer times, helps you remember Allah, connects you with the Qur'an and encourages you to do more good. The companion of every Muslim.",
+    stats: [
+      { value: "604", label: "Pages of the Madinah Mushaf" },
+      { value: "9", label: "Books of hadith" },
+      { value: "8", label: "Languages" },
+      { value: "0", label: "Ads — free forever" },
     ],
   },
   reviews: {
-    title: "What our users say",
-    body: "Real reviews from the App Store. Your opinion helps us improve — and helps others find the app.",
-    write: "Write a review",
+    title: "Our users' opinions",
+    body: "Rafiq Al-Muslim reminds you of prayer times, helps you remember Allah and connects you with the Qur'an. Here is what users say on the App Store.",
+    write: "Write your review",
   },
   contact: {
     title: "Contact us",
     body: "Questions, suggestions or a problem? Write to us — we read every message.",
-    name: "Your name",
-    email: "Your email",
-    message: "We're happy to hear from you",
+    message: "Happy to hear from you",
     send: "Send",
-  },
-  download: {
-    title: "Take Rafiq Al-Muslim with you",
-    body: "Athan reminders, offline Qur'an and recitation, widgets and more. Free, with no ads.",
-    platforms: "iPhone · iPad · Android · Huawei",
   },
 };
 
 const ar: Home = {
+  strip: { tagline: "رفيقك في الطاعة", sub: "القرآن · الحديث · الأذكار · الصلاة — مجانًا وبلا إعلانات" },
   hero: {
-    title: "اعرف مواقيت الصلاة لليوم والشهر حسب موقعك بدقة",
-    subtitle: "مواقيت صلاة دقيقة لموقعك، والقرآن الكريم بمصحف المدينة، والحديث الشريف، وأذكارك اليومية — مجانًا مع رفيق المسلم.",
+    slides: [
+      { before: "تعرف على ", highlight: "مواقيت الصلاة", after: " حسب موقعك لليوم والشهر بكل دقة", body: "تعرف على مواقيت الصلاة لمدينتك بدقة، مع الأذان عند كل صلاة — مع رفيق المسلم." },
+      { before: "تصفح صحيح ", highlight: "الأذكار والأدعية", after: " من القرآن والسنة التي يحتاجها كل مسلم", body: "أذكار الصباح والمساء وحصن المسلم والسبحة، بالصوت ومع العدّاد." },
+      { before: "اقرأ القرآن الكريم من ", highlight: "مصحف المدينة", after: " مع التفسير والترجمة والتلاوة", body: "كل صفحة كما طُبعت في المدينة المنورة، مع معاني الآيات بلغتك." },
+      { before: "حدد ", highlight: "اتجاه القبلة", after: " واستمع إلى الأذان أينما كنت", body: "البوصلة والشمس والقمر والخريطة — وأذان بشاشة كاملة عند كل صلاة." },
+    ],
     getApp: "حمّل رفيق المسلم الآن",
   },
-  services: {
-    title: "استخدمه هنا مباشرة",
-    subtitle: "كل الخدمات التالية تعمل في متصفحك دون تسجيل.",
-    open: "افتح",
-    items: {
-      quran: "مصحف المدينة صفحةً صفحة، مع الترجمة والتفسير والتلاوة.",
-      hadith: "البخاري ومسلم وبقية الكتب التسعة، كتابًا كتابًا.",
-      athkar: "أذكار الصباح والمساء وبعد الصلاة وقبل النوم — مع عدّاد.",
-      prayer: "مواقيت دقيقة لمدينتك، مع الصلاة القادمة وجدول شهري.",
-      qibla: "اتجاه الكعبة المشرفة والمسافة إليها.",
-      tasbeeh: "سبحة بسيطة بأذكارك وأهدافك.",
-      names: "أسماء الله الحسنى التسعة والتسعون ومعانيها.",
-      calendar: "الشهر الهجري بنظرة واحدة، مع المناسبات الإسلامية.",
-    },
-  },
-  articles: { title: "أحدث المقالات", viewMore: "عرض المزيد" },
+  prayer: { title: "أوقات الصلاة", more: "المزيد", method: "طريقة الحساب", next: "الصلاة القادمة" },
+  articles: { recent: "أحدث المقالات", mostRead: "الأكثر قراءة", viewMore: "عرض المزيد" },
   qibla: {
     before: "اعرف ",
     highlight: "اتجاه القبلة",
     after: " أينما كنت، بطرق مختلفة",
     methods: { compass: "البوصلة", sunMoon: "الشمس والقمر", shadow: "الظل", map: "الخريطة" },
-    open: "حدّد القبلة",
   },
   about: {
     title: "كل ما يحتاجه المسلم في تطبيق واحد مجاني",
-    body: "رفيق المسلم يذكّرك بمواقيت الصلاة، ويعينك على ذكر الله، ويصلك بالقرآن الكريم، ويحثّك على المزيد من الطاعات. رفيقك في الطاعة كل يوم.",
-    stats: { pages: "صفحة في المصحف", books: "كتب حديث", languages: "لغات", ads: "إعلانات، أبدًا" },
-  },
-  showcase: {
-    title: "والمزيد في التطبيق",
-    items: [
-      { title: "مصحف المدينة", body: "كل صفحة كما طُبعت في المدينة المنورة، مع تلاوات كبار القراء والتفسير ومعاني الكلمات." },
-      { title: "مواقيت الصلاة والأذان", body: "أذان عند كل صلاة مع شاشة تذكير كاملة، وأدوات للشاشة الرئيسية، وجدول شهري." },
-      { title: "الأذكار والسبحة", body: "حصن المسلم والأذكار اليومية بالصوت، وسبحة تحفظ تقدّمك." },
-      { title: "القبلة أينما كنت", body: "بوصلة وخريطة والشمس والقمر لتحديد القبلة في أي مكان." },
+    body: "تطبيق رفيق المسلم يذكّرك بمواقيت الصلاة، ويعينك على ذكر الله، ويصلك بالقرآن الكريم، ويحثّك على المزيد من الطاعات. رفيق كل مسلم.",
+    stats: [
+      { value: "604", label: "صفحة من مصحف المدينة" },
+      { value: "9", label: "كتب حديث" },
+      { value: "8", label: "لغات" },
+      { value: "0", label: "إعلانات — مجاني دائمًا" },
     ],
   },
   reviews: {
     title: "آراء مستخدمينا",
-    body: "تقييمات حقيقية من متجر App Store. رأيك يساعدنا على التطوير، ويساعد غيرك على الوصول إلى التطبيق.",
-    write: "اكتب تقييمك",
+    body: "تطبيق رفيق المسلم يذكّرك بمواقيت الصلاة، ويعينك على ذكر الله، ويصلك بالقرآن الكريم. هذه آراء المستخدمين في متجر App Store.",
+    write: "اكتب رأيك",
   },
   contact: {
     title: "تواصل معنا",
     body: "سؤال أو اقتراح أو مشكلة؟ راسلنا — نقرأ كل رسالة.",
-    name: "اسمك",
-    email: "بريدك الإلكتروني",
     message: "يسعدنا سماع رأيك",
     send: "إرسال",
-  },
-  download: {
-    title: "خذ رفيق المسلم معك",
-    body: "تنبيهات الأذان، والقرآن والتلاوة دون إنترنت، وأدوات الشاشة الرئيسية والمزيد. مجاني وبلا إعلانات.",
-    platforms: "iPhone · iPad · Android · Huawei",
   },
 };
 
