@@ -119,7 +119,7 @@ export function AthkarReader({
   return (
     <div className="pb-20">
       {/* sticky progress + reading settings */}
-      <div className="sticky top-16 z-30 border-y border-line bg-white/95 backdrop-blur lg:top-0 dark:bg-canvas/90">
+      <div className="sticky top-16 z-30 border-y border-line bg-white/95 backdrop-blur min-[1180px]:top-0 dark:bg-canvas/90">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-4 gap-y-2 px-4 py-2.5 lg:pe-[calc(100%-48rem-2rem)]">
           <div className="min-w-40 flex-1">
             <div className="text-xs font-semibold text-ink-2">{t.readCount.replace("{done}", d(doneCount)).replace("{total}", d(items.length))}</div>

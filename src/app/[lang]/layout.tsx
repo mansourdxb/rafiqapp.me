@@ -5,6 +5,7 @@ import "../globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { PlayerRoot } from "@/components/player/PlayerRoot";
+import { DownloadPrompt } from "@/components/layout/DownloadPrompt";
 import { dir, isLocale, locales, ogLocale, SITE_URL, type Locale } from "@/i18n/config";
 import { common } from "@/i18n/messages/common";
 import { alternates } from "@/i18n/metadata";
@@ -69,6 +70,7 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
           <Navbar lang={l} />
           <main>{children}</main>
           <Footer lang={l} />
+          <DownloadPrompt lang={l} />
         </PlayerRoot>
       </body>
     </html>

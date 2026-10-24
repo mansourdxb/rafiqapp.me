@@ -182,7 +182,7 @@ export function QuranReader({ lang, initialPage, initialData }: { lang: Locale; 
   return (
     <div className="mushaf min-h-[calc(100dvh-4rem)] bg-[var(--m-outer)]" ref={topRef}>
       {/* toolbar */}
-      <div className="sticky top-16 z-30 bg-white/95 shadow-[0_6px_20px_-12px_rgba(0,0,0,0.25)] backdrop-blur lg:top-0 dark:bg-card/95">
+      <div className="sticky top-16 z-30 bg-white/95 shadow-[0_6px_20px_-12px_rgba(0,0,0,0.25)] backdrop-blur min-[1180px]:top-0 dark:bg-card/95">
         <div className="mx-auto flex h-14 max-w-6xl items-center gap-2 px-3 sm:px-4">
           <Link href={localePath(lang, "/quran/")} className="inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-sm font-bold text-primary ring-1 ring-primary hover:bg-tint">
             <Icon name="menu" className="size-4" />
