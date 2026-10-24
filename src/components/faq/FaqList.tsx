@@ -1,18 +1,12 @@
 "use client";
 // FAQ accordion with search. Opens the question named in the URL hash (#qibla-accuracy).
+import { searchFold } from "@/lib/searchFold";
 import { useEffect, useMemo, useState } from "react";
 
 type Item = { id: string; q: string; steps: string[] };
 type Labels = { searchPlaceholder: string; noResults: string; expandAll: string; collapseAll: string };
 
-const norm = (s: string) =>
-  s
-    .toLocaleLowerCase()
-    .normalize("NFKD")
-    .replace(/[̀-ًͯ-ٰٟ]/g, "")
-    .replace(/[أإآٱ]/g, "ا")
-    .replace(/ى/g, "ي")
-    .replace(/ة/g, "ه");
+const norm = searchFold;
 
 export function FaqList({ items, labels, digits }: { items: Item[]; labels: Labels; digits: string[] }) {
   const [q, setQ] = useState("");

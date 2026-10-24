@@ -1,16 +1,10 @@
 "use client";
 // Title search over the current language's articles (index passed from the server: title, href, category).
+import { searchFold } from "@/lib/searchFold";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 
-const norm = (s: string) =>
-  s
-    .toLocaleLowerCase()
-    .normalize("NFKD")
-    .replace(/[̀-ًͯ-ٰٟ]/g, "")
-    .replace(/[أإآٱ]/g, "ا")
-    .replace(/ى/g, "ي")
-    .replace(/ة/g, "ه");
+const norm = searchFold;
 
 export function ArticleSearch({
   index,
