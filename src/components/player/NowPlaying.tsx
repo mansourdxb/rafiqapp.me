@@ -12,11 +12,12 @@ import { localDigits } from "@/lib/digits";
 import { arabicIndic, pageOfAyah, SURAHS } from "@/lib/quran/data";
 import { fetchPage, fetchTranslation } from "@/lib/quran/client";
 import { quranPageHref } from "@/lib/quran/href";
-import { CATEGORIES, LISTED_RECITERS, reciterName, reciterOf, reciterShortName } from "@/lib/player/reciters";
+import { reciterName, reciterOf } from "@/lib/player/reciters";
 import { usePlayer, usePlayerProgress } from "@/lib/player/usePlayer";
 import { clock, surahTitle, xOfY } from "./labels";
 import { PIcon, Spinner } from "./PlayerIcons";
 import { ReciterAvatar } from "./ReciterAvatar";
+import { ReciterPicker } from "./ReciterPicker";
 
 type AyahText = { key: string; ayah: string; tr: string };
 
@@ -77,9 +78,9 @@ export function NowPlaying({ lang }: { lang: Locale }) {
   return (
     <div className="fixed inset-0 z-[60] flex items-stretch justify-center md:items-center" role="dialog" aria-modal="true" aria-label={t.nowPlaying}>
       <button type="button" aria-label={t.collapse} tabIndex={-1} className="absolute inset-0 hidden cursor-default bg-black/45 backdrop-blur-[2px] md:block" onClick={() => p.setExpanded(false)} />
-      <div className="relative flex h-full w-full flex-col overflow-y-auto bg-white md:h-auto md:max-h-[94dvh] md:max-w-xl md:rounded-[15px] md:shadow-[0_5px_25px_rgba(0,0,0,0.25)] dark:bg-card">
+      <div className="relative flex h-full w-full flex-col overflow-y-auto bg-white md:h-auto md:max-h-[88dvh] md:max-w-md md:rounded-[15px] md:shadow-[0_5px_25px_rgba(0,0,0,0.25)] dark:bg-card">
         {/* top: navy, as the site's bar */}
-        <div className="bg-gradient-to-b from-navy to-section px-4 pb-6 text-white" style={{ paddingTop: "max(12px, env(safe-area-inset-top, 0px))" }}>
+        <div className="bg-gradient-to-b from-navy to-section px-4 pb-4 text-white" style={{ paddingTop: "max(12px, env(safe-area-inset-top, 0px))" }}>
           <div dir="ltr" className="flex items-center gap-2">
             <button type="button" onClick={() => p.setExpanded(false)} aria-label={t.collapse} className="grid size-10 place-items-center rounded-full hover:bg-white/10">
               <PIcon name="down" className="size-6" />
@@ -94,18 +95,18 @@ export function NowPlaying({ lang }: { lang: Locale }) {
             </button>
           </div>
 
-          <div className="mt-5 flex justify-center">
-            <ReciterAvatar reciter={p.reciter} size={168} className="rounded-[22px] shadow-[0_10px_30px_rgba(0,0,0,0.35)] ring-4 ring-white/15" />
+          <div className="mt-3 flex justify-center">
+            <ReciterAvatar reciter={p.reciter} size={96} className="rounded-[22px] shadow-[0_10px_30px_rgba(0,0,0,0.35)] ring-4 ring-white/15" />
           </div>
 
-          <div className="mx-auto mt-5 max-h-[34dvh] min-h-24 max-w-lg overflow-y-auto text-center md:max-h-56">
+          <div className="mx-auto mt-3 max-h-[26dvh] min-h-16 max-w-lg overflow-y-auto text-center md:max-h-40">
             {shown ? (
               <>
-                <p dir="rtl" lang="ar" className="quran text-[24px] leading-[2.05]">
+                <p dir="rtl" lang="ar" className="quran text-[20px] leading-[1.9]">
                   {shown.ayah} <span className="text-orange">{arabicIndic(p.ayah)}</span>
                 </p>
                 {shown.tr ? (
-                  <p dir={isRtl(lang) ? "rtl" : "ltr"} className="mt-2 text-[15px] leading-7 text-white/85">
+                  <p dir={isRtl(lang) ? "rtl" : "ltr"} className="mt-1.5 text-[13px] leading-6 text-white/85">
                     {shown.tr}
                   </p>
                 ) : null}
@@ -117,7 +118,7 @@ export function NowPlaying({ lang }: { lang: Locale }) {
               </div>
             )}
           </div>
-          <div className="mt-3 text-center">
+          <div className="mt-2 text-center">
             <Link href={quranPageHref(lang, page)} onClick={() => p.setExpanded(false)} className="text-xs font-bold text-primary-light hover:underline">
               {quran[lang].page} {localDigits(lang, page)}
             </Link>
@@ -125,34 +126,16 @@ export function NowPlaying({ lang }: { lang: Locale }) {
         </div>
 
         {/* bottom: white card with the controls */}
-        <div className="flex flex-1 flex-col gap-5 px-5 pb-6 pt-5" style={{ paddingBottom: "max(24px, env(safe-area-inset-bottom, 0px))" }}>
+        <div className="flex flex-1 flex-col gap-3.5 px-4 pb-4 pt-4" style={{ paddingBottom: "max(24px, env(safe-area-inset-bottom, 0px))" }}>
           {/* reciter */}
-          <label className="flex items-center gap-3 rounded-[15px] bg-card p-3 shadow-[0_3px_12px_rgba(0,0,0,0.1)] dark:shadow-none dark:ring-1 dark:ring-line">
-            <ReciterAvatar reciter={p.reciter} size={44} className="rounded-full" />
+          <div className="flex items-center gap-3 rounded-[15px] bg-card p-2.5 shadow-[0_3px_12px_rgba(0,0,0,0.1)] dark:shadow-none dark:ring-1 dark:ring-line">
+            <ReciterAvatar reciter={p.reciter} size={40} className="rounded-full" />
             <span className="min-w-0 flex-1">
-              <span className="block text-xs font-semibold text-orange">{appT(lang, "carplay.yourReciter")}</span>
-              <span className="block truncate font-bold text-section dark:text-primary-light">{reciterName(lang, p.reciter)}</span>
+              <span className="block text-[11px] font-semibold text-orange">{appT(lang, "carplay.yourReciter")}</span>
+              <span className="block truncate text-sm font-bold text-section dark:text-primary-light">{reciterName(lang, p.reciter)}</span>
             </span>
-            <span className="relative inline-flex h-9 shrink-0 items-center rounded-full px-3.5 text-sm font-bold text-primary ring-1 ring-primary hover:bg-tint">
-              {t.changeReciter}
-              <select
-                value={r ? (LISTED_RECITERS.some((x) => x.key === r.key) ? r.key : "") : ""}
-                onChange={(e) => p.setReciter(e.target.value)}
-                aria-label={t.changeReciter}
-                className="absolute inset-0 cursor-pointer opacity-0"
-              >
-                {CATEGORIES.map((c) => (
-                  <optgroup key={c.cat} label={appT(lang, c.key)}>
-                    {LISTED_RECITERS.filter((x) => x.cat === c.cat).map((x) => (
-                      <option key={x.key} value={x.key}>
-                        {reciterShortName(lang, x.key)}
-                      </option>
-                    ))}
-                  </optgroup>
-                ))}
-              </select>
-            </span>
-          </label>
+            <ReciterPicker lang={lang} value={r?.key ?? ""} label={t.changeReciter} searchLabel={appT(lang, "alm.audio.searchReciter")} onPick={p.setReciter} />
+          </div>
 
           {/* time in the ayah */}
           <div dir="ltr">
@@ -193,7 +176,7 @@ export function NowPlaying({ lang }: { lang: Locale }) {
               type="button"
               onClick={() => p.toggle()}
               aria-label={p.playing ? t.pause : t.play}
-              className="grid size-[72px] place-items-center rounded-full bg-primary text-white shadow-[0_8px_22px_rgba(0,176,233,0.45)] transition hover:bg-primary-deep"
+              className="grid size-[60px] place-items-center rounded-full bg-primary text-white shadow-[0_8px_22px_rgba(0,176,233,0.45)] transition hover:bg-primary-deep"
             >
               {p.status === "loading" ? <Spinner className="size-8" /> : <PIcon name={p.playing ? "pause" : "play"} className="size-8" />}
             </button>
@@ -214,7 +197,7 @@ export function NowPlaying({ lang }: { lang: Locale }) {
           </p>
 
           {/* progress through the surah: seek by ayah */}
-          <div className="rounded-[15px] bg-tint p-4">
+          <div className="rounded-[15px] bg-tint px-4 py-3">
             <div className="mb-2 flex items-center justify-between text-sm font-bold text-navy-2 dark:text-ink">
               <span>{t.goToAyah}</span>
               <span className="text-primary">{xOfY(lang, ayahValue, count)}</span>

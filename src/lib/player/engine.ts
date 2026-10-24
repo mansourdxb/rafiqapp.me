@@ -94,6 +94,8 @@ let els: HTMLAudioElement[] = [];
 let cur = 0;
 let gen = 0;
 let primed = false;
+/** True only while the idle element is being primed (muted) on the first tap. */
+let priming = false;
 let labeler: ((s: PlayerState) => { title: string; artist: string; album: string; artwork: string }) | null = null;
 
 const urlOf = (el: HTMLAudioElement) => el.dataset.url ?? "";
@@ -106,7 +108,11 @@ function ensureEls() {
     el.preload = "auto";
     const mine = () => cur === i;
     el.addEventListener("playing", () => {
-      if (!mine()) return;
+      // only the active element may sound; anything else (a late play() promise, a stray resume) stops
+      if (!mine()) {
+        if (!priming) el.pause();
+        return;
+      }
       set({ status: "playing" });
       preloadNext();
     });
@@ -209,10 +215,12 @@ function prime() {
   other.dataset.url = url;
   other.src = url;
   other.muted = true;
+  priming = true;
   const done = () => {
-    other.pause();
+    priming = false;
+    if (other !== active()) other.pause();
     other.muted = false;
-    if (other.currentTime) other.currentTime = 0;
+    if (other !== active() && other.currentTime) other.currentTime = 0;
   };
   void other.play().then(done, done);
 }
@@ -279,7 +287,8 @@ export function toggle(play?: boolean) {
   const want = play ?? !playing;
   const el = active();
   if (!want) {
-    el.pause();
+    ++gen; // a play() still pending must not resume after this pause
+    els.forEach((x) => x.pause());
     set({ status: "paused" });
     return;
   }
