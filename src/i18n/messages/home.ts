@@ -38,7 +38,6 @@ const en: Home = {
     title: "Everything a Muslim needs, in one free app",
     body: "Rafiq Al-Muslim reminds you of prayer times, helps you remember Allah, connects you with the Qur'an and encourages you to do more good. The companion of every Muslim.",
     stats: [
-      { value: "604", label: "Pages of the Madinah Mushaf" },
       { value: "9", label: "Books of hadith" },
       { value: "8", label: "Languages" },
       { value: "0", label: "Ads — free forever" },
@@ -80,7 +79,6 @@ const ar: Home = {
     title: "كل ما يحتاجه المسلم في تطبيق واحد مجاني",
     body: "تطبيق رفيق المسلم يذكّرك بمواقيت الصلاة، ويعينك على ذكر الله، ويصلك بالقرآن الكريم، ويحثّك على المزيد من الطاعات. رفيق كل مسلم.",
     stats: [
-      { value: "604", label: "صفحة من مصحف المدينة" },
       { value: "9", label: "كتب حديث" },
       { value: "8", label: "لغات" },
       { value: "0", label: "إعلانات — مجاني دائمًا" },

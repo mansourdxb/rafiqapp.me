@@ -29,7 +29,7 @@ const QIBLA_METHODS = [
   ["map", "/images/ref/qibla-map.webp"],
 ] as const;
 
-const STAT_ICONS: IconName[] = ["quran", "hadith", "globe", "names"];
+const STAT_ICONS: IconName[] = ["hadith", "globe", "names"];
 
 function Arrow() {
   return (
@@ -103,7 +103,7 @@ export function HomeView({ lang }: { lang: Locale }) {
         <div className="mx-auto max-w-6xl px-4 pb-16 text-center">
           <h2 className="text-[26px] font-bold text-section sm:text-[34px] dark:text-primary-light">{t.about.title}</h2>
           <p className="mx-auto mt-6 max-w-4xl text-lg leading-8 text-black dark:text-ink">{t.about.body}</p>
-          <ul className="mt-12 grid grid-cols-2 gap-8 text-start md:grid-cols-4">
+          <ul className="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-8 text-start sm:grid-cols-3">
             {t.about.stats.map((s, i) => (
               <li key={s.label} className="flex items-start gap-4">
                 <Icon name={STAT_ICONS[i]} className="size-10 shrink-0 text-primary" />
