@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رفيق المسلم — Rafiq Al-Muslim</title>
+<meta name="description" content="القرآن الكريم والحديث الشريف والأذكار ومواقيت الصلاة — Qur'an, hadith, adhkar and prayer times.">
+<meta property="og:title" content="رفيق المسلم — رفيقك في الطاعة">
+<meta property="og:image" content="https://rafiqapp.me/og-image.png">
+<link rel="canonical" href="https://rafiqapp.me/ar/">
+<link rel="icon" href="/logo.png">
+<script>
+  // Opens the site in the saved language, else the browser's, else Arabic.
+  (function () {
+    var langs = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id"];
+    var pick = null;
+    try { pick = localStorage.getItem("lang"); } catch (e) {}
+    if (langs.indexOf(pick) < 0) {
+      var nav = (navigator.languages || [navigator.language || ""]);
+      for (var i = 0; i < nav.length && !pick; i++) {
+        var c = String(nav[i]).slice(0, 2).toLowerCase();
+        if (langs.indexOf(c) >= 0) pick = c;
+      }
+    }
+    if (langs.indexOf(pick) < 0) pick = "ar";
+    location.replace("/" + pick + "/" + location.search + location.hash);
+  })();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=/ar/"></noscript>
+</head>
+<body style="background:#0D245E"></body>
+</html>
