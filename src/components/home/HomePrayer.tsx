@@ -1,7 +1,7 @@
 import type { Locale } from "@/i18n/config";
+import { PrayerStrip } from "@/components/prayer/PrayerStrip";
 
-/** Today's prayer times on the hero (filled by the prayer section's PrayerStrip once it lands). */
+/** Today's prayer times on the hero, for the visitor's saved place. */
 export function HomePrayer({ lang }: { lang: Locale }) {
-  void lang;
-  return null;
+  return <PrayerStrip lang={lang} />;
 }

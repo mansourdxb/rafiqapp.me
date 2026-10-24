@@ -1,0 +1,265 @@
+// Prayer-times page strings. Prayer names, method names, madhab and countdown labels come from the
+// app (appT: prayer.*, prayerSettings.*, alm.prayer.*, alm.mid.*).
+import type { Locale } from "../config";
+
+export type PrayerMsg = {
+  title: string;
+  description: string;
+  useLocation: string;
+  locating: string;
+  searchPlaceholder: string;
+  searching: string;
+  noResults: string;
+  searchError: string;
+  locError: string;
+  defaultNotice: string;
+  settings: string;
+  auto: string;
+  timeFormat: string;
+  h12: string;
+  h24: string;
+  highLat: string;
+  tzNote: string;
+  monthly: string;
+  print: string;
+  prevMonth: string;
+  nextMonth: string;
+  thisMonth: string;
+  date: string;
+  location: string;
+  makkah: string;
+};
+
+const en: PrayerMsg = {
+  title: "Prayer times",
+  description:
+    "Today's prayer times for your city — Fajr, sunrise, Dhuhr, Asr, Maghrib and Isha — with a live countdown to the next prayer and a printable monthly timetable.",
+  useLocation: "Use my location",
+  locating: "Locating…",
+  searchPlaceholder: "Search for a city",
+  searching: "Searching…",
+  noResults: "No places found",
+  searchError: "Search isn't available right now. Please try again.",
+  locError: "Couldn't get your location. Allow location access, or search for your city.",
+  defaultNotice: "Showing the times for Makkah. Use your location or search for your city.",
+  settings: "Settings",
+  auto: "Automatic — {{method}}",
+  timeFormat: "Time format",
+  h12: "12-hour",
+  h24: "24-hour",
+  highLat: "Above 48° latitude, Fajr and Isha use the twilight-angle rule automatically.",
+  tzNote: "Times are in {{city}} local time ({{tz}}).",
+  monthly: "Monthly timetable",
+  print: "Print",
+  prevMonth: "Previous month",
+  nextMonth: "Next month",
+  thisMonth: "This month",
+  date: "Date",
+  location: "Location",
+  makkah: "Makkah",
+};
+
+const ar: PrayerMsg = {
+  title: "مواقيت الصلاة",
+  description:
+    "مواقيت الصلاة اليوم لمدينتك — الفجر والشروق والظهر والعصر والمغرب والعشاء — مع عدّ تنازلي مباشر للصلاة القادمة وجدول شهري قابل للطباعة.",
+  useLocation: "استخدم موقعي",
+  locating: "جارٍ تحديد الموقع…",
+  searchPlaceholder: "ابحث عن مدينة",
+  searching: "جارٍ البحث…",
+  noResults: "لم يتم العثور على أماكن",
+  searchError: "البحث غير متاح الآن. حاول مرة أخرى.",
+  locError: "تعذّر تحديد موقعك. اسمح بالوصول إلى الموقع أو ابحث عن مدينتك.",
+  defaultNotice: "تُعرض مواقيت مكة المكرمة. استخدم موقعك أو ابحث عن مدينتك.",
+  settings: "الإعدادات",
+  auto: "تلقائي — {{method}}",
+  timeFormat: "تنسيق الوقت",
+  h12: "١٢ ساعة",
+  h24: "٢٤ ساعة",
+  highLat: "فوق خط العرض ٤٨° تُحسب أوقات الفجر والعشاء تلقائيًا بقاعدة زاوية الشفق.",
+  tzNote: "المواقيت بالتوقيت المحلي لـ{{city}} ({{tz}}).",
+  monthly: "الجدول الشهري",
+  print: "طباعة",
+  prevMonth: "الشهر السابق",
+  nextMonth: "الشهر التالي",
+  thisMonth: "هذا الشهر",
+  date: "التاريخ",
+  location: "الموقع",
+  makkah: "مكة المكرمة",
+};
+
+const ur: PrayerMsg = {
+  title: "اوقاتِ نماز",
+  description:
+    "آپ کے شہر کے آج کے اوقاتِ نماز — فجر، طلوعِ آفتاب، ظہر، عصر، مغرب اور عشاء — اگلی نماز تک براہِ راست الٹی گنتی اور قابلِ پرنٹ ماہانہ نظام الاوقات کے ساتھ۔",
+  useLocation: "میرا مقام استعمال کریں",
+  locating: "مقام معلوم کیا جا رہا ہے…",
+  searchPlaceholder: "شہر تلاش کریں",
+  searching: "تلاش جاری ہے…",
+  noResults: "کوئی جگہ نہیں ملی",
+  searchError: "تلاش ابھی دستیاب نہیں۔ دوبارہ کوشش کریں۔",
+  locError: "آپ کا مقام معلوم نہیں ہو سکا۔ مقام تک رسائی کی اجازت دیں یا اپنا شہر تلاش کریں۔",
+  defaultNotice: "مکہ مکرمہ کے اوقات دکھائے جا رہے ہیں۔ اپنا مقام استعمال کریں یا اپنا شہر تلاش کریں۔",
+  settings: "ترتیبات",
+  auto: "خودکار — {{method}}",
+  timeFormat: "وقت کا انداز",
+  h12: "12 گھنٹے",
+  h24: "24 گھنٹے",
+  highLat: "48° عرض بلد سے اوپر فجر اور عشاء کے لیے خودکار طور پر زاویۂ شفق کا اصول استعمال ہوتا ہے۔",
+  tzNote: "اوقات {{city}} کے مقامی وقت ({{tz}}) کے مطابق ہیں۔",
+  monthly: "ماہانہ نظام الاوقات",
+  print: "پرنٹ کریں",
+  prevMonth: "پچھلا مہینہ",
+  nextMonth: "اگلا مہینہ",
+  thisMonth: "اس مہینے",
+  date: "تاریخ",
+  location: "مقام",
+  makkah: "مکہ مکرمہ",
+};
+
+const fa: PrayerMsg = {
+  title: "اوقات شرعی",
+  description:
+    "اوقات نماز امروز برای شهر شما — صبح، طلوع، ظهر، عصر، مغرب و عشا — با شمارش معکوس زنده تا نماز بعدی و جدول ماهانهٔ قابل چاپ.",
+  useLocation: "استفاده از موقعیت من",
+  locating: "در حال یافتن موقعیت…",
+  searchPlaceholder: "جستجوی شهر",
+  searching: "در حال جستجو…",
+  noResults: "مکانی پیدا نشد",
+  searchError: "جستجو اکنون در دسترس نیست. دوباره تلاش کنید.",
+  locError: "موقعیت شما پیدا نشد. اجازهٔ دسترسی به موقعیت را بدهید یا شهر خود را جستجو کنید.",
+  defaultNotice: "اوقات مکهٔ مکرمه نمایش داده می‌شود. از موقعیت خود استفاده کنید یا شهرتان را جستجو کنید.",
+  settings: "تنظیمات",
+  auto: "خودکار — {{method}}",
+  timeFormat: "قالب زمان",
+  h12: "۱۲ ساعته",
+  h24: "۲۴ ساعته",
+  highLat: "بالاتر از عرض ۴۸ درجه، صبح و عشا به‌طور خودکار با قاعدهٔ زاویهٔ شفق محاسبه می‌شوند.",
+  tzNote: "اوقات به وقت محلی {{city}} ({{tz}}) است.",
+  monthly: "جدول ماهانه",
+  print: "چاپ",
+  prevMonth: "ماه قبل",
+  nextMonth: "ماه بعد",
+  thisMonth: "این ماه",
+  date: "تاریخ",
+  location: "موقعیت",
+  makkah: "مکهٔ مکرمه",
+};
+
+const ru: PrayerMsg = {
+  title: "Время намаза",
+  description:
+    "Время намаза на сегодня для вашего города — фаджр, восход, зухр, аср, магриб и иша — с живым отсчётом до следующего намаза и месячным расписанием для печати.",
+  useLocation: "Моё местоположение",
+  locating: "Определяем местоположение…",
+  searchPlaceholder: "Найти город",
+  searching: "Поиск…",
+  noResults: "Ничего не найдено",
+  searchError: "Поиск сейчас недоступен. Попробуйте ещё раз.",
+  locError: "Не удалось определить местоположение. Разрешите доступ к геолокации или найдите свой город.",
+  defaultNotice: "Показано время для Мекки. Определите своё местоположение или найдите свой город.",
+  settings: "Настройки",
+  auto: "Автоматически — {{method}}",
+  timeFormat: "Формат времени",
+  h12: "12 часов",
+  h24: "24 часа",
+  highLat: "Выше 48° широты фаджр и иша автоматически рассчитываются по правилу угла сумерек.",
+  tzNote: "Время указано по местному времени города {{city}} ({{tz}}).",
+  monthly: "Расписание на месяц",
+  print: "Печать",
+  prevMonth: "Предыдущий месяц",
+  nextMonth: "Следующий месяц",
+  thisMonth: "Этот месяц",
+  date: "Дата",
+  location: "Местоположение",
+  makkah: "Мекка",
+};
+
+const ms: PrayerMsg = {
+  title: "Waktu solat",
+  description:
+    "Waktu solat hari ini untuk bandar anda — Subuh, Syuruk, Zohor, Asar, Maghrib dan Isyak — dengan kiraan detik langsung ke solat seterusnya dan jadual bulanan yang boleh dicetak.",
+  useLocation: "Guna lokasi saya",
+  locating: "Mencari lokasi…",
+  searchPlaceholder: "Cari bandar",
+  searching: "Mencari…",
+  noResults: "Tiada tempat ditemui",
+  searchError: "Carian tidak tersedia sekarang. Sila cuba lagi.",
+  locError: "Lokasi anda tidak dapat dikesan. Benarkan akses lokasi atau cari bandar anda.",
+  defaultNotice: "Menunjukkan waktu untuk Makkah. Guna lokasi anda atau cari bandar anda.",
+  settings: "Tetapan",
+  auto: "Automatik — {{method}}",
+  timeFormat: "Format masa",
+  h12: "12 jam",
+  h24: "24 jam",
+  highLat: "Melebihi latitud 48°, Subuh dan Isyak menggunakan kaedah sudut senja secara automatik.",
+  tzNote: "Waktu mengikut waktu tempatan {{city}} ({{tz}}).",
+  monthly: "Jadual bulanan",
+  print: "Cetak",
+  prevMonth: "Bulan sebelumnya",
+  nextMonth: "Bulan berikutnya",
+  thisMonth: "Bulan ini",
+  date: "Tarikh",
+  location: "Lokasi",
+  makkah: "Makkah",
+};
+
+const tr: PrayerMsg = {
+  title: "Namaz vakitleri",
+  description:
+    "Şehriniz için bugünün namaz vakitleri — imsak, güneş, öğle, ikindi, akşam ve yatsı — bir sonraki namaza canlı geri sayım ve yazdırılabilir aylık takvimle.",
+  useLocation: "Konumumu kullan",
+  locating: "Konum bulunuyor…",
+  searchPlaceholder: "Şehir ara",
+  searching: "Aranıyor…",
+  noResults: "Yer bulunamadı",
+  searchError: "Arama şu anda kullanılamıyor. Lütfen tekrar deneyin.",
+  locError: "Konumunuz alınamadı. Konum erişimine izin verin veya şehrinizi arayın.",
+  defaultNotice: "Mekke'nin vakitleri gösteriliyor. Konumunuzu kullanın veya şehrinizi arayın.",
+  settings: "Ayarlar",
+  auto: "Otomatik — {{method}}",
+  timeFormat: "Saat biçimi",
+  h12: "12 saat",
+  h24: "24 saat",
+  highLat: "48° enlemin üzerinde sabah ve yatsı vakitleri otomatik olarak alacakaranlık açısı kuralıyla hesaplanır.",
+  tzNote: "Vakitler {{city}} yerel saatine ({{tz}}) göredir.",
+  monthly: "Aylık vakitler",
+  print: "Yazdır",
+  prevMonth: "Önceki ay",
+  nextMonth: "Sonraki ay",
+  thisMonth: "Bu ay",
+  date: "Tarih",
+  location: "Konum",
+  makkah: "Mekke",
+};
+
+const id: PrayerMsg = {
+  title: "Jadwal salat",
+  description:
+    "Jadwal salat hari ini untuk kota Anda — Subuh, terbit, Zuhur, Asar, Magrib, dan Isya — dengan hitung mundur langsung ke salat berikutnya dan jadwal bulanan yang bisa dicetak.",
+  useLocation: "Gunakan lokasi saya",
+  locating: "Mencari lokasi…",
+  searchPlaceholder: "Cari kota",
+  searching: "Mencari…",
+  noResults: "Tempat tidak ditemukan",
+  searchError: "Pencarian sedang tidak tersedia. Silakan coba lagi.",
+  locError: "Lokasi Anda tidak dapat ditemukan. Izinkan akses lokasi atau cari kota Anda.",
+  defaultNotice: "Menampilkan jadwal untuk Makkah. Gunakan lokasi Anda atau cari kota Anda.",
+  settings: "Pengaturan",
+  auto: "Otomatis — {{method}}",
+  timeFormat: "Format waktu",
+  h12: "12 jam",
+  h24: "24 jam",
+  highLat: "Di atas lintang 48°, Subuh dan Isya otomatis memakai aturan sudut senja.",
+  tzNote: "Waktu sesuai waktu setempat {{city}} ({{tz}}).",
+  monthly: "Jadwal bulanan",
+  print: "Cetak",
+  prevMonth: "Bulan sebelumnya",
+  nextMonth: "Bulan berikutnya",
+  thisMonth: "Bulan ini",
+  date: "Tanggal",
+  location: "Lokasi",
+  makkah: "Makkah",
+};
+
+export const prayerMsg: Record<Locale, PrayerMsg> = { ar, en, ur, fa, ru, ms, tr, id };
