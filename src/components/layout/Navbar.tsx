@@ -201,9 +201,26 @@ export function Navbar({ lang }: { lang: Locale }) {
               </li>
             ))}
           </ul>
-          <div className="mt-4 flex items-center justify-between border-t border-white/15 pt-4">
-            {langMenu}
-            <button onClick={toggleTheme} className="flex items-center gap-2 text-sm font-bold text-white/85">
+          <div className="mt-4 border-t border-white/15 pt-4">
+            <p className="mb-2 flex items-center gap-2 px-1 text-sm font-bold text-white/70">
+              <Icon name="globe" className="size-4" />
+              {t.language}
+            </p>
+            <ul className="grid grid-cols-2 gap-2">
+              {locales.map((l) => (
+                <li key={l}>
+                  <Link
+                    href={switchLang(pathname, l)}
+                    onClick={() => chooseLang(l)}
+                    lang={l}
+                    className={`block rounded-xl px-3 py-2.5 text-center text-sm font-bold ${l === lang ? "bg-primary text-white" : "bg-white/10 text-white hover:bg-white/20"}`}
+                  >
+                    {nativeName[l]}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <button onClick={toggleTheme} className="mt-4 flex items-center gap-2 px-1 text-sm font-bold text-white/85">
               <Icon name={dark ? "sun" : "moon"} className="size-4.5" />
               {dark ? t.theme.light : t.theme.dark}
             </button>
