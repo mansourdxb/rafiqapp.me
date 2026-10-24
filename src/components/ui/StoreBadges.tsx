@@ -14,21 +14,21 @@ export function StoreBadges({ lang, className = "" }: { lang: Locale; className?
     { href: STORES.appGallery, path: HUAWEI, small: t.exploreOn, big: t.appGallery },
   ];
   return (
-    <div className={`flex flex-wrap gap-3 ${className}`}>
+    <div className={`flex flex-wrap gap-2.5 sm:gap-3 ${className}`}>
       {items.map((s) => (
         <a
           key={s.big}
           href={s.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-14 min-w-44 items-center gap-3 rounded-2xl bg-black px-4 text-white ring-1 ring-white/15 transition hover:-translate-y-0.5 hover:bg-black/85"
+          className="flex h-12 items-center gap-2.5 rounded-xl bg-black px-3.5 sm:h-14 sm:min-w-44 sm:gap-3 sm:rounded-2xl sm:px-4 text-white ring-1 ring-white/15 transition hover:-translate-y-0.5 hover:bg-black/85"
         >
-          <svg viewBox="0 0 24 24" className="size-7 shrink-0" fill="currentColor" aria-hidden>
+          <svg viewBox="0 0 24 24" className="size-6 shrink-0 sm:size-7" fill="currentColor" aria-hidden>
             <path d={s.path} />
           </svg>
           <span className="flex flex-col leading-tight">
-            <span className="text-[11px] opacity-80">{s.small}</span>
-            <span className="text-lg font-bold" dir="ltr">
+            <span className="text-[10px] opacity-80 sm:text-[11px]">{s.small}</span>
+            <span className="text-base font-bold sm:text-lg" dir="ltr">
               {s.big}
             </span>
           </span>

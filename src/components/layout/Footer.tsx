@@ -13,7 +13,7 @@ export function Footer({ lang }: { lang: Locale }) {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
-            <Image src="/logo.png" alt="" width={44} height={44} className="rounded-2xl" />
+            <Image src="/logo-512.png" alt="" width={44} height={44} className="rounded-2xl" />
             <div>
               <p className="text-xl font-bold">{t.siteName}</p>
               <p className="text-sm text-white/65">{t.tagline}</p>
@@ -35,16 +35,28 @@ export function Footer({ lang }: { lang: Locale }) {
           </ul>
         </div>
         <div>
-          <p className="mb-4 text-sm font-bold text-primary-light">{t.footer.legal}</p>
+          <p className="mb-4 text-sm font-bold text-primary-light">{t.nav.more}</p>
           <ul className="space-y-2.5 text-sm text-white/75">
+            {(["articles", "imsakiya", "live", "faq"] as const).map((k) => (
+              <li key={k}>
+                <Link href={localePath(lang, `/${k}/`)} className="hover:text-white">
+                  {t.nav[k]}
+                </Link>
+              </li>
+            ))}
             <li>
               <a href="/privacy.html" className="hover:text-white">
                 {t.footer.privacy}
               </a>
             </li>
             <li>
-              <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-white">
+              <a href={`${localePath(lang)}#contact`} className="hover:text-white">
                 {t.footer.contact}
+              </a>
+            </li>
+            <li>
+              <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-white" dir="ltr">
+                {CONTACT_EMAIL}
               </a>
             </li>
           </ul>

@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
 import { locales, localePath, nativeName, type Locale } from "@/i18n/config";
 import { common } from "@/i18n/messages/common";
-import { NAV } from "./nav";
+import { NAV_MAIN, NAV_MORE } from "./nav";
 
 /** Same page in another language: swaps the first path segment. */
 function switchLang(pathname: string, to: Locale) {
@@ -21,12 +21,14 @@ export function Navbar({ lang }: { lang: Locale }) {
   const pathname = usePathname() ?? `/${lang}/`;
   const [open, setOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const [dark, setDark] = useState(false);
 
   useEffect(() => setDark(document.documentElement.classList.contains("dark")), []);
   useEffect(() => {
     setOpen(false);
     setLangOpen(false);
+    setMoreOpen(false);
   }, [pathname]);
 
   const toggleTheme = () => {
@@ -49,13 +51,13 @@ export function Navbar({ lang }: { lang: Locale }) {
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-navy/95 text-white backdrop-blur supports-[backdrop-filter]:bg-navy/80">
       <nav className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4">
-        <Link href={localePath(lang)} className="flex shrink-0 items-center gap-2.5">
-          <Image src="/logo.png" alt="" width={36} height={36} className="rounded-xl" priority />
-          <span className="text-lg font-bold">{t.siteName}</span>
+        <Link href={localePath(lang)} className="flex min-w-0 items-center gap-2.5">
+          <Image src="/logo-512.png" alt="" width={36} height={36} className="shrink-0 rounded-xl" priority />
+          <span className="truncate text-base font-bold sm:text-lg">{t.siteName}</span>
         </Link>
 
-        <ul className="ms-6 hidden items-center gap-1 xl:flex">
-          {NAV.map((n) => (
+        <ul className="ms-6 hidden items-center gap-1 lg:flex">
+          {NAV_MAIN.map((n) => (
             <li key={n.key}>
               <Link
                 href={localePath(lang, n.href)}
@@ -67,9 +69,36 @@ export function Navbar({ lang }: { lang: Locale }) {
               </Link>
             </li>
           ))}
+          <li className="relative">
+            <button
+              onClick={() => setMoreOpen((v) => !v)}
+              aria-expanded={moreOpen}
+              className={`flex items-center gap-1 rounded-full px-3 py-2 text-sm font-semibold transition ${
+                NAV_MORE.some((n) => active(n.href)) ? "bg-white/15 text-white" : "text-white/75 hover:bg-white/10 hover:text-white"
+              }`}
+            >
+              {t.nav.more}
+              <Icon name="chevron" className={`size-4 transition ${moreOpen ? "-rotate-90" : "rotate-90"}`} />
+            </button>
+            {moreOpen && (
+              <ul className="absolute start-0 top-12 w-60 overflow-hidden rounded-2xl border border-line bg-card py-1.5 text-ink shadow-xl">
+                {NAV_MORE.map((n) => (
+                  <li key={n.key}>
+                    <Link
+                      href={localePath(lang, n.href)}
+                      className={`flex items-center gap-3 px-4 py-2.5 text-sm font-semibold hover:bg-tint ${active(n.href) ? "text-primary" : ""}`}
+                    >
+                      <Icon name={n.icon} className="size-4.5 text-primary" />
+                      {t.nav[n.key]}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
         </ul>
 
-        <div className="ms-auto flex items-center gap-1.5">
+        <div className="ms-auto flex shrink-0 items-center gap-0.5 sm:gap-1.5">
           <div className="relative">
             <button
               onClick={() => setLangOpen((v) => !v)}
@@ -112,7 +141,7 @@ export function Navbar({ lang }: { lang: Locale }) {
           </Link>
           <button
             onClick={() => setOpen((v) => !v)}
-            className="rounded-full p-2.5 text-white/85 hover:bg-white/10 xl:hidden"
+            className="rounded-full p-2.5 text-white/85 hover:bg-white/10 lg:hidden"
             aria-label={open ? t.close : t.menu}
             aria-expanded={open}
           >
@@ -122,9 +151,9 @@ export function Navbar({ lang }: { lang: Locale }) {
       </nav>
 
       {open && (
-        <div className="border-t border-white/10 xl:hidden">
+        <div className="border-t border-white/10 lg:hidden">
           <ul className="mx-auto grid max-w-7xl grid-cols-2 gap-2 px-4 py-4 sm:grid-cols-4">
-            {NAV.map((n) => (
+            {[...NAV_MAIN, ...NAV_MORE].map((n) => (
               <li key={n.key}>
                 <Link
                   href={localePath(lang, n.href)}

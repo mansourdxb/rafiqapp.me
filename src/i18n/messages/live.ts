@@ -1,0 +1,78 @@
+import type { Locale } from "../config";
+
+type Live = { title: string; subtitle: string; makkah: string; madinah: string; makkahSrc: string; madinahSrc: string; openYoutube: string };
+
+export const live: Record<Locale, Live> = {
+  ar: {
+    title: "البث المباشر",
+    subtitle: "بث مباشر من المسجد الحرام والمسجد النبوي عبر القناتين الرسميتين.",
+    makkah: "المسجد الحرام — مكة المكرمة",
+    madinah: "المسجد النبوي — المدينة المنورة",
+    makkahSrc: "قناة القرآن الكريم",
+    madinahSrc: "قناة السنة النبوية",
+    openYoutube: "افتح في YouTube",
+  },
+  en: {
+    title: "Live broadcast",
+    subtitle: "Live from the Sacred Mosque in Makkah and the Prophet's Mosque in Madinah, from the official channels.",
+    makkah: "The Sacred Mosque — Makkah",
+    madinah: "The Prophet's Mosque — Madinah",
+    makkahSrc: "Quran TV",
+    madinahSrc: "Sunnah TV",
+    openYoutube: "Open in YouTube",
+  },
+  ur: {
+    title: "براہِ راست نشریات",
+    subtitle: "مسجد الحرام اور مسجد نبوی سے سرکاری چینلز کے ذریعے براہِ راست نشریات۔",
+    makkah: "مسجد الحرام — مکہ مکرمہ",
+    madinah: "مسجد نبوی — مدینہ منورہ",
+    makkahSrc: "قرآن ٹی وی",
+    madinahSrc: "سنہ ٹی وی",
+    openYoutube: "YouTube پر کھولیں",
+  },
+  fa: {
+    title: "پخش زنده",
+    subtitle: "پخش زنده از مسجدالحرام و مسجدالنبی از شبکه‌های رسمی.",
+    makkah: "مسجدالحرام — مکهٔ مکرمه",
+    madinah: "مسجدالنبی — مدینهٔ منوره",
+    makkahSrc: "شبکهٔ قرآن کریم",
+    madinahSrc: "شبکهٔ سنت نبوی",
+    openYoutube: "باز کردن در YouTube",
+  },
+  ru: {
+    title: "Прямой эфир",
+    subtitle: "Прямая трансляция из Заповедной мечети в Мекке и Мечети Пророка в Медине с официальных каналов.",
+    makkah: "Заповедная мечеть — Мекка",
+    madinah: "Мечеть Пророка — Медина",
+    makkahSrc: "Quran TV",
+    madinahSrc: "Sunnah TV",
+    openYoutube: "Открыть в YouTube",
+  },
+  ms: {
+    title: "Siaran langsung",
+    subtitle: "Siaran langsung dari Masjidil Haram di Makkah dan Masjid Nabawi di Madinah melalui saluran rasmi.",
+    makkah: "Masjidil Haram — Makkah",
+    madinah: "Masjid Nabawi — Madinah",
+    makkahSrc: "Quran TV",
+    madinahSrc: "Sunnah TV",
+    openYoutube: "Buka di YouTube",
+  },
+  tr: {
+    title: "Canlı yayın",
+    subtitle: "Mekke'deki Mescid-i Haram ve Medine'deki Mescid-i Nebevî'den resmî kanallarla canlı yayın.",
+    makkah: "Mescid-i Haram — Mekke",
+    madinah: "Mescid-i Nebevî — Medine",
+    makkahSrc: "Quran TV",
+    madinahSrc: "Sunnah TV",
+    openYoutube: "YouTube'da aç",
+  },
+  id: {
+    title: "Siaran langsung",
+    subtitle: "Siaran langsung dari Masjidil Haram di Makkah dan Masjid Nabawi di Madinah melalui kanal resmi.",
+    makkah: "Masjidil Haram — Makkah",
+    madinah: "Masjid Nabawi — Madinah",
+    makkahSrc: "Quran TV",
+    madinahSrc: "Sunnah TV",
+    openYoutube: "Buka di YouTube",
+  },
+};

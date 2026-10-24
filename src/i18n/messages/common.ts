@@ -16,6 +16,10 @@ export type Common = {
     tasbeeh: string;
     names: string;
     calendar: string;
+    articles: string;
+    imsakiya: string;
+    live: string;
+    faq: string;
     more: string;
     download: string;
   };
@@ -54,6 +58,10 @@ const en: Common = {
     tasbeeh: "Tasbih",
     names: "Names of Allah",
     calendar: "Hijri calendar",
+    articles: "Articles",
+    imsakiya: "Imsakiya",
+    live: "Live broadcast",
+    faq: "FAQ",
     more: "More",
     download: "Get the app",
   },
@@ -100,6 +108,10 @@ const ar: Common = {
     tasbeeh: "السبحة",
     names: "أسماء الله الحسنى",
     calendar: "التقويم الهجري",
+    articles: "المقالات",
+    imsakiya: "الإمساكية",
+    live: "البث المباشر",
+    faq: "الأسئلة الشائعة",
     more: "المزيد",
     download: "حمّل التطبيق",
   },
