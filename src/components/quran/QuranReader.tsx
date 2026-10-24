@@ -90,6 +90,21 @@ export function QuranReader({ lang, initialPage, initialData }: { lang: Locale; 
     [page, twoUp, go],
   );
 
+  // recitation: highlight the ayah being read and turn the page with it (like the app). Only follows
+  // when the reciter was on a page the reader is showing — browsing elsewhere is never pulled back.
+  const playKey = audio.visible && audio.status !== "idle" ? `${audio.surah}:${audio.ayah}` : null;
+  const playPage = playKey ? pageOfAyah(audio.surah, audio.ayah) : null;
+  const lastPlayPage = useRef<number | null>(null);
+  useEffect(() => {
+    if (!playPage) return;
+    const prevPage = lastPlayPage.current;
+    lastPlayPage.current = playPage;
+    if (!audio.playing || prevPage === null || prevPage === playPage) return;
+    const shown = wideNow() ? spread : [page];
+    if (shown.includes(prevPage) && !shown.includes(playPage)) go(playPage);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [playPage]);
+
   // keyboard: ← next page, → previous page (the mushaf opens to the left)
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -232,7 +247,7 @@ export function QuranReader({ lang, initialPage, initialData }: { lang: Locale; 
               className={`${n === page ? "block" : `hidden ${twoUp ? "min-[1100px]:block" : ""}`} w-full max-w-[36rem] shrink-0 ${twoUp ? "min-[1100px]:w-[var(--pw)]" : ""} ${twoUp && spread.length === 2 ? (n === right ? "min-[1100px]:shadow-[inset_-14px_0_18px_-14px_rgba(0,0,0,0.25)]" : "min-[1100px]:shadow-[inset_14px_0_18px_-14px_rgba(0,0,0,0.25)]") : ""}`}
               style={{ ["--pw" as string]: "clamp(380px, calc((100dvh - 15rem) / 1.93 + 52px), min(36rem, calc(50vw - 2rem)))" }}
             >
-              <MushafPage page={n} data={pages[n] ?? null} selected={sel && sel.page === n ? `${sel.s}:${sel.a}` : sel && pages[n]?.ayahs[`${sel.s}:${sel.a}`] ? `${sel.s}:${sel.a}` : null} onSelect={select(n)} />
+              <MushafPage page={n} data={pages[n] ?? null} selected={sel && sel.page === n ? `${sel.s}:${sel.a}` : sel && pages[n]?.ayahs[`${sel.s}:${sel.a}`] ? `${sel.s}:${sel.a}` : null} playing={playKey && pages[n]?.ayahs[playKey] !== undefined ? playKey : null} onSelect={select(n)} />
             </div>
           ))}
         </div>

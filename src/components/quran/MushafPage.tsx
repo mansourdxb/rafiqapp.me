@@ -25,10 +25,12 @@ type Props = {
   page: number;
   data: PageData | null;
   selected: string | null;
+  /** "s:a" being recited by the player — its own highlight, like the app */
+  playing?: string | null;
   onSelect: (sura: number, aya: number) => void;
 };
 
-export function MushafPage({ page, data, selected, onSelect }: Props) {
+export function MushafPage({ page, data, selected, playing = null, onSelect }: Props) {
   const font = useQcfFont(page, data?.sha);
   const centeredPage = page <= 2;
   const lineH = centeredPage ? LINE_CQW * 1.5 : LINE_CQW;
@@ -56,7 +58,7 @@ export function MushafPage({ page, data, selected, onSelect }: Props) {
         </div>
         <div className="px-0.5">
           <div className="mp">
-            <TextBox page={page} data={data} font={font} lineH={lineH} selected={selected} onSelect={onSelect} />
+            <TextBox page={page} data={data} font={font} lineH={lineH} selected={selected} playing={playing} onSelect={onSelect} />
           </div>
         </div>
       </div>
@@ -73,9 +75,12 @@ function firstSura(d: PageData) {
 }
 
 /** min-height in container units does not resolve on the container itself — wrap the lines. */
-function TextBox({ page, data, font, lineH, selected, onSelect }: { page: number; data: PageData | null; font: "ready" | "loading" | "failed"; lineH: number; selected: string | null; onSelect: (s: number, a: number) => void }) {
+function TextBox({ page, data, font, lineH, selected, playing, onSelect }: { page: number; data: PageData | null; font: "ready" | "loading" | "failed"; lineH: number; selected: string | null; playing: string | null; onSelect: (s: number, a: number) => void }) {
   const ref = useRef<HTMLDivElement>(null);
-  const bands = useBands(ref, selected, `${page}|${font}|${data ? 1 : 0}`);
+  const dep = `${page}|${font}|${data ? 1 : 0}`;
+  const selBands = useBands(ref, selected, dep);
+  const playBands = useBands(ref, playing && playing !== selected ? playing : null, dep, "play");
+  const bands = [...playBands, ...selBands];
   const centeredPage = page <= 2;
   if (!data) return <Skeleton lines={centeredPage ? 8 : 15} lineH={lineH} />;
   const useQcf = font === "ready";
@@ -90,10 +95,10 @@ function TextBox({ page, data, font, lineH, selected, onSelect }: { page: number
   );
 }
 
-type Band = { line: number; left: number; width: number };
+type Band = { line: number; left: number; width: number; kind?: "play" };
 
 /** Measures the selected ayah's words on every line → one band per line behind them (HighlightRow). */
-function useBands(ref: React.RefObject<HTMLDivElement | null>, selected: string | null, dep: string) {
+function useBands(ref: React.RefObject<HTMLDivElement | null>, selected: string | null, dep: string, kind?: "play") {
   const [bands, setBands] = useState<Band[]>([]);
   useLayoutEffect(() => {
     const root = ref.current;
@@ -115,15 +120,24 @@ function useBands(ref: React.RefObject<HTMLDivElement | null>, selected: string 
           l = Math.min(l, b.left);
           r = Math.max(r, b.right);
         });
-        out.push({ line: li, left: l - lr.left - 2, width: r - l + 4 });
+        out.push({ line: li, left: l - lr.left - 2, width: r - l + 4, kind });
       });
       setBands(out);
     };
     measure();
+    // again once the line fit has settled and fonts are in
+    const raf = requestAnimationFrame(() => requestAnimationFrame(measure));
+    const t = setTimeout(measure, 400);
+    document.fonts?.addEventListener?.("loadingdone", measure);
     const ro = new ResizeObserver(measure);
     ro.observe(root);
-    return () => ro.disconnect();
-  }, [ref, selected, dep]);
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(t);
+      document.fonts?.removeEventListener?.("loadingdone", measure);
+      ro.disconnect();
+    };
+  }, [ref, selected, dep, kind]);
   return bands;
 }
 
@@ -133,7 +147,7 @@ function BandsFor({ bands, line }: { bands: Band[]; line: number }) {
       {bands
         .filter((b) => b.line === line)
         .map((b, i) => (
-          <span key={i} className="mp-band" style={{ left: b.left, width: b.width }} />
+          <span key={i} className={b.kind === "play" ? "mp-band mp-band-play" : "mp-band"} style={{ left: b.left, width: b.width }} />
         ))}
     </>
   );
