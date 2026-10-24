@@ -52,14 +52,29 @@ export function PrayerTimesView({ lang }: { lang: Locale }) {
               <Icon name="location" className="size-5 shrink-0 text-navy-2 dark:text-white" />
               <span className="min-w-0 truncate text-sm font-bold text-navy-2 dark:text-white">{where}</span>
             </div>
-            <div className={PILL}>
+            <label className={`${PILL} relative cursor-pointer`}>
               <Icon name="settings" className="size-5 shrink-0 text-navy-2 dark:text-white" />
-              <span className="min-w-0 truncate text-sm font-bold text-navy-2 dark:text-white">{appT(lang, METHOD_LABEL[effectiveMethod(place, s)])}</span>
-            </div>
-            <div className={PILL}>
+              <span className="min-w-0 flex-1 truncate text-sm font-bold text-navy-2 dark:text-white">{appT(lang, METHOD_LABEL[effectiveMethod(place, s)])}</span>
+              <Icon name="chevron" className="size-4 shrink-0 rotate-90 text-navy-2 dark:text-white" />
+              <select
+                value={s.method}
+                onChange={(e) => settingsStore.set({ ...s, method: e.target.value as MethodKey | "auto" })}
+                aria-label={appT(lang, "almSettings.calcMethod")}
+                className="absolute inset-0 cursor-pointer opacity-0"
+              >
+                <option value="auto">{t.auto.replace("{{method}}", appT(lang, METHOD_LABEL[effectiveMethod(place, { ...s, method: "auto" })]))}</option>
+                {METHODS.map((m) => (
+                  <option key={m} value={m}>
+                    {appT(lang, METHOD_LABEL[m])}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <a href="#monthly" className={PILL}>
               <Icon name="calendar" className="size-5 shrink-0 text-navy-2 dark:text-white" />
-              <span className="min-w-0 truncate text-xs font-bold text-navy-2 dark:text-white">{date ? `${date.weekday}${sep}${date.hijri} - ${date.gregorian}` : ""}</span>
-            </div>
+              <span className="min-w-0 flex-1 truncate text-xs font-bold text-navy-2 dark:text-white">{date ? `${date.weekday}${sep}${date.hijri} - ${date.gregorian}` : ""}</span>
+              <Icon name="chevron" className="size-4 shrink-0 rotate-90 text-navy-2 dark:text-white" />
+            </a>
           </div>
         </div>
 
@@ -117,7 +132,9 @@ export function PrayerTimesView({ lang }: { lang: Locale }) {
         </p>
 
         <SettingsCard lang={lang} place={place} s={s} />
-        <MonthlyTable lang={lang} place={place} s={s} today={now ? ymdInTz(now, place.tz) : null} />
+        <div id="monthly" className="scroll-mt-24">
+          <MonthlyTable lang={lang} place={place} s={s} today={now ? ymdInTz(now, place.tz) : null} />
+        </div>
       </div>
     </>
   );

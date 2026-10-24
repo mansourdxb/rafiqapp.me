@@ -4,6 +4,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { prayerMsg } from "@/i18n/messages/prayer";
 import { isRtl, localePath, type Locale } from "@/i18n/config";
 import { appT } from "@/i18n/app";
 import { home } from "@/i18n/messages/home";
@@ -11,8 +12,9 @@ import { Icon } from "@/components/ui/Icon";
 import { LocationPicker } from "@/components/prayer/LocationPicker";
 import { dateLine, fmtTime, prayerName, useLive } from "@/components/prayer/prayerUi";
 import { useNow, usePlace, useSettings } from "@/components/prayer/usePlace";
-import { effectiveMethod, formatDuration, PRAYERS, type PrayerKey } from "@/lib/prayer/compute";
-import { METHOD_LABEL } from "@/lib/prayer/methods";
+import { computeDay, effectiveMethod, formatDuration, PRAYERS, ymdInTz, type PrayerKey } from "@/lib/prayer/compute";
+import { METHOD_LABEL, METHODS, type MethodKey } from "@/lib/prayer/methods";
+import { settingsStore } from "@/lib/prayer/store";
 
 const ICON: Record<PrayerKey, string> = {
   fajr: "/images/ref/p-fajr.svg",
@@ -32,10 +34,19 @@ export function HomePrayer({ lang }: { lang: Locale }) {
   const now = useNow(1000);
   const live = useLive(place, s, now);
   const fmt = fmtTime(lang, place, s);
-  const date = now ? dateLine(lang, now, place.tz) : null;
   const [picking, setPicking] = useState(false);
-  const nextKey = live?.mode === "since" ? live.current! : live?.next;
   const sep = isRtl(lang) ? "، " : ", ";
+
+  // another day picked in the date pill: show that day's times (no countdown)
+  const [day, setDay] = useState<string | null>(null);
+  const todayYmd = now ? ymdInTz(now, place.tz) : null;
+  const todayIso = todayYmd ? `${todayYmd.y}-${String(todayYmd.m).padStart(2, "0")}-${String(todayYmd.d).padStart(2, "0")}` : "";
+  const other = day && day !== todayIso ? day.split("-").map(Number) : null;
+  const shown = other ? computeDay(place, s, other[0], other[1], other[2]) : live?.today;
+  const date = other ? dateLine(lang, new Date(Date.UTC(other[0], other[1] - 1, other[2], 12)), place.tz) : now ? dateLine(lang, now, place.tz) : null;
+  const nextKey = other ? undefined : live?.mode === "since" ? live.current! : live?.next;
+  const todayWord = new Intl.RelativeTimeFormat(lang, { numeric: "auto" }).format(0, "day");
+  const autoMethod = effectiveMethod(place, { ...s, method: "auto" });
 
   return (
     <section className="mx-auto max-w-6xl px-4">
@@ -55,13 +66,41 @@ export function HomePrayer({ lang }: { lang: Locale }) {
           </span>
           <Icon name="search" className="size-5 shrink-0 text-navy-2 dark:text-white" />
         </button>
-        <div className={pill}>
+        <label className={`${pill} relative cursor-pointer`}>
           <span className="shrink-0 text-xs text-navy-2 dark:text-ink-2">{t.method}:</span>
-          <span className="min-w-0 truncate text-sm font-bold text-navy-2 dark:text-white">{appT(lang, METHOD_LABEL[effectiveMethod(place, s)])}</span>
-        </div>
-        <div className={pill}>
-          <Icon name="calendar" className="size-7 shrink-0 text-navy-2 dark:text-white" />
-          <span className="min-w-0 truncate text-xs font-bold text-navy-2 dark:text-white">{date ? `${date.weekday}${sep}${date.hijri} - ${date.gregorian}` : ""}</span>
+          <span className="min-w-0 flex-1 truncate text-sm font-bold text-navy-2 dark:text-white">{appT(lang, METHOD_LABEL[effectiveMethod(place, s)])}</span>
+          <Icon name="chevron" className="size-4 shrink-0 rotate-90 text-navy-2 dark:text-white" />
+          <select
+            value={s.method}
+            onChange={(e) => settingsStore.set({ ...s, method: e.target.value as MethodKey | "auto" })}
+            aria-label={t.method}
+            className="absolute inset-0 cursor-pointer opacity-0"
+          >
+            <option value="auto">{prayerMsg[lang].auto.replace("{{method}}", appT(lang, METHOD_LABEL[autoMethod]))}</option>
+            {METHODS.map((m) => (
+              <option key={m} value={m}>
+                {appT(lang, METHOD_LABEL[m])}
+              </option>
+            ))}
+          </select>
+        </label>
+        <div className={`${pill} relative`}>
+          <label className="relative flex min-w-0 flex-1 cursor-pointer items-center gap-3">
+            <Icon name="calendar" className="size-7 shrink-0 text-navy-2 dark:text-white" />
+            <span className="min-w-0 flex-1 truncate text-xs font-bold text-navy-2 dark:text-white">{date ? `${date.weekday}${sep}${date.hijri} - ${date.gregorian}` : ""}</span>
+            <input
+              type="date"
+              value={day ?? todayIso}
+              onChange={(e) => setDay(e.target.value || null)}
+              aria-label={t.title}
+              className="absolute inset-0 cursor-pointer opacity-0"
+            />
+          </label>
+          {other && (
+            <button type="button" onClick={() => setDay(null)} className="shrink-0 rounded-full bg-primary px-3 py-1 text-xs font-bold text-white">
+              {todayWord}
+            </button>
+          )}
         </div>
       </div>
       {picking && (
@@ -85,14 +124,14 @@ export function HomePrayer({ lang }: { lang: Locale }) {
                   {formatDuration(live.ms)}
                 </span>
               )}
-              <span className="text-sm font-bold tabular-nums">{live ? fmt(live.today[k]) : "--:--"}</span>
+              <span className="text-sm font-bold tabular-nums">{shown ? fmt(shown[k]) : "--:--"}</span>
             </div>
           ) : (
             <div key={k} className="flex min-w-[9rem] shrink-0 snap-start items-center gap-3 rounded-xl bg-white px-4 py-3 ring-2 ring-edge/70 shadow-[0_3px_10px_rgba(124,180,200,0.3)] md:min-w-0 dark:bg-card">
               <Image src={ICON[k]} alt="" width={30} height={30} className="size-7 shrink-0" />
               <span className="flex flex-col">
                 <span className="text-sm font-bold text-navy-2 dark:text-white">{prayerName(lang, k)}</span>
-                <span className="text-xs font-bold tabular-nums text-navy-2 dark:text-ink-2">{live ? fmt(live.today[k]) : "--:--"}</span>
+                <span className="text-xs font-bold tabular-nums text-navy-2 dark:text-ink-2">{shown ? fmt(shown[k]) : "--:--"}</span>
               </span>
             </div>
           );

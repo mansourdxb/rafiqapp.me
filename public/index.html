@@ -12,6 +12,10 @@
 <script>
   // Opens the site in the saved language, else the browser's, else Arabic.
   (function () {
+    if (location.protocol === "http:" && !/^(localhost|127\.|192\.168\.)/.test(location.hostname)) {
+      location.replace("https://" + location.host + location.pathname + location.search + location.hash);
+      return;
+    }
     var langs = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id"];
     var pick = null;
     try { pick = localStorage.getItem("lang"); } catch (e) {}

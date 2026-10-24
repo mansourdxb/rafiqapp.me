@@ -92,9 +92,9 @@ export async function lookupTz(lat: number, lng: number): Promise<string> {
 }
 
 /** Browser geolocation → a Place (name in `lang`, the device's own time zone). */
-export function locate(lang: string): Promise<Place> {
+function gpsLocate(lang: string): Promise<Place> {
   return new Promise((resolve, reject) => {
-    if (!navigator.geolocation) return reject(new Error("unsupported"));
+    if (!navigator.geolocation || !window.isSecureContext) return reject(new Error("unsupported"));
     navigator.geolocation.getCurrentPosition(
       async (pos) => {
         const lat = Number(pos.coords.latitude.toFixed(4));
@@ -103,7 +103,39 @@ export function locate(lang: string): Promise<Place> {
         resolve({ name: hit?.name ?? `${lat}, ${lng}`, country: hit?.country, cc: hit?.cc, lat, lng, tz: browserTz(), lang });
       },
       (err) => reject(err),
-      { enableHighAccuracy: false, timeout: 15000, maximumAge: 600000 },
+      { enableHighAccuracy: false, timeout: 12000, maximumAge: 600000 },
     );
   });
+}
+
+/**
+ * Approximate city from the connection (geojs.io, no key) — used when the phone refuses or can't give
+ * a position: in-app browsers (WhatsApp, Instagram…) and phones with location turned off for the browser.
+ */
+async function ipLocate(lang: string): Promise<Place> {
+  const r = await fetch("https://get.geojs.io/v1/ip/geo.json");
+  if (!r.ok) throw new Error("ip");
+  const g = (await r.json()) as { latitude?: string; longitude?: string; timezone?: string; city?: string; country?: string; country_code?: string };
+  const lat = Number(Number(g.latitude).toFixed(4));
+  const lng = Number(Number(g.longitude).toFixed(4));
+  if (!Number.isFinite(lat) || !Number.isFinite(lng) || (lat === 0 && lng === 0)) throw new Error("ip");
+  const hit = await reversePlace(lat, lng, lang);
+  return {
+    name: hit?.name ?? g.city ?? `${lat}, ${lng}`,
+    country: hit?.country ?? g.country,
+    cc: hit?.cc ?? g.country_code?.toLowerCase(),
+    lat,
+    lng,
+    tz: g.timezone || browserTz(),
+    lang,
+  };
+}
+
+/** The visitor's place: the phone's position, else the approximate city of the connection. */
+export async function locate(lang: string): Promise<Place> {
+  try {
+    return await gpsLocate(lang);
+  } catch {
+    return ipLocate(lang);
+  }
 }
