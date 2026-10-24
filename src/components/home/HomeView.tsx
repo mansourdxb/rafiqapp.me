@@ -167,9 +167,9 @@ export function HomeView({ lang }: { lang: Locale }) {
           </ul>
 
           <div id="contact" className="relative z-10 mx-auto mt-24 max-w-4xl translate-y-1/3 scroll-mt-24 rounded-md bg-white p-2.5 shadow-xl">
-            <div className="grid items-center gap-6 rounded bg-primary px-8 py-10 md:grid-cols-[1fr_1.1fr]">
+            <div className="grid min-w-0 items-center gap-6 rounded bg-primary px-5 py-8 sm:px-8 sm:py-10 md:grid-cols-[1fr_1.1fr]">
               <div>
-                <h2 className="text-2xl font-bold">{t.contact.title}</h2>
+                <h2 className="break-words text-2xl font-bold">{t.contact.title}</h2>
                 <p className="mt-2 text-xs leading-5 text-white/95">{t.contact.body}</p>
               </div>
               <ContactForm placeholder={t.contact.message} send={t.contact.send} siteName={c.siteName} />

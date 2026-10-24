@@ -11,7 +11,7 @@ export function ContactForm({ placeholder, send, siteName }: { placeholder: stri
     location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(siteName)}&body=${encodeURIComponent(msg)}`;
   };
   return (
-    <form onSubmit={submit} className="flex h-[70px] w-full items-center gap-2 rounded-full bg-white p-2.5 ps-6 shadow-sm">
+    <form onSubmit={submit} className="flex h-[64px] w-full min-w-0 items-center gap-2 rounded-full bg-white p-2.5 ps-6 shadow-sm">
       <input
         required
         value={msg}
@@ -19,7 +19,7 @@ export function ContactForm({ placeholder, send, siteName }: { placeholder: stri
         placeholder={placeholder}
         className="min-w-0 flex-1 bg-transparent text-sm font-bold text-section placeholder:text-section focus:outline-none"
       />
-      <button type="submit" className="h-full shrink-0 rounded-full bg-navy px-8 text-sm font-bold text-white hover:bg-navy-2">
+      <button type="submit" className="h-full shrink-0 rounded-full bg-navy px-5 text-sm font-bold text-white hover:bg-navy-2 sm:px-8">
         {send}
       </button>
     </form>
