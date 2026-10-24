@@ -4,6 +4,7 @@ import { Almarai, Noto_Sans_Arabic, Roboto } from "next/font/google";
 import "../globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { PlayerRoot } from "@/components/player/PlayerRoot";
 import { dir, isLocale, locales, ogLocale, SITE_URL, type Locale } from "@/i18n/config";
 import { common } from "@/i18n/messages/common";
 import { alternates } from "@/i18n/metadata";
@@ -46,6 +47,8 @@ export const viewport: Viewport = {
   themeColor: "#0F1C50",
   width: "device-width",
   initialScale: 1,
+  // lets the player bar sit above the iPhone home indicator (env(safe-area-inset-bottom))
+  viewportFit: "cover",
 };
 
 // Always https (phones only allow location on secure pages; the domain also answers on http).
@@ -62,9 +65,11 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
       <body className="min-h-dvh font-sans antialiased">
-        <Navbar lang={l} />
-        <main>{children}</main>
-        <Footer lang={l} />
+        <PlayerRoot lang={l}>
+          <Navbar lang={l} />
+          <main>{children}</main>
+          <Footer lang={l} />
+        </PlayerRoot>
       </body>
     </html>
   );

@@ -163,12 +163,61 @@ function BasmalaRow({ fontCqw, lineH, idx }: { fontCqw: number; lineH: number; i
 
 type LinesProps = { data: PageData; lineH: number; centeredPage: boolean; onSelect: (s: number, a: number) => void; bands: Band[] };
 
+/**
+ * Shrinks the page text when a line would run past the frame. The QCF widths are measured for
+ * Chrome; Safari, browser zoom and minimum-font-size settings can draw the glyphs wider. Re-measured
+ * on every resize and when fonts finish loading.
+ */
+function useLineFit(dep: unknown) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [fit, setFit] = useState(1);
+  useLayoutEffect(() => {
+    const box = ref.current;
+    if (!box) return;
+    let raf = 0;
+    const measure = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        let worst = 1;
+        box.querySelectorAll<HTMLElement>(".mp-line").forEach((line) => {
+          const avail = line.clientWidth;
+          let used = 0;
+          line.querySelectorAll<HTMLElement>(":scope > .mp-w").forEach((w) => {
+            const cs = getComputedStyle(w);
+            used += w.getBoundingClientRect().width + parseFloat(cs.marginLeft) + parseFloat(cs.marginRight);
+          });
+          if (avail > 0 && used > 0) worst = Math.min(worst, avail / used);
+        });
+        // measured at the current fit: compound so it converges instead of oscillating
+        setFit((f) => {
+          const next = Math.min(1, f * worst * (worst < 1 ? 0.995 : 1));
+          return Math.abs(next - f) > 0.002 ? next : f;
+        });
+      });
+    };
+    const ro = new ResizeObserver(() => {
+      setFit(1);
+      measure();
+    });
+    ro.observe(box.parentElement ?? box);
+    document.fonts?.addEventListener?.("loadingdone", measure);
+    measure();
+    return () => {
+      cancelAnimationFrame(raf);
+      ro.disconnect();
+      document.fonts?.removeEventListener?.("loadingdone", measure);
+    };
+  }, [dep]);
+  return { ref, fit };
+}
+
 function QcfLines({ data, lineH, centeredPage, onSelect, bands }: LinesProps) {
   const family = qcfFamily(data.p);
   const maxEm = Math.max(1, ...data.q.map((x) => (x[0] === "q" ? x[2] : 0)));
-  const fontCqw = Math.min(QCF_FIT / (centeredPage ? maxEm * 1.08 : maxEm), lineH / 1.6);
+  const { ref, fit } = useLineFit(data.p);
+  const fontCqw = Math.min(QCF_FIT / (centeredPage ? maxEm * 1.08 : maxEm), lineH / 1.6) * fit;
   return (
-    <>
+    <div ref={ref} className="contents">
       {data.q.map((slot, i) => {
         if (slot[0] === "h") return <TitleRow key={`h${i}`} sura={slot[1]} lineH={lineH} />;
         if (slot[0] === "b") return <BasmalaRow key={`b${i}`} idx={i} fontCqw={fontCqw} lineH={lineH} />;
@@ -202,7 +251,7 @@ function QcfLines({ data, lineH, centeredPage, onSelect, bands }: LinesProps) {
           </div>
         );
       })}
-    </>
+    </div>
   );
 }
 
@@ -210,12 +259,13 @@ function UniLines({ data, lineH, centeredPage, onSelect, bands }: LinesProps) {
   const rub = new Set(data.rub);
   const maxEm = Math.max(0, ...data.u.map((x) => (x[0] === "t" ? x[2] : 0)));
   const baseEm = centeredPage ? Math.max(8, maxEm * 1.08) : Math.min(20.2, Math.max(17, maxEm));
-  const base = Math.min(UNI_FIT / baseEm, lineH / 1.75);
+  const { ref, fit } = useLineFit(data.p);
+  const base = Math.min(UNI_FIT / baseEm, lineH / 1.75) * fit;
   const words = (k: string) => (data.ayahs[k] ?? "").split(" ");
   const qcfMax = Math.max(1, ...data.q.map((x) => (x[0] === "q" ? x[2] : 0)));
   const basmalaFont = Math.min(QCF_FIT / (centeredPage ? qcfMax * 1.08 : qcfMax), lineH / 1.6);
   return (
-    <>
+    <div ref={ref} className="contents">
       {data.u.map((slot, i) => {
         if (slot[0] === "h") return <TitleRow key={`h${i}`} sura={slot[1]} lineH={lineH} />;
         if (slot[0] === "b") return <BasmalaRow key={`b${i}`} idx={i} fontCqw={basmalaFont} lineH={lineH} />;
@@ -254,7 +304,7 @@ function UniLines({ data, lineH, centeredPage, onSelect, bands }: LinesProps) {
           </div>
         );
       })}
-    </>
+    </div>
   );
 }
 

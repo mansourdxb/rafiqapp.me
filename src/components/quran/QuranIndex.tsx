@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
 import { PageHeader } from "@/components/ui/PageHeader";
-import { isRtl, type Locale } from "@/i18n/config";
+import { isRtl, localePath, type Locale } from "@/i18n/config";
 import { appT } from "@/i18n/app";
 import { common } from "@/i18n/messages/common";
 import { fill, quran } from "@/i18n/messages/quran";
@@ -13,6 +13,9 @@ import { localDigits } from "@/lib/digits";
 import { arabicIndic, hizbTitleAr, juzTitleAr, QUARTERS, searchSurahs, SURAHS, surahName, surahOfPage, type Quarter } from "@/lib/quran/data";
 import { useLastRead } from "@/lib/quran/client";
 import { quranPageHref } from "@/lib/quran/href";
+import { usePlayer } from "@/lib/player/usePlayer";
+import { PIcon } from "@/components/player/PlayerIcons";
+import { player } from "@/i18n/messages/player";
 
 export function QuranIndex({ lang }: { lang: Locale }) {
   const t = quran[lang];
@@ -20,6 +23,7 @@ export function QuranIndex({ lang }: { lang: Locale }) {
   const [tab, setTab] = useState<"surah" | "juz">("surah");
   const [query, setQuery] = useState("");
   const last = useLastRead();
+  const audio = usePlayer();
 
   const results = useMemo(() => searchSurahs(query), [query]);
   const digits = (n: number) => localDigits(lang, n);
@@ -93,6 +97,10 @@ export function QuranIndex({ lang }: { lang: Locale }) {
               {arabic ? (k === "surah" ? "السور" : "الأجزاء") : appT(lang, k === "surah" ? "quranIndex.surahsTab" : "quranIndex.juzTab")}
             </button>
           ))}
+          <Link href={localePath(lang, "/quran/listen/")} className="ms-auto inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-primary ring-1 ring-primary hover:bg-tint">
+            <PIcon name="headphones" className="size-4" />
+            {appT(lang, "qaudio.title")}
+          </Link>
         </div>
 
         {tab === "surah" ? (
@@ -101,8 +109,8 @@ export function QuranIndex({ lang }: { lang: Locale }) {
               {results.map((s) => {
                 const type = appT(lang, s.type === "meccan" ? "quranIndex.meccan" : "quranIndex.madinan");
                 return (
-                  <li key={s.n}>
-                    <Link href={pageHref(s.page)} className="group flex items-center gap-3 rounded-xl bg-white p-3.5 shadow-[0_3px_10px_rgba(124,180,200,0.3)] ring-2 ring-edge/70 transition hover:-translate-y-0.5 hover:ring-primary dark:bg-card">
+                  <li key={s.n} className="relative">
+                    <Link href={pageHref(s.page)} className="group flex items-center gap-3 rounded-xl bg-white p-3.5 pe-16 shadow-[0_3px_10px_rgba(124,180,200,0.3)] ring-2 ring-edge/70 transition hover:-translate-y-0.5 hover:ring-primary dark:bg-card">
                       <NumberBadge label={digits(s.n)} />
                       <div className="min-w-0 flex-1">
                         <div className="truncate text-[16px] font-bold text-section group-hover:text-primary dark:text-primary-light">{arabic ? `سورة ${s.ar}` : surahName(lang, s.n)}</div>
@@ -120,6 +128,15 @@ export function QuranIndex({ lang }: { lang: Locale }) {
                         <span className="text-xs font-semibold text-primary">{arabic ? `صفحة ${arabicIndic(s.page)}` : appT(lang, "quranIndex.page").replace("{0}", digits(s.page))}</span>
                       </div>
                     </Link>
+                    <button
+                      type="button"
+                      onClick={() => (audio.visible && audio.surah === s.n ? audio.toggle() : audio.playSurah(audio.reciter, s.n))}
+                      aria-label={audio.visible && audio.surah === s.n && audio.playing ? player[lang].pause : fill(player[lang].listenSurah, { surah: surahName(lang, s.n) })}
+                      title={player[lang].listen}
+                      className="absolute end-3 top-1/2 grid size-10 -translate-y-1/2 place-items-center rounded-full bg-primary text-white shadow-sm transition hover:bg-primary-deep"
+                    >
+                      <PIcon name={audio.visible && audio.surah === s.n && audio.playing ? "pause" : "play"} className="size-[18px]" />
+                    </button>
                   </li>
                 );
               })}

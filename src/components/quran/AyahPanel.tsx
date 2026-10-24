@@ -10,7 +10,9 @@ import { fill, quran } from "@/i18n/messages/quran";
 import { localDigits } from "@/lib/digits";
 import { arabicIndic, surahName, SURAHS } from "@/lib/quran/data";
 import { quranPageHref } from "@/lib/quran/href";
-import { ayahAudioUrl, fetchTafsir, fetchTranslation, RECITER_KEY, RECITERS, TAFSIR_KEY, TRANSLATION, usePref, writePref } from "@/lib/quran/client";
+import { usePlayer } from "@/lib/player/usePlayer";
+import { reciterByFolder } from "@/lib/player/reciters";
+import { fetchTafsir, fetchTranslation, RECITER_KEY, RECITERS, TAFSIR_KEY, TRANSLATION, usePref, writePref } from "@/lib/quran/client";
 
 export type AyahSel = { s: number; a: number; page: number; text: string };
 
@@ -30,8 +32,10 @@ export function AyahPanel({ lang, sel, onClose, onStep }: { lang: Locale; sel: A
   const [reload, setReload] = useState(0);
   const [result, setResult] = useState<Result | null>(null);
   const [copied, setCopied] = useState(false);
-  const [playing, setPlaying] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  // recitation goes through the site's global player (mini bar), from this ayah to the end of the surah
+  const audio = usePlayer();
+  const here = audio.visible && audio.surah === sel.s && audio.ayah === sel.a;
+  const playing = here && audio.playing;
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -61,29 +65,9 @@ export function AyahPanel({ lang, sel, onClose, onStep }: { lang: Locale; sel: A
   }, [arabic, lang, sel.page, key, book, req]);
   const body: Body = result?.req === req ? result.body : { state: "loading" };
 
-  // stop the recitation when the verse changes or the sheet closes
-  useEffect(() => {
-    return () => {
-      audioRef.current?.pause();
-      audioRef.current = null;
-      setPlaying(false);
-    };
-  }, [key, reciter]);
-
   const togglePlay = () => {
-    if (playing) {
-      audioRef.current?.pause();
-      return;
-    }
-    if (!audioRef.current) {
-      const au = new Audio(ayahAudioUrl(reciter, sel.s, sel.a));
-      au.onplay = () => setPlaying(true);
-      au.onpause = () => setPlaying(false);
-      au.onended = () => setPlaying(false);
-      au.onerror = () => setPlaying(false);
-      audioRef.current = au;
-    }
-    void audioRef.current.play().catch(() => setPlaying(false));
+    if (here) audio.toggle();
+    else audio.playSurah(reciterByFolder(reciter)?.key ?? audio.reciter, sel.s, sel.a);
   };
 
   const ref = arabic ? `[${SURAHS[sel.s - 1]?.ar} : ${arabicIndic(sel.a)}]` : `[${surahName(lang, sel.s)} ${sel.s}:${sel.a}]`;

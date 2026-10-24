@@ -25,6 +25,7 @@ export const NAV_MAIN: NavItem[] = [
 ];
 
 export const NAV_MORE: NavItem[] = [
+  { key: "listen", href: "/quran/listen/", icon: "play" },
   NAV[4],
   NAV[5],
   NAV[6],
