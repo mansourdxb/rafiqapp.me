@@ -130,41 +130,43 @@ export function HomeView({ lang }: { lang: Locale }) {
           </div>
           <ul className="mt-12 grid gap-8 md:grid-cols-3">
             {REVIEWS.map((r) => (
-              <li key={r.name} className="flex min-h-[340px] flex-col rounded-xl bg-white p-10 text-navy-2 shadow-xl">
+              <li key={r.name} className="flex min-h-[260px] flex-col rounded-xl bg-white p-8 text-navy-2 shadow-xl">
                 <span className="text-sm tracking-widest text-orange" aria-label={`${r.rating}/5`}>
                   {"★".repeat(r.rating)}
                 </span>
-                <p className="mt-5 text-lg font-bold" dir="auto">
-                  {r.title}
-                </p>
-                <p className="mt-2 text-lg leading-8" dir="auto">
+                {r.title && (
+                  <p className="mt-5 text-lg font-bold" dir="auto">
+                    {r.title}
+                  </p>
+                )}
+                <p className="mt-3 text-base leading-8" dir="auto">
                   {r.body}
                 </p>
                 <div className="mt-auto flex items-center gap-3 pt-6">
                   <Image src="/images/ref/ellipse_76-3x.webp" alt="" width={50} height={50} className="size-12 rounded-full" />
                   <span className="text-xs font-bold text-section" dir="auto">
                     {r.name}
-                    <span className="block font-normal text-ink-2">{r.store}</span>
+                    <span className="block font-normal text-ink-2">
+                      {r.store} · {localDigits(lang, r.date.replaceAll("-", "/"))}
+                    </span>
                   </span>
                 </div>
               </li>
             ))}
-            <li className="flex min-h-[340px] flex-col items-center justify-center gap-4 rounded-xl border-2 border-dashed border-white/30 p-10 text-center">
-              <span className="text-2xl tracking-widest text-orange">★★★★★</span>
-              <p className="text-lg font-bold">{t.reviews.write}</p>
-              <div className="flex flex-wrap justify-center gap-2">
-                {[
-                  ["App Store", `${STORES.appStore}?action=write-review`],
-                  ["Google Play", STORES.googlePlay],
-                  ["AppGallery", STORES.appGallery],
-                ].map(([n, href]) => (
-                  <a key={n} href={href} target="_blank" rel="noopener noreferrer" className="rounded-full bg-white/10 px-4 py-2 text-sm font-bold hover:bg-white/20">
-                    {n}
-                  </a>
-                ))}
-              </div>
-            </li>
           </ul>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 rounded-xl border-2 border-dashed border-white/30 px-6 py-5 text-center">
+            <span className="text-xl tracking-widest text-orange">★★★★★</span>
+            <p className="text-lg font-bold">{t.reviews.write}</p>
+            {[
+              ["App Store", `${STORES.appStore}?action=write-review`],
+              ["Google Play", STORES.googlePlay],
+              ["AppGallery", STORES.appGallery],
+            ].map(([n, href]) => (
+              <a key={n} href={href} target="_blank" rel="noopener noreferrer" className="rounded-full bg-white/10 px-4 py-2 text-sm font-bold hover:bg-white/20">
+                {n}
+              </a>
+            ))}
+          </div>
 
           <div id="contact" className="relative z-10 mx-auto mt-24 max-w-4xl translate-y-1/3 scroll-mt-24 rounded-md bg-white p-2.5 shadow-xl">
             <div className="grid min-w-0 items-center gap-6 rounded bg-primary px-5 py-8 sm:px-8 sm:py-10 md:grid-cols-[1fr_1.1fr]">

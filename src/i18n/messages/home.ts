@@ -46,7 +46,7 @@ const en: Home = {
   },
   reviews: {
     title: "Our users' opinions",
-    body: "Rafiq Al-Muslim reminds you of prayer times, helps you remember Allah and connects you with the Qur'an. Here is what users say on the App Store.",
+    body: "Rafiq Al-Muslim reminds you of prayer times, helps you remember Allah and connects you with the Qur'an. Here is what users say on the App Store and Google Play.",
     write: "Write your review",
   },
   contact: {
@@ -88,7 +88,7 @@ const ar: Home = {
   },
   reviews: {
     title: "آراء مستخدمينا",
-    body: "تطبيق رفيق المسلم يذكّرك بمواقيت الصلاة، ويعينك على ذكر الله، ويصلك بالقرآن الكريم. هذه آراء المستخدمين في متجر App Store.",
+    body: "تطبيق رفيق المسلم يذكّرك بمواقيت الصلاة، ويعينك على ذكر الله، ويصلك بالقرآن الكريم. هذه آراء المستخدمين في متجري App Store وGoogle Play.",
     write: "اكتب رأيك",
   },
   contact: {
