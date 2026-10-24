@@ -4,6 +4,9 @@ import { isRtl, type Locale } from "@/i18n/config";
 import { appT } from "@/i18n/app";
 import { imsakiyaMsg } from "@/i18n/messages/imsakiya";
 import { prayerMsg } from "@/i18n/messages/prayer";
+import { common } from "@/i18n/messages/common";
+import { PageHeader } from "@/components/ui/PageHeader";
+import { PANEL } from "@/components/prayer/prayerUi";
 import { Icon } from "@/components/ui/Icon";
 import { localDigits } from "@/lib/digits";
 import { computeDay, effectiveMethod, formatTime, ymdInTz } from "@/lib/prayer/compute";
@@ -58,17 +61,28 @@ export function ImsakiyaView({ lang }: { lang: Locale }) {
     k === "imsak" ? appT(lang, "alm.imsakiya.imsak") : k === "maghrib" ? `${appT(lang, "prayer.maghrib")} · ${appT(lang, "alm.imsakiya.iftar")}` : appT(lang, `prayer.${k}`);
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-6 sm:py-10">
+    <>
       <style>{PRINT_CSS}</style>
-      <div className="mb-5 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-        <h1 className="text-2xl font-extrabold text-ink sm:text-3xl">{appT(lang, "more.imsakiya")}</h1>
-        <div className="w-full lg:max-w-xl">
-          <LocationPicker lang={lang} />
-        </div>
+      <PageHeader
+        lang={lang}
+        crumbs={[{ label: common[lang].nav.imsakiya }]}
+        title={
+          <>
+            {appT(lang, "more.imsakiya")}{" "}
+            <span className="text-orange">
+              {place.label}
+              {place.countryLabel ? `${isRtl(lang) ? "، " : ", "}${place.countryLabel}` : ""}
+            </span>
+          </>
+        }
+      />
+      <div className="mx-auto max-w-6xl px-4 pb-12">
+      <div className={PANEL}>
+        <LocationPicker lang={lang} />
       </div>
-      {place.isDefault && <p className="mb-4 rounded-xl border border-primary/25 bg-tint px-4 py-3 text-sm text-ink">{prayerMsg[lang].defaultNotice}</p>}
+      {place.isDefault && <p className="mt-4 rounded-md bg-tint px-4 py-3 text-sm font-semibold text-navy-2 dark:text-ink">{prayerMsg[lang].defaultNotice}</p>}
 
-      <section className="print-area overflow-hidden rounded-3xl shadow-lg" style={{ background: th.row }}>
+      <section className="print-area mt-8 overflow-hidden rounded-[15px] shadow-[0_5px_25px_rgba(0,0,0,0.16)]" style={{ background: th.row }}>
         <div className="relative px-5 py-6 text-center sm:px-8" style={{ background: th.header, color: th.title }}>
           <div className="no-print absolute end-4 top-4 flex items-center gap-2">
             {ORDER.map((id) => (
@@ -138,11 +152,12 @@ export function ImsakiyaView({ lang }: { lang: Locale }) {
           <p className="max-w-xl">
             {t.imsakNote} · {appT(lang, METHOD_LABEL[effectiveMethod(place, s)])} · {place.tz} · {appT(lang, "app.name")} — rafiqapp.me
           </p>
-          <button type="button" onClick={() => window.print()} className="no-print inline-flex h-10 items-center gap-1.5 rounded-xl bg-orange px-4 text-sm font-bold text-white hover:brightness-110">
+          <button type="button" onClick={() => window.print()} className="no-print inline-flex h-10 items-center gap-1.5 rounded-full bg-navy px-6 text-sm font-bold text-white ring-1 ring-white/30 hover:bg-section">
             {prayerMsg[lang].print}
           </button>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

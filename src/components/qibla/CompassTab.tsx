@@ -72,18 +72,18 @@ export function CompassTab({ lang, qibla }: { lang: Locale; qibla: number }) {
       </div>
 
       {status === "on" && diff != null && (
-        <p className={`rounded-xl px-4 py-2 text-center text-sm font-bold ${aligned ? "bg-orange text-white" : "bg-tint text-ink"}`} role="status">
+        <p className={`rounded-md px-4 py-2 text-center text-sm font-bold ${aligned ? "bg-orange text-white" : "bg-tint text-navy-2 dark:text-ink"}`} role="status">
           {aligned ? t.facing : appT(lang, diff > 0 ? "alm.qibla.moveRight" : "alm.qibla.moveLeft")}
         </p>
       )}
 
       <div className="flex flex-wrap items-center justify-center gap-2">
         {status !== "on" && (
-          <button type="button" onClick={start} disabled={status === "waiting"} className="h-11 rounded-xl bg-primary px-5 text-sm font-bold text-white hover:bg-primary-deep disabled:opacity-70">
+          <button type="button" onClick={start} disabled={status === "waiting"} className="h-11 rounded-lg bg-primary px-8 text-sm font-bold text-white hover:bg-primary-deep disabled:opacity-70">
             {t.startCompass}
           </button>
         )}
-        <button type="button" onClick={() => setCalib((c) => !c)} className="h-11 rounded-xl border border-line px-4 text-sm font-semibold text-ink hover:bg-tint">
+        <button type="button" onClick={() => setCalib((c) => !c)} className="h-11 rounded-full px-6 text-sm font-bold text-navy-2 ring-1 ring-primary hover:bg-tint dark:text-white">
           {t.calibrate}
         </button>
       </div>
@@ -94,7 +94,7 @@ export function CompassTab({ lang, qibla }: { lang: Locale; qibla: number }) {
       {status === "on" && <p className="max-w-md text-center text-xs text-ink-2">{appT(lang, "alm.qibla.holdFlat")}</p>}
 
       {calib && (
-        <div className="w-full max-w-md rounded-2xl bg-tint p-4 text-sm text-ink">
+        <div className="w-full max-w-md rounded-md bg-tint p-4 text-sm text-navy-2 dark:text-ink">
           <p className="mb-1 font-bold">{appT(lang, "alm.qibla.calibrateTitle")}</p>
           <p>{appT(lang, "alm.qibla.calibrateBody")}</p>
           <svg viewBox="0 0 120 50" className="mx-auto mt-3 h-12 w-28 text-primary" aria-hidden>

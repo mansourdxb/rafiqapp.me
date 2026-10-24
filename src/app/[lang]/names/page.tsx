@@ -5,6 +5,7 @@ import { alternates } from "@/i18n/metadata";
 import { names, NAMES_VERSE } from "@/i18n/messages/names";
 import { NAMES, nameText } from "@/lib/athkar/data";
 import { NamesGrid } from "@/components/names/NamesGrid";
+import { PageHeader } from "@/components/ui/PageHeader";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/names">): Promise<Metadata> {
   const { lang } = await params;
@@ -21,13 +22,19 @@ export default async function NamesPage({ params }: PageProps<"/[lang]/names">) 
 
   return (
     <div className="pb-16">
-      <section className="bg-gradient-to-b from-navy to-navy-2 px-4 pt-10 pb-24 text-center text-white">
-        <h1 className="text-3xl font-bold sm:text-4xl">{t.title}</h1>
-        <p dir="rtl" lang="ar" className="quran mt-4 text-2xl text-gold sm:text-3xl">
-          ﴿{NAMES_VERSE}﴾
-        </p>
-        <p className="mt-1 text-sm text-white/60">{t.verseRef}</p>
-      </section>
+      <PageHeader
+        lang={lang}
+        crumbs={[{ label: t.title }]}
+        title={t.title}
+        subtitle={
+          <>
+            <span dir="rtl" lang="ar" className="quran mt-2 block text-2xl text-section sm:text-3xl dark:text-primary-light">
+              ﴿{NAMES_VERSE}﴾
+            </span>
+            <span className="mt-1 block text-sm text-ink-2">{t.verseRef}</span>
+          </>
+        }
+      />
       <NamesGrid lang={lang} list={list} labels={{ search: t.search, noResults: t.noResults, note: t.englishNote }} />
     </div>
   );

@@ -49,7 +49,7 @@ export function MapTab({ lang, place, km }: { lang: Locale; place: Place; km: nu
 
   return (
     <div>
-      <div className="overflow-hidden rounded-2xl border border-line bg-tint">
+      <div className="overflow-hidden rounded-xl bg-tint ring-2 ring-edge/70">
         <svg viewBox={`0 0 ${W} ${H}`} className="block h-auto w-full" role="img" aria-label={appT(lang, "alm.qibla.mapDirection")}>
           {view.tiles.map((tl) => (
             <image key={tl.key} href={tl.href} x={tl.x} y={tl.y} width={256} height={256} />

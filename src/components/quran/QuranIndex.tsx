@@ -4,6 +4,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
+import { PageHeader } from "@/components/ui/PageHeader";
 import { isRtl, type Locale } from "@/i18n/config";
 import { appT } from "@/i18n/app";
 import { common } from "@/i18n/messages/common";
@@ -35,53 +36,51 @@ export function QuranIndex({ lang }: { lang: Locale }) {
 
   return (
     <div className="pb-16">
-      {/* hero */}
-      <section className="relative overflow-hidden bg-navy text-white">
-        <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:radial-gradient(circle_at_20%_20%,#29ABE2_0,transparent_45%),radial-gradient(circle_at_85%_70%,#F47A1F_0,transparent_40%)]" />
-        <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-10 sm:pt-14">
-          {/* 73:4, text from the app's qpc-hafs.json */}
-          <p className="quran text-2xl leading-loose text-gold sm:text-3xl" dir="rtl" lang="ar" style={{ textAlign: isRtl(lang) ? "right" : "left" }}>
-            ﴿أَوۡ زِدۡ عَلَيۡهِ وَرَتِّلِ ٱلۡقُرۡءَانَ تَرۡتِيلًا﴾ <span className="font-sans text-sm text-white/60">[المزمل: ٤]</span>
-          </p>
-          <h1 className="mt-3 text-3xl font-bold sm:text-4xl">{t.title}</h1>
-          <p className="mt-2 max-w-2xl text-white/75">{t.heroSub}</p>
-          <div className="relative mt-6 max-w-xl">
-            <Icon name="search" className="pointer-events-none absolute start-4 top-1/2 size-5 -translate-y-1/2 text-ink-2" />
-            <input
-              type="search"
-              value={query}
-              onChange={(e) => {
-                setQuery(e.target.value);
-                setTab("surah");
-              }}
-              placeholder={appT(lang, "quranIndex.searchSurah")}
-              aria-label={appT(lang, "quranIndex.searchSurah")}
-              className="h-12 w-full rounded-2xl border-0 bg-white ps-12 pe-4 text-base text-[#16202B] shadow-lg outline-none ring-2 ring-transparent placeholder:text-[#7C8A99] focus:ring-primary-light"
-            />
-          </div>
-        </div>
-      </section>
+      <PageHeader lang={lang} crumbs={[{ label: common[lang].nav.quran }]} title={t.title} subtitle={t.heroSub} photo="/images/ref/catHeader1.webp">
+        {/* 73:4, text from the app's qpc-hafs.json */}
+        <p className="quran mt-4 text-2xl leading-loose text-white sm:text-[26px]" dir="rtl" lang="ar">
+          ﴿أَوۡ زِدۡ عَلَيۡهِ وَرَتِّلِ ٱلۡقُرۡءَانَ تَرۡتِيلًا﴾ <span className="font-sans text-sm text-white/75">[المزمل: ٤]</span>
+        </p>
+      </PageHeader>
 
-      <div className="relative mx-auto -mt-12 max-w-6xl px-4">
-        {/* continue reading / start */}
-        <div className="flex flex-wrap items-center gap-3 rounded-3xl bg-card p-4 shadow-[0_10px_30px_-12px_rgba(13,36,94,0.25)] ring-1 ring-line sm:flex-nowrap sm:p-5">
-          <div className="grid size-12 shrink-0 place-items-center rounded-2xl bg-tint text-primary">
-            <Icon name={last ? "bookmark" : "quran"} className="size-6" />
-          </div>
-          <div className="min-w-0 flex-1">
-            <div className="font-bold text-ink">{last ? appT(lang, "quranIndex.continueReading") : t.startReading}</div>
-            <div className="truncate text-sm text-ink-2">
-              {last ? `${fill(t.lastRead, { page: digits(last.page) })} · ${surahName(lang, surahOfPage(last.page))}` : `${surahName(lang, 1)} · ${t.page} ${digits(1)}`}
+      <div className="mx-auto max-w-6xl px-4 pt-10">
+        {/* search (tinted box with a pill field, as the reference) + continue reading */}
+        <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+          <div className="rounded-[15px] bg-tint p-4 sm:p-5">
+            <div className="relative">
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => {
+                  setQuery(e.target.value);
+                  setTab("surah");
+                }}
+                placeholder={appT(lang, "quranIndex.searchSurah")}
+                aria-label={appT(lang, "quranIndex.searchSurah")}
+                className="h-14 w-full rounded-full bg-white ps-6 pe-12 text-base text-navy-2 shadow-[0_3px_10px_rgba(124,180,200,0.35)] outline-none ring-2 ring-edge/70 placeholder:text-ink-2 focus:ring-primary dark:bg-canvas dark:text-ink"
+              />
+              <Icon name="search" className="pointer-events-none absolute end-5 top-1/2 size-5 -translate-y-1/2 text-navy-2 dark:text-ink" />
             </div>
           </div>
-          <Link href={pageHref(last?.page ?? 1)} className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange px-5 py-2.5 sm:w-auto text-sm font-bold text-white shadow-sm hover:brightness-105">
-            {last ? appT(lang, "quranIndex.continueReading") : t.startReading}
-            <Icon name="chevron" className="size-4" flip />
-          </Link>
+          <div className="flex flex-wrap items-center gap-3 rounded-[15px] bg-card p-4 shadow-[0_5px_25px_rgba(0,0,0,0.16)] sm:flex-nowrap sm:p-5 dark:shadow-none dark:ring-1 dark:ring-line">
+            <div className="grid size-12 shrink-0 place-items-center rounded-full bg-primary text-white">
+              <Icon name={last ? "bookmark" : "quran"} className="size-6" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="font-bold text-section dark:text-primary-light">{last ? appT(lang, "quranIndex.continueReading") : t.startReading}</div>
+              <div className="truncate text-sm text-navy-2 dark:text-ink-2">
+                {last ? `${fill(t.lastRead, { page: digits(last.page) })} · ${surahName(lang, surahOfPage(last.page))}` : `${surahName(lang, 1)} · ${t.page} ${digits(1)}`}
+              </div>
+            </div>
+            <Link href={pageHref(last?.page ?? 1)} className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-bold text-white hover:bg-primary-deep sm:w-auto">
+              {last ? appT(lang, "quranIndex.continueReading") : t.startReading}
+              <Icon name="chevron" className="size-4" flip />
+            </Link>
+          </div>
         </div>
 
         {/* tabs */}
-        <div role="tablist" className="mx-auto mt-6 grid max-w-md grid-cols-2 rounded-2xl bg-card p-1 shadow-sm ring-1 ring-line">
+        <div role="tablist" className="mt-8 flex flex-wrap items-center gap-2">
           {(["surah", "juz"] as const).map((k) => (
             <button
               key={k}
@@ -89,7 +88,7 @@ export function QuranIndex({ lang }: { lang: Locale }) {
               type="button"
               aria-selected={tab === k}
               onClick={() => setTab(k)}
-              className={`rounded-xl py-2.5 text-[15px] font-bold transition ${tab === k ? "bg-primary text-white shadow" : "text-ink-2 hover:text-ink"}`}
+              className={`rounded-full px-6 py-3 text-[15px] font-bold transition ${tab === k ? "bg-navy text-white shadow-sm" : "text-navy-2 hover:text-primary dark:text-ink"}`}
             >
               {arabic ? (k === "surah" ? "السور" : "الأجزاء") : appT(lang, k === "surah" ? "quranIndex.surahsTab" : "quranIndex.juzTab")}
             </button>
@@ -98,27 +97,27 @@ export function QuranIndex({ lang }: { lang: Locale }) {
 
         {tab === "surah" ? (
           results.length ? (
-            <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {results.map((s) => {
                 const type = appT(lang, s.type === "meccan" ? "quranIndex.meccan" : "quranIndex.madinan");
                 return (
                   <li key={s.n}>
-                    <Link href={pageHref(s.page)} className="group flex items-center gap-3 rounded-2xl bg-card p-3.5 shadow-sm ring-1 ring-line transition hover:-translate-y-0.5 hover:shadow-md hover:ring-primary/40">
+                    <Link href={pageHref(s.page)} className="group flex items-center gap-3 rounded-xl bg-white p-3.5 shadow-[0_3px_10px_rgba(124,180,200,0.3)] ring-2 ring-edge/70 transition hover:-translate-y-0.5 hover:ring-primary dark:bg-card">
                       <NumberBadge label={digits(s.n)} />
                       <div className="min-w-0 flex-1">
-                        <div className="truncate text-[16px] font-bold text-ink group-hover:text-primary">{arabic ? `سورة ${s.ar}` : surahName(lang, s.n)}</div>
-                        <div className="mt-0.5 flex items-center gap-1 truncate text-[13px] text-ink-2">
+                        <div className="truncate text-[16px] font-bold text-section group-hover:text-primary dark:text-primary-light">{arabic ? `سورة ${s.ar}` : surahName(lang, s.n)}</div>
+                        <div className="mt-0.5 flex items-center gap-1 truncate text-[13px] text-navy-2 dark:text-ink-2">
                           <Icon name="location" className="size-3.5 shrink-0 text-orange" />
                           {arabic ? `${type} - آياتها ${arabicIndic(s.ayahs)}` : `${type} · ${appT(lang, "carplay.ayahCount", { n: digits(s.ayahs) })}`}
                         </div>
                       </div>
                       <div className="flex shrink-0 flex-col items-end gap-0.5 text-end">
                         {!arabic ? (
-                          <span className="quran text-xl leading-tight text-section dark:text-primary-light" dir="rtl" lang="ar">
+                          <span className="quran text-xl leading-tight text-navy-2 dark:text-ink" dir="rtl" lang="ar">
                             {s.ar}
                           </span>
                         ) : null}
-                        <span className="text-xs font-semibold text-ink-2">{arabic ? `صفحة ${arabicIndic(s.page)}` : appT(lang, "quranIndex.page").replace("{0}", digits(s.page))}</span>
+                        <span className="text-xs font-semibold text-primary">{arabic ? `صفحة ${arabicIndic(s.page)}` : appT(lang, "quranIndex.page").replace("{0}", digits(s.page))}</span>
                       </div>
                     </Link>
                   </li>
@@ -126,36 +125,36 @@ export function QuranIndex({ lang }: { lang: Locale }) {
               })}
             </ul>
           ) : (
-            <p className="mt-10 text-center text-ink-2">{common[lang].noResults}</p>
+            <p className="mt-10 text-center font-bold text-section dark:text-primary-light">{common[lang].noResults}</p>
           )
         ) : (
-          <div className="mt-5 grid gap-4 lg:grid-cols-2">
+          <div className="mt-6 grid gap-6 lg:grid-cols-2">
             {juzSections.map(({ juz, items }) => (
-              <section key={juz} className="overflow-hidden rounded-2xl bg-card shadow-sm ring-1 ring-line">
-                <h2 className="flex items-center justify-between bg-tint px-4 py-2.5 text-[15px] font-bold text-section dark:text-primary-light">
+              <section key={juz}>
+                <h2 className="flex items-center justify-between rounded-md bg-tint px-4 py-3 text-[17px] font-bold text-navy-2 dark:text-ink">
                   <span>{arabic ? juzTitleAr(juz) : appT(lang, "quranIndex.juz").replace("{0}", digits(juz))}</span>
-                  <Link href={pageHref(items[0].q.p)} className="text-xs font-semibold text-primary hover:underline">
+                  <Link href={pageHref(items[0].q.p)} className="text-xs font-bold text-primary hover:underline">
                     {arabic ? `صفحة ${arabicIndic(items[0].q.p)}` : appT(lang, "quranIndex.page").replace("{0}", digits(items[0].q.p))}
                   </Link>
                 </h2>
-                <ul className="divide-y divide-line">
+                <ul className="divide-y divide-line px-1">
                   {items.map(({ q, idx }) => {
                     const quarter = idx % 4;
                     const hizb = Math.floor(idx / 4) + 1;
                     return (
                       <li key={idx}>
-                        <Link href={pageHref(q.p)} className="flex items-center gap-3 px-4 py-3 transition hover:bg-tint/60">
+                        <Link href={pageHref(q.p)} className="flex items-center gap-3 rounded-md px-3 py-3 transition hover:bg-tint/60">
                           <QuarterStar quarter={quarter} hizb={hizb} />
                           <div className="min-w-0 flex-1">
                             {quarter === 0 ? <div className="text-xs font-semibold text-orange">{arabic ? hizbTitleAr(hizb) : appT(lang, "quranIndex.hizb").replace("{0}", digits(hizb))}</div> : null}
-                            <div className="quran truncate text-[19px] leading-9 text-ink" dir="rtl" lang="ar" style={{ textAlign: isRtl(lang) ? "right" : "left" }}>
+                            <div className="quran truncate text-[19px] leading-9 text-navy-2 dark:text-ink" dir="rtl" lang="ar" style={{ textAlign: isRtl(lang) ? "right" : "left" }}>
                               {q.t}
                             </div>
                             <div className="truncate text-xs text-ink-2">
                               {arabic ? `سورة ${SURAHS[q.s - 1].ar} – آية ${arabicIndic(q.a)}` : appT(lang, "quranIndex.surahAyah").replace("{0}", surahName(lang, q.s)).replace("{1}", digits(q.a))}
                             </div>
                           </div>
-                          <span className="shrink-0 text-xs font-semibold text-ink-2">{digits(q.p)}</span>
+                          <span className="shrink-0 text-xs font-bold text-primary">{digits(q.p)}</span>
                         </Link>
                       </li>
                     );
@@ -175,8 +174,8 @@ function NumberBadge({ label }: { label: string }) {
   return (
     <span className="relative grid size-11 shrink-0 place-items-center text-[13px] font-bold text-primary">
       <svg viewBox="0 0 44 44" className="absolute inset-0 size-full" aria-hidden>
-        <rect x="9" y="9" width="26" height="26" rx="4" className="fill-tint stroke-primary/40" strokeWidth="1.5" />
-        <rect x="9" y="9" width="26" height="26" rx="4" transform="rotate(45 22 22)" className="fill-tint stroke-primary/40" strokeWidth="1.5" />
+        <rect x="9" y="9" width="26" height="26" rx="4" className="fill-tint stroke-primary/60" strokeWidth="1.5" />
+        <rect x="9" y="9" width="26" height="26" rx="4" transform="rotate(45 22 22)" className="fill-tint stroke-primary/60" strokeWidth="1.5" />
       </svg>
       <span className="relative">{label}</span>
     </span>

@@ -3,35 +3,24 @@
 import { useState } from "react";
 import { CONTACT_EMAIL } from "@/lib/stores";
 
-type Labels = { name: string; email: string; message: string; send: string };
-
-/** No server on a static site: the form opens the visitor's mail app with the message filled in. */
-export function ContactForm({ labels, siteName }: { labels: Labels; siteName: string }) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+/** One rounded field + Send, like the reference. A static site has no server: Send opens the mail app. */
+export function ContactForm({ placeholder, send, siteName }: { placeholder: string; send: string; siteName: string }) {
   const [msg, setMsg] = useState("");
-
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    const body = `${msg}\n\n— ${name}${email ? ` <${email}>` : ""}`;
-    location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(siteName)}&body=${encodeURIComponent(body)}`;
+    location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(siteName)}&body=${encodeURIComponent(msg)}`;
   };
-
-  const field = "w-full rounded-2xl border-0 bg-white/95 px-4 py-3 text-ink placeholder:text-ink-2 focus:outline-none focus:ring-2 focus:ring-orange dark:bg-white/10 dark:text-white";
   return (
-    <form onSubmit={submit} className="grid gap-3 sm:grid-cols-2">
-      <input className={field} placeholder={labels.name} value={name} onChange={(e) => setName(e.target.value)} />
-      <input className={field} type="email" placeholder={labels.email} value={email} onChange={(e) => setEmail(e.target.value)} />
-      <textarea
+    <form onSubmit={submit} className="flex h-[70px] w-full items-center gap-2 rounded-full bg-white p-2.5 ps-6 shadow-sm">
+      <input
         required
-        rows={4}
-        className={`${field} sm:col-span-2`}
-        placeholder={labels.message}
         value={msg}
         onChange={(e) => setMsg(e.target.value)}
+        placeholder={placeholder}
+        className="min-w-0 flex-1 bg-transparent text-sm font-bold text-section placeholder:text-section focus:outline-none"
       />
-      <button type="submit" className="justify-self-start rounded-full bg-navy px-8 py-3 font-bold text-white transition hover:bg-navy-2">
-        {labels.send}
+      <button type="submit" className="h-full shrink-0 rounded-full bg-navy px-8 text-sm font-bold text-white hover:bg-navy-2">
+        {send}
       </button>
     </form>
   );

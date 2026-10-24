@@ -6,8 +6,11 @@ import { common } from "@/i18n/messages/common";
 import { faq as msgs } from "@/i18n/messages/faq";
 import { localDigits } from "@/lib/digits";
 import { FaqList } from "@/components/faq/FaqList";
-import { GetAppCard } from "@/components/articles/Parts";
-import { IslamicBand, StarPattern } from "@/components/ui/IslamicBand";
+import { articles as articleMsgs } from "@/i18n/messages/articles";
+import { mostRead } from "@/lib/articles";
+import { ArticleCard } from "@/components/articles/ArticleCard";
+import { GetAppCard, SideBox } from "@/components/articles/Parts";
+import { PageHeader } from "@/components/ui/PageHeader";
 import ar from "@/generated/faq-ar.json";
 import en from "@/generated/faq-en.json";
 import ur from "@/generated/faq-ur.json";
@@ -55,28 +58,25 @@ export default async function FaqPage({ params }: PageProps<"/[lang]/faq">) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <section className="relative overflow-hidden bg-navy text-white">
-        <StarPattern className="text-white/5" />
-        <div className="absolute -end-24 -top-24 size-96 rounded-full bg-primary/25 blur-3xl" aria-hidden />
-        <div className="relative mx-auto max-w-4xl px-4 pb-20 pt-14 text-center sm:pt-20">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-semibold ring-1 ring-white/15">
-            <span className="size-2 rounded-full bg-orange" />
-            {t.count.replace("{n}", localDigits(lang, data.items.length))}
-          </span>
-          <h1 className="mt-5 text-3xl font-extrabold sm:text-5xl">{data.title}</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-white/80 sm:text-lg">{t.subtitle}</p>
+      <PageHeader lang={lang} crumbs={[{ label: data.title }]} title={data.title} subtitle={t.subtitle} />
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 pb-16 pt-4 lg:grid-cols-[minmax(0,1fr)_290px]">
+        <div className="min-w-0">
+          <FaqList
+            items={data.items}
+            digits={digits}
+            labels={{ searchPlaceholder: t.searchPlaceholder, noResults: t.noResults, expandAll: t.expandAll, collapseAll: t.collapseAll }}
+          />
         </div>
-      </section>
-      <IslamicBand />
-      <div className="mx-auto max-w-4xl px-4 py-10">
-        <FaqList
-          items={data.items}
-          digits={digits}
-          labels={{ searchPlaceholder: t.searchPlaceholder, noResults: t.noResults, expandAll: t.expandAll, collapseAll: t.collapseAll }}
-        />
-      </div>
-      <div className="mx-auto max-w-7xl px-4 pb-16 pt-6">
-        <GetAppCard lang={lang} />
+        <aside className="flex flex-col gap-8 lg:pt-16">
+          <SideBox title={articleMsgs[lang].mostRead}>
+            <div className="space-y-4">
+              {mostRead(lang, 3).map((c) => (
+                <ArticleCard key={c.href} lang={lang} card={c} size="row" />
+              ))}
+            </div>
+          </SideBox>
+          <GetAppCard lang={lang} compact />
+        </aside>
       </div>
     </>
   );

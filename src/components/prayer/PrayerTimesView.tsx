@@ -1,8 +1,11 @@
 "use client";
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import { isRtl, type Locale } from "@/i18n/config";
 import { appT } from "@/i18n/app";
 import { prayerMsg } from "@/i18n/messages/prayer";
+import { common } from "@/i18n/messages/common";
+import { PageHeader } from "@/components/ui/PageHeader";
 import { Icon } from "@/components/ui/Icon";
 import { localDigits } from "@/lib/digits";
 import { computeDay, effectiveMethod, formatDuration, highLatitude, PRAYERS, ymdInTz, type Place, type PrayerSettings } from "@/lib/prayer/compute";
@@ -10,7 +13,7 @@ import { METHOD_LABEL, METHODS, type MethodKey } from "@/lib/prayer/methods";
 import { settingsStore } from "@/lib/prayer/store";
 import { formatGregorian, hijriMonthName, toHijri, weekdayName } from "@/lib/calendar/hijri";
 import { LocationPicker } from "./LocationPicker";
-import { dateLine, fmtTime, PrayerIcon, prayerName, SCENES, Skyline, useLive } from "./prayerUi";
+import { CARD, dateLine, fmtTime, OUTLINED, PANEL, PILL, PRAYER_ICON_SRC, prayerName, useLive } from "./prayerUi";
 import { useNow, usePlace, useSettings, type ShownPlace } from "./usePlace";
 import { PRINT_CSS } from "./printCss";
 
@@ -22,112 +25,114 @@ export function PrayerTimesView({ lang }: { lang: Locale }) {
   const live = useLive(place, s, now);
   const fmt = fmtTime(lang, place, s);
   const date = now ? dateLine(lang, now, place.tz) : null;
-  const scene = live ? (live.current ?? "isha") : "isha";
   const nextKey = live?.mode === "since" ? live.current! : live?.next;
+  const sep = isRtl(lang) ? "، " : ", ";
+  const where = `${place.label}${place.countryLabel ? `${sep}${place.countryLabel}` : ""}`;
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-6 sm:py-10">
+    <>
       <style>{PRINT_CSS}</style>
-      <div className="no-print mb-5 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-        <h1 className="text-2xl font-extrabold text-ink sm:text-3xl">{t.title}</h1>
-        <div className="w-full lg:max-w-xl">
+      <div className="no-print">
+        <PageHeader
+          lang={lang}
+          crumbs={[{ label: common[lang].nav.prayer }]}
+          title={
+            <>
+              {t.title} <span className="text-orange">{where}</span>
+            </>
+          }
+        />
+      </div>
+      <div className="mx-auto max-w-6xl px-4 pb-12">
+        {/* place search + method + date, in a light-blue panel like the reference */}
+        <div className={`no-print ${PANEL} grid gap-3`}>
           <LocationPicker lang={lang} />
-        </div>
-      </div>
-
-      {place.isDefault && (
-        <p className="mb-4 rounded-xl border border-primary/25 bg-tint px-4 py-3 text-sm text-ink">{t.defaultNotice}</p>
-      )}
-
-      {/* hero */}
-      <section
-        className="relative overflow-hidden rounded-3xl px-5 pb-28 pt-5 text-white shadow-lg sm:px-8 sm:pb-36 sm:pt-7"
-        style={{ background: SCENES[scene] }}
-      >
-        <Skyline className="pointer-events-none absolute inset-x-0 bottom-12 h-16 w-full text-navy/40 sm:bottom-16 sm:h-20" />
-        <div className="relative flex flex-wrap items-center justify-between gap-3">
-          <span className="inline-flex max-w-full items-center gap-1.5 rounded-full border border-white/25 bg-navy-2/80 px-3 py-1.5 text-sm font-semibold">
-            <Icon name="location" className="size-4 shrink-0" />
-            <span className="truncate">
-              {place.label}
-              {place.countryLabel ? `${isRtl(lang) ? "، " : ", "}${place.countryLabel}` : ""}
-            </span>
-          </span>
-          {date && (
-            <span className="text-sm text-white/85">
-              {date.weekday} · {date.hijri}
-            </span>
-          )}
-        </div>
-        <div className="relative mt-6 sm:mt-8">
-          <p className="text-base font-semibold text-white/90 sm:text-lg">
-            {live ? appT(lang, live.mode === "since" ? "alm.prayer.since" : "alm.prayer.after", { prayer: prayerName(lang, nextKey!) }) : " "}
-          </p>
-          <p className="mt-1 font-sans text-5xl font-extrabold tabular-nums tracking-wide sm:text-7xl">
-            <span className="inline-block" dir="ltr">
-              {live ? formatDuration(live.ms) : "--:--:--"}
-            </span>
-          </p>
-          {date && <p className="mt-2 text-sm text-white/80">{date.gregorian}</p>}
-        </div>
-      </section>
-
-      {/* prayer cards */}
-      <div className="relative z-10 -mt-16 grid grid-cols-3 gap-2.5 px-2 sm:-mt-20 sm:grid-cols-6 sm:gap-3 sm:px-5">
-        {PRAYERS.map((k) => {
-          const active = live && nextKey === k;
-          return (
-            <div
-              key={k}
-              className={`flex flex-col items-center gap-1.5 rounded-2xl px-2 py-3 text-center shadow-md transition sm:py-4 ${
-                active ? "bg-navy text-white ring-2 ring-orange" : "bg-card text-ink"
-              }`}
-            >
-              <span className={`text-sm font-bold ${active ? "text-white" : "text-ink"}`}>{prayerName(lang, k)}</span>
-              <PrayerIcon k={k} className={`size-7 ${active ? "text-gold" : "text-primary"}`} />
-              <span className="text-base font-extrabold tabular-nums sm:text-lg">
-                {live ? fmt(live.today[k]) : "--:--"}
-              </span>
+          <div className="grid gap-3 md:grid-cols-[1fr_1fr_1.2fr]">
+            <div className={PILL}>
+              <Icon name="location" className="size-5 shrink-0 text-navy-2 dark:text-white" />
+              <span className="min-w-0 truncate text-sm font-bold text-navy-2 dark:text-white">{where}</span>
             </div>
-          );
-        })}
-      </div>
-
-      {live && (live.midnight || live.lastThird) && (
-        <div className="mt-4 flex flex-wrap justify-center gap-2 text-sm">
-          {live.midnight && (
-            <span className="rounded-full bg-card px-4 py-1.5 text-ink shadow-sm">
-              {appT(lang, "alm.mid.midnight")} <b className="ms-1 tabular-nums">{fmt(live.midnight)}</b>
-            </span>
-          )}
-          {live.lastThird && (
-            <span className="rounded-full bg-card px-4 py-1.5 text-ink shadow-sm">
-              {appT(lang, "alm.mid.lastThird")} <b className="ms-1 tabular-nums">{fmt(live.lastThird)}</b>
-            </span>
-          )}
+            <div className={PILL}>
+              <Icon name="settings" className="size-5 shrink-0 text-navy-2 dark:text-white" />
+              <span className="min-w-0 truncate text-sm font-bold text-navy-2 dark:text-white">{appT(lang, METHOD_LABEL[effectiveMethod(place, s)])}</span>
+            </div>
+            <div className={PILL}>
+              <Icon name="calendar" className="size-5 shrink-0 text-navy-2 dark:text-white" />
+              <span className="min-w-0 truncate text-xs font-bold text-navy-2 dark:text-white">{date ? `${date.weekday}${sep}${date.hijri} - ${date.gregorian}` : ""}</span>
+            </div>
+          </div>
         </div>
-      )}
 
-      <p className="mt-3 text-center text-xs text-ink-2">
-        {t.tzNote.replace("{{city}}", place.label).replace("{{tz}}", place.tz)} · {appT(lang, METHOD_LABEL[effectiveMethod(place, s)])}
-      </p>
+        {place.isDefault && (
+          <p className="no-print mt-4 rounded-md bg-tint px-4 py-3 text-sm font-semibold text-navy-2 dark:text-ink">{t.defaultNotice}</p>
+        )}
 
-      <SettingsCard lang={lang} place={place} s={s} />
-      <MonthlyTable lang={lang} place={place} s={s} today={now ? ymdInTz(now, place.tz) : null} />
-    </div>
+        {/* six prayer cards; the next (or current) prayer is the navy card with the countdown */}
+        <div className="no-print mt-8 grid grid-cols-2 items-end gap-3 sm:grid-cols-3 md:grid-cols-6 md:gap-4">
+          {PRAYERS.map((k) => {
+            const on = live && nextKey === k;
+            return on ? (
+              <div key={k} className="col-span-2 flex flex-col items-center gap-1 rounded-t-2xl rounded-b-xl bg-navy px-3 pb-3 pt-3 text-center text-white shadow-lg sm:col-span-1 md:-mt-4">
+                <span className="text-[11px] font-semibold text-white/85">
+                  {appT(lang, live.mode === "since" ? "alm.prayer.since" : "alm.prayer.after", { prayer: prayerName(lang, k) })}
+                </span>
+                <div className="flex w-full items-center justify-center gap-2.5">
+                  <Image src={PRAYER_ICON_SRC[k]} alt="" width={30} height={30} className="size-7 brightness-0 invert" />
+                  <span className="text-sm font-bold">{prayerName(lang, k)}</span>
+                </div>
+                <span className="text-2xl font-extrabold tabular-nums" dir="ltr">
+                  {formatDuration(live.ms)}
+                </span>
+                <span className="text-sm font-bold tabular-nums">{fmt(live.today[k])}</span>
+              </div>
+            ) : (
+              <div key={k} className={`${OUTLINED} flex items-center gap-3 px-4 py-3`}>
+                <Image src={PRAYER_ICON_SRC[k]} alt="" width={30} height={30} className="size-7 shrink-0" />
+                <span className="flex min-w-0 flex-col">
+                  <span className="truncate text-sm font-bold text-navy-2 dark:text-white">{prayerName(lang, k)}</span>
+                  <span className="text-sm font-bold tabular-nums text-navy-2 dark:text-ink-2">{live ? fmt(live.today[k]) : "--:--"}</span>
+                </span>
+              </div>
+            );
+          })}
+        </div>
+
+        {live && (live.midnight || live.lastThird) && (
+          <div className="no-print mt-5 flex flex-wrap justify-center gap-3 text-sm">
+            {live.midnight && (
+              <span className="rounded-full bg-white px-5 py-2 text-navy-2 ring-2 ring-edge/70 dark:bg-card dark:text-ink">
+                {appT(lang, "alm.mid.midnight")} <b className="ms-1 tabular-nums">{fmt(live.midnight)}</b>
+              </span>
+            )}
+            {live.lastThird && (
+              <span className="rounded-full bg-white px-5 py-2 text-navy-2 ring-2 ring-edge/70 dark:bg-card dark:text-ink">
+                {appT(lang, "alm.mid.lastThird")} <b className="ms-1 tabular-nums">{fmt(live.lastThird)}</b>
+              </span>
+            )}
+          </div>
+        )}
+
+        <p className="no-print mt-3 text-center text-xs text-ink-2">
+          {t.tzNote.replace("{{city}}", place.label).replace("{{tz}}", place.tz)} · {appT(lang, METHOD_LABEL[effectiveMethod(place, s)])}
+        </p>
+
+        <SettingsCard lang={lang} place={place} s={s} />
+        <MonthlyTable lang={lang} place={place} s={s} today={now ? ymdInTz(now, place.tz) : null} />
+      </div>
+    </>
   );
 }
 
 function Seg<T extends string>({ value, options, onChange }: { value: T; options: [T, string][]; onChange: (v: T) => void }) {
   return (
-    <div className="inline-flex w-full rounded-xl border border-line bg-canvas p-1">
+    <div className="inline-flex w-full rounded-full bg-white p-1 ring-2 ring-edge/70 dark:bg-card">
       {options.map(([v, label]) => (
         <button
           key={v}
           type="button"
           onClick={() => onChange(v)}
           aria-pressed={value === v}
-          className={`flex-1 rounded-lg px-3 py-2 text-sm font-semibold transition ${value === v ? "bg-primary text-white shadow" : "text-ink-2 hover:text-ink"}`}
+          className={`flex-1 rounded-full px-3 py-2 text-sm font-bold transition ${value === v ? "bg-gradient-to-b from-primary-light to-primary-deep text-white shadow" : "text-navy-2 hover:bg-tint dark:text-ink"}`}
         >
           {label}
         </button>
@@ -141,18 +146,18 @@ function SettingsCard({ lang, place, s }: { lang: Locale; place: ShownPlace; s: 
   const set = (patch: Partial<PrayerSettings>) => settingsStore.set({ ...s, ...patch });
   const auto = effectiveMethod(place, { ...s, method: "auto" });
   return (
-    <section className="no-print mt-8 rounded-2xl border border-line bg-card p-5 sm:p-6">
-      <h2 className="mb-4 flex items-center gap-2 text-lg font-bold text-ink">
+    <section className={`no-print mt-10 ${CARD} p-5 sm:p-6`}>
+      <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-section dark:text-primary-light">
         <Icon name="settings" className="size-5 text-primary" />
         {t.settings}
       </h2>
       <div className="grid gap-5 md:grid-cols-3">
         <label className="block">
-          <span className="mb-1.5 block text-sm font-semibold text-ink-2">{appT(lang, "almSettings.calcMethod")}</span>
+          <span className="mb-1.5 block text-sm font-bold text-navy-2 dark:text-ink-2">{appT(lang, "almSettings.calcMethod")}</span>
           <select
             value={s.method}
             onChange={(e) => set({ method: e.target.value as MethodKey | "auto" })}
-            className="h-11 w-full rounded-xl border border-line bg-canvas px-3 text-sm text-ink outline-none focus:ring-2 focus:ring-primary/40"
+            className="h-11 w-full rounded-full bg-white px-4 text-sm font-semibold text-navy-2 outline-none ring-2 ring-edge/70 focus:ring-primary dark:bg-card dark:text-ink"
           >
             <option value="auto">{t.auto.replace("{{method}}", appT(lang, METHOD_LABEL[auto]))}</option>
             {METHODS.map((m) => (
@@ -163,7 +168,7 @@ function SettingsCard({ lang, place, s }: { lang: Locale; place: ShownPlace; s: 
           </select>
         </label>
         <div>
-          <span className="mb-1.5 block text-sm font-semibold text-ink-2">{appT(lang, "almSettings.madhabRow")}</span>
+          <span className="mb-1.5 block text-sm font-bold text-navy-2 dark:text-ink-2">{appT(lang, "almSettings.madhabRow")}</span>
           <Seg
             value={s.madhab}
             onChange={(madhab) => set({ madhab })}
@@ -174,7 +179,7 @@ function SettingsCard({ lang, place, s }: { lang: Locale; place: ShownPlace; s: 
           />
         </div>
         <div>
-          <span className="mb-1.5 block text-sm font-semibold text-ink-2">{t.timeFormat}</span>
+          <span className="mb-1.5 block text-sm font-bold text-navy-2 dark:text-ink-2">{t.timeFormat}</span>
           <Seg
             value={s.hour12 ? "12" : "24"}
             onChange={(v) => set({ hour12: v === "12" })}
@@ -212,68 +217,79 @@ function MonthlyTable({ lang, place, s, today }: { lang: Locale; place: Place & 
   const h2 = rows[rows.length - 1]?.h;
   const hijriSpan = h1 && h2 ? `${hijriMonthName(lang, h1.hm)}${h1.hm !== h2.hm ? ` – ${hijriMonthName(lang, h2.hm)}` : ""} ${localDigits(lang, h2.hy)} ${appT(lang, "hijri.suffix")}` : "";
 
+  const navBtn = "grid size-12 place-items-center rounded-full bg-primary text-white shadow-md hover:bg-primary-deep sm:size-14";
+
   return (
-    <section className="print-area mt-8 overflow-hidden rounded-2xl border border-line bg-card">
-      <div className="flex flex-wrap items-center justify-between gap-3 bg-navy px-4 py-4 text-white sm:px-6">
-        <div>
-          <h2 className="text-lg font-bold">{t.monthly}</h2>
-          <p className="text-sm text-white/80">
-            {place.label} · {monthLabel} · {hijriSpan}
-          </p>
-        </div>
-        <div className="no-print flex items-center gap-1.5">
-          <button type="button" onClick={() => setOffset((o) => o - 1)} aria-label={t.prevMonth} className="grid size-9 place-items-center rounded-lg bg-white/10 hover:bg-white/20">
-            <Icon name="chevron" className="size-5 ltr:-scale-x-100" />
-          </button>
-          {offset !== 0 && (
-            <button type="button" onClick={() => setOffset(0)} className="h-9 rounded-lg bg-white/10 px-3 text-sm font-semibold hover:bg-white/20">
-              {t.thisMonth}
-            </button>
-          )}
-          <button type="button" onClick={() => setOffset((o) => o + 1)} aria-label={t.nextMonth} className="grid size-9 place-items-center rounded-lg bg-white/10 hover:bg-white/20">
-            <Icon name="chevron" className="size-5 rtl:-scale-x-100" />
-          </button>
-          <button type="button" onClick={() => window.print()} className="ms-1 inline-flex h-9 items-center gap-1.5 rounded-lg bg-orange px-3 text-sm font-bold hover:brightness-110">
+    <section className="print-area mt-10">
+      <div className={`overflow-hidden ${CARD} bg-white dark:bg-card`}>
+        <div className="flex flex-wrap items-center justify-between gap-3 bg-navy px-5 py-4 text-white sm:px-6">
+          <div className="min-w-0">
+            <h2 className="text-xl font-bold">
+              {t.monthly} <span className="text-orange">{place.label}</span>
+            </h2>
+            <p className="text-sm text-white/80">
+              {monthLabel} · {hijriSpan}
+            </p>
+          </div>
+          <button type="button" onClick={() => window.print()} className="no-print inline-flex h-10 items-center gap-1.5 rounded-full bg-white px-6 text-sm font-bold text-navy hover:bg-tint">
             {t.print}
           </button>
         </div>
-      </div>
-      <div className="overflow-x-auto">
-        <table className="w-full min-w-[640px] text-center text-sm">
-          <thead>
-            <tr className="border-b border-line bg-tint text-xs font-bold text-ink-2">
-              <th className="px-2 py-2.5 text-start">{appT(lang, "alm.month.day")}</th>
-              <th className="px-2 py-2.5">{t.date}</th>
-              {PRAYERS.map((k) => (
-                <th key={k} className="px-2 py-2.5">
-                  {prayerName(lang, k)}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map(({ g, h, times }) => {
-              const isToday = today && today.y === g.y && today.m === g.m && today.d === g.d;
-              return (
-                <tr key={g.d} className={`border-b border-line last:border-0 ${isToday ? "bg-primary font-bold text-white" : "text-ink even:bg-canvas/60"}`}>
-                  <td className="px-2 py-2 text-start whitespace-nowrap">{weekdayName(lang, g, "short")}</td>
-                  <td className="px-2 py-2 whitespace-nowrap">
-                    {localDigits(lang, g.d)} <span className={isToday ? "text-white/80" : "text-ink-2"}>/ {localDigits(lang, h.hd)}</span>
-                  </td>
-                  {PRAYERS.map((k) => (
-                    <td key={k} className="px-2 py-2 tabular-nums" dir="ltr">
-                      {bare(fmt(times[k]))}
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[640px] text-center text-sm font-bold text-navy-2 dark:text-ink">
+            <thead>
+              <tr className="bg-tint text-xs font-bold text-navy-2 dark:text-ink-2">
+                <th className="px-2 py-3 text-start">{appT(lang, "alm.month.day")}</th>
+                <th className="px-2 py-3">{t.date}</th>
+                {PRAYERS.map((k) => (
+                  <th key={k} className="px-2 py-3">
+                    {prayerName(lang, k)}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map(({ g, h, times }) => {
+                const isToday = today && today.y === g.y && today.m === g.m && today.d === g.d;
+                const side = isToday ? "" : "bg-[#EFEFEF] dark:bg-white/5";
+                return (
+                  <tr key={g.d} className={isToday ? "bg-primary text-white" : ""}>
+                    <td className={`px-2 py-2.5 text-start whitespace-nowrap ${side}`}>{weekdayName(lang, g, "short")}</td>
+                    <td className={`px-2 py-2.5 whitespace-nowrap ${side}`}>
+                      {localDigits(lang, g.d)} <span className={isToday ? "text-white/85" : "text-ink-2"}>/ {localDigits(lang, h.hd)}</span>
                     </td>
-                  ))}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+                    {PRAYERS.map((k) => (
+                      <td key={k} className="px-2 py-2.5 tabular-nums" dir="ltr">
+                        {bare(fmt(times[k]))}
+                      </td>
+                    ))}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+        <p className="px-5 py-3 text-xs text-ink-2 sm:px-6">
+          {appT(lang, METHOD_LABEL[effectiveMethod(place, s)])} · {place.tz} · {appT(lang, "app.name")} — rafiqapp.me
+        </p>
       </div>
-      <p className="px-4 py-3 text-xs text-ink-2 sm:px-6">
-        {appT(lang, METHOD_LABEL[effectiveMethod(place, s)])} · {place.tz} · {appT(lang, "app.name")} — rafiqapp.me
-      </p>
+      {/* month navigation: round sky buttons around the month, like the reference */}
+      <div className="no-print mt-8 flex items-center justify-center gap-5 sm:gap-8">
+        <button type="button" onClick={() => setOffset((o) => o - 1)} aria-label={t.prevMonth} className={navBtn}>
+          <Icon name="chevron" className="size-6 ltr:-scale-x-100" />
+        </button>
+        <div className="min-w-[9rem] text-center">
+          <p className="text-lg font-bold text-navy-2 dark:text-white">{monthLabel}</p>
+          {offset !== 0 && (
+            <button type="button" onClick={() => setOffset(0)} className="mt-1 text-sm font-bold text-primary hover:underline">
+              {t.thisMonth}
+            </button>
+          )}
+        </div>
+        <button type="button" onClick={() => setOffset((o) => o + 1)} aria-label={t.nextMonth} className={navBtn}>
+          <Icon name="chevron" className="size-6 rtl:-scale-x-100" />
+        </button>
+      </div>
     </section>
   );
 }

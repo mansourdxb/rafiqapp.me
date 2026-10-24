@@ -17,6 +17,24 @@ export const SCENES: Record<PrayerKey, string> = {
   isha: "linear-gradient(160deg,#0B1736 0%,#0D245E 55%,#15294D 100%)",
 };
 
+/** The reference prayer icons (coloured SVGs in public/images/ref). */
+export const PRAYER_ICON_SRC: Record<PrayerKey, string> = {
+  fajr: "/images/ref/p-fajr.svg",
+  sunrise: "/images/ref/p-sunrise.svg",
+  dhuhr: "/images/ref/p-dhuhr.svg",
+  asr: "/images/ref/p-asr.svg",
+  maghrib: "/images/ref/p-maghrib.svg",
+  isha: "/images/ref/p-isha.svg",
+};
+
+/** Reference look: outlined white pill (inputs, place / method / date) and outlined card. */
+export const PILL = "flex h-12 min-w-0 items-center gap-3 rounded-full bg-white px-5 shadow-[0_3px_10px_rgba(124,180,200,0.35)] ring-2 ring-edge/70 dark:bg-card";
+export const OUTLINED = "rounded-xl bg-white ring-2 ring-edge/70 shadow-[0_3px_10px_rgba(124,180,200,0.3)] dark:bg-card";
+/** Light-blue panel that holds the search / filter pills. */
+export const PANEL = "rounded-[15px] bg-tint p-4 sm:p-5";
+/** Card per the style guide. */
+export const CARD = "rounded-[15px] bg-card shadow-[0_5px_25px_rgba(0,0,0,0.16)]";
+
 export const prayerName = (lang: Locale, k: PrayerKey) => appT(lang, `prayer.${k}`);
 
 export function PrayerIcon({ k, className = "size-6" }: { k: PrayerKey; className?: string }) {

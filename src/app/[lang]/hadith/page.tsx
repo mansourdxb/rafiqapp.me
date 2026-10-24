@@ -23,9 +23,9 @@ export default async function HadithPage({ params }: PageProps<"/[lang]/hadith">
   const h = hadith[lang];
   return (
     <>
-      <HadithHeader lang={lang} crumbs={[{ href: "/", label: common[lang].nav.home }, { label: common[lang].nav.hadith }]} title={appT(lang, "hadithLib.title")} subtitle={h.intro} />
-      <div className="relative mx-auto -mt-10 max-w-5xl px-4 pb-16">
-        <HadithHub lang={lang} L={hadithLabels(lang)} names={nameMap(lang)} books={BOOKS.map((b) => ({ key: b.key, hasEn: b.hasEn }))}>
+      <HadithHeader lang={lang} crumbs={[{ label: common[lang].nav.hadith }]} title={appT(lang, "hadithLib.title")} subtitle={h.intro} photo="/images/ref/catHeader2.webp" />
+      <div className="mx-auto max-w-6xl px-4 pt-10 pb-16">
+        <HadithHub lang={lang} L={hadithLabels(lang)} names={nameMap(lang)} books={BOOKS.map((b) => ({ key: b.key, hasEn: b.hasEn }))} searchTitle={common[lang].search}>
           <BooksGrid lang={lang} />
         </HadithHub>
       </div>

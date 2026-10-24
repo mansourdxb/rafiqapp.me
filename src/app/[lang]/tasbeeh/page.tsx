@@ -5,6 +5,7 @@ import { alternates } from "@/i18n/metadata";
 import { tasbeeh } from "@/i18n/messages/tasbeeh";
 import { TASBEEH } from "@/lib/athkar/data";
 import { Tasbeeh, type Preset } from "@/components/tasbeeh/Tasbeeh";
+import { PageHeader } from "@/components/ui/PageHeader";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/tasbeeh">): Promise<Metadata> {
   const { lang } = await params;
@@ -31,10 +32,7 @@ export default async function TasbeehPage({ params }: PageProps<"/[lang]/tasbeeh
 
   return (
     <div className="pb-16">
-      <section className="bg-gradient-to-b from-[#19A9CC] to-[#1492B8] px-4 pt-10 pb-24 text-center text-white dark:from-[#0E5566] dark:to-[#0A3E4B]">
-        <h1 className="text-3xl font-bold sm:text-4xl">{t.title}</h1>
-        <p className="mx-auto mt-3 max-w-xl text-white/85">{t.subtitle}</p>
-      </section>
+      <PageHeader lang={lang} crumbs={[{ label: t.title }]} title={t.title} subtitle={t.subtitle} />
       <Tasbeeh lang={lang} presets={presets} t={t} />
     </div>
   );

@@ -7,6 +7,7 @@ import { names } from "@/i18n/messages/names";
 import { NAMES, nameText } from "@/lib/athkar/data";
 import { localDigits } from "@/lib/digits";
 import { Icon } from "@/components/ui/Icon";
+import { PageHeader } from "@/components/ui/PageHeader";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -36,28 +37,28 @@ export default async function NamePage({ params }: PageProps<"/[lang]/names/[n]"
 
   return (
     <div className="pb-16">
-      <section className="bg-gradient-to-b from-navy to-navy-2 px-4 pt-6 pb-24 text-white">
-        <div className="mx-auto max-w-3xl">
-          <Link href={localePath(lang, "/names/")} className="inline-flex items-center gap-1 rounded-full px-2 py-1 text-sm font-semibold text-white/80 hover:bg-white/10">
-            <Icon name="chevron" className="size-4 ltr:rotate-180" />
-            {t.all}
-          </Link>
-          <div className="mt-4 text-center">
-            <p className="text-sm font-semibold text-white/60">{t.nth.replace("{n}", localDigits(lang, x.n))}</p>
-            <h1 dir="rtl" lang="ar" className="quran mt-2 text-6xl leading-[1.5] text-gold sm:text-7xl">
-              {x.ar}
-            </h1>
-            <p className="mt-2 text-lg font-semibold text-primary-light">{x.tl}</p>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        lang={lang}
+        crumbs={[{ label: t.title, href: localePath(lang, "/names/") }, { label: lang === "ar" ? x.ar : x.tl }]}
+        title={
+          <span dir="rtl" lang="ar" className="quran text-5xl leading-[1.6] sm:text-6xl">
+            {x.ar}
+          </span>
+        }
+        subtitle={
+          <span className="flex flex-wrap items-center gap-3">
+            <span className="rounded-full bg-orange px-3 py-1 text-sm font-bold text-white">{t.nth.replace("{n}", localDigits(lang, x.n))}</span>
+            <span className="text-lg font-bold text-primary">{x.tl}</span>
+          </span>
+        }
+      />
 
-      <div className="mx-auto -mt-14 max-w-3xl px-4">
-        <article className="rounded-3xl bg-card p-5 shadow-[0_6px_14px_rgba(22,40,70,0.08)] ring-1 ring-line sm:p-8">
+      <div className="mx-auto max-w-6xl px-4 [&>*]:max-w-3xl">
+        <article className="rounded-[15px] bg-card p-5 shadow-[0_5px_25px_rgba(0,0,0,0.16)] sm:p-8">
           {lang !== "ar" && (
             <>
               <h2 className="text-xs font-bold tracking-wide text-ink-2 uppercase">{t.meaning}</h2>
-              <p dir={textDir} className="mt-1 text-2xl font-bold text-ink">
+              <p dir={textDir} className="mt-1 text-2xl font-bold text-section dark:text-primary-light">
                 {meaning}
               </p>
             </>
@@ -73,7 +74,7 @@ export default async function NamePage({ params }: PageProps<"/[lang]/names/[n]"
               <h2 className="mt-6 text-xs font-bold tracking-wide text-ink-2 uppercase">{t.inQuran}</h2>
               <ul className="mt-2 flex flex-wrap gap-2" dir="ltr">
                 {x.q.map((r) => (
-                  <li key={r} className="rounded-full bg-tint px-3 py-1 text-sm font-semibold text-primary tabular-nums">
+                  <li key={r} className="rounded-full px-3 py-1 text-sm font-bold text-primary tabular-nums ring-1 ring-primary">
                     {localDigits(lang, r)}
                   </li>
                 ))}
@@ -82,13 +83,13 @@ export default async function NamePage({ params }: PageProps<"/[lang]/names/[n]"
           )}
         </article>
 
-        <nav className="mt-5 grid grid-cols-2 gap-3">
+        <nav className="mt-6 grid grid-cols-2 gap-4">
           {prev ? (
-            <Link href={localePath(lang, `/names/${prev.n}/`)} className="flex items-center gap-2 rounded-2xl bg-card p-3 ring-1 ring-line hover:ring-primary/40">
-              <Icon name="chevron" className="size-4 shrink-0 text-ink-2 ltr:rotate-180" />
+            <Link href={localePath(lang, `/names/${prev.n}/`)} className="flex items-center gap-2 rounded-[15px] bg-card p-3 shadow-[0_5px_25px_rgba(0,0,0,0.12)] transition hover:-translate-y-0.5">
+              <Icon name="chevron" className="size-4 shrink-0 text-primary ltr:rotate-180" />
               <span className="min-w-0">
                 <span className="block text-xs text-ink-2">{t.prev}</span>
-                <span dir="rtl" lang="ar" className="quran block truncate text-xl text-ink">
+                <span dir="rtl" lang="ar" className="quran block truncate text-xl text-section dark:text-primary-light">
                   {prev.ar}
                 </span>
               </span>
@@ -97,14 +98,14 @@ export default async function NamePage({ params }: PageProps<"/[lang]/names/[n]"
             <span />
           )}
           {next && (
-            <Link href={localePath(lang, `/names/${next.n}/`)} className="flex items-center justify-end gap-2 rounded-2xl bg-card p-3 text-end ring-1 ring-line hover:ring-primary/40">
+            <Link href={localePath(lang, `/names/${next.n}/`)} className="flex items-center justify-end gap-2 rounded-[15px] bg-card p-3 text-end shadow-[0_5px_25px_rgba(0,0,0,0.12)] transition hover:-translate-y-0.5">
               <span className="min-w-0">
                 <span className="block text-xs text-ink-2">{t.next}</span>
-                <span dir="rtl" lang="ar" className="quran block truncate text-xl text-ink">
+                <span dir="rtl" lang="ar" className="quran block truncate text-xl text-section dark:text-primary-light">
                   {next.ar}
                 </span>
               </span>
-              <Icon name="chevron" className="size-4 shrink-0 text-ink-2 rtl:rotate-180" />
+              <Icon name="chevron" className="size-4 shrink-0 text-primary rtl:rotate-180" />
             </Link>
           )}
         </nav>
