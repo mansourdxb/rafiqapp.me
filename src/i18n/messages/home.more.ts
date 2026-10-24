@@ -24,7 +24,6 @@ const ur: Home = {
     title: "ایک مسلمان کی ہر ضرورت، ایک مفت ایپ میں",
     body: "رفیق المسلم آپ کو نماز کے اوقات یاد دلاتا ہے، اللہ کے ذکر میں مدد کرتا ہے، قرآنِ کریم سے جوڑتا ہے اور مزید نیکیوں کی ترغیب دیتا ہے۔ ہر مسلمان کا ساتھی۔",
     stats: [
-      { value: "604", label: "مدینہ مصحف کے صفحات" },
       { value: "9", label: "حدیث کی کتابیں" },
       { value: "8", label: "زبانیں" },
       { value: "0", label: "اشتہارات — ہمیشہ مفت" },
@@ -61,7 +60,6 @@ const fa: Home = {
     title: "هر آنچه یک مسلمان نیاز دارد، در یک برنامهٔ رایگان",
     body: "رفیق المسلم اوقات نماز را به شما یادآوری می‌کند، در ذکر خدا یاری‌تان می‌دهد، شما را با قرآن کریم پیوند می‌دهد و به کارهای نیک بیشتر تشویق می‌کند. همراه هر مسلمان.",
     stats: [
-      { value: "604", label: "صفحهٔ مصحف مدینه" },
       { value: "9", label: "کتاب حدیث" },
       { value: "8", label: "زبان" },
       { value: "0", label: "تبلیغات — همیشه رایگان" },
@@ -98,7 +96,6 @@ const ru: Home = {
     title: "Всё, что нужно мусульманину, в одном бесплатном приложении",
     body: "Рафик Аль-Муслим напоминает о времени намаза, помогает поминать Аллаха, связывает вас с Кораном и побуждает к добрым делам. Спутник каждого мусульманина.",
     stats: [
-      { value: "604", label: "Страницы мединского мусхафа" },
       { value: "9", label: "Сборников хадисов" },
       { value: "8", label: "Языков" },
       { value: "0", label: "Рекламы — всегда бесплатно" },
@@ -135,7 +132,6 @@ const ms: Home = {
     title: "Semua keperluan seorang Muslim dalam satu aplikasi percuma",
     body: "Rafiq Al-Muslim mengingatkan anda waktu solat, membantu anda berzikir, menghubungkan anda dengan Al-Quran dan mendorong anda melakukan lebih banyak kebaikan. Teman setiap Muslim.",
     stats: [
-      { value: "604", label: "Halaman Mushaf Madinah" },
       { value: "9", label: "Kitab hadis" },
       { value: "8", label: "Bahasa" },
       { value: "0", label: "Iklan — percuma selamanya" },
@@ -172,7 +168,6 @@ const tr: Home = {
     title: "Bir Müslümanın ihtiyacı olan her şey tek bir ücretsiz uygulamada",
     body: "Rafiq Al-Muslim size namaz vakitlerini hatırlatır, Allah'ı anmanıza yardım eder, sizi Kur'an'la buluşturur ve daha fazla iyiliğe teşvik eder. Her Müslümanın yol arkadaşı.",
     stats: [
-      { value: "604", label: "Medine Mushafı sayfası" },
       { value: "9", label: "Hadis kitabı" },
       { value: "8", label: "Dil" },
       { value: "0", label: "Reklam — her zaman ücretsiz" },
@@ -209,7 +204,6 @@ const id: Home = {
     title: "Semua kebutuhan seorang Muslim dalam satu aplikasi gratis",
     body: "Rafiq Al-Muslim mengingatkan Anda waktu shalat, membantu Anda berzikir, menghubungkan Anda dengan Al-Quran dan mendorong Anda berbuat lebih banyak kebaikan. Teman setiap Muslim.",
     stats: [
-      { value: "604", label: "Halaman Mushaf Madinah" },
       { value: "9", label: "Kitab hadis" },
       { value: "8", label: "Bahasa" },
       { value: "0", label: "Iklan — gratis selamanya" },
