@@ -14,6 +14,7 @@ import { clampPage, juzOfPage, JUZ_STARTS, PAGE_COUNT, pageOfAyah, SURAHS, surah
 import { fetchPage, saveLastRead, TWO_UP_KEY, usePref, writePref } from "@/lib/quran/client";
 import { ensureQcf, useQcfFont } from "@/lib/quran/qcfFonts";
 import { pageTitle } from "@/lib/quran/title";
+import { quranPageHref } from "@/lib/quran/href";
 import { MushafPage } from "./MushafPage";
 import { AyahPanel, type AyahSel } from "./AyahPanel";
 
@@ -58,8 +59,8 @@ export function QuranReader({ lang, initialPage, initialData }: { lang: Locale; 
   // URL, title, last read
   useEffect(() => {
     saveLastRead(page);
-    const url = localePath(lang, `/quran/${page}/`);
-    if (window.location.pathname !== url) window.history.replaceState(window.history.state, "", url);
+    const url = quranPageHref(lang, page);
+    if (window.location.pathname + window.location.search !== url) window.history.replaceState(window.history.state, "", url);
     document.title = `${pageTitle(lang, page)} | ${common[lang].siteName}`;
   }, [lang, page]);
 
@@ -154,8 +155,8 @@ export function QuranReader({ lang, initialPage, initialData }: { lang: Locale; 
   const sura = surahOfPage(page);
   const digits = (n: number) => localDigits(lang, n);
   const juzLabel = lang === "ar" ? `الجزء ${digits(juz)}` : appT(lang, "quranIndex.juz").replace("{0}", digits(juz));
-  const nextHref = localePath(lang, `/quran/${Math.min(PAGE_COUNT, page + 1)}/`);
-  const prevHref = localePath(lang, `/quran/${Math.max(1, page - 1)}/`);
+  const nextHref = quranPageHref(lang, Math.min(PAGE_COUNT, page + 1));
+  const prevHref = quranPageHref(lang, Math.max(1, page - 1));
 
   const navBtn = "inline-flex items-center gap-1.5 rounded-full bg-card px-4 py-2.5 text-sm font-semibold text-ink shadow-sm ring-1 ring-line transition hover:text-primary disabled:opacity-40 aria-disabled:pointer-events-none aria-disabled:opacity-40";
 

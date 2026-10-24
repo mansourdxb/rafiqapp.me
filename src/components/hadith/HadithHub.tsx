@@ -1,9 +1,10 @@
 "use client";
 
+import { chapterHref } from "@/lib/hadith/href";
 import Link from "next/link";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { Icon } from "@/components/ui/Icon";
-import { localePath, type Locale } from "@/i18n/config";
+import type { Locale } from "@/i18n/config";
 import { localDigits } from "@/lib/digits";
 import type { NameMap } from "@/lib/hadith/books";
 import { favId, loadChapter, queryTerms, searchHadith, toggleFavorite, useFavorites, type HadithRow, type SearchHit } from "@/lib/hadith/client";
@@ -101,7 +102,7 @@ function Favorites({ lang, L, names }: { lang: Locale; L: HadithLabels; names: N
     <div className="space-y-4">
       {favs.map((f) => {
         const b = names[f.book];
-        const href = `${localePath(lang, `/hadith/${f.book}/${f.chapter}/`)}#h${f.n}`;
+        const href = chapterHref(lang, f.book, f.chapter, f.n);
         return (
           <article key={f.id} className="rounded-2xl bg-card p-4 ring-1 ring-line/60 sm:p-6 dark:ring-line">
             <header className="mb-3 flex items-center gap-2">
@@ -212,7 +213,7 @@ function SearchHitCard({ lang, L, names, hit, terms, latin, hasEn }: { lang: Loc
     };
   }, [hit]);
   const b = names[hit.book];
-  const href = `${localePath(lang, `/hadith/${hit.book}/${hit.chapter}/`)}#h${hit.n}`;
+  const href = chapterHref(lang, hit.book, hit.chapter, hit.n);
   return (
     <div>
       <Link href={href} className="mb-1.5 flex items-center gap-1 px-1 text-sm font-bold text-primary hover:underline">

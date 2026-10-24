@@ -1,9 +1,10 @@
 "use client";
 
+import { chapterHref } from "@/lib/hadith/href";
 import { useState } from "react";
 import { Icon } from "@/components/ui/Icon";
 import type { Locale } from "@/i18n/config";
-import { dir, SITE_URL, localePath } from "@/i18n/config";
+import { dir, SITE_URL } from "@/i18n/config";
 import { localDigits } from "@/lib/digits";
 import { normalizeArabic } from "@/lib/hadith/matn";
 import { toggleFavorite, type HadithRow } from "@/lib/hadith/client";
@@ -34,7 +35,7 @@ export function HadithCard({ lang, L, book, chapter, row, bookName, chapterName,
     setTimeout(() => setToast(""), 1600);
   };
 
-  const url = `${SITE_URL}${localePath(lang, `/hadith/${book}/${chapter}/`)}#h${n}`;
+  const url = `${SITE_URL}${chapterHref(lang, book, chapter, n)}`;
   const shareText = () => {
     let body = normalizeArabic(arabic);
     if (text) body += `\n\n${narrator ? `${narrator}\n` : ""}${text}`;

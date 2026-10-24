@@ -4,13 +4,14 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
-import { isRtl, localePath, type Locale } from "@/i18n/config";
+import { isRtl, type Locale } from "@/i18n/config";
 import { appT } from "@/i18n/app";
 import { common } from "@/i18n/messages/common";
 import { fill, quran } from "@/i18n/messages/quran";
 import { localDigits } from "@/lib/digits";
 import { arabicIndic, hizbTitleAr, juzTitleAr, QUARTERS, searchSurahs, SURAHS, surahName, surahOfPage, type Quarter } from "@/lib/quran/data";
 import { useLastRead } from "@/lib/quran/client";
+import { quranPageHref } from "@/lib/quran/href";
 
 export function QuranIndex({ lang }: { lang: Locale }) {
   const t = quran[lang];
@@ -21,7 +22,7 @@ export function QuranIndex({ lang }: { lang: Locale }) {
 
   const results = useMemo(() => searchSurahs(query), [query]);
   const digits = (n: number) => localDigits(lang, n);
-  const pageHref = (p: number) => localePath(lang, `/quran/${p}/`);
+  const pageHref = (p: number) => quranPageHref(lang, p);
 
   const juzSections = useMemo(() => {
     const out: { juz: number; items: { q: Quarter; idx: number }[] }[] = [];

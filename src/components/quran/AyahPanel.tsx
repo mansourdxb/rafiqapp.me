@@ -3,12 +3,13 @@
 // tafsir books), recitation (everyayah, as the app) and copy / share.
 import { useEffect, useRef, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
-import { isRtl, localePath, type Locale } from "@/i18n/config";
+import { isRtl, type Locale } from "@/i18n/config";
 import { appT } from "@/i18n/app";
 import { common } from "@/i18n/messages/common";
 import { fill, quran } from "@/i18n/messages/quran";
 import { localDigits } from "@/lib/digits";
 import { arabicIndic, surahName, SURAHS } from "@/lib/quran/data";
+import { quranPageHref } from "@/lib/quran/href";
 import { ayahAudioUrl, fetchTafsir, fetchTranslation, RECITER_KEY, RECITERS, TAFSIR_KEY, TRANSLATION, usePref, writePref } from "@/lib/quran/client";
 
 export type AyahSel = { s: number; a: number; page: number; text: string };
@@ -90,7 +91,7 @@ export function AyahPanel({ lang, sel, onClose, onStep }: { lang: Locale; sel: A
     const extra = body.state === "ok" && body.text && !arabic ? `\n\n${body.text}` : "";
     return `﴿${sel.text} ${arabicIndic(sel.a)}﴾\n${ref}${extra}`;
   };
-  const url = () => `${window.location.origin}${localePath(lang, `/quran/${sel.page}/`)}`;
+  const url = () => `${window.location.origin}${quranPageHref(lang, sel.page)}`;
   const copy = async () => {
     try {
       await navigator.clipboard.writeText(shareText());

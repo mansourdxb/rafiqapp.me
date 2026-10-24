@@ -1,4 +1,5 @@
 // Server-rendered parts of the hadith section: page header, book cards, chapter (kitab) list.
+import { chapterHref } from "@/lib/hadith/href";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Icon } from "@/components/ui/Icon";
@@ -137,7 +138,7 @@ export function ChapterList({ lang, b }: { lang: Locale; b: BookInfo }) {
         const local = chapterTitle(lang, c);
         return (
           <li key={c.id}>
-            <Link href={localePath(lang, `/hadith/${b.key}/${c.id}/`)} className="group flex items-center gap-3 px-4 py-3.5 transition hover:bg-tint sm:px-5">
+            <Link href={chapterHref(lang, b.key, c.id)} className="group flex items-center gap-3 px-4 py-3.5 transition hover:bg-tint sm:px-5">
               <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-orange/10 text-sm font-bold text-orange">{localDigits(lang, i + 1)}</span>
               <div className="min-w-0 flex-1">
                 <p dir="rtl" lang="ar" className={`leading-relaxed font-bold text-ink ${arAlign(lang)}`}>
