@@ -74,7 +74,8 @@ export function Navbar({ lang }: { lang: Locale }) {
 
   const langMenu = (
     <div className="relative">
-      <button onClick={() => setLangOpen((v) => !v)} aria-expanded={langOpen} className="flex items-center gap-1 text-[13px] font-bold text-white">
+      <button onClick={() => setLangOpen((v) => !v)} aria-expanded={langOpen} aria-label={t.language} title={t.language} className="flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-[13px] font-bold text-white ring-1 ring-white/30 hover:bg-white/10">
+        <Icon name="globe" className="size-4.5" />
         {nativeName[lang]}
         <Icon name="chevron" className={`size-3.5 transition ${langOpen ? "-rotate-90" : "rotate-90"}`} />
       </button>
