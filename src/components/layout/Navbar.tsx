@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { Icon } from "@/components/ui/Icon";
 import { locales, localePath, nativeName, type Locale } from "@/i18n/config";
 import { common } from "@/i18n/messages/common";
@@ -32,18 +32,27 @@ export function Navbar({ lang }: { lang: Locale }) {
   const [open, setOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
-  const [dark, setDark] = useState(false);
+  // dark class is set before paint by the layout script; read it without a mount effect
+  const domDark = useSyncExternalStore(
+    () => () => {},
+    () => document.documentElement.classList.contains("dark"),
+    () => false,
+  );
+  const [picked, setPicked] = useState<boolean | null>(null);
+  const dark = picked ?? domDark;
 
-  useEffect(() => setDark(document.documentElement.classList.contains("dark")), []);
-  useEffect(() => {
+  // close the menus when the page changes
+  const [shownPath, setShownPath] = useState(pathname);
+  if (shownPath !== pathname) {
+    setShownPath(pathname);
     setOpen(false);
     setLangOpen(false);
     setMoreOpen(false);
-  }, [pathname]);
+  }
 
   const toggleTheme = () => {
     const next = !dark;
-    setDark(next);
+    setPicked(next);
     document.documentElement.classList.toggle("dark", next);
     try {
       localStorage.setItem("theme", next ? "dark" : "light");

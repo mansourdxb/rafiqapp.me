@@ -8,6 +8,7 @@ import { formatTime, ymdInTz, zonedMidnight, type Place, type PrayerSettings } f
 import { sunAzimuthCrossings } from "@/lib/qibla/astro";
 import { normDeg } from "@/lib/qibla/geo";
 import { useNow } from "@/components/prayer/usePlace";
+import { OUTLINED } from "@/components/prayer/prayerUi";
 
 export function ShadowTab({ lang, place, qibla, s }: { lang: Locale; place: Place; qibla: number; s: PrayerSettings }) {
   const t = qiblaMsg[lang];
@@ -41,14 +42,14 @@ export function ShadowTab({ lang, place, qibla, s }: { lang: Locale; place: Plac
       </svg>
       <div className="space-y-3">
         <p className="text-sm text-ink">{t.shadowIntro}</p>
-        {now && events.length === 0 && <p className="rounded-xl bg-tint p-3 text-sm text-ink">{t.shadowNone}</p>}
+        {now && events.length === 0 && <p className="rounded-md bg-tint p-3 text-sm text-navy-2 dark:text-ink">{t.shadowNone}</p>}
         {events.map(({ at, toward }) => {
           const passed = now != null && at.getTime() < now.getTime();
           return (
-            <div key={at.getTime()} className={`flex items-center gap-4 rounded-2xl border border-line p-4 ${passed ? "opacity-60" : ""}`}>
+            <div key={at.getTime()} className={`${OUTLINED} flex items-center gap-4 p-4 ${passed ? "opacity-60" : ""}`}>
               <span className="min-w-[5.5rem] text-center text-xl font-extrabold tabular-nums text-primary">{formatTime(at, place.tz, lang, s.hour12)}</span>
               <div className="min-w-0">
-                <p className="font-bold text-ink">
+                <p className="font-bold text-navy-2 dark:text-white">
                   {toward ? t.shadowToward : t.shadowAway}
                   {passed && <span className="ms-2 rounded-full bg-canvas px-2 py-0.5 text-xs font-semibold text-ink-2">{t.shadowPassed}</span>}
                 </p>
@@ -57,7 +58,7 @@ export function ShadowTab({ lang, place, qibla, s }: { lang: Locale; place: Plac
             </div>
           );
         })}
-        <p className="rounded-xl bg-tint p-3 text-xs leading-relaxed text-ink">{t.kaabaFact}</p>
+        <p className="rounded-md bg-tint p-3 text-xs leading-relaxed text-navy-2 dark:text-ink">{t.kaabaFact}</p>
       </div>
     </div>
   );

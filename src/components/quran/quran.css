@@ -16,7 +16,7 @@
 }
 
 .mushaf {
-  --m-outer: #efe8dd;
+  --m-outer: #f2f5f7; /* light neutral surround (site chrome); the page itself stays cream */
   --m-page: #fff8f1;
   --m-text: #000000;
   --m-marker: #98765a;

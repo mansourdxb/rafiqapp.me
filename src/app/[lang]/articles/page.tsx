@@ -1,18 +1,15 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLocale, ogLocale, type Locale } from "@/i18n/config";
 import { alternates } from "@/i18n/metadata";
 import { common } from "@/i18n/messages/common";
 import { articles as msgs } from "@/i18n/messages/articles";
-import { latestArticles, mostRead, searchIndex } from "@/lib/articles";
+import { latestArticles, mostRead } from "@/lib/articles";
 import { ArticleCard } from "@/components/articles/ArticleCard";
-import { ArticleSearch } from "@/components/articles/ArticleSearch";
-import { CategoryChips, CategoryTiles, GetAppCard, SectionTitle } from "@/components/articles/Parts";
-import { IslamicBand, StarPattern } from "@/components/ui/IslamicBand";
+import { ArticlesToolbar, CategoryTiles, GetAppCard, SectionTitle } from "@/components/articles/Parts";
+import { PageHeader } from "@/components/ui/PageHeader";
 import { StoreBadges } from "@/components/ui/StoreBadges";
-import { Icon } from "@/components/ui/Icon";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/articles">): Promise<Metadata> {
   const { lang } = await params;
@@ -44,30 +41,16 @@ export default async function ArticlesPage({ params }: PageProps<"/[lang]/articl
 
   return (
     <>
-      <section className="relative overflow-hidden bg-navy text-white">
-        <Image src="/images/hero-mosque.webp" alt="" fill priority sizes="100vw" className="object-cover opacity-35" />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/70 to-navy" />
-        <StarPattern className="text-white/5" />
-        <div className="relative mx-auto max-w-7xl px-4 pb-24 pt-14 sm:pt-20">
-          <p className="text-2xl font-extrabold text-orange sm:text-3xl">{t.heroAccent}</p>
-          <h1 className="mt-2 max-w-3xl text-3xl font-extrabold leading-tight sm:text-5xl">{t.heroTitle}</h1>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-white/80 sm:text-lg">{t.heroSubtitle}</p>
-          <StoreBadges lang={lang} className="mt-7" />
-        </div>
-      </section>
-      <IslamicBand />
+      <PageHeader lang={lang} photo="/images/ref/catHeader1.webp" highlight={t.heroAccent} title={t.heroTitle} subtitle={t.heroSubtitle}>
+        <StoreBadges lang={lang} className="mt-6" />
+      </PageHeader>
 
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="relative z-10 -mt-14 flex flex-col gap-4 rounded-3xl bg-card p-4 shadow-[0_16px_40px_-20px_rgba(13,36,94,0.45)] ring-1 ring-line sm:p-5 lg:flex-row lg:items-center lg:justify-between">
-          <div className="min-w-0 lg:flex-1">
-            <CategoryChips lang={lang} />
-          </div>
-          <ArticleSearch index={searchIndex(lang)} placeholder={t.searchPlaceholder} empty={t.noResults} />
-        </div>
+      <ArticlesToolbar lang={lang} />
 
+      <div className="mx-auto max-w-6xl px-4">
         <section className="pt-14">
           <SectionTitle title={t.mostRead} />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {popular.map((c) => (
               <ArticleCard key={c.href} lang={lang} card={c} size="lg" />
             ))}
@@ -75,34 +58,22 @@ export default async function ArticlesPage({ params }: PageProps<"/[lang]/articl
         </section>
 
         <section className="pt-16">
-          <SectionTitle
-            title={t.recent}
-            action={
-              <Link href="#categories" className="hidden shrink-0 items-center gap-1 text-sm font-bold text-primary hover:text-orange sm:inline-flex">
-                {t.viewMore}
-                <Icon name="chevron" className="size-4" flip />
-              </Link>
-            }
-          />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <SectionTitle title={t.recent} />
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {recent.map((c) => (
               <ArticleCard key={c.href} lang={lang} card={c} />
             ))}
           </div>
-          <div className="mt-10 flex justify-center">
-            <Link
-              href="#categories"
-              className="inline-flex h-12 items-center gap-2 rounded-full bg-orange px-7 font-bold text-white shadow-lg shadow-orange/25 transition hover:-translate-y-0.5 hover:bg-orange/90"
-            >
+          <div className="mt-10 text-center">
+            <Link href="#categories" className="inline-block min-w-56 rounded-lg bg-primary px-10 py-2.5 text-lg font-bold text-white hover:bg-primary-deep">
               {t.viewMore}
-              <Icon name="chevron" className="size-4" flip />
             </Link>
           </div>
         </section>
 
         <section id="categories" className="scroll-mt-24 pt-16">
           <SectionTitle title={t.categoriesTitle} />
-          <p className="-mt-3 mb-6 text-ink-2">{t.categoriesSubtitle}</p>
+          <p className="-mt-5 mb-8 text-navy-2 dark:text-ink-2">{t.categoriesSubtitle}</p>
           <CategoryTiles lang={lang} />
         </section>
 

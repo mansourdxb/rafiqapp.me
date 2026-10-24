@@ -133,11 +133,11 @@ export function Tasbeeh({ lang, presets, t }: { lang: Locale; presets: Preset[];
   const arText = preset ? cleanZikr(preset.ar) : custom?.text ?? "";
 
   return (
-    <div className="mx-auto -mt-16 grid max-w-6xl gap-6 px-4 lg:grid-cols-[minmax(0,1fr)_360px]">
+    <div className="mx-auto grid max-w-6xl gap-8 px-4 pt-2 lg:grid-cols-[minmax(0,1fr)_360px]">
       {/* counter */}
-      <section className="rounded-3xl bg-card p-5 shadow-[0_6px_14px_rgba(22,40,70,0.08)] ring-1 ring-line sm:p-8">
+      <section className="rounded-[15px] bg-card p-5 shadow-[0_5px_25px_rgba(0,0,0,0.16)] sm:p-8">
         <div className="text-center">
-          <p dir="auto" className="text-[26px] leading-[1.9] font-bold text-[#16384A] dark:text-ink sm:text-3xl" lang={preset ? "ar" : undefined}>
+          <p dir="auto" className="text-[26px] leading-[1.9] font-bold text-section dark:text-primary-light sm:text-3xl" lang={preset ? "ar" : undefined}>
             {arText}
           </p>
           {preset?.translit && dir(lang) === "ltr" && <p className="mt-1 text-sm font-semibold text-primary">{preset.translit}</p>}
@@ -152,7 +152,7 @@ export function Tasbeeh({ lang, presets, t }: { lang: Locale; presets: Preset[];
                 type="button"
                 onClick={() => setFadlOpen((v) => !v)}
                 aria-expanded={fadlOpen}
-                className="inline-flex items-center gap-1 rounded-full border border-dashed border-primary/50 px-3 py-1 text-[13px] font-bold text-primary"
+                className="inline-flex items-center gap-1 rounded-full px-3 py-1 text-[13px] font-bold text-primary ring-1 ring-primary"
               >
                 {t.fadl}
                 <Icon name="chevron" className={`size-3.5 transition ${fadlOpen ? "-rotate-90" : "rotate-90"}`} />
@@ -181,19 +181,19 @@ export function Tasbeeh({ lang, presets, t }: { lang: Locale; presets: Preset[];
                 <stop offset="100%" stopColor="#8EA0AB" />
               </radialGradient>
               <radialGradient id={`${gid}n`} cx="36%" cy="30%" r="72%">
-                <stop offset="0%" stopColor="#9CC9E6" />
-                <stop offset="35%" stopColor="#2C5A84" />
-                <stop offset="85%" stopColor="#163049" />
-                <stop offset="100%" stopColor="#0C1C2C" />
+                <stop offset="0%" stopColor="#BDEBFB" />
+                <stop offset="35%" stopColor="#00B0E9" />
+                <stop offset="85%" stopColor="#174D92" />
+                <stop offset="100%" stopColor="#0F1C50" />
               </radialGradient>
               <radialGradient id={`${gid}g`} cx="36%" cy="30%" r="72%">
-                <stop offset="0%" stopColor="#B7EBCB" />
-                <stop offset="40%" stopColor="#2E9E5B" />
-                <stop offset="100%" stopColor="#14502C" />
+                <stop offset="0%" stopColor="#FFD9B0" />
+                <stop offset="40%" stopColor="#FF8711" />
+                <stop offset="100%" stopColor="#A04E00" />
               </radialGradient>
             </defs>
             {/* string */}
-            <circle cx="150" cy="150" r={R} fill="none" strokeWidth="1.5" className="stroke-[#C9A24B]/60" />
+            <circle cx="150" cy="150" r={R} fill="none" strokeWidth="1.5" className="stroke-edge/70" />
             {/* progress toward the target */}
             <circle cx="150" cy="150" r="100" fill="none" strokeWidth="8" className="stroke-line" />
             <circle
@@ -204,7 +204,7 @@ export function Tasbeeh({ lang, presets, t }: { lang: Locale; presets: Preset[];
               strokeWidth="8"
               strokeLinecap="round"
               transform="rotate(-90 150 150)"
-              className={`transition-all duration-300 ${done ? "stroke-[#2E9E5B]" : "stroke-primary"}`}
+              className={`transition-all duration-300 ${done ? "stroke-orange" : "stroke-primary"}`}
               strokeDasharray={ring}
               strokeDashoffset={ring * (1 - Math.min(1, count / target))}
             />
@@ -225,10 +225,10 @@ export function Tasbeeh({ lang, presets, t }: { lang: Locale; presets: Preset[];
               );
             })}
             {/* imame (head bead) */}
-            <circle cx="150" cy={150 - R - 2} r="5" className="fill-[#C9A24B]" />
+            <circle cx="150" cy={150 - R - 2} r="5" className="fill-orange" />
           </svg>
           <span className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
-            <span key={pulse} className="animate-[tasbeeh-pop_180ms_ease-out] text-6xl font-bold text-[#1E6A93] tabular-nums dark:text-[#5FB4D6]">
+            <span key={pulse} className="animate-[tasbeeh-pop_180ms_ease-out] text-6xl font-bold text-section tabular-nums dark:text-primary-light">
               {/* Latin digits in the big counter, like the app's CircularCounter */}
               {count}
             </span>
@@ -240,8 +240,8 @@ export function Tasbeeh({ lang, presets, t }: { lang: Locale; presets: Preset[];
         <p className="mt-4 text-center text-xs text-ink-2">{t.tapHint}</p>
 
         {done && (
-          <div className="mx-auto mt-4 max-w-md rounded-2xl bg-[#2E9E5B]/10 p-3 text-center" role="status">
-            <p className="font-bold text-[#2E9E5B]">{t.completed}</p>
+          <div className="mx-auto mt-4 max-w-md rounded-md bg-tint p-3 text-center" role="status">
+            <p className="font-bold text-orange">{t.completed}</p>
             <p className="text-sm text-ink-2">{t.completedSub}</p>
           </div>
         )}
@@ -251,7 +251,7 @@ export function Tasbeeh({ lang, presets, t }: { lang: Locale; presets: Preset[];
             type="button"
             onClick={reset}
             disabled={count === 0}
-            className="inline-flex items-center gap-1.5 rounded-full bg-[#E98127] px-5 py-2.5 text-sm font-bold text-white transition disabled:opacity-40"
+            className="inline-flex items-center gap-1.5 rounded-full bg-orange px-5 py-2.5 text-sm font-bold text-white transition hover:bg-orange/90 disabled:opacity-40"
           >
             <Icon name="reset" className="size-4" />
             {t.reset}
@@ -266,17 +266,17 @@ export function Tasbeeh({ lang, presets, t }: { lang: Locale; presets: Preset[];
             [t.today, todayTotal],
             [t.allTime, s.all],
           ].map(([k, v]) => (
-            <div key={k as string} className="rounded-2xl bg-tint px-2 py-3">
+            <div key={k as string} className="rounded-md bg-tint px-2 py-3">
               <dt className="text-xs font-semibold text-ink-2">{k}</dt>
-              <dd className="mt-0.5 text-xl font-bold text-ink tabular-nums">{d(v as number)}</dd>
+              <dd className="mt-0.5 text-xl font-bold text-section tabular-nums dark:text-primary-light">{d(v as number)}</dd>
             </div>
           ))}
         </dl>
       </section>
 
       {/* dhikr list */}
-      <aside className="rounded-3xl bg-card p-4 shadow-[0_6px_14px_rgba(22,40,70,0.08)] ring-1 ring-line lg:max-h-[calc(100dvh-6rem)] lg:overflow-y-auto">
-        <h2 className="px-1 text-lg font-bold text-ink">{t.choose}</h2>
+      <aside className="rounded-[15px] bg-[#EFEFEF] p-5 lg:max-h-[calc(100dvh-3rem)] lg:overflow-y-auto dark:bg-card">
+        <h2 className="px-1 text-2xl font-bold text-section dark:text-primary-light">{t.choose}</h2>
         <p className="mt-3 px-1 text-xs font-bold tracking-wide text-ink-2">{t.builtIn}</p>
         <ul className="mt-2 space-y-1.5">
           {presets.map((p) => (
@@ -315,7 +315,7 @@ export function Tasbeeh({ lang, presets, t }: { lang: Locale; presets: Preset[];
 
         {adding ? (
           <form
-            className="mt-3 space-y-2 rounded-2xl bg-tint p-3"
+            className="mt-3 space-y-2 rounded-[15px] bg-white p-3 dark:bg-canvas"
             onSubmit={(e) => {
               e.preventDefault();
               addCustom();
@@ -330,7 +330,7 @@ export function Tasbeeh({ lang, presets, t }: { lang: Locale; presets: Preset[];
               rows={2}
               maxLength={300}
               autoFocus
-              className="w-full resize-none rounded-xl bg-card p-2.5 text-[15px] text-ink ring-1 ring-line outline-none focus:ring-2 focus:ring-primary"
+              className="w-full resize-none rounded-xl bg-white p-2.5 text-[15px] text-ink ring-2 ring-edge/70 outline-none focus:ring-primary dark:bg-card"
             />
             <label className="flex items-center gap-2 text-sm text-ink-2">
               {t.target}
@@ -341,14 +341,14 @@ export function Tasbeeh({ lang, presets, t }: { lang: Locale; presets: Preset[];
                 max={100000}
                 value={draft.target}
                 onChange={(e) => setDraft((x) => ({ ...x, target: e.target.value }))}
-                className="w-24 rounded-xl bg-card px-2.5 py-1.5 text-ink ring-1 ring-line outline-none focus:ring-2 focus:ring-primary"
+                className="w-24 rounded-full bg-white px-3 py-1.5 text-ink ring-2 ring-edge/70 outline-none focus:ring-primary dark:bg-card"
               />
             </label>
             <div className="flex gap-2">
-              <button type="submit" disabled={!draft.text.trim()} className="rounded-full bg-primary px-4 py-2 text-sm font-bold text-white disabled:opacity-40">
+              <button type="submit" disabled={!draft.text.trim()} className="rounded-lg bg-primary px-6 py-2 text-sm font-bold text-white hover:bg-primary-deep disabled:opacity-40">
                 {t.save}
               </button>
-              <button type="button" onClick={() => setAdding(false)} className="rounded-full px-4 py-2 text-sm font-bold text-ink-2 hover:bg-card">
+              <button type="button" onClick={() => setAdding(false)} className="rounded-full px-4 py-2 text-sm font-bold text-ink-2 hover:bg-tint">
                 {t.cancel}
               </button>
             </div>
@@ -357,7 +357,7 @@ export function Tasbeeh({ lang, presets, t }: { lang: Locale; presets: Preset[];
           <button
             type="button"
             onClick={() => setAdding(true)}
-            className="mt-3 flex w-full items-center justify-center gap-1.5 rounded-2xl border-2 border-dashed border-primary/40 py-3 text-sm font-bold text-primary hover:bg-primary/5"
+            className="mt-4 flex w-full items-center justify-center gap-1.5 rounded-lg bg-primary py-3 text-sm font-bold text-white hover:bg-primary-deep"
           >
             <span className="text-lg leading-none">+</span>
             {t.add}
@@ -374,8 +374,8 @@ function DhikrRow({ active, title, sub, target, count, onClick }: { active: bool
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className={`flex w-full items-center gap-3 rounded-2xl px-3 py-2.5 text-start transition ${
-        active ? "bg-primary text-white shadow" : "text-ink hover:bg-tint"
+      className={`flex w-full items-center gap-3 rounded-[12px] px-3 py-2.5 text-start transition ${
+        active ? "bg-navy text-white shadow dark:bg-primary" : "bg-white text-navy-2 hover:bg-tint dark:bg-canvas dark:text-ink"
       }`}
     >
       <span className="min-w-0 flex-1">
@@ -402,7 +402,7 @@ function Toggle({ on, label, onClick }: { on: boolean; label: string; onClick: (
       role="switch"
       aria-checked={on}
       onClick={onClick}
-      className={`rounded-full px-4 py-2.5 text-sm font-bold ring-1 transition ${on ? "bg-primary/10 text-primary ring-primary/40" : "text-ink-2 ring-line"}`}
+      className={`rounded-full px-4 py-2.5 text-sm font-bold ring-1 transition ${on ? "bg-primary text-white ring-primary" : "text-primary ring-primary"}`}
     >
       {label}
     </button>

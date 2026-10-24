@@ -122,40 +122,40 @@ export function AyahPanel({ lang, sel, onClose, onStep }: { lang: Locale; sel: A
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center md:items-center" role="dialog" aria-modal="true" aria-label={title}>
       <button type="button" aria-label={t.close} className="absolute inset-0 cursor-default bg-black/40 backdrop-blur-[2px]" onClick={onClose} />
-      <div className="relative flex max-h-[88dvh] w-full max-w-2xl flex-col overflow-hidden rounded-t-3xl bg-card shadow-2xl md:mx-4 md:rounded-3xl">
-        <div className="flex items-center gap-2 border-b border-line px-4 py-3">
-          <button type="button" onClick={() => onStep(-1)} disabled={!canPrev} aria-label={t.prevPage} className="grid size-9 place-items-center rounded-full text-ink-2 hover:bg-tint disabled:opacity-30">
+      <div className="relative flex max-h-[88dvh] w-full max-w-2xl flex-col overflow-hidden rounded-t-[15px] bg-white shadow-[0_5px_25px_rgba(0,0,0,0.16)] md:mx-4 md:rounded-[15px] dark:bg-card">
+        <div className="flex items-center gap-2 bg-navy px-4 py-3 text-white">
+          <button type="button" onClick={() => onStep(-1)} disabled={!canPrev} aria-label={t.prevPage} className="grid size-9 place-items-center rounded-full text-white/85 hover:bg-white/10 hover:text-white disabled:opacity-30">
             <span className="rtl:-scale-x-100">
               <Icon name="chevron" className="size-5 -scale-x-100" />
             </span>
           </button>
-          <h2 className="min-w-0 flex-1 truncate text-center text-base font-bold text-ink">{title}</h2>
-          <button type="button" onClick={() => onStep(1)} disabled={!canNext} aria-label={t.nextPage} className="grid size-9 place-items-center rounded-full text-ink-2 hover:bg-tint disabled:opacity-30">
+          <h2 className="min-w-0 flex-1 truncate text-center text-base font-bold text-white">{title}</h2>
+          <button type="button" onClick={() => onStep(1)} disabled={!canNext} aria-label={t.nextPage} className="grid size-9 place-items-center rounded-full text-white/85 hover:bg-white/10 hover:text-white disabled:opacity-30">
             <Icon name="chevron" className="size-5" flip />
           </button>
-          <button ref={closeRef} type="button" onClick={onClose} aria-label={t.close} className="grid size-9 place-items-center rounded-full bg-tint text-ink hover:bg-line">
+          <button ref={closeRef} type="button" onClick={onClose} aria-label={t.close} className="grid size-9 place-items-center rounded-full bg-white/15 text-white hover:bg-white/25">
             <Icon name="close" className="size-5" />
           </button>
         </div>
 
         <div className="overflow-y-auto px-5 pb-5 pt-4">
-          <p dir="rtl" lang="ar" className="text-center text-[26px] leading-[2.1] text-ink" style={{ fontFamily: `"KFGQPCHafs", var(--font-quran)` }}>
+          <p dir="rtl" lang="ar" className="text-center text-[26px] leading-[2.1] text-navy-2 dark:text-ink" style={{ fontFamily: `"KFGQPCHafs", var(--font-quran)` }}>
             {sel.text}{" "}
             <span className="text-[#98765A] dark:text-[#B8A080]">{arabicIndic(sel.a)}</span>
           </p>
 
           {/* actions */}
           <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-            <button type="button" onClick={togglePlay} className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-deep">
+            <button type="button" onClick={togglePlay} className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2 text-sm font-bold text-white shadow-sm hover:bg-primary-deep">
               <Icon name={playing ? "pause" : "play"} className="size-4" />
               {playing ? t.pause : t.play}
             </button>
-            <label className="inline-flex items-center gap-1.5 rounded-full border border-line bg-canvas px-3 py-1.5 text-sm text-ink-2">
+            <label className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-sm text-navy-2 ring-2 ring-edge/70 dark:bg-canvas dark:text-ink">
               <span className="sr-only">{t.reciter}</span>
               <select
                 value={reciter}
                 onChange={(e) => writePref(RECITER_KEY, e.target.value)}
-                className="max-w-[12rem] bg-transparent text-ink outline-none"
+                className="max-w-[12rem] bg-transparent font-semibold text-navy-2 outline-none dark:text-ink"
               >
                 {RECITERS.map((r) => (
                   <option key={r.folder} value={r.folder}>
@@ -164,17 +164,17 @@ export function AyahPanel({ lang, sel, onClose, onStep }: { lang: Locale; sel: A
                 ))}
               </select>
             </label>
-            <button type="button" onClick={copy} className="inline-flex items-center gap-1.5 rounded-full border border-line px-3 py-2 text-sm font-medium text-ink hover:bg-tint">
+            <button type="button" onClick={copy} className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-sm font-bold text-primary ring-1 ring-primary hover:bg-tint">
               <Icon name="copy" className="size-4" />
               {copied ? t.copied : t.copy}
             </button>
-            <button type="button" onClick={share} className="inline-flex items-center gap-1.5 rounded-full border border-line px-3 py-2 text-sm font-medium text-ink hover:bg-tint">
+            <button type="button" onClick={share} className="inline-flex items-center gap-1.5 rounded-full bg-navy px-3.5 py-2 text-sm font-bold text-white hover:bg-section">
               <Icon name="share" className="size-4" />
               {t.share}
             </button>
           </div>
 
-          <div className="mt-5 rounded-2xl bg-tint p-4">
+          <div className="mt-5 rounded-[15px] bg-tint p-4">
             <div className="mb-3 flex flex-wrap items-center gap-2">
               <span className="text-sm font-bold text-section dark:text-primary-light">{arabic ? t.tafsir : appT(lang, "quran.translation")}</span>
               {arabic ? (
@@ -184,7 +184,7 @@ export function AyahPanel({ lang, sel, onClose, onStep }: { lang: Locale; sel: A
                       key={k}
                       type="button"
                       onClick={() => writePref(TAFSIR_KEY, String(i))}
-                      className={`rounded-full px-3 py-1 text-xs font-semibold ${book === i ? "bg-primary text-white" : "bg-card text-ink-2 hover:text-ink"}`}
+                      className={`rounded-full px-3 py-1 text-xs font-semibold ${book === i ? "bg-navy text-white" : "bg-white text-navy-2 hover:text-primary dark:bg-card dark:text-ink-2"}`}
                     >
                       {appT(lang, k)}
                     </button>
@@ -206,7 +206,7 @@ export function AyahPanel({ lang, sel, onClose, onStep }: { lang: Locale; sel: A
                 </button>
               </div>
             ) : (
-              <p dir={trDir} className="whitespace-pre-line text-start text-[16px] leading-8 text-ink">
+              <p dir={trDir} className="whitespace-pre-line text-start text-[16px] leading-8 text-navy-2 dark:text-ink">
                 {body.text}
               </p>
             )}

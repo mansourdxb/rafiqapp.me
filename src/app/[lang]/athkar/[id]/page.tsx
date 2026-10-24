@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { isLocale, locales } from "@/i18n/config";
+import { isLocale, localePath, locales } from "@/i18n/config";
 import { alternates } from "@/i18n/metadata";
 import { athkar, fill, READER_LABELS, type ReaderLabels } from "@/i18n/messages/athkar";
 import { CATEGORIES, categoryTitle, loadCategory } from "@/lib/athkar/data";
 import { AthkarReader } from "@/components/athkar/AthkarReader";
+import { PageHeader } from "@/components/ui/PageHeader";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -30,5 +31,12 @@ export default async function AthkarCategoryPage({ params }: PageProps<"/[lang]/
   const t = athkar[lang];
   const labels = Object.fromEntries(READER_LABELS.map((k) => [k, t[k]])) as ReaderLabels;
 
-  return <AthkarReader lang={lang} id={cat.id} title={categoryTitle(lang, cat.id)} items={cat.items} labels={labels} />;
+  const title = categoryTitle(lang, cat.id);
+
+  return (
+    <>
+      <PageHeader lang={lang} crumbs={[{ label: t.title, href: localePath(lang, "/athkar/") }, { label: title }]} title={title} />
+      <AthkarReader lang={lang} id={cat.id} title={title} items={cat.items} labels={labels} />
+    </>
+  );
 }

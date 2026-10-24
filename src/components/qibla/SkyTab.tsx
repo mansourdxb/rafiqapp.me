@@ -9,6 +9,7 @@ import { moonPosition, nextRise, sunPosition } from "@/lib/qibla/astro";
 import { normDeg } from "@/lib/qibla/geo";
 import { useNow } from "@/components/prayer/usePlace";
 import { Dial, type DialMark } from "./Dial";
+import { OUTLINED } from "@/components/prayer/prayerUi";
 
 export function SkyTab({ lang, place, qibla, s }: { lang: Locale; place: Place; qibla: number; s: PrayerSettings }) {
   const t = qiblaMsg[lang];
@@ -26,8 +27,8 @@ export function SkyTab({ lang, place, qibla, s }: { lang: Locale; place: Place; 
   const time = (d: Date | null) => (d ? formatTime(d, place.tz, lang, s.hour12) : "—");
 
   const card = (kind: "sun" | "moon", up: boolean, az: number, alt: number) => (
-    <div className={`rounded-2xl border p-4 ${up ? "border-primary/30 bg-tint" : "border-line bg-canvas opacity-80"}`}>
-      <p className="flex items-center gap-2 font-bold text-ink">
+    <div className={`p-4 ${up ? "rounded-xl bg-tint" : `${OUTLINED} opacity-80`}`}>
+      <p className="flex items-center gap-2 font-bold text-navy-2 dark:text-white">
         <span className={`inline-block size-3 rounded-full ${kind === "sun" ? "bg-[#F9A825]" : "bg-[#B0BEC5]"}`} />
         {appT(lang, kind === "sun" ? "alm.qibla.sun" : "alm.qibla.moon")}
       </p>

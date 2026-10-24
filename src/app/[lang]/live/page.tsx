@@ -4,6 +4,7 @@ import { isLocale } from "@/i18n/config";
 import { live } from "@/i18n/messages/live";
 import { alternates } from "@/i18n/metadata";
 import { Icon } from "@/components/ui/Icon";
+import { PageHeader } from "@/components/ui/PageHeader";
 
 // Official Saudi channels' 24/7 streams (Saudi Broadcasting Authority). Quran TV runs several live
 // streams, so YouTube's "channel live" embed can't pick one — it embeds the Makkah stream's video id
@@ -26,19 +27,10 @@ export default async function LivePage({ params }: PageProps<"/[lang]/live">) {
   const t = live[lang];
   return (
     <>
-      <section className="bg-navy px-4 py-12 text-center text-white">
-        <h1 className="flex items-center justify-center gap-3 text-3xl font-extrabold sm:text-4xl">
-          <span className="relative flex size-3">
-            <span className="absolute inline-flex size-full animate-ping rounded-full bg-red-500 opacity-75" />
-            <span className="relative inline-flex size-3 rounded-full bg-red-500" />
-          </span>
-          {t.title}
-        </h1>
-        <p className="mx-auto mt-3 max-w-2xl text-white/75">{t.subtitle}</p>
-      </section>
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 lg:grid-cols-2">
+      <PageHeader lang={lang} crumbs={[{ label: t.title }]} title={t.title} subtitle={t.subtitle} />
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 pb-16 pt-2 md:grid-cols-2">
         {STREAMS.map((s) => (
-          <article key={s.key} className="overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-line">
+          <article key={s.key} className="overflow-hidden rounded-[15px] bg-card shadow-[0_5px_25px_rgba(0,0,0,0.16)]">
             <div className="aspect-video bg-black">
               <iframe
                 src={`https://www.youtube-nocookie.com/embed/${s.embed}`}
@@ -49,16 +41,22 @@ export default async function LivePage({ params }: PageProps<"/[lang]/live">) {
                 loading="lazy"
               />
             </div>
-            <div className="flex flex-wrap items-center justify-between gap-3 p-5">
+            <div className="flex flex-wrap items-center justify-between gap-3 px-5 py-4">
               <div>
-                <h2 className="text-lg font-bold">{t[s.key]}</h2>
-                <p className="text-sm text-ink-2">{s.key === "makkah" ? t.makkahSrc : t.madinahSrc}</p>
+                <h2 className="flex items-center gap-2 text-lg font-bold text-section dark:text-primary-light">
+                  <span className="relative flex size-2.5 shrink-0">
+                    <span className="absolute inline-flex size-full animate-ping rounded-full bg-red-500 opacity-75" />
+                    <span className="relative inline-flex size-2.5 rounded-full bg-red-500" />
+                  </span>
+                  {t[s.key]}
+                </h2>
+                <p className="text-sm text-navy-2 dark:text-ink-2">{s.key === "makkah" ? t.makkahSrc : t.madinahSrc}</p>
               </div>
               <a
                 href={`https://www.youtube.com/channel/${s.channel}/live`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-full bg-tint px-4 py-2 text-sm font-bold text-primary hover:bg-primary hover:text-white"
+                className="flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold text-primary ring-1 ring-primary transition hover:bg-primary hover:text-white"
               >
                 <Icon name="play" className="size-4" />
                 {t.openYoutube}

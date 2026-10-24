@@ -11,13 +11,8 @@ import { CategoryIcon, type CategoryIconName } from "./CategoryIcon";
 
 type Chapter = { id: number; title: string; ar: string; icon: CategoryIconName; n: number };
 
-// Alternating pastel cards + icon colours, as in the app's Hisn al-Muslim index.
-const TONES = [
-  "bg-[#E8F7FA] text-[#2E9BD6] dark:bg-[#15303A]",
-  "bg-[#EFF6EA] text-[#5FA463] dark:bg-[#1C2E22]",
-  "bg-[#FBF1E5] text-[#E0912D] dark:bg-[#33281A]",
-  "bg-[#F1F2F5] text-[#7A6FB0] dark:bg-[#24263A]",
-];
+// Alternating icon colours (sky / orange / blue / green) on white cards.
+const TONES = ["bg-primary/12 text-primary", "bg-orange/12 text-orange", "bg-section/10 text-section dark:text-primary-light", "bg-[#0A9B7A]/12 text-[#0A9B7A]"];
 
 export function HisnGrid({
   lang,
@@ -38,9 +33,9 @@ export function HisnGrid({
   }, [q, chapters]);
 
   return (
-    <div className="mt-5">
-      <label className="flex h-12 items-center gap-2 rounded-2xl bg-card px-4 shadow-sm ring-1 ring-line focus-within:ring-2 focus-within:ring-primary">
-        <Icon name="search" className="size-5 text-ink-2" />
+    <div className="mt-6">
+      <label className="flex h-12 items-center gap-2 rounded-full bg-white px-5 shadow-[0_3px_10px_rgba(124,180,200,0.35)] ring-2 ring-edge/70 focus-within:ring-primary sm:max-w-md dark:bg-card">
+        <Icon name="search" className="size-5 text-navy dark:text-primary" />
         <input
           type="search"
           value={q}
@@ -54,23 +49,23 @@ export function HisnGrid({
       {list.length === 0 ? (
         <p className="py-16 text-center text-ink-2">{labels.noResults}</p>
       ) : (
-        <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {list.map((c, i) => {
             const isDone = done.includes(c.id);
             return (
               <li key={c.id}>
                 <Link
                   href={localePath(lang, `/athkar/${c.id}/`)}
-                  className={`relative flex min-h-20 items-center gap-3 rounded-2xl p-4 transition hover:-translate-y-0.5 hover:shadow-md ${TONES[i % 4]} ${
-                    isDone ? "ring-2 ring-[#5FA463]" : "ring-1 ring-black/5 dark:ring-white/10"
+                  className={`relative flex min-h-20 items-center gap-3 rounded-[15px] bg-card p-4 shadow-[0_5px_25px_rgba(0,0,0,0.12)] transition hover:-translate-y-0.5 ${
+                    isDone ? "ring-2 ring-[#5FA463]" : ""
                   }`}
                 >
-                  <span className="grid size-10 shrink-0 place-items-center rounded-full bg-white dark:bg-white/10">
+                  <span className={`grid size-11 shrink-0 place-items-center rounded-full ${TONES[i % 4]}`}>
                     <CategoryIcon name={c.icon} className="size-5.5" />
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className="line-clamp-2 text-[14.5px] leading-6 font-bold text-[#16202B] dark:text-ink">{c.title}</span>
-                    <span className="text-xs text-[#7C8A99]">{labels.count.replace("{count}", localDigits(lang, c.n))}</span>
+                    <span className="line-clamp-2 text-[14.5px] leading-6 font-bold text-section dark:text-primary-light">{c.title}</span>
+                    <span className="text-xs font-semibold text-ink-2">{labels.count.replace("{count}", localDigits(lang, c.n))}</span>
                   </span>
                   {isDone && (
                     <span className="absolute end-2 top-2 grid size-5 place-items-center rounded-full bg-[#5FA463] text-white" title={labels.done}>

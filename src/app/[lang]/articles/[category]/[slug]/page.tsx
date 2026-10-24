@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLocale, locales, ogLocale, SITE_URL, type Locale } from "@/i18n/config";
@@ -15,15 +16,17 @@ import {
   getArticle,
   mostRead,
   relatedArticles,
+  searchIndex,
   siblings,
 } from "@/lib/articles";
 import { ArticleBody } from "@/components/articles/ArticleBody";
-import { ArticleCard, shareLabels } from "@/components/articles/ArticleCard";
-import { CategoryIcon, CATEGORY_STYLE, categoryBackground } from "@/components/articles/CategoryArt";
+import { ArticleCard, CATEGORY_TONE, coverSrc, shareLabels } from "@/components/articles/ArticleCard";
+import { ArticleSearch } from "@/components/articles/ArticleSearch";
 import { FavButton } from "@/components/articles/FavButton";
-import { Breadcrumbs, GetAppCard, SectionTitle } from "@/components/articles/Parts";
+import { GetAppCard, SectionTitle, SideBox } from "@/components/articles/Parts";
 import { ShareBar } from "@/components/articles/ShareBar";
 import { Icon } from "@/components/ui/Icon";
+import { PageHeader } from "@/components/ui/PageHeader";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -66,7 +69,7 @@ export default async function ArticlePage({ params }: PageProps<"/[lang]/article
   const href = articlePath(lang, a);
   const { prev, next } = siblings(lang, a);
   const related = relatedArticles(lang, a, 3);
-  const popular = mostRead(lang).filter((c) => c.href !== href).slice(0, 4);
+  const popular = mostRead(lang).filter((c) => c.href !== href).slice(0, 3);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -81,48 +84,46 @@ export default async function ArticlePage({ params }: PageProps<"/[lang]/article
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <section className="relative overflow-hidden text-white" style={categoryBackground(a.c)}>
-        <div className="absolute -end-24 -top-24 size-80 rounded-full bg-white/10" aria-hidden />
-        <div className="relative mx-auto max-w-7xl px-4 pb-24 pt-10 sm:pt-12">
-          <Breadcrumbs lang={lang} items={[{ label: t.title, href: articlesPath(lang) }, { label: name, href: categoryPath(lang, a.c) }]} />
-          <div className="mt-6 flex flex-wrap items-center gap-3 text-sm">
-            <Link href={categoryPath(lang, a.c)} className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 font-bold text-navy hover:bg-white/90">
-              <CategoryIcon cat={a.c} className="size-4" />
-              {name}
-            </Link>
-            {a.k && <span className="rounded-full bg-white/15 px-3 py-1 font-semibold">{a.k}</span>}
-            <span className="inline-flex items-center gap-1.5 text-white/85">
-              <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" aria-hidden>
-                <path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 7v5l3 2" />
-              </svg>
-              {fill(t.minRead, { n: localDigits(lang, a.m) })}
-            </span>
-          </div>
-          <h1 className="mt-4 max-w-4xl text-3xl font-extrabold leading-tight sm:text-[2.6rem]">{a.t}</h1>
+      <PageHeader lang={lang} crumbs={[{ label: t.title, href: articlesPath(lang) }, { label: name, href: categoryPath(lang, a.c) }]} title={a.t}>
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 lg:max-w-[calc(100%-330px)]">
+          <ShareBar href={href} title={a.t} labels={shareLabels(lang)} />
+          <FavButton id={`${a.c}/${a.s}`} addLabel={t.favAdd} removeLabel={t.favRemove} className="size-10 ring-2 ring-edge/70" />
         </div>
-      </section>
+      </PageHeader>
 
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[minmax(0,1fr)_320px]">
-        <article className="relative z-10 -mt-14 min-w-0 rounded-3xl bg-card p-5 shadow-[0_16px_40px_-20px_rgba(13,36,94,0.45)] ring-1 ring-line sm:p-10">
-          <div className="mb-8 flex flex-wrap items-center justify-between gap-3 border-b border-line pb-6">
-            <ShareBar href={href} title={a.t} labels={shareLabels(lang)} />
-            <FavButton id={`${a.c}/${a.s}`} addLabel={t.favAdd} removeLabel={t.favRemove} className="size-10 ring-1 ring-line" />
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 lg:grid-cols-[minmax(0,1fr)_290px]">
+        <article className="min-w-0">
+          <figure className="relative h-56 overflow-hidden rounded-[20px] shadow-[0_5px_25px_rgba(0,0,0,0.16)] sm:h-[380px]">
+            <Image src={coverSrc(a.c)} alt="" fill priority sizes="(max-width: 1024px) 100vw, 760px" className="object-cover" />
+            <span className={`absolute start-4 top-4 rounded-full px-3 py-1 text-xs font-bold text-white shadow-sm ${CATEGORY_TONE[a.c]}`}>{name}</span>
+            <figcaption className="absolute bottom-4 end-4 flex items-center gap-2.5 rounded-full bg-black/45 px-4 py-1.5 text-sm font-semibold text-white backdrop-blur-sm">
+              {a.k && (
+                <>
+                  <span>{a.k}</span>
+                  <span className="size-1.5 rounded-full bg-white" aria-hidden />
+                </>
+              )}
+              <span>{fill(t.minRead, { n: localDigits(lang, a.m) })}</span>
+            </figcaption>
+          </figure>
+
+          <div className="mt-10">
+            <ArticleBody lang={lang} blocks={a.b} />
           </div>
-          <ArticleBody lang={lang} blocks={a.b} />
 
           {(prev || next) && (
-            <nav className="mt-12 grid gap-3 border-t border-line pt-6 sm:grid-cols-2">
+            <nav className="mt-12 grid gap-4 sm:grid-cols-2">
               {prev ? (
-                <Link href={articlePath(lang, prev)} className="group flex items-center gap-3 rounded-2xl p-3 ring-1 ring-line transition hover:ring-primary">
+                <Link href={articlePath(lang, prev)} className="group flex items-center gap-3 rounded-[15px] bg-card p-4 shadow-[0_5px_25px_rgba(0,0,0,0.12)] transition hover:-translate-y-0.5">
                   <Icon name="chevron" className="size-5 shrink-0 rotate-180 text-primary rtl:rotate-0" />
-                  <span className="line-clamp-2 text-sm font-semibold text-ink group-hover:text-primary">{prev.t}</span>
+                  <span className="line-clamp-2 text-sm font-bold text-section group-hover:text-primary dark:text-primary-light">{prev.t}</span>
                 </Link>
               ) : (
                 <span className="hidden sm:block" />
               )}
               {next && (
-                <Link href={articlePath(lang, next)} className="group flex items-center justify-end gap-3 rounded-2xl p-3 text-end ring-1 ring-line transition hover:ring-primary">
-                  <span className="line-clamp-2 text-sm font-semibold text-ink group-hover:text-primary">{next.t}</span>
+                <Link href={articlePath(lang, next)} className="group flex items-center justify-end gap-3 rounded-[15px] bg-card p-4 text-end shadow-[0_5px_25px_rgba(0,0,0,0.12)] transition hover:-translate-y-0.5">
+                  <span className="line-clamp-2 text-sm font-bold text-section group-hover:text-primary dark:text-primary-light">{next.t}</span>
                   <Icon name="chevron" className="size-5 shrink-0 text-primary" flip />
                 </Link>
               )}
@@ -130,34 +131,24 @@ export default async function ArticlePage({ params }: PageProps<"/[lang]/article
           )}
         </article>
 
-        <aside className="flex flex-col gap-6 lg:pt-8">
-          <section className="rounded-3xl bg-card p-5 ring-1 ring-line">
-            <h2 className="mb-4 text-lg font-extrabold text-navy dark:text-white">{t.mostRead}</h2>
-            <ul className="space-y-3">
+        <aside className="flex flex-col gap-8">
+          <SideBox title={common[lang].search}>
+            <ArticleSearch index={searchIndex(lang)} placeholder={t.searchPlaceholder} empty={t.noResults} className="" />
+          </SideBox>
+          <SideBox title={t.mostRead}>
+            <div className="space-y-4">
               {popular.map((c) => (
-                <li key={c.href}>
-                  <Link href={c.href} className="group flex items-center gap-3">
-                    <span className="grid size-12 shrink-0 place-items-center rounded-2xl text-white" style={categoryBackground(c.category)}>
-                      <CategoryIcon cat={c.category} className="size-6" />
-                    </span>
-                    <span className="min-w-0">
-                      <span className="block text-xs font-semibold" style={{ color: CATEGORY_STYLE[c.category].to }}>
-                        {c.categoryName}
-                      </span>
-                      <span className="line-clamp-2 text-sm font-bold text-ink group-hover:text-primary">{c.title}</span>
-                    </span>
-                  </Link>
-                </li>
+                <ArticleCard key={c.href} lang={lang} card={c} size="row" />
               ))}
-            </ul>
-          </section>
-          <div className="lg:sticky lg:top-24">
+            </div>
+          </SideBox>
+          <div className="lg:sticky lg:top-6">
             <GetAppCard lang={lang} compact />
           </div>
         </aside>
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 py-16">
+      <div className="mx-auto max-w-6xl px-4 py-16">
         <SectionTitle
           title={t.related}
           action={
@@ -167,7 +158,7 @@ export default async function ArticlePage({ params }: PageProps<"/[lang]/article
             </Link>
           }
         />
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {related.map((c) => (
             <ArticleCard key={c.href} lang={lang} card={c} />
           ))}

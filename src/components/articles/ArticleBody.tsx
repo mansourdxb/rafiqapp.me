@@ -58,7 +58,7 @@ export function ArticleBody({ lang, blocks }: { lang: Locale; blocks: Block[] })
             );
           case "h":
             return (
-              <h2 key={i} className="flex items-center gap-3 pt-4 text-xl font-extrabold text-navy dark:text-white">
+              <h2 key={i} className="flex items-center gap-3 pt-4 text-[22px] font-bold text-section dark:text-primary-light">
                 <span className="grid size-9 shrink-0 place-items-center rounded-full bg-orange text-base text-white" aria-label={fill(t.step, { n: b.n })}>
                   {localDigits(lang, b.n)}
                 </span>

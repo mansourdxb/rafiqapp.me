@@ -1,8 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { dir, localePath, type Locale } from "@/i18n/config";
+import { dir, type Locale } from "@/i18n/config";
 import type { ReaderLabels } from "@/i18n/messages/athkar";
 import type { Dhikr } from "@/lib/athkar/data";
 import { localDigits } from "@/lib/digits";
@@ -119,20 +118,9 @@ export function AthkarReader({
 
   return (
     <div className="pb-20">
-      {/* header */}
-      <section className="bg-gradient-to-b from-primary to-primary-deep px-4 pt-6 pb-8 text-white">
-        <div className="mx-auto max-w-3xl">
-          <Link href={localePath(lang, "/athkar/")} className="inline-flex items-center gap-1 rounded-full px-2 py-1 text-sm font-semibold text-white/85 hover:bg-white/10">
-            <Icon name="chevron" className="size-4 ltr:rotate-180" />
-            {t.back}
-          </Link>
-          <h1 className="mt-2 text-2xl leading-snug font-bold sm:text-3xl">{title}</h1>
-        </div>
-      </section>
-
       {/* sticky progress + reading settings */}
-      <div className="sticky top-16 z-30 border-b border-line bg-canvas/90 backdrop-blur">
-        <div className="mx-auto flex max-w-3xl flex-wrap items-center gap-x-4 gap-y-2 px-4 py-2.5">
+      <div className="sticky top-16 z-30 border-y border-line bg-white/95 backdrop-blur lg:top-0 dark:bg-canvas/90">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-4 gap-y-2 px-4 py-2.5 lg:pe-[calc(100%-48rem-2rem)]">
           <div className="min-w-40 flex-1">
             <div className="text-xs font-semibold text-ink-2">{t.readCount.replace("{done}", d(doneCount)).replace("{total}", d(items.length))}</div>
             <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-line">
@@ -157,7 +145,7 @@ export function AthkarReader({
               onClick={() => setFont(Math.max(FONT_MIN, font - 2))}
               disabled={font <= FONT_MIN}
               aria-label={`${t.fontSize} −`}
-              className="grid size-8 place-items-center rounded-full bg-card text-sm font-bold text-primary ring-1 ring-line disabled:opacity-40"
+              className="grid size-8 place-items-center rounded-full bg-white text-sm font-bold text-primary ring-1 ring-primary disabled:opacity-40 dark:bg-card"
             >
               A−
             </button>
@@ -166,7 +154,7 @@ export function AthkarReader({
               onClick={() => setFont(Math.min(FONT_MAX, font + 2))}
               disabled={font >= FONT_MAX}
               aria-label={`${t.fontSize} +`}
-              className="grid size-8 place-items-center rounded-full bg-card text-base font-bold text-primary ring-1 ring-line disabled:opacity-40"
+              className="grid size-8 place-items-center rounded-full bg-white text-base font-bold text-primary ring-1 ring-primary disabled:opacity-40 dark:bg-card"
             >
               A+
             </button>
@@ -174,7 +162,7 @@ export function AthkarReader({
         </div>
       </div>
 
-      <ol className="mx-auto mt-5 max-w-3xl space-y-4 px-4">
+      <ol className="mx-auto mt-8 max-w-6xl space-y-6 px-4 [&>li]:max-w-3xl">
         {items.map((it, i) => {
           const c = counts[i];
           const isDone = c >= it.c;
@@ -187,7 +175,7 @@ export function AthkarReader({
                 <button
                   type="button"
                   onClick={() => setExpanded((e) => [...e, i])}
-                  className="flex w-full items-center gap-3 rounded-2xl bg-card/70 p-3 text-start ring-1 ring-line transition hover:bg-card"
+                  className="flex w-full items-center gap-3 rounded-[15px] bg-tint/60 p-3 text-start transition hover:bg-tint"
                 >
                   <span className="grid size-8 shrink-0 place-items-center rounded-full bg-[#2E9E5B] text-white">
                     <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth={3} aria-hidden>
@@ -208,9 +196,9 @@ export function AthkarReader({
           const showDalil = dalil.includes(i);
           return (
             <li key={i} id={`dhikr-${i}`} className="scroll-mt-36">
-              <article className="rounded-3xl bg-card p-4 shadow-[0_6px_14px_rgba(22,40,70,0.06)] ring-1 ring-line sm:p-6">
+              <article className="rounded-[15px] bg-card p-4 shadow-[0_5px_25px_rgba(0,0,0,0.16)] sm:p-6">
                 <div className="flex items-center gap-2">
-                  <span className="rounded-full bg-tint px-2.5 py-1 text-xs font-bold text-primary">{num}</span>
+                  <span className="rounded-full bg-navy px-3 py-1 text-xs font-bold text-white dark:bg-primary">{num}</span>
                   {it.c > 1 && (
                     <span className="rounded-full bg-orange/10 px-2.5 py-1 text-xs font-bold text-orange">
                       {t.repeat}: {d(it.c)} {t.times}
@@ -237,7 +225,7 @@ export function AthkarReader({
                   </div>
                 </div>
 
-                <p dir="rtl" lang="ar" className="mt-4 text-start leading-[2.05] text-ink" style={{ fontSize: font }}>
+                <p dir="rtl" lang="ar" className="mt-4 text-start leading-[2.05] text-navy-2 dark:text-ink" style={{ fontSize: font }}>
                   {arabic(it.ar)}
                 </p>
 
@@ -253,7 +241,7 @@ export function AthkarReader({
                       type="button"
                       onClick={() => setDalil((x) => (showDalil ? x.filter((k) => k !== i) : [...x, i]))}
                       aria-expanded={showDalil}
-                      className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-[13px] font-bold text-primary"
+                      className="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-[13px] font-bold text-primary ring-1 ring-primary"
                     >
                       <Icon name="chevron" className={`size-3.5 transition ${showDalil ? "-rotate-90" : "rotate-90"}`} />
                       {showDalil ? t.hideDalil : t.showDalil}
@@ -328,11 +316,11 @@ export function AthkarReader({
       </ol>
 
       {allDone && (
-        <div className="mx-auto mt-6 max-w-3xl px-4">
-          <div className="rounded-3xl bg-gradient-to-b from-[#2E9E5B] to-[#25844B] p-6 text-center text-white">
-            <p className="text-lg font-bold">{t.allDone}</p>
+        <div className="mx-auto mt-6 max-w-6xl px-4 [&>*]:max-w-3xl">
+          <div className="rounded-[15px] bg-navy p-6 text-center text-white shadow-[0_5px_25px_rgba(0,0,0,0.16)]">
+            <p className="text-lg font-bold text-orange">{t.allDone}</p>
             <p className="mt-1 text-sm text-white/80">{t.allDoneSub}</p>
-            <button type="button" onClick={restart} className="mt-4 rounded-full bg-white px-5 py-2 text-sm font-bold text-[#25844B]">
+            <button type="button" onClick={restart} className="mt-4 rounded-lg bg-primary px-8 py-2.5 text-sm font-bold text-white hover:bg-primary-deep">
               {t.restart}
             </button>
           </div>

@@ -3,6 +3,9 @@ import { useState } from "react";
 import type { Locale } from "@/i18n/config";
 import { appT } from "@/i18n/app";
 import { calendarMsg } from "@/i18n/messages/calendar";
+import { common } from "@/i18n/messages/common";
+import { PageHeader } from "@/components/ui/PageHeader";
+import { CARD } from "@/components/prayer/prayerUi";
 import { Icon } from "@/components/ui/Icon";
 import { localDigits } from "@/lib/digits";
 import {
@@ -78,37 +81,34 @@ export function CalendarView({ lang }: { lang: Locale }) {
   const isCurrent = th && th.hy === cur.hy && th.hm === cur.hm;
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-6 sm:py-10">
-      <div className="mb-5 flex flex-wrap items-end justify-between gap-2">
-        <div>
-          <h1 className="text-2xl font-extrabold text-ink sm:text-3xl">{t.title}</h1>
-          {today && th && (
-            <p className="mt-1 text-sm text-ink-2">
-              {weekdayName(lang, today)} · {formatHijri(lang, th)} · {formatGregorian(lang, today)}
-            </p>
-          )}
-        </div>
-      </div>
+    <>
+      <PageHeader
+        lang={lang}
+        crumbs={[{ label: common[lang].nav.calendar }]}
+        title={t.title}
+        subtitle={today && th ? <span className="font-bold">{weekdayName(lang, today)} · <span className="text-orange">{formatHijri(lang, th)}</span> · {formatGregorian(lang, today)}</span> : <span>&nbsp;</span>}
+      />
+      <div className="mx-auto max-w-6xl px-4 pb-12">
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
         {/* month grid */}
-        <section className="overflow-hidden rounded-3xl border border-line bg-card">
-          <div className="flex items-center justify-between gap-2 bg-primary px-3 py-3 text-white sm:px-5">
-            <button type="button" onClick={() => shift(-1)} aria-label={t.prevMonth} className="grid size-10 shrink-0 place-items-center rounded-xl bg-white/15 hover:bg-white/25">
+        <section className={`overflow-hidden ${CARD} bg-white dark:bg-card`}>
+          <div className="flex items-center justify-between gap-2 bg-navy px-3 py-3 text-white sm:px-5">
+            <button type="button" onClick={() => shift(-1)} aria-label={t.prevMonth} className="grid size-10 shrink-0 place-items-center rounded-full bg-primary shadow hover:bg-primary-deep">
               <Icon name="chevron" className="size-5 ltr:-scale-x-100" />
             </button>
             <div className="min-w-0 text-center">
-              <p className="text-lg font-extrabold sm:text-xl">
-                {hijriMonthName(lang, cur.hm)} {n(cur.hy)} {appT(lang, "hijri.suffix")}
+              <p className="text-lg font-bold sm:text-xl">
+                {hijriMonthName(lang, cur.hm)} <span className="text-orange">{n(cur.hy)} {appT(lang, "hijri.suffix")}</span>
               </p>
               <p className="text-xs text-white/85 sm:text-sm">{gSpan}</p>
             </div>
-            <button type="button" onClick={() => shift(1)} aria-label={t.nextMonth} className="grid size-10 shrink-0 place-items-center rounded-xl bg-white/15 hover:bg-white/25">
+            <button type="button" onClick={() => shift(1)} aria-label={t.nextMonth} className="grid size-10 shrink-0 place-items-center rounded-full bg-primary shadow hover:bg-primary-deep">
               <Icon name="chevron" className="size-5 rtl:-scale-x-100" />
             </button>
           </div>
           <div className="p-2 sm:p-4">
-            <div className="grid grid-cols-7 gap-1 pb-2 text-center text-[11px] font-bold text-ink-2 sm:text-xs">
+            <div className="mb-2 grid grid-cols-7 gap-1 rounded-md bg-tint py-2.5 text-center text-[11px] font-bold text-navy-2 sm:text-xs dark:text-ink-2">
               {WEEK.map((g) => (
                 <div key={g.d} className="truncate">
                   {weekdayName(lang, g, "short")}
@@ -125,7 +125,7 @@ export function CalendarView({ lang }: { lang: Locale }) {
                     key={`${g.y}-${g.m}-${g.d}`}
                     title={occ ? appT(lang, occ.label) : white ? appT(lang, "fasting.whiteDays") : undefined}
                     className={`relative flex aspect-square flex-col items-center justify-center rounded-xl sm:aspect-[1.15] ${
-                      isToday ? "bg-primary text-white shadow" : occ ? "text-ink" : im ? "text-ink" : "text-ink-2/50"
+                      isToday ? "bg-primary text-white shadow" : occ ? "text-navy-2 dark:text-ink" : im ? "text-navy-2 dark:text-ink" : "text-ink-2/50"
                     }`}
                     style={occ && !isToday ? { background: `${occ.color}22` } : undefined}
                   >
@@ -147,7 +147,7 @@ export function CalendarView({ lang }: { lang: Locale }) {
                 <span className="font-extrabold text-[#B8860B] dark:text-gold">{n(13)}</span> {appT(lang, "fasting.whiteDays")}
               </span>
               {!isCurrent && th && (
-                <button type="button" onClick={() => setSel(null)} className="ms-auto rounded-lg bg-tint px-3 py-1.5 font-semibold text-primary">
+                <button type="button" onClick={() => setSel(null)} className="ms-auto rounded-full px-5 py-1.5 font-bold text-navy-2 ring-1 ring-primary hover:bg-tint dark:text-white">
                   {appT(lang, "countdown.today")}
                 </button>
               )}
@@ -156,8 +156,8 @@ export function CalendarView({ lang }: { lang: Locale }) {
         </section>
 
         <aside className="space-y-6">
-          <section className="rounded-3xl border border-line bg-card p-5">
-            <h2 className="mb-3 font-bold text-ink">
+          <section className="rounded-[15px] bg-[#EFEFEF] p-6 dark:bg-card">
+            <h2 className="mb-4 text-xl font-bold text-section dark:text-primary-light">
               {t.occasionsMonth} — {hijriMonthName(lang, cur.hm)}
             </h2>
             {monthOccasions.length === 0 && <p className="text-sm text-ink-2">{t.noOccasions}</p>}
@@ -165,12 +165,12 @@ export function CalendarView({ lang }: { lang: Locale }) {
               {monthOccasions.map((o) => {
                 const g = fromHijri(cur.hy, cur.hm, Math.min(o.hd, hijriMonthLength(cur.hy, cur.hm)));
                 return (
-                  <li key={o.key} className="flex items-center gap-3 rounded-xl p-2" style={{ background: `${o.color}14` }}>
+                  <li key={o.key} className="flex items-center gap-3 rounded-xl bg-white p-2 ring-2 ring-edge/50 dark:bg-canvas">
                     <span className="grid size-10 shrink-0 place-items-center rounded-lg text-sm font-extrabold text-white" style={{ background: o.color }}>
                       {n(o.hd)}
                     </span>
                     <span className="min-w-0">
-                      <span className="block truncate text-sm font-bold text-ink">{appT(lang, o.label)}</span>
+                      <span className="block truncate text-sm font-bold text-navy-2 dark:text-ink">{appT(lang, o.label)}</span>
                       {g && <span className="block text-xs text-ink-2">{formatGregorian(lang, g, { weekday: "long", day: "numeric", month: "long", year: "numeric" })}</span>}
                     </span>
                   </li>
@@ -179,17 +179,17 @@ export function CalendarView({ lang }: { lang: Locale }) {
             </ul>
           </section>
 
-          <section className="rounded-3xl border border-line bg-card p-5">
-            <h2 className="mb-3 font-bold text-ink">{appT(lang, "alm.occasions.upcoming")}</h2>
-            <ul className="divide-y divide-line">
+          <section className="rounded-[15px] bg-[#EFEFEF] p-6 dark:bg-card">
+            <h2 className="mb-3 text-xl font-bold text-section dark:text-primary-light">{appT(lang, "alm.occasions.upcoming")}</h2>
+            <ul className="divide-y divide-black/10 dark:divide-line">
               {upcoming.map((o) => (
                 <li key={o.key} className="flex items-center gap-3 py-2.5">
                   <span className="size-2.5 shrink-0 rounded-full" style={{ background: o.color }} />
                   <span className="min-w-0 flex-1">
-                    <span className="block truncate text-sm font-bold text-ink">{appT(lang, o.label)}</span>
+                    <span className="block truncate text-sm font-bold text-navy-2 dark:text-ink">{appT(lang, o.label)}</span>
                     <span className="block text-xs text-ink-2">{formatGregorian(lang, o.g!)}</span>
                   </span>
-                  <span className="shrink-0 rounded-full bg-tint px-2.5 py-1 text-xs font-bold text-primary">
+                  <span className="shrink-0 rounded-full bg-white px-3 py-1 text-xs font-bold text-primary ring-1 ring-primary dark:bg-canvas">
                     {o.days === 0
                       ? appT(lang, "countdown.today")
                       : o.days === 1
@@ -203,14 +203,15 @@ export function CalendarView({ lang }: { lang: Locale }) {
         </aside>
       </div>
 
-      <Converter lang={lang} today={today} />
-      <p className="mt-4 text-center text-xs text-ink-2">{t.note}</p>
-    </div>
+        <Converter lang={lang} today={today} />
+        <p className="mt-4 text-center text-xs text-ink-2">{t.note}</p>
+      </div>
+    </>
   );
 }
 
 const pad = (v: number) => String(v).padStart(2, "0");
-const field = "h-11 w-full rounded-xl border border-line bg-canvas px-3 text-sm text-ink outline-none focus:ring-2 focus:ring-primary/40";
+const field = "h-11 w-full rounded-full bg-white px-4 text-sm font-semibold text-navy-2 outline-none ring-2 ring-edge/70 focus:ring-primary dark:bg-card dark:text-ink";
 
 function Converter({ lang, today }: { lang: Locale; today: Ymd | null }) {
   const t = calendarMsg[lang];
@@ -226,20 +227,20 @@ function Converter({ lang, today }: { lang: Locale; today: Ymd | null }) {
   const hResult = h0.hy >= 1300 && h0.hy <= 1500 ? fromHijri(h0.hy, h0.hm, h0.hd) : null;
 
   return (
-    <section className="mt-8 rounded-3xl border border-line bg-card p-5 sm:p-6">
-      <h2 className="mb-4 flex items-center gap-2 text-lg font-bold text-ink">
+    <section className={`mt-10 ${CARD} p-5 sm:p-6`}>
+      <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-section dark:text-primary-light">
         <Icon name="calendar" className="size-5 text-primary" />
         {t.converter}
       </h2>
       <div className="grid gap-6 md:grid-cols-2">
-        <div className="rounded-2xl bg-tint p-4">
-          <p className="mb-2 text-sm font-bold text-ink">{t.gToH}</p>
+        <div className="rounded-md bg-tint p-4">
+          <p className="mb-2 text-sm font-bold text-navy-2 dark:text-ink">{t.gToH}</p>
           <input type="date" value={gValue} min="1900-04-30" max="2076-11-16" onChange={(e) => setGStr(e.target.value)} className={field} aria-label={t.gToH} />
           <p className="mt-3 text-lg font-extrabold text-primary">{gResult ? formatHijri(lang, gResult) : "—"}</p>
           {gResult && gOk && <p className="text-sm text-ink-2">{weekdayName(lang, { y: gParts[0], m: gParts[1], d: gParts[2] })}</p>}
         </div>
-        <div className="rounded-2xl bg-tint p-4">
-          <p className="mb-2 text-sm font-bold text-ink">{t.hToG}</p>
+        <div className="rounded-md bg-tint p-4">
+          <p className="mb-2 text-sm font-bold text-navy-2 dark:text-ink">{t.hToG}</p>
           <div className="grid grid-cols-[1fr_2fr_1.3fr] gap-2">
             <select value={h0.hd} onChange={(e) => setHIn({ ...h0, hd: Number(e.target.value) })} className={field} aria-label={t.day}>
               {Array.from({ length: 30 }, (_, i) => (

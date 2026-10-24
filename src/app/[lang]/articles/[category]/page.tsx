@@ -5,10 +5,10 @@ import { alternates } from "@/i18n/metadata";
 import { common } from "@/i18n/messages/common";
 import { articles as msgs, fill } from "@/i18n/messages/articles";
 import { localDigits } from "@/lib/digits";
-import { CATEGORY_IDS, articlesPath, categoryArticles, categoryName, isCategory, toCard } from "@/lib/articles";
+import { CATEGORY_IDS, categoryArticles, categoryName, isCategory, toCard } from "@/lib/articles";
 import { ArticleCard } from "@/components/articles/ArticleCard";
-import { CategoryIcon, categoryBackground } from "@/components/articles/CategoryArt";
-import { Breadcrumbs, CategoryChips, GetAppCard } from "@/components/articles/Parts";
+import { ArticlesToolbar, GetAppCard, SectionTitle } from "@/components/articles/Parts";
+import { PageHeader } from "@/components/ui/PageHeader";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -35,33 +35,33 @@ export default async function CategoryPage({ params }: PageProps<"/[lang]/articl
   const t = msgs[lang];
   const list = categoryArticles(lang, category);
   const name = categoryName(lang, category);
+  const banner = `/images/ref/catHeader${(CATEGORY_IDS.indexOf(category) % 4) + 1}.webp`;
 
   return (
     <>
-      <section className="relative overflow-hidden text-white" style={categoryBackground(category)}>
-        <div className="absolute -end-20 -top-24 size-80 rounded-full bg-white/10" aria-hidden />
-        <div className="relative mx-auto flex max-w-7xl flex-col gap-6 px-4 pb-20 pt-10 sm:flex-row sm:items-center sm:pt-14">
-          <span className="grid size-20 shrink-0 place-items-center rounded-3xl bg-white/15 ring-1 ring-white/25 sm:size-24">
-            <CategoryIcon cat={category} className="size-11 sm:size-12" />
-          </span>
-          <div>
-            <Breadcrumbs lang={lang} items={[{ label: t.title, href: articlesPath(lang) }, { label: name }]} />
-            <h1 className="mt-3 text-3xl font-extrabold sm:text-4xl">{name}</h1>
-            <p className="mt-2 max-w-2xl text-white/85">{t.catDesc[category]}</p>
-            <p className="mt-3 inline-flex rounded-full bg-white/15 px-3 py-1 text-sm font-semibold">{fill(t.count, { n: localDigits(lang, list.length) })}</p>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        lang={lang}
+        photo={banner}
+        title={<span className="text-orange">{name}</span>}
+        subtitle={
+          <>
+            <p className="text-lg font-semibold">{t.catDesc[category]}</p>
+            <span className="mt-4 inline-flex rounded-full bg-white/15 px-3 py-1 text-sm font-bold ring-1 ring-white/30">{fill(t.count, { n: localDigits(lang, list.length) })}</span>
+          </>
+        }
+      />
 
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="relative z-10 -mt-10 rounded-3xl bg-card p-4 shadow-[0_16px_40px_-20px_rgba(13,36,94,0.45)] ring-1 ring-line sm:p-5">
-          <CategoryChips lang={lang} active={category} />
-        </div>
-        <div className="grid gap-6 pt-10 sm:grid-cols-2 lg:grid-cols-3">
-          {list.map((a) => (
-            <ArticleCard key={a.s} lang={lang} card={toCard(lang, a)} />
-          ))}
-        </div>
+      <ArticlesToolbar lang={lang} active={category} />
+
+      <div className="mx-auto max-w-6xl px-4">
+        <section className="pt-14">
+          <SectionTitle title={t.recent} />
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {list.map((a) => (
+              <ArticleCard key={a.s} lang={lang} card={toCard(lang, a)} />
+            ))}
+          </div>
+        </section>
         <div className="py-16">
           <GetAppCard lang={lang} />
         </div>

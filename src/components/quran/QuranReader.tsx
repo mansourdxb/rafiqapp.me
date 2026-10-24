@@ -158,31 +158,31 @@ export function QuranReader({ lang, initialPage, initialData }: { lang: Locale; 
   const nextHref = quranPageHref(lang, Math.min(PAGE_COUNT, page + 1));
   const prevHref = quranPageHref(lang, Math.max(1, page - 1));
 
-  const navBtn = "inline-flex items-center gap-1.5 rounded-full bg-card px-4 py-2.5 text-sm font-semibold text-ink shadow-sm ring-1 ring-line transition hover:text-primary disabled:opacity-40 aria-disabled:pointer-events-none aria-disabled:opacity-40";
+  const navBtn = "inline-flex items-center gap-1.5 rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-primary-deep disabled:opacity-40 aria-disabled:pointer-events-none aria-disabled:opacity-40";
 
   return (
     <div className="mushaf min-h-[calc(100dvh-4rem)] bg-[var(--m-outer)]" ref={topRef}>
       {/* toolbar */}
-      <div className="sticky top-16 z-30 border-b border-black/5 bg-[var(--m-outer)]/90 backdrop-blur dark:border-white/5">
+      <div className="sticky top-16 z-30 bg-white/95 shadow-[0_6px_20px_-12px_rgba(0,0,0,0.25)] backdrop-blur lg:top-0 dark:bg-card/95">
         <div className="mx-auto flex h-14 max-w-6xl items-center gap-2 px-3 sm:px-4">
-          <Link href={localePath(lang, "/quran/")} className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-card px-3 py-1.5 text-sm font-semibold text-ink shadow-sm ring-1 ring-line hover:text-primary">
+          <Link href={localePath(lang, "/quran/")} className="inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-sm font-bold text-primary ring-1 ring-primary hover:bg-tint">
             <Icon name="menu" className="size-4" />
             <span className="hidden sm:inline">{appT(lang, "quranIndex.tabIndex")}</span>
           </Link>
           <div className="min-w-0 flex-1 text-center leading-tight">
-            <div className="truncate text-[15px] font-bold text-ink">{surahName(lang, sura)}</div>
-            <div className="truncate text-xs text-ink-2">
+            <div className="truncate text-[16px] font-bold text-section dark:text-primary-light">{surahName(lang, sura)}</div>
+            <div className="truncate text-xs font-semibold text-orange">
               {juzLabel} · {t.page} {digits(page)}
             </div>
           </div>
           <button
             type="button"
             onClick={() => writePref(TWO_UP_KEY, twoUp ? "0" : "1")}
-            className="hidden shrink-0 rounded-full bg-card px-3 py-1.5 text-sm font-semibold text-ink shadow-sm ring-1 ring-line hover:text-primary min-[1100px]:inline-flex"
+            className="hidden h-9 shrink-0 items-center rounded-full px-3.5 text-sm font-bold text-primary ring-1 ring-primary hover:bg-tint min-[1100px]:inline-flex"
           >
             {twoUp ? t.onePage : t.twoPages}
           </button>
-          <button type="button" onClick={() => setGotoOpen((v) => !v)} aria-expanded={gotoOpen} className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-primary px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-deep">
+          <button type="button" onClick={() => setGotoOpen((v) => !v)} aria-expanded={gotoOpen} className="inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full bg-navy px-4 text-sm font-bold text-white shadow-sm hover:bg-section">
             <Icon name="search" className="size-4" />
             <span>{t.goTo}</span>
           </button>
@@ -196,7 +196,7 @@ export function QuranReader({ lang, initialPage, initialData }: { lang: Locale; 
           <p className="mx-auto mb-3 w-fit rounded-full bg-navy/85 px-3.5 py-1 text-center text-xs font-semibold text-white">{font === "failed" ? t.fontFailed : t.loadingFont}</p>
         ) : null}
         {failedPage === page && !pages[page] ? (
-          <p className="mx-auto mb-3 w-fit rounded-xl bg-card px-4 py-2 text-sm text-ink-2 shadow-sm">
+          <p className="mx-auto mb-3 w-fit rounded-[15px] bg-card px-4 py-2 text-sm text-navy-2 shadow-[0_5px_25px_rgba(0,0,0,0.16)] dark:text-ink-2">
             {t.loadError}{" "}
             <button type="button" className="font-semibold text-primary underline" onClick={() => {
                 setFailedPage(null);
@@ -232,7 +232,7 @@ export function QuranReader({ lang, initialPage, initialData }: { lang: Locale; 
             <Icon name="chevron" className="size-4 -scale-x-100" />
             <span className="max-sm:sr-only">{t.nextPage}</span>
           </a>
-          <span className="min-w-0 truncate text-center text-xs text-ink-2" dir={dirOf(lang)}>
+          <span className="min-w-0 truncate text-center text-xs font-bold text-navy-2 dark:text-ink-2" dir={dirOf(lang)}>
             {surahName(lang, sura)} · {juzLabel} · {digits(page)}
           </span>
           <a
@@ -248,7 +248,7 @@ export function QuranReader({ lang, initialPage, initialData }: { lang: Locale; 
             <Icon name="chevron" className="size-4" />
           </a>
         </div>
-        <p className="mt-3 text-center text-xs text-ink-2">{t.tapHint}</p>
+        <p className="mt-3 text-center text-xs text-navy-2/80 dark:text-ink-2">{t.tapHint}</p>
       </div>
 
       {sel ? <AyahPanel lang={lang} sel={sel} onClose={() => setSel(null)} onStep={stepAyah} /> : null}
@@ -260,7 +260,7 @@ function GoTo({ lang, page, onGo, onClose }: { lang: Locale; page: number; onGo:
   const t = quran[lang];
   const [p, setP] = useState(String(page));
   const digits = (n: number) => localDigits(lang, n);
-  const field = "w-full rounded-xl border border-line bg-canvas px-3 py-2 text-sm text-ink outline-none focus:border-primary";
+  const field = "h-11 w-full rounded-full bg-white px-4 text-sm text-navy-2 outline-none ring-2 ring-edge/70 shadow-[0_3px_10px_rgba(124,180,200,0.35)] focus:ring-primary dark:bg-canvas dark:text-ink";
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", onKey);
@@ -268,7 +268,7 @@ function GoTo({ lang, page, onGo, onClose }: { lang: Locale; page: number; onGo:
   }, [onClose]);
   return (
     <div className="mx-auto max-w-6xl px-3 pb-3 sm:px-4">
-      <div className="grid gap-3 rounded-2xl bg-card p-4 shadow-lg ring-1 ring-line sm:grid-cols-3">
+      <div className="grid gap-4 rounded-[15px] bg-tint p-4 sm:grid-cols-3 sm:p-5">
         <form
           className="flex flex-col gap-1.5"
           onSubmit={(e) => {
@@ -277,18 +277,18 @@ function GoTo({ lang, page, onGo, onClose }: { lang: Locale; page: number; onGo:
             if (n >= 1 && n <= PAGE_COUNT) onGo(n);
           }}
         >
-          <label className="text-xs font-semibold text-ink-2" htmlFor="q-goto-page">
+          <label className="text-xs font-bold text-navy-2 dark:text-ink" htmlFor="q-goto-page">
             {t.page} ({digits(1)}–{digits(PAGE_COUNT)})
           </label>
           <div className="flex gap-2">
             <input id="q-goto-page" inputMode="numeric" value={p} onChange={(e) => setP(e.target.value)} className={field} autoFocus />
-            <button type="submit" className="shrink-0 rounded-xl bg-primary px-4 text-sm font-semibold text-white hover:bg-primary-deep">
+            <button type="submit" className="shrink-0 rounded-lg bg-primary px-5 text-sm font-bold text-white hover:bg-primary-deep">
               {t.go}
             </button>
           </div>
         </form>
         <label className="flex flex-col gap-1.5">
-          <span className="text-xs font-semibold text-ink-2">{t.surah}</span>
+          <span className="text-xs font-bold text-navy-2 dark:text-ink">{t.surah}</span>
           <select className={field} defaultValue="" onChange={(e) => e.target.value && onGo(SURAHS[Number(e.target.value) - 1].page)}>
             <option value="" disabled>
               —
@@ -301,7 +301,7 @@ function GoTo({ lang, page, onGo, onClose }: { lang: Locale; page: number; onGo:
           </select>
         </label>
         <label className="flex flex-col gap-1.5">
-          <span className="text-xs font-semibold text-ink-2">{t.juz}</span>
+          <span className="text-xs font-bold text-navy-2 dark:text-ink">{t.juz}</span>
           <select className={field} defaultValue="" onChange={(e) => e.target.value && onGo(JUZ_STARTS[Number(e.target.value) - 1].p)}>
             <option value="" disabled>
               —

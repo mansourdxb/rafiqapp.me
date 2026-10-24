@@ -6,7 +6,7 @@ import { SITE_URL } from "@/i18n/config";
 const BRANDS = {
   facebook: {
     name: "Facebook",
-    bg: "#1877F2",
+    bg: "#3B5998",
     d: "M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21z",
     url: (u: string) => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(u)}`,
   },
@@ -24,7 +24,7 @@ const BRANDS = {
   },
   telegram: {
     name: "Telegram",
-    bg: "#229ED9",
+    bg: "#2AA3DD",
     d: "M20.7 4.3 2.9 11.2c-1.2.5-1.2 1.2-.2 1.5l4.6 1.4 1.8 5.4c.2.6.4.8.8.8s.6-.2.9-.5l2.2-2.1 4.6 3.4c.8.5 1.4.2 1.6-.8l3-14.1c.3-1.2-.5-1.8-1.5-1.4zm-3.3 3.3-8 7.2-.3 3.3-1.6-4.8 9.4-5.9c.4-.3.8 0 .5.2z",
     url: (u: string, t: string) => `https://t.me/share/url?url=${encodeURIComponent(u)}&text=${encodeURIComponent(t)}`,
   },
@@ -54,53 +54,38 @@ function useShare(href: string, title: string, labels: Labels) {
 
 const SHARE_ICON = "M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7M16 6l-4-4-4 4M12 2v13";
 
-/** Full share row for the article page. */
+const COPY_ICON = "M9 9h11v11H9zM5 15H4V4h11v1";
+const round = "grid size-10 place-items-center rounded-full text-white transition hover:-translate-y-0.5 hover:opacity-90";
+
+/** Full share row for the article page: round coloured icons, as in the reference. */
 export function ShareBar({ href, title, labels }: { href: string; title: string; labels: Labels }) {
   const { url, copied, copy, native } = useShare(href, title, labels);
   return (
-    <div className="flex flex-wrap items-center gap-2">
-      <button
-        type="button"
-        onClick={native}
-        className="inline-flex h-9 items-center gap-2 rounded-full bg-navy px-4 text-sm font-semibold text-white transition hover:bg-section dark:bg-primary dark:hover:bg-primary-deep"
-      >
-        <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-          <path d={SHARE_ICON} />
-        </svg>
-        {labels.share}
-      </button>
+    <div className="flex flex-wrap items-center gap-2.5">
       {(Object.keys(BRANDS) as (keyof typeof BRANDS)[]).map((k) => {
         const b = BRANDS[k];
         const label = labels.shareOn.replace("{x}", b.name);
         return (
-          <a
-            key={k}
-            href={b.url(url, title)}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={label}
-            title={label}
-            className="grid size-9 place-items-center rounded-full text-white transition hover:-translate-y-0.5 hover:opacity-90"
-            style={{ background: b.bg }}
-          >
-            <svg viewBox="0 0 24 24" className="size-[18px]" fill="currentColor" aria-hidden>
+          <a key={k} href={b.url(url, title)} target="_blank" rel="noopener noreferrer" aria-label={label} title={label} className={round} style={{ background: b.bg }}>
+            <svg viewBox="0 0 24 24" className="size-5" fill="currentColor" aria-hidden>
               <path d={b.d} />
             </svg>
           </a>
         );
       })}
-      <button
-        type="button"
-        onClick={copy}
-        aria-label={labels.copyLink}
-        title={labels.copyLink}
-        className="inline-flex h-9 items-center gap-2 rounded-full border border-line bg-card px-3 text-sm font-semibold text-ink transition hover:border-primary hover:text-primary"
-      >
-        <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-          {copied ? <path d="M5 12l5 5L20 7" /> : <path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" />}
+      <button type="button" onClick={copy} aria-label={copied ? labels.copied : labels.copyLink} title={copied ? labels.copied : labels.copyLink} className={`${round} bg-section`}>
+        <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+          <path d={copied ? "M5 12l5 5L20 7" : COPY_ICON} />
         </svg>
-        <span aria-live="polite">{copied ? labels.copied : labels.copyLink}</span>
       </button>
+      <button type="button" onClick={native} aria-label={labels.share} title={labels.share} className={`${round} bg-navy dark:bg-primary`}>
+        <svg viewBox="0 0 24 24" className="size-[18px]" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+          <path d={SHARE_ICON} />
+        </svg>
+      </button>
+      <span aria-live="polite" className="text-sm font-semibold text-primary">
+        {copied ? labels.copied : ""}
+      </span>
     </div>
   );
 }

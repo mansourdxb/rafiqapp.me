@@ -70,12 +70,12 @@ export function ChapterReader({ lang, L, book, chapter, total, bookName, chapter
       return n;
     });
   const favSet = new Set(favs.map((f) => f.id));
-  const tool = "grid h-9 min-w-9 place-items-center rounded-full px-2 text-sm font-bold text-ink-2 hover:bg-tint hover:text-primary";
+  const tool = "grid h-9 min-w-9 place-items-center rounded-full px-2 text-sm font-bold text-navy-2 hover:bg-tint hover:text-primary dark:text-ink";
 
   return (
     <div>
-      <div className="mb-4 flex flex-wrap items-center gap-2 rounded-2xl bg-card px-3 py-2 ring-1 ring-line/60 dark:ring-line">
-        <span className="px-1 text-sm text-ink-2">
+      <div className="mb-6 flex flex-wrap items-center gap-2 rounded-full bg-white px-3 py-1.5 ring-2 ring-edge/70 shadow-[0_3px_10px_rgba(124,180,200,0.35)] dark:bg-card">
+        <span className="px-2 text-sm font-bold text-navy-2 dark:text-ink">
           {L.shownOf.replace("{a}", localDigits(lang, Math.min(shown, rows?.length ?? total))).replace("{b}", localDigits(lang, total))}
         </span>
         <div className="ms-auto flex items-center gap-1">
@@ -86,7 +86,7 @@ export function ChapterReader({ lang, L, book, chapter, total, bookName, chapter
                 setArTranslation(!arTranslation);
               }}
               aria-pressed={arTranslation}
-              className={`rounded-full px-3 py-1.5 text-sm font-semibold transition ${arTranslation ? "bg-primary text-white" : "text-ink-2 hover:bg-tint"}`}
+              className={`rounded-full px-3 py-1.5 text-sm font-semibold transition ${arTranslation ? "bg-navy text-white" : "text-navy-2 ring-1 ring-primary hover:bg-tint dark:text-ink"}`}
             >
               {L.showTranslation}
             </button>
@@ -100,7 +100,7 @@ export function ChapterReader({ lang, L, book, chapter, total, bookName, chapter
         </div>
       </div>
 
-      {lang !== "ar" && !hasEn ? <p className="mb-4 rounded-xl bg-tint px-4 py-3 text-sm text-section dark:text-primary-light">{L.noTranslation}</p> : null}
+      {lang !== "ar" && !hasEn ? <p className="mb-6 rounded-md bg-tint px-4 py-3 text-sm font-bold text-navy-2 dark:text-ink">{L.noTranslation}</p> : null}
 
       {failed ? (
         <LoadError L={L} onRetry={load} />
@@ -109,7 +109,7 @@ export function ChapterReader({ lang, L, book, chapter, total, bookName, chapter
           <HadithSkeleton />
         </div>
       ) : (
-        <div className="space-y-4">
+        <div className="space-y-6">
           {rows.slice(0, shown).map((r) => (
             <HadithCard
               key={r[0]}
@@ -128,7 +128,7 @@ export function ChapterReader({ lang, L, book, chapter, total, bookName, chapter
           ))}
           {shown < rows.length ? (
             <div ref={sentinel} className="pt-2 text-center">
-              <button onClick={() => setShown((s) => s + PAGE)} className="rounded-full bg-card px-6 py-2.5 text-sm font-bold text-primary ring-1 ring-line hover:bg-tint">
+              <button onClick={() => setShown((s) => s + PAGE)} className="rounded-lg bg-primary px-10 py-2.5 text-sm font-bold text-white hover:bg-primary-deep">
                 {L.showMore}
               </button>
             </div>

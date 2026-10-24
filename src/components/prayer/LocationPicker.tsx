@@ -77,7 +77,7 @@ export function LocationPicker({ lang, tone = "light", onDone }: { lang: Locale;
   return (
     <div ref={boxRef} className="relative flex w-full flex-col gap-2 sm:flex-row sm:items-start">
       <div className="relative min-w-0 flex-1">
-        <span className={`pointer-events-none absolute inset-y-0 start-3 flex items-center ${dark ? "text-white/70" : "text-ink-2"}`}>
+        <span className={`pointer-events-none absolute inset-y-0 flex items-center ${dark ? "start-3 text-white/70" : "start-4 text-navy-2 dark:text-white"}`}>
           <Icon name="search" className="size-4.5" />
         </span>
         <input
@@ -98,17 +98,17 @@ export function LocationPicker({ lang, tone = "light", onDone }: { lang: Locale;
           aria-expanded={open}
           role="combobox"
           autoComplete="off"
-          className={`h-11 w-full rounded-xl ps-10 pe-3 text-[15px] outline-none transition focus:ring-2 ${
+          className={`w-full ps-10 pe-3 text-[15px] outline-none transition ${
             dark
-              ? "bg-white/12 text-white placeholder:text-white/60 ring-white/40 border border-white/20"
-              : "border border-line bg-card text-ink placeholder:text-ink-2 ring-primary/40"
+              ? "h-11 rounded-xl bg-white/12 text-white placeholder:text-white/60 ring-white/40 border border-white/20 focus:ring-2"
+              : "h-12 rounded-full bg-white font-semibold text-navy-2 placeholder:font-normal placeholder:text-ink-2 shadow-[0_3px_10px_rgba(124,180,200,0.35)] ring-2 ring-edge/70 focus:ring-primary dark:bg-card dark:text-white"
           }`}
         />
         {open && (hits || busy === "search") && (
           <ul
             id={listId}
             role="listbox"
-            className="absolute inset-x-0 top-12 z-30 max-h-72 overflow-auto rounded-xl border border-line bg-card p-1 text-ink shadow-xl"
+            className="absolute inset-x-0 top-[3.25rem] z-30 max-h-72 overflow-auto rounded-xl border border-line bg-card p-1 text-ink shadow-xl"
           >
             {busy === "search" && !hits?.length && <li className="px-3 py-2.5 text-sm text-ink-2">{t.searching}</li>}
             {hits?.length === 0 && busy !== "search" && <li className="px-3 py-2.5 text-sm text-ink-2">{t.noResults}</li>}
@@ -134,15 +134,15 @@ export function LocationPicker({ lang, tone = "light", onDone }: { lang: Locale;
         type="button"
         onClick={useMine}
         disabled={busy === "locate"}
-        className={`inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-xl px-4 text-sm font-bold transition disabled:opacity-70 ${
-          dark ? "bg-white text-navy hover:bg-white/90" : "bg-primary text-white hover:bg-primary-deep"
+        className={`inline-flex shrink-0 items-center justify-center gap-2 px-4 text-sm font-bold transition disabled:opacity-70 ${
+          dark ? "h-11 rounded-xl bg-white text-navy hover:bg-white/90" : "h-12 rounded-full bg-navy px-6 text-white hover:bg-section"
         }`}
       >
         <Icon name="location" className="size-4.5" />
         {busy === "locate" ? t.locating : t.useLocation}
       </button>
       {(err || busy === "pick") && (
-        <p className={`text-sm sm:absolute sm:top-12 sm:start-0 ${dark ? "text-white/85" : err ? "text-orange" : "text-ink-2"}`} role="status">
+        <p className={`text-sm sm:absolute sm:top-[3.25rem] sm:start-0 ${dark ? "text-white/85" : err ? "text-orange" : "text-ink-2"}`} role="status">
           {err ?? t.searching}
         </p>
       )}

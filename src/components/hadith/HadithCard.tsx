@@ -59,25 +59,22 @@ export function HadithCard({ lang, L, book, chapter, row, bookName, chapterName,
     flash(added ? L.saved : L.removed);
   };
 
-  const btn = "grid size-9 place-items-center rounded-full bg-canvas text-ink-2 transition hover:bg-tint hover:text-primary";
+  const btn = "grid size-9 place-items-center rounded-full text-navy-2 transition hover:bg-tint hover:text-primary dark:text-ink";
   return (
     <article
       id={`h${n}`}
-      className={`scroll-mt-24 rounded-2xl bg-card p-4 shadow-[0_2px_12px_rgba(13,36,94,0.06)] ring-1 sm:p-6 dark:shadow-none ${
-        focused ? "ring-2 ring-primary" : "ring-line/60 dark:ring-line"
+      className={`scroll-mt-24 rounded-[15px] bg-card p-4 shadow-[0_5px_25px_rgba(0,0,0,0.16)] sm:p-6 dark:shadow-none ${
+        focused ? "ring-2 ring-primary" : "dark:ring-1 dark:ring-line"
       }`}
     >
       <header className="mb-3 flex items-center gap-2">
-        <span className="rounded-full bg-tint px-3 py-1 text-sm font-bold text-primary">
+        <span className="rounded-full bg-primary px-3.5 py-1 text-sm font-bold text-white">
           {L.hadithN.replace("{n}", localDigits(lang, n))}
         </span>
         <span aria-live="polite" className="text-xs font-semibold text-[#2D7A4E] dark:text-[#3DA06A]">
           {toast}
         </span>
-        <div className="ms-auto flex items-center gap-1.5">
-          <button onClick={share} className={btn} aria-label={L.share} title={L.share}>
-            <Icon name="share" className="size-4.5" />
-          </button>
+        <div className="ms-auto flex items-center gap-1">
           <button onClick={copy} className={btn} aria-label={L.copy} title={L.copy}>
             <Icon name="copy" className="size-4.5" />
           </button>
@@ -91,6 +88,10 @@ export function HadithCard({ lang, L, book, chapter, row, bookName, chapterName,
             <svg viewBox="0 0 24 24" className="size-4.5" fill={isFav ? "currentColor" : "none"} stroke="currentColor" strokeWidth={1.8} strokeLinejoin="round" aria-hidden>
               <path d="M6 3h12v18l-6-4-6 4z" />
             </svg>
+          </button>
+          <button onClick={share} className="ms-1 inline-flex h-8 items-center gap-1.5 rounded-full bg-navy px-3.5 text-xs font-bold text-white transition hover:bg-section" aria-label={L.share} title={L.share}>
+            {L.share}
+            <Icon name="share" className="size-4" />
           </button>
         </div>
       </header>
@@ -113,8 +114,8 @@ export function HadithCard({ lang, L, book, chapter, row, bookName, chapterName,
           [L.hadithNumber, localDigits(lang, n)],
         ].map(([k, v]) => (
           <div key={k} className="flex flex-wrap gap-x-1.5">
-            <dt className="font-bold text-[#2D7A4E] dark:text-[#3DA06A]">{k}:</dt>
-            <dd className="text-[#A87F12] dark:text-gold">{v}</dd>
+            <dt className="font-bold text-section dark:text-primary-light">{k}:</dt>
+            <dd className="font-semibold text-orange">{v}</dd>
           </div>
         ))}
       </dl>
@@ -126,21 +127,21 @@ export function HadithSkeleton({ count = 3 }: { count?: number }) {
   return (
     <div className="space-y-4" aria-hidden>
       {Array.from({ length: count }, (_, i) => (
-        <div key={i} className="animate-pulse rounded-2xl bg-card p-5 ring-1 ring-line/60 dark:ring-line">
+        <div key={i} className="animate-pulse rounded-[15px] bg-card p-5 shadow-[0_5px_25px_rgba(0,0,0,0.16)] dark:shadow-none dark:ring-1 dark:ring-line">
           <div className="mb-4 flex items-center gap-2">
             <div className="h-6 w-24 rounded-full bg-tint" />
             <div className="ms-auto flex gap-1.5">
-              <div className="size-9 rounded-full bg-canvas" />
-              <div className="size-9 rounded-full bg-canvas" />
-              <div className="size-9 rounded-full bg-canvas" />
+              <div className="size-9 rounded-full bg-tint" />
+              <div className="size-9 rounded-full bg-tint" />
+              <div className="size-9 rounded-full bg-tint" />
             </div>
           </div>
           <div className="space-y-3">
-            <div className="h-4 rounded bg-canvas" />
-            <div className="h-4 w-11/12 rounded bg-canvas" />
-            <div className="h-4 w-9/12 rounded bg-canvas" />
+            <div className="h-4 rounded bg-tint" />
+            <div className="h-4 w-11/12 rounded bg-tint" />
+            <div className="h-4 w-9/12 rounded bg-tint" />
           </div>
-          <div className="mt-5 h-3 w-1/3 rounded bg-canvas" />
+          <div className="mt-5 h-3 w-1/3 rounded bg-tint" />
         </div>
       ))}
     </div>
@@ -149,9 +150,9 @@ export function HadithSkeleton({ count = 3 }: { count?: number }) {
 
 export function LoadError({ L, onRetry }: { L: HadithLabels; onRetry: () => void }) {
   return (
-    <div className="rounded-2xl bg-card p-8 text-center ring-1 ring-line/60 dark:ring-line">
+    <div className="rounded-[15px] bg-card p-8 text-center shadow-[0_5px_25px_rgba(0,0,0,0.16)] dark:shadow-none dark:ring-1 dark:ring-line">
       <p className="text-ink-2">{L.error}</p>
-      <button onClick={onRetry} className="mt-4 rounded-full bg-primary px-5 py-2 text-sm font-bold text-white hover:bg-primary-deep">
+      <button onClick={onRetry} className="mt-4 rounded-lg bg-primary px-10 py-2.5 text-sm font-bold text-white hover:bg-primary-deep">
         {L.retry}
       </button>
     </div>

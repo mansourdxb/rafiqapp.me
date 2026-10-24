@@ -52,8 +52,8 @@ export function PageHeader({
     return (
       <section className="relative overflow-hidden bg-[#2b2b2b] text-white">
         <Image src={photo} alt="" fill priority sizes="100vw" className="object-cover rtl:-scale-x-100" />
-        <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/35 to-transparent rtl:bg-gradient-to-r" />
-        <div className="relative mx-auto flex min-h-[240px] max-w-6xl flex-col justify-center px-4 py-10 md:min-h-[300px] md:items-end md:text-end rtl:md:items-start rtl:md:text-start">
+        <div className="absolute inset-0 bg-black/55 md:bg-transparent md:bg-gradient-to-l md:from-black/75 md:via-black/50 md:to-black/10" />
+        <div className="relative mx-auto flex min-h-[260px] max-w-6xl flex-col justify-center px-4 py-10 md:min-h-[420px] md:items-end md:text-end rtl:md:items-start rtl:md:text-start">
           <h1 className="max-w-xl text-[28px] font-bold leading-snug md:text-[32px]">
             {highlight && <span className="text-orange">{highlight} </span>}
             {title}
