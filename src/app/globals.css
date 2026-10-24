@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* Colours of the app's new design ("sky" theme, client/context/appColors.ts + almosalyTheme.ts). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-primary: #029CCD;
+  --color-primary-light: #29ABE2;
+  --color-primary-deep: #1E93C9;
+  --color-section: #12608F;
+  --color-orange: #F47A1F;
+  --color-navy: #0D245E;
+  --color-navy-2: #15294D;
+  --color-gold: #E8B84B;
+
+  --color-canvas: var(--canvas);
+  --color-card: var(--card);
+  --color-tint: var(--tint);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-line: var(--line);
+
+  --font-sans: var(--font-cairo), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-quran: "UthmanicHafs", "Amiri Quran", serif;
+}
+
+:root {
+  --canvas: #EDEFF2;
+  --card: #FFFFFF;
+  --tint: #EAF6FC;
+  --ink: #16202B;
+  --ink-2: #7C8A99;
+  --line: #E7EBEF;
+  color-scheme: light;
+}
+.dark {
+  --canvas: #0E141B;
+  --card: #1A222C;
+  --tint: #16222E;
+  --ink: #E8EDF2;
+  --ink-2: #8A98A6;
+  --line: #283440;
+  color-scheme: dark;
+}
+
+@font-face {
+  font-family: "UthmanicHafs";
+  src: url("/fonts/uthmanic_hafs_v20.ttf") format("truetype");
+  font-display: swap;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--canvas); color: var(--ink); }
+.quran { font-family: var(--font-quran); }
