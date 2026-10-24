@@ -1,0 +1,87 @@
+// FAQ page copy. The page title is the app's own (alm.faq.title, in src/generated/faq-<lang>.json).
+import type { Locale } from "../config";
+
+export type Faq = {
+  subtitle: string;
+  metaDescription: string;
+  searchPlaceholder: string;
+  noResults: string;
+  count: string; // {n}
+  expandAll: string;
+  collapseAll: string;
+};
+
+export const faq: Record<Locale, Faq> = {
+  en: {
+    subtitle: "Step-by-step answers to the questions people ask most about the Rafiq Al-Muslim app.",
+    metaDescription: "Answers about the Rafiq Al-Muslim app: Qibla accuracy, prayer time calculation, athan notifications, offline Qur'an audio, language, dark mode and more.",
+    searchPlaceholder: "Search the questions…",
+    noResults: "No questions match your search.",
+    count: "{n} questions",
+    expandAll: "Expand all",
+    collapseAll: "Collapse all",
+  },
+  ar: {
+    subtitle: "إجابات خطوة بخطوة عن أكثر ما يُسأل عنه في تطبيق رفيق المسلم.",
+    metaDescription: "إجابات عن تطبيق رفيق المسلم: دقة القبلة، طريقة حساب المواقيت، تنبيهات الأذان، صوت القرآن دون اتصال، اللغة، الوضع الليلي وغير ذلك.",
+    searchPlaceholder: "ابحث في الأسئلة…",
+    noResults: "لا توجد أسئلة مطابقة لبحثك.",
+    count: "{n} سؤالًا",
+    expandAll: "فتح الكل",
+    collapseAll: "طي الكل",
+  },
+  ur: {
+    subtitle: "رفیق المسلم ایپ کے بارے میں سب سے زیادہ پوچھے جانے والے سوالات کے مرحلہ وار جوابات۔",
+    metaDescription: "رفیق المسلم ایپ کے بارے میں جوابات: قبلہ کی درستی، اوقاتِ نماز کا حساب، اذان کی اطلاعات، آف لائن قرآن آڈیو، زبان، ڈارک موڈ اور مزید۔",
+    searchPlaceholder: "سوالات میں تلاش کریں…",
+    noResults: "آپ کی تلاش سے کوئی سوال نہیں ملا۔",
+    count: "{n} سوالات",
+    expandAll: "سب کھولیں",
+    collapseAll: "سب بند کریں",
+  },
+  fa: {
+    subtitle: "پاسخ‌های گام‌به‌گام به پرتکرارترین پرسش‌ها درباره‌ی برنامه‌ی رفیق المسلم.",
+    metaDescription: "پاسخ‌هایی درباره‌ی برنامه‌ی رفیق المسلم: دقت قبله، روش محاسبه‌ی اوقات، اعلان اذان، صوت قرآن آفلاین، زبان، حالت تاریک و موارد دیگر.",
+    searchPlaceholder: "جستجو در پرسش‌ها…",
+    noResults: "پرسشی مطابق جستجوی شما یافت نشد.",
+    count: "{n} پرسش",
+    expandAll: "باز کردن همه",
+    collapseAll: "بستن همه",
+  },
+  ru: {
+    subtitle: "Пошаговые ответы на самые частые вопросы о приложении Rafiq Al-Muslim.",
+    metaDescription: "Ответы о приложении Rafiq Al-Muslim: точность киблы, расчёт времени намаза, уведомления азана, Коран офлайн, язык, тёмная тема и другое.",
+    searchPlaceholder: "Поиск по вопросам…",
+    noResults: "По вашему запросу вопросов не найдено.",
+    count: "Вопросов: {n}",
+    expandAll: "Развернуть все",
+    collapseAll: "Свернуть все",
+  },
+  ms: {
+    subtitle: "Jawapan langkah demi langkah bagi soalan yang paling kerap ditanya tentang aplikasi Rafiq Al-Muslim.",
+    metaDescription: "Jawapan tentang aplikasi Rafiq Al-Muslim: ketepatan kiblat, kiraan waktu solat, notifikasi azan, audio al-Quran luar talian, bahasa, mod gelap dan lain-lain.",
+    searchPlaceholder: "Cari soalan…",
+    noResults: "Tiada soalan yang sepadan dengan carian anda.",
+    count: "{n} soalan",
+    expandAll: "Buka semua",
+    collapseAll: "Tutup semua",
+  },
+  tr: {
+    subtitle: "Rafiq Al-Muslim uygulaması hakkında en çok sorulan sorulara adım adım cevaplar.",
+    metaDescription: "Rafiq Al-Muslim uygulaması hakkında cevaplar: kıble doğruluğu, namaz vakti hesaplama, ezan bildirimleri, çevrimdışı Kur'an sesi, dil, karanlık mod ve daha fazlası.",
+    searchPlaceholder: "Sorularda ara…",
+    noResults: "Aramanızla eşleşen soru bulunamadı.",
+    count: "{n} soru",
+    expandAll: "Tümünü aç",
+    collapseAll: "Tümünü kapat",
+  },
+  id: {
+    subtitle: "Jawaban langkah demi langkah untuk pertanyaan yang paling sering diajukan tentang aplikasi Rafiq Al-Muslim.",
+    metaDescription: "Jawaban seputar aplikasi Rafiq Al-Muslim: akurasi kiblat, perhitungan waktu salat, notifikasi azan, audio Al-Qur'an offline, bahasa, mode gelap, dan lainnya.",
+    searchPlaceholder: "Cari pertanyaan…",
+    noResults: "Tidak ada pertanyaan yang cocok dengan pencarian Anda.",
+    count: "{n} pertanyaan",
+    expandAll: "Buka semua",
+    collapseAll: "Tutup semua",
+  },
+};
