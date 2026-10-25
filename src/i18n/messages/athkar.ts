@@ -424,7 +424,42 @@ const ha: AthkarMessages = {
   cats: { morning: "Azkar na safe", evening: "Azkar na yamma", afterPrayer: "Azkar na bayan sallah", sleep: "Azkar na barci", wake: "Azkar na farkawa" },
 };
 
-export const athkar: Record<Locale, AthkarMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };
+const fr: AthkarMessages = {
+  title: "Adhkar",
+  subtitle: "N’est-ce point par l’évocation d’Allah que se tranquillisent les cœurs ?",
+  description: "Adhkar du matin et du soir, après la prière, au coucher et au réveil, et tous les chapitres de Hisn al-Muslim — avec compteur de répétitions, audio et traduction.",
+  daily: "Adhkar quotidiens",
+  hisn: "Hisn al-Muslim",
+  hisnSub: "Des adhkar tirés de la Sunna prophétique authentique",
+  tasbih: "Tasbih",
+  tasbihSub: "Glorifiez Allah et gardez le compte",
+  search: "Rechercher dans Hisn al-Muslim…",
+  noResults: "Aucun résultat",
+  count: "{count} dhikr",
+  readCount: "{done} lus sur {total}",
+  tashkeel: "Voyelles",
+  fontSize: "Taille du texte",
+  showDalil: "Afficher la preuve",
+  hideDalil: "Masquer la preuve",
+  repeat: "Répéter",
+  times: "fois",
+  tapToCount: "Touchez pour compter",
+  listen: "Écouter",
+  stop: "Arrêter",
+  copy: "Copier",
+  copied: "Copié",
+  share: "Partager",
+  reset: "Réinitialiser",
+  done: "Terminé",
+  allDone: "Vous avez terminé ces adhkar — qu’Allah les accepte de vous",
+  allDoneSub: "La progression du jour est enregistrée sur cet appareil",
+  restart: "Recommencer",
+  back: "Adhkar",
+  readerDescription: "{title} — le texte arabe complet avec traduction, compteur de répétitions et audio.",
+  cats: { morning: "Adhkar du matin", evening: "Adhkar du soir", afterPrayer: "Adhkar après la prière", sleep: "Adhkar du coucher", wake: "Adhkar du réveil" },
+};
+
+export const athkar: Record<Locale, AthkarMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };
 
 export const fill = (s: string, p: Record<string, string | number>) =>
   s.replace(/\{(\w+)\}/g, (_, k: string) => String(p[k] ?? ""));

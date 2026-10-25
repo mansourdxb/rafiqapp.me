@@ -111,4 +111,13 @@ export const faq: Record<Locale, Faq> = {
     expandAll: "Buɗe duka",
     collapseAll: "Rufe duka",
   },
+  fr: {
+    subtitle: "Des réponses étape par étape aux questions les plus posées sur l’application Rafiq Al-Muslim.",
+    metaDescription: "Réponses sur l’application Rafiq Al-Muslim : précision de la qibla, calcul des horaires de prière, notifications de l’adhan, audio du Coran hors ligne, langue, mode sombre et plus encore.",
+    searchPlaceholder: "Rechercher dans les questions…",
+    noResults: "Aucune question ne correspond à votre recherche.",
+    count: "{n} questions",
+    expandAll: "Tout déplier",
+    collapseAll: "Tout replier",
+  },
 };

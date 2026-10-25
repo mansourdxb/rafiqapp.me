@@ -92,4 +92,12 @@ export const promo: Record<Locale, Promo> = {
     close: "Rufe",
     later: "Ba yanzu ba",
   },
+  fr: {
+    before: "Téléchargez l’application ",
+    name: "Rafiq Al-Muslim",
+    after: " dès maintenant !",
+    body: "Vivez les plus beaux moments de votre journée avec le Coran, les adhkar, les douas et les horaires de prière. Rafiq Al-Muslim vous aide dans votre adoration — téléchargez-la maintenant, gratuitement et sans publicité.",
+    close: "Fermer",
+    later: "Plus tard",
+  },
 };

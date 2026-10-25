@@ -438,7 +438,44 @@ const ha: HadithMessages = {
   chapterMeta: "{chapter} — {book}: hadisai {n} da Larabci tare da fassara.",
 };
 
-export const hadith: Record<Locale, HadithMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };
+const fr: HadithMessages = {
+  books: {
+    bukhari: "Sahih al-Bukhari",
+    muslim: "Sahih Muslim",
+    abudawud: "Sunan Abi Dawud",
+    tirmidhi: "Jami’ at-Tirmidhi",
+    nasai: "Sunan an-Nasa’i",
+    ibnmajah: "Sunan Ibn Majah",
+    malik: "Al-Muwatta de l’imam Malik",
+    darimi: "Sunan ad-Darimi",
+    ahmed: "Musnad Ahmad ibn Hanbal",
+  },
+  metaTitle: "Hadiths — les neuf recueils",
+  metaDescription: "Lisez Sahih al-Bukhari, Sahih Muslim et les autres recueils de hadiths en arabe avec traduction anglaise, faites-y des recherches et enregistrez vos favoris.",
+  intro: "Les neuf recueils de la Sunna, en arabe avec traduction anglaise. Les paroles du Prophète ﷺ sont surlignées en vert.",
+  hadiths: "Hadiths",
+  kitabs: "Livres",
+  hadithN: "Hadith {n}",
+  minChars: "Saisissez au moins 2 lettres pour rechercher",
+  searchLoading: "Chargement de l’index de recherche…",
+  searchHintEn: "Recherchez en arabe ou dans la traduction anglaise",
+  noFavorites: "Aucun favori pour l’instant. Touchez le signet d’un hadith pour l’enregistrer ici.",
+  addFavorite: "Ajouter aux favoris",
+  removeFavorite: "Retirer des favoris",
+  copy: "Copier",
+  share: "Partager",
+  showMore: "Afficher plus",
+  shownOf: "{a} sur {b}",
+  prev: "Précédent",
+  next: "Suivant",
+  allBooks: "Tous les recueils de hadiths",
+  noTranslation: "Ce recueil n’a pas encore de traduction — texte arabe uniquement.",
+  shareVia: "via l’application Rafiq Al-Muslim",
+  bookMeta: "Lisez {book} : {n} hadiths répartis en {k} livres, en arabe avec traduction.",
+  chapterMeta: "{chapter} — {book} : {n} hadiths en arabe avec traduction.",
+};
+
+export const hadith: Record<Locale, HadithMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };
 
 /** "{n} of {b}" → filled in. */
 export function fill(s: string, p: Record<string, string | number>) {

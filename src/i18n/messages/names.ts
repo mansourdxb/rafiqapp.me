@@ -199,4 +199,20 @@ const ha: NamesMessages = {
   nth: "Suna na {n} cikin 99",
 };
 
-export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };
+const fr: NamesMessages = {
+  title: "Les 99 noms d’Allah",
+  verseRef: "Al-A‘raf 7:180",
+  description: "Les 99 plus beaux noms d’Allah (Asma al-Husna), avec le sens et l’explication de chaque nom et les passages du Coran où il apparaît.",
+  search: "Rechercher un nom…",
+  noResults: "Aucun résultat",
+  meaning: "Sens",
+  explanation: "Explication",
+  inQuran: "Dans le Coran",
+  englishNote: "Le sens et l’explication sont affichés en anglais",
+  prev: "Nom précédent",
+  next: "Nom suivant",
+  all: "Tous les noms",
+  nth: "Nom {n} sur 99",
+};
+
+export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };

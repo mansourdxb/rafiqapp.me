@@ -523,7 +523,51 @@ const ha: Articles = {
   },
 };
 
-export const articles: Record<Locale, Articles> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };
+const fr: Articles = {
+  title: "Articles",
+  heroTitle: "Lire, apprendre et méditer",
+  heroAccent: "Articles islamiques",
+  heroSubtitle: "La Sîra du Prophète, les histoires des prophètes, comment prier, le Hajj et la Omra, les douas et le tajwid — le même contenu révisé que dans l’application.",
+  metaDescription: "Articles islamiques de Rafiq Al-Muslim : la Sîra du Prophète, les histoires des prophètes, les piliers de l’islam, comment prier, le Hajj et la Omra, les douas, la roqya et le tajwid.",
+  allCategories: "Toutes les catégories",
+  categoriesTitle: "Parcourir par catégorie",
+  categoriesSubtitle: "Choisissez un thème et commencez à lire.",
+  recent: "Articles récents",
+  mostRead: "Les plus lus",
+  viewMore: "Voir toutes les catégories",
+  count: "{n} articles",
+  minRead: "{n} min de lecture",
+  readMore: "Lire",
+  share: "Partager",
+  shareOn: "Partager sur {x}",
+  copyLink: "Copier le lien",
+  copied: "Lien copié",
+  favAdd: "Ajouter aux favoris",
+  favRemove: "Retirer des favoris",
+  related: "Articles similaires",
+  moreIn: "Plus dans « {cat} »",
+  getAppTitle: "Emportez-le avec vous",
+  getAppBody: "Lisez tous les articles hors ligne dans l’application Rafiq Al-Muslim, avec le Coran, les adhkar et les horaires de prière — gratuitement, sans publicité.",
+  home: "Accueil",
+  source: "Source",
+  meaning: "Sens",
+  step: "Étape {n}",
+  searchPlaceholder: "Rechercher des articles…",
+  noResults: "Aucun article ne correspond à votre recherche.",
+  cat: { fiqh: "Piliers et fiqh", duas: "Jardin des douas" },
+  catDesc: {
+    seerah: "Des moments de la vie du Prophète ﷺ, de sa naissance au pèlerinage d’adieu.",
+    prophets: "Les histoires des prophètes et des messagers, que la paix soit sur eux, telles que les raconte le Coran.",
+    fiqh: "Les piliers de l’islam et de la foi, et les règles du sacrifice (Udhiya), en bref.",
+    hajj: "Les étapes de la Omra et du Hajj dans l’ordre, avec ce qui se dit à chacune.",
+    prayer: "Les ablutions et la prière, étape par étape.",
+    duas: "Des douas du Coran et de la Sunna, classées selon le besoin.",
+    ruqyah: "Les versets et les douas de la roqya, tirés du Coran et de la Sunna.",
+    tajweed: "Les règles du tajwid, avec des exemples tirés du Coran.",
+  },
+};
+
+export const articles: Record<Locale, Articles> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };
 
 export const fill = (s: string, params: Record<string, string | number>) =>
   Object.entries(params).reduce((acc, [k, v]) => acc.replaceAll(`{${k}}`, String(v)), s);

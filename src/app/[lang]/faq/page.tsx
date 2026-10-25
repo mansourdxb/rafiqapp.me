@@ -22,9 +22,10 @@ import id from "@/generated/faq-id.json";
 import hi from "@/generated/faq-hi.json";
 import bn from "@/generated/faq-bn.json";
 import ha from "@/generated/faq-ha.json";
+import fr from "@/generated/faq-fr.json";
 
 type FaqData = { title: string; items: { id: string; q: string; steps: string[] }[] };
-const DATA: Record<Locale, FaqData> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };
+const DATA: Record<Locale, FaqData> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/faq">): Promise<Metadata> {
   const { lang } = await params;
