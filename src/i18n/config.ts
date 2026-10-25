@@ -21,6 +21,21 @@ export const nativeName: Record<Locale, string> = {
   ha: "Hausa",
 };
 
+/** Flag shown next to each language in the language menu (public/flags/<code>.svg, from flag-icons, MIT). */
+export const flag: Record<Locale, string> = {
+  ar: "sa",
+  en: "us",
+  ur: "pk",
+  fa: "ir",
+  ru: "ru",
+  ms: "my",
+  tr: "tr",
+  id: "id",
+  hi: "in",
+  bn: "bd",
+  ha: "ng",
+};
+
 export const ogLocale: Record<Locale, string> = {
   ar: "ar_AR",
   en: "en_US",
