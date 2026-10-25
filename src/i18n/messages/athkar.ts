@@ -354,7 +354,42 @@ const hi: AthkarMessages = {
   cats: { morning: "सुबह के अज़कार", evening: "शाम के अज़कार", afterPrayer: "नमाज़ के बाद के अज़कार", sleep: "सोने के अज़कार", wake: "जागने के अज़कार" },
 };
 
-export const athkar: Record<Locale, AthkarMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi };
+const bn: AthkarMessages = {
+  title: "আজকার",
+  subtitle: "নিশ্চয়ই আল্লাহর জিকিরেই অন্তর প্রশান্তি লাভ করে",
+  description: "সকাল-সন্ধ্যার আজকার, নামাজের পরের, ঘুমানোর ও ঘুম থেকে ওঠার আজকার এবং হিসনুল মুসলিমের সব অধ্যায় — পুনরাবৃত্তির কাউন্টার, অডিও ও অনুবাদসহ।",
+  daily: "দৈনিক আজকার",
+  hisn: "হিসনুল মুসলিম",
+  hisnSub: "সহিহ সুন্নাহ থেকে নেওয়া আজকার",
+  tasbih: "তাসবিহ",
+  tasbihSub: "আল্লাহর তাসবিহ পড়ুন এবং আপনার গণনা সংরক্ষণ করুন",
+  search: "হিসনুল মুসলিমে খুঁজুন...",
+  noResults: "কোনো ফলাফল পাওয়া যায়নি",
+  count: "{count}টি জিকির",
+  readCount: "{total}-এর মধ্যে {done}টি পড়া হয়েছে",
+  tashkeel: "হরকত",
+  fontSize: "ফন্টের আকার",
+  showDalil: "দলিল দেখান",
+  hideDalil: "দলিল লুকান",
+  repeat: "পুনরাবৃত্তি",
+  times: "বার",
+  tapToCount: "গণনা করতে চাপুন",
+  listen: "শুনুন",
+  stop: "থামান",
+  copy: "কপি করুন",
+  copied: "কপি হয়েছে",
+  share: "শেয়ার করুন",
+  reset: "রিসেট করুন",
+  done: "সম্পন্ন",
+  allDone: "আপনি এই আজকারগুলো শেষ করেছেন — আল্লাহ আপনার কাছ থেকে কবুল করুন",
+  allDoneSub: "আজকের অগ্রগতি এই ডিভাইসেই সংরক্ষিত থাকে",
+  restart: "আবার শুরু করুন",
+  back: "আজকার",
+  readerDescription: "{title} — সম্পূর্ণ আরবি পাঠ, অনুবাদ, পুনরাবৃত্তির কাউন্টার ও অডিওসহ।",
+  cats: { morning: "সকালের আজকার", evening: "সন্ধ্যার আজকার", afterPrayer: "নামাজের পরের আজকার", sleep: "ঘুমানোর আজকার", wake: "ঘুম থেকে ওঠার আজকার" },
+};
+
+export const athkar: Record<Locale, AthkarMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn };
 
 export const fill = (s: string, p: Record<string, string | number>) =>
   s.replace(/\{(\w+)\}/g, (_, k: string) => String(p[k] ?? ""));

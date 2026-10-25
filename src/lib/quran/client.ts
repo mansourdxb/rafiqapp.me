@@ -50,6 +50,7 @@ export const TRANSLATION: Record<Exclude<Locale, "ar">, { id: number; name: stri
   tr: { id: 77, name: "Diyanet İşleri" },
   id: { id: 33, name: "Kementerian Agama Republik Indonesia" },
   hi: { id: 122, name: "मौलाना अज़ीज़ुल हक़ अल-उमरी" },
+  bn: { id: 161, name: "Taisirul Quran (Tawheed Publication)" },
 };
 
 function stripHtml(html: string) {

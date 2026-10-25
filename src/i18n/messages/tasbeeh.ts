@@ -272,4 +272,31 @@ const hi: TasbeehMessages = {
   vibrate: "वाइब्रेशन",
 };
 
-export const tasbeeh: Record<Locale, TasbeehMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi };
+const bn: TasbeehMessages = {
+  title: "তাসবিহ",
+  subtitle: "আল্লাহর তাসবিহ পড়ুন এবং গণনা রাখুন — এটি আপনার ডিভাইসেই সংরক্ষিত থাকে",
+  description: "ইলেকট্রনিক তাসবিহ: একটি জিকির বেছে নিন বা নিজের জিকির যোগ করুন, লক্ষ্য ঠিক করুন, তারপর গণনা করতে চাপুন বা স্পেস বার চাপুন।",
+  choose: "জিকির বেছে নিন",
+  builtIn: "তাসবিহের জিকির",
+  mine: "আমার জিকির",
+  add: "জিকির যোগ করুন",
+  addTitle: "নতুন জিকির",
+  textPlaceholder: "আপনার জিকির লিখুন",
+  target: "লক্ষ্য",
+  save: "সংরক্ষণ করুন",
+  cancel: "বাতিল",
+  remove: "জিকির মুছুন",
+  reset: "রিসেট করুন",
+  tapHint: "গণনা করতে তাসবিহের দানায় চাপুন বা স্পেস বার চাপুন",
+  ofTarget: "{target}-এর মধ্যে",
+  completed: "লক্ষ্য পূর্ণ হয়েছে",
+  completedSub: "আল্লাহ আপনার কাছ থেকে কবুল করুন — চাইলে চালিয়ে যান",
+  today: "আজ",
+  allTime: "মোট",
+  thisDhikr: "এই জিকির",
+  fadl: "এই জিকিরের ফজিলত",
+  sound: "শব্দ",
+  vibrate: "ভাইব্রেশন",
+};
+
+export const tasbeeh: Record<Locale, TasbeehMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn };
