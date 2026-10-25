@@ -466,7 +466,7 @@ const ha: Common = {
   },
   language: "Harshe",
   theme: { light: "Yanayin haske", dark: "Yanayin duhu" },
-  menu: "Menu",
+  menu: "Zaɓuɓɓuka",
   close: "Rufe",
   getApp: "Sauke manhajar",
   getAppNow: "Sauke Rafiq Al-Muslim yanzu!",
