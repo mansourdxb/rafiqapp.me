@@ -299,4 +299,31 @@ const bn: TasbeehMessages = {
   vibrate: "ভাইব্রেশন",
 };
 
-export const tasbeeh: Record<Locale, TasbeehMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn };
+const ha: TasbeehMessages = {
+  title: "Tasbihi",
+  subtitle: "Ka tsarkake Allah kuma ka riƙe adadinka — yana nan a ajiye a na'urarka",
+  description: "Tasbihi na lantarki: zaɓi zikiri ko ka ƙara naka, saita buri, sannan ka danna ko ka latsa maɓallin sarari don ƙirgawa.",
+  choose: "Zaɓi zikiri",
+  builtIn: "Azkar na tasbihi",
+  mine: "Azkar ɗina",
+  add: "Ƙara zikiri",
+  addTitle: "Sabon zikiri",
+  textPlaceholder: "Rubuta zikirinka",
+  target: "Buri",
+  save: "Ajiye",
+  cancel: "Soke",
+  remove: "Share Zikiri",
+  reset: "Sake saiti",
+  tapHint: "Danna carbin ko ka latsa maɓallin sarari don ƙirgawa",
+  ofTarget: "cikin {target}",
+  completed: "An cimma buri",
+  completedSub: "Allah Ya karɓa daga gare ka — ka ci gaba idan kana so",
+  today: "Yau",
+  allTime: "Gaba ɗaya",
+  thisDhikr: "Wannan zikiri",
+  fadl: "Falalar wannan zikiri",
+  sound: "Sauti",
+  vibrate: "Jijjiga",
+};
+
+export const tasbeeh: Record<Locale, TasbeehMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };

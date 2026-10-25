@@ -21,7 +21,7 @@
   --color-ink-2: var(--ink-2);
   --color-line: var(--line);
 
-  --font-sans: var(--font-roboto), var(--font-noto-deva), var(--font-noto-beng), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-roboto), var(--font-noto-latin), var(--font-noto-deva), var(--font-noto-beng), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
   --font-quran: "UthmanicHafs", "Amiri Quran", serif;
 }
 
@@ -47,6 +47,11 @@
 /* Arabic-script pages use the Arabic face first. */
 html[lang="ar"] body, html[lang="fa"] body, html[lang="ur"] body {
   font-family: var(--font-almarai), var(--font-noto-ar), var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Hausa uses Noto Sans for the whole page, so the hooked letters (ɓ ɗ ƙ ƴ) match the rest of the text. */
+html[lang="ha"] body {
+  font-family: var(--font-noto-latin), var(--font-roboto), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
 }
 
 @font-face {

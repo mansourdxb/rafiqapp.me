@@ -199,4 +199,22 @@ const bn: CalendarMsg = {
   note: "উম্মুল কুরা ক্যালেন্ডার। আপনার দেশে চাঁদ দেখার ওপর নির্ভর করে মাসের শুরু এক দিন আগে-পরে হতে পারে।",
 };
 
-export const calendarMsg: Record<Locale, CalendarMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn };
+const ha: CalendarMsg = {
+  title: "Kalandar Hijira",
+  description:
+    "Kalandar Hijira (Ummul Ƙura) wata-wata tare da kwanakin Miladiyya, lokutan musamman na Musulunci kamar Ramadan, Idi biyu, Arafa da Ashura, da mai canza kwanan wata tsakanin Hijira da Miladiyya.",
+  prevMonth: "Watan da ya gabata",
+  nextMonth: "Wata mai zuwa",
+  occasionsMonth: "Wannan wata",
+  noOccasions: "Babu wani lokaci na musamman a wannan wata",
+  converter: "Mai canza kwanan wata",
+  gToH: "Daga Miladiyya zuwa Hijira",
+  hToG: "Daga Hijira zuwa Miladiyya",
+  day: "Rana",
+  month: "Wata",
+  year: "Shekara",
+  invalid: "Wannan kwanan wata babu shi a kalandar Ummul Ƙura.",
+  note: "Kalandar Ummul Ƙura. Farkon wata zai iya bambanta da kwana ɗaya gwargwadon ganin wata a ƙasarku.",
+};
+
+export const calendarMsg: Record<Locale, CalendarMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };

@@ -155,5 +155,5 @@ const ar: Common = {
   noResults: "لا توجد نتائج",
 };
 
-// The other six languages are in common.more.ts.
+// The other languages are in common.more.ts.
 export const common: Record<Locale, Common> = { en, ar, ...more };

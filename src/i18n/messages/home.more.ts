@@ -25,7 +25,7 @@ const ur: Home = {
     body: "رفیق المسلم آپ کو نماز کے اوقات یاد دلاتا ہے، اللہ کے ذکر میں مدد کرتا ہے، قرآنِ کریم سے جوڑتا ہے اور مزید نیکیوں کی ترغیب دیتا ہے۔ ہر مسلمان کا ساتھی۔",
     stats: [
       { value: "9", label: "حدیث کی کتابیں" },
-      { value: "10", label: "زبانیں" },
+      { value: "11", label: "زبانیں" },
       { value: "بغیر اشتہارات", label: "ہمیشہ مفت" },
     ],
   },
@@ -61,7 +61,7 @@ const fa: Home = {
     body: "رفیق المسلم اوقات نماز را به شما یادآوری می‌کند، در ذکر خدا یاری‌تان می‌دهد، شما را با قرآن کریم پیوند می‌دهد و به کارهای نیک بیشتر تشویق می‌کند. همراه هر مسلمان.",
     stats: [
       { value: "9", label: "کتاب حدیث" },
-      { value: "10", label: "زبان" },
+      { value: "11", label: "زبان" },
       { value: "بدون تبلیغات", label: "همیشه رایگان" },
     ],
   },
@@ -97,7 +97,7 @@ const ru: Home = {
     body: "Рафик Аль-Муслим напоминает о времени намаза, помогает поминать Аллаха, связывает вас с Кораном и побуждает к добрым делам. Спутник каждого мусульманина.",
     stats: [
       { value: "9", label: "Сборников хадисов" },
-      { value: "10", label: "Языков" },
+      { value: "11", label: "Языков" },
       { value: "Без рекламы", label: "Всегда бесплатно" },
     ],
   },
@@ -133,7 +133,7 @@ const ms: Home = {
     body: "Rafiq Al-Muslim mengingatkan anda waktu solat, membantu anda berzikir, menghubungkan anda dengan Al-Quran dan mendorong anda melakukan lebih banyak kebaikan. Teman setiap Muslim.",
     stats: [
       { value: "9", label: "Kitab hadis" },
-      { value: "10", label: "Bahasa" },
+      { value: "11", label: "Bahasa" },
       { value: "Tanpa iklan", label: "Percuma selamanya" },
     ],
   },
@@ -169,7 +169,7 @@ const tr: Home = {
     body: "Rafiq Al-Muslim size namaz vakitlerini hatırlatır, Allah'ı anmanıza yardım eder, sizi Kur'an'la buluşturur ve daha fazla iyiliğe teşvik eder. Her Müslümanın yol arkadaşı.",
     stats: [
       { value: "9", label: "Hadis kitabı" },
-      { value: "10", label: "Dil" },
+      { value: "11", label: "Dil" },
       { value: "Reklamsız", label: "Her zaman ücretsiz" },
     ],
   },
@@ -205,7 +205,7 @@ const id: Home = {
     body: "Rafiq Al-Muslim mengingatkan Anda waktu shalat, membantu Anda berzikir, menghubungkan Anda dengan Al-Quran dan mendorong Anda berbuat lebih banyak kebaikan. Teman setiap Muslim.",
     stats: [
       { value: "9", label: "Kitab hadis" },
-      { value: "10", label: "Bahasa" },
+      { value: "11", label: "Bahasa" },
       { value: "Tanpa iklan", label: "Gratis selamanya" },
     ],
   },
@@ -241,7 +241,7 @@ const hi: Home = {
     body: "रफ़ीक़ अल-मुस्लिम आपको नमाज़ के समय याद दिलाता है, अल्लाह के ज़िक्र में आपकी मदद करता है, आपको क़ुरआन से जोड़ता है और ज़्यादा नेक अमल के लिए प्रेरित करता है। हर मुसलमान का साथी।",
     stats: [
       { value: "9", label: "हदीस की किताबें" },
-      { value: "10", label: "भाषाएँ" },
+      { value: "11", label: "भाषाएँ" },
       { value: "बिना विज्ञापन", label: "हमेशा मुफ़्त" },
     ],
   },
@@ -277,7 +277,7 @@ const bn: Home = {
     body: "রফিক আল-মুসলিম আপনাকে নামাজের সময় মনে করিয়ে দেয়, আল্লাহর জিকিরে সাহায্য করে, কুরআনের সঙ্গে যুক্ত রাখে এবং আরও বেশি নেক আমলে উৎসাহ দেয়। প্রত্যেক মুসলমানের সঙ্গী।",
     stats: [
       { value: "9", label: "হাদিস গ্রন্থ" },
-      { value: "10", label: "ভাষা" },
+      { value: "11", label: "ভাষা" },
       { value: "বিজ্ঞাপন নেই", label: "সবসময় বিনামূল্যে" },
     ],
   },
@@ -289,4 +289,40 @@ const bn: Home = {
   contact: { title: "যোগাযোগ করুন", body: "কোনো প্রশ্ন, পরামর্শ বা সমস্যা? আমাদের লিখুন — আমরা প্রতিটি বার্তা পড়ি।", message: "আপনার কথা শুনতে পেলে আমরা খুশি হব", send: "পাঠান" },
 };
 
-export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms, tr, id, hi, bn };
+const ha: Home = {
+  strip: { tagline: "Abokinka a cikin ibada", sub: "Alƙur'ani · Hadisi · Azkar · Sallah — kyauta, babu talla" },
+  hero: {
+    slides: [
+      { before: "San ", highlight: "lokutan sallah", after: " bisa wurin da kake, na yini da na wata, cikin cikakken daidaito", body: "San ainihin lokutan sallah na garinku, tare da kiran sallah a kowace sallah — tare da Rafiq Al-Muslim." },
+      { before: "Duba ingantattun ", highlight: "azkar da addu'o'i", after: " daga Alƙur'ani da Sunna waɗanda kowane Musulmi yake buƙata", body: "Azkar na safe da na yamma, Hisnul Muslim da tasbihi, tare da sauti da mai ƙirgawa." },
+      { before: "Karanta Alƙur'ani a ", highlight: "Mushafin Madina", after: ", tare da tafsiri, fassara da karatu", body: "Kowane shafi kamar yadda aka buga shi a Madina, tare da ma'anonin ayoyi a harshenka." },
+      { before: "Gano ", highlight: "alƙibla", after: " kuma ka ji kiran sallah a duk inda kake", body: "Kamfas, rana da wata da taswira — da kiran sallah mai cike da allo a kowane lokacin sallah." },
+    ],
+    getApp: "Sauke Rafiq Al-Muslim yanzu",
+  },
+  prayer: { title: "Lokacin sallah", more: "Ƙari", method: "Hanyar lissafi", next: "Sallah mai zuwa" },
+  articles: { recent: "Sababbin maƙaloli", mostRead: "Waɗanda aka fi karantawa", viewMore: "Duba ƙari" },
+  qibla: {
+    before: "San ",
+    highlight: "inda alƙibla take",
+    after: " a duk inda kake, ta hanyoyi daban-daban",
+    methods: { compass: "kamfas", sunMoon: "rana da wata", shadow: "inuwa", map: "taswira" },
+  },
+  about: {
+    title: "Duk abin da Musulmi yake buƙata, a cikin manhaja ɗaya kyauta",
+    body: "Rafiq Al-Muslim yana tunatar da kai lokutan sallah, yana taimaka maka wajen ambaton Allah, yana haɗa ka da Alƙur'ani kuma yana ƙarfafa ka ka ƙara ayyukan alheri. Abokin kowane Musulmi.",
+    stats: [
+      { value: "9", label: "Littattafan hadisi" },
+      { value: "11", label: "Harsuna" },
+      { value: "Babu talla", label: "Kyauta har abada" },
+    ],
+  },
+  reviews: {
+    title: "Ra'ayoyin masu amfani da mu",
+    body: "Rafiq Al-Muslim yana tunatar da kai lokutan sallah, yana taimaka maka wajen ambaton Allah kuma yana haɗa ka da Alƙur'ani.",
+    write: "Rubuta ra'ayinka",
+  },
+  contact: { title: "Tuntuɓe mu", body: "Kana da tambaya, shawara ko matsala? Rubuto mana — muna karanta kowane saƙo.", message: "Muna farin cikin jin ta bakinka", send: "Aika" },
+};
+
+export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms, tr, id, hi, bn, ha };

@@ -22,5 +22,5 @@ Never show the reference brand name anywhere.
 - Accordions (FAQ): `rounded-lg ring-2 ring-navy` boxes with a navy ▾ at the start.
 - Sidebars: `rounded-[15px] bg-[#EFEFEF] p-6` with a blue title ("Search", "Most viewed").
 - Primary button: `rounded-lg bg-primary px-10 py-2.5 font-bold text-white`; outline: `rounded-full ring-1 ring-primary`.
-- Fonts: Roboto (Latin/Cyrillic), Almarai (Arabic), Noto Sans Arabic fallback (Urdu/Persian letters), Noto Sans Devanagari (Hindi), Noto Sans Bengali (Bengali).
+- Fonts: Roboto (Latin/Cyrillic), Noto Sans (Hausa pages: Roboto lacks ɓ ɗ ƙ ƴ), Almarai (Arabic), Noto Sans Arabic fallback (Urdu/Persian letters), Noto Sans Devanagari (Hindi), Noto Sans Bengali (Bengali).
 - The Qur'an page itself keeps the app's Mushaf look (cream page, frame) — only the chrome around it changes.

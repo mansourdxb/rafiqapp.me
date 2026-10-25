@@ -45,7 +45,8 @@ export function HomePrayer({ lang }: { lang: Locale }) {
   const shown = other ? computeDay(place, s, other[0], other[1], other[2]) : live?.today;
   const date = other ? dateLine(lang, new Date(Date.UTC(other[0], other[1] - 1, other[2], 12)), place.tz) : now ? dateLine(lang, now, place.tz) : null;
   const nextKey = other ? undefined : live?.mode === "since" ? live.current! : live?.next;
-  const todayWord = new Intl.RelativeTimeFormat(lang, { numeric: "auto" }).format(0, "day");
+  // Chrome's Intl has no Hausa (it would say "today").
+  const todayWord = lang === "ha" ? "Yau" : new Intl.RelativeTimeFormat(lang, { numeric: "auto" }).format(0, "day");
   const autoMethod = effectiveMethod(place, { ...s, method: "auto" });
 
   return (

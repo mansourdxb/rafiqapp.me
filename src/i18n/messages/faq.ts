@@ -102,4 +102,13 @@ export const faq: Record<Locale, Faq> = {
     expandAll: "সব খুলুন",
     collapseAll: "সব বন্ধ করুন",
   },
+  ha: {
+    subtitle: "Amsoshi mataki-mataki ga tambayoyin da mutane suka fi yi game da manhajar Rafiq Al-Muslim.",
+    metaDescription: "Amsoshi game da manhajar Rafiq Al-Muslim: daidaiton alƙibla, lissafin lokutan sallah, sanarwar kiran sallah, sautin Alƙur'ani ba tare da intanet ba, harshe, yanayin duhu da sauransu.",
+    searchPlaceholder: "Nemi a cikin tambayoyin…",
+    noResults: "Babu tambayar da ta dace da abin da kuka nema.",
+    count: "Tambayoyi {n}",
+    expandAll: "Buɗe duka",
+    collapseAll: "Rufe duka",
+  },
 };

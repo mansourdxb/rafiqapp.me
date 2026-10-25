@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState, useSyncExternalStore } from "react";
 import { AuthButton } from "@/components/auth/AuthButton";
 import { Icon } from "@/components/ui/Icon";
-import { isRtl, locales, localePath, nativeName, type Locale } from "@/i18n/config";
+import { flag, isRtl, locales, localePath, nativeName, type Locale } from "@/i18n/config";
 import { common } from "@/i18n/messages/common";
 import { home } from "@/i18n/messages/home";
 import { STORES } from "@/lib/stores";
@@ -18,6 +18,11 @@ function switchLang(pathname: string, to: Locale) {
   parts[1] = to;
   const q = typeof window === "undefined" ? "" : window.location.search + window.location.hash;
   return (parts.join("/") || `/${to}/`) + q;
+}
+
+/** Small decorative flag before a language name (SVG, not emoji: Windows shows emoji flags as letters). */
+function Flag({ l }: { l: Locale }) {
+  return <Image src={`/flags/${flag[l]}.svg`} alt="" aria-hidden width={20} height={15} className="h-[15px] w-5 shrink-0 rounded-[2px] object-cover ring-1 ring-black/10" />;
 }
 
 const STORE_ICONS = [
@@ -87,8 +92,9 @@ export function Navbar({ lang }: { lang: Locale }) {
                 href={switchLang(pathname, l)}
                 onClick={() => chooseLang(l)}
                 lang={l}
-                className={`block px-4 py-2.5 text-sm hover:bg-tint ${l === lang ? "font-bold text-primary" : ""}`}
+                className={`flex items-center gap-2.5 px-4 py-2.5 text-sm hover:bg-tint ${l === lang ? "font-bold text-primary" : ""}`}
               >
+                <Flag l={l} />
                 {nativeName[l]}
               </Link>
             </li>
@@ -222,8 +228,9 @@ export function Navbar({ lang }: { lang: Locale }) {
                     href={switchLang(pathname, l)}
                     onClick={() => chooseLang(l)}
                     lang={l}
-                    className={`block rounded-xl px-3 py-2.5 text-center text-sm font-bold ${l === lang ? "bg-primary text-white" : "bg-white/10 text-white hover:bg-white/20"}`}
+                    className={`flex items-center justify-center gap-2 rounded-xl px-3 py-2.5 text-center text-sm font-bold ${l === lang ? "bg-primary text-white" : "bg-white/10 text-white hover:bg-white/20"}`}
                   >
+                    <Flag l={l} />
                     {nativeName[l]}
                   </Link>
                 </li>

@@ -84,4 +84,12 @@ export const promo: Record<Locale, Promo> = {
     close: "বন্ধ করুন",
     later: "এখন নয়",
   },
+  ha: {
+    before: "Sauke manhajar ",
+    name: "Rafiq Al-Muslim",
+    after: " yanzu!",
+    body: "Ka ciyar da mafi kyawun lokutan yininka tare da Alƙur'ani, azkar, addu'o'i da lokutan sallah. Rafiq Al-Muslim yana taimaka maka a cikin ibadarka — sauke shi yanzu, kyauta kuma babu talla.",
+    close: "Rufe",
+    later: "Ba yanzu ba",
+  },
 };

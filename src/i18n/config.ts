@@ -1,5 +1,5 @@
-// The site's languages — the same ten as the app, in the app's picker order.
-export const locales = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn"] as const;
+// The site's languages — the same eleven as the app, in the app's picker order.
+export const locales = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "ar";
 
@@ -18,6 +18,22 @@ export const nativeName: Record<Locale, string> = {
   id: "Bahasa Indonesia",
   hi: "हिन्दी",
   bn: "বাংলা",
+  ha: "Hausa",
+};
+
+/** Flag shown next to each language in the language menu (public/flags/<code>.svg, from flag-icons, MIT). */
+export const flag: Record<Locale, string> = {
+  ar: "sa",
+  en: "us",
+  ur: "pk",
+  fa: "ir",
+  ru: "ru",
+  ms: "my",
+  tr: "tr",
+  id: "id",
+  hi: "in",
+  bn: "bd",
+  ha: "ng",
 };
 
 export const ogLocale: Record<Locale, string> = {
@@ -31,6 +47,7 @@ export const ogLocale: Record<Locale, string> = {
   id: "id_ID",
   hi: "hi_IN",
   bn: "bn_BD",
+  ha: "ha_NG",
 };
 
 export function isLocale(v: string): v is Locale {

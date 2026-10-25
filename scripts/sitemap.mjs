@@ -4,7 +4,7 @@ import { join } from "node:path";
 
 const OUT = "out";
 const SITE = "https://rafiqapp.me";
-const LANGS = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn"];
+const LANGS = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha"];
 
 function pages(dir, rel = "") {
   const found = [];

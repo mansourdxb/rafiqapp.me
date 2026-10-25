@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
-import { Almarai, Noto_Sans_Arabic, Noto_Sans_Bengali, Noto_Sans_Devanagari, Roboto } from "next/font/google";
+import { Almarai, Noto_Sans, Noto_Sans_Arabic, Noto_Sans_Bengali, Noto_Sans_Devanagari, Roboto } from "next/font/google";
 import "../globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -18,6 +18,8 @@ const notoAr = Noto_Sans_Arabic({ subsets: ["arabic"], weight: ["400", "500", "7
 const notoDeva = Noto_Sans_Devanagari({ subsets: ["devanagari"], weight: ["400", "500", "700", "900"], variable: "--font-noto-deva", display: "swap", preload: false });
 // Bengali (Bengali script) — Roboto has no Bengali letters.
 const notoBeng = Noto_Sans_Bengali({ subsets: ["bengali"], weight: ["400", "500", "700", "900"], variable: "--font-noto-beng", display: "swap", preload: false });
+// Hausa — Roboto has no hooked letters (ɓ ɗ ƙ ƴ), so Hausa pages are set in Noto Sans, which has them.
+const notoLatin = Noto_Sans({ subsets: ["latin", "latin-ext"], weight: ["400", "500", "700", "900"], variable: "--font-noto-latin", display: "swap", preload: false });
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -65,7 +67,7 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
   if (!isLocale(lang)) notFound();
   const l = lang as Locale;
   return (
-    <html lang={l} dir={dir(l)} className={`${roboto.variable} ${almarai.variable} ${notoAr.variable} ${notoDeva.variable} ${notoBeng.variable}`} suppressHydrationWarning>
+    <html lang={l} dir={dir(l)} className={`${roboto.variable} ${almarai.variable} ${notoAr.variable} ${notoDeva.variable} ${notoBeng.variable} ${notoLatin.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
