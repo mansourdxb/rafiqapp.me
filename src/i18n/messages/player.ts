@@ -400,4 +400,37 @@ const ha: PlayerMessages = {
   langNames: { en: "Turanci", fa: "Farisanci", az: "Azarbaijanci", bs: "Bosniyanci", ur: "Urdu" },
 };
 
-export const player: Record<Locale, PlayerMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };
+const fr: PlayerMessages = {
+  description: "Écoutez le Saint Coran récité par plus de cinquante récitateurs, verset par verset, pendant que vous parcourez le site.",
+  subtitle: "Choisissez un récitateur, puis écoutez une sourate entière ou continuez à partir de n’importe quelle sourate — la lecture se poursuit pendant que vous naviguez.",
+  play: "Lire",
+  pause: "Pause",
+  prevAyah: "Verset précédent",
+  nextAyah: "Verset suivant",
+  expand: "Ouvrir le lecteur",
+  collapse: "Réduire le lecteur",
+  close: "Arrêter et fermer",
+  repeat: "Répéter",
+  repeatOff: "Répétition désactivée",
+  repeatSurah: "Répéter la sourate",
+  repeatAyah: "Répéter le verset",
+  speed: "Vitesse de lecture",
+  playSurah: "Écouter la sourate",
+  playFromHere: "Tout écouter à partir d’ici",
+  favourites: "Favoris",
+  addFavourite: "Ajouter aux favoris",
+  removeFavourite: "Retirer des favoris",
+  allReciters: "Tous les récitateurs",
+  nowPlaying: "En cours de lecture",
+  loadError: "Impossible de lire ce verset. Vérifiez votre connexion et réessayez.",
+  listen: "Écouter",
+  listenSurah: "Écouter {surah}",
+  listenPage: "Écouter à partir de cette page",
+  ended: "Récitation terminée",
+  changeReciter: "Changer de récitateur",
+  goToAyah: "Aller au verset",
+  surahs: "Sourates",
+  langNames: { en: "Anglais", fa: "Persan", az: "Azéri", bs: "Bosnien", ur: "Ourdou" },
+};
+
+export const player: Record<Locale, PlayerMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };

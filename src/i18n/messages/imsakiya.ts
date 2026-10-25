@@ -118,4 +118,14 @@ const ha: ImsakiyaMsg = {
   started: "Barka da Ramadan",
 };
 
-export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };
+const fr: ImsakiyaMsg = {
+  description:
+    "Imsakiya du Ramadan pour votre ville : imsak, Fajr, Dhuhr, Asr, Maghrib (iftar) et Isha pour chaque jour du Ramadan, prête à imprimer.",
+  theme: "Couleur",
+  themes: { night: "Nuit", sunset: "Coucher du soleil", day: "Jour" },
+  imsakNote: "L’imsak est indiqué 10 minutes avant le Fajr, par précaution ; le jeûne commence au Fajr.",
+  daysLeft: "Le Ramadan commence dans {{n}} jours",
+  started: "Ramadan Moubarak",
+};
+
+export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };

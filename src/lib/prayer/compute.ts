@@ -19,10 +19,13 @@ export type Place = {
 export type PrayerSettings = {
   method: MethodKey | "auto";
   madhab: "Shafi" | "Hanafi";
-  hour12: boolean;
+  hour12?: boolean; // unset: the language's default clock (see uses12h)
 };
 
-export const DEFAULT_SETTINGS: PrayerSettings = { method: "auto", madhab: "Shafi", hour12: true };
+export const DEFAULT_SETTINGS: PrayerSettings = { method: "auto", madhab: "Shafi" };
+
+/** 12- or 24-hour clock: the user's choice, else 24-hour for French (as in the app), 12-hour otherwise. */
+export const uses12h = (lang: string, hour12?: boolean) => hour12 ?? lang !== "fr";
 
 export const MAKKAH: Place = { name: "Makkah", cc: "sa", lat: 21.4225, lng: 39.8262, tz: "Asia/Riyadh" };
 
@@ -102,7 +105,8 @@ export function computeLive(place: Place, s: PrayerSettings, now = new Date()): 
 const ARABIC_SCRIPT = ["ar", "ur", "fa"];
 
 /** Clock time in the place's zone, like the app's formatTimeInTZ: Latin digits, ص/م for ar/ur/fa. */
-export function formatTime(date: Date, tz: string, lang: string, hour12: boolean) {
+export function formatTime(date: Date, tz: string, lang: string, choice?: boolean) {
+  const hour12 = uses12h(lang, choice);
   try {
     let s = new Intl.DateTimeFormat("en-US", { hour: "2-digit", minute: "2-digit", hour12, timeZone: tz }).format(date);
     if (hour12) {

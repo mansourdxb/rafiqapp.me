@@ -349,4 +349,33 @@ const ha: PrayerMsg = {
   makkah: "Makka",
 };
 
-export const prayerMsg: Record<Locale, PrayerMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };
+const fr: PrayerMsg = {
+  title: "Horaires de prière",
+  description:
+    "Les horaires de prière du jour pour votre ville — Fajr, lever du soleil, Dhuhr, Asr, Maghrib et Isha — avec un compte à rebours jusqu’à la prochaine prière et un calendrier mensuel à imprimer.",
+  useLocation: "Utiliser ma position",
+  locating: "Localisation…",
+  searchPlaceholder: "Rechercher une ville",
+  searching: "Recherche…",
+  noResults: "Aucun lieu trouvé",
+  searchError: "La recherche n’est pas disponible pour le moment. Veuillez réessayer.",
+  locError: "Impossible d’obtenir votre position — recherchez votre ville. Pour l’autoriser sur iPhone : Réglages → Confidentialité et sécurité → Service de localisation → votre navigateur → Lorsque l’app est active.",
+  defaultNotice: "Horaires affichés pour La Mecque. Utilisez votre position ou recherchez votre ville.",
+  settings: "Réglages",
+  auto: "Automatique — {{method}}",
+  timeFormat: "Format de l’heure",
+  h12: "12 heures",
+  h24: "24 heures",
+  highLat: "Au-delà de 48° de latitude, le Fajr et l’Isha suivent automatiquement la règle de l’angle du crépuscule.",
+  tzNote: "Heures locales de {{city}} ({{tz}}).",
+  monthly: "Calendrier mensuel",
+  print: "Imprimer",
+  prevMonth: "Mois précédent",
+  nextMonth: "Mois suivant",
+  thisMonth: "Ce mois-ci",
+  date: "Date",
+  location: "Lieu",
+  makkah: "La Mecque",
+};
+
+export const prayerMsg: Record<Locale, PrayerMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };

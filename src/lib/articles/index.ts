@@ -11,6 +11,7 @@ import id from "@/generated/articles-id.json";
 import hi from "@/generated/articles-hi.json";
 import bn from "@/generated/articles-bn.json";
 import ha from "@/generated/articles-ha.json";
+import fr from "@/generated/articles-fr.json";
 import { localePath, type Locale } from "@/i18n/config";
 import { articles as msgs, type CategoryId } from "@/i18n/messages/articles";
 
@@ -26,7 +27,7 @@ export type Block =
 export type Article = { c: CategoryId; s: string; t: string; k?: string; x: string; m: number; b: Block[] };
 type Library = { categories: { id: CategoryId; name?: string; n: number }[]; articles: Article[] };
 
-const DATA = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha } as unknown as Record<Locale, Library>;
+const DATA = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr } as unknown as Record<Locale, Library>;
 
 export const CATEGORY_IDS: CategoryId[] = ["seerah", "prophets", "fiqh", "hajj", "prayer", "duas", "ruqyah", "tajweed"];
 export const isCategory = (v: string): v is CategoryId => (CATEGORY_IDS as string[]).includes(v);

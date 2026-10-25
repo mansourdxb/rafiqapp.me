@@ -217,4 +217,22 @@ const ha: CalendarMsg = {
   note: "Kalandar Ummul Ƙura. Farkon wata zai iya bambanta da kwana ɗaya gwargwadon ganin wata a ƙasarku.",
 };
 
-export const calendarMsg: Record<Locale, CalendarMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };
+const fr: CalendarMsg = {
+  title: "Calendrier hégirien",
+  description:
+    "Le calendrier hégirien (Umm al-Qura) mois par mois avec les dates grégoriennes, les occasions islamiques comme le Ramadan, les deux Aïds, Arafat et Achoura, et un convertisseur de dates hégirien–grégorien.",
+  prevMonth: "Mois précédent",
+  nextMonth: "Mois suivant",
+  occasionsMonth: "Ce mois-ci",
+  noOccasions: "Aucune occasion ce mois-ci",
+  converter: "Convertisseur de dates",
+  gToH: "Grégorien vers hégirien",
+  hToG: "Hégirien vers grégorien",
+  day: "Jour",
+  month: "Mois",
+  year: "Année",
+  invalid: "Cette date n’existe pas dans le calendrier Umm al-Qura.",
+  note: "Calendrier Umm al-Qura. Le début d’un mois peut varier d’un jour selon l’observation du croissant dans votre pays.",
+};
+
+export const calendarMsg: Record<Locale, CalendarMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };

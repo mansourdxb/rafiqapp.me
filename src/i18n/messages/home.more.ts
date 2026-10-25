@@ -25,7 +25,7 @@ const ur: Home = {
     body: "رفیق المسلم آپ کو نماز کے اوقات یاد دلاتا ہے، اللہ کے ذکر میں مدد کرتا ہے، قرآنِ کریم سے جوڑتا ہے اور مزید نیکیوں کی ترغیب دیتا ہے۔ ہر مسلمان کا ساتھی۔",
     stats: [
       { value: "9", label: "حدیث کی کتابیں" },
-      { value: "11", label: "زبانیں" },
+      { value: "12", label: "زبانیں" },
       { value: "بغیر اشتہارات", label: "ہمیشہ مفت" },
     ],
   },
@@ -61,7 +61,7 @@ const fa: Home = {
     body: "رفیق المسلم اوقات نماز را به شما یادآوری می‌کند، در ذکر خدا یاری‌تان می‌دهد، شما را با قرآن کریم پیوند می‌دهد و به کارهای نیک بیشتر تشویق می‌کند. همراه هر مسلمان.",
     stats: [
       { value: "9", label: "کتاب حدیث" },
-      { value: "11", label: "زبان" },
+      { value: "12", label: "زبان" },
       { value: "بدون تبلیغات", label: "همیشه رایگان" },
     ],
   },
@@ -97,7 +97,7 @@ const ru: Home = {
     body: "Рафик Аль-Муслим напоминает о времени намаза, помогает поминать Аллаха, связывает вас с Кораном и побуждает к добрым делам. Спутник каждого мусульманина.",
     stats: [
       { value: "9", label: "Сборников хадисов" },
-      { value: "11", label: "Языков" },
+      { value: "12", label: "Языков" },
       { value: "Без рекламы", label: "Всегда бесплатно" },
     ],
   },
@@ -133,7 +133,7 @@ const ms: Home = {
     body: "Rafiq Al-Muslim mengingatkan anda waktu solat, membantu anda berzikir, menghubungkan anda dengan Al-Quran dan mendorong anda melakukan lebih banyak kebaikan. Teman setiap Muslim.",
     stats: [
       { value: "9", label: "Kitab hadis" },
-      { value: "11", label: "Bahasa" },
+      { value: "12", label: "Bahasa" },
       { value: "Tanpa iklan", label: "Percuma selamanya" },
     ],
   },
@@ -169,7 +169,7 @@ const tr: Home = {
     body: "Rafiq Al-Muslim size namaz vakitlerini hatırlatır, Allah'ı anmanıza yardım eder, sizi Kur'an'la buluşturur ve daha fazla iyiliğe teşvik eder. Her Müslümanın yol arkadaşı.",
     stats: [
       { value: "9", label: "Hadis kitabı" },
-      { value: "11", label: "Dil" },
+      { value: "12", label: "Dil" },
       { value: "Reklamsız", label: "Her zaman ücretsiz" },
     ],
   },
@@ -205,7 +205,7 @@ const id: Home = {
     body: "Rafiq Al-Muslim mengingatkan Anda waktu shalat, membantu Anda berzikir, menghubungkan Anda dengan Al-Quran dan mendorong Anda berbuat lebih banyak kebaikan. Teman setiap Muslim.",
     stats: [
       { value: "9", label: "Kitab hadis" },
-      { value: "11", label: "Bahasa" },
+      { value: "12", label: "Bahasa" },
       { value: "Tanpa iklan", label: "Gratis selamanya" },
     ],
   },
@@ -241,7 +241,7 @@ const hi: Home = {
     body: "रफ़ीक़ अल-मुस्लिम आपको नमाज़ के समय याद दिलाता है, अल्लाह के ज़िक्र में आपकी मदद करता है, आपको क़ुरआन से जोड़ता है और ज़्यादा नेक अमल के लिए प्रेरित करता है। हर मुसलमान का साथी।",
     stats: [
       { value: "9", label: "हदीस की किताबें" },
-      { value: "11", label: "भाषाएँ" },
+      { value: "12", label: "भाषाएँ" },
       { value: "बिना विज्ञापन", label: "हमेशा मुफ़्त" },
     ],
   },
@@ -277,7 +277,7 @@ const bn: Home = {
     body: "রফিক আল-মুসলিম আপনাকে নামাজের সময় মনে করিয়ে দেয়, আল্লাহর জিকিরে সাহায্য করে, কুরআনের সঙ্গে যুক্ত রাখে এবং আরও বেশি নেক আমলে উৎসাহ দেয়। প্রত্যেক মুসলমানের সঙ্গী।",
     stats: [
       { value: "9", label: "হাদিস গ্রন্থ" },
-      { value: "11", label: "ভাষা" },
+      { value: "12", label: "ভাষা" },
       { value: "বিজ্ঞাপন নেই", label: "সবসময় বিনামূল্যে" },
     ],
   },
@@ -313,7 +313,7 @@ const ha: Home = {
     body: "Rafiq Al-Muslim yana tunatar da kai lokutan sallah, yana taimaka maka wajen ambaton Allah, yana haɗa ka da Alƙur'ani kuma yana ƙarfafa ka ka ƙara ayyukan alheri. Abokin kowane Musulmi.",
     stats: [
       { value: "9", label: "Littattafan hadisi" },
-      { value: "11", label: "Harsuna" },
+      { value: "12", label: "Harsuna" },
       { value: "Babu talla", label: "Kyauta har abada" },
     ],
   },
@@ -325,4 +325,45 @@ const ha: Home = {
   contact: { title: "Tuntuɓe mu", body: "Kana da tambaya, shawara ko matsala? Rubuto mana — muna karanta kowane saƙo.", message: "Muna farin cikin jin ta bakinka", send: "Aika" },
 };
 
-export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms, tr, id, hi, bn, ha };
+const fr: Home = {
+  strip: { tagline: "Votre compagnon dans l’adoration", sub: "Coran · Hadiths · Adhkar · Prière — gratuit, sans publicité" },
+  hero: {
+    slides: [
+      { before: "Connaissez les ", highlight: "horaires de prière", after: " selon votre position, pour le jour et pour le mois, en toute précision", body: "Connaissez les horaires de prière exacts de votre ville, avec l’adhan à chaque prière — avec Rafiq Al-Muslim." },
+      { before: "Parcourez les ", highlight: "adhkar et douas", after: " authentiques du Coran et de la Sunna dont chaque musulman a besoin", body: "Adhkar du matin et du soir, Hisn al-Muslim et le tasbih, avec l’audio et un compteur." },
+      { before: "Lisez le Coran dans le ", highlight: "Mushaf de Médine", after: ", avec tafsir, traduction et récitation", body: "Chaque page telle qu’imprimée à Médine, avec le sens des versets dans votre langue." },
+      { before: "Trouvez la ", highlight: "qibla", after: " et écoutez l’adhan où que vous soyez", body: "Boussole, soleil et lune, et carte — et un adhan en plein écran à chaque heure de prière." },
+    ],
+    getApp: "Téléchargez Rafiq Al-Muslim dès maintenant",
+  },
+  prayer: { title: "Heure de prière", more: "Plus", method: "Méthode", next: "Prochaine prière" },
+  articles: { recent: "Articles récents", mostRead: "Les plus lus", viewMore: "Voir plus" },
+  qibla: {
+    before: "Connaissez la ",
+    highlight: "direction de la qibla",
+    after: " où que vous soyez, grâce à différentes méthodes",
+    methods: { compass: "boussole", sunMoon: "soleil et lune", shadow: "ombre", map: "carte" },
+  },
+  about: {
+    title: "Tout ce dont un musulman a besoin, dans une seule application gratuite",
+    body: "Rafiq Al-Muslim vous rappelle les horaires de prière, vous aide à vous souvenir d’Allah, vous relie au Coran et vous encourage à faire davantage de bien. Le compagnon de chaque musulman.",
+    stats: [
+      { value: "9", label: "Recueils de hadiths" },
+      { value: "12", label: "Langues" },
+      { value: "Sans pub", label: "Gratuit pour toujours" },
+    ],
+  },
+  reviews: {
+    title: "L’avis de nos utilisateurs",
+    body: "Rafiq Al-Muslim vous rappelle les horaires de prière, vous aide à vous souvenir d’Allah et vous relie au Coran.",
+    write: "Donnez votre avis",
+  },
+  contact: {
+    title: "Nous contacter",
+    body: "Une question, une suggestion ou un problème ? Écrivez-nous — nous lisons chaque message.",
+    message: "Nous serons ravis de vous lire",
+    send: "Envoyer",
+  },
+};
+
+export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms, tr, id, hi, bn, ha, fr };

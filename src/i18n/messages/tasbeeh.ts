@@ -326,4 +326,31 @@ const ha: TasbeehMessages = {
   vibrate: "Jijjiga",
 };
 
-export const tasbeeh: Record<Locale, TasbeehMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };
+const fr: TasbeehMessages = {
+  title: "Tasbih",
+  subtitle: "Glorifiez Allah et gardez le compte — il reste enregistré sur votre appareil",
+  description: "Un tasbih électronique : choisissez un dhikr ou ajoutez le vôtre, fixez un objectif, puis touchez l’écran ou appuyez sur la barre d’espace pour compter.",
+  choose: "Choisir un dhikr",
+  builtIn: "Adhkar du tasbih",
+  mine: "Mes adhkar",
+  add: "Ajouter un dhikr",
+  addTitle: "Nouveau dhikr",
+  textPlaceholder: "Écrivez votre dhikr",
+  target: "Objectif",
+  save: "Enregistrer",
+  cancel: "Annuler",
+  remove: "Supprimer le dhikr",
+  reset: "Réinitialiser",
+  tapHint: "Touchez les perles ou appuyez sur la barre d’espace pour compter",
+  ofTarget: "sur {target}",
+  completed: "Objectif atteint",
+  completedSub: "Qu’Allah l’accepte de vous — continuez si vous le souhaitez",
+  today: "Aujourd’hui",
+  allTime: "Depuis le début",
+  thisDhikr: "Ce dhikr",
+  fadl: "Mérite de ce dhikr",
+  sound: "Son",
+  vibrate: "Vibration",
+};
+
+export const tasbeeh: Record<Locale, TasbeehMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };

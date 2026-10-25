@@ -8,7 +8,7 @@ import { common } from "@/i18n/messages/common";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Icon } from "@/components/ui/Icon";
 import { localDigits } from "@/lib/digits";
-import { computeDay, effectiveMethod, formatDuration, highLatitude, PRAYERS, ymdInTz, type Place, type PrayerSettings } from "@/lib/prayer/compute";
+import { computeDay, effectiveMethod, formatDuration, highLatitude, PRAYERS, uses12h, ymdInTz, type Place, type PrayerSettings } from "@/lib/prayer/compute";
 import { METHOD_LABEL, METHODS, type MethodKey } from "@/lib/prayer/methods";
 import { settingsStore } from "@/lib/prayer/store";
 import { formatGregorian, hijriMonthName, toHijri, weekdayName } from "@/lib/calendar/hijri";
@@ -198,7 +198,7 @@ function SettingsCard({ lang, place, s }: { lang: Locale; place: ShownPlace; s: 
         <div>
           <span className="mb-1.5 block text-sm font-bold text-navy-2 dark:text-ink-2">{t.timeFormat}</span>
           <Seg
-            value={s.hour12 ? "12" : "24"}
+            value={uses12h(lang, s.hour12) ? "12" : "24"}
             onChange={(v) => set({ hour12: v === "12" })}
             options={[
               ["12", t.h12],

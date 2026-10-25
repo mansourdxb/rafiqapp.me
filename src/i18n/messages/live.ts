@@ -102,4 +102,13 @@ export const live: Record<Locale, Live> = {
     madinahSrc: "Tashar Sunnar Annabi",
     openYoutube: "Buɗe a YouTube",
   },
+  fr: {
+    title: "Diffusion en direct",
+    subtitle: "En direct de la Mosquée sacrée de La Mecque et de la Mosquée du Prophète à Médine, depuis les chaînes officielles.",
+    makkah: "La Mosquée sacrée — La Mecque",
+    madinah: "La Mosquée du Prophète — Médine",
+    makkahSrc: "Quran TV",
+    madinahSrc: "Sunnah TV",
+    openYoutube: "Ouvrir dans YouTube",
+  },
 };

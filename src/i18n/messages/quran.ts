@@ -385,7 +385,39 @@ const ha: QuranMessages = {
   ayah: "Aya",
 };
 
-export const quran: Record<Locale, QuranMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };
+const fr: QuranMessages = {
+  title: "Le Saint Coran",
+  description: "Lisez le Saint Coran dans le Mushaf de Médine, page par page, avec traduction, tafsir et récitation verset par verset.",
+  heroSub: "Le Mushaf de Médine, page par page — touchez un verset pour sa traduction et sa récitation.",
+  readerDescription: "Page {page} du Mushaf de Médine — sourate {surah}. Lisez-la avec traduction, tafsir et récitation.",
+  lastRead: "Vous vous êtes arrêté à la page {page}",
+  startReading: "Commencer la lecture",
+  prevPage: "Page précédente",
+  nextPage: "Page suivante",
+  goTo: "Aller à",
+  page: "Page",
+  surah: "Sourate",
+  juz: "Juz",
+  go: "OK",
+  twoPages: "Deux pages",
+  onePage: "Une page",
+  tafsir: "Tafsir",
+  play: "Écouter",
+  pause: "Pause",
+  copy: "Copier",
+  copied: "Copié",
+  share: "Partager",
+  close: "Fermer",
+  reciter: "Récitateur",
+  loadingFont: "Chargement de la page du Mushaf…",
+  fontFailed: "La police du Mushaf n’a pas pu être chargée : les versets sont affichés en écriture simple.",
+  translationBy: "Traduction : {name}",
+  loadError: "Chargement impossible. Vérifiez votre connexion et réessayez.",
+  tapHint: "Touchez un verset pour sa traduction et sa récitation",
+  ayah: "Verset",
+};
+
+export const quran: Record<Locale, QuranMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };
 
 export const fill = (s: string, params: Record<string, string | number>) =>
   Object.entries(params).reduce((acc, [k, v]) => acc.replaceAll(`{${k}}`, String(v)), s);

@@ -341,4 +341,33 @@ const ha: QiblaMsg = {
   noPlace: "Ba a saita wurinka ba tukuna. Yi amfani da wurinka ko ka nemi garinku.",
 };
 
-export const qiblaMsg: Record<Locale, QiblaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };
+const fr: QiblaMsg = {
+  title: "Direction de la qibla",
+  description:
+    "Trouvez la qibla où que vous soyez : l’angle par rapport au nord, la distance jusqu’à la Kaaba, une boussole en direct sur votre téléphone, le soleil et la lune, les ombres et une carte.",
+  tabShadow: "Ombre",
+  startCompass: "Lancer la boussole en direct",
+  compassOn: "Boussole en direct activée — tournez jusqu’à ce que la flèche pointe vers le haut",
+  noSensor: "Aucun capteur de boussole n’a été trouvé sur cet appareil. Utilisez l’angle par rapport au nord indiqué sur le cadran.",
+  denied: "L’accès au mouvement et à l’orientation a été refusé. Vous pouvez l’autoriser dans les réglages de votre navigateur.",
+  desktopHint: "Le nord est en haut du cadran. Ouvrez cette page sur votre téléphone pour utiliser la boussole en direct.",
+  facing: "Vous êtes face à la qibla",
+  azimuth: "Direction",
+  altitude: "Hauteur au-dessus de l’horizon",
+  qiblaBearing: "Qibla",
+  shadowIntro:
+    "Plantez un bâton ou un stylo bien droit sur un sol plat, au soleil. Aux heures ci-dessous, son ombre s’aligne exactement sur la qibla.",
+  shadowToward: "L’ombre indique la qibla",
+  shadowTowardHint: "Placez-vous dans l’axe de l’ombre, du bâton vers sa pointe.",
+  shadowAway: "Le soleil est dans la direction de la qibla",
+  shadowAwayHint: "Faites face au soleil — l’ombre pointe derrière vous, à l’opposé de la qibla.",
+  shadowNone: "Aujourd’hui, le soleil ne s’aligne pas sur la qibla à cet endroit. Utilisez la boussole ou la carte.",
+  shadowPassed: "passé",
+  kaabaFact:
+    "Deux fois par an — vers les 27 et 28 mai à 12 h 18 et les 15 et 16 juillet à 12 h 27, heure de La Mecque — le soleil se trouve juste au-dessus de la Kaaba, et partout où il fait jour, chaque ombre pointe à l’opposé de la qibla.",
+  mapNote: "La ligne suit le grand cercle — le chemin le plus court vers la Kaaba.",
+  calibrate: "Calibrer",
+  noPlace: "Votre position n’est pas encore définie. Utilisez votre position ou recherchez votre ville.",
+};
+
+export const qiblaMsg: Record<Locale, QiblaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };

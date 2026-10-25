@@ -3,7 +3,8 @@
  * tashkeel, one shape per Arabic-script letter (Arabic / Persian / Urdu forms of alef, ya, kaf, ha,
  * ta marbuta, hamza seats), Turkish dotless ı = i, Russian ё = е, Hindi with or without nuqta (क़ = क),
  * Bengali as the app folds it (য় = য, ড় = ড, ঢ় = ঢ, no chandrabindu, ী = ি, ূ = ু),
- * Hausa hooked letters as plain ones (ɓ = b, ɗ = d, ƙ = k, ƴ = y) and no apostrophes (Qur'ani = Qurani).
+ * Hausa hooked letters as plain ones (ɓ = b, ɗ = d, ƙ = k, ƴ = y) and no apostrophes (Qur'ani = Qurani),
+ * French ligatures spelled out (cœur = coeur).
  */
 export function searchFold(s = ""): string {
   return s
@@ -15,6 +16,8 @@ export function searchFold(s = ""): string {
     .replace(/ƙ/g, "k")
     .replace(/ƴ/g, "y")
     .replace(/['‘’ʼ]/g, "")
+    .replace(/œ/g, "oe")
+    .replace(/æ/g, "ae")
     .normalize("NFKD")
     .replace(/[̀-ͯؐ-ًؚ-ٰٟۖ-ۭـ]/g, "")
     .replace(/\u093C/g, "")
