@@ -19,9 +19,10 @@ import ru from "@/generated/faq-ru.json";
 import ms from "@/generated/faq-ms.json";
 import tr from "@/generated/faq-tr.json";
 import id from "@/generated/faq-id.json";
+import hi from "@/generated/faq-hi.json";
 
 type FaqData = { title: string; items: { id: string; q: string; steps: string[] }[] };
-const DATA: Record<Locale, FaqData> = { ar, en, ur, fa, ru, ms, tr, id };
+const DATA: Record<Locale, FaqData> = { ar, en, ur, fa, ru, ms, tr, id, hi };
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/faq">): Promise<Metadata> {
   const { lang } = await params;

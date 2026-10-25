@@ -262,4 +262,33 @@ const id: PrayerMsg = {
   makkah: "Makkah",
 };
 
-export const prayerMsg: Record<Locale, PrayerMsg> = { ar, en, ur, fa, ru, ms, tr, id };
+const hi: PrayerMsg = {
+  title: "नमाज़ के समय",
+  description:
+    "आपके शहर के आज के नमाज़ के समय — फ़ज्र, सूर्योदय, ज़ुहर, अस्र, मग़रिब और इशा — अगली नमाज़ तक लाइव उलटी गिनती और प्रिंट करने लायक़ मासिक समय-सारणी के साथ।",
+  useLocation: "मेरी लोकेशन इस्तेमाल करें",
+  locating: "लोकेशन पता की जा रही है…",
+  searchPlaceholder: "शहर खोजें",
+  searching: "खोजा जा रहा है…",
+  noResults: "कोई जगह नहीं मिली",
+  searchError: "खोज अभी उपलब्ध नहीं है। कृपया दोबारा कोशिश करें।",
+  locError: "आपकी लोकेशन नहीं मिल सकी — अपना शहर खोजें। iPhone पर अनुमति देने के लिए: Settings → Privacy & Security → Location Services → आपका ब्राउज़र → While Using।",
+  defaultNotice: "मक्का के समय दिखाए जा रहे हैं। अपनी लोकेशन इस्तेमाल करें या अपना शहर खोजें।",
+  settings: "सेटिंग्स",
+  auto: "स्वचालित — {{method}}",
+  timeFormat: "समय का फ़ॉर्मेट",
+  h12: "12-घंटे",
+  h24: "24-घंटे",
+  highLat: "48° अक्षांश से ऊपर फ़ज्र और इशा के लिए अपने-आप संध्या-कोण (ट्वाइलाइट एंगल) का नियम इस्तेमाल होता है।",
+  tzNote: "समय {{city}} के स्थानीय समय ({{tz}}) के अनुसार हैं।",
+  monthly: "मासिक समय-सारणी",
+  print: "प्रिंट करें",
+  prevMonth: "पिछला महीना",
+  nextMonth: "अगला महीना",
+  thisMonth: "इस महीने",
+  date: "तारीख़",
+  location: "लोकेशन",
+  makkah: "मक्का",
+};
+
+export const prayerMsg: Record<Locale, PrayerMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi };

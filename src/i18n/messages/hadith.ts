@@ -327,7 +327,44 @@ const id: HadithMessages = {
   chapterMeta: "{chapter} — {book}: {n} hadis dalam bahasa Arab dengan terjemahan.",
 };
 
-export const hadith: Record<Locale, HadithMessages> = { ar, en, ur, fa, ru, ms, tr, id };
+const hi: HadithMessages = {
+  books: {
+    bukhari: "सहीह बुख़ारी",
+    muslim: "सहीह मुस्लिम",
+    abudawud: "सुनन अबू दाऊद",
+    tirmidhi: "जामे तिर्मिज़ी",
+    nasai: "सुनन नसाई",
+    ibnmajah: "सुनन इब्ने माजा",
+    malik: "मुवत्ता इमाम मालिक",
+    darimi: "सुनन दारिमी",
+    ahmed: "मुसनद अहमद",
+  },
+  metaTitle: "हदीस — नौ किताबें",
+  metaDescription: "सहीह बुख़ारी, सहीह मुस्लिम और दूसरी हदीस की किताबें अरबी में अंग्रेज़ी अनुवाद के साथ पढ़ें, उनमें खोजें और अपनी पसंदीदा हदीसें सेव करें।",
+  intro: "सुन्नत की नौ किताबें, अरबी में अंग्रेज़ी अनुवाद के साथ। नबी ﷺ के शब्द हरे रंग में दिखाए गए हैं।",
+  hadiths: "हदीसें",
+  kitabs: "किताबें",
+  hadithN: "हदीस {n}",
+  minChars: "खोजने के लिए कम से कम 2 अक्षर लिखें",
+  searchLoading: "खोज इंडेक्स लोड हो रहा है…",
+  searchHintEn: "अरबी में या अंग्रेज़ी अनुवाद में खोजें",
+  noFavorites: "अभी कोई पसंदीदा नहीं। किसी भी हदीस पर बुकमार्क दबाकर उसे यहाँ सेव करें।",
+  addFavorite: "पसंदीदा में जोड़ें",
+  removeFavorite: "पसंदीदा से हटाएँ",
+  copy: "कॉपी करें",
+  share: "शेयर करें",
+  showMore: "और दिखाएँ",
+  shownOf: "{b} में से {a}",
+  prev: "पिछला",
+  next: "आगे",
+  allBooks: "हदीस की सभी किताबें",
+  noTranslation: "इस किताब का अभी कोई अनुवाद नहीं है — सिर्फ़ अरबी पाठ।",
+  shareVia: "रफ़ीक़ अल-मुस्लिम ऐप के ज़रिए",
+  bookMeta: "{book} पढ़ें: {k} किताबों में {n} हदीसें, अरबी में अनुवाद के साथ।",
+  chapterMeta: "{chapter} — {book}: अरबी में अनुवाद के साथ {n} हदीसें।",
+};
+
+export const hadith: Record<Locale, HadithMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi };
 
 /** "{n} of {b}" → filled in. */
 export function fill(s: string, p: Record<string, string | number>) {

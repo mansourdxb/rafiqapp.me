@@ -21,7 +21,7 @@
   --color-ink-2: var(--ink-2);
   --color-line: var(--line);
 
-  --font-sans: var(--font-roboto), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-roboto), var(--font-noto-deva), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
   --font-quran: "UthmanicHafs", "Amiri Quran", serif;
 }
 

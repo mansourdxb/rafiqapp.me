@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
-import { Almarai, Noto_Sans_Arabic, Roboto } from "next/font/google";
+import { Almarai, Noto_Sans_Arabic, Noto_Sans_Devanagari, Roboto } from "next/font/google";
 import "../globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -14,6 +14,8 @@ const roboto = Roboto({ subsets: ["latin", "cyrillic"], weight: ["400", "500", "
 const almarai = Almarai({ subsets: ["arabic"], weight: ["300", "400", "700", "800"], variable: "--font-almarai", display: "swap" });
 // Urdu / Persian letters Almarai lacks (ٹ ڈ ڑ ں ے ک ی …) fall back to Noto Sans Arabic.
 const notoAr = Noto_Sans_Arabic({ subsets: ["arabic"], weight: ["400", "500", "700"], variable: "--font-noto-ar", display: "swap", preload: false });
+// Hindi (Devanagari) — Roboto has no Devanagari letters.
+const notoDeva = Noto_Sans_Devanagari({ subsets: ["devanagari"], weight: ["400", "500", "700", "900"], variable: "--font-noto-deva", display: "swap", preload: false });
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -61,7 +63,7 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
   if (!isLocale(lang)) notFound();
   const l = lang as Locale;
   return (
-    <html lang={l} dir={dir(l)} className={`${roboto.variable} ${almarai.variable} ${notoAr.variable}`} suppressHydrationWarning>
+    <html lang={l} dir={dir(l)} className={`${roboto.variable} ${almarai.variable} ${notoAr.variable} ${notoDeva.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>

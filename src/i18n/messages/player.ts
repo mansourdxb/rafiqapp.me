@@ -301,4 +301,37 @@ const id: PlayerMessages = {
   langNames: { en: "Inggris", fa: "Persia", az: "Azerbaijan", bs: "Bosnia", ur: "Urdu" },
 };
 
-export const player: Record<Locale, PlayerMessages> = { ar, en, ur, fa, ru, ms, tr, id };
+const hi: PlayerMessages = {
+  description: "साइट देखते हुए भी 50 से ज़्यादा क़ारियों की आवाज़ में क़ुरआन मजीद आयत-दर-आयत सुनें।",
+  subtitle: "क़ारी चुनें, फिर पूरी सूरह चलाएँ या किसी भी सूरह से आगे सुनते रहें — साइट पर घूमते हुए भी तिलावत चलती रहती है।",
+  play: "चलाएँ",
+  pause: "रोकें",
+  prevAyah: "पिछली आयत",
+  nextAyah: "अगली आयत",
+  expand: "प्लेयर खोलें",
+  collapse: "प्लेयर छोटा करें",
+  close: "रोकें और बंद करें",
+  repeat: "दोहराएँ",
+  repeatOff: "दोहराना बंद",
+  repeatSurah: "सूरह दोहराएँ",
+  repeatAyah: "आयत दोहराएँ",
+  speed: "प्लेबैक की रफ़्तार",
+  playSurah: "सूरह चलाएँ",
+  playFromHere: "यहाँ से सब चलाएँ",
+  favourites: "पसंदीदा",
+  addFavourite: "पसंदीदा में जोड़ें",
+  removeFavourite: "पसंदीदा से हटाएँ",
+  allReciters: "सभी क़ारी",
+  nowPlaying: "अभी चल रहा है",
+  loadError: "यह आयत नहीं चल सकी। अपना कनेक्शन जाँचें और फिर से कोशिश करें।",
+  listen: "सुनें",
+  listenSurah: "सूरह {surah} सुनें",
+  listenPage: "इस पेज से सुनें",
+  ended: "तिलावत पूरी हुई",
+  changeReciter: "क़ारी बदलें",
+  goToAyah: "आयत पर जाएँ",
+  surahs: "सूरतें",
+  langNames: { en: "अंग्रेज़ी", fa: "फ़ारसी", az: "अज़रबैजानी", bs: "बोस्नियाई", ur: "उर्दू" },
+};
+
+export const player: Record<Locale, PlayerMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi };

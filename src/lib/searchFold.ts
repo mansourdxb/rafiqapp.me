@@ -1,7 +1,7 @@
 /**
  * Loose form of a string for searching in any of the site's languages: lower case, no diacritics or
  * tashkeel, one shape per Arabic-script letter (Arabic / Persian / Urdu forms of alef, ya, kaf, ha,
- * ta marbuta, hamza seats), Turkish dotless ı = i, Russian ё = е.
+ * ta marbuta, hamza seats), Turkish dotless ı = i, Russian ё = е, Hindi with or without nuqta (क़ = क).
  */
 export function searchFold(s = ""): string {
   return s
@@ -10,6 +10,7 @@ export function searchFold(s = ""): string {
     .replace(/ё/g, "е")
     .normalize("NFKD")
     .replace(/[̀-ͯؐ-ًؚ-ٰٟۖ-ۭـ]/g, "")
+    .replace(/\u093C/g, "")
     .replace(/[أإآٱ]/g, "ا")
     .replace(/[ىیےۍ]/g, "ي")
     .replace(/[ةۀہھۃ]/g, "ه")

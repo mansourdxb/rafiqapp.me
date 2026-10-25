@@ -88,4 +88,14 @@ const id: ImsakiyaMsg = {
   started: "Ramadan Mubarak",
 };
 
-export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id };
+const hi: ImsakiyaMsg = {
+  description:
+    "आपके शहर के लिए रमज़ान इम्साकिया: रमज़ान के हर दिन के लिए इम्साक, फ़ज्र, ज़ुहर, अस्र, मग़रिब (इफ़्तार) और इशा, प्रिंट के लिए तैयार।",
+  theme: "रंग",
+  themes: { night: "रात", sunset: "सूर्यास्त", day: "दिन" },
+  imsakNote: "एहतियात के तौर पर इम्साक फ़ज्र से 10 मिनट पहले दिखाया गया है; रोज़ा फ़ज्र से शुरू होता है।",
+  daysLeft: "रमज़ान {{n}} दिन में शुरू होगा",
+  started: "रमज़ान मुबारक",
+};
+
+export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi };

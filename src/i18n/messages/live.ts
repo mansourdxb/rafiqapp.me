@@ -75,4 +75,13 @@ export const live: Record<Locale, Live> = {
     madinahSrc: "Sunnah TV",
     openYoutube: "Buka di YouTube",
   },
+  hi: {
+    title: "लाइव प्रसारण",
+    subtitle: "मक्का की मस्जिद-ए-हराम और मदीना की मस्जिद-ए-नबवी से आधिकारिक चैनलों के ज़रिए लाइव प्रसारण।",
+    makkah: "मस्जिद-ए-हराम — मक्का",
+    madinah: "मस्जिद-ए-नबवी — मदीना",
+    makkahSrc: "क़ुरआन टीवी",
+    madinahSrc: "सुन्नत टीवी",
+    openYoutube: "YouTube पर खोलें",
+  },
 };

@@ -163,4 +163,22 @@ const id: CalendarMsg = {
   note: "Kalender Umm al-Qura. Awal bulan bisa berbeda satu hari tergantung rukyat hilal di negara Anda.",
 };
 
-export const calendarMsg: Record<Locale, CalendarMsg> = { ar, en, ur, fa, ru, ms, tr, id };
+const hi: CalendarMsg = {
+  title: "हिजरी कैलेंडर",
+  description:
+    "हिजरी (उम्मुल क़ुरा) कैलेंडर महीने-दर-महीने ग्रेगोरियन तारीख़ों के साथ, रमज़ान, दोनों ईदें, अरफ़ा और आशूरा जैसे इस्लामी मौक़े, और हिजरी–ग्रेगोरियन तारीख़ कन्वर्टर।",
+  prevMonth: "पिछला महीना",
+  nextMonth: "अगला महीना",
+  occasionsMonth: "इस महीने",
+  noOccasions: "इस महीने कोई मौक़ा नहीं",
+  converter: "तारीख़ कन्वर्टर",
+  gToH: "ग्रेगोरियन से हिजरी",
+  hToG: "हिजरी से ग्रेगोरियन",
+  day: "दिन",
+  month: "महीना",
+  year: "साल",
+  invalid: "यह तारीख़ उम्मुल क़ुरा कैलेंडर में मौजूद नहीं है।",
+  note: "उम्मुल क़ुरा कैलेंडर। आपके देश में चाँद दिखने के अनुसार महीने की शुरुआत एक दिन अलग हो सकती है।",
+};
+
+export const calendarMsg: Record<Locale, CalendarMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi };

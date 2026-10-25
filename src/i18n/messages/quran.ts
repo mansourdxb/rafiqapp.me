@@ -289,7 +289,39 @@ const id: QuranMessages = {
   ayah: "Ayat",
 };
 
-export const quran: Record<Locale, QuranMessages> = { ar, en, ur, fa, ru, ms, tr, id };
+const hi: QuranMessages = {
+  title: "क़ुरआन मजीद",
+  description: "मदीना मुसहफ़ में क़ुरआन मजीद पृष्ठ दर पृष्ठ पढ़ें, अनुवाद, तफ़सीर और आयत-दर-आयत तिलावत के साथ।",
+  heroSub: "मदीना मुसहफ़, पृष्ठ दर पृष्ठ — किसी भी आयत पर टैप करें और उसका अनुवाद और तिलावत पाएँ।",
+  readerDescription: "मदीना मुसहफ़ का पृष्ठ {page} — सूरह {surah}। इसे अनुवाद, तफ़सीर और तिलावत के साथ पढ़ें।",
+  lastRead: "आप पृष्ठ {page} पर रुके थे",
+  startReading: "पढ़ना शुरू करें",
+  prevPage: "पिछला पृष्ठ",
+  nextPage: "अगला पृष्ठ",
+  goTo: "यहाँ जाएँ",
+  page: "पृष्ठ",
+  surah: "सूरह",
+  juz: "पारा",
+  go: "जाएँ",
+  twoPages: "दो पृष्ठ",
+  onePage: "एक पृष्ठ",
+  tafsir: "तफ़सीर",
+  play: "सुनें",
+  pause: "रोकें",
+  copy: "कॉपी करें",
+  copied: "कॉपी हो गया",
+  share: "शेयर करें",
+  close: "बंद करें",
+  reciter: "क़ारी",
+  loadingFont: "मुसहफ़ का पृष्ठ लोड हो रहा है…",
+  fontFailed: "मुसहफ़ का फ़ॉन्ट लोड नहीं हो सका, इसलिए आयतें सादी लिपि में दिखाई जा रही हैं।",
+  translationBy: "अनुवाद: {name}",
+  loadError: "लोड नहीं हो सका। अपना कनेक्शन जाँचें और फिर से कोशिश करें।",
+  tapHint: "अनुवाद और तिलावत के लिए किसी आयत पर टैप करें",
+  ayah: "आयत",
+};
+
+export const quran: Record<Locale, QuranMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi };
 
 export const fill = (s: string, params: Record<string, string | number>) =>
   Object.entries(params).reduce((acc, [k, v]) => acc.replaceAll(`{${k}}`, String(v)), s);

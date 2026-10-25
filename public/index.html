@@ -16,7 +16,7 @@
       location.replace("https://" + location.host + location.pathname + location.search + location.hash);
       return;
     }
-    var langs = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id"];
+    var langs = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi"];
     var pick = null;
     try { pick = localStorage.getItem("lang"); } catch (e) {}
     if (langs.indexOf(pick) < 0) {

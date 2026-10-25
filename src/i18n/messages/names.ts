@@ -148,7 +148,23 @@ const id: NamesMessages = {
   nth: "Nama ke-{n} dari 99",
 };
 
+const hi: NamesMessages = {
+  title: "अल्लाह के 99 नाम",
+  verseRef: "अल-आराफ़ 7:180",
+  description: "अल्लाह के 99 ख़ूबसूरत नाम (अस्मा-उल-हुस्ना), हर नाम के अर्थ, व्याख्या और क़ुरआन में उसके आने की जगहों के साथ।",
+  search: "नाम खोजें...",
+  noResults: "कोई परिणाम नहीं मिला",
+  meaning: "अर्थ",
+  explanation: "व्याख्या",
+  inQuran: "क़ुरआन में",
+  englishNote: "अर्थ और व्याख्या अंग्रेज़ी में दिखाई गई है",
+  prev: "पिछला नाम",
+  next: "अगला नाम",
+  all: "सभी नाम",
+  nth: "99 में से नाम {n}",
+};
+
 /** Al-A'raf 7:180 (opening), verbatim from the app's Qur'an data. */
 export const NAMES_VERSE = "وَلِلَّهِ ٱلْأَسْمَآءُ ٱلْحُسْنَىٰ فَٱدْعُوهُ بِهَا";
 
-export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id };
+export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi };

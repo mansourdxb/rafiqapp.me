@@ -391,7 +391,51 @@ const id: Articles = {
   },
 };
 
-export const articles: Record<Locale, Articles> = { ar, en, ur, fa, ru, ms, tr, id };
+const hi: Articles = {
+  title: "लेख",
+  heroTitle: "पढ़ें, सीखें और ग़ौर करें",
+  heroAccent: "इस्लामी लेख",
+  heroSubtitle: "पैग़ंबर ﷺ की सीरत, नबियों के क़िस्से, नमाज़ का तरीक़ा, हज और उमरा, दुआएँ और तजवीद — वही जाँची हुई सामग्री जो आपको ऐप में मिलती है।",
+  metaDescription: "रफ़ीक़ अल-मुस्लिम के इस्लामी लेख: पैग़ंबर ﷺ की सीरत, नबियों के क़िस्से, इस्लाम के स्तंभ, नमाज़ का तरीक़ा, हज और उमरा, दुआएँ, रुक़्या और तजवीद।",
+  allCategories: "सभी श्रेणियाँ",
+  categoriesTitle: "श्रेणी के अनुसार देखें",
+  categoriesSubtitle: "कोई विषय चुनें और पढ़ना शुरू करें।",
+  recent: "हाल के लेख",
+  mostRead: "सबसे ज़्यादा पढ़े गए",
+  viewMore: "सभी श्रेणियाँ देखें",
+  count: "{n} लेख",
+  minRead: "{n} मिनट का पाठ",
+  readMore: "पढ़ें",
+  share: "शेयर करें",
+  shareOn: "{x} पर शेयर करें",
+  copyLink: "लिंक कॉपी करें",
+  copied: "लिंक कॉपी हो गया",
+  favAdd: "पसंदीदा में जोड़ें",
+  favRemove: "पसंदीदा से हटाएँ",
+  related: "संबंधित लेख",
+  moreIn: "{cat} में और",
+  getAppTitle: "इसे अपने साथ रखें",
+  getAppBody: "रफ़ीक़ अल-मुस्लिम ऐप में हर लेख ऑफ़लाइन पढ़ें, साथ में क़ुरआन, अज़कार और नमाज़ के समय — मुफ़्त और बिना विज्ञापन।",
+  home: "होम",
+  source: "स्रोत",
+  meaning: "अर्थ",
+  step: "चरण {n}",
+  searchPlaceholder: "लेख खोजें…",
+  noResults: "आपकी खोज से कोई लेख मेल नहीं खाता।",
+  cat: { fiqh: "स्तंभ और फ़िक़्ह", duas: "दुआओं का बाग़" },
+  catDesc: {
+    seerah: "पैग़ंबर ﷺ के जीवन के अहम पड़ाव, उनके जन्म से हज्जतुल-विदा तक।",
+    prophets: "नबियों और रसूलों (अलैहिमुस्सलाम) के क़िस्से, जैसे क़ुरआन में बयान हुए हैं।",
+    fiqh: "इस्लाम और ईमान के स्तंभ, और क़ुर्बानी के अहकाम, संक्षेप में।",
+    hajj: "उमरा और हज के चरण क्रम से, हर चरण पर पढ़ी जाने वाली दुआओं के साथ।",
+    prayer: "वुज़ू और नमाज़, क़दम-ब-क़दम।",
+    duas: "क़ुरआन और सुन्नत की दुआएँ, ज़रूरत के अनुसार क्रमबद्ध।",
+    ruqyah: "क़ुरआन और सुन्नत से रुक़्या की आयतें और दुआएँ।",
+    tajweed: "क़ुरआन की मिसालों के साथ तजवीद के नियम।",
+  },
+};
+
+export const articles: Record<Locale, Articles> = { ar, en, ur, fa, ru, ms, tr, id, hi };
 
 export const fill = (s: string, params: Record<string, string | number>) =>
   Object.entries(params).reduce((acc, [k, v]) => acc.replaceAll(`{${k}}`, String(v)), s);
