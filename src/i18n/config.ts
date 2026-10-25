@@ -15,7 +15,7 @@ export const nativeName: Record<Locale, string> = {
   ru: "Русский",
   ms: "Bahasa Melayu",
   tr: "Türkçe",
-  id: "Bahasa Indonesia",
+  id: "Indonesia", // same label as the app; "Bahasa Indonesia" wrapped in the two-column phone menu
   hi: "हिन्दी",
   bn: "বাংলা",
   ha: "Hausa",
