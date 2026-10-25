@@ -163,4 +163,40 @@ const id: CalendarMsg = {
   note: "Kalender Umm al-Qura. Awal bulan bisa berbeda satu hari tergantung rukyat hilal di negara Anda.",
 };
 
-export const calendarMsg: Record<Locale, CalendarMsg> = { ar, en, ur, fa, ru, ms, tr, id };
+const hi: CalendarMsg = {
+  title: "हिजरी कैलेंडर",
+  description:
+    "हिजरी (उम्मुल क़ुरा) कैलेंडर महीने-दर-महीने ग्रेगोरियन तारीख़ों के साथ, रमज़ान, दोनों ईदें, अरफ़ा और आशूरा जैसे इस्लामी मौक़े, और हिजरी–ग्रेगोरियन तारीख़ कन्वर्टर।",
+  prevMonth: "पिछला महीना",
+  nextMonth: "अगला महीना",
+  occasionsMonth: "इस महीने",
+  noOccasions: "इस महीने कोई मौक़ा नहीं",
+  converter: "तारीख़ कन्वर्टर",
+  gToH: "ग्रेगोरियन से हिजरी",
+  hToG: "हिजरी से ग्रेगोरियन",
+  day: "दिन",
+  month: "महीना",
+  year: "साल",
+  invalid: "यह तारीख़ उम्मुल क़ुरा कैलेंडर में मौजूद नहीं है।",
+  note: "उम्मुल क़ुरा कैलेंडर। आपके देश में चाँद दिखने के अनुसार महीने की शुरुआत एक दिन अलग हो सकती है।",
+};
+
+const bn: CalendarMsg = {
+  title: "হিজরি ক্যালেন্ডার",
+  description:
+    "হিজরি (উম্মুল কুরা) ক্যালেন্ডার মাসে মাসে ইংরেজি তারিখসহ, রমজান, দুই ঈদ, আরাফা ও আশুরার মতো ইসলামি উপলক্ষ, এবং হিজরি–ইংরেজি তারিখ রূপান্তরকারী।",
+  prevMonth: "আগের মাস",
+  nextMonth: "পরের মাস",
+  occasionsMonth: "এই মাসে",
+  noOccasions: "এই মাসে কোনো উপলক্ষ নেই",
+  converter: "তারিখ রূপান্তরকারী",
+  gToH: "ইংরেজি থেকে হিজরি",
+  hToG: "হিজরি থেকে ইংরেজি",
+  day: "দিন",
+  month: "মাস",
+  year: "বছর",
+  invalid: "এই তারিখটি উম্মুল কুরা ক্যালেন্ডারে নেই।",
+  note: "উম্মুল কুরা ক্যালেন্ডার। আপনার দেশে চাঁদ দেখার ওপর নির্ভর করে মাসের শুরু এক দিন আগে-পরে হতে পারে।",
+};
+
+export const calendarMsg: Record<Locale, CalendarMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn };

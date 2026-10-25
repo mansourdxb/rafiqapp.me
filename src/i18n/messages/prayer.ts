@@ -262,4 +262,62 @@ const id: PrayerMsg = {
   makkah: "Makkah",
 };
 
-export const prayerMsg: Record<Locale, PrayerMsg> = { ar, en, ur, fa, ru, ms, tr, id };
+const hi: PrayerMsg = {
+  title: "नमाज़ के समय",
+  description:
+    "आपके शहर के आज के नमाज़ के समय — फ़ज्र, सूर्योदय, ज़ुहर, अस्र, मग़रिब और इशा — अगली नमाज़ तक लाइव उलटी गिनती और प्रिंट करने लायक़ मासिक समय-सारणी के साथ।",
+  useLocation: "मेरी लोकेशन इस्तेमाल करें",
+  locating: "लोकेशन पता की जा रही है…",
+  searchPlaceholder: "शहर खोजें",
+  searching: "खोजा जा रहा है…",
+  noResults: "कोई जगह नहीं मिली",
+  searchError: "खोज अभी उपलब्ध नहीं है। कृपया दोबारा कोशिश करें।",
+  locError: "आपकी लोकेशन नहीं मिल सकी — अपना शहर खोजें। iPhone पर अनुमति देने के लिए: Settings → Privacy & Security → Location Services → आपका ब्राउज़र → While Using।",
+  defaultNotice: "मक्का के समय दिखाए जा रहे हैं। अपनी लोकेशन इस्तेमाल करें या अपना शहर खोजें।",
+  settings: "सेटिंग्स",
+  auto: "स्वचालित — {{method}}",
+  timeFormat: "समय का फ़ॉर्मेट",
+  h12: "12-घंटे",
+  h24: "24-घंटे",
+  highLat: "48° अक्षांश से ऊपर फ़ज्र और इशा के लिए अपने-आप संध्या-कोण (ट्वाइलाइट एंगल) का नियम इस्तेमाल होता है।",
+  tzNote: "समय {{city}} के स्थानीय समय ({{tz}}) के अनुसार हैं।",
+  monthly: "मासिक समय-सारणी",
+  print: "प्रिंट करें",
+  prevMonth: "पिछला महीना",
+  nextMonth: "अगला महीना",
+  thisMonth: "इस महीने",
+  date: "तारीख़",
+  location: "लोकेशन",
+  makkah: "मक्का",
+};
+
+const bn: PrayerMsg = {
+  title: "নামাজের সময়",
+  description:
+    "আপনার শহরের আজকের নামাজের সময় — ফজর, সূর্যোদয়, জোহর, আসর, মাগরিব ও এশা — পরবর্তী নামাজ পর্যন্ত লাইভ কাউন্টডাউন এবং প্রিন্ট করার উপযোগী মাসিক সময়সূচিসহ।",
+  useLocation: "আমার লোকেশন ব্যবহার করুন",
+  locating: "লোকেশন খোঁজা হচ্ছে…",
+  searchPlaceholder: "শহর খুঁজুন",
+  searching: "খোঁজা হচ্ছে…",
+  noResults: "কোনো জায়গা পাওয়া যায়নি",
+  searchError: "অনুসন্ধান এখন পাওয়া যাচ্ছে না। অনুগ্রহ করে আবার চেষ্টা করুন।",
+  locError: "আপনার লোকেশন পাওয়া যায়নি — আপনার শহর খুঁজুন। iPhone-এ অনুমতি দিতে: Settings → Privacy & Security → Location Services → আপনার ব্রাউজার → While Using।",
+  defaultNotice: "মক্কার সময় দেখানো হচ্ছে। আপনার লোকেশন ব্যবহার করুন বা আপনার শহর খুঁজুন।",
+  settings: "সেটিংস",
+  auto: "স্বয়ংক্রিয় — {{method}}",
+  timeFormat: "সময়ের ফরম্যাট",
+  h12: "12-ঘণ্টা",
+  h24: "24-ঘণ্টা",
+  highLat: "48° অক্ষাংশের ওপরে ফজর ও এশার জন্য স্বয়ংক্রিয়ভাবে গোধূলি-কোণের নিয়ম ব্যবহার করা হয়।",
+  tzNote: "সময়গুলো {{city}}-এর স্থানীয় সময় ({{tz}}) অনুযায়ী।",
+  monthly: "মাসিক সময়সূচি",
+  print: "প্রিন্ট করুন",
+  prevMonth: "আগের মাস",
+  nextMonth: "পরের মাস",
+  thisMonth: "এই মাস",
+  date: "তারিখ",
+  location: "লোকেশন",
+  makkah: "মক্কা",
+};
+
+export const prayerMsg: Record<Locale, PrayerMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn };

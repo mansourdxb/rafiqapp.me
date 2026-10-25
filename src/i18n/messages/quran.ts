@@ -289,7 +289,71 @@ const id: QuranMessages = {
   ayah: "Ayat",
 };
 
-export const quran: Record<Locale, QuranMessages> = { ar, en, ur, fa, ru, ms, tr, id };
+const hi: QuranMessages = {
+  title: "क़ुरआन मजीद",
+  description: "मदीना मुसहफ़ में क़ुरआन मजीद पृष्ठ दर पृष्ठ पढ़ें, अनुवाद, तफ़सीर और आयत-दर-आयत तिलावत के साथ।",
+  heroSub: "मदीना मुसहफ़, पृष्ठ दर पृष्ठ — किसी भी आयत पर टैप करें और उसका अनुवाद और तिलावत पाएँ।",
+  readerDescription: "मदीना मुसहफ़ का पृष्ठ {page} — सूरह {surah}। इसे अनुवाद, तफ़सीर और तिलावत के साथ पढ़ें।",
+  lastRead: "आप पृष्ठ {page} पर रुके थे",
+  startReading: "पढ़ना शुरू करें",
+  prevPage: "पिछला पृष्ठ",
+  nextPage: "अगला पृष्ठ",
+  goTo: "यहाँ जाएँ",
+  page: "पृष्ठ",
+  surah: "सूरह",
+  juz: "पारा",
+  go: "जाएँ",
+  twoPages: "दो पृष्ठ",
+  onePage: "एक पृष्ठ",
+  tafsir: "तफ़सीर",
+  play: "सुनें",
+  pause: "रोकें",
+  copy: "कॉपी करें",
+  copied: "कॉपी हो गया",
+  share: "शेयर करें",
+  close: "बंद करें",
+  reciter: "क़ारी",
+  loadingFont: "मुसहफ़ का पृष्ठ लोड हो रहा है…",
+  fontFailed: "मुसहफ़ का फ़ॉन्ट लोड नहीं हो सका, इसलिए आयतें सादी लिपि में दिखाई जा रही हैं।",
+  translationBy: "अनुवाद: {name}",
+  loadError: "लोड नहीं हो सका। अपना कनेक्शन जाँचें और फिर से कोशिश करें।",
+  tapHint: "अनुवाद और तिलावत के लिए किसी आयत पर टैप करें",
+  ayah: "आयत",
+};
+
+const bn: QuranMessages = {
+  title: "কুরআন মাজিদ",
+  description: "মদিনার মুসহাফে কুরআন মাজিদ পৃষ্ঠা ধরে পড়ুন, অনুবাদ, তাফসির ও আয়াত ধরে ধরে তিলাওয়াতসহ।",
+  heroSub: "মদিনার মুসহাফ, পৃষ্ঠা ধরে — যেকোনো আয়াতে চাপ দিন, এর অনুবাদ ও তিলাওয়াত পেয়ে যাবেন।",
+  readerDescription: "মদিনার মুসহাফের {page} নম্বর পৃষ্ঠা — সূরা {surah}। অনুবাদ, তাফসির ও তিলাওয়াতসহ পড়ুন।",
+  lastRead: "আপনি {page} নম্বর পৃষ্ঠায় থেমেছিলেন",
+  startReading: "পড়া শুরু করুন",
+  prevPage: "আগের পৃষ্ঠা",
+  nextPage: "পরের পৃষ্ঠা",
+  goTo: "যান",
+  page: "পৃষ্ঠা",
+  surah: "সূরা",
+  juz: "পারা",
+  go: "যান",
+  twoPages: "দুই পৃষ্ঠা",
+  onePage: "এক পৃষ্ঠা",
+  tafsir: "তাফসির",
+  play: "শুনুন",
+  pause: "বিরতি",
+  copy: "কপি করুন",
+  copied: "কপি হয়েছে",
+  share: "শেয়ার করুন",
+  close: "বন্ধ করুন",
+  reciter: "ক্বারী",
+  loadingFont: "মুসহাফের পৃষ্ঠা লোড হচ্ছে…",
+  fontFailed: "মুসহাফের ফন্ট লোড করা যায়নি, তাই আয়াতগুলো সাধারণ লিপিতে দেখানো হচ্ছে।",
+  translationBy: "অনুবাদ: {name}",
+  loadError: "লোড করা যায়নি। আপনার সংযোগ পরীক্ষা করে আবার চেষ্টা করুন।",
+  tapHint: "অনুবাদ ও তিলাওয়াতের জন্য যেকোনো আয়াতে চাপ দিন",
+  ayah: "আয়াত",
+};
+
+export const quran: Record<Locale, QuranMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn };
 
 export const fill = (s: string, params: Record<string, string | number>) =>
   Object.entries(params).reduce((acc, [k, v]) => acc.replaceAll(`{${k}}`, String(v)), s);
