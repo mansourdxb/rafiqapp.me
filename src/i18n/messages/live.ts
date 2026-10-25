@@ -93,4 +93,13 @@ export const live: Record<Locale, Live> = {
     madinahSrc: "সুন্নাহ টিভি",
     openYoutube: "YouTube-এ খুলুন",
   },
+  ha: {
+    title: "Watsa shirye-shirye kai tsaye",
+    subtitle: "Watsa shirye-shirye kai tsaye daga Masallacin Harami da Masallacin Annabi ta tashoshin hukuma biyu.",
+    makkah: "Masallacin Harami — Makka Mai Albarka",
+    madinah: "Masallacin Annabi — Madina Mai Haske",
+    makkahSrc: "Tashar Alƙur'ani Mai Girma",
+    madinahSrc: "Tashar Sunnar Annabi",
+    openYoutube: "Buɗe a YouTube",
+  },
 };

@@ -367,4 +367,37 @@ const bn: PlayerMessages = {
   langNames: { en: "ইংরেজি", fa: "ফারসি", az: "আজারবাইজানি", bs: "বসনীয়", ur: "উর্দু" },
 };
 
-export const player: Record<Locale, PlayerMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn };
+const ha: PlayerMessages = {
+  description: "Saurari Alƙur'ani Mai Girma daga bakin masu karatu sama da hamsin, aya bayan aya, yayin da kake duba shafin.",
+  subtitle: "Zaɓi mai karatu, sannan ka kunna cikakkiyar sura ko ka ci gaba daga kowace sura — zai ci gaba da kunnawa yayin da kake duba shafin.",
+  play: "Kunna",
+  pause: "Dakata",
+  prevAyah: "Aya ta baya",
+  nextAyah: "Aya ta gaba",
+  expand: "Buɗe na'urar kunnawa",
+  collapse: "Rage na'urar kunnawa",
+  close: "Tsayar kuma rufe",
+  repeat: "Maimaitawa",
+  repeatOff: "Babu maimaitawa",
+  repeatSurah: "Maimaita surar",
+  repeatAyah: "Maimaita ayar",
+  speed: "Saurin kunnawa",
+  playSurah: "Kunna surar",
+  playFromHere: "Kunna duka daga nan",
+  favourites: "Waɗanda aka fi so",
+  addFavourite: "Ƙara zuwa abubuwan da aka fi so",
+  removeFavourite: "Cire daga abubuwan da aka fi so",
+  allReciters: "Dukkan masu karatu",
+  nowPlaying: "Ana kunnawa yanzu",
+  loadError: "Ba a iya kunna wannan ayar ba. Duba haɗinka ka sake gwadawa.",
+  listen: "Saurara",
+  listenSurah: "Saurari {surah}",
+  listenPage: "Saurara daga wannan shafi",
+  ended: "Karatun ya ƙare",
+  changeReciter: "Canza mai karatu",
+  goToAyah: "Je zuwa aya",
+  surahs: "Surori",
+  langNames: { en: "Turanci", fa: "Farisanci", az: "Azarbaijanci", bs: "Bosniyanci", ur: "Urdu" },
+};
+
+export const player: Record<Locale, PlayerMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };

@@ -312,4 +312,33 @@ const bn: QiblaMsg = {
   noPlace: "আপনার লোকেশন এখনো সেট করা হয়নি। আপনার লোকেশন ব্যবহার করুন বা আপনার শহর খুঁজুন।",
 };
 
-export const qiblaMsg: Record<Locale, QiblaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn };
+const ha: QiblaMsg = {
+  title: "Inda alƙibla take",
+  description:
+    "Gano alƙibla daga duk inda kake: kusurwa daga arewa, nisa zuwa Ka'aba, kamfas kai tsaye a wayarka, rana da wata, inuwa da taswira.",
+  tabShadow: "Inuwa",
+  startCompass: "Fara kamfas kai tsaye",
+  compassOn: "Kamfas kai tsaye yana aiki — juya har sai kibiyar ta nuna sama",
+  noSensor: "Ba a sami na'urar kamfas a wannan na'ura ba. Yi amfani da kusurwa daga arewa da aka nuna a kan fuskar kamfas.",
+  denied: "An hana izinin motsi da fuskanta. Za ka iya ba da izini a saitunan mai binciken intanet ɗinka.",
+  desktopHint: "Arewa tana sama a fuskar kamfas. Buɗe wannan shafi a wayarka don amfani da kamfas kai tsaye.",
+  facing: "Kana fuskantar alƙibla",
+  azimuth: "Alƙibla (hanya)",
+  altitude: "Tsayi sama da sararin sama",
+  qiblaBearing: "Alƙibla",
+  shadowIntro:
+    "Kafa sanda ko alƙalami a tsaye a ƙasa mai daidai a cikin rana. A lokutan da ke ƙasa inuwarsa za ta daidaita daidai da alƙibla.",
+  shadowToward: "Inuwa tana nuna alƙibla",
+  shadowTowardHint: "Fuskanci hanyar inuwar, daga sandar zuwa ƙarshenta.",
+  shadowAway: "Rana tana a wajen alƙibla",
+  shadowAwayHint: "Fuskanci rana — inuwar tana nuna bayanka, nesa da alƙibla.",
+  shadowNone: "Rana ba ta daidaita da alƙibla a yau a wannan wuri ba. Yi amfani da kamfas ko taswira.",
+  shadowPassed: "ya wuce",
+  kaabaFact:
+    "Sau biyu a shekara — kusan 27–28 ga Mayu da ƙarfe 12:18 da 15–16 ga Yuli da ƙarfe 12:27 agogon Makka — rana tana tsayawa daidai sama da Ka'aba, kuma a duk inda ake rana kowace inuwa tana nuna nesa da alƙibla.",
+  mapNote: "Layin shi ne babban da'ira — mafi gajeriyar hanya zuwa Ka'aba.",
+  calibrate: "Daidaita",
+  noPlace: "Ba a saita wurinka ba tukuna. Yi amfani da wurinka ko ka nemi garinku.",
+};
+
+export const qiblaMsg: Record<Locale, QiblaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };

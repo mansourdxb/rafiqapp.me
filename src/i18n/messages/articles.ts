@@ -479,7 +479,51 @@ const bn: Articles = {
   },
 };
 
-export const articles: Record<Locale, Articles> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn };
+const ha: Articles = {
+  title: "Maƙaloli",
+  heroTitle: "Karanta, koya kuma yi tunani",
+  heroAccent: "Maƙalolin Musulunci",
+  heroSubtitle: "Sirar Annabi ﷺ, labaran annabawa, yadda ake sallah, aikin Hajji da Umara, addu'o'i da tajwidi — abubuwan da aka tantance iri ɗaya da kuke samu a cikin manhajar.",
+  metaDescription: "Maƙalolin Musulunci daga Rafiq Al-Muslim: Sirar Annabi ﷺ, labaran annabawa, rukunan Musulunci, yadda ake sallah, aikin Hajji da Umara, addu'o'i, ruƙiyya da tajwidi.",
+  allCategories: "Dukkan rukunoni",
+  categoriesTitle: "Duba ta rukuni",
+  categoriesSubtitle: "Zaɓi wani batu ka fara karatu.",
+  recent: "Sababbin maƙaloli",
+  mostRead: "Waɗanda aka fi karantawa",
+  viewMore: "Duba dukkan rukunoni",
+  count: "Maƙaloli {n}",
+  minRead: "Karatun minti {n}",
+  readMore: "Karanta",
+  share: "Raba",
+  shareOn: "Raba a {x}",
+  copyLink: "Kwafi mahaɗi",
+  copied: "An kwafi mahaɗin",
+  favAdd: "Ƙara zuwa abubuwan da aka fi so",
+  favRemove: "Cire daga abubuwan da aka fi so",
+  related: "Maƙaloli masu alaƙa",
+  moreIn: "Ƙari a cikin {cat}",
+  getAppTitle: "Ka riƙe shi a koyaushe",
+  getAppBody: "Karanta kowace maƙala ba tare da intanet ba a cikin manhajar Rafiq Al-Muslim, tare da Alƙur'ani, azkar da lokutan sallah — kyauta, babu talla.",
+  home: "Gida",
+  source: "Madogara",
+  meaning: "Ma'ana",
+  step: "Mataki na {n}",
+  searchPlaceholder: "Nemi maƙaloli…",
+  noResults: "Babu maƙalar da ta dace da abin da kuka nema.",
+  cat: { fiqh: "Rukunai da Fiƙihu", duas: "Lambun Addu'o'i" },
+  catDesc: {
+    seerah: "Lokuta daga rayuwar Annabi ﷺ, tun daga haihuwarsa har zuwa Hajjin Bankwana.",
+    prophets: "Labaran annabawa da manzanni, amincin Allah ya tabbata a gare su, kamar yadda Alƙur'ani ya ba da su.",
+    fiqh: "Rukunan Musulunci da na Imani, da hukunce-hukuncen layya, a taƙaice.",
+    hajj: "Matakan Umara da aikin Hajji bisa jeri, tare da abin da ake faɗa a kowane mataki.",
+    prayer: "Alwala da sallah, mataki-mataki.",
+    duas: "Addu'o'i daga Alƙur'ani da Sunna, an tsara su bisa buƙata.",
+    ruqyah: "Ayoyi da addu'o'in ruƙiyya daga Alƙur'ani da Sunna.",
+    tajweed: "Ƙa'idojin tajwidi tare da misalai daga Alƙur'ani.",
+  },
+};
+
+export const articles: Record<Locale, Articles> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };
 
 export const fill = (s: string, params: Record<string, string | number>) =>
   Object.entries(params).reduce((acc, [k, v]) => acc.replaceAll(`{${k}}`, String(v)), s);

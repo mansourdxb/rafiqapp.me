@@ -49,9 +49,28 @@ export function formatHijri(lang: Locale, h: Hijri) {
   return `${localDigits(lang, h.hd)} ${hijriMonthName(lang, h.hm)} ${localDigits(lang, h.hy)} ${appT(lang, "hijri.suffix")}`;
 }
 
+// Hausa month and weekday names (CLDR). Chrome's Intl has no Hausa (it falls back to English), so Hausa
+// dates are always built from these — the same on the server and in every browser.
+const HA_MONTHS = ["Janairu", "Faburairu", "Maris", "Afirilu", "Mayu", "Yuni", "Yuli", "Agusta", "Satumba", "Oktoba", "Nuwamba", "Disamba"];
+const HA_MONTHS_SHORT = ["Jan", "Fab", "Mar", "Afi", "May", "Yun", "Yul", "Agu", "Sat", "Okt", "Nuw", "Dis"];
+const HA_DAYS = ["Lahadi", "Litinin", "Talata", "Laraba", "Alhamis", "Juma'a", "Asabar"];
+const HA_DAYS_SHORT = ["Lah", "Lit", "Tal", "Lar", "Alh", "Jum", "Asa"];
+
+/** "Lahadi, 25 Oktoba, 2026" — the parts asked for in `opts`, in CLDR's Hausa order. */
+function formatHausa(g: Ymd, opts: Intl.DateTimeFormatOptions) {
+  const wd = utcNoon(g.y, g.m, g.d).getUTCDay();
+  const day = opts.day ? String(g.d) : "";
+  const month = opts.month === "short" ? HA_MONTHS_SHORT[g.m - 1] : opts.month ? HA_MONTHS[g.m - 1] : "";
+  const dm = [day, month].filter(Boolean).join(" ");
+  const date = [dm, opts.year ? String(g.y) : ""].filter(Boolean).join(day ? ", " : " ");
+  const weekday = opts.weekday === "short" ? HA_DAYS_SHORT[wd] : opts.weekday ? HA_DAYS[wd] : "";
+  return [weekday, date].filter(Boolean).join(", ");
+}
+
 /** Gregorian date in the site language (Latin digits from Intl, then the app's digit style). */
 export function formatGregorian(lang: Locale, g: Ymd, opts: Intl.DateTimeFormatOptions = { day: "numeric", month: "long", year: "numeric" }) {
   try {
+    if (lang === "ha") return formatHausa(g, opts);
     return localDigits(lang, new Intl.DateTimeFormat(`${lang}-u-nu-latn`, { ...opts, timeZone: "UTC" }).format(utcNoon(g.y, g.m, g.d)));
   } catch {
     return `${g.y}-${g.m}-${g.d}`;

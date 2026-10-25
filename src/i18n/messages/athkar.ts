@@ -389,7 +389,42 @@ const bn: AthkarMessages = {
   cats: { morning: "সকালের আজকার", evening: "সন্ধ্যার আজকার", afterPrayer: "নামাজের পরের আজকার", sleep: "ঘুমানোর আজকার", wake: "ঘুম থেকে ওঠার আজকার" },
 };
 
-export const athkar: Record<Locale, AthkarMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn };
+const ha: AthkarMessages = {
+  title: "Azkar",
+  subtitle: "Lalle, da ambaton Allah ne zukata suke samun natsuwa",
+  description: "Azkar na safe da na yamma, na bayan sallah, na barci da na farkawa da dukkan babukan Hisnul Muslim — tare da mai ƙirga maimaitawa, sauti da fassara.",
+  daily: "Azkar na kullum",
+  hisn: "Hisnul Muslim",
+  hisnSub: "Azkar daga ingantacciyar Sunnar Annabi ﷺ",
+  tasbih: "Tasbihi",
+  tasbihSub: "Ka tsarkake Allah kuma ka riƙe adadinka",
+  search: "Nemi a cikin Hisnul Muslim...",
+  noResults: "Babu sakamakon nema",
+  count: "Zikiri {count}",
+  readCount: "An karanta {done} cikin {total}",
+  tashkeel: "Wasula (harakoki)",
+  fontSize: "Girman rubutu",
+  showDalil: "Nuna dalili",
+  hideDalil: "Ɓoye dalili",
+  repeat: "Maimaitawa",
+  times: "sau",
+  tapToCount: "Danna don ƙirgawa",
+  listen: "Saurara",
+  stop: "Tsaya",
+  copy: "Kwafa",
+  copied: "An kwafa",
+  share: "Raba",
+  reset: "Sake farawa daga sifili",
+  done: "An gama",
+  allDone: "Ka kammala waɗannan azkar — Allah Ya karɓa daga gare ka",
+  allDoneSub: "An ajiye ci gaban yau a wannan na'urar",
+  restart: "Sake farawa",
+  back: "Azkar",
+  readerDescription: "{title} — cikakken rubutun Larabci tare da fassara, mai ƙirga maimaitawa da sauti.",
+  cats: { morning: "Azkar na safe", evening: "Azkar na yamma", afterPrayer: "Azkar na bayan sallah", sleep: "Azkar na barci", wake: "Azkar na farkawa" },
+};
+
+export const athkar: Record<Locale, AthkarMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };
 
 export const fill = (s: string, p: Record<string, string | number>) =>
   s.replace(/\{(\w+)\}/g, (_, k: string) => String(p[k] ?? ""));

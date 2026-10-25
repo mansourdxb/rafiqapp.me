@@ -108,4 +108,14 @@ const bn: ImsakiyaMsg = {
   started: "রমজান মোবারক",
 };
 
-export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn };
+const ha: ImsakiyaMsg = {
+  description:
+    "Jadawalin Ramadan (imsakiya) na garinku: Imsak, Asuba, Azahar, La'asar, Magariba (buɗa baki) da Isha na kowace rana ta Ramadan, a shirye don bugawa.",
+  theme: "Launi",
+  themes: { night: "Dare", sunset: "Faɗuwar rana", day: "Rana" },
+  imsakNote: "Ana nuna Imsak minti 10 kafin Asuba, don taka-tsantsan; azumi yana farawa ne da Asuba.",
+  daysLeft: "Ramadan zai fara nan da kwanaki {{n}}",
+  started: "Barka da Ramadan",
+};
+
+export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };

@@ -401,7 +401,44 @@ const bn: HadithMessages = {
   chapterMeta: "{chapter} — {book}: আরবিতে অনুবাদসহ {n}টি হাদিস।",
 };
 
-export const hadith: Record<Locale, HadithMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn };
+const ha: HadithMessages = {
+  books: {
+    bukhari: "Sahihul Bukhari",
+    muslim: "Sahihu Muslim",
+    abudawud: "Sunan Abi Dawud",
+    tirmidhi: "Jami'ut Tirmizi",
+    nasai: "Sunan An-Nasa'i",
+    ibnmajah: "Sunan Ibn Majah",
+    malik: "Muwadda Malik",
+    darimi: "Sunan Ad-Darimi",
+    ahmed: "Musnad Ahmad",
+  },
+  metaTitle: "Hadisi — littattafai tara",
+  metaDescription: "Karanta Sahihul Bukhari, Sahihu Muslim da sauran littattafan hadisi da Larabci tare da fassarar Turanci, ka yi nema a cikinsu kuma ka ajiye waɗanda ka fi so.",
+  intro: "Littattafan Sunna tara, da Larabci tare da fassarar Turanci. An haskaka maganganun Annabi ﷺ da kore.",
+  hadiths: "Hadisai",
+  kitabs: "Littattafai",
+  hadithN: "Hadisi na {n}",
+  minChars: "Rubuta aƙalla haruffa 2 don yin nema",
+  searchLoading: "Ana loda bayanan nema…",
+  searchHintEn: "Nemi da Larabci ko a cikin fassarar Turanci",
+  noFavorites: "Babu waɗanda ka fi so tukuna. Danna alamar shafi a kan kowane hadisi don ajiye shi a nan.",
+  addFavorite: "Ƙara zuwa abubuwan da aka fi so",
+  removeFavorite: "Cire daga abubuwan da aka fi so",
+  copy: "Kwafa",
+  share: "Raba",
+  showMore: "Nuna ƙari",
+  shownOf: "{a} cikin {b}",
+  prev: "Na baya",
+  next: "Na gaba",
+  allBooks: "Dukkan littattafan hadisi",
+  noTranslation: "Wannan littafin ba shi da fassara tukuna — rubutun Larabci kawai.",
+  shareVia: "ta manhajar Rafiq Al-Muslim",
+  bookMeta: "Karanta {book}: hadisai {n} a cikin littattafai {k}, da Larabci tare da fassara.",
+  chapterMeta: "{chapter} — {book}: hadisai {n} da Larabci tare da fassara.",
+};
+
+export const hadith: Record<Locale, HadithMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };
 
 /** "{n} of {b}" → filled in. */
 export function fill(s: string, p: Record<string, string | number>) {

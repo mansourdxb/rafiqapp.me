@@ -8,12 +8,14 @@ import { localePath, type Locale } from "@/i18n/config";
 import { appT } from "@/i18n/app";
 import { auth as authMsgs } from "@/i18n/messages/auth";
 import { common } from "@/i18n/messages/common";
+import { formatGregorian, ymdOf } from "@/lib/calendar/hijri";
 import { localDigits } from "@/lib/digits";
 import { authErrorMessage, getSyncedData, signOut, updateDisplayName, useAuth, type SyncedData } from "@/lib/auth";
 import { Avatar, displayName } from "./Avatar";
 
 const fmtDate = (lang: Locale, v: string | number) => {
   try {
+    if (lang === "ha") return formatGregorian(lang, ymdOf(new Date(v)));
     return new Intl.DateTimeFormat(`${lang}-u-nu-${lang === "ar" || lang === "fa" || lang === "ur" ? "arab" : "latn"}`, { year: "numeric", month: "long", day: "numeric" }).format(new Date(v));
   } catch {
     return "";

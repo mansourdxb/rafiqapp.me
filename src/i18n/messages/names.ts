@@ -183,4 +183,20 @@ const bn: NamesMessages = {
   nth: "99টির মধ্যে {n} নম্বর নাম",
 };
 
-export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn };
+const ha: NamesMessages = {
+  title: "Sunayen Allah 99",
+  verseRef: "Al-A'raf 7:180",
+  description: "Sunayen Allah Kyawawa 99 (Asma'ul Husna) tare da ma'ana da bayanin kowane suna da inda ya zo a cikin Alƙur'ani.",
+  search: "Nemi sunaye...",
+  noResults: "Babu sakamakon nema",
+  meaning: "Ma'ana",
+  explanation: "Bayani",
+  inQuran: "A cikin Alƙur'ani",
+  englishNote: "Ana nuna ma'ana da bayani da Turanci",
+  prev: "Sunan da ya gabata",
+  next: "Suna na gaba",
+  all: "Dukkan sunaye",
+  nth: "Suna na {n} cikin 99",
+};
+
+export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };

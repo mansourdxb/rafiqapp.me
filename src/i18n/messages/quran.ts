@@ -353,7 +353,39 @@ const bn: QuranMessages = {
   ayah: "আয়াত",
 };
 
-export const quran: Record<Locale, QuranMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn };
+const ha: QuranMessages = {
+  title: "Alƙur'ani Mai Girma",
+  description: "Karanta Alƙur'ani Mai Girma a Mushafin Madina, shafi bayan shafi, tare da fassara, tafsiri da karatun aya bayan aya.",
+  heroSub: "Mushafin Madina, shafi bayan shafi — danna kowace aya don fassararta da karatunta.",
+  readerDescription: "Shafi na {page} na Mushafin Madina — Suratu {surah}. Karanta shi tare da fassara, tafsiri da karatu.",
+  lastRead: "Ka tsaya a shafi na {page}",
+  startReading: "Fara karatu",
+  prevPage: "Shafin da ya gabata",
+  nextPage: "Shafi na gaba",
+  goTo: "Je zuwa",
+  page: "Shafi",
+  surah: "Sura",
+  juz: "Izu",
+  go: "Je",
+  twoPages: "Shafuka biyu",
+  onePage: "Shafi ɗaya",
+  tafsir: "Tafsiri",
+  play: "Saurara",
+  pause: "Dakata",
+  copy: "Kwafa",
+  copied: "An kwafa",
+  share: "Raba",
+  close: "Rufe",
+  reciter: "Mai karatu",
+  loadingFont: "Ana loda shafin Mushafi…",
+  fontFailed: "Ba a iya loda rubutun Mushafi ba, don haka ana nuna ayoyin da rubutu na yau da kullum.",
+  translationBy: "Fassara: {name}",
+  loadError: "Ba a iya lodawa ba. Duba haɗinka ka sake gwadawa.",
+  tapHint: "Danna aya don fassararta da karatunta",
+  ayah: "Aya",
+};
+
+export const quran: Record<Locale, QuranMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };
 
 export const fill = (s: string, params: Record<string, string | number>) =>
   Object.entries(params).reduce((acc, [k, v]) => acc.replaceAll(`{${k}}`, String(v)), s);

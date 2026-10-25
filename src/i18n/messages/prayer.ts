@@ -320,4 +320,33 @@ const bn: PrayerMsg = {
   makkah: "মক্কা",
 };
 
-export const prayerMsg: Record<Locale, PrayerMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn };
+const ha: PrayerMsg = {
+  title: "Lokutan sallah",
+  description:
+    "Lokutan sallah na yau a garinku — Asuba, fitowar rana, Azahar, La'asar, Magariba da Isha — tare da ƙirgar lokaci kai tsaye zuwa sallah mai zuwa da jadawalin wata da za a iya bugawa.",
+  useLocation: "Yi amfani da wurina",
+  locating: "Ana gano wurinka…",
+  searchPlaceholder: "Nemi gari",
+  searching: "Ana nema…",
+  noResults: "Ba a sami wani wuri ba",
+  searchError: "Nema ba ya aiki a yanzu. Don Allah sake gwadawa.",
+  locError: "Ba a iya samun wurinka ba — nemi garinku. Don ba da izini a iPhone: Settings → Privacy & Security → Location Services → mai binciken intanet ɗinka → While Using.",
+  defaultNotice: "Ana nuna lokutan Makka. Yi amfani da wurinka ko ka nemi garinku.",
+  settings: "Saituna",
+  auto: "Ta atomatik — {{method}}",
+  timeFormat: "Tsarin lokaci",
+  h12: "Awa 12",
+  h24: "Awa 24",
+  highLat: "Sama da layin latitude 48°, Asuba da Isha suna amfani da ƙa'idar kusurwar magariba ta atomatik.",
+  tzNote: "Lokutan suna bisa agogon {{city}} ({{tz}}).",
+  monthly: "Jadawalin wata",
+  print: "Buga",
+  prevMonth: "Watan da ya gabata",
+  nextMonth: "Wata mai zuwa",
+  thisMonth: "Wannan wata",
+  date: "Kwanan wata",
+  location: "Wuri",
+  makkah: "Makka",
+};
+
+export const prayerMsg: Record<Locale, PrayerMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha };
