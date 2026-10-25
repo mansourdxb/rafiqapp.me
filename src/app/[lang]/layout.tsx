@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
-import { Almarai, Noto_Sans_Arabic, Noto_Sans_Devanagari, Roboto } from "next/font/google";
+import { Almarai, Noto_Sans_Arabic, Noto_Sans_Bengali, Noto_Sans_Devanagari, Roboto } from "next/font/google";
 import "../globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -16,6 +16,8 @@ const almarai = Almarai({ subsets: ["arabic"], weight: ["300", "400", "700", "80
 const notoAr = Noto_Sans_Arabic({ subsets: ["arabic"], weight: ["400", "500", "700"], variable: "--font-noto-ar", display: "swap", preload: false });
 // Hindi (Devanagari) — Roboto has no Devanagari letters.
 const notoDeva = Noto_Sans_Devanagari({ subsets: ["devanagari"], weight: ["400", "500", "700", "900"], variable: "--font-noto-deva", display: "swap", preload: false });
+// Bengali (Bengali script) — Roboto has no Bengali letters.
+const notoBeng = Noto_Sans_Bengali({ subsets: ["bengali"], weight: ["400", "500", "700", "900"], variable: "--font-noto-beng", display: "swap", preload: false });
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -63,7 +65,7 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
   if (!isLocale(lang)) notFound();
   const l = lang as Locale;
   return (
-    <html lang={l} dir={dir(l)} className={`${roboto.variable} ${almarai.variable} ${notoAr.variable} ${notoDeva.variable}`} suppressHydrationWarning>
+    <html lang={l} dir={dir(l)} className={`${roboto.variable} ${almarai.variable} ${notoAr.variable} ${notoDeva.variable} ${notoBeng.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>

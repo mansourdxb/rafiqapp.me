@@ -167,4 +167,20 @@ const hi: NamesMessages = {
 /** Al-A'raf 7:180 (opening), verbatim from the app's Qur'an data. */
 export const NAMES_VERSE = "وَلِلَّهِ ٱلْأَسْمَآءُ ٱلْحُسْنَىٰ فَٱدْعُوهُ بِهَا";
 
-export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi };
+const bn: NamesMessages = {
+  title: "আল্লাহর 99টি নাম",
+  verseRef: "আল-আরাফ 7:180",
+  description: "আল্লাহর 99টি সুন্দর নাম (আসমাউল হুসনা), প্রতিটি নামের অর্থ, ব্যাখ্যা এবং কুরআনে তার উল্লেখের স্থানসহ।",
+  search: "নাম খুঁজুন...",
+  noResults: "কোনো ফলাফল পাওয়া যায়নি",
+  meaning: "অর্থ",
+  explanation: "ব্যাখ্যা",
+  inQuran: "কুরআনে",
+  englishNote: "অর্থ ও ব্যাখ্যা ইংরেজিতে দেখানো হয়েছে",
+  prev: "আগের নাম",
+  next: "পরের নাম",
+  all: "সব নাম",
+  nth: "99টির মধ্যে {n} নম্বর নাম",
+};
+
+export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn };

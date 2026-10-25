@@ -84,4 +84,13 @@ export const live: Record<Locale, Live> = {
     madinahSrc: "सुन्नत टीवी",
     openYoutube: "YouTube पर खोलें",
   },
+  bn: {
+    title: "সরাসরি সম্প্রচার",
+    subtitle: "মক্কার মসজিদুল হারাম ও মদিনার মসজিদে নববী থেকে অফিসিয়াল চ্যানেলের মাধ্যমে সরাসরি সম্প্রচার।",
+    makkah: "মসজিদুল হারাম — মক্কা",
+    madinah: "মসজিদে নববী — মদিনা",
+    makkahSrc: "কুরআন টিভি",
+    madinahSrc: "সুন্নাহ টিভি",
+    openYoutube: "YouTube-এ খুলুন",
+  },
 };

@@ -334,4 +334,37 @@ const hi: PlayerMessages = {
   langNames: { en: "अंग्रेज़ी", fa: "फ़ारसी", az: "अज़रबैजानी", bs: "बोस्नियाई", ur: "उर्दू" },
 };
 
-export const player: Record<Locale, PlayerMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi };
+const bn: PlayerMessages = {
+  description: "সাইট ব্রাউজ করার সময়ও 50-এর বেশি ক্বারীর কণ্ঠে কুরআন মাজিদ আয়াত ধরে ধরে শুনুন।",
+  subtitle: "একজন ক্বারী বেছে নিন, তারপর পুরো সূরা চালান বা যেকোনো সূরা থেকে শুনতে থাকুন — সাইটে ঘুরে বেড়ানোর সময়ও তিলাওয়াত চলতে থাকে।",
+  play: "চালান",
+  pause: "বিরতি",
+  prevAyah: "আগের আয়াত",
+  nextAyah: "পরের আয়াত",
+  expand: "প্লেয়ার খুলুন",
+  collapse: "প্লেয়ার ছোট করুন",
+  close: "থামিয়ে বন্ধ করুন",
+  repeat: "পুনরাবৃত্তি",
+  repeatOff: "পুনরাবৃত্তি বন্ধ",
+  repeatSurah: "সূরা পুনরাবৃত্তি",
+  repeatAyah: "আয়াত পুনরাবৃত্তি",
+  speed: "প্লেব্যাকের গতি",
+  playSurah: "সূরা চালান",
+  playFromHere: "এখান থেকে সব চালান",
+  favourites: "প্রিয়",
+  addFavourite: "প্রিয় তালিকায় যোগ করুন",
+  removeFavourite: "প্রিয় তালিকা থেকে সরান",
+  allReciters: "সব ক্বারী",
+  nowPlaying: "এখন চলছে",
+  loadError: "এই আয়াতটি চালানো যায়নি। আপনার সংযোগ পরীক্ষা করে আবার চেষ্টা করুন।",
+  listen: "শুনুন",
+  listenSurah: "সূরা {surah} শুনুন",
+  listenPage: "এই পৃষ্ঠা থেকে শুনুন",
+  ended: "তিলাওয়াত শেষ হয়েছে",
+  changeReciter: "ক্বারী পরিবর্তন করুন",
+  goToAyah: "আয়াতে যান",
+  surahs: "সূরাসমূহ",
+  langNames: { en: "ইংরেজি", fa: "ফারসি", az: "আজারবাইজানি", bs: "বসনীয়", ur: "উর্দু" },
+};
+
+export const player: Record<Locale, PlayerMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn };

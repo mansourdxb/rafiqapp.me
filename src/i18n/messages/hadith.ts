@@ -364,7 +364,44 @@ const hi: HadithMessages = {
   chapterMeta: "{chapter} — {book}: अरबी में अनुवाद के साथ {n} हदीसें।",
 };
 
-export const hadith: Record<Locale, HadithMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi };
+const bn: HadithMessages = {
+  books: {
+    bukhari: "সহিহ বুখারি",
+    muslim: "সহিহ মুসলিম",
+    abudawud: "সুনানে আবু দাউদ",
+    tirmidhi: "জামে তিরমিজি",
+    nasai: "সুনানে নাসায়ি",
+    ibnmajah: "সুনানে ইবনে মাজাহ",
+    malik: "মুয়াত্তা মালিক",
+    darimi: "সুনানে দারেমি",
+    ahmed: "মুসনাদে আহমাদ",
+  },
+  metaTitle: "হাদিস — নয়টি গ্রন্থ",
+  metaDescription: "সহিহ বুখারি, সহিহ মুসলিম ও অন্যান্য হাদিস গ্রন্থ আরবিতে ইংরেজি অনুবাদসহ পড়ুন, এগুলোতে খুঁজুন এবং প্রিয় হাদিসগুলো সংরক্ষণ করুন।",
+  intro: "সুন্নাহর নয়টি গ্রন্থ, আরবিতে ইংরেজি অনুবাদসহ। নবী ﷺ-এর বাণী সবুজ রঙে দেখানো হয়েছে।",
+  hadiths: "হাদিস",
+  kitabs: "অধ্যায়",
+  hadithN: "হাদিস {n}",
+  minChars: "খুঁজতে অন্তত 2টি অক্ষর লিখুন",
+  searchLoading: "অনুসন্ধান সূচি লোড হচ্ছে…",
+  searchHintEn: "আরবিতে বা ইংরেজি অনুবাদে খুঁজুন",
+  noFavorites: "এখনো কোনো প্রিয় হাদিস নেই। যেকোনো হাদিসের বুকমার্কে চাপ দিয়ে সেটি এখানে সংরক্ষণ করুন।",
+  addFavorite: "প্রিয় তালিকায় যোগ করুন",
+  removeFavorite: "প্রিয় তালিকা থেকে সরান",
+  copy: "কপি করুন",
+  share: "শেয়ার করুন",
+  showMore: "আরও দেখান",
+  shownOf: "{b}-এর মধ্যে {a}",
+  prev: "আগের",
+  next: "পরের",
+  allBooks: "সব হাদিস গ্রন্থ",
+  noTranslation: "এই গ্রন্থের এখনো কোনো অনুবাদ নেই — শুধু আরবি পাঠ।",
+  shareVia: "রফিক আল-মুসলিম অ্যাপের মাধ্যমে",
+  bookMeta: "{book} পড়ুন: {k}টি অধ্যায়ে {n}টি হাদিস, আরবিতে অনুবাদসহ।",
+  chapterMeta: "{chapter} — {book}: আরবিতে অনুবাদসহ {n}টি হাদিস।",
+};
+
+export const hadith: Record<Locale, HadithMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn };
 
 /** "{n} of {b}" → filled in. */
 export function fill(s: string, p: Record<string, string | number>) {
