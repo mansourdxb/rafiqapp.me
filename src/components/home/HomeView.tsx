@@ -11,6 +11,7 @@ import { REVIEWS } from "@/data/reviews";
 import { ContactForm } from "./ContactForm";
 import { HeroArt } from "./HeroArt";
 import { HeroSlider } from "./HeroSlider";
+import { HomeDevices } from "./HomeDevices";
 import { HomeArticles } from "./HomeArticles";
 import { HomePrayer } from "./HomePrayer";
 
@@ -96,6 +97,8 @@ export function HomeView({ lang }: { lang: Locale }) {
           <StoreBadges lang={lang} className="mt-5" />
         </div>
       </section>
+
+      <HomeDevices lang={lang} siteName={c.siteName} />
 
       {/* stars band + about */}
       <section className="relative bg-white dark:bg-canvas">
