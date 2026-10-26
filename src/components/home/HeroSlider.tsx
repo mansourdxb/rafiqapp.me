@@ -8,6 +8,12 @@ import type { Home } from "@/i18n/messages/home";
 export function HeroSlider({ slides, getApp, getAppHref, badges, art }: { slides: Home["hero"]["slides"]; getApp: string; getAppHref: string; badges: ReactNode; art: ReactNode[] }) {
   const [i, setI] = useState(0);
   const [paused, setPaused] = useState(false);
+  // only the first slide's phone screens load with the page; the others mount a moment later
+  const [later, setLater] = useState(false);
+  useEffect(() => {
+    const id = setTimeout(() => setLater(true), 2500);
+    return () => clearTimeout(id);
+  }, []);
   useEffect(() => {
     if (paused) return;
     const id = setInterval(() => setI((v) => (v + 1) % slides.length), 7000);
@@ -38,7 +44,7 @@ export function HeroSlider({ slides, getApp, getAppHref, badges, art }: { slides
               </Link>
               <div className="mt-3 flex justify-center lg:justify-start">{badges}</div>
             </div>
-            <div className="order-1 lg:order-2">{art[k]}</div>
+            <div className="order-1 lg:order-2">{k === 0 || k === i || later ? art[k] : <div className="mx-auto mb-2 aspect-[1.2] w-full max-w-[580px]" />}</div>
           </div>
         ))}
       </div>
