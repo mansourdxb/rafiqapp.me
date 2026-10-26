@@ -100,4 +100,12 @@ export const promo: Record<Locale, Promo> = {
     close: "Fermer",
     later: "Plus tard",
   },
+  zh: {
+    before: "立即下载 ",
+    name: "Rafiq Al-Muslim",
+    after: " 应用！",
+    body: "用《古兰经》、记念词、都阿和礼拜时间度过一天中最美好的时光。Rafiq Al-Muslim 助您功修——立即下载，免费，无广告。",
+    close: "关闭",
+    later: "以后再说",
+  },
 };

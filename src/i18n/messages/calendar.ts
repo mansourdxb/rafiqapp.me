@@ -235,4 +235,22 @@ const fr: CalendarMsg = {
   note: "Calendrier Umm al-Qura. Le début d’un mois peut varier d’un jour selon l’observation du croissant dans votre pays.",
 };
 
-export const calendarMsg: Record<Locale, CalendarMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };
+const zh: CalendarMsg = {
+  title: "伊斯兰历",
+  description:
+    "逐月查看伊斯兰历（乌姆古拉历）及对应的公历日期，包括斋月、两大节日、阿拉法特日和阿舒拉日等伊斯兰节日，还有伊斯兰历与公历的日期换算。",
+  prevMonth: "上个月",
+  nextMonth: "下个月",
+  occasionsMonth: "本月",
+  noOccasions: "本月没有节日",
+  converter: "日期换算",
+  gToH: "公历转伊斯兰历",
+  hToG: "伊斯兰历转公历",
+  day: "日",
+  month: "月",
+  year: "年",
+  invalid: "乌姆古拉历中没有这一天。",
+  note: "乌姆古拉历。根据您所在国家的见月情况，月初可能相差一天。",
+};
+
+export const calendarMsg: Record<Locale, CalendarMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };

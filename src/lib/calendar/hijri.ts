@@ -44,9 +44,15 @@ export function todayYmd(): Ymd {
 
 export const hijriMonthName = (lang: Locale, hm: number) => appT(lang, `hijri.month${hm}`);
 
-/** "13 Jumada al-Ula 1448 AH" with the app's month names and suffix. */
+/** "13 Jumada al-Ula 1448 AH" with the app's month names and suffix ("伊历 1448 年主马达·敏外鲁月 13 日" in Chinese, as the app). */
 export function formatHijri(lang: Locale, h: Hijri) {
+  if (lang === "zh") return `${hijriYear(lang, h.hy)}${hijriMonthName(lang, h.hm)} ${h.hd} 日`;
   return `${localDigits(lang, h.hd)} ${hijriMonthName(lang, h.hm)} ${localDigits(lang, h.hy)} ${appT(lang, "hijri.suffix")}`;
+}
+
+/** "1448 AH" ("伊历 1448 年" in Chinese, as the app). */
+export function hijriYear(lang: Locale, hy: number) {
+  return lang === "zh" ? `${appT(lang, "hijri.suffix")} ${hy} 年` : `${localDigits(lang, hy)} ${appT(lang, "hijri.suffix")}`;
 }
 
 // Hausa month and weekday names (CLDR). Chrome's Intl has no Hausa (it falls back to English), so Hausa

@@ -4,7 +4,9 @@
  * ta marbuta, hamza seats), Turkish dotless ı = i, Russian ё = е, Hindi with or without nuqta (क़ = क),
  * Bengali as the app folds it (য় = য, ড় = ড, ঢ় = ঢ, no chandrabindu, ী = ি, ূ = ু),
  * Hausa hooked letters as plain ones (ɓ = b, ɗ = d, ƙ = k, ƴ = y) and no apostrophes (Qur'ani = Qurani),
- * French ligatures spelled out (cœur = coeur).
+ * French ligatures spelled out (cœur = coeur), and no spaces next to Chinese characters (Chinese has no
+ * word spaces, and the site's text puts a space between Chinese and digits: "第 2 章" = "第2章"), so a
+ * Chinese query matches as a plain substring.
  */
 export function searchFold(s = ""): string {
   return s
@@ -36,5 +38,7 @@ export function searchFold(s = ""): string {
     .replace(/[٠-٩]/g, (d) => String(d.charCodeAt(0) - 0x660))
     .replace(/[০-৯]/g, (d) => String(d.charCodeAt(0) - 0x9e6))
     .replace(/\s+/g, " ")
+    .replace(/(\p{Script=Han})\s+/gu, "$1")
+    .replace(/\s+(?=\p{Script=Han})/gu, "")
     .trim();
 }

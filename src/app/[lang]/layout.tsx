@@ -6,7 +6,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { PlayerRoot } from "@/components/player/PlayerRoot";
 import { DownloadPrompt } from "@/components/layout/DownloadPrompt";
-import { dir, isLocale, locales, ogLocale, SITE_URL, type Locale } from "@/i18n/config";
+import { dir, isLocale, langTag, locales, ogLocale, SITE_URL, type Locale } from "@/i18n/config";
 import { common } from "@/i18n/messages/common";
 import { alternates } from "@/i18n/metadata";
 
@@ -67,7 +67,7 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
   if (!isLocale(lang)) notFound();
   const l = lang as Locale;
   return (
-    <html lang={l} dir={dir(l)} className={`${roboto.variable} ${almarai.variable} ${notoAr.variable} ${notoDeva.variable} ${notoBeng.variable} ${notoLatin.variable}`} suppressHydrationWarning>
+    <html lang={langTag(l)} dir={dir(l)} className={`${roboto.variable} ${almarai.variable} ${notoAr.variable} ${notoDeva.variable} ${notoBeng.variable} ${notoLatin.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>

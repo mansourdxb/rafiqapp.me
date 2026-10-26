@@ -370,4 +370,33 @@ const fr: QiblaMsg = {
   noPlace: "Votre position n’est pas encore définie. Utilisez votre position ou recherchez votre ville.",
 };
 
-export const qiblaMsg: Record<Locale, QiblaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };
+const zh: QiblaMsg = {
+  title: "朝向（基卜拉）",
+  description:
+    "无论身在何处都能找到朝向：相对正北的方位角、到克尔白的距离、手机上的实时指南针、太阳和月亮、影子以及地图。",
+  tabShadow: "影子",
+  startCompass: "启动实时指南针",
+  compassOn: "实时指南针已开启——转动身体，直到箭头指向正上方",
+  noSensor: "此设备上没有找到指南针传感器。请参照表盘上显示的相对正北的角度。",
+  denied: "运动与方向权限被拒绝。您可以在浏览器设置中允许。",
+  desktopHint: "表盘上方为正北。在手机上打开此页面即可使用实时指南针。",
+  facing: "您正面向朝向",
+  azimuth: "方位",
+  altitude: "地平线以上高度",
+  qiblaBearing: "朝向",
+  shadowIntro:
+    "在阳光下的平地上竖直立一根木棍或一支笔。在下面的时间，它的影子会正好与朝向对齐。",
+  shadowToward: "影子指向朝向",
+  shadowTowardHint: "顺着影子的方向站立，从木棍朝向影子的尖端。",
+  shadowAway: "太阳位于朝向的方向",
+  shadowAwayHint: "面向太阳——影子在您身后，背离朝向。",
+  shadowNone: "今天在此地太阳不会与朝向对齐。请使用指南针或地图。",
+  shadowPassed: "已过",
+  kaabaFact:
+    "每年有两次——约 5 月 27–28 日麦加时间 12:18 和 7 月 15–16 日麦加时间 12:27——太阳正好位于克尔白上空，凡是白天的地方，所有影子都背离朝向。",
+  mapNote: "这条线是大圆航线——通往克尔白的最短路径。",
+  calibrate: "校准",
+  noPlace: "尚未设置您的位置。请使用您的位置或搜索您的城市。",
+};
+
+export const qiblaMsg: Record<Locale, QiblaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };

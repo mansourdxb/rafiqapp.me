@@ -459,7 +459,42 @@ const fr: AthkarMessages = {
   cats: { morning: "Adhkar du matin", evening: "Adhkar du soir", afterPrayer: "Adhkar après la prière", sleep: "Adhkar du coucher", wake: "Adhkar du réveil" },
 };
 
-export const athkar: Record<Locale, AthkarMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };
+const zh: AthkarMessages = {
+  title: "记念词",
+  subtitle: "真的，一切心境因记忆真主而安静",
+  description: "早晨和傍晚记念词、礼拜后、睡前和醒来时的记念词，以及《穆斯林堡垒》的全部章节——附重复计数、音频和译文。",
+  daily: "每日记念词",
+  hisn: "穆斯林堡垒",
+  hisnSub: "出自先知可靠圣行的记念词",
+  tasbih: "赞念",
+  tasbihSub: "赞颂真主并记录次数",
+  search: "在《穆斯林堡垒》中搜索…",
+  noResults: "没有结果",
+  count: "{count} 条记念词",
+  readCount: "已读 {done} / {total}",
+  tashkeel: "符号",
+  fontSize: "字体大小",
+  showDalil: "显示依据",
+  hideDalil: "隐藏依据",
+  repeat: "重复",
+  times: "次",
+  tapToCount: "点按计数",
+  listen: "收听",
+  stop: "停止",
+  copy: "复制",
+  copied: "已复制",
+  share: "分享",
+  reset: "重置",
+  done: "完成",
+  allDone: "您已念完这些记念词——愿真主接受您的功修",
+  allDoneSub: "今天的进度保存在此设备上",
+  restart: "重新开始",
+  back: "记念词",
+  readerDescription: "{title}——完整的阿拉伯语原文，附译文、重复计数和音频。",
+  cats: { morning: "早晨记念词", evening: "傍晚记念词", afterPrayer: "礼拜后记念词", sleep: "睡前记念词", wake: "醒来记念词" },
+};
+
+export const athkar: Record<Locale, AthkarMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };
 
 export const fill = (s: string, p: Record<string, string | number>) =>
   s.replace(/\{(\w+)\}/g, (_, k: string) => String(p[k] ?? ""));

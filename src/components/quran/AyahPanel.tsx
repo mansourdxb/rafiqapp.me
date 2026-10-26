@@ -189,9 +189,13 @@ export function AyahPanel({ lang, sel, onClose, onStep }: { lang: Locale; sel: A
                   {common[lang].retry}
                 </button>
               </div>
-            ) : (
+            ) : body.text || arabic ? (
               <p dir={trDir} className="whitespace-pre-line text-start text-[16px] leading-8 text-navy-2 dark:text-ink">
                 {body.text}
+              </p>
+            ) : (
+              <p dir={trDir} className="text-start text-sm text-ink-2">
+                {appT(lang, "listView.noTranslation")}
               </p>
             )}
             {!arabic ? <p className="mt-3 text-xs text-ink-2">{fill(t.translationBy, { name: TRANSLATION[lang as Exclude<Locale, "ar">].name })}</p> : null}

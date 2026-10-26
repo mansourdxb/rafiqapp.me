@@ -120,4 +120,13 @@ export const faq: Record<Locale, Faq> = {
     expandAll: "Tout déplier",
     collapseAll: "Tout replier",
   },
+  zh: {
+    subtitle: "关于 Rafiq Al-Muslim 应用的常见问题，逐步解答。",
+    metaDescription: "关于 Rafiq Al-Muslim 应用的解答：朝向的准确性、礼拜时间的计算、宣礼通知、离线古兰经音频、语言、深色模式等。",
+    searchPlaceholder: "搜索问题…",
+    noResults: "没有符合搜索条件的问题。",
+    count: "{n} 个问题",
+    expandAll: "全部展开",
+    collapseAll: "全部收起",
+  },
 };

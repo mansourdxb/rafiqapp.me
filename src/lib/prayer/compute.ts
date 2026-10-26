@@ -24,8 +24,8 @@ export type PrayerSettings = {
 
 export const DEFAULT_SETTINGS: PrayerSettings = { method: "auto", madhab: "Shafi" };
 
-/** 12- or 24-hour clock: the user's choice, else 24-hour for French (as in the app), 12-hour otherwise. */
-export const uses12h = (lang: string, hour12?: boolean) => hour12 ?? lang !== "fr";
+/** 12- or 24-hour clock: the user's choice, else 24-hour for French and Chinese (as in the app), 12-hour otherwise. */
+export const uses12h = (lang: string, hour12?: boolean) => hour12 ?? (lang !== "fr" && lang !== "zh");
 
 export const MAKKAH: Place = { name: "Makkah", cc: "sa", lat: 21.4225, lng: 39.8262, tz: "Asia/Riyadh" };
 

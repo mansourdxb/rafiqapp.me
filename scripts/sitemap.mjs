@@ -4,7 +4,8 @@ import { join } from "node:path";
 
 const OUT = "out";
 const SITE = "https://rafiqapp.me";
-const LANGS = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr"];
+const LANGS = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh"];
+const TAG = { zh: "zh-CN" }; // hreflang, as <html lang> (src/i18n/config.ts langTag)
 
 function pages(dir, rel = "") {
   const found = [];
@@ -23,7 +24,7 @@ const paths = pages(join(OUT, "ar"))
 const today = new Date().toISOString().slice(0, 10);
 const urls = paths.flatMap((p) =>
   LANGS.map((l) => {
-    const alts = LANGS.map((a) => `<xhtml:link rel="alternate" hreflang="${a}" href="${SITE}/${a}/${p}"/>`).join("");
+    const alts = LANGS.map((a) => `<xhtml:link rel="alternate" hreflang="${TAG[a] ?? a}" href="${SITE}/${a}/${p}"/>`).join("");
     return `<url><loc>${SITE}/${l}/${p}</loc><lastmod>${today}</lastmod>${alts}<xhtml:link rel="alternate" hreflang="x-default" href="${SITE}/ar/${p}"/></url>`;
   }),
 );

@@ -353,4 +353,31 @@ const fr: TasbeehMessages = {
   vibrate: "Vibration",
 };
 
-export const tasbeeh: Record<Locale, TasbeehMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };
+const zh: TasbeehMessages = {
+  title: "赞念",
+  subtitle: "赞颂真主并记录次数——计数保存在您的设备上",
+  description: "电子念珠：选择一条记念词或添加您自己的，设定目标，然后点按或按空格键计数。",
+  choose: "选择记念词",
+  builtIn: "赞念词",
+  mine: "我的记念词",
+  add: "添加记念词",
+  addTitle: "新的记念词",
+  textPlaceholder: "输入您的记念词",
+  target: "目标",
+  save: "保存",
+  cancel: "取消",
+  remove: "删除记念词",
+  reset: "重置",
+  tapHint: "点按念珠或按空格键计数",
+  ofTarget: "/ {target}",
+  completed: "已达到目标",
+  completedSub: "愿真主接受您的功修——您可以继续念",
+  today: "今天",
+  allTime: "累计",
+  thisDhikr: "本条记念词",
+  fadl: "这条记念词的贵重",
+  sound: "声音",
+  vibrate: "振动",
+};
+
+export const tasbeeh: Record<Locale, TasbeehMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };

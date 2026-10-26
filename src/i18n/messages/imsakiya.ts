@@ -128,4 +128,14 @@ const fr: ImsakiyaMsg = {
   started: "Ramadan Moubarak",
 };
 
-export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };
+const zh: ImsakiyaMsg = {
+  description:
+    "您所在城市的斋月时间表：斋月每天的止斋时间（伊姆萨克）、晨礼、晌礼、晡礼、昏礼（开斋）和宵礼，可直接打印。",
+  theme: "颜色",
+  themes: { night: "夜晚", sunset: "日落", day: "白天" },
+  imsakNote: "为谨慎起见，止斋时间（伊姆萨克）显示为晨礼前 10 分钟；斋戒从晨礼开始。",
+  daysLeft: "距斋月还有 {{n}} 天",
+  started: "斋月吉庆",
+};
+
+export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };

@@ -39,7 +39,7 @@ const en: Home = {
     body: "Rafiq Al-Muslim reminds you of prayer times, helps you remember Allah, connects you with the Qur'an and encourages you to do more good. The companion of every Muslim.",
     stats: [
       { value: "9", label: "Books of hadith" },
-      { value: "12", label: "Languages" },
+      { value: "13", label: "Languages" },
       { value: "No ads", label: "Free forever" },
     ],
   },
@@ -80,7 +80,7 @@ const ar: Home = {
     body: "تطبيق رفيق المسلم يذكّرك بمواقيت الصلاة، ويعينك على ذكر الله، ويصلك بالقرآن الكريم، ويحثّك على المزيد من الطاعات. رفيق كل مسلم.",
     stats: [
       { value: "9", label: "كتب حديث" },
-      { value: "12", label: "لغات" },
+      { value: "13", label: "لغات" },
       { value: "بلا إعلانات", label: "مجاني دائمًا" },
     ],
   },

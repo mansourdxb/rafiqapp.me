@@ -15,6 +15,7 @@ import {
   fromHijri,
   hijriMonthLength,
   hijriMonthName,
+  hijriYear,
   sameYmd,
   toHijri,
   utcNoon,
@@ -99,7 +100,16 @@ export function CalendarView({ lang }: { lang: Locale }) {
             </button>
             <div className="min-w-0 text-center">
               <p className="text-lg font-bold sm:text-xl">
-                {hijriMonthName(lang, cur.hm)} <span className="text-orange">{n(cur.hy)} {appT(lang, "hijri.suffix")}</span>
+                {lang === "zh" ? (
+                  <>
+                    <span className="text-orange">{hijriYear(lang, cur.hy)}</span>
+                    {hijriMonthName(lang, cur.hm)}
+                  </>
+                ) : (
+                  <>
+                    {hijriMonthName(lang, cur.hm)} <span className="text-orange">{n(cur.hy)} {appT(lang, "hijri.suffix")}</span>
+                  </>
+                )}
               </p>
               <p className="text-xs text-white/85 sm:text-sm">{gSpan}</p>
             </div>
