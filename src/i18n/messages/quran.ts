@@ -417,7 +417,39 @@ const fr: QuranMessages = {
   ayah: "Verset",
 };
 
-export const quran: Record<Locale, QuranMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };
+const zh: QuranMessages = {
+  title: "尊贵的《古兰经》",
+  description: "逐页阅读麦地那版经本的尊贵《古兰经》，附译文、经注和逐节诵读。",
+  heroSub: "麦地那版经本，逐页阅读——点按任意一节即可查看译文并收听诵读。",
+  readerDescription: "麦地那版经本第 {page} 页——{surah}。附译文、经注和诵读。",
+  lastRead: "您上次读到第 {page} 页",
+  startReading: "开始阅读",
+  prevPage: "上一页",
+  nextPage: "下一页",
+  goTo: "跳转到",
+  page: "页",
+  surah: "章",
+  juz: "卷",
+  go: "前往",
+  twoPages: "双页",
+  onePage: "单页",
+  tafsir: "经注",
+  play: "播放",
+  pause: "暂停",
+  copy: "复制",
+  copied: "已复制",
+  share: "分享",
+  close: "关闭",
+  reciter: "诵读者",
+  loadingFont: "正在加载经本页面…",
+  fontFailed: "经本字体无法加载，经文以普通字体显示。",
+  translationBy: "译文：{name}",
+  loadError: "无法加载。请检查网络连接后重试。",
+  tapHint: "点按任意一节即可查看译文并收听诵读",
+  ayah: "节",
+};
+
+export const quran: Record<Locale, QuranMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };
 
 export const fill = (s: string, params: Record<string, string | number>) =>
   Object.entries(params).reduce((acc, [k, v]) => acc.replaceAll(`{${k}}`, String(v)), s);

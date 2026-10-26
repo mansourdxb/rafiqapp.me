@@ -567,7 +567,51 @@ const fr: Articles = {
   },
 };
 
-export const articles: Record<Locale, Articles> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };
+const zh: Articles = {
+  title: "文章",
+  heroTitle: "阅读、学习、思考",
+  heroAccent: "伊斯兰文章",
+  heroSubtitle: "先知传记、众先知的故事、礼拜方法、朝觐与副朝、都阿和泰吉威德——与应用中相同的、经过审核的内容。",
+  metaDescription: "Rafiq Al-Muslim 的伊斯兰文章：先知传记、众先知的故事、伊斯兰的支柱、礼拜方法、朝觐与副朝、都阿、鲁格叶和泰吉威德。",
+  allCategories: "全部分类",
+  categoriesTitle: "按分类浏览",
+  categoriesSubtitle: "选择一个主题，开始阅读。",
+  recent: "最新文章",
+  mostRead: "最多阅读",
+  viewMore: "查看全部分类",
+  count: "{n} 篇文章",
+  minRead: "阅读约 {n} 分钟",
+  readMore: "阅读",
+  share: "分享",
+  shareOn: "分享到 {x}",
+  copyLink: "复制链接",
+  copied: "链接已复制",
+  favAdd: "加入收藏",
+  favRemove: "取消收藏",
+  related: "相关文章",
+  moreIn: "更多“{cat}”文章",
+  getAppTitle: "随身携带",
+  getAppBody: "在 Rafiq Al-Muslim 应用中离线阅读所有文章，还有古兰经、记念词和礼拜时间——免费，无广告。",
+  home: "首页",
+  source: "出处",
+  meaning: "含义",
+  step: "第 {n} 步",
+  searchPlaceholder: "搜索文章…",
+  noResults: "没有符合搜索条件的文章。",
+  cat: { fiqh: "支柱与教法", duas: "都阿园地" },
+  catDesc: {
+    seerah: "先知ﷺ一生中的重要时刻，从他的诞生到辞朝。",
+    prophets: "《古兰经》所讲述的众先知和使者（愿主赐他们平安）的故事。",
+    fiqh: "伊斯兰的支柱与信仰的支柱，以及宰牲（乌德希亚）的教法，简明扼要。",
+    hajj: "按顺序介绍副朝和朝觐的各个步骤，以及每一步要念的内容。",
+    prayer: "小净与礼拜，一步一步。",
+    duas: "出自《古兰经》和圣行的祈祷词，按需求分类。",
+    ruqyah: "出自《古兰经》和圣行的鲁格叶经文与祈祷词。",
+    tajweed: "泰吉威德诵读规则，附《古兰经》中的例子。",
+  },
+};
+
+export const articles: Record<Locale, Articles> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };
 
 export const fill = (s: string, params: Record<string, string | number>) =>
   Object.entries(params).reduce((acc, [k, v]) => acc.replaceAll(`{${k}}`, String(v)), s);

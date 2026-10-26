@@ -11,7 +11,7 @@ import { localDigits } from "@/lib/digits";
 import { computeDay, effectiveMethod, formatDuration, highLatitude, PRAYERS, uses12h, ymdInTz, type Place, type PrayerSettings } from "@/lib/prayer/compute";
 import { METHOD_LABEL, METHODS, type MethodKey } from "@/lib/prayer/methods";
 import { settingsStore } from "@/lib/prayer/store";
-import { formatGregorian, hijriMonthName, toHijri, weekdayName } from "@/lib/calendar/hijri";
+import { formatGregorian, hijriMonthName, hijriYear, toHijri, weekdayName } from "@/lib/calendar/hijri";
 import { LocationPicker } from "./LocationPicker";
 import { CARD, dateLine, fmtTime, OUTLINED, PANEL, PILL, PRAYER_ICON_SRC, prayerName, useLive } from "./prayerUi";
 import { useNow, usePlace, useSettings, type ShownPlace } from "./usePlace";
@@ -232,7 +232,8 @@ function MonthlyTable({ lang, place, s, today }: { lang: Locale; place: Place & 
   const monthLabel = formatGregorian(lang, { y, m, d: 1 }, { month: "long", year: "numeric" });
   const h1 = rows[0]?.h;
   const h2 = rows[rows.length - 1]?.h;
-  const hijriSpan = h1 && h2 ? `${hijriMonthName(lang, h1.hm)}${h1.hm !== h2.hm ? ` – ${hijriMonthName(lang, h2.hm)}` : ""} ${localDigits(lang, h2.hy)} ${appT(lang, "hijri.suffix")}` : "";
+  const hijriMonths = h1 && h2 ? `${hijriMonthName(lang, h1.hm)}${h1.hm !== h2.hm ? ` – ${hijriMonthName(lang, h2.hm)}` : ""}` : "";
+  const hijriSpan = h1 && h2 ? (lang === "zh" ? `${hijriYear(lang, h2.hy)}${hijriMonths}` : `${hijriMonths} ${hijriYear(lang, h2.hy)}`) : "";
 
   const navBtn = "grid size-12 place-items-center rounded-full bg-primary text-white shadow-md hover:bg-primary-deep sm:size-14";
 

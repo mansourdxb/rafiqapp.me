@@ -111,4 +111,13 @@ export const live: Record<Locale, Live> = {
     madinahSrc: "Sunnah TV",
     openYoutube: "Ouvrir dans YouTube",
   },
+  zh: {
+    title: "直播",
+    subtitle: "来自麦加禁寺和麦地那先知寺的直播，信号来自官方频道。",
+    makkah: "禁寺——麦加",
+    madinah: "先知寺——麦地那",
+    makkahSrc: "Quran TV",
+    madinahSrc: "Sunnah TV",
+    openYoutube: "在 YouTube 中打开",
+  },
 };

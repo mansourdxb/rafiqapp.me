@@ -378,4 +378,33 @@ const fr: PrayerMsg = {
   makkah: "La Mecque",
 };
 
-export const prayerMsg: Record<Locale, PrayerMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };
+const zh: PrayerMsg = {
+  title: "礼拜时间",
+  description:
+    "您所在城市今天的礼拜时间——晨礼、日出、晌礼、晡礼、昏礼和宵礼——附下一次礼拜的实时倒计时，以及可打印的月度时间表。",
+  useLocation: "使用我的位置",
+  locating: "正在定位…",
+  searchPlaceholder: "搜索城市",
+  searching: "正在搜索…",
+  noResults: "未找到地点",
+  searchError: "暂时无法搜索，请重试。",
+  locError: "无法获取您的位置——请搜索您的城市。在 iPhone 上开启：设置 → 隐私与安全性 → 定位服务 → 您的浏览器 → 使用 App 期间。",
+  defaultNotice: "当前显示的是麦加的时间。请使用您的位置或搜索您的城市。",
+  settings: "设置",
+  auto: "自动——{{method}}",
+  timeFormat: "时间格式",
+  h12: "12 小时制",
+  h24: "24 小时制",
+  highLat: "在纬度 48° 以上，晨礼和宵礼会自动采用暮光角度规则。",
+  tzNote: "时间为{{city}}当地时间（{{tz}}）。",
+  monthly: "月度时间表",
+  print: "打印",
+  prevMonth: "上个月",
+  nextMonth: "下个月",
+  thisMonth: "本月",
+  date: "日期",
+  location: "地点",
+  makkah: "麦加",
+};
+
+export const prayerMsg: Record<Locale, PrayerMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };

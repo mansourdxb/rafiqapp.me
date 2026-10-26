@@ -1,5 +1,5 @@
-// The site's languages — the same twelve as the app, in the app's picker order.
-export const locales = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr"] as const;
+// The site's languages — the same thirteen as the app, in the app's picker order.
+export const locales = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "ar";
 
@@ -20,6 +20,7 @@ export const nativeName: Record<Locale, string> = {
   bn: "বাংলা",
   ha: "Hausa",
   fr: "Français",
+  zh: "简体中文",
 };
 
 /** Flag shown next to each language in the language menu (public/flags/<code>.svg, from flag-icons, MIT). */
@@ -36,6 +37,7 @@ export const flag: Record<Locale, string> = {
   bn: "bd",
   ha: "ng",
   fr: "fr",
+  zh: "cn",
 };
 
 export const ogLocale: Record<Locale, string> = {
@@ -51,7 +53,11 @@ export const ogLocale: Record<Locale, string> = {
   bn: "bn_BD",
   ha: "ha_NG",
   fr: "fr_FR",
+  zh: "zh_CN",
 };
+
+/** BCP 47 tag for <html lang> and hreflang: Chinese is Simplified Chinese (zh-CN), so browsers pick Simplified glyphs. */
+export const langTag = (l: Locale) => (l === "zh" ? "zh-CN" : l);
 
 export function isLocale(v: string): v is Locale {
   return (locales as readonly string[]).includes(v);

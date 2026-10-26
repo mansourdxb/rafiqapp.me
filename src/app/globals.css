@@ -54,6 +54,11 @@ html[lang="ha"] body {
   font-family: var(--font-noto-latin), var(--font-roboto), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Chinese: Latin from Roboto, Chinese characters from the system's Simplified Chinese font (no CJK web font). */
+html[lang="zh-CN"] body {
+  font-family: var(--font-roboto), "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "WenQuanYi Micro Hei", var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+}
+
 @font-face {
   font-family: "UthmanicHafs";
   src: url("/fonts/uthmanic_hafs_v20.ttf") format("truetype");

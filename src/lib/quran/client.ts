@@ -53,6 +53,7 @@ export const TRANSLATION: Record<Exclude<Locale, "ar">, { id: number; name: stri
   bn: { id: 161, name: "Taisirul Quran (Tawheed Publication)" },
   ha: { id: 32, name: "Abubakar Mahmoud Gumi" },
   fr: { id: 31, name: "Muhammad Hamidullah" },
+  zh: { id: 56, name: "马坚" },
 };
 
 function stripHtml(html: string) {
@@ -69,16 +70,54 @@ function stripHtml(html: string) {
     .trim();
 }
 
+/** Ma Jian's text as the app cleans it (translationBookCache.ts stripHtml): two Traditional forms
+ * to Simplified, the encoding leftovers 棗 (——) and ﹖ (？), no spaces between Chinese characters. */
+const cleanZh = (s: string) =>
+  s
+    .replace(/後/g, "后")
+    .replace(/於/g, "于")
+    .replace(/棗/g, "——")
+    .replace(/﹖/g, "？")
+    .replace(/([\u4E00-\u9FFF\u3000-\u303F\uFF00-\uFFEF\u2014\u201C\u201D])\s+(?=[\u4E00-\u9FFF\u3000-\u303F\uFF00-\uFFEF\u2014\u201C\u201D])/g, "$1");
+
+async function quranCom(id: number, key: string): Promise<string> {
+  const data = await getJson<{ verse?: { translations?: { text: string }[] } }>(
+    `https://api.quran.com/api/v4/verses/by_key/${key}?translations=${id}&fields=verse_key`,
+  );
+  const text = stripHtml(data.verse?.translations?.[0]?.text ?? "");
+  return id === TRANSLATION.zh.id ? cleanZh(text) : text;
+}
+
+/**
+ * The app's fixMaJianGaps: the digitised Ma Jian text repeats the previous verse in place of 4:110,
+ * 7:110, 11:110 and 26:217–219, and has 4:110's meaning under 4:111. 4:110 gets its text back and the
+ * verses whose text is missing stay empty — only while the source still shows the defect.
+ */
+const MA_JIAN_GAPS = ["7:110", "11:110", "26:217", "26:218", "26:219"];
+async function maJian(key: string): Promise<string> {
+  const id = TRANSLATION.zh.id;
+  const prev = (k: string) => k.replace(/\d+$/, (a) => String(Number(a) - 1));
+  if (key === "4:110" || key === "4:111") {
+    const [t109, t110, t111] = await Promise.all(["4:109", "4:110", "4:111"].map((k) => quranCom(id, k)));
+    const moved = !!t110 && t110 === t109 && !!t111;
+    if (key === "4:110") return moved ? t111 : t110;
+    return moved ? "" : t111;
+  }
+  if (MA_JIAN_GAPS.includes(key)) {
+    const [before, text] = await Promise.all([quranCom(id, prev(key)), quranCom(id, key)]);
+    return text && text === before ? "" : text;
+  }
+  return quranCom(id, key);
+}
+
+/** The verse's translation in `lang`; "" when the translation has no text for it. */
 export async function fetchTranslation(lang: Exclude<Locale, "ar">, page: number, key: string): Promise<string> {
   if (lang === "en") {
     const m = await getJson<Record<string, string>>(`/data/quran/en/${page}.json`);
     if (m[key]) return m[key];
   }
-  const id = TRANSLATION[lang].id;
-  const data = await getJson<{ verse?: { translations?: { text: string }[] } }>(
-    `https://api.quran.com/api/v4/verses/by_key/${key}?translations=${id}&fields=verse_key`,
-  );
-  return stripHtml(data.verse?.translations?.[0]?.text ?? "");
+  if (lang === "zh") return maJian(key);
+  return quranCom(TRANSLATION[lang].id, key);
 }
 
 // ── ayah audio: everyayah.com, as the app (client/src/services/quranAudio.ts; default reciter first) ──

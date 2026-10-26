@@ -475,7 +475,44 @@ const fr: HadithMessages = {
   chapterMeta: "{chapter} — {book} : {n} hadiths en arabe avec traduction.",
 };
 
-export const hadith: Record<Locale, HadithMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };
+const zh: HadithMessages = {
+  books: {
+    bukhari: "布哈里圣训实录",
+    muslim: "穆斯林圣训实录",
+    abudawud: "艾布·达乌德圣训集",
+    tirmidhi: "提尔密济圣训集",
+    nasai: "奈萨仪圣训集",
+    ibnmajah: "伊本·马哲圣训集",
+    malik: "马立克《圣训易读》",
+    darimi: "达里米圣训集",
+    ahmed: "艾哈迈德《穆斯奈德》",
+  },
+  metaTitle: "圣训——九部圣训集",
+  metaDescription: "阅读布哈里圣训实录、穆斯林圣训实录和其他圣训集的阿拉伯语原文及英文译文，可搜索并收藏。",
+  intro: "九部圣行经典，阿拉伯语原文附英文译文。先知ﷺ的话语以绿色突出显示。",
+  hadiths: "圣训",
+  kitabs: "卷",
+  hadithN: "第 {n} 段圣训",
+  minChars: "请输入至少 2 个字符进行搜索",
+  searchLoading: "正在加载搜索索引…",
+  searchHintEn: "可用阿拉伯语或英文译文搜索",
+  noFavorites: "还没有收藏。点按圣训上的书签即可保存到这里。",
+  addFavorite: "加入收藏",
+  removeFavorite: "取消收藏",
+  copy: "复制",
+  share: "分享",
+  showMore: "显示更多",
+  shownOf: "{a} / {b}",
+  prev: "上一个",
+  next: "下一个",
+  allBooks: "全部圣训集",
+  noTranslation: "这部圣训集暂无译文——仅有阿拉伯语原文。",
+  shareVia: "来自 Rafiq Al-Muslim 应用",
+  bookMeta: "阅读{book}：共 {n} 段圣训，分为 {k} 卷，阿拉伯语原文附译文。",
+  chapterMeta: "{chapter}——{book}：{n} 段圣训，阿拉伯语原文附译文。",
+};
+
+export const hadith: Record<Locale, HadithMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };
 
 /** "{n} of {b}" → filled in. */
 export function fill(s: string, p: Record<string, string | number>) {

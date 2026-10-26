@@ -215,4 +215,20 @@ const fr: NamesMessages = {
   nth: "Nom {n} sur 99",
 };
 
-export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };
+const zh: NamesMessages = {
+  title: "真主的九十九个美名",
+  verseRef: "高处章 7:180",
+  description: "真主的九十九个美名（阿斯玛·侯斯纳），附每个尊名的含义、解释及其在《古兰经》中出现的位置。",
+  search: "搜索尊名…",
+  noResults: "没有结果",
+  meaning: "含义",
+  explanation: "解释",
+  inQuran: "在《古兰经》中",
+  englishNote: "含义和解释以英文显示",
+  prev: "上一个尊名",
+  next: "下一个尊名",
+  all: "全部尊名",
+  nth: "第 {n} 个尊名（共 99 个）",
+};
+
+export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };

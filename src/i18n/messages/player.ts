@@ -433,4 +433,37 @@ const fr: PlayerMessages = {
   langNames: { en: "Anglais", fa: "Persan", az: "Azéri", bs: "Bosnien", ur: "Ourdou" },
 };
 
-export const player: Record<Locale, PlayerMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr };
+const zh: PlayerMessages = {
+  description: "收听五十多位诵读者逐节诵读的尊贵《古兰经》，浏览网站时也可继续收听。",
+  subtitle: "选择一位诵读者，然后播放整章，或从任意一章开始连续播放——浏览网站时会继续播放。",
+  play: "播放",
+  pause: "暂停",
+  prevAyah: "上一节",
+  nextAyah: "下一节",
+  expand: "打开播放器",
+  collapse: "收起播放器",
+  close: "停止并关闭",
+  repeat: "重复",
+  repeatOff: "不重复",
+  repeatSurah: "重复本章",
+  repeatAyah: "重复本节",
+  speed: "播放速度",
+  playSurah: "播放本章",
+  playFromHere: "从这里开始全部播放",
+  favourites: "收藏",
+  addFavourite: "加入收藏",
+  removeFavourite: "取消收藏",
+  allReciters: "全部诵读者",
+  nowPlaying: "正在播放",
+  loadError: "无法播放这一节。请检查网络连接后重试。",
+  listen: "收听",
+  listenSurah: "收听{surah}",
+  listenPage: "从本页开始收听",
+  ended: "诵读结束",
+  changeReciter: "更换诵读者",
+  goToAyah: "跳到该节",
+  surahs: "章节",
+  langNames: { en: "英语", fa: "波斯语", az: "阿塞拜疆语", bs: "波斯尼亚语", ur: "乌尔都语" },
+};
+
+export const player: Record<Locale, PlayerMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };
