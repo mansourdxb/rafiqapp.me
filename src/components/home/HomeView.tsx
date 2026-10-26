@@ -14,12 +14,12 @@ import { HeroSlider } from "./HeroSlider";
 import { HomeArticles } from "./HomeArticles";
 import { HomePrayer } from "./HomePrayer";
 
-// app screens shown on each hero slide: [front, back]
-const SLIDE_SHOTS: [string, string][] = [
-  ["01", "07"],
-  ["04", "03"],
-  ["05", "06"],
-  ["02", "08"],
+// app screens shown on each hero slide: [front, left, right]
+const SLIDE_SHOTS: [string, string, string][] = [
+  ["01", "07", "08"],
+  ["04", "03", "06"],
+  ["05", "06", "01"],
+  ["02", "07", "03"],
 ];
 
 const QIBLA_METHODS = [
@@ -55,8 +55,8 @@ export function HomeView({ lang }: { lang: Locale }) {
             getApp={t.hero.getApp}
             getAppHref={download}
             badges={<StoreBadges lang={lang} className="justify-center lg:justify-start" />}
-            art={SLIDE_SHOTS.map(([f, b], k) => (
-              <HeroArt key={k} front={shot(f)} back={shot(b)} alt={c.siteName} priority={k === 0} />
+            art={SLIDE_SHOTS.map(([f, l, r], k) => (
+              <HeroArt key={k} front={shot(f)} left={shot(l)} right={shot(r)} alt={c.siteName} priority={k === 0} />
             ))}
           />
         </div>
