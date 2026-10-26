@@ -68,3 +68,18 @@ html[lang="zh-CN"] body {
 html { -webkit-text-size-adjust: 100%; }
 body { background: var(--canvas); color: var(--ink); }
 .quran { font-family: var(--font-quran); }
+
+/* App store badges (StoreBadges): white card, black rim, full-colour store logo. */
+@layer components {
+  .store-badge {
+    display: flex; align-items: center; gap: .5rem; height: 2.75rem; padding: 0 .75rem;
+    border-radius: 10px; background: #fff; color: #000; box-shadow: 0 0 0 1.5px #000, 0 1px 2px rgba(0,0,0,.08);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .store-badge:hover { transform: translateY(-2px); box-shadow: 0 0 0 1.5px #000, 0 8px 20px -6px rgba(20,35,78,.35); }
+  .store-badge:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+  .store-badge img { width: 1.75rem; height: 1.75rem; flex-shrink: 0; }
+  .store-badge span { display: flex; flex-direction: column; text-align: start; line-height: 1; }
+  .store-badge small { font-size: 10px; font-weight: 500; text-transform: uppercase; }
+  .store-badge b { margin-top: .125rem; font-size: 17px; font-weight: 600; letter-spacing: -.025em; }
+}
