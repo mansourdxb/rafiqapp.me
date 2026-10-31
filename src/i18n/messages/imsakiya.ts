@@ -138,4 +138,13 @@ const zh: ImsakiyaMsg = {
   started: "斋月吉庆",
 };
 
-export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };
+const ps: ImsakiyaMsg = {
+  description: "ستاسو د ښار لپاره د رمضان امساکیه: امساک، سهار، ماسپښین، مازدیګر، ماښام (روژه ماتی) او ماسخوتن د رمضان د هرې ورځې لپاره، د چاپ لپاره چمتو.",
+  theme: "رنګ",
+  themes: { night: "شپه", sunset: "لمر لوېدل", day: "ورځ" },
+  imsakNote: "امساک د احتیاط لپاره د سهار له اذان 10 دقیقې مخکې ښودل شوی؛ روژه د سهار په اذان پیلېږي.",
+  daysLeft: "رمضان به {{n}} ورځې وروسته پیل شي",
+  started: "رمضان مو مبارک شه",
+};
+
+export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps };

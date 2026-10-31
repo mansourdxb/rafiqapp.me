@@ -380,4 +380,31 @@ const zh: TasbeehMessages = {
   vibrate: "振动",
 };
 
-export const tasbeeh: Record<Locale, TasbeehMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };
+const ps: TasbeehMessages = {
+  title: "تسبیح",
+  subtitle: "د الله تسبیح ووایئ او شمېر یې وساتئ — ستاسو په وسیله کې خوندي پاتې کېږي",
+  description: "برېښنايي تسبیح: یو ذکر وټاکئ یا خپل ذکر زیات کړئ، هدف وټاکئ، بیا د شمېرلو لپاره کښېکاږئ یا د سپېس تڼۍ کېکاږئ.",
+  choose: "یو ذکر وټاکئ",
+  builtIn: "د تسبیح اذکار",
+  mine: "زما اذکار",
+  add: "ذکر زیات کړئ",
+  addTitle: "نوی ذکر",
+  textPlaceholder: "خپل ذکر ولیکئ",
+  target: "هدف",
+  save: "خوندي کول",
+  cancel: "لغوه کول",
+  remove: "ذکر ړنګ کړئ",
+  reset: "بیا تنظیمول",
+  tapHint: "د شمېرلو لپاره پر دانو کښېکاږئ یا د سپېس تڼۍ کېکاږئ",
+  ofTarget: "له {target} څخه",
+  completed: "هدف ته ورسېدئ",
+  completedSub: "الله دې در څخه قبول کړي — که مو خوښه وي، دوام ورکړئ",
+  today: "نن",
+  allTime: "ټول وخت",
+  thisDhikr: "دا ذکر",
+  fadl: "د دې ذکر فضیلت",
+  sound: "غږ",
+  vibrate: "لړزه",
+};
+
+export const tasbeeh: Record<Locale, TasbeehMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps };

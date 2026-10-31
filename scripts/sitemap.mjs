@@ -4,7 +4,7 @@ import { join } from "node:path";
 
 const OUT = "out";
 const SITE = "https://rafiqapp.me";
-const LANGS = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh"];
+const LANGS = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh", "ps"];
 const TAG = { zh: "zh-CN" }; // hreflang, as <html lang> (src/i18n/config.ts langTag)
 
 function pages(dir, rel = "") {

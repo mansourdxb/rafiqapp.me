@@ -253,4 +253,22 @@ const zh: CalendarMsg = {
   note: "乌姆古拉历。根据您所在国家的见月情况，月初可能相差一天。",
 };
 
-export const calendarMsg: Record<Locale, CalendarMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };
+const ps: CalendarMsg = {
+  title: "هجري کلیزه",
+  description:
+    "هجري (ام القری) کلیزه میاشت په میاشت له میلادي نېټو سره، اسلامي مناسبتونه لکه رمضان، دواړه اخترونه، عرفه او عاشورا، او د هجري او میلادي نېټو بدلوونکی.",
+  prevMonth: "تېره میاشت",
+  nextMonth: "راتلونکې میاشت",
+  occasionsMonth: "دا میاشت",
+  noOccasions: "په دې میاشت کې کوم مناسبت نشته",
+  converter: "د نېټې بدلوونکی",
+  gToH: "له میلادي څخه هجري ته",
+  hToG: "له هجري څخه میلادي ته",
+  day: "ورځ",
+  month: "میاشت",
+  year: "کال",
+  invalid: "دا نېټه د ام القری په کلیزه کې نشته.",
+  note: "د ام القری کلیزه. ستاسو په هېواد کې د سپوږمۍ د لیدو له مخې د میاشتې پیل کېدای شي یوه ورځ توپیر ولري.",
+};
+
+export const calendarMsg: Record<Locale, CalendarMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps };

@@ -73,11 +73,12 @@ function formatHausa(g: Ymd, opts: Intl.DateTimeFormatOptions) {
   return [weekday, date].filter(Boolean).join(", ");
 }
 
-/** Gregorian date in the site language (Latin digits from Intl, then the app's digit style). */
+/** Gregorian date in the site language (Latin digits from Intl, then the app's digit style). Pashto asks for
+ * the Gregorian calendar by name: CLDR's default calendar for "ps" is the Persian solar one. */
 export function formatGregorian(lang: Locale, g: Ymd, opts: Intl.DateTimeFormatOptions = { day: "numeric", month: "long", year: "numeric" }) {
   try {
     if (lang === "ha") return formatHausa(g, opts);
-    return localDigits(lang, new Intl.DateTimeFormat(`${lang}-u-nu-latn`, { ...opts, timeZone: "UTC" }).format(utcNoon(g.y, g.m, g.d)));
+    return localDigits(lang, new Intl.DateTimeFormat(`${lang}-u-${lang === "ps" ? "ca-gregory-" : ""}nu-latn`, { ...opts, timeZone: "UTC" }).format(utcNoon(g.y, g.m, g.d)));
   } catch {
     return `${g.y}-${g.m}-${g.d}`;
   }

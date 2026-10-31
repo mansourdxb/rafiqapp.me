@@ -407,4 +407,33 @@ const zh: PrayerMsg = {
   makkah: "麦加",
 };
 
-export const prayerMsg: Record<Locale, PrayerMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };
+const ps: PrayerMsg = {
+  title: "د لمانځه وختونه",
+  description:
+    "ستاسو د ښار د نن ورځې د لمانځه وختونه — سهار، لمر ختل، ماسپښین، مازدیګر، ماښام او ماسخوتن — بل لمانځه ته له ژوندۍ شاتنۍ شمېرنې او د چاپ وړ میاشتني مهالوېش سره.",
+  useLocation: "زما ځای وکاروئ",
+  locating: "ځای موندل کېږي…",
+  searchPlaceholder: "د ښار لټون",
+  searching: "لټون روان دی…",
+  noResults: "هېڅ ځای ونه موندل شو",
+  searchError: "لټون اوس مهال شتون نه لري. مهرباني وکړئ بیا هڅه وکړئ.",
+  locError: "ستاسو ځای ونه موندل شو — خپل ښار ولټوئ. په iPhone کې د اجازې لپاره: Settings ← Privacy & Security ← Location Services ← ستاسو براوزر ← While Using.",
+  defaultNotice: "د مکې مکرمې وختونه ښودل کېږي. خپل ځای وکاروئ یا خپل ښار ولټوئ.",
+  settings: "تنظیمات",
+  auto: "اتومات — {{method}}",
+  timeFormat: "د وخت بڼه",
+  h12: "12 ساعته",
+  h24: "24 ساعته",
+  highLat: "له 48° عرض البلد پورته، د سهار او ماسخوتن لپاره د شفق د زاویې قاعده په اتومات ډول کارول کېږي.",
+  tzNote: "وختونه د {{city}} د ځایي وخت ({{tz}}) له مخې دي.",
+  monthly: "میاشتنی مهالوېش",
+  print: "چاپ",
+  prevMonth: "تېره میاشت",
+  nextMonth: "راتلونکې میاشت",
+  thisMonth: "دا میاشت",
+  date: "نېټه",
+  location: "ځای",
+  makkah: "مکه مکرمه",
+};
+
+export const prayerMsg: Record<Locale, PrayerMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps };

@@ -611,7 +611,51 @@ const zh: Articles = {
   },
 };
 
-export const articles: Record<Locale, Articles> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };
+const ps: Articles = {
+  title: "لیکنې",
+  heroTitle: "ولولئ، زده کړئ او فکر وکړئ",
+  heroAccent: "اسلامي لیکنې",
+  heroSubtitle: "نبوي سیرت، د پیغمبرانو کیسې، د لمانځه طریقه، حج او عمره، دعاګانې او تجوید — هماغه کتل شوې منځپانګه چې په اپلیکېشن کې یې مومئ.",
+  metaDescription: "د رفیق المسلم اسلامي لیکنې: نبوي سیرت، د پیغمبرانو کیسې، د اسلام ارکان، د لمانځه طریقه، حج او عمره، دعاګانې، رقیه او تجوید.",
+  allCategories: "ټولې برخې",
+  categoriesTitle: "د برخو له مخې یې وګورئ",
+  categoriesSubtitle: "یوه موضوع وټاکئ او لوستل پیل کړئ.",
+  recent: "نوې لیکنې",
+  mostRead: "ډېرې لوستل شوې",
+  viewMore: "ټولې برخې وګورئ",
+  count: "{n} لیکنې",
+  minRead: "{n} دقیقې لوستل",
+  readMore: "ولولئ",
+  share: "شریکول",
+  shareOn: "په {x} کې شریکول",
+  copyLink: "لینک کاپي کړئ",
+  copied: "لینک کاپي شو",
+  favAdd: "خوښو ته زیاتول",
+  favRemove: "له خوښو لرې کول",
+  related: "اړوندې لیکنې",
+  moreIn: "په {cat} کې نورې",
+  getAppTitle: "تل یې له ځان سره ولرئ",
+  getAppBody: "ټولې لیکنې بې له انټرنېټه د رفیق المسلم په اپلیکېشن کې ولولئ، د قرآن، اذکارو او د لمانځه له وختونو سره — وړیا او بې له اعلانونو.",
+  home: "کور",
+  source: "سرچینه",
+  meaning: "مانا",
+  step: "ګام {n}",
+  searchPlaceholder: "په لیکنو کې لټون…",
+  noResults: "ستاسو له لټون سره سمه هېڅ لیکنه ونه موندل شوه.",
+  cat: { fiqh: "ارکان او فقه", duas: "د دعاګانو بڼ" },
+  catDesc: {
+    seerah: "د رسول الله ﷺ د ژوند شېبې، له زوکړې تر حجة الوداع پورې.",
+    prophets: "د پیغمبرانو او رسولانو علیهم السلام کیسې، لکه څنګه چې په قرآن کې راغلې دي.",
+    fiqh: "د اسلام او ایمان ارکان او د قربانۍ احکام، په لنډه توګه.",
+    hajj: "د عمرې او حج پړاوونه په ترتیب سره، او هغه څه چې په هر پړاو کې ویل کېږي.",
+    prayer: "اودس او لمونځ، ګام په ګام.",
+    duas: "له قرآن او سنتو دعاګانې، د اړتیا له مخې ترتیب شوې.",
+    ruqyah: "له قرآن او سنتو د رقیې آیتونه او دعاګانې.",
+    tajweed: "د تجوید قواعد د قرآن له بېلګو سره.",
+  },
+};
+
+export const articles: Record<Locale, Articles> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps };
 
 export const fill = (s: string, params: Record<string, string | number>) =>
   Object.entries(params).reduce((acc, [k, v]) => acc.replaceAll(`{${k}}`, String(v)), s);

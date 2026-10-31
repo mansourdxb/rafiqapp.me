@@ -512,7 +512,44 @@ const zh: HadithMessages = {
   chapterMeta: "{chapter}——{book}：{n} 段圣训，阿拉伯语原文附译文。",
 };
 
-export const hadith: Record<Locale, HadithMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };
+const ps: HadithMessages = {
+  books: {
+    bukhari: "صحیح بخاري",
+    muslim: "صحیح مسلم",
+    abudawud: "سنن ابو داود",
+    tirmidhi: "جامع ترمذي",
+    nasai: "سنن نسائي",
+    ibnmajah: "سنن ابن ماجه",
+    malik: "موطأ امام مالک",
+    darimi: "سنن دارمي",
+    ahmed: "مسند احمد بن حنبل",
+  },
+  metaTitle: "حدیث — نهه کتابونه",
+  metaDescription: "صحیح بخاري، صحیح مسلم او د حدیثو نور کتابونه په عربي متن او انګلیسي ژباړې ولولئ، په کې لټون وکړئ او خپل خوښ حدیثونه خوندي کړئ.",
+  intro: "د سنتو نهه کتابونه، په عربي متن او انګلیسي ژباړې. د رسول الله ﷺ خبرې په شین رنګ ښودل شوې دي.",
+  hadiths: "حدیثونه",
+  kitabs: "کتابونه",
+  hadithN: "حدیث {n}",
+  minChars: "د لټون لپاره لږ تر لږه 2 توري ولیکئ",
+  searchLoading: "د لټون فهرست بارېږي…",
+  searchHintEn: "په عربي یا په انګلیسي ژباړه کې لټون وکړئ",
+  noFavorites: "تر اوسه هېڅ خوښ حدیث نشته. د هر حدیث پر نښه کښېکاږئ چې دلته خوندي شي.",
+  addFavorite: "خوښو ته زیاتول",
+  removeFavorite: "له خوښو لرې کول",
+  copy: "کاپي",
+  share: "شریکول",
+  showMore: "نور وښایئ",
+  shownOf: "{a} له {b} څخه",
+  prev: "مخکینی",
+  next: "بل",
+  allBooks: "د حدیثو ټول کتابونه",
+  noTranslation: "دا کتاب تر اوسه ژباړه نه لري — یوازې عربي متن.",
+  shareVia: "د رفیق المسلم اپلیکېشن له لارې",
+  bookMeta: "{book} ولولئ: {n} حدیثونه په {k} کتابونو کې، په عربي متن او ژباړې.",
+  chapterMeta: "{chapter} — {book}: {n} حدیثونه په عربي متن او ژباړې.",
+};
+
+export const hadith: Record<Locale, HadithMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps };
 
 /** "{n} of {b}" → filled in. */
 export function fill(s: string, p: Record<string, string | number>) {

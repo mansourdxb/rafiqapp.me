@@ -54,6 +54,7 @@ export const TRANSLATION: Record<Exclude<Locale, "ar">, { id: number; name: stri
   ha: { id: 32, name: "Abubakar Mahmoud Gumi" },
   fr: { id: 31, name: "Muhammad Hamidullah" },
   zh: { id: 56, name: "马坚" },
+  ps: { id: 118, name: "زکریا عبدالسلام" },
 };
 
 function stripHtml(html: string) {

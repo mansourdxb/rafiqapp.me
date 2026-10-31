@@ -494,7 +494,42 @@ const zh: AthkarMessages = {
   cats: { morning: "早晨记念词", evening: "傍晚记念词", afterPrayer: "礼拜后记念词", sleep: "睡前记念词", wake: "醒来记念词" },
 };
 
-export const athkar: Record<Locale, AthkarMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };
+const ps: AthkarMessages = {
+  title: "اذکار",
+  subtitle: "خبردار شئ! يواځې د الله په ذکر (ياد) سره زړونه مطمئن کېږي",
+  description: "د سهار او ماښام اذکار، له لمانځه وروسته، د خوب او د راویښېدو اذکار او د حصن المسلم ټول بابونه — د تکرار له شمېرونکي، غږ او ژباړې سره.",
+  daily: "ورځني اذکار",
+  hisn: "حصن المسلم",
+  hisnSub: "د صحیحو نبوي سنتو اذکار",
+  tasbih: "تسبیح",
+  tasbihSub: "د الله تسبیح ووایئ او شمېر یې وساتئ",
+  search: "په حصن المسلم کې لټون...",
+  noResults: "هېڅ پایله ونه موندل شوه",
+  count: "{count} ذکرونه",
+  readCount: "له {total} څخه {done} ولوستل شول",
+  tashkeel: "اعراب",
+  fontSize: "د لیکدود کچه",
+  showDalil: "دلیل وښایئ",
+  hideDalil: "دلیل پټ کړئ",
+  repeat: "تکرار",
+  times: "ځله",
+  tapToCount: "د شمېرلو لپاره کښېکاږئ",
+  listen: "اورېدل",
+  stop: "درول",
+  copy: "کاپي",
+  copied: "کاپي شو",
+  share: "شریکول",
+  reset: "بیا تنظیمول",
+  done: "بشپړ",
+  allDone: "تاسو دا اذکار بشپړ کړل — الله دې در څخه قبول کړي",
+  allDoneSub: "د نن ورځې پرمختګ په همدې وسیله کې خوندي کېږي",
+  restart: "بیا پیل",
+  back: "اذکار",
+  readerDescription: "{title} — بشپړ عربي متن له ژباړې، د تکرار له شمېرونکي او غږ سره.",
+  cats: { morning: "د سهار اذکار", evening: "د ماښام اذکار", afterPrayer: "له لمانځه وروسته اذکار", sleep: "د خوب اذکار", wake: "د راویښېدو اذکار" },
+};
+
+export const athkar: Record<Locale, AthkarMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps };
 
 export const fill = (s: string, p: Record<string, string | number>) =>
   s.replace(/\{(\w+)\}/g, (_, k: string) => String(p[k] ?? ""));

@@ -466,4 +466,37 @@ const zh: PlayerMessages = {
   langNames: { en: "英语", fa: "波斯语", az: "阿塞拜疆语", bs: "波斯尼亚语", ur: "乌尔都语" },
 };
 
-export const player: Record<Locale, PlayerMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };
+const ps: PlayerMessages = {
+  description: "قرآن کریم له پنځوسو ډېرو قاریانو په غږ، آیت په آیت واورئ، په داسې حال کې چې وېبپاڼه ګورئ.",
+  subtitle: "یو قاري وټاکئ، بیا ټول سورت وغږوئ یا له هر سورت څخه دوام ورکړئ — د وېبپاڼې د کتلو پر مهال غږېدل دوام کوي.",
+  play: "غږول",
+  pause: "درول",
+  prevAyah: "مخکینی آیت",
+  nextAyah: "بل آیت",
+  expand: "غږوونکی پرانیستل",
+  collapse: "غږوونکی کوچنی کول",
+  close: "درول او بندول",
+  repeat: "تکرار",
+  repeatOff: "تکرار بند",
+  repeatSurah: "د سورت تکرار",
+  repeatAyah: "د آیت تکرار",
+  speed: "د غږولو چټکتیا",
+  playSurah: "سورت وغږوئ",
+  playFromHere: "له دې ځایه ټول وغږوئ",
+  favourites: "خوښې",
+  addFavourite: "خوښو ته زیاتول",
+  removeFavourite: "له خوښو لرې کول",
+  allReciters: "ټول قاریان",
+  nowPlaying: "اوس غږېږي",
+  loadError: "دا آیت ونه غږېد. خپل اتصال وګورئ او بیا هڅه وکړئ.",
+  listen: "اورېدل",
+  listenSurah: "{surah} واورئ",
+  listenPage: "له دې مخ څخه واورئ",
+  ended: "تلاوت پای ته ورسېد",
+  changeReciter: "قاري بدلول",
+  goToAyah: "آیت ته ورتلل",
+  surahs: "سورتونه",
+  langNames: { en: "انګلیسي", fa: "فارسي", az: "آذربایجاني", bs: "بوسنیايي", ur: "اردو" },
+};
+
+export const player: Record<Locale, PlayerMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps };

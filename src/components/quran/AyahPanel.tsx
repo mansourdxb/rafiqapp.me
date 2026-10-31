@@ -143,7 +143,7 @@ export function AyahPanel({ lang, sel, onClose, onStep }: { lang: Locale; sel: A
               >
                 {RECITERS.map((r) => (
                   <option key={r.folder} value={r.folder}>
-                    {arabic || lang === "ur" || lang === "fa" ? r.ar : r.lat}
+                    {arabic || lang === "ur" || lang === "fa" || lang === "ps" ? r.ar : r.lat}
                   </option>
                 ))}
               </select>

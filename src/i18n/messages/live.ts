@@ -120,4 +120,13 @@ export const live: Record<Locale, Live> = {
     madinahSrc: "Sunnah TV",
     openYoutube: "在 YouTube 中打开",
   },
+  ps: {
+    title: "ژوندۍ خپرونه",
+    subtitle: "له مکې مکرمې د مسجد الحرام او له مدینې منورې د مسجد النبوي ژوندۍ خپرونه، له رسمي چینلونو.",
+    makkah: "مسجد الحرام — مکه مکرمه",
+    madinah: "مسجد النبوي — مدینه منوره",
+    makkahSrc: "Quran TV",
+    madinahSrc: "Sunnah TV",
+    openYoutube: "په YouTube کې یې پرانیزئ",
+  },
 };

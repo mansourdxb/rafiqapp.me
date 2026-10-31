@@ -449,7 +449,39 @@ const zh: QuranMessages = {
   ayah: "节",
 };
 
-export const quran: Record<Locale, QuranMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };
+const ps: QuranMessages = {
+  title: "قرآن کریم",
+  description: "قرآن کریم په مدني مصحف کې، مخ په مخ، له ژباړې، تفسیر او آیت په آیت تلاوت سره ولولئ.",
+  heroSub: "مدني مصحف، مخ په مخ — د ژباړې او تلاوت لپاره پر هر آیت کښېکاږئ.",
+  readerDescription: "د مدني مصحف {page} مخ — {surah} سورت. له ژباړې، تفسیر او تلاوت سره یې ولولئ.",
+  lastRead: "تاسو په {page} مخ درېدلي وئ",
+  startReading: "لوستل پیل کړئ",
+  prevPage: "مخکینی مخ",
+  nextPage: "بل مخ",
+  goTo: "ورتلل",
+  page: "مخ",
+  surah: "سورت",
+  juz: "پاره",
+  go: "ورشئ",
+  twoPages: "دوه مخونه",
+  onePage: "یو مخ",
+  tafsir: "تفسیر",
+  play: "اورېدل",
+  pause: "درول",
+  copy: "کاپي",
+  copied: "کاپي شو",
+  share: "شریکول",
+  close: "بندول",
+  reciter: "قاري",
+  loadingFont: "د مصحف مخ بارېږي…",
+  fontFailed: "د مصحف لیکدود بار نه شو، نو آیتونه په ساده لیک ښودل کېږي.",
+  translationBy: "ژباړه: {name}",
+  loadError: "بار نه شو. خپل اتصال وګورئ او بیا هڅه وکړئ.",
+  tapHint: "د ژباړې او تلاوت لپاره پر یوه آیت کښېکاږئ",
+  ayah: "آیت",
+};
+
+export const quran: Record<Locale, QuranMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps };
 
 export const fill = (s: string, params: Record<string, string | number>) =>
   Object.entries(params).reduce((acc, [k, v]) => acc.replaceAll(`{${k}}`, String(v)), s);

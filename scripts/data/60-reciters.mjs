@@ -71,7 +71,7 @@ export default async function (ctx) {
     const en = EN[r.key];
     if (!en) throw new Error(`reciters: no Latin label for ${r.key}`);
     if (/[A-Za-z]/.test(ar)) throw new Error(`reciters: Arabic label for ${r.key} is Latin: ${ar}`);
-    const names = Object.fromEntries(LOCALES.map((l) => [l, l === "ar" || l === "ur" || l === "fa" ? ar : en]));
+    const names = Object.fromEntries(LOCALES.map((l) => [l, l === "ar" || l === "ur" || l === "fa" || l === "ps" ? ar : en]));
     const photo = byKey[r.key];
     if (photo) usedPhotos.add(photo);
     const cat = catOf(r);

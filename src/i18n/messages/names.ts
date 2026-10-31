@@ -231,4 +231,20 @@ const zh: NamesMessages = {
   nth: "第 {n} 个尊名（共 99 个）",
 };
 
-export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };
+const ps: NamesMessages = {
+  title: "د الله ښکلي نومونه",
+  verseRef: "الأعراف ٧:١٨٠",
+  description: "د الله تعالی نهه نوي ښکلي نومونه (اسماء الحسنی)، د هر نوم له مانا او تشریح سره او دا چې په قرآن کریم کې چېرته راغلی.",
+  search: "په نومونو کې لټون...",
+  noResults: "هېڅ پایله ونه موندل شوه",
+  meaning: "مانا",
+  explanation: "تشریح",
+  inQuran: "په قرآن کې",
+  englishNote: "مانا او تشریح په انګلیسي ژبه ښودل شوې ده",
+  prev: "مخکینی نوم",
+  next: "بل نوم",
+  all: "ټول نومونه",
+  nth: "نوم {n} له ٩٩ څخه",
+};
+
+export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps };
