@@ -22,7 +22,7 @@ export const CATEGORIES = [
 ];
 
 const EASTERN = "٠١٢٣٤٥٦٧٨٩";
-const digits = (lang, v) => (["ar", "fa", "ur", "ps"].includes(lang) ? String(v).replace(/[0-9]/g, (d) => EASTERN[d]) : String(v));
+const digits = (lang, v) => (["ar", "fa", "ur", "ps", "pnb"].includes(lang) ? String(v).replace(/[0-9]/g, (d) => EASTERN[d]) : String(v));
 
 function slugify(s) {
   return s
@@ -83,7 +83,7 @@ export default async function (ctx) {
     refs
       .split("؛")
       .map((r) => quranRef(r.trim(), lang))
-      .join(["ar", "ur", "fa", "ps"].includes(lang) ? "؛ " : "; ");
+      .join(["ar", "ur", "fa", "ps", "pnb"].includes(lang) ? "؛ " : "; ");
 
   // Dua meaning keys: "<cat>:<index within category>" over the whole array (duaText.buildDuaMeaningIndex).
   const seen = {};

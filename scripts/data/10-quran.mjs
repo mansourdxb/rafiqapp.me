@@ -34,7 +34,8 @@ export default async function quranData(ctx) {
     if (!m) throw new Error(`SURAH_NAMES_${code} not found`);
     return new Function(`return ${m[1]}`)();
   };
-  const localized = Object.fromEntries(["fa", "ur", "tr", "id", "ru", "hi", "bn", "ha", "fr", "zh"].map((l) => [l, namesOf(l.toUpperCase())]));
+  const localized = Object.fromEntries(["fa", "ur", "tr", "id", "ru", "hi", "bn", "ha", "fr", "zh", "pa"].map((l) => [l, namesOf(l.toUpperCase())]));
+  localized.pnb = localized.ur; // Shahmukhi reads the Urdu names, as the app (surahLocale.localizedSurahName)
 
   // ── page / juz lookups (binary search over the start lists, as the app does) ──
   const cmp = (a, b) => (a.sura !== b.sura ? a.sura - b.sura : a.aya - b.aya);
