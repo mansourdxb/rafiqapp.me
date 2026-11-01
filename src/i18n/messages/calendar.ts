@@ -306,4 +306,39 @@ const pnb: CalendarMsg = {
   note: "ام القریٰ کیلنڈر۔ تہاڈے دیس وچ چن ویکھن دے حساب نال مہینے دا شروع اک دن اگے پچھے ہو سکدا اے۔",
 };
 
-export const calendarMsg: Record<Locale, CalendarMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb };
+const uz: CalendarMsg = {
+  title: "Hijriy taqvim",
+  description:
+    "Hijriy (Ummul-Quro) taqvim oyma-oy, milodiy sanalar bilan; Ramazon, ikki hayit, Arafa va Ashuro kabi islomiy sanalar hamda hijriy va milodiy sanalarni oʻzaro oʻgirish vositasi.",
+  prevMonth: "Oldingi oy",
+  nextMonth: "Keyingi oy",
+  occasionsMonth: "Shu oyda",
+  noOccasions: "Bu oyda muhim sanalar yoʻq",
+  converter: "Sanani oʻgirish",
+  gToH: "Milodiydan hijriyga",
+  hToG: "Hijriydan milodiyga",
+  day: "Kun",
+  month: "Oy",
+  year: "Yil",
+  invalid: "Bu sana Ummul-Quro taqvimida mavjud emas.",
+  note: "Ummul-Quro taqvimi. Oyning boshlanishi mamlakatingizda hilolning koʻrinishiga qarab bir kun farq qilishi mumkin.",
+};
+const uzCyrl: CalendarMsg = {
+  title: "Ҳижрий тақвим",
+  description:
+    "Ҳижрий (Уммул-Қуро) тақвим ойма-ой, милодий саналар билан; Рамазон, икки ҳайит, Арафа ва Ашуро каби исломий саналар ҳамда ҳижрий ва милодий саналарни ўзаро ўгириш воситаси.",
+  prevMonth: "Олдинги ой",
+  nextMonth: "Кейинги ой",
+  occasionsMonth: "Шу ойда",
+  noOccasions: "Бу ойда муҳим саналар йўқ",
+  converter: "Санани ўгириш",
+  gToH: "Милодийдан ҳижрийга",
+  hToG: "Ҳижрийдан милодийга",
+  day: "Кун",
+  month: "Ой",
+  year: "Йил",
+  invalid: "Бу сана Уммул-Қуро тақвимида мавжуд эмас.",
+  note: "Уммул-Қуро тақвими. Ойнинг бошланиши мамлакатингизда ҳилолнинг кўринишига қараб бир кун фарқ қилиши мумкин.",
+};
+
+export const calendarMsg: Record<Locale, CalendarMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl };

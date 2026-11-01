@@ -484,5 +484,61 @@ const pnb: QiblaMsg = {
   calibrate: "درست کرو",
   noPlace: "تہاڈی تھاں حالے مقرر نہیں ہوئی۔ اپنی تھاں ورتو یا اپنا شہر کھوجو۔",
 };
+const uz: QiblaMsg = {
+  title: "Qibla yoʻnalishi",
+  description:
+    "Qayerda boʻlmang, qiblani toping: shimoldan burchak, Kaʼbagacha masofa, telefoningizda jonli kompas, quyosh va oy, soyalar hamda xarita.",
+  tabShadow: "Soya",
+  startCompass: "Jonli kompasni yoqish",
+  compassOn: "Jonli kompas yoqilgan — strelka yuqoriga qaragunicha buriling",
+  noSensor: "Bu qurilmada kompas sensori topilmadi. Siferblatda koʻrsatilgan shimoldan burchakdan foydalaning.",
+  denied: "Harakat va yoʻnalish maʼlumotlariga ruxsat berilmadi. Uni brauzeringiz sozlamalarida yoqishingiz mumkin.",
+  desktopHint: "Siferblatning yuqorisi — shimol. Jonli kompasdan foydalanish uchun bu sahifani telefoningizda oching.",
+  facing: "Siz qiblaga yuzlangansiz",
+  azimuth: "Yoʻnalish",
+  altitude: "Ufqdan balandlik",
+  qiblaBearing: "Qibla",
+  shadowIntro:
+    "Quyosh tushib turgan tekis yerga tayoq yoki ruchkani tik qoʻying. Quyidagi vaqtlarda uning soyasi aynan qibla yoʻnalishiga toʻgʻri keladi.",
+  shadowToward: "Soya qiblani koʻrsatadi",
+  shadowTowardHint: "Soya boʻylab, tayoqdan soyaning uchiga qarab yuzlaning.",
+  shadowAway: "Quyosh qibla tomonda",
+  shadowAwayHint: "Quyoshga yuzlaning — soya ortingizga, qiblaga teskari tomonga tushadi.",
+  shadowNone: "Bugun bu joyda quyosh qibla yoʻnalishiga toʻgʻri kelmaydi. Kompas yoki xaritadan foydalaning.",
+  shadowPassed: "oʻtdi",
+  kaabaFact:
+    "Yiliga ikki marta — Makka vaqti bilan taxminan 27–28 may kunlari soat 12:18 da va 15–16 iyul kunlari soat 12:27 da — quyosh roppa-rosa Kaʼba ustida turadi va kunduz boʻlgan har bir joyda barcha soyalar qiblaga teskari tomonga tushadi.",
+  mapNote: "Bu chiziq katta aylana — Kaʼbagacha eng qisqa yoʻl.",
+  calibrate: "Sozlash",
+  noPlace: "Joylashuvingiz hali belgilanmagan. Joylashuvingizdan foydalaning yoki shahringizni qidiring.",
+};
+const uzCyrl: QiblaMsg = {
+  title: "Қибла йўналиши",
+  description:
+    "Қаерда бўлманг, қиблани топинг: шимолдан бурчак, Каъбагача масофа, телефонингизда жонли компас, қуёш ва ой, соялар ҳамда харита.",
+  tabShadow: "Соя",
+  startCompass: "Жонли компасни ёқиш",
+  compassOn: "Жонли компас ёқилган — стрелка юқорига қарагунича бурилинг",
+  noSensor: "Бу қурилмада компас сенсори топилмади. Циферблатда кўрсатилган шимолдан бурчакдан фойдаланинг.",
+  denied: "Ҳаракат ва йўналиш маълумотларига рухсат берилмади. Уни браузерингиз созламаларида ёқишингиз мумкин.",
+  desktopHint: "Циферблатнинг юқориси — шимол. Жонли компасдан фойдаланиш учун бу саҳифани телефонингизда очинг.",
+  facing: "Сиз қиблага юзлангансиз",
+  azimuth: "Йўналиш",
+  altitude: "Уфқдан баландлик",
+  qiblaBearing: "Қибла",
+  shadowIntro:
+    "Қуёш тушиб турган текис ерга таёқ ёки ручкани тик қўйинг. Қуйидаги вақтларда унинг сояси айнан қибла йўналишига тўғри келади.",
+  shadowToward: "Соя қиблани кўрсатади",
+  shadowTowardHint: "Соя бўйлаб, таёқдан соянинг учига қараб юзланинг.",
+  shadowAway: "Қуёш қибла томонда",
+  shadowAwayHint: "Қуёшга юзланинг — соя ортингизга, қиблага тескари томонга тушади.",
+  shadowNone: "Бугун бу жойда қуёш қибла йўналишига тўғри келмайди. Компас ёки харитадан фойдаланинг.",
+  shadowPassed: "ўтди",
+  kaabaFact:
+    "Йилига икки марта — Макка вақти билан тахминан 27–28 май кунлари соат 12:18 да ва 15–16 июл кунлари соат 12:27 да — қуёш роппа-роса Каъба устида туради ва кундуз бўлган ҳар бир жойда барча соялар қиблага тескари томонга тушади.",
+  mapNote: "Бу чизиқ катта айлана — Каъбагача энг қисқа йўл.",
+  calibrate: "Созлаш",
+  noPlace: "Жойлашувингиз ҳали белгиланмаган. Жойлашувингиздан фойдаланинг ёки шаҳрингизни қидиринг.",
+};
 
-export const qiblaMsg: Record<Locale, QiblaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb };
+export const qiblaMsg: Record<Locale, QiblaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl };

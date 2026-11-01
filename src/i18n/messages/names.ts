@@ -278,4 +278,35 @@ const pnb: NamesMessages = {
   nth: "٩٩ وچوں ناں {n}",
 };
 
-export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb };
+const uz: NamesMessages = {
+  title: "Allohning 99 ismi",
+  verseRef: "Aʼrof 7:180",
+  description: "Allohning 99 goʻzal ismi (Asmoul husno): har bir ismning maʼnosi va izohi hamda u Qurʼonda qayerda kelgani.",
+  search: "Ismlarni qidirish...",
+  noResults: "Hech narsa topilmadi",
+  meaning: "Maʼnosi",
+  explanation: "Izoh",
+  inQuran: "Qurʼonda",
+  englishNote: "Maʼnosi va izohi ingliz tilida koʻrsatilgan",
+  prev: "Oldingi ism",
+  next: "Keyingi ism",
+  all: "Barcha ismlar",
+  nth: "99 ismdan {n}-ism",
+};
+const uzCyrl: NamesMessages = {
+  title: "Аллоҳнинг 99 исми",
+  verseRef: "Аъроф 7:180",
+  description: "Аллоҳнинг 99 гўзал исми (Асмоул ҳусно): ҳар бир исмнинг маъноси ва изоҳи ҳамда у Қуръонда қаерда келгани.",
+  search: "Исмларни қидириш...",
+  noResults: "Ҳеч нарса топилмади",
+  meaning: "Маъноси",
+  explanation: "Изоҳ",
+  inQuran: "Қуръонда",
+  englishNote: "Маъноси ва изоҳи инглиз тилида кўрсатилган",
+  prev: "Олдинги исм",
+  next: "Кейинги исм",
+  all: "Барча исмлар",
+  nth: "99 исмдан {n}-исм",
+};
+
+export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl };

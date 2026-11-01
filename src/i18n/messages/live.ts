@@ -147,4 +147,22 @@ export const live: Record<Locale, Live> = {
     madinahSrc: "Sunnah TV",
     openYoutube: "YouTube وچ کھولو",
   },
+  uz: {
+    title: "Jonli efir",
+    subtitle: "Makkadagi Masjidul Harom va Madinadagi Masjidi Nabaviydan rasmiy kanallar orqali jonli efir.",
+    makkah: "Masjidul Harom — Makka",
+    madinah: "Masjidi Nabaviy — Madina",
+    makkahSrc: "Quran TV",
+    madinahSrc: "Sunnah TV",
+    openYoutube: "YouTube orqali ochish",
+  },
+  "uz-Cyrl": {
+    title: "Жонли эфир",
+    subtitle: "Маккадаги Масжидул Ҳаром ва Мадинадаги Масжиди Набавийдан расмий каналлар орқали жонли эфир.",
+    makkah: "Масжидул Ҳаром — Макка",
+    madinah: "Масжиди Набавий — Мадина",
+    makkahSrc: "Quran TV",
+    madinahSrc: "Sunnah TV",
+    openYoutube: "YouTube орқали очиш",
+  },
 };

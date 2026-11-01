@@ -16,6 +16,8 @@ import zh from "@/generated/articles-zh.json";
 import ps from "@/generated/articles-ps.json";
 import pa from "@/generated/articles-pa.json";
 import pnb from "@/generated/articles-pnb.json";
+import uz from "@/generated/articles-uz.json";
+import uzCyrl from "@/generated/articles-uz-Cyrl.json";
 import { localePath, type Locale } from "@/i18n/config";
 import { articles as msgs, type CategoryId } from "@/i18n/messages/articles";
 
@@ -31,7 +33,7 @@ export type Block =
 export type Article = { c: CategoryId; s: string; t: string; k?: string; x: string; m: number; b: Block[] };
 type Library = { categories: { id: CategoryId; name?: string; n: number }[]; articles: Article[] };
 
-const DATA = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb } as unknown as Record<Locale, Library>;
+const DATA = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl } as unknown as Record<Locale, Library>;
 
 export const CATEGORY_IDS: CategoryId[] = ["seerah", "prophets", "fiqh", "hajj", "prayer", "duas", "ruqyah", "tajweed"];
 export const isCategory = (v: string): v is CategoryId => (CATEGORY_IDS as string[]).includes(v);

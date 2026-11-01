@@ -493,4 +493,61 @@ const pnb: PrayerMsg = {
   makkah: "مکہ مکرمہ",
 };
 
-export const prayerMsg: Record<Locale, PrayerMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb };
+const uz: PrayerMsg = {
+  title: "Namoz vaqtlari",
+  description:
+    "Shahringiz uchun bugungi namoz vaqtlari — Bomdod, Quyosh chiqishi, Peshin, Asr, Shom va Xufton — keyingi namozgacha jonli teskari sanoq va chop etiladigan oylik jadval bilan.",
+  useLocation: "Joylashuvimdan foydalanish",
+  locating: "Joylashuv aniqlanmoqda…",
+  searchPlaceholder: "Shaharni qidiring",
+  searching: "Qidirilmoqda…",
+  noResults: "Hech qanday joy topilmadi",
+  searchError: "Qidiruv hozir mavjud emas. Iltimos, qayta urinib koʻring.",
+  locError: "Joylashuvingizni aniqlab boʻlmadi — shahringizni qidiring. iPhone qurilmasida ruxsat berish uchun: Settings → Privacy & Security → Location Services → brauzeringiz → While Using.",
+  defaultNotice: "Makka vaqtlari koʻrsatilmoqda. Joylashuvingizdan foydalaning yoki shahringizni qidiring.",
+  settings: "Sozlamalar",
+  auto: "Avtomatik — {{method}}",
+  timeFormat: "Vaqt formati",
+  h12: "12 soatlik",
+  h24: "24 soatlik",
+  highLat: "48° kenglikdan yuqorida Bomdod va Xufton uchun shafaq burchagi qoidasi avtomatik qoʻllaniladi.",
+  tzNote: "Vaqtlar {{city}} mahalliy vaqti ({{tz}}) boʻyicha.",
+  monthly: "Oylik jadval",
+  print: "Chop etish",
+  prevMonth: "Oldingi oy",
+  nextMonth: "Keyingi oy",
+  thisMonth: "Shu oy",
+  date: "Sana",
+  location: "Joylashuv",
+  makkah: "Makkai Mukarrama",
+};
+const uzCyrl: PrayerMsg = {
+  title: "Намоз вақтлари",
+  description:
+    "Шаҳрингиз учун бугунги намоз вақтлари — Бомдод, Қуёш чиқиши, Пешин, Аср, Шом ва Хуфтон — кейинги намозгача жонли тескари саноқ ва чоп этиладиган ойлик жадвал билан.",
+  useLocation: "Жойлашувимдан фойдаланиш",
+  locating: "Жойлашув аниқланмоқда…",
+  searchPlaceholder: "Шаҳарни қидиринг",
+  searching: "Қидирилмоқда…",
+  noResults: "Ҳеч қандай жой топилмади",
+  searchError: "Қидирув ҳозир мавжуд эмас. Илтимос, қайта уриниб кўринг.",
+  locError: "Жойлашувингизни аниқлаб бўлмади — шаҳрингизни қидиринг. iPhone қурилмасида рухсат бериш учун: Settings → Privacy & Security → Location Services → браузерингиз → While Using.",
+  defaultNotice: "Макка вақтлари кўрсатилмоқда. Жойлашувингиздан фойдаланинг ёки шаҳрингизни қидиринг.",
+  settings: "Созламалар",
+  auto: "Автоматик — {{method}}",
+  timeFormat: "Вақт формати",
+  h12: "12 соатлик",
+  h24: "24 соатлик",
+  highLat: "48° кенгликдан юқорида Бомдод ва Хуфтон учун шафақ бурчаги қоидаси автоматик қўлланилади.",
+  tzNote: "Вақтлар {{city}} маҳаллий вақти ({{tz}}) бўйича.",
+  monthly: "Ойлик жадвал",
+  print: "Чоп этиш",
+  prevMonth: "Олдинги ой",
+  nextMonth: "Кейинги ой",
+  thisMonth: "Шу ой",
+  date: "Сана",
+  location: "Жойлашув",
+  makkah: "Маккаи Мукаррама",
+};
+
+export const prayerMsg: Record<Locale, PrayerMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl };

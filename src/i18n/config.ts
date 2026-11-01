@@ -1,5 +1,5 @@
-// The site's languages — the same sixteen as the app, in the app's picker order.
-export const locales = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh", "ps", "pa", "pnb"] as const;
+// The site's languages — the same eighteen as the app, in the app's picker order.
+export const locales = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh", "ps", "pa", "pnb", "uz", "uz-Cyrl"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "ar";
 
@@ -24,6 +24,8 @@ export const nativeName: Record<Locale, string> = {
   ps: "پښتو",
   pa: "ਪੰਜਾਬੀ",
   pnb: "پنجابی",
+  uz: "Oʻzbekcha",
+  "uz-Cyrl": "Ўзбекча",
 };
 
 /** Flag shown next to each language in the language menu (public/flags/<code>.svg, from flag-icons, MIT). */
@@ -44,6 +46,8 @@ export const flag: Record<Locale, string> = {
   ps: "af",
   pa: "in",
   pnb: "pk",
+  uz: "uz",
+  "uz-Cyrl": "uz",
 };
 
 export const ogLocale: Record<Locale, string> = {
@@ -63,10 +67,13 @@ export const ogLocale: Record<Locale, string> = {
   ps: "ps_AF",
   pa: "pa_IN",
   pnb: "pa_PK",
+  uz: "uz_UZ",
+  "uz-Cyrl": "uz_UZ",
 };
 
 /** BCP 47 tag for <html lang> and hreflang: Chinese is Simplified Chinese (zh-CN), so browsers pick Simplified glyphs;
- * Punjabi is tagged by script — Gurmukhi (pa-Guru) and Shahmukhi (pa-Arab, the app's "pnb", never used as a tag). */
+ * Punjabi is tagged by script — Gurmukhi (pa-Guru) and Shahmukhi (pa-Arab, the app's "pnb", never used as a tag).
+ * Uzbek: "uz" (Latin) and "uz-Cyrl" are already BCP 47 tags, and also the URL segments the app's share links use. */
 const TAGS: Partial<Record<Locale, string>> = { zh: "zh-CN", pa: "pa-Guru", pnb: "pa-Arab" };
 export const langTag = (l: Locale) => TAGS[l] ?? l;
 

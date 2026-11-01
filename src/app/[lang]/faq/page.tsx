@@ -27,9 +27,11 @@ import zh from "@/generated/faq-zh.json";
 import ps from "@/generated/faq-ps.json";
 import pa from "@/generated/faq-pa.json";
 import pnb from "@/generated/faq-pnb.json";
+import uz from "@/generated/faq-uz.json";
+import uzCyrl from "@/generated/faq-uz-Cyrl.json";
 
 type FaqData = { title: string; items: { id: string; q: string; steps: string[] }[] };
-const DATA: Record<Locale, FaqData> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb };
+const DATA: Record<Locale, FaqData> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl };
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/faq">): Promise<Metadata> {
   const { lang } = await params;

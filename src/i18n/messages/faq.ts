@@ -156,4 +156,22 @@ export const faq: Record<Locale, Faq> = {
     expandAll: "سارے کھولو",
     collapseAll: "سارے بند کرو",
   },
+  uz: {
+    subtitle: "Rafiq Al-Muslim ilovasi haqida eng koʻp beriladigan savollarga bosqichma-bosqich javoblar.",
+    metaDescription: "Rafiq Al-Muslim ilovasi haqida javoblar: qibla aniqligi, namoz vaqtlarini hisoblash, azon bildirishnomalari, internetsiz Qurʼon tilovati, til, tungi rejim va boshqalar.",
+    searchPlaceholder: "Savollardan qidiring…",
+    noResults: "Qidiruvingizga mos savol topilmadi.",
+    count: "{n} ta savol",
+    expandAll: "Hammasini ochish",
+    collapseAll: "Hammasini yopish",
+  },
+  "uz-Cyrl": {
+    subtitle: "Рафиқ Ал-Муслим иловаси ҳақида энг кўп бериладиган саволларга босқичма-босқич жавоблар.",
+    metaDescription: "Рафиқ Ал-Муслим иловаси ҳақида жавоблар: қибла аниқлиги, намоз вақтларини ҳисоблаш, азон билдиришномалари, интернетсиз Қуръон тиловати, тил, тунги режим ва бошқалар.",
+    searchPlaceholder: "Саволлардан қидиринг…",
+    noResults: "Қидирувингизга мос савол топилмади.",
+    count: "{n} та савол",
+    expandAll: "Ҳаммасини очиш",
+    collapseAll: "Ҳаммасини ёпиш",
+  },
 };

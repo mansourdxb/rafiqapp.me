@@ -166,4 +166,23 @@ const pnb: ImsakiyaMsg = {
   started: "رمضان مبارک",
 };
 
-export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb };
+const uz: ImsakiyaMsg = {
+  description:
+    "Shahringiz uchun Ramazon taqvimi (imsakiya): Ramazonning har bir kuni uchun saharlik (imsak), Bomdod, Peshin, Asr, Shom (iftorlik) va Xufton vaqtlari, chop etishga tayyor.",
+  theme: "Rang",
+  themes: { night: "Tun", sunset: "Quyosh botishi", day: "Kun" },
+  imsakNote: "Ehtiyot uchun imsak (saharlik tugashi) Bomdoddan 10 daqiqa oldin koʻrsatiladi; roʻza Bomdod vaqtidan boshlanadi.",
+  daysLeft: "Ramazon {{n}} kundan soʻng boshlanadi",
+  started: "Ramazon muborak",
+};
+const uzCyrl: ImsakiyaMsg = {
+  description:
+    "Шаҳрингиз учун Рамазон тақвими (имсакия): Рамазоннинг ҳар бир куни учун саҳарлик (имсак), Бомдод, Пешин, Аср, Шом (ифторлик) ва Хуфтон вақтлари, чоп этишга тайёр.",
+  theme: "Ранг",
+  themes: { night: "Тун", sunset: "Қуёш ботиши", day: "Кун" },
+  imsakNote: "Эҳтиёт учун имсак (саҳарлик тугаши) Бомдоддан 10 дақиқа олдин кўрсатилади; рўза Бомдод вақтидан бошланади.",
+  daysLeft: "Рамазон {{n}} кундан сўнг бошланади",
+  started: "Рамазон муборак",
+};
+
+export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl };

@@ -16,14 +16,14 @@
       location.replace("https://" + location.host + location.pathname + location.search + location.hash);
       return;
     }
-    var langs = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh", "ps", "pa", "pnb"];
+    var langs = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh", "ps", "pa", "pnb", "uz", "uz-Cyrl"];
     var pick = null;
     try { pick = localStorage.getItem("lang"); } catch (e) {}
     if (langs.indexOf(pick) < 0) {
       var nav = (navigator.languages || [navigator.language || ""]);
       for (var i = 0; i < nav.length && !pick; i++) {
         var t = String(nav[i]).toLowerCase();
-        var c = /^pnb|^pa-(arab|pk)/.test(t) ? "pnb" : t.slice(0, 2); // Punjabi in Shahmukhi, else Gurmukhi
+        var c = /^pnb|^pa-(arab|pk)/.test(t) ? "pnb" : /^uz-cyrl/.test(t) ? "uz-Cyrl" : t.slice(0, 2); // Punjabi in Shahmukhi, else Gurmukhi; Uzbek in Cyrillic, else Latin
         if (langs.indexOf(c) >= 0) pick = c;
       }
     }

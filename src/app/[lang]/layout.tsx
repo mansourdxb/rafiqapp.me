@@ -11,6 +11,8 @@ import { common } from "@/i18n/messages/common";
 import { alternates } from "@/i18n/metadata";
 
 const roboto = Roboto({ subsets: ["latin", "cyrillic"], weight: ["400", "500", "700", "900"], variable: "--font-roboto", display: "swap" });
+// Uzbek Cyrillic letters ғ қ ҳ are in Roboto's cyrillic-ext subset (used only on uz-Cyrl pages, globals.css).
+const robotoCyrExt = Roboto({ subsets: ["cyrillic-ext"], weight: ["400", "500", "700", "900"], variable: "--font-roboto-cyrext", display: "swap", preload: false });
 const almarai = Almarai({ subsets: ["arabic"], weight: ["300", "400", "700", "800"], variable: "--font-almarai", display: "swap" });
 // Urdu / Persian letters Almarai lacks (ٹ ڈ ڑ ں ے ک ی …) fall back to Noto Sans Arabic.
 const notoAr = Noto_Sans_Arabic({ subsets: ["arabic"], weight: ["400", "500", "700"], variable: "--font-noto-ar", display: "swap", preload: false });
@@ -69,7 +71,7 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
   if (!isLocale(lang)) notFound();
   const l = lang as Locale;
   return (
-    <html lang={langTag(l)} dir={dir(l)} className={`${roboto.variable} ${almarai.variable} ${notoAr.variable} ${notoDeva.variable} ${notoBeng.variable} ${notoGuru.variable} ${notoLatin.variable}`} suppressHydrationWarning>
+    <html lang={langTag(l)} dir={dir(l)} className={`${roboto.variable} ${robotoCyrExt.variable} ${almarai.variable} ${notoAr.variable} ${notoDeva.variable} ${notoBeng.variable} ${notoGuru.variable} ${notoLatin.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>

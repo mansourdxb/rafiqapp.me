@@ -246,4 +246,32 @@ export const devices: Record<Locale, Devices> = {
       androidAuto: "گڈی چلاندیاں قرآن دی تلاوت، اذکار، تسبیح تے نماز دے ویلے۔",
     },
   },
+  uz: {
+    title: "avtomobilingizda va bilagingizda",
+    sub: "Namoz vaqtlari, Qurʼon va zikrlar siz bilan birga — aqlli soatingizda va avtomobilingiz ekranida.",
+    wrist: "Bilagingizda",
+    car: "Avtomobilingizda",
+    names: NAMES,
+    text: {
+      appleWatch: "Teskari sanoq bilan namoz vaqtlari, tasbeh va qibla — iPhone bilan sinxronlangan.",
+      wearOs: "Aqlli soatingizda namoz vaqtlari, qibla, tasbeh va zikrlar.",
+      huaweiWatch: "Namoz vaqtlari, tasbeh, zikrlar, qibla va kun oyati.",
+      carPlay: "Avtomobilingiz ekranida Qurʼon va zikrlarni tinglang, namoz vaqtlarini koʻring.",
+      androidAuto: "Haydash paytida Qurʼon tilovati, zikrlar, tasbeh va namoz vaqtlari.",
+    },
+  },
+  "uz-Cyrl": {
+    title: "автомобилингизда ва билагингизда",
+    sub: "Намоз вақтлари, Қуръон ва зикрлар сиз билан бирга — ақлли соатингизда ва автомобилингиз экранида.",
+    wrist: "Билагингизда",
+    car: "Автомобилингизда",
+    names: NAMES,
+    text: {
+      appleWatch: "Тескари саноқ билан намоз вақтлари, тасбеҳ ва қибла — iPhone билан синхронланган.",
+      wearOs: "Ақлли соатингизда намоз вақтлари, қибла, тасбеҳ ва зикрлар.",
+      huaweiWatch: "Намоз вақтлари, тасбеҳ, зикрлар, қибла ва кун ояти.",
+      carPlay: "Автомобилингиз экранида Қуръон ва зикрларни тингланг, намоз вақтларини кўринг.",
+      androidAuto: "Ҳайдаш пайтида Қуръон тиловати, зикрлар, тасбеҳ ва намоз вақтлари.",
+    },
+  },
 };

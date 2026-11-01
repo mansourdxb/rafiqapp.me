@@ -132,4 +132,20 @@ export const promo: Record<Locale, Promo> = {
     close: "بند کرو",
     later: "ہُݨے نہیں",
   },
+  uz: {
+    before: "",
+    name: "Rafiq Al-Muslim",
+    after: " ilovasini hozir yuklab oling!",
+    body: "Kuningizning eng goʻzal damlarini Qurʼon, zikrlar, duolar va namoz vaqtlari bilan oʻtkazing. Rafiq Al-Muslim ibodatingizda sizga yordam beradi — uni hozir bepul va reklamasiz yuklab oling.",
+    close: "Yopish",
+    later: "Hozir emas",
+  },
+  "uz-Cyrl": {
+    before: "",
+    name: "Рафиқ Ал-Муслим",
+    after: " иловасини ҳозир юклаб олинг!",
+    body: "Кунингизнинг энг гўзал дамларини Қуръон, зикрлар, дуолар ва намоз вақтлари билан ўтказинг. Рафиқ Ал-Муслим ибодатингизда сизга ёрдам беради — уни ҳозир бепул ва рекламасиз юклаб олинг.",
+    close: "Ёпиш",
+    later: "Ҳозир эмас",
+  },
 };
