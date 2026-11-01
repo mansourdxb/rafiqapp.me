@@ -550,4 +550,33 @@ const uzCyrl: PrayerMsg = {
   makkah: "Маккаи Мукаррама",
 };
 
-export const prayerMsg: Record<Locale, PrayerMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl };
+const so: PrayerMsg = {
+  title: "Waqtiyada salaadda",
+  description:
+    "Waqtiyada salaadda maanta ee magaaladaada — Subax, qorrax ka soo baxa, Duhur, Casar, Maqrib iyo Cishaa — oo leh tirin-dhimis toos ah oo ilaa salaadda xigta iyo jadwal bille ah oo la daabici karo.",
+  useLocation: "Isticmaal goobtayda",
+  locating: "Goobta waa la raadinayaa…",
+  searchPlaceholder: "Raadi magaalo",
+  searching: "Waa la raadinayaa…",
+  noResults: "Meel lama helin",
+  searchError: "Raadintu hadda lama heli karo. Fadlan mar kale isku day.",
+  locError: "Goobtaada lama helin — raadi magaaladaada. Si aad ugu oggolaato iPhone: Dejinta → Asturnaanta iyo Amniga → Adeegyada Goobta → browser-kaaga → Marka la isticmaalayo.",
+  defaultNotice: "Waxaa la muujinayaa waqtiyada Makka. Isticmaal goobtaada ama raadi magaaladaada.",
+  settings: "Dejinta",
+  auto: "Toos — {{method}}",
+  timeFormat: "Qaabka waqtiga",
+  h12: "12 saacadood",
+  h24: "24 saacadood",
+  highLat: "Meelaha ka sarreeya loolka 48°, Subax iyo Cishaa waxay si toos ah u isticmaalaan xeerka xagalka casarka-habeenka (twilight).",
+  tzNote: "Waqtiyadu waa waqtiga maxalliga ah ee {{city}} ({{tz}}).",
+  monthly: "Jadwalka bisha",
+  print: "Daabac",
+  prevMonth: "Bishii hore",
+  nextMonth: "Bisha xigta",
+  thisMonth: "Bishan",
+  date: "Taariikhda",
+  location: "Goobta",
+  makkah: "Makka",
+};
+
+export const prayerMsg: Record<Locale, PrayerMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so };

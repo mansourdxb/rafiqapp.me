@@ -512,4 +512,31 @@ const uzCyrl: TasbeehMessages = {
   vibrate: "Тебраниш",
 };
 
-export const tasbeeh: Record<Locale, TasbeehMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl };
+const so: TasbeehMessages = {
+  title: "Tasbiix",
+  subtitle: "Allaah tasbiixso oo ilaali tiradaada — waxay ku kaydsan tahay qalabkaaga",
+  description: "Tasbiix elektaroonig ah: dooro dikri ama ku dar mid adiga kuu gaar ah, deji hadaf, kadibna taabo ama riix badhanka meesha bannaan si aad u tiriso.",
+  choose: "Dooro dikri",
+  builtIn: "Adkaarta tasbiixda",
+  mine: "Adkaartayda",
+  add: "Ku dar dikri",
+  addTitle: "Dikri cusub",
+  textPlaceholder: "Qor dikrigaaga",
+  target: "Hadafka",
+  save: "Kaydi",
+  cancel: "Jooji",
+  remove: "Tirtir dikriga",
+  reset: "Eber ka dhig",
+  tapHint: "Taabo tusbaxa ama riix badhanka meesha bannaan si aad u tiriso",
+  ofTarget: "ka mid ah {target}",
+  completed: "Hadafka waa la gaaray",
+  completedSub: "Allaah ha kaa aqbalo — sii wad haddaad doonto",
+  today: "Maanta",
+  allTime: "Waqtiga oo dhan",
+  thisDhikr: "Dikrigan",
+  fadl: "Fadliga dikrigan",
+  sound: "Cod",
+  vibrate: "Gariir",
+};
+
+export const tasbeeh: Record<Locale, TasbeehMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so };

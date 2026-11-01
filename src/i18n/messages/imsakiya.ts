@@ -185,4 +185,14 @@ const uzCyrl: ImsakiyaMsg = {
   started: "Рамазон муборак",
 };
 
-export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl };
+const so: ImsakiyaMsg = {
+  description:
+    "Jadwalka Ramadaan ee magaaladaada: Imsaakka, Subax, Duhur, Casar, Maqrib (afurka) iyo Cishaa maalin kasta oo Ramadaan ah, oo diyaar u ah daabacaad.",
+  theme: "Midab",
+  themes: { night: "Habeen", sunset: "Qorrax dhac", day: "Maalin" },
+  imsakNote: "Imsaakka waxaa la muujiyaa 10 daqiiqo ka hor Subax, taxaddar ahaan; soonku wuxuu bilaabmaa waqtiga Subax.",
+  daysLeft: "Ramadaan wuxuu bilaabmayaa {{n}} maalmood kadib",
+  started: "Ramadaan Mubaarak",
+};
+
+export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so };

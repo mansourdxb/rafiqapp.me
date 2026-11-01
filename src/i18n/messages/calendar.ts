@@ -341,4 +341,22 @@ const uzCyrl: CalendarMsg = {
   note: "Уммул-Қуро тақвими. Ойнинг бошланиши мамлакатингизда ҳилолнинг кўринишига қараб бир кун фарқ қилиши мумкин.",
 };
 
-export const calendarMsg: Record<Locale, CalendarMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl };
+const so: CalendarMsg = {
+  title: "Kalandarka Hijriga",
+  description:
+    "Kalandarka Hijriga (Umm al-Qura) bil-bil oo leh taariikhaha Miilaadiga, munaasabadaha Islaamka sida Ramadaan, labada Ciid, Carafo iyo Caashuura, iyo beddelaha taariikhda Hijriga iyo Miilaadiga.",
+  prevMonth: "Bishii hore",
+  nextMonth: "Bisha xigta",
+  occasionsMonth: "Bishan",
+  noOccasions: "Bishan munaasabad ma leh",
+  converter: "Beddelaha taariikhda",
+  gToH: "Miilaadi ilaa Hijri",
+  hToG: "Hijri ilaa Miilaadi",
+  day: "Maalin",
+  month: "Bil",
+  year: "Sannad",
+  invalid: "Taariikhdani kuma jirto kalandarka Umm al-Qura.",
+  note: "Kalandarka Umm al-Qura. Bilowga bishu wuxuu ku kala duwanaan karaa hal maalin iyadoo ku xiran muuqashada dayaxa ee dalkaaga.",
+};
+
+export const calendarMsg: Record<Locale, CalendarMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so };

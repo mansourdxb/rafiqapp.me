@@ -165,4 +165,13 @@ export const live: Record<Locale, Live> = {
     madinahSrc: "Sunnah TV",
     openYoutube: "YouTube орқали очиш",
   },
+  so: {
+    title: "Baahin toos ah",
+    subtitle: "Si toos ah uga daawo Masjidka Xurmada leh ee Makka iyo Masjidka Nabiga ee Madiina, kanaalada rasmiga ah.",
+    makkah: "Masjidka Xurmada leh — Makka",
+    madinah: "Masjidka Nabiga — Madiina",
+    makkahSrc: "Quran TV",
+    madinahSrc: "Sunnah TV",
+    openYoutube: "Ku fur YouTube",
+  },
 };

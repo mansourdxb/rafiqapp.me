@@ -541,4 +541,33 @@ const uzCyrl: QiblaMsg = {
   noPlace: "Жойлашувингиз ҳали белгиланмаган. Жойлашувингиздан фойдаланинг ёки шаҳрингизни қидиринг.",
 };
 
-export const qiblaMsg: Record<Locale, QiblaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl };
+const so: QiblaMsg = {
+  title: "Jihada Qiblada",
+  description:
+    "Ka hel Qiblada meel kasta oo aad joogto: xagalka laga bilaabo waqooyi, masaafada ilaa Kacbada, jiheeye toos ah oo taleefankaaga ku jira, qorraxda iyo dayaxa, hooska iyo khariidad.",
+  tabShadow: "Hooska",
+  startCompass: "Daar jiheeyaha tooska ah",
+  compassOn: "Jiheeyaha tooska ahi waa shidan yahay — wareeg ilaa fallaartu kor u jeedsato",
+  noSensor: "Qalabkan laguma helin dareeme jiheeye. Isticmaal xagalka laga bilaabo waqooyi ee ka muuqda wajiga.",
+  denied: "Gelitaanka dhaqdhaqaaqa iyo jihaynta waa la diiday. Waxaad ku oggolaan kartaa dejinta browser-kaaga.",
+  desktopHint: "Waqooyi waxay ku taal xagga sare ee wajiga. Boggan ku fur taleefankaaga si aad u isticmaasho jiheeyaha tooska ah.",
+  facing: "Waxaad u jeeddaa Qiblada",
+  azimuth: "Jihada",
+  altitude: "Joogga ka sarreeya jiidka cirka",
+  qiblaBearing: "Qiblada",
+  shadowIntro:
+    "Ul ama qalin si toos ah ugu taag dhul siman oo qorraxdu ku dhacayso. Waqtiyada hoose hooskiisu si sax ah ayuu ula siman yahay Qiblada.",
+  shadowToward: "Hooska wuxuu u jeedaa Qiblada",
+  shadowTowardHint: "U jeeso dhinaca hooska, adigoo ka bilaabaya ulda ilaa caarada hooska.",
+  shadowAway: "Qorraxdu waxay ku jirtaa jihada Qiblada",
+  shadowAwayHint: "U jeeso qorraxda — hooskuna wuxuu u jeedaa gadaashaada, kana fog Qiblada.",
+  shadowNone: "Maanta goobtan qorraxdu lama siman Qiblada. Isticmaal jiheeyaha ama khariidadda.",
+  shadowPassed: "waa dhaafay",
+  kaabaFact:
+    "Laba jeer sannadkii — qiyaastii 27–28 May saacadda 12:18 iyo 15–16 Luulyo saacadda 12:27 waqtiga Makka — qorraxdu waxay si toos ah uga korraysaa Kacbada, meel kasta oo maalin ahna hooska oo dhan wuxuu u jeedaa dhinaca ka soo horjeeda Qiblada.",
+  mapNote: "Xariiqdu waa goobada weyn — jidka ugu gaaban ee Kacbada loo maro.",
+  calibrate: "Hagaaji",
+  noPlace: "Goobtaada weli lama dejin. Isticmaal goobtaada ama raadi magaaladaada.",
+};
+
+export const qiblaMsg: Record<Locale, QiblaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so };

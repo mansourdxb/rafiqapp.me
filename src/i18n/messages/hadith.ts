@@ -695,7 +695,44 @@ const uzCyrl: HadithMessages = {
   chapterMeta: "{chapter} — {book}: {n} та ҳадис арабча матн ва таржима билан.",
 };
 
-export const hadith: Record<Locale, HadithMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl };
+const so: HadithMessages = {
+  books: {
+    bukhari: "Saxiix al-Bukhaari",
+    muslim: "Saxiix Muslim",
+    abudawud: "Sunan Abii Daawuud",
+    tirmidhi: "Jaamic at-Tirmidi",
+    nasai: "Sunan an-Nasaa’i",
+    ibnmajah: "Sunan Ibnu Maajah",
+    malik: "Muwadda’ Maalik",
+    darimi: "Sunan ad-Daarimi",
+    ahmed: "Musnad Axmad",
+  },
+  metaTitle: "Xadiiska — sagaalka kitaab",
+  metaDescription: "Ku akhri Saxiix al-Bukhaari, Saxiix Muslim iyo kutubta kale ee xadiiska Carabi iyo tarjumaad Ingiriisi ah, ka raadi oo kaydi kuwa aad jeceshahay.",
+  intro: "Sagaalka kitaab ee Sunnada, Carabi iyo tarjumaad Ingiriisi ah. Hadalka Nabiga ﷺ waxaa lagu iftiimiyay midab cagaar ah.",
+  hadiths: "Xadiisyo",
+  kitabs: "Kutub",
+  hadithN: "Xadiiska {n}",
+  minChars: "Qor ugu yaraan 2 xaraf si aad u raadiso",
+  searchLoading: "Tusmada raadinta waa la soo rarayaa…",
+  searchHintEn: "Ku raadi Carabi ama tarjumaadda Ingiriisiga",
+  noFavorites: "Weli wax aad jeceshahay ma jiraan. Taabo calaamadda kaydinta ee xadiis kasta si aad halkan ugu kaydiso.",
+  addFavorite: "Ku dar kuwa aad jeceshahay",
+  removeFavorite: "Ka saar kuwa aad jeceshahay",
+  copy: "Koobiyee",
+  share: "La wadaag",
+  showMore: "Muuji wax dheeraad ah",
+  shownOf: "{a} ka mid ah {b}",
+  prev: "Kii hore",
+  next: "Kan xiga",
+  allBooks: "Dhammaan kutubta xadiiska",
+  noTranslation: "Kitaabkan weli tarjumaad ma leh — qoraal Carabi ah oo keliya.",
+  shareVia: "barnaamijka Rafiq Al-Muslim",
+  bookMeta: "Akhri {book}: {n} xadiis oo ku jira {k} kitaab, Carabi iyo tarjumaad.",
+  chapterMeta: "{chapter} — {book}: {n} xadiis oo Carabi iyo tarjumaad ah.",
+};
+
+export const hadith: Record<Locale, HadithMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so };
 
 /** "{n} of {b}" → filled in. */
 export function fill(s: string, p: Record<string, string | number>) {

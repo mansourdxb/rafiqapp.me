@@ -309,4 +309,20 @@ const uzCyrl: NamesMessages = {
   nth: "99 исмдан {n}-исм",
 };
 
-export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl };
+const so: NamesMessages = {
+  title: "99-ka Magac ee Allaah",
+  verseRef: "Al-Acraaf 7:180",
+  description: "99-ka Magac ee Wanaagsan ee Allaah (Asmaa’ul Xusnaa) oo leh macnaha iyo sharraxaadda magac kasta iyo meesha uu Qur’aanka kaga yimid.",
+  search: "Raadi magacyada...",
+  noResults: "Natiijo lama helin",
+  meaning: "Macnaha",
+  explanation: "Sharraxaad",
+  inQuran: "Qur’aanka dhexdiisa",
+  englishNote: "Macnaha iyo sharraxaadda waxaa lagu muujiyay Ingiriisi",
+  prev: "Magacii hore",
+  next: "Magaca xiga",
+  all: "Dhammaan magacyada",
+  nth: "Magaca {n} ee 99",
+};
+
+export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so };

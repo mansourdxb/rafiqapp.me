@@ -629,4 +629,37 @@ const uzCyrl: PlayerMessages = {
   langNames: { en: "Инглиз тили", fa: "Форс тили", az: "Озарбайжон тили", bs: "Босния тили", ur: "Урду тили" },
 };
 
-export const player: Record<Locale, PlayerMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl };
+const so: PlayerMessages = {
+  description: "Dhegayso Qur’aanka Kariimka ah oo ay akhriyeen in ka badan konton akhriste, aayad-aayad, inta aad bogga dhex marayso.",
+  subtitle: "Dooro akhriste, kadibna daar suurad dhan ama ka sii wad suurad kasta — wuu sii socdaa inta aad bogga dhex marayso.",
+  play: "Daar",
+  pause: "Hakad",
+  prevAyah: "Aayaddii hore",
+  nextAyah: "Aayadda xigta",
+  expand: "Fur ciyaariyaha",
+  collapse: "Yaree ciyaariyaha",
+  close: "Jooji oo xir",
+  repeat: "Ku celi",
+  repeatOff: "Ku celintu waa dansan tahay",
+  repeatSurah: "Ku celi suuradda",
+  repeatAyah: "Ku celi aayadda",
+  speed: "Xawaaraha dhegaysiga",
+  playSurah: "Daar suuradda",
+  playFromHere: "Halkan ka daar dhammaan",
+  favourites: "Kuwa aan jeclahay",
+  addFavourite: "Ku dar kuwa aad jeceshahay",
+  removeFavourite: "Ka saar kuwa aad jeceshahay",
+  allReciters: "Dhammaan akhristayaasha",
+  nowPlaying: "Hadda waa la daarayaa",
+  loadError: "Aayaddan lama daari karin. Hubi xiriirkaaga oo mar kale isku day.",
+  listen: "Dhegayso",
+  listenSurah: "Dhegayso {surah}",
+  listenPage: "Bogan ka dhegayso",
+  ended: "Tilaawadii way dhammaatay",
+  changeReciter: "Beddel akhristaha",
+  goToAyah: "U gudub aayadda",
+  surahs: "Suuradaha",
+  langNames: { en: "Ingiriisi", fa: "Faarisi", az: "Asarbayjaani", bs: "Boosniyaan", ur: "Urduu" },
+};
+
+export const player: Record<Locale, PlayerMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so };

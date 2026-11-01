@@ -42,7 +42,8 @@ export function useLastRead(): LastRead | null {
 // ── translations: the app's quran.com translation per language (client/utils/translationBookCache.ts);
 // English is Saheeh International, bundled in the app (and in public/data/quran/en). Punjabi (Gurmukhi) is
 // Arif Haleem from QuranEnc, as the app; no Shahmukhi translation exists, so Shahmukhi shows the site's Urdu one.
-// Uzbek is Muhammad Sodiq Muhammad Yusuf in both scripts, bundled per page in public/data/quran/{uz,uz-Cyrl}. ──
+// Uzbek is Muhammad Sodiq Muhammad Yusuf in both scripts, bundled per page in public/data/quran/{uz,uz-Cyrl}.
+// Somali is Abdullah Hasan Yaqoub from QuranEnc (somali_yacob), as the app, bundled per page in public/data/quran/so. ──
 export const TRANSLATION: Record<Exclude<Locale, "ar">, { id: number; name: string }> = {
   en: { id: 20, name: "Saheeh International" },
   ur: { id: 151, name: "تفسیرِ عثمانی — شیخ الہند محمود الحسن" },
@@ -61,6 +62,7 @@ export const TRANSLATION: Record<Exclude<Locale, "ar">, { id: number; name: stri
   pnb: { id: 151, name: "تفسیرِ عثمانی — شیخ الہند محمود الحسن" }, // the Urdu translation (ur)
   uz: { id: 55, name: "Muhammad Sodiq Muhammad Yusuf" },
   "uz-Cyrl": { id: 127, name: "Муҳаммад Содиқ Муҳаммад Юсуф" },
+  so: { id: 0, name: "Abdullah Hasan Yaqoub (QuranEnc)" }, // QuranEnc somali_yacob (not on quran.com)
 };
 
 function stripHtml(html: string) {
@@ -117,22 +119,23 @@ async function maJian(key: string): Promise<string> {
   return quranCom(id, key);
 }
 
-/** Arif Haleem's Punjabi (QuranEnc punjabi_arif), one surah per request, footnote markers " [1]" dropped as the app does. */
-async function quranEnc(key: string): Promise<string> {
+/** A QuranEnc translation (Arif Haleem's Punjabi punjabi_arif, Yaqoub's Somali somali_yacob), one surah per request, footnote markers " [1]" dropped as the app does. */
+async function quranEnc(key: string, book = "punjabi_arif"): Promise<string> {
   const [s, a] = key.split(":");
-  const data = await getJson<{ result?: { aya: string; translation: string }[] }>(`https://quranenc.com/api/v1/translation/sura/punjabi_arif/${s}`);
+  const data = await getJson<{ result?: { aya: string; translation: string }[] }>(`https://quranenc.com/api/v1/translation/sura/${book}/${s}`);
   const row = data.result?.find((r) => r.aya === a);
   return (row?.translation ?? "").replace(/\s*\[\d+\]/g, "").replace(/\s+/g, " ").trim();
 }
 
 /** The verse's translation in `lang`; "" when the translation has no text for it. */
 export async function fetchTranslation(lang: Exclude<Locale, "ar">, page: number, key: string): Promise<string> {
-  if (lang === "en" || lang === "uz" || lang === "uz-Cyrl") {
+  if (lang === "en" || lang === "uz" || lang === "uz-Cyrl" || lang === "so") {
     const m = await getJson<Record<string, string>>(`/data/quran/${lang}/${page}.json`);
     if (m[key]) return m[key];
   }
   if (lang === "zh") return maJian(key);
   if (lang === "pa") return quranEnc(key);
+  if (lang === "so") return quranEnc(key, "somali_yacob");
   return quranCom(TRANSLATION[lang].id, key);
 }
 

@@ -1,5 +1,5 @@
-// The site's languages — the same eighteen as the app, in the app's picker order.
-export const locales = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh", "ps", "pa", "pnb", "uz", "uz-Cyrl"] as const;
+// The site's languages — the same nineteen as the app, in the app's picker order.
+export const locales = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh", "ps", "pa", "pnb", "uz", "uz-Cyrl", "so"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "ar";
 
@@ -26,6 +26,7 @@ export const nativeName: Record<Locale, string> = {
   pnb: "پنجابی",
   uz: "Oʻzbekcha",
   "uz-Cyrl": "Ўзбекча",
+  so: "Soomaali",
 };
 
 /** Flag shown next to each language in the language menu (public/flags/<code>.svg, from flag-icons, MIT). */
@@ -48,6 +49,7 @@ export const flag: Record<Locale, string> = {
   pnb: "pk",
   uz: "uz",
   "uz-Cyrl": "uz",
+  so: "so",
 };
 
 export const ogLocale: Record<Locale, string> = {
@@ -69,6 +71,7 @@ export const ogLocale: Record<Locale, string> = {
   pnb: "pa_PK",
   uz: "uz_UZ",
   "uz-Cyrl": "uz_UZ",
+  so: "so_SO",
 };
 
 /** BCP 47 tag for <html lang> and hreflang: Chinese is Simplified Chinese (zh-CN), so browsers pick Simplified glyphs;

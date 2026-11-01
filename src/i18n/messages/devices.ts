@@ -274,4 +274,18 @@ export const devices: Record<Locale, Devices> = {
       androidAuto: "Ҳайдаш пайтида Қуръон тиловати, зикрлар, тасбеҳ ва намоз вақтлари.",
     },
   },
+  so: {
+    title: "baabuurkaaga iyo curcurkaaga",
+    sub: "Waqtiyada salaadda, Qur’aanka iyo adkaarta way kula socdaan — saacaddaada casriga ah iyo shaashadda baabuurkaaga.",
+    wrist: "Curcurkaaga",
+    car: "Baabuurkaaga",
+    names: NAMES,
+    text: {
+      appleWatch: "Waqtiyada salaadda oo leh tirin-dhimis, tasbiix iyo Qiblada — oo la jaanqaadaya iPhone-kaaga.",
+      wearOs: "Waqtiyada salaadda, Qiblada, tasbiixda iyo adkaarta saacaddaada casriga ah.",
+      huaweiWatch: "Waqtiyada salaadda, tasbiixda, adkaarta, Qiblada iyo aayadda maalinta.",
+      carPlay: "Dhegayso Qur’aanka iyo adkaarta oo ku arag waqtiyada salaadda shaashadda baabuurkaaga.",
+      androidAuto: "Tilaawada Qur’aanka, adkaarta, tasbiixda iyo waqtiyada salaadda inta aad wadid.",
+    },
+  },
 };

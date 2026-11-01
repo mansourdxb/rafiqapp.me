@@ -829,7 +829,51 @@ const uzCyrl: Articles = {
   },
 };
 
-export const articles: Record<Locale, Articles> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl };
+const so: Articles = {
+  title: "Maqaallo",
+  heroTitle: "Akhri, baro oo ka fiirso",
+  heroAccent: "Maqaallo Islaami ah",
+  heroSubtitle: "Siirada Nabiga, sheekooyinka nebiyada, sida loo tukado, Xajka iyo Cumrada, ducooyinka iyo tajwiidka — isla waxyaabaha la hubiyay ee aad ka hesho barnaamijka.",
+  metaDescription: "Maqaallo Islaami ah oo ka socda Rafiq Al-Muslim: Siirada Nabiga, sheekooyinka nebiyada, tiirarka Islaamka, sida loo tukado, Xajka iyo Cumrada, ducooyinka, ruqyada iyo tajwiidka.",
+  allCategories: "Dhammaan qaybaha",
+  categoriesTitle: "Ku baadh qaybaha",
+  categoriesSubtitle: "Dooro mawduuc oo bilow akhriska.",
+  recent: "Maqaallada ugu dambeeyay",
+  mostRead: "Kuwa ugu badan ee la akhriyay",
+  viewMore: "Arag dhammaan qaybaha",
+  count: "{n} maqaal",
+  minRead: "{n} daqiiqo akhris ah",
+  readMore: "Akhri",
+  share: "La wadaag",
+  shareOn: "Ku wadaag {x}",
+  copyLink: "Koobiyee xiriirka",
+  copied: "Xiriirka waa la koobiyeeyay",
+  favAdd: "Ku dar kuwa aad jeceshahay",
+  favRemove: "Ka saar kuwa aad jeceshahay",
+  related: "Maqaallo la xiriira",
+  moreIn: "Wax kale oo ku jira {cat}",
+  getAppTitle: "Had iyo jeer kula jir",
+  getAppBody: "Maqaal kasta ku akhri internet la’aan barnaamijka Rafiq Al-Muslim, oo ay weheliyaan Qur’aanka, adkaarta iyo waqtiyada salaadda — bilaash ah, xayeysiis la’aan.",
+  home: "Bogga hore",
+  source: "Isha",
+  meaning: "Macnaha",
+  step: "Tallaabada {n}",
+  searchPlaceholder: "Ka raadi maqaallada…",
+  noResults: "Maqaal la mid ah raadintaada lama helin.",
+  cat: { fiqh: "Tiirarka iyo Fiqiga", duas: "Beerta Ducooyinka" },
+  catDesc: {
+    seerah: "Daqiiqado ka mid ah nolosha Nabiga ﷺ, laga bilaabo dhalashadiisa ilaa Xajkii Sagootinta.",
+    prophets: "Sheekooyinka nebiyada iyo rasuullada, nabadgelyo korkooda ha ahaatee, sida Qur’aanku u sheegay.",
+    fiqh: "Tiirarka Islaamka iyo Iimaanka, iyo xukunnada udxiyada, si kooban.",
+    hajj: "Tallaabooyinka Cumrada iyo Xajka si kala horreeya, iyo waxa mid kasta lagu yiraahdo.",
+    prayer: "Weysada iyo salaadda, tallaabo-tallaabo.",
+    duas: "Ducooyin laga soo xigtay Qur’aanka iyo Sunnada, oo loo kala soocay baahida.",
+    ruqyah: "Aayadaha iyo ducooyinka ruqyada ee Qur’aanka iyo Sunnada.",
+    tajweed: "Xukunnada tajwiidka oo leh tusaalooyin Qur’aanka ah.",
+  },
+};
+
+export const articles: Record<Locale, Articles> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so };
 
 export const fill = (s: string, params: Record<string, string | number>) =>
   Object.entries(params).reduce((acc, [k, v]) => acc.replaceAll(`{${k}}`, String(v)), s);

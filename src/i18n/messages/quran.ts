@@ -610,7 +610,39 @@ const uzCyrl: QuranMessages = {
   ayah: "Оят",
 };
 
-export const quran: Record<Locale, QuranMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl };
+const so: QuranMessages = {
+  title: "Qur’aanka Kariimka ah",
+  description: "Ku akhri Qur’aanka Kariimka ah Mushafka Madiina, bog-bog, oo leh tarjumaad, tafsiir iyo tilaawad aayad-aayad ah.",
+  heroSub: "Mushafka Madiina, bog-bog — taabo aayad kasta si aad u hesho tarjumaaddeeda iyo tilaawaddeeda.",
+  readerDescription: "Bogga {page} ee Mushafka Madiina — Suuradda {surah}. Ku akhri tarjumaad, tafsiir iyo tilaawad.",
+  lastRead: "Waxaad ku joogsatay bogga {page}",
+  startReading: "Bilow akhriska",
+  prevPage: "Boggii hore",
+  nextPage: "Bogga xiga",
+  goTo: "U gudub",
+  page: "Bog",
+  surah: "Suurad",
+  juz: "Juz’",
+  go: "Tag",
+  twoPages: "Laba bog",
+  onePage: "Hal bog",
+  tafsir: "Tafsiir",
+  play: "Dhegayso",
+  pause: "Hakad",
+  copy: "Koobiyee",
+  copied: "Waa la koobiyeeyay",
+  share: "La wadaag",
+  close: "Xir",
+  reciter: "Akhriste",
+  loadingFont: "Bogga Mushafka waa la soo rarayaa…",
+  fontFailed: "Farta Mushafka lama soo rarin karin, sidaa darteed aayadaha waxaa lagu muujiyay far caadi ah.",
+  translationBy: "Tarjumaadda: {name}",
+  loadError: "Lama soo rarin karin. Hubi xiriirkaaga oo mar kale isku day.",
+  tapHint: "Taabo aayad si aad u hesho tarjumaaddeeda iyo tilaawaddeeda",
+  ayah: "Aayad",
+};
+
+export const quran: Record<Locale, QuranMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so };
 
 export const fill = (s: string, params: Record<string, string | number>) =>
   Object.entries(params).reduce((acc, [k, v]) => acc.replaceAll(`{${k}}`, String(v)), s);

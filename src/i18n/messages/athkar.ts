@@ -666,7 +666,42 @@ const uzCyrl: AthkarMessages = {
   cats: { morning: "Тонгги зикрлар", evening: "Кечки зикрлар", afterPrayer: "Намоздан кейинги зикрлар", sleep: "Уйқу зикрлари", wake: "Уйғониш зикрлари" },
 };
 
-export const athkar: Record<Locale, AthkarMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl };
+const so: AthkarMessages = {
+  title: "Adkaarta",
+  subtitle: "Ogaada xusidda Alle bay ku xasishaa quluubtu.",
+  description: "Adkaarta subaxa iyo galabta, salaadda kadib, hurdada iyo toosidda iyo dhammaan cutubyada Xisnul Muslim — oo leh tiriye ku celin, cod iyo tarjumaad.",
+  daily: "Adkaarta maalinlaha ah",
+  hisn: "Xisnul Muslim",
+  hisnSub: "Adkaar laga soo xigtay Sunnada Nabiga ee saxiixa ah",
+  tasbih: "Tasbiix",
+  tasbihSub: "Allaah tasbiixso oo ilaali tiradaada",
+  search: "Ka raadi Xisnul Muslim...",
+  noResults: "Natiijo lama helin",
+  count: "{count} dikri",
+  readCount: "Waxaad akhriday {done} ka mid ah {total}",
+  tashkeel: "Shaklinta (xarakaadka)",
+  fontSize: "Cabbirka farta",
+  showDalil: "Muuji daliilka",
+  hideDalil: "Qari daliilka",
+  repeat: "Ku celi",
+  times: "jeer",
+  tapToCount: "Taabo si aad u tiriso",
+  listen: "Dhegayso",
+  stop: "Jooji",
+  copy: "Koobiyee",
+  copied: "Waa la koobiyeeyay",
+  share: "La wadaag",
+  reset: "Eber ka dhig",
+  done: "Dhammaad",
+  allDone: "Waxaad dhammaysay adkaartan — Allaah ha kaa aqbalo",
+  allDoneSub: "Horumarka maanta wuxuu ku kaydsan yahay qalabkan",
+  restart: "Dib u bilow",
+  back: "Adkaarta",
+  readerDescription: "{title} — qoraalka Carabiga oo dhammaystiran oo leh tarjumaad, tiriye ku celin iyo cod.",
+  cats: { morning: "Adkaarta subaxa", evening: "Adkaarta galabta", afterPrayer: "Adkaarta salaadda kadib", sleep: "Adkaarta hurdada", wake: "Adkaarta toositaanka" },
+};
+
+export const athkar: Record<Locale, AthkarMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so };
 
 export const fill = (s: string, p: Record<string, string | number>) =>
   s.replace(/\{(\w+)\}/g, (_, k: string) => String(p[k] ?? ""));

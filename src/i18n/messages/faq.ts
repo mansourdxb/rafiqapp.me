@@ -174,4 +174,13 @@ export const faq: Record<Locale, Faq> = {
     expandAll: "Ҳаммасини очиш",
     collapseAll: "Ҳаммасини ёпиш",
   },
+  so: {
+    subtitle: "Jawaabo tallaabo-tallaabo ah oo ku saabsan su’aalaha inta badan laga weydiiyo barnaamijka Rafiq Al-Muslim.",
+    metaDescription: "Jawaabo ku saabsan barnaamijka Rafiq Al-Muslim: saxnaanta Qiblada, xisaabinta waqtiyada salaadda, ogeysiisyada aadaanka, dhegaysiga Qur’aanka internet la’aan, luqadda, habka mugdiga iyo wax kale.",
+    searchPlaceholder: "Ka raadi su’aalaha…",
+    noResults: "Su’aal la mid ah raadintaada lama helin.",
+    count: "{n} su’aalood",
+    expandAll: "Fur dhammaan",
+    collapseAll: "Xir dhammaan",
+  },
 };

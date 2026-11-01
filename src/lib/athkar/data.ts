@@ -52,6 +52,7 @@ const LOADERS: Record<Locale, () => Promise<{ default: unknown }>> = {
   pnb: () => import("@/generated/athkar-pnb.json"),
   uz: () => import("@/generated/athkar-uz.json"),
   "uz-Cyrl": () => import("@/generated/athkar-uz-Cyrl.json"),
+  so: () => import("@/generated/athkar-so.json"),
 };
 
 export async function loadCategory(lang: Locale, id: number) {

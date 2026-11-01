@@ -148,4 +148,12 @@ export const promo: Record<Locale, Promo> = {
     close: "Ёпиш",
     later: "Ҳозир эмас",
   },
+  so: {
+    before: "Hadda soo deji barnaamijka ",
+    name: "Rafiq Al-Muslim",
+    after: "!",
+    body: "Waqtiyada ugu wanaagsan maalintaada ku qaado Qur’aanka, adkaarta, ducooyinka iyo waqtiyada salaadda. Rafiq Al-Muslim wuxuu kaa caawiyaa cibaadadaada — hadda soo deji, waa bilaash oo xayeysiis ma leh.",
+    close: "Xir",
+    later: "Hadda maya",
+  },
 };
