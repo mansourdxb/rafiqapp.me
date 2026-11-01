@@ -4,6 +4,8 @@
 //   public/data/quran/pages/{p}.json  — one mushaf page: QCF V1 glyph lines + Unicode fallback lines + ayah texts
 //   public/data/quran/tafsir/{p}.json — Arabic tafsir (المختصر, الجلالين, السعدي) of the page's ayahs
 //   public/data/quran/en/{p}.json     — English translation (Saheeh International, bundled in the app)
+//   public/data/quran/uz/{p}.json, uz-Cyrl/{p}.json — Uzbek, Muhammad Sodiq Muhammad Yusuf (quran.com 55 Latin,
+//     127 Cyrillic) from scripts/data/translations/, as the app saves it (Latin oʻ/gʻ/ʼ, translationBookCache)
 //   public/data/quran/fonts, frame    — medallion / surah-title / basmala fonts and the page frame artwork
 // The 604 QCF page fonts are not copied: the reader loads them from the assets repo (then quran.com).
 import { copyFileSync, mkdirSync, readdirSync, readFileSync, rmSync } from "node:fs";
@@ -24,6 +26,10 @@ export default async function quranData(ctx) {
   const juzStarts = readJson(app("data", "Quran", "mushaf-juz.json"));
   const quarters = readJson(app("data", "Quran", "hizb-quarters.json"));
   const english = readJson(app("assets", "data", "quran_en.json"));
+  const uzbek = {
+    uz: readJson(join(ctx.root, "scripts", "data", "translations", "uz-sodiq-latn.json")),
+    "uz-Cyrl": readJson(join(ctx.root, "scripts", "data", "translations", "uz-sodiq-cyrl.json")),
+  };
   // page font URLs (bases tried in order) + SHA-256 of every page font: a font is used only if it matches
   const fonts = readJson(app("data", "mushaf", "qcf-v1-fonts.json"));
 
@@ -36,6 +42,8 @@ export default async function quranData(ctx) {
   };
   const localized = Object.fromEntries(["fa", "ur", "tr", "id", "ru", "hi", "bn", "ha", "fr", "zh", "pa"].map((l) => [l, namesOf(l.toUpperCase())]));
   localized.pnb = localized.ur; // Shahmukhi reads the Urdu names, as the app (surahLocale.localizedSurahName)
+  localized.uz = namesOf("UZ");
+  localized["uz-Cyrl"] = namesOf("UZC");
 
   // ── page / juz lookups (binary search over the start lists, as the app does) ──
   const cmp = (a, b) => (a.sura !== b.sura ? a.sura - b.sura : a.aya - b.aya);
@@ -97,7 +105,7 @@ export default async function quranData(ctx) {
   for (const s of english) for (const v of s.verses) en.set(`${s.id}:${v.id}`, v.translation);
 
   // ── per-page files ──
-  for (const d of ["pages", "tafsir", "en"]) rmSync(join(out, d), { recursive: true, force: true });
+  for (const d of ["pages", "tafsir", "en", ...Object.keys(uzbek)]) rmSync(join(out, d), { recursive: true, force: true });
   const rub = new Set(lines.rub);
   for (let p = 1; p <= 604; p++) {
     const keys = new Set();
@@ -132,6 +140,7 @@ export default async function quranData(ctx) {
     writeJson(join(out, "pages", `${p}.json`), { p, juz: pageJuz[p - 1], sha: fonts.sha256[p - 1], q, u, ayahs, rub: rubOnPage });
     writeJson(join(out, "tafsir", `${p}.json`), tf);
     writeJson(join(out, "en", `${p}.json`), tr);
+    for (const [l, m] of Object.entries(uzbek)) writeJson(join(out, l, `${p}.json`), Object.fromEntries([...keys].map((k) => [k, m[k] ?? ""])));
   }
 
   // ── fonts + frame artwork ──
