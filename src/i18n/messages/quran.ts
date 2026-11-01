@@ -28,6 +28,8 @@ export type QuranMessages = {
   loadingFont: string;
   fontFailed: string;
   translationBy: string; // {name}
+  /** Shown under the translation when it is another language's (Shahmukhi shows the Urdu one). */
+  translationNote?: string;
   loadError: string;
   tapHint: string;
   ayah: string;
@@ -481,7 +483,71 @@ const ps: QuranMessages = {
   ayah: "آیت",
 };
 
-export const quran: Record<Locale, QuranMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps };
+const pa: QuranMessages = {
+  title: "ਕੁਰਆਨ ਮਜੀਦ",
+  description: "ਮਦੀਨੇ ਵਾਲੇ ਮੁਸਹਫ਼ ਵਿੱਚ ਕੁਰਆਨ ਮਜੀਦ ਸਫ਼ਾ-ਦਰ-ਸਫ਼ਾ ਪੜ੍ਹੋ, ਤਰਜਮੇ, ਤਫ਼ਸੀਰ ਅਤੇ ਆਇਤ-ਦਰ-ਆਇਤ ਤਿਲਾਵਤ ਨਾਲ।",
+  heroSub: "ਮਦੀਨੇ ਵਾਲਾ ਮੁਸਹਫ਼, ਸਫ਼ਾ-ਦਰ-ਸਫ਼ਾ — ਕਿਸੇ ਵੀ ਆਇਤ 'ਤੇ ਟੈਪ ਕਰਕੇ ਉਸ ਦਾ ਤਰਜਮਾ ਅਤੇ ਤਿਲਾਵਤ ਵੇਖੋ।",
+  readerDescription: "ਮਦੀਨੇ ਵਾਲੇ ਮੁਸਹਫ਼ ਦਾ ਸਫ਼ਾ {page} — ਸੂਰਤ {surah}। ਇਸ ਨੂੰ ਤਰਜਮੇ, ਤਫ਼ਸੀਰ ਅਤੇ ਤਿਲਾਵਤ ਨਾਲ ਪੜ੍ਹੋ।",
+  lastRead: "ਤੁਸੀਂ ਸਫ਼ਾ {page} 'ਤੇ ਰੁਕੇ ਸੀ",
+  startReading: "ਪੜ੍ਹਨਾ ਸ਼ੁਰੂ ਕਰੋ",
+  prevPage: "ਪਿਛਲਾ ਸਫ਼ਾ",
+  nextPage: "ਅਗਲਾ ਸਫ਼ਾ",
+  goTo: "ਇੱਥੇ ਜਾਓ",
+  page: "ਸਫ਼ਾ",
+  surah: "ਸੂਰਤ",
+  juz: "ਪਾਰਾ",
+  go: "ਜਾਓ",
+  twoPages: "ਦੋ ਸਫ਼ੇ",
+  onePage: "ਇੱਕ ਸਫ਼ਾ",
+  tafsir: "ਤਫ਼ਸੀਰ",
+  play: "ਸੁਣੋ",
+  pause: "ਰੋਕੋ",
+  copy: "ਕਾਪੀ ਕਰੋ",
+  copied: "ਕਾਪੀ ਹੋ ਗਿਆ",
+  share: "ਸਾਂਝਾ ਕਰੋ",
+  close: "ਬੰਦ ਕਰੋ",
+  reciter: "ਕਾਰੀ",
+  loadingFont: "ਮੁਸਹਫ਼ ਦਾ ਸਫ਼ਾ ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ…",
+  fontFailed: "ਮੁਸਹਫ਼ ਦਾ ਫ਼ੌਂਟ ਲੋਡ ਨਹੀਂ ਹੋ ਸਕਿਆ, ਇਸ ਲਈ ਆਇਤਾਂ ਸਾਦੀ ਲਿਪੀ ਵਿੱਚ ਵਿਖਾਈਆਂ ਗਈਆਂ ਹਨ।",
+  translationBy: "ਤਰਜਮਾ: {name}",
+  loadError: "ਲੋਡ ਨਹੀਂ ਹੋ ਸਕਿਆ। ਆਪਣਾ ਕਨੈਕਸ਼ਨ ਵੇਖੋ ਅਤੇ ਮੁੜ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+  tapHint: "ਤਰਜਮੇ ਅਤੇ ਤਿਲਾਵਤ ਲਈ ਕਿਸੇ ਆਇਤ 'ਤੇ ਟੈਪ ਕਰੋ",
+  ayah: "ਆਇਤ",
+};
+const pnb: QuranMessages = {
+  title: "قرآن مجید",
+  description: "قرآن مجید مدینے والے مصحف وچ صفحہ بہ صفحہ پڑھو، ترجمے، تفسیر تے آیت بہ آیت تلاوت دے نال۔",
+  heroSub: "مدینے والا مصحف، صفحہ بہ صفحہ — کسے وی آیت اُتے ٹیپ کرو تے اوہدا ترجمہ تے تلاوت ویکھو۔",
+  readerDescription: "مدینے والے مصحف دا صفحہ {page} — سورت {surah}۔ ترجمے، تفسیر تے تلاوت دے نال پڑھو۔",
+  lastRead: "تسیں صفحہ {page} اُتے رُکے سو",
+  startReading: "پڑھنا شروع کرو",
+  prevPage: "پچھلا صفحہ",
+  nextPage: "اگلا صفحہ",
+  goTo: "ایتھے جاؤ",
+  page: "صفحہ",
+  surah: "سورت",
+  juz: "پارہ",
+  go: "جاؤ",
+  twoPages: "دو صفحے",
+  onePage: "اک صفحہ",
+  tafsir: "تفسیر",
+  play: "سݨو",
+  pause: "روکو",
+  copy: "کاپی کرو",
+  copied: "کاپی ہو گیا",
+  share: "شیئر کرو",
+  close: "بند کرو",
+  reciter: "قاری",
+  loadingFont: "مصحف دا صفحہ لوڈ ہو رہیا اے…",
+  fontFailed: "مصحف دا فونٹ لوڈ نہیں ہو سکیا، ایس لئی آیتاں سادے خط وچ وکھائیاں جا رہیاں نیں۔",
+  translationBy: "ترجمہ: {name}",
+  loadError: "لوڈ نہیں ہو سکیا۔ اپنا کنکشن ویکھو تے فیر کوشش کرو۔",
+  tapHint: "ترجمے تے تلاوت لئی کسے آیت اُتے ٹیپ کرو",
+  ayah: "آیت",
+  translationNote: "شاہ مکھی پنجابی وچ قرآن دا کوئی ترجمہ موجود نہیں، ایس لئی اردو ترجمہ وکھایا جا رہیا اے۔",
+};
+
+export const quran: Record<Locale, QuranMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb };
 
 export const fill = (s: string, params: Record<string, string | number>) =>
   Object.entries(params).reduce((acc, [k, v]) => acc.replaceAll(`{${k}}`, String(v)), s);

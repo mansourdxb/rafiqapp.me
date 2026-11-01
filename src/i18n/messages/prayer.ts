@@ -436,4 +436,61 @@ const ps: PrayerMsg = {
   makkah: "مکه مکرمه",
 };
 
-export const prayerMsg: Record<Locale, PrayerMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps };
+const pa: PrayerMsg = {
+  title: "ਨਮਾਜ਼ ਦੇ ਸਮੇਂ",
+  description:
+    "ਤੁਹਾਡੇ ਸ਼ਹਿਰ ਲਈ ਅੱਜ ਦੇ ਨਮਾਜ਼ ਦੇ ਸਮੇਂ — ਫ਼ਜਰ, ਸੂਰਜ ਚੜ੍ਹਨਾ, ਜ਼ੁਹਰ, ਅਸਰ, ਮਗ਼ਰਿਬ ਅਤੇ ਇਸ਼ਾ — ਅਗਲੀ ਨਮਾਜ਼ ਤੱਕ ਲਾਈਵ ਉਲਟੀ ਗਿਣਤੀ ਅਤੇ ਛਾਪਣਯੋਗ ਮਹੀਨੇਵਾਰ ਸਮਾਂ-ਸਾਰਣੀ ਨਾਲ।",
+  useLocation: "ਮੇਰਾ ਟਿਕਾਣਾ ਵਰਤੋ",
+  locating: "ਟਿਕਾਣਾ ਲੱਭਿਆ ਜਾ ਰਿਹਾ ਹੈ…",
+  searchPlaceholder: "ਸ਼ਹਿਰ ਖੋਜੋ",
+  searching: "ਖੋਜ ਹੋ ਰਹੀ ਹੈ…",
+  noResults: "ਕੋਈ ਥਾਂ ਨਹੀਂ ਮਿਲੀ",
+  searchError: "ਖੋਜ ਇਸ ਵੇਲੇ ਉਪਲਬਧ ਨਹੀਂ। ਕਿਰਪਾ ਕਰਕੇ ਮੁੜ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+  locError: "ਤੁਹਾਡਾ ਟਿਕਾਣਾ ਨਹੀਂ ਮਿਲ ਸਕਿਆ — ਆਪਣਾ ਸ਼ਹਿਰ ਖੋਜੋ। iPhone 'ਤੇ ਇਜਾਜ਼ਤ ਦੇਣ ਲਈ: ਸੈਟਿੰਗਾਂ → ਪਰਾਈਵੇਸੀ ਅਤੇ ਸੁਰੱਖਿਆ → ਟਿਕਾਣਾ ਸੇਵਾਵਾਂ → ਤੁਹਾਡਾ ਬ੍ਰਾਊਜ਼ਰ → ਵਰਤਦੇ ਸਮੇਂ।",
+  defaultNotice: "ਮੱਕੇ ਦੇ ਸਮੇਂ ਵਿਖਾਏ ਜਾ ਰਹੇ ਹਨ। ਆਪਣਾ ਟਿਕਾਣਾ ਵਰਤੋ ਜਾਂ ਆਪਣਾ ਸ਼ਹਿਰ ਖੋਜੋ।",
+  settings: "ਸੈਟਿੰਗਾਂ",
+  auto: "ਆਪਣੇ-ਆਪ — {{method}}",
+  timeFormat: "ਸਮੇਂ ਦਾ ਫ਼ਾਰਮੈਟ",
+  h12: "12 ਘੰਟੇ",
+  h24: "24 ਘੰਟੇ",
+  highLat: "48° ਅਕਸ਼ਾਂਸ਼ ਤੋਂ ਉੱਪਰ ਫ਼ਜਰ ਅਤੇ ਇਸ਼ਾ ਲਈ ਸੰਝ ਦੇ ਕੋਣ ਵਾਲਾ ਨਿਯਮ ਆਪਣੇ-ਆਪ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ।",
+  tzNote: "ਸਮੇਂ {{city}} ਦੇ ਸਥਾਨਕ ਸਮੇਂ ({{tz}}) ਮੁਤਾਬਕ ਹਨ।",
+  monthly: "ਮਹੀਨੇਵਾਰ ਸਮਾਂ-ਸਾਰਣੀ",
+  print: "ਛਾਪੋ",
+  prevMonth: "ਪਿਛਲਾ ਮਹੀਨਾ",
+  nextMonth: "ਅਗਲਾ ਮਹੀਨਾ",
+  thisMonth: "ਇਹ ਮਹੀਨਾ",
+  date: "ਤਾਰੀਖ਼",
+  location: "ਟਿਕਾਣਾ",
+  makkah: "ਮੱਕਾ ਮੁਕੱਰਮਾ",
+};
+const pnb: PrayerMsg = {
+  title: "نماز دے ویلے",
+  description:
+    "تہاڈے شہر لئی اج دے نماز دے ویلے — فجر، سورج چڑھنا، ظہر، عصر، مغرب تے عشاء — اگلی نماز تیکر سدھی الٹی گنتی تے چھاپن والے مہینے دے نقشے دے نال۔",
+  useLocation: "میری تھاں ورتو",
+  locating: "تھاں لبھی جا رہی اے…",
+  searchPlaceholder: "کوئی شہر کھوجو",
+  searching: "کھوج ہو رہی اے…",
+  noResults: "کوئی تھاں نہیں ملی",
+  searchError: "کھوج ہُݨے دستیاب نہیں۔ مہربانی کر کے فیر کوشش کرو۔",
+  locError: "تہاڈی تھاں نہیں مل سکی — اپنا شہر کھوجو۔ iPhone اُتے اجازت دین لئی: Settings ← Privacy & Security ← Location Services ← تہاڈا براؤزر ← While Using۔",
+  defaultNotice: "مکہ مکرمہ دے ویلے وکھائے جا رہے نیں۔ اپنی تھاں ورتو یا اپنا شہر کھوجو۔",
+  settings: "سیٹنگاں",
+  auto: "آپ مہارا — {{method}}",
+  timeFormat: "ویلے دا انداز",
+  h12: "12 گھنٹے",
+  h24: "24 گھنٹے",
+  highLat: "48° عرض بلد توں اُتے، فجر تے عشاء لئی شفق دے زاویے والا قاعدہ آپ مہارا ورتیا جاندا اے۔",
+  tzNote: "ویلے {{city}} دے مقامی ویلے ({{tz}}) مطابق نیں۔",
+  monthly: "مہینے دا نقشہ",
+  print: "چھاپو",
+  prevMonth: "پچھلا مہینہ",
+  nextMonth: "اگلا مہینہ",
+  thisMonth: "ایہہ مہینہ",
+  date: "تریخ",
+  location: "تھاں",
+  makkah: "مکہ مکرمہ",
+};
+
+export const prayerMsg: Record<Locale, PrayerMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb };

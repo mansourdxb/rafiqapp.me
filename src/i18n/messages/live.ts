@@ -129,4 +129,22 @@ export const live: Record<Locale, Live> = {
     madinahSrc: "Sunnah TV",
     openYoutube: "په YouTube کې یې پرانیزئ",
   },
+  pa: {
+    title: "ਸਿੱਧਾ ਪ੍ਰਸਾਰਣ",
+    subtitle: "ਮੱਕੇ ਦੀ ਮਸਜਿਦ-ਏ-ਹਰਾਮ ਅਤੇ ਮਦੀਨੇ ਦੀ ਮਸਜਿਦ-ਏ-ਨਬਵੀ ਤੋਂ ਸਿੱਧਾ, ਸਰਕਾਰੀ ਚੈਨਲਾਂ ਤੋਂ।",
+    makkah: "ਮਸਜਿਦ-ਏ-ਹਰਾਮ — ਮੱਕਾ",
+    madinah: "ਮਸਜਿਦ-ਏ-ਨਬਵੀ — ਮਦੀਨਾ",
+    makkahSrc: "Quran TV",
+    madinahSrc: "Sunnah TV",
+    openYoutube: "YouTube ਵਿੱਚ ਖੋਲ੍ਹੋ",
+  },
+  pnb: {
+    title: "سدھا نشر",
+    subtitle: "مکہ مکرمہ دی مسجد الحرام تے مدینہ منورہ دی مسجد نبوی توں سدھا نشر، سرکاری چینلاں توں۔",
+    makkah: "مسجد الحرام — مکہ مکرمہ",
+    madinah: "مسجد نبوی — مدینہ منورہ",
+    makkahSrc: "Quran TV",
+    madinahSrc: "Sunnah TV",
+    openYoutube: "YouTube وچ کھولو",
+  },
 };

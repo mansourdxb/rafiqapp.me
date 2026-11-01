@@ -247,4 +247,35 @@ const ps: NamesMessages = {
   nth: "نوم {n} له ٩٩ څخه",
 };
 
-export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps };
+const pa: NamesMessages = {
+  title: "ਅੱਲਾਹ ਦੇ 99 ਨਾਂ",
+  verseRef: "ਅਲ-ਆਰਾਫ਼ 7:180",
+  description: "ਅੱਲਾਹ ਦੇ 99 ਸੋਹਣੇ ਨਾਂ (ਅਸਮਾਉਲ ਹੁਸਨਾ), ਹਰ ਨਾਂ ਦੇ ਅਰਥ ਅਤੇ ਵਿਆਖਿਆ ਨਾਲ ਅਤੇ ਇਹ ਕਿ ਉਹ ਕੁਰਆਨ ਵਿੱਚ ਕਿੱਥੇ ਆਇਆ ਹੈ।",
+  search: "ਨਾਂ ਖੋਜੋ...",
+  noResults: "ਕੋਈ ਨਤੀਜਾ ਨਹੀਂ ਮਿਲਿਆ",
+  meaning: "ਅਰਥ",
+  explanation: "ਵਿਆਖਿਆ",
+  inQuran: "ਕੁਰਆਨ ਵਿੱਚ",
+  englishNote: "ਅਰਥ ਅਤੇ ਵਿਆਖਿਆ ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਵਿਖਾਏ ਗਏ ਹਨ",
+  prev: "ਪਿਛਲਾ ਨਾਂ",
+  next: "ਅਗਲਾ ਨਾਂ",
+  all: "ਸਾਰੇ ਨਾਂ",
+  nth: "99 ਵਿੱਚੋਂ ਨਾਂ {n}",
+};
+const pnb: NamesMessages = {
+  title: "اللہ دے ٩٩ ناں",
+  verseRef: "الاعراف ٧:١٨٠",
+  description: "اللہ تعالیٰ دے ننانوے سوہݨے ناں (اسماء الحسنیٰ)، ہر ناں دے مطلب تے وضاحت دے نال، تے ایہہ کہ قرآن مجید وچ اوہ کتھے آیا اے۔",
+  search: "ناں کھوجو...",
+  noResults: "کھوج دا کوئی نتیجہ نہیں",
+  meaning: "مطلب",
+  explanation: "وضاحت",
+  inQuran: "قرآن وچ",
+  englishNote: "مطلب تے وضاحت انگریزی وچ وکھائے گئے نیں",
+  prev: "پچھلا ناں",
+  next: "اگلا ناں",
+  all: "سارے ناں",
+  nth: "٩٩ وچوں ناں {n}",
+};
+
+export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb };

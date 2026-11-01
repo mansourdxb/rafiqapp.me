@@ -40,7 +40,8 @@ export function useLastRead(): LastRead | null {
 }
 
 // ── translations: the app's quran.com translation per language (client/utils/translationBookCache.ts);
-// English is Saheeh International, bundled in the app (and in public/data/quran/en). ──
+// English is Saheeh International, bundled in the app (and in public/data/quran/en). Punjabi (Gurmukhi) is
+// Arif Haleem from QuranEnc, as the app; no Shahmukhi translation exists, so Shahmukhi shows the site's Urdu one. ──
 export const TRANSLATION: Record<Exclude<Locale, "ar">, { id: number; name: string }> = {
   en: { id: 20, name: "Saheeh International" },
   ur: { id: 151, name: "تفسیرِ عثمانی — شیخ الہند محمود الحسن" },
@@ -55,6 +56,8 @@ export const TRANSLATION: Record<Exclude<Locale, "ar">, { id: number; name: stri
   fr: { id: 31, name: "Muhammad Hamidullah" },
   zh: { id: 56, name: "马坚" },
   ps: { id: 118, name: "زکریا عبدالسلام" },
+  pa: { id: 0, name: "ਆਰਿਫ਼ ਹਲੀਮ" }, // QuranEnc punjabi_arif (not on quran.com)
+  pnb: { id: 151, name: "تفسیرِ عثمانی — شیخ الہند محمود الحسن" }, // the Urdu translation (ur)
 };
 
 function stripHtml(html: string) {
@@ -111,6 +114,14 @@ async function maJian(key: string): Promise<string> {
   return quranCom(id, key);
 }
 
+/** Arif Haleem's Punjabi (QuranEnc punjabi_arif), one surah per request, footnote markers " [1]" dropped as the app does. */
+async function quranEnc(key: string): Promise<string> {
+  const [s, a] = key.split(":");
+  const data = await getJson<{ result?: { aya: string; translation: string }[] }>(`https://quranenc.com/api/v1/translation/sura/punjabi_arif/${s}`);
+  const row = data.result?.find((r) => r.aya === a);
+  return (row?.translation ?? "").replace(/\s*\[\d+\]/g, "").replace(/\s+/g, " ").trim();
+}
+
 /** The verse's translation in `lang`; "" when the translation has no text for it. */
 export async function fetchTranslation(lang: Exclude<Locale, "ar">, page: number, key: string): Promise<string> {
   if (lang === "en") {
@@ -118,6 +129,7 @@ export async function fetchTranslation(lang: Exclude<Locale, "ar">, page: number
     if (m[key]) return m[key];
   }
   if (lang === "zh") return maJian(key);
+  if (lang === "pa") return quranEnc(key);
   return quranCom(TRANSLATION[lang].id, key);
 }
 

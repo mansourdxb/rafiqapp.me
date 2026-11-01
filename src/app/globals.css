@@ -59,6 +59,16 @@ html[lang="ps"] body {
   font-family: var(--font-noto-ar), var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Punjabi in Shahmukhi: Almarai lacks ݨ ݪ, so Shahmukhi is set in Noto Sans Arabic, like Pashto. */
+html[lang="pa-Arab"] body {
+  font-family: var(--font-noto-ar), var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Punjabi in Gurmukhi: Latin from Roboto, Gurmukhi from Noto Sans Gurmukhi. */
+html[lang="pa-Guru"] body {
+  font-family: var(--font-roboto), var(--font-noto-guru), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+}
+
 /* Chinese: Latin from Roboto, Chinese characters from the system's Simplified Chinese font (no CJK web font). */
 html[lang="zh-CN"] body {
   font-family: var(--font-roboto), "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "WenQuanYi Micro Hei", var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;

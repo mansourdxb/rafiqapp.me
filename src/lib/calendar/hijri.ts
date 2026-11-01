@@ -73,11 +73,26 @@ function formatHausa(g: Ymd, opts: Intl.DateTimeFormatOptions) {
   return [weekday, date].filter(Boolean).join(", ");
 }
 
+// Punjabi in Shahmukhi: CLDR "pa-Arab" month and weekday names (short = long in CLDR). Built here, in the Urdu
+// order (weekday، day month year), because CLDR's pa-Arab patterns are the root ones ("نومبر 1, اتوار") and
+// browsers without pa-Arab data would fall back to Gurmukhi.
+const PNB_MONTHS = ["جنوری", "فروری", "مارچ", "اپریل", "مئ", "جون", "جولائی", "اگست", "ستمبر", "اکتوبر", "نومبر", "دسمبر"];
+const PNB_DAYS = ["اتوار", "پیر", "منگل", "بُدھ", "جمعرات", "جمعہ", "ہفتہ"];
+
+/** "اتوار، 1 نومبر 2026" (digits localized by the caller) — the parts asked for in `opts`. */
+function formatShahmukhi(g: Ymd, opts: Intl.DateTimeFormatOptions) {
+  const date = [opts.day ? String(g.d) : "", opts.month ? PNB_MONTHS[g.m - 1] : "", opts.year ? String(g.y) : ""].filter(Boolean).join(" ");
+  const weekday = opts.weekday ? PNB_DAYS[utcNoon(g.y, g.m, g.d).getUTCDay()] : "";
+  return [weekday, date].filter(Boolean).join("، ");
+}
+
 /** Gregorian date in the site language (Latin digits from Intl, then the app's digit style). Pashto asks for
- * the Gregorian calendar by name: CLDR's default calendar for "ps" is the Persian solar one. */
+ * the Gregorian calendar by name: CLDR's default calendar for "ps" is the Persian solar one. Gurmukhi uses
+ * CLDR "pa"; Shahmukhi ("pa-Arab") is built from CLDR's pa-Arab names (formatShahmukhi). */
 export function formatGregorian(lang: Locale, g: Ymd, opts: Intl.DateTimeFormatOptions = { day: "numeric", month: "long", year: "numeric" }) {
   try {
     if (lang === "ha") return formatHausa(g, opts);
+    if (lang === "pnb") return localDigits(lang, formatShahmukhi(g, opts));
     return localDigits(lang, new Intl.DateTimeFormat(`${lang}-u-${lang === "ps" ? "ca-gregory-" : ""}nu-latn`, { ...opts, timeZone: "UTC" }).format(utcNoon(g.y, g.m, g.d)));
   } catch {
     return `${g.y}-${g.m}-${g.d}`;

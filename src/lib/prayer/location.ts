@@ -2,7 +2,8 @@
 import type { Place } from "./compute";
 
 /** Like the app: non-Arabic-script languages fall back to English for places with no local name. */
-const accept = (lang: string) => (["ar", "ur", "fa", "en"].includes(lang) ? lang : `${lang},en`);
+// OSM tags Shahmukhi names name:pnb; Urdu names are the closest fallback in the same script.
+const accept = (lang: string) => (["ar", "ur", "fa", "en"].includes(lang) ? lang : lang === "pnb" ? "pnb,ur,en" : `${lang},en`);
 
 type NomAddress = {
   city?: string;

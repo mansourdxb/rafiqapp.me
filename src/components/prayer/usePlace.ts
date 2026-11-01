@@ -11,6 +11,8 @@ export type ShownPlace = Place & { isDefault: boolean; label: string; countryLab
 function regionName(lang: Locale, cc?: string) {
   try {
     if (!cc) return undefined;
+    // Shahmukhi: CLDR's pa-Arab has almost no country names (Saudi Arabia is "SA"), so the Urdu ones, same script.
+    if (lang === "pnb") return new Intl.DisplayNames(["ur"], { type: "region" }).of(cc.toUpperCase());
     // Chrome has no Hausa names (it would say "Saudi Arabia"): name the default place, otherwise no country name.
     if (!Intl.DisplayNames.supportedLocalesOf([lang]).length) return lang === "ha" && cc.toLowerCase() === "sa" ? "Saudiyya" : undefined;
     return new Intl.DisplayNames([lang], { type: "region" }).of(cc.toUpperCase());

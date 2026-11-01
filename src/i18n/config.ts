@@ -1,9 +1,9 @@
-// The site's languages — the same fourteen as the app, in the app's picker order.
-export const locales = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh", "ps"] as const;
+// The site's languages — the same sixteen as the app, in the app's picker order.
+export const locales = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh", "ps", "pa", "pnb"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "ar";
 
-export const rtlLocales: readonly Locale[] = ["ar", "ur", "fa", "ps"];
+export const rtlLocales: readonly Locale[] = ["ar", "ur", "fa", "ps", "pnb"];
 export const isRtl = (l: Locale) => rtlLocales.includes(l);
 export const dir = (l: Locale) => (isRtl(l) ? "rtl" : "ltr");
 
@@ -22,6 +22,8 @@ export const nativeName: Record<Locale, string> = {
   fr: "Français",
   zh: "简体中文",
   ps: "پښتو",
+  pa: "ਪੰਜਾਬੀ",
+  pnb: "پنجابی",
 };
 
 /** Flag shown next to each language in the language menu (public/flags/<code>.svg, from flag-icons, MIT). */
@@ -40,6 +42,8 @@ export const flag: Record<Locale, string> = {
   fr: "fr",
   zh: "cn",
   ps: "af",
+  pa: "in",
+  pnb: "pk",
 };
 
 export const ogLocale: Record<Locale, string> = {
@@ -57,10 +61,14 @@ export const ogLocale: Record<Locale, string> = {
   fr: "fr_FR",
   zh: "zh_CN",
   ps: "ps_AF",
+  pa: "pa_IN",
+  pnb: "pa_PK",
 };
 
-/** BCP 47 tag for <html lang> and hreflang: Chinese is Simplified Chinese (zh-CN), so browsers pick Simplified glyphs. */
-export const langTag = (l: Locale) => (l === "zh" ? "zh-CN" : l);
+/** BCP 47 tag for <html lang> and hreflang: Chinese is Simplified Chinese (zh-CN), so browsers pick Simplified glyphs;
+ * Punjabi is tagged by script — Gurmukhi (pa-Guru) and Shahmukhi (pa-Arab, the app's "pnb", never used as a tag). */
+const TAGS: Partial<Record<Locale, string>> = { zh: "zh-CN", pa: "pa-Guru", pnb: "pa-Arab" };
+export const langTag = (l: Locale) => TAGS[l] ?? l;
 
 export function isLocale(v: string): v is Locale {
   return (locales as readonly string[]).includes(v);

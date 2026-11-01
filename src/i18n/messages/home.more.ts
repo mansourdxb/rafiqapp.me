@@ -25,7 +25,7 @@ const ur: Home = {
     body: "رفیق المسلم آپ کو نماز کے اوقات یاد دلاتا ہے، اللہ کے ذکر میں مدد کرتا ہے، قرآنِ کریم سے جوڑتا ہے اور مزید نیکیوں کی ترغیب دیتا ہے۔ ہر مسلمان کا ساتھی۔",
     stats: [
       { value: "9", label: "حدیث کی کتابیں" },
-      { value: "14", label: "زبانیں" },
+      { value: "16", label: "زبانیں" },
       { value: "بغیر اشتہارات", label: "ہمیشہ مفت" },
     ],
   },
@@ -61,7 +61,7 @@ const fa: Home = {
     body: "رفیق المسلم اوقات نماز را به شما یادآوری می‌کند، در ذکر خدا یاری‌تان می‌دهد، شما را با قرآن کریم پیوند می‌دهد و به کارهای نیک بیشتر تشویق می‌کند. همراه هر مسلمان.",
     stats: [
       { value: "9", label: "کتاب حدیث" },
-      { value: "14", label: "زبان" },
+      { value: "16", label: "زبان" },
       { value: "بدون تبلیغات", label: "همیشه رایگان" },
     ],
   },
@@ -97,7 +97,7 @@ const ru: Home = {
     body: "Рафик Аль-Муслим напоминает о времени намаза, помогает поминать Аллаха, связывает вас с Кораном и побуждает к добрым делам. Спутник каждого мусульманина.",
     stats: [
       { value: "9", label: "Сборников хадисов" },
-      { value: "14", label: "Языков" },
+      { value: "16", label: "Языков" },
       { value: "Без рекламы", label: "Всегда бесплатно" },
     ],
   },
@@ -133,7 +133,7 @@ const ms: Home = {
     body: "Rafiq Al-Muslim mengingatkan anda waktu solat, membantu anda berzikir, menghubungkan anda dengan Al-Quran dan mendorong anda melakukan lebih banyak kebaikan. Teman setiap Muslim.",
     stats: [
       { value: "9", label: "Kitab hadis" },
-      { value: "14", label: "Bahasa" },
+      { value: "16", label: "Bahasa" },
       { value: "Tanpa iklan", label: "Percuma selamanya" },
     ],
   },
@@ -169,7 +169,7 @@ const tr: Home = {
     body: "Rafiq Al-Muslim size namaz vakitlerini hatırlatır, Allah'ı anmanıza yardım eder, sizi Kur'an'la buluşturur ve daha fazla iyiliğe teşvik eder. Her Müslümanın yol arkadaşı.",
     stats: [
       { value: "9", label: "Hadis kitabı" },
-      { value: "14", label: "Dil" },
+      { value: "16", label: "Dil" },
       { value: "Reklamsız", label: "Her zaman ücretsiz" },
     ],
   },
@@ -205,7 +205,7 @@ const id: Home = {
     body: "Rafiq Al-Muslim mengingatkan Anda waktu shalat, membantu Anda berzikir, menghubungkan Anda dengan Al-Quran dan mendorong Anda berbuat lebih banyak kebaikan. Teman setiap Muslim.",
     stats: [
       { value: "9", label: "Kitab hadis" },
-      { value: "14", label: "Bahasa" },
+      { value: "16", label: "Bahasa" },
       { value: "Tanpa iklan", label: "Gratis selamanya" },
     ],
   },
@@ -241,7 +241,7 @@ const hi: Home = {
     body: "रफ़ीक़ अल-मुस्लिम आपको नमाज़ के समय याद दिलाता है, अल्लाह के ज़िक्र में आपकी मदद करता है, आपको क़ुरआन से जोड़ता है और ज़्यादा नेक अमल के लिए प्रेरित करता है। हर मुसलमान का साथी।",
     stats: [
       { value: "9", label: "हदीस की किताबें" },
-      { value: "14", label: "भाषाएँ" },
+      { value: "16", label: "भाषाएँ" },
       { value: "बिना विज्ञापन", label: "हमेशा मुफ़्त" },
     ],
   },
@@ -277,7 +277,7 @@ const bn: Home = {
     body: "রফিক আল-মুসলিম আপনাকে নামাজের সময় মনে করিয়ে দেয়, আল্লাহর জিকিরে সাহায্য করে, কুরআনের সঙ্গে যুক্ত রাখে এবং আরও বেশি নেক আমলে উৎসাহ দেয়। প্রত্যেক মুসলমানের সঙ্গী।",
     stats: [
       { value: "9", label: "হাদিস গ্রন্থ" },
-      { value: "14", label: "ভাষা" },
+      { value: "16", label: "ভাষা" },
       { value: "বিজ্ঞাপন নেই", label: "সবসময় বিনামূল্যে" },
     ],
   },
@@ -313,7 +313,7 @@ const ha: Home = {
     body: "Rafiq Al-Muslim yana tunatar da kai lokutan sallah, yana taimaka maka wajen ambaton Allah, yana haɗa ka da Alƙur'ani kuma yana ƙarfafa ka ka ƙara ayyukan alheri. Abokin kowane Musulmi.",
     stats: [
       { value: "9", label: "Littattafan hadisi" },
-      { value: "14", label: "Harsuna" },
+      { value: "16", label: "Harsuna" },
       { value: "Babu talla", label: "Kyauta har abada" },
     ],
   },
@@ -349,7 +349,7 @@ const fr: Home = {
     body: "Rafiq Al-Muslim vous rappelle les horaires de prière, vous aide à vous souvenir d’Allah, vous relie au Coran et vous encourage à faire davantage de bien. Le compagnon de chaque musulman.",
     stats: [
       { value: "9", label: "Recueils de hadiths" },
-      { value: "14", label: "Langues" },
+      { value: "16", label: "Langues" },
       { value: "Sans pub", label: "Gratuit pour toujours" },
     ],
   },
@@ -390,7 +390,7 @@ const zh: Home = {
     body: "Rafiq Al-Muslim 提醒您礼拜时间，帮助您记念真主，让您与《古兰经》相连，并鼓励您多行善功。每一位穆斯林的伙伴。",
     stats: [
       { value: "9", label: "部圣训集" },
-      { value: "14", label: "种语言" },
+      { value: "16", label: "种语言" },
       { value: "无广告", label: "永久免费" },
     ],
   },
@@ -431,7 +431,7 @@ const ps: Home = {
     body: "رفیق المسلم تاسو ته د لمانځه وختونه در یادوي، د الله په ذکر کې مو مرسته کوي، له قرآن کریم سره مو تړي او ډېرو نېکیو ته مو هڅوي. د هر مسلمان ملګری.",
     stats: [
       { value: "9", label: "د حدیثو کتابونه" },
-      { value: "14", label: "ژبې" },
+      { value: "16", label: "ژبې" },
       { value: "بې له اعلانونو", label: "تل وړیا" },
     ],
   },
@@ -443,4 +443,80 @@ const ps: Home = {
   contact: { title: "له موږ سره اړیکه", body: "پوښتنه، وړاندیز یا کومه ستونزه لرئ؟ موږ ته ولیکئ — موږ هر پیغام لولو.", message: "ستاسو پیغام ته سترګې په لار یو", send: "لېږل" },
 };
 
-export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps };
+const pa: Home = {
+  strip: { tagline: "ਇਬਾਦਤ ਵਿੱਚ ਤੁਹਾਡਾ ਸਾਥੀ", sub: "ਕੁਰਆਨ · ਹਦੀਸ · ਅਜ਼ਕਾਰ · ਨਮਾਜ਼ — ਮੁਫ਼ਤ, ਬਿਨਾਂ ਇਸ਼ਤਿਹਾਰਾਂ ਦੇ" },
+  hero: {
+    slides: [
+      { before: "ਆਪਣੇ ਟਿਕਾਣੇ ਮੁਤਾਬਕ ਦਿਨ ਅਤੇ ਮਹੀਨੇ ਦੇ ", highlight: "ਨਮਾਜ਼ ਦੇ ਸਮੇਂ", after: " ਪੂਰੀ ਸਹੀ ਤਰ੍ਹਾਂ ਜਾਣੋ", body: "ਰਫ਼ੀਕ ਅਲ-ਮੁਸਲਿਮ ਨਾਲ ਆਪਣੇ ਸ਼ਹਿਰ ਦੇ ਨਮਾਜ਼ ਦੇ ਸਹੀ ਸਮੇਂ ਜਾਣੋ, ਹਰ ਨਮਾਜ਼ 'ਤੇ ਅਜ਼ਾਨ ਦੇ ਨਾਲ।" },
+      { before: "ਕੁਰਆਨ ਅਤੇ ਸੁੰਨਤ ਦੇ ਉਹ ਪ੍ਰਮਾਣਿਕ ", highlight: "ਅਜ਼ਕਾਰ ਅਤੇ ਦੁਆਵਾਂ", after: " ਵੇਖੋ ਜਿਨ੍ਹਾਂ ਦੀ ਹਰ ਮੁਸਲਮਾਨ ਨੂੰ ਲੋੜ ਹੈ", body: "ਸਵੇਰ ਅਤੇ ਸ਼ਾਮ ਦੇ ਅਜ਼ਕਾਰ, ਹਿਸਨੁਲ ਮੁਸਲਿਮ ਅਤੇ ਤਸਬੀਹ, ਆਵਾਜ਼ ਅਤੇ ਗਿਣਤੀ ਦੇ ਨਾਲ।" },
+      { before: "", highlight: "ਮਦੀਨੇ ਵਾਲੇ ਮੁਸਹਫ਼", after: " ਵਿੱਚ ਕੁਰਆਨ ਪੜ੍ਹੋ, ਤਫ਼ਸੀਰ, ਤਰਜਮੇ ਅਤੇ ਤਿਲਾਵਤ ਦੇ ਨਾਲ", body: "ਹਰ ਸਫ਼ਾ ਉਸੇ ਤਰ੍ਹਾਂ ਜਿਵੇਂ ਮਦੀਨੇ ਵਿੱਚ ਛਪਿਆ ਹੈ, ਤੁਹਾਡੀ ਭਾਸ਼ਾ ਵਿੱਚ ਆਇਤਾਂ ਦੇ ਅਰਥਾਂ ਨਾਲ।" },
+      { before: "ਜਿੱਥੇ ਵੀ ਹੋਵੋ ", highlight: "ਕਿਬਲਾ", after: " ਲੱਭੋ ਅਤੇ ਅਜ਼ਾਨ ਸੁਣੋ", body: "ਕੰਪਾਸ, ਸੂਰਜ ਅਤੇ ਚੰਨ ਅਤੇ ਨਕਸ਼ਾ — ਅਤੇ ਹਰ ਨਮਾਜ਼ ਦੇ ਸਮੇਂ ਪੂਰੀ ਸਕਰੀਨ 'ਤੇ ਅਜ਼ਾਨ।" },
+    ],
+    getApp: "ਰਫ਼ੀਕ ਅਲ-ਮੁਸਲਿਮ ਹੁਣੇ ਲਓ",
+  },
+  prayer: { title: "ਨਮਾਜ਼ ਦਾ ਸਮਾਂ", more: "ਹੋਰ", method: "ਤਰੀਕਾ", next: "ਅਗਲੀ ਨਮਾਜ਼" },
+  articles: { recent: "ਨਵੇਂ ਲੇਖ", mostRead: "ਸਭ ਤੋਂ ਵੱਧ ਪੜ੍ਹੇ ਗਏ", viewMore: "ਹੋਰ ਵੇਖੋ" },
+  qibla: {
+    before: "ਜਿੱਥੇ ਵੀ ਹੋਵੋ, ਵੱਖ-ਵੱਖ ਤਰੀਕਿਆਂ ਨਾਲ ",
+    highlight: "ਕਿਬਲੇ ਦੀ ਦਿਸ਼ਾ",
+    after: " ਜਾਣੋ",
+    methods: { compass: "ਕੰਪਾਸ", sunMoon: "ਸੂਰਜ ਅਤੇ ਚੰਨ", shadow: "ਪਰਛਾਵਾਂ", map: "ਨਕਸ਼ਾ" },
+  },
+  about: {
+    title: "ਇੱਕ ਮੁਸਲਮਾਨ ਦੀ ਲੋੜ ਦੀ ਹਰ ਚੀਜ਼, ਇੱਕ ਮੁਫ਼ਤ ਐਪ ਵਿੱਚ",
+    body: "ਰਫ਼ੀਕ ਅਲ-ਮੁਸਲਿਮ ਤੁਹਾਨੂੰ ਨਮਾਜ਼ ਦੇ ਸਮੇਂ ਯਾਦ ਕਰਵਾਉਂਦਾ ਹੈ, ਅੱਲਾਹ ਦੇ ਜ਼ਿਕਰ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ, ਤੁਹਾਨੂੰ ਕੁਰਆਨ ਨਾਲ ਜੋੜਦਾ ਹੈ ਅਤੇ ਹੋਰ ਨੇਕੀ ਕਰਨ ਦਾ ਹੌਸਲਾ ਦਿੰਦਾ ਹੈ। ਹਰ ਮੁਸਲਮਾਨ ਦਾ ਸਾਥੀ।",
+    stats: [
+      { value: "9", label: "ਹਦੀਸ ਦੀਆਂ ਕਿਤਾਬਾਂ" },
+      { value: "16", label: "ਭਾਸ਼ਾਵਾਂ" },
+      { value: "ਕੋਈ ਇਸ਼ਤਿਹਾਰ ਨਹੀਂ", label: "ਹਮੇਸ਼ਾ ਲਈ ਮੁਫ਼ਤ" },
+    ],
+  },
+  reviews: {
+    title: "ਸਾਡੇ ਵਰਤੋਂਕਾਰਾਂ ਦੀ ਰਾਏ",
+    body: "ਰਫ਼ੀਕ ਅਲ-ਮੁਸਲਿਮ ਤੁਹਾਨੂੰ ਨਮਾਜ਼ ਦੇ ਸਮੇਂ ਯਾਦ ਕਰਵਾਉਂਦਾ ਹੈ, ਅੱਲਾਹ ਦੇ ਜ਼ਿਕਰ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ ਅਤੇ ਤੁਹਾਨੂੰ ਕੁਰਆਨ ਨਾਲ ਜੋੜਦਾ ਹੈ।",
+    write: "ਆਪਣੀ ਰਾਏ ਲਿਖੋ",
+  },
+  contact: {
+    title: "ਸਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ",
+    body: "ਸਵਾਲ, ਸੁਝਾਅ ਜਾਂ ਕੋਈ ਸਮੱਸਿਆ? ਸਾਨੂੰ ਲਿਖੋ — ਅਸੀਂ ਹਰ ਸੁਨੇਹਾ ਪੜ੍ਹਦੇ ਹਾਂ।",
+    message: "ਤੁਹਾਡੇ ਸੁਨੇਹੇ ਦੀ ਉਡੀਕ ਹੈ",
+    send: "ਭੇਜੋ",
+  },
+};
+const pnb: Home = {
+  strip: { tagline: "عبادت وچ تہاڈا ساتھی", sub: "قرآن · حدیث · اذکار · نماز — مفت تے اشتہاراں توں بغیر" },
+  hero: {
+    slides: [
+      { before: "اپنی تھاں دے حساب نال دن تے مہینے دے ", highlight: "نماز دے ویلے", after: " پوری درستی نال جاݨو", body: "اپنے شہر دے نماز دے ٹھیک ویلے جاݨو، ہر نماز دی اذان دے نال — رفیق المسلم نال۔" },
+      { before: "قرآن تے سنت دے صحیح ", highlight: "اذکار تے دعاواں", after: " ویکھو جنہاں دی ہر مسلمان نوں لوڑ اے", body: "سویر تے شام دے اذکار، حصن المسلم تے تسبیح، آواز تے گنتی دے نال۔" },
+      { before: "قرآن مجید ", highlight: "مدنی مصحف", after: " وچ پڑھو، تفسیر، ترجمے تے تلاوت دے نال", body: "ہر صفحہ اوویں ای جیویں مدینہ منورہ وچ چھپیا، آیتاں دے مطلب تہاڈی اپنی زبان وچ۔" },
+      { before: "جتھے وی ہووو، ", highlight: "قبلہ", after: " لبھو تے اذان سݨو", body: "قطب نما، سورج تے چن تے نقشہ — تے ہر نماز دے ویلے پوری سکرین والی اذان۔" },
+    ],
+    getApp: "ہُݨے رفیق المسلم لوو",
+  },
+  prayer: { title: "نماز دا ویلا", more: "ہور", method: "حساب دا طریقہ", next: "اگلی نماز" },
+  articles: { recent: "نویں مضمون", mostRead: "سب توں ودھ پڑھے گئے", viewMore: "ہور ویکھو" },
+  qibla: {
+    before: "جتھے وی ہووو، وکھو وکھ طریقیاں نال ",
+    highlight: "قبلے دا رخ",
+    after: " جاݨو",
+    methods: { compass: "قطب نما", sunMoon: "سورج تے چن", shadow: "پرچھاواں", map: "نقشہ" },
+  },
+  about: {
+    title: "جو کجھ اک مسلمان نوں چاہیدا اے، اک مفت ایپ وچ",
+    body: "رفیق المسلم تہانوں نماز دے ویلے یاد کراندا اے، اللہ دے ذکر وچ تہاڈی مدد کردا اے، تہانوں قرآن نال جوڑدا اے تے ہور نیکیاں کرن دا حوصلہ دیندا اے۔ ہر مسلمان دا ساتھی۔",
+    stats: [
+      { value: "9", label: "حدیث دیاں کتاباں" },
+      { value: "16", label: "زباناں" },
+      { value: "اشتہاراں توں بغیر", label: "ہمیشہ مفت" },
+    ],
+  },
+  reviews: {
+    title: "ساڈے ورتن والیاں دیاں راواں",
+    body: "رفیق المسلم تہانوں نماز دے ویلے یاد کراندا اے، اللہ دے ذکر وچ تہاڈی مدد کردا اے تے تہانوں قرآن نال جوڑدا اے۔",
+    write: "اپنی رائے لکھو",
+  },
+  contact: { title: "ساڈے نال رابطہ", body: "کوئی سوال، مشورہ یا مسئلہ اے؟ سانوں لکھو — اسیں ہر سنیہا پڑھدے آں۔", message: "تہاڈے سنیہے دی اڈیک اے", send: "گھلو" },
+};
+
+export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb };

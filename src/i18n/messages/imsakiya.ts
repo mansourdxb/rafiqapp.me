@@ -147,4 +147,23 @@ const ps: ImsakiyaMsg = {
   started: "رمضان مو مبارک شه",
 };
 
-export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps };
+const pa: ImsakiyaMsg = {
+  description:
+    "ਤੁਹਾਡੇ ਸ਼ਹਿਰ ਲਈ ਰਮਜ਼ਾਨ ਦੀ ਇਮਸਾਕੀਆ: ਰਮਜ਼ਾਨ ਦੇ ਹਰ ਦਿਨ ਲਈ ਇਮਸਾਕ, ਫ਼ਜਰ, ਜ਼ੁਹਰ, ਅਸਰ, ਮਗ਼ਰਿਬ (ਇਫ਼ਤਾਰ) ਅਤੇ ਇਸ਼ਾ, ਛਾਪਣ ਲਈ ਤਿਆਰ।",
+  theme: "ਰੰਗ",
+  themes: { night: "ਰਾਤ", sunset: "ਸੂਰਜ ਡੁੱਬਣਾ", day: "ਦਿਨ" },
+  imsakNote: "ਇਹਤਿਆਤ ਵਜੋਂ ਇਮਸਾਕ ਫ਼ਜਰ ਤੋਂ 10 ਮਿੰਟ ਪਹਿਲਾਂ ਵਿਖਾਇਆ ਗਿਆ ਹੈ; ਰੋਜ਼ਾ ਫ਼ਜਰ ਤੋਂ ਸ਼ੁਰੂ ਹੁੰਦਾ ਹੈ।",
+  daysLeft: "ਰਮਜ਼ਾਨ {{n}} ਦਿਨਾਂ ਵਿੱਚ ਸ਼ੁਰੂ ਹੋਵੇਗਾ",
+  started: "ਰਮਜ਼ਾਨ ਮੁਬਾਰਕ",
+};
+const pnb: ImsakiyaMsg = {
+  description:
+    "تہاڈے شہر لئی رمضان دی امساکیہ: رمضان دے ہر دن لئی امساک، فجر، ظہر، عصر، مغرب (افطاری) تے عشاء، چھاپن لئی تیار۔",
+  theme: "رنگ",
+  themes: { night: "رات", sunset: "سورج ڈُبنا", day: "دن" },
+  imsakNote: "احتیاط لئی امساک فجر توں 10 منٹ پہلاں وکھایا جاندا اے؛ روزہ فجر ویلے شروع ہوندا اے۔",
+  daysLeft: "رمضان {{n}} دناں بعد شروع ہووے گا",
+  started: "رمضان مبارک",
+};
+
+export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb };
