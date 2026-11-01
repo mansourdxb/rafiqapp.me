@@ -27,7 +27,8 @@ export default async function quranData(ctx) {
   const quarters = readJson(app("data", "Quran", "hizb-quarters.json"));
   const english = readJson(app("assets", "data", "quran_en.json"));
   const uzbek = {
-    uz: readJson(join(ctx.root, "scripts", "data", "translations", "uz-sodiq-latn.json")),
+    // an apostrophe after a letter is always the tutuq belgisi in Sodiq's text, word-final too (rukuʼ), as the app
+    uz: Object.fromEntries(Object.entries(readJson(join(ctx.root, "scripts", "data", "translations", "uz-sodiq-latn.json"))).map(([k, v]) => [k, v.replace(/(?<=\p{L})['’]/gu, "ʼ")])),
     "uz-Cyrl": readJson(join(ctx.root, "scripts", "data", "translations", "uz-sodiq-cyrl.json")),
   };
   // page font URLs (bases tried in order) + SHA-256 of every page font: a font is used only if it matches
