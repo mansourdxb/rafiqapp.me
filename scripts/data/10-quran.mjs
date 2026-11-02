@@ -8,6 +8,9 @@
 //     127 Cyrillic) from scripts/data/translations/, as the app saves it (Latin oʻ/gʻ/ʼ, translationBookCache)
 //   public/data/quran/so/{p}.json     — Somali, Abdullah Hasan Yaqoub (QuranEnc somali_yacob) from scripts/data/translations/,
 //     verse numbers and [n] footnote markers removed as the app saves it
+//   public/data/quran/{sw,ku-Arab,ml,de,es}/{p}.json — QuranEnc swahili_rwwad (Rowwad), kurdish_bamoki (Sorani),
+//     malayalam_kunhi (ZWJ chillu → atomic chillu, ൻറ → ന്റ), german_bubenheim, spanish_garcia, cleaned the same way;
+//     Kurmanji (ku-Latn) has no translation of its own and reads the Sorani pages, as the app
 //   public/data/quran/fonts, frame    — medallion / surah-title / basmala fonts and the page frame artwork
 // The 604 QCF page fonts are not copied: the reader loads them from the assets repo (then quran.com).
 import { copyFileSync, mkdirSync, readdirSync, readFileSync, rmSync } from "node:fs";
@@ -33,6 +36,11 @@ export default async function quranData(ctx) {
     uz: Object.fromEntries(Object.entries(readJson(join(ctx.root, "scripts", "data", "translations", "uz-sodiq-latn.json"))).map(([k, v]) => [k, v.replace(/(?<=\p{L})['’]/gu, "ʼ")])),
     "uz-Cyrl": readJson(join(ctx.root, "scripts", "data", "translations", "uz-sodiq-cyrl.json")),
     so: readJson(join(ctx.root, "scripts", "data", "translations", "so-yacob.json")),
+    sw: readJson(join(ctx.root, "scripts", "data", "translations", "sw-rwwad.json")),
+    "ku-Arab": readJson(join(ctx.root, "scripts", "data", "translations", "ku-bamoki.json")),
+    ml: readJson(join(ctx.root, "scripts", "data", "translations", "ml-kunhi.json")),
+    de: readJson(join(ctx.root, "scripts", "data", "translations", "de-bubenheim.json")),
+    es: readJson(join(ctx.root, "scripts", "data", "translations", "es-garcia.json")),
   };
   // page font URLs (bases tried in order) + SHA-256 of every page font: a font is used only if it matches
   const fonts = readJson(app("data", "mushaf", "qcf-v1-fonts.json"));
@@ -49,6 +57,12 @@ export default async function quranData(ctx) {
   localized.uz = namesOf("UZ");
   localized["uz-Cyrl"] = namesOf("UZC");
   localized.so = namesOf("SO");
+  localized.sw = namesOf("SW");
+  localized["ku-Arab"] = namesOf("KUA");
+  localized["ku-Latn"] = namesOf("KUL");
+  localized.ml = namesOf("ML");
+  localized.de = namesOf("DE");
+  localized.es = namesOf("ES");
 
   // ── page / juz lookups (binary search over the start lists, as the app does) ──
   const cmp = (a, b) => (a.sura !== b.sura ? a.sura - b.sura : a.aya - b.aya);

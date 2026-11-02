@@ -1,7 +1,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 
-export const LOCALES = ["ar", "en", "ur", "fa", "ru", "tr", "id", "ms", "hi", "bn", "ha", "fr", "zh", "ps", "pa", "pnb", "uz", "uz-Cyrl", "so"];
+export const LOCALES = ["ar", "en", "ur", "fa", "ru", "tr", "id", "ms", "hi", "bn", "ha", "fr", "zh", "ps", "pa", "pnb", "uz", "uz-Cyrl", "so", "sw", "ku-Arab", "ku-Latn", "ml", "de", "es"];
 
 export function readJson(p) {
   return JSON.parse(readFileSync(p, "utf8"));
