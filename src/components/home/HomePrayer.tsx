@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { prayerMsg } from "@/i18n/messages/prayer";
-import { isRtl, localePath, type Locale } from "@/i18n/config";
+import { intlTag, isRtl, localePath, type Locale } from "@/i18n/config";
 import { appT } from "@/i18n/app";
 import { home } from "@/i18n/messages/home";
 import { Icon } from "@/components/ui/Icon";
@@ -45,8 +45,8 @@ export function HomePrayer({ lang }: { lang: Locale }) {
   const shown = other ? computeDay(place, s, other[0], other[1], other[2]) : live?.today;
   const date = other ? dateLine(lang, new Date(Date.UTC(other[0], other[1] - 1, other[2], 12)), place.tz) : now ? dateLine(lang, now, place.tz) : null;
   const nextKey = other ? undefined : live?.mode === "since" ? live.current! : live?.next;
-  // Chrome's Intl has no Hausa (it would say "today").
-  const todayWord = lang === "ha" ? "Yau" : new Intl.RelativeTimeFormat(lang, { numeric: "auto" }).format(0, "day");
+  // Chrome's Intl has no Hausa or Kurdish (it would say "today"); the Kurdish words are the app's alm.common.today.
+  const todayWord = lang === "ha" ? "Yau" : lang === "ku-Arab" ? "ئەمڕۆ" : lang === "ku-Latn" ? "Îro" : new Intl.RelativeTimeFormat(intlTag(lang), { numeric: "auto" }).format(0, "day");
   const autoMethod = effectiveMethod(place, { ...s, method: "auto" });
 
   return (

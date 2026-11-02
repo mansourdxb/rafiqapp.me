@@ -195,4 +195,64 @@ const so: ImsakiyaMsg = {
   started: "Ramadaan Mubaarak",
 };
 
-export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so };
+const sw: ImsakiyaMsg = {
+  description:
+    "Ratiba ya Ramadhani ya mji wako: Imsaki, Alfajiri, Adhuhuri, Alasiri, Magharibi (futari) na Isha kwa kila siku ya Ramadhani, tayari kuchapishwa.",
+  theme: "Rangi",
+  themes: { night: "Usiku", sunset: "Machweo", day: "Mchana" },
+  imsakNote: "Imsaki inaonyeshwa dakika 10 kabla ya Alfajiri, kwa tahadhari; funga huanza wakati wa Alfajiri.",
+  daysLeft: "Ramadhani inaanza baada ya siku {{n}}",
+  started: "Ramadhani Mubarak",
+};
+
+const kuArab: ImsakiyaMsg = {
+  description:
+    "خشتەی ڕەمەزانی شارەکەت: ئیمساک، بەیانی، نیوەڕۆ، عەسر، ئێوارە (بەربانگ) و خەوتنان بۆ هەموو ڕۆژێکی ڕەمەزان، ئامادە بۆ چاپکردن.",
+  theme: "ڕەنگ",
+  themes: { night: "شەو", sunset: "خۆرئاوابوون", day: "ڕۆژ" },
+  imsakNote: "ئیمساک بۆ وریایی 10 خولەک پێش بانگی بەیانی پیشان دەدرێت؛ ڕۆژوو بە بانگی بەیانی دەست پێدەکات.",
+  daysLeft: "ڕەمەزان {{n}} ڕۆژی تر دەست پێدەکات",
+  started: "ڕەمەزانتان پیرۆز بێت",
+};
+
+const kuLatn: ImsakiyaMsg = {
+  description:
+    "Îmsakiyeya Remezanê ji bo bajarê te: Îmsak, Sibeh, Nîvro, Esir, Mexrib (fitar) û Eşa ji bo her roja Remezanê, amade ji bo çapkirinê.",
+  theme: "Reng",
+  themes: { night: "Şev", sunset: "Rojava", day: "Roj" },
+  imsakNote: "Îmsak ji bo hişyariyê 10 deqe berî Sibehê tê nîşandan; rojî bi dema Sibehê dest pê dike.",
+  daysLeft: "Remezan piştî {{n}} rojan dest pê dike",
+  started: "Remezana we pîroz be",
+};
+
+const ml: ImsakiyaMsg = {
+  description:
+    "നിങ്ങളുടെ നഗരത്തിലെ റമദാൻ ഇംസാകിയ്യ: റമദാനിലെ ഓരോ ദിവസത്തെയും ഇംസാക്, സുബ്ഹ്, ളുഹ്ർ, അസ്ർ, മഗ്‌രിബ് (നോമ്പുതുറ), ഇശാ സമയങ്ങൾ, അച്ചടിക്കാൻ തയ്യാറായി.",
+  theme: "നിറം",
+  themes: { night: "രാത്രി", sunset: "സൂര്യാസ്തമയം", day: "പകൽ" },
+  imsakNote: "മുൻകരുതലായി സുബ്ഹിന് 10 മിനിറ്റ് മുമ്പാണ് ഇംസാക് കാണിക്കുന്നത്; നോമ്പ് ആരംഭിക്കുന്നത് സുബ്ഹിന്റെ സമയത്താണ്.",
+  daysLeft: "{{n}} ദിവസത്തിനുള്ളിൽ റമദാൻ ആരംഭിക്കും",
+  started: "റമദാൻ മുബാറക്",
+};
+
+const de: ImsakiyaMsg = {
+  description:
+    "Ramadan-Imsakiya für deine Stadt: Imsak, Fadschr, Dhuhr, Asr, Maghrib (Iftar) und Ischa für jeden Tag des Ramadan, druckfertig.",
+  theme: "Farbe",
+  themes: { night: "Nacht", sunset: "Sonnenuntergang", day: "Tag" },
+  imsakNote: "Imsak wird zur Vorsicht 10 Minuten vor Fadschr angezeigt; das Fasten beginnt mit Fadschr.",
+  daysLeft: "Der Ramadan beginnt in {{n}} Tagen",
+  started: "Ramadan Mubarak",
+};
+
+const es: ImsakiyaMsg = {
+  description:
+    "Imsakiya de Ramadán para tu ciudad: Imsak, Fayr, Dhuhr, Asr, Magrib (iftar) e Isha de cada día de Ramadán, lista para imprimir.",
+  theme: "Color",
+  themes: { night: "Noche", sunset: "Atardecer", day: "Día" },
+  imsakNote: "El Imsak se muestra 10 minutos antes del Fayr, como precaución; el ayuno comienza con el Fayr.",
+  daysLeft: "Ramadán comienza en {{n}} días",
+  started: "Ramadán Mubarak",
+};
+
+export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so, sw, "ku-Arab": kuArab, "ku-Latn": kuLatn, ml, de, es };

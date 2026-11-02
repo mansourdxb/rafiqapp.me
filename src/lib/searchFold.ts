@@ -4,7 +4,9 @@
  * ta marbuta, hamza seats), Turkish dotless ı = i, Russian ё = е, Hindi with or without nuqta (क़ = क),
  * Bengali as the app folds it (য় = য, ড় = ড, ঢ় = ঢ, no chandrabindu, ী = ি, ূ = ু),
  * Hausa hooked letters as plain ones (ɓ = b, ɗ = d, ƙ = k, ƴ = y) and no apostrophes (Qur'ani = Qurani),
- * French ligatures spelled out (cœur = coeur), and no spaces next to Chinese characters (Chinese has no
+ * French ligatures spelled out (cœur = coeur), German ß = ss, Sorani letters as their Arabic-keyboard
+ * neighbours (ڕ = ر, ڵ = ل, ێ = ی, ۆ = و, ە = ه), Malayalam atomic chillu letters as consonant + virama (ൻ = ന്,
+ * the same as the old chillu + ZWJ spelling once ZWJ is dropped), and no spaces next to Chinese characters (Chinese has no
  * word spaces, and the site's text puts a space between Chinese and digits: "第 2 章" = "第2章"), so a
  * Chinese query matches as a plain substring.
  */
@@ -20,6 +22,13 @@ export function searchFold(s = ""): string {
     .replace(/['‘’ʼ]/g, "")
     .replace(/œ/g, "oe")
     .replace(/æ/g, "ae")
+    .replace(/ß/g, "ss")
+    .replace(/ڕ/g, "ر")
+    .replace(/ڵ/g, "ل")
+    .replace(/ێ/g, "ی")
+    .replace(/ۆ/g, "و")
+    .replace(/ە/g, "ه")
+    .replace(/[\u0D7A-\u0D7F]/g, (c) => "\u0D23\u0D28\u0D30\u0D32\u0D33\u0D15"[c.charCodeAt(0) - 0x0d7a] + "\u0D4D")
     .normalize("NFKD")
     .replace(/[̀-ͯؐ-ًؚ-ٰٟۖ-ۭـ]/g, "")
     .replace(/\u093C/g, "")

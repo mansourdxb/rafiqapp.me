@@ -15,7 +15,7 @@ import { Avatar, displayName } from "./Avatar";
 
 const fmtDate = (lang: Locale, v: string | number) => {
   try {
-    if (lang === "ha" || lang === "ps" || lang === "pnb" || lang === "uz" || lang === "uz-Cyrl") return formatGregorian(lang, ymdOf(new Date(v)));
+    if (lang === "ha" || lang === "ps" || lang === "pnb" || lang === "uz" || lang === "uz-Cyrl" || lang === "ku-Arab" || lang === "ku-Latn") return formatGregorian(lang, ymdOf(new Date(v)));
     return new Intl.DateTimeFormat(`${lang}-u-nu-${lang === "ar" || lang === "fa" || lang === "ur" ? "arab" : "latn"}`, { year: "numeric", month: "long", day: "numeric" }).format(new Date(v));
   } catch {
     return "";

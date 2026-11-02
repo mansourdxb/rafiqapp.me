@@ -69,6 +69,25 @@ html[lang="pa-Guru"] body {
   font-family: var(--font-roboto), var(--font-noto-guru), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Kurdish (Sorani): Almarai has no Sorani letters (ڕ ڵ ێ ۆ ە), so Sorani is set in Noto Sans Arabic, like Pashto —
+   also the Sorani Qur'an translation shown on Kurmanji pages (lang="ckb" inside a "ku" page). */
+html[lang="ckb"] body, html[lang="ku"] [lang="ckb"] {
+  font-family: var(--font-noto-ar), var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Kurdish (Kurmanji): Roboto's latin subset has no ş, so Kurmanji uses Noto Sans for the whole page, like Hausa. */
+html[lang="ku"] body {
+  font-family: var(--font-noto-latin), var(--font-roboto), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Malayalam: Latin from Roboto, Malayalam from Noto Sans Malayalam. */
+html[lang="ml"] body {
+  font-family: var(--font-roboto), var(--font-noto-mlym), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+}
+/* Malayalam menu words are wide: smaller, tighter items in the desktop menu bar so it fits from 1180px. */
+html[lang="ml"] nav > div > ul { column-gap: 0.5rem; }
+html[lang="ml"] nav > div > ul > li > a, html[lang="ml"] nav > div > ul > li > button { font-size: 12px; }
+
 /* Uzbek in Cyrillic: ғ қ ҳ from Roboto's cyrillic-ext subset, the rest from Roboto. */
 html[lang="uz-Cyrl"] body {
   font-family: var(--font-roboto), var(--font-roboto-cyrext), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;

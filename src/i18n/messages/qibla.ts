@@ -570,4 +570,178 @@ const so: QiblaMsg = {
   noPlace: "Goobtaada weli lama dejin. Isticmaal goobtaada ama raadi magaaladaada.",
 };
 
-export const qiblaMsg: Record<Locale, QiblaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so };
+const sw: QiblaMsg = {
+  title: "Mwelekeo wa Kibla",
+  description:
+    "Pata Kibla popote ulipo: pembe kutoka kaskazini, umbali hadi Al-Kaaba, dira hai kwenye simu yako, jua na mwezi, vivuli na ramani.",
+  tabShadow: "Kivuli",
+  startCompass: "Washa dira hai",
+  compassOn: "Dira hai imewashwa — geuka hadi mshale uelekee juu",
+  noSensor: "Hakuna kihisi cha dira kilichopatikana kwenye kifaa hiki. Tumia pembe kutoka kaskazini inayoonyeshwa kwenye uso wa dira.",
+  denied: "Ruhusa ya mwendo na mwelekeo imekataliwa. Unaweza kuiruhusu katika mipangilio ya kivinjari chako.",
+  desktopHint: "Kaskazini iko juu ya uso wa dira. Fungua ukurasa huu kwenye simu yako ili kutumia dira hai.",
+  facing: "Unaelekea Kibla",
+  azimuth: "Mwelekeo",
+  altitude: "Kimo juu ya upeo wa macho",
+  qiblaBearing: "Kibla",
+  shadowIntro:
+    "Simamisha fimbo au kalamu wima juu ya ardhi tambarare kwenye jua. Katika nyakati zilizo hapa chini kivuli chake hulingana sawasawa na Kibla.",
+  shadowToward: "Kivuli kinaelekea Kibla",
+  shadowTowardHint: "Elekea upande wa kivuli, kutoka kwenye fimbo hadi ncha ya kivuli.",
+  shadowAway: "Jua liko upande wa Kibla",
+  shadowAwayHint: "Elekea jua — kivuli kinaelekea nyuma yako, mbali na Kibla.",
+  shadowNone: "Leo jua halilingani na Kibla mahali hapa. Tumia dira au ramani.",
+  shadowPassed: "umepita",
+  kaabaFact:
+    "Mara mbili kwa mwaka — takriban tarehe 27–28 Mei saa 12:18 na 15–16 Julai saa 12:27 kwa saa za Makka — jua husimama moja kwa moja juu ya Al-Kaaba, na popote palipo mchana kila kivuli huelekea upande ulio kinyume na Kibla.",
+  mapNote: "Mstari huu ni duara kuu — njia fupi zaidi kuelekea Al-Kaaba.",
+  calibrate: "Rekebisha",
+  noPlace: "Mahali ulipo bado hapajawekwa. Tumia mahali ulipo au tafuta mji wako.",
+};
+
+const kuArab: QiblaMsg = {
+  title: "ئاراستەی قیبلە",
+  description:
+    "لە هەر شوێنێک بیت قیبلە بدۆزەرەوە: گۆشە لە باکوورەوە، دووری لە کەعبەوە، قیبلەنمای ڕاستەوخۆ لە مۆبایلەکەتدا، خۆر و مانگ، سێبەر و نەخشە.",
+  tabShadow: "سێبەر",
+  startCompass: "دەستپێکردنی قیبلەنمای ڕاستەوخۆ",
+  compassOn: "قیبلەنمای ڕاستەوخۆ چالاکە — بسووڕێوە تا تیرەکە بەرەو سەرەوە ئاماژە بکات",
+  noSensor: "لەم ئامێرەدا هەستەوەری قیبلەنما نەدۆزرایەوە. ئەو گۆشەیە بەکاربهێنە کە لە باکوورەوە لەسەر ڕووکارەکە پیشان دراوە.",
+  denied: "دەستگەیشتن بە جووڵە و ئاراستە ڕەت کرایەوە. دەتوانیت لە ڕێکخستنەکانی وێبگەڕەکەتدا ڕێگە بدەیت.",
+  desktopHint: "باکوور لە سەرەوەی ڕووکارەکەیە. ئەم لاپەڕەیە لە مۆبایلەکەتدا بکەرەوە بۆ بەکارهێنانی قیبلەنمای ڕاستەوخۆ.",
+  facing: "ڕووت لە قیبلەیە",
+  azimuth: "ئاراستە",
+  altitude: "بەرزی لە ئاسۆوە",
+  qiblaBearing: "قیبلە",
+  shadowIntro:
+    "دارێک یان قەڵەمێک بە ستوونی لەسەر زەوییەکی تەخت لەبەر خۆردا ڕابگرە. لەم کاتانەی خوارەوەدا سێبەرەکەی ڕێک لەگەڵ ئاراستەی قیبلە یەک دەگرێتەوە.",
+  shadowToward: "سێبەر ئاماژە بە قیبلە دەکات",
+  shadowTowardHint: "ڕوو لە ئاراستەی سێبەرەکە بکە، لە دارەکەوە بۆ سەری سێبەرەکە.",
+  shadowAway: "خۆر لە ئاراستەی قیبلەدایە",
+  shadowAwayHint: "ڕوو لە خۆر بکە — سێبەرەکە دەکەوێتە پشتتەوە، بە پێچەوانەی قیبلە.",
+  shadowNone: "ئەمڕۆ لەم شوێنەدا خۆر لەگەڵ ئاراستەی قیبلە یەک ناگرێتەوە. قیبلەنما یان نەخشە بەکاربهێنە.",
+  shadowPassed: "تێپەڕی",
+  kaabaFact:
+    "ساڵانە دوو جار — نزیکەی 27–28ی ئایار کاتژمێر 12:18 و 15–16ی تەمموز کاتژمێر 12:27 بە کاتی مەککە — خۆر ڕێک دەکەوێتە سەرووی کەعبەوە، و لە هەر شوێنێک ڕۆژ بێت، هەموو سێبەرێک بە پێچەوانەی قیبلەوەیە.",
+  mapNote: "ئەم هێڵە بازنەی گەورەیە — کورتترین ڕێگا بۆ کەعبە.",
+  calibrate: "ڕێکخستن",
+  noPlace: "شوێنەکەت هێشتا دیاری نەکراوە. شوێنەکەت بەکاربهێنە یان بەدوای شارەکەتدا بگەڕێ.",
+};
+
+const kuLatn: QiblaMsg = {
+  title: "Rêya Qibleyê",
+  description:
+    "Qibleyê li ku derê bî jî bibîne: goşeya ji bakur ve, dûrahiya heta Kabeyê, pûsleyeke zindî li ser telefona te, roj û heyv, sî û nexşe.",
+  tabShadow: "Sî",
+  startCompass: "Pûsleya zindî vêxe",
+  compassOn: "Pûsleya zindî vêxistî ye — bizivire heta ku tîr ber bi jor ve be",
+  noSensor: "Li ser vê amûrê hestyarê pûsleyê nehat dîtin. Goşeya ji bakur ve ya li ser rûkarê bi kar bîne.",
+  denied: "Destûra tevger û arastekirinê hat redkirin. Tu dikarî di mîhengên geroka xwe de destûrê bidî.",
+  desktopHint: "Bakur li jorê rûkarê ye. Vê rûpelê li ser telefona xwe veke da ku pûsleya zindî bi kar bînî.",
+  facing: "Tu ber bi Qibleyê ve yî",
+  azimuth: "Alî",
+  altitude: "Bilindahiya ji asoyê",
+  qiblaBearing: "Qible",
+  shadowIntro:
+    "Darek an qelemekê rast li ser erdeke rast a ku roj lê dide raweste. Di demên jêrîn de sîya wê tam li ser rêya Qibleyê ye.",
+  shadowToward: "Sî ber bi Qibleyê ve ye",
+  shadowTowardHint: "Ber bi aliyê sîyê ve bizivire, ji darê heta serê sîyê.",
+  shadowAway: "Roj li aliyê Qibleyê ye",
+  shadowAwayHint: "Ber bi rojê ve bizivire — sî li pişt te ye, dûrî Qibleyê.",
+  shadowNone: "Îro li vî cihî roj bi Qibleyê re li hev nayê. Pûsle an nexşeyê bi kar bîne.",
+  shadowPassed: "derbas bû",
+  kaabaFact:
+    "Salê du caran — nêzîkî 27–28ê Gulanê saet 12:18 û 15–16ê Tîrmehê saet 12:27 bi dema Mekkeyê — roj rasterast li ser Kabeyê ye, û li her derê ku roj e hemû sî berevajî Qibleyê ne.",
+  mapNote: "Xet xeleka mezin e — rêya herî kurt a ber bi Kabeyê ve.",
+  calibrate: "Rast bike",
+  noPlace: "Cihê te hêj nehatiye diyarkirin. Cihê xwe bi kar bîne an li bajarê xwe bigere.",
+};
+
+const ml: QiblaMsg = {
+  title: "ഖിബ്‌ലയുടെ ദിശ",
+  description:
+    "നിങ്ങൾ എവിടെയായിരുന്നാലും ഖിബ്‌ല കണ്ടെത്തുക: വടക്കുനിന്നുള്ള കോൺ, കഅ്ബയിലേക്കുള്ള ദൂരം, ഫോണിലെ തത്സമയ കോമ്പസ്, സൂര്യനും ചന്ദ്രനും, നിഴൽ, മാപ്പ്.",
+  tabShadow: "നിഴൽ",
+  startCompass: "തത്സമയ കോമ്പസ് ആരംഭിക്കുക",
+  compassOn: "തത്സമയ കോമ്പസ് ഓണാണ് — അമ്പടയാളം മുകളിലേക്ക് ചൂണ്ടുന്നതുവരെ തിരിയുക",
+  noSensor: "ഈ ഉപകരണത്തിൽ കോമ്പസ് സെൻസർ കണ്ടെത്തിയില്ല. ഡയലിൽ കാണിച്ചിരിക്കുന്ന വടക്കുനിന്നുള്ള കോൺ ഉപയോഗിക്കുക.",
+  denied: "ചലനത്തിനും ദിശയ്ക്കുമുള്ള അനുമതി നിരസിച്ചു. ബ്രൗസർ ക്രമീകരണങ്ങളിൽ നിങ്ങൾക്ക് ഇത് അനുവദിക്കാം.",
+  desktopHint: "ഡയലിന്റെ മുകൾഭാഗത്താണ് വടക്ക്. തത്സമയ കോമ്പസ് ഉപയോഗിക്കാൻ ഈ പേജ് ഫോണിൽ തുറക്കുക.",
+  facing: "നിങ്ങൾ ഖിബ്‌ലയ്ക്ക് അഭിമുഖമാണ്",
+  azimuth: "ദിശ",
+  altitude: "ചക്രവാളത്തിന് മുകളിലുള്ള ഉയരം",
+  qiblaBearing: "ഖിബ്‌ല",
+  shadowIntro:
+    "സൂര്യപ്രകാശം വീഴുന്ന നിരപ്പായ പ്രതലത്തിൽ ഒരു വടിയോ പേനയോ നേരെ നിർത്തുക. താഴെ കൊടുത്ത സമയങ്ങളിൽ അതിന്റെ നിഴൽ ഖിബ്‌ലയുമായി കൃത്യമായി ഒത്തുവരും.",
+  shadowToward: "നിഴൽ ഖിബ്‌ലയിലേക്ക് ചൂണ്ടുന്നു",
+  shadowTowardHint: "വടിയിൽ നിന്ന് നിഴലിന്റെ അറ്റത്തേക്കുള്ള ദിശയിൽ നിഴലിന് അഭിമുഖമായി നിൽക്കുക.",
+  shadowAway: "സൂര്യൻ ഖിബ്‌ലയുടെ ദിശയിലാണ്",
+  shadowAwayHint: "സൂര്യന് അഭിമുഖമായി നിൽക്കുക — നിഴൽ നിങ്ങളുടെ പിന്നിലേക്ക്, ഖിബ്‌ലയിൽ നിന്ന് അകലേക്ക് ചൂണ്ടും.",
+  shadowNone: "ഇന്ന് ഈ സ്ഥലത്ത് സൂര്യൻ ഖിബ്‌ലയുമായി ഒത്തുവരുന്നില്ല. കോമ്പസോ മാപ്പോ ഉപയോഗിക്കുക.",
+  shadowPassed: "കഴിഞ്ഞു",
+  kaabaFact:
+    "വർഷത്തിൽ രണ്ടുതവണ — ഏകദേശം മെയ് 27–28-ന് മക്ക സമയം 12:18-നും ജൂലൈ 15–16-ന് 12:27-നും — സൂര്യൻ കഅ്ബയ്ക്ക് നേരെ മുകളിലെത്തുന്നു, പകലുള്ള എല്ലായിടത്തും ഓരോ നിഴലും ഖിബ്‌ലയുടെ എതിർദിശയിലേക്ക് ചൂണ്ടുന്നു.",
+  mapNote: "ഈ വര ഗ്രേറ്റ് സർക്കിൾ ആണ് — കഅ്ബയിലേക്കുള്ള ഏറ്റവും ചെറിയ പാത.",
+  calibrate: "കാലിബ്രേറ്റ് ചെയ്യുക",
+  noPlace: "നിങ്ങളുടെ സ്ഥലം ഇതുവരെ നിശ്ചയിച്ചിട്ടില്ല. നിങ്ങളുടെ ലൊക്കേഷൻ ഉപയോഗിക്കുക അല്ലെങ്കിൽ നഗരം തിരയുക.",
+};
+
+const de: QiblaMsg = {
+  title: "Qibla-Richtung",
+  description:
+    "Finde die Qibla, wo immer du bist: die Richtung ab Norden, die Entfernung zur Kaaba, ein Live-Kompass auf deinem Handy, Sonne und Mond, Schatten und eine Karte.",
+  tabShadow: "Schatten",
+  startCompass: "Live-Kompass starten",
+  compassOn: "Live-Kompass an – dreh dich, bis der Pfeil nach oben zeigt",
+  noSensor: "Auf diesem Gerät wurde kein Kompasssensor gefunden. Nutze den Winkel ab Norden, der auf der Skala angezeigt wird.",
+  denied: "Der Zugriff auf Bewegung und Ausrichtung wurde verweigert. Du kannst ihn in deinen Browsereinstellungen erlauben.",
+  desktopHint: "Norden ist oben auf der Skala. Öffne diese Seite auf deinem Handy, um den Live-Kompass zu nutzen.",
+  facing: "Du bist zur Qibla ausgerichtet",
+  azimuth: "Richtung",
+  altitude: "Höhe über dem Horizont",
+  qiblaBearing: "Qibla",
+  shadowIntro:
+    "Stelle einen Stab oder Stift senkrecht auf ebenen Boden in die Sonne. Zu den unten angegebenen Zeiten zeigt sein Schatten genau in Richtung Qibla.",
+  shadowToward: "Der Schatten zeigt zur Qibla",
+  shadowTowardHint: "Richte dich entlang des Schattens aus, vom Stab zu seiner Spitze.",
+  shadowAway: "Die Sonne steht in Richtung Qibla",
+  shadowAwayHint: "Wende dich der Sonne zu – der Schatten zeigt hinter dich, von der Qibla weg.",
+  shadowNone: "Heute steht die Sonne an diesem Ort nicht in einer Linie mit der Qibla. Nutze den Kompass oder die Karte.",
+  shadowPassed: "vorbei",
+  kaabaFact:
+    "Zweimal im Jahr – etwa am 27.–28. Mai um 12:18 Uhr und am 15.–16. Juli um 12:27 Uhr Mekka-Zeit – steht die Sonne genau über der Kaaba, und überall, wo es Tag ist, zeigt jeder Schatten von der Qibla weg.",
+  mapNote: "Die Linie ist der Großkreis – der kürzeste Weg zur Kaaba.",
+  calibrate: "Kalibrieren",
+  noPlace: "Dein Standort ist noch nicht festgelegt. Verwende deinen Standort oder suche nach deiner Stadt.",
+};
+
+const es: QiblaMsg = {
+  title: "Dirección de la alquibla",
+  description:
+    "Encuentra la alquibla dondequiera que estés: el rumbo desde el norte, la distancia a la Kaaba, una brújula en vivo en tu teléfono, el sol y la luna, las sombras y un mapa.",
+  tabShadow: "Sombra",
+  startCompass: "Iniciar la brújula en vivo",
+  compassOn: "Brújula en vivo activada — gira hasta que la flecha apunte hacia arriba",
+  noSensor: "No se encontró ningún sensor de brújula en este dispositivo. Usa el ángulo desde el norte que se muestra en la esfera.",
+  denied: "Se denegó el acceso al movimiento y la orientación. Puedes permitirlo en los ajustes de tu navegador.",
+  desktopHint: "El norte está en la parte superior de la esfera. Abre esta página en tu teléfono para usar la brújula en vivo.",
+  facing: "Estás orientado hacia la alquibla",
+  azimuth: "Dirección",
+  altitude: "Altura sobre el horizonte",
+  qiblaBearing: "Alquibla",
+  shadowIntro:
+    "Coloca un palo o un bolígrafo en posición vertical sobre un suelo plano al sol. En las horas indicadas abajo, su sombra se alinea exactamente con la alquibla.",
+  shadowToward: "La sombra apunta hacia la alquibla",
+  shadowTowardHint: "Colócate a lo largo de la sombra, mirando desde el palo hacia su punta.",
+  shadowAway: "El sol está en la dirección de la alquibla",
+  shadowAwayHint: "Mira hacia el sol — la sombra apunta detrás de ti, en sentido contrario a la alquibla.",
+  shadowNone: "Hoy el sol no se alinea con la alquibla en este lugar. Usa la brújula o el mapa.",
+  shadowPassed: "ya pasó",
+  kaabaFact:
+    "Dos veces al año — hacia el 27–28 de mayo a las 12:18 y el 15–16 de julio a las 12:27, hora de La Meca — el sol se sitúa justo encima de la Kaaba, y allí donde sea de día todas las sombras apuntan en sentido contrario a la alquibla.",
+  mapNote: "La línea es el círculo máximo — el camino más corto hasta la Kaaba.",
+  calibrate: "Calibrar",
+  noPlace: "Tu ubicación aún no está definida. Usa tu ubicación o busca tu ciudad.",
+};
+
+export const qiblaMsg: Record<Locale, QiblaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so, sw, "ku-Arab": kuArab, "ku-Latn": kuLatn, ml, de, es };

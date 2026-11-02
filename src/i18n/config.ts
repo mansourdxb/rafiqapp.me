@@ -1,9 +1,9 @@
-// The site's languages — the same nineteen as the app, in the app's picker order.
-export const locales = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh", "ps", "pa", "pnb", "uz", "uz-Cyrl", "so"] as const;
+// The site's languages — the same twenty-five as the app, in the app's picker order.
+export const locales = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh", "ps", "pa", "pnb", "uz", "uz-Cyrl", "so", "sw", "ku-Arab", "ku-Latn", "ml", "de", "es"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "ar";
 
-export const rtlLocales: readonly Locale[] = ["ar", "ur", "fa", "ps", "pnb"];
+export const rtlLocales: readonly Locale[] = ["ar", "ur", "fa", "ps", "pnb", "ku-Arab"];
 export const isRtl = (l: Locale) => rtlLocales.includes(l);
 export const dir = (l: Locale) => (isRtl(l) ? "rtl" : "ltr");
 
@@ -27,6 +27,12 @@ export const nativeName: Record<Locale, string> = {
   uz: "Oʻzbekcha",
   "uz-Cyrl": "Ўзбекча",
   so: "Soomaali",
+  sw: "Kiswahili",
+  "ku-Arab": "کوردیی ناوەندی",
+  "ku-Latn": "Kurdî",
+  ml: "മലയാളം",
+  de: "Deutsch",
+  es: "Español",
 };
 
 /** Flag shown next to each language in the language menu (public/flags/<code>.svg, from flag-icons, MIT). */
@@ -50,6 +56,12 @@ export const flag: Record<Locale, string> = {
   uz: "uz",
   "uz-Cyrl": "uz",
   so: "so",
+  sw: "tz",
+  "ku-Arab": "iq",
+  "ku-Latn": "tr",
+  ml: "in",
+  de: "de",
+  es: "es",
 };
 
 export const ogLocale: Record<Locale, string> = {
@@ -72,13 +84,24 @@ export const ogLocale: Record<Locale, string> = {
   uz: "uz_UZ",
   "uz-Cyrl": "uz_UZ",
   so: "so_SO",
+  sw: "sw_TZ",
+  "ku-Arab": "ckb_IQ",
+  "ku-Latn": "ku_TR",
+  ml: "ml_IN",
+  de: "de_DE",
+  es: "es_ES",
 };
 
 /** BCP 47 tag for <html lang> and hreflang: Chinese is Simplified Chinese (zh-CN), so browsers pick Simplified glyphs;
  * Punjabi is tagged by script — Gurmukhi (pa-Guru) and Shahmukhi (pa-Arab, the app's "pnb", never used as a tag).
- * Uzbek: "uz" (Latin) and "uz-Cyrl" are already BCP 47 tags, and also the URL segments the app's share links use. */
-const TAGS: Partial<Record<Locale, string>> = { zh: "zh-CN", pa: "pa-Guru", pnb: "pa-Arab" };
+ * Uzbek: "uz" (Latin) and "uz-Cyrl" are already BCP 47 tags, and also the URL segments the app's share links use.
+ * Kurdish: the URL segments are the app's codes (ku-Arab, ku-Latn — what its share links open); the tags are
+ * "ckb" for Sorani (Central Kurdish) and "ku" for Kurmanji, as CLDR names them. */
+const TAGS: Partial<Record<Locale, string>> = { zh: "zh-CN", pa: "pa-Guru", pnb: "pa-Arab", "ku-Arab": "ckb", "ku-Latn": "ku" };
 export const langTag = (l: Locale) => TAGS[l] ?? l;
+
+/** Locale for Intl: the site code, except Kurdish — Intl reads "ku-Arab" as Kurmanji, so Sorani asks for "ckb". */
+export const intlTag = (l: Locale) => (l === "ku-Arab" ? "ckb" : l === "ku-Latn" ? "ku" : l);
 
 export function isLocale(v: string): v is Locale {
   return (locales as readonly string[]).includes(v);

@@ -325,4 +325,100 @@ const so: NamesMessages = {
   nth: "Magaca {n} ee 99",
 };
 
-export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so };
+const sw: NamesMessages = {
+  title: "Majina 99 ya Mwenyezi Mungu",
+  verseRef: "Al-A'raf 7:180",
+  description: "Majina 99 Mazuri ya Mwenyezi Mungu (Asmaul Husna) pamoja na maana na maelezo ya kila jina na mahali linapotajwa katika Qur'ani.",
+  search: "Tafuta majina...",
+  noResults: "Hakuna matokeo yaliyopatikana",
+  meaning: "Maana",
+  explanation: "Maelezo",
+  inQuran: "Katika Qur'ani",
+  englishNote: "Maana na maelezo yanaonyeshwa kwa Kiingereza",
+  prev: "Jina lililotangulia",
+  next: "Jina linalofuata",
+  all: "Majina yote",
+  nth: "Jina la {n} kati ya 99",
+};
+
+const kuArab: NamesMessages = {
+  title: "ناوە جوانەکانی خوا",
+  verseRef: "ئەعراف 7:180",
+  description: "نەوەد و نۆ ناوە جوانەکەی خوا (ئەسمائولحوسنا)، لەگەڵ مانا و ڕوونکردنەوەی هەر ناوێک و ئەو شوێنەی لە قورئاندا هاتووە.",
+  search: "گەڕان لە ناوەکاندا...",
+  noResults: "هیچ ئەنجامێک نەدۆزرایەوە",
+  meaning: "مانا",
+  explanation: "ڕوونکردنەوە",
+  inQuran: "لە قورئاندا",
+  englishNote: "مانا و ڕوونکردنەوە بە ئینگلیزی پیشان دەدرێن",
+  prev: "ناوی پێشوو",
+  next: "ناوی دواتر",
+  all: "هەموو ناوەکان",
+  nth: "ناوی {n} لە 99",
+};
+
+const kuLatn: NamesMessages = {
+  title: "99 Navên Xwedê",
+  verseRef: "El-E’raf 7:180",
+  description: "99 Navên Xwedê yên Bedew (Esmaul-Husna) bi wate û şirovekirina her navî û cihê ku di Qur'anê de hatiye.",
+  search: "Li navan bigere...",
+  noResults: "Tu encam nehatin dîtin",
+  meaning: "Wate",
+  explanation: "Şirove",
+  inQuran: "Di Qur'anê de",
+  englishNote: "Wate û şirove bi îngilîzî tên nîşandan",
+  prev: "Navê berê",
+  next: "Navê pêş",
+  all: "Hemû nav",
+  nth: "Nav {n} ji 99",
+};
+
+const ml: NamesMessages = {
+  title: "അല്ലാഹുവിന്റെ 99 നാമങ്ങൾ",
+  verseRef: "അൽ-അഅ്റാഫ് 7:180",
+  description: "അല്ലാഹുവിന്റെ 99 അത്യുത്തമ നാമങ്ങൾ (അസ്മാഉൽ ഹുസ്ന), ഓരോ നാമത്തിന്റെയും അർത്ഥവും വിശദീകരണവും ഖുർആനിൽ അത് വന്ന സ്ഥലവും സഹിതം.",
+  search: "നാമങ്ങൾ തിരയുക...",
+  noResults: "ഫലങ്ങളൊന്നുമില്ല",
+  meaning: "അർത്ഥം",
+  explanation: "വിശദീകരണം",
+  inQuran: "ഖുർആനിൽ",
+  englishNote: "അർത്ഥവും വിശദീകരണവും ഇംഗ്ലീഷിലാണ് കാണിച്ചിരിക്കുന്നത്",
+  prev: "മുമ്പത്തെ നാമം",
+  next: "അടുത്ത നാമം",
+  all: "എല്ലാ നാമങ്ങളും",
+  nth: "99-ൽ {n}-ാമത്തെ നാമം",
+};
+
+const de: NamesMessages = {
+  title: "Die 99 Namen Allahs",
+  verseRef: "Al-A‘raf 7:180",
+  description: "Die 99 schönsten Namen Allahs (Asma ul-Husna) mit der Bedeutung und Erklärung jedes Namens und der Stelle, an der er im Koran vorkommt.",
+  search: "Namen suchen …",
+  noResults: "Keine Ergebnisse gefunden",
+  meaning: "Bedeutung",
+  explanation: "Erklärung",
+  inQuran: "Im Koran",
+  englishNote: "Bedeutung und Erklärung werden auf Englisch angezeigt",
+  prev: "Vorheriger Name",
+  next: "Nächster Name",
+  all: "Alle Namen",
+  nth: "Name {n} von 99",
+};
+
+const es: NamesMessages = {
+  title: "Los 99 nombres de Dios",
+  verseRef: "Al-A’raf 7:180",
+  description: "Los 99 bellos nombres de Dios (Asma ul-Husna) con el significado y la explicación de cada nombre y dónde aparece en el Corán.",
+  search: "Buscar nombres...",
+  noResults: "No se encontraron resultados",
+  meaning: "Significado",
+  explanation: "Explicación",
+  inQuran: "En el Corán",
+  englishNote: "El significado y la explicación se muestran en inglés",
+  prev: "Nombre anterior",
+  next: "Nombre siguiente",
+  all: "Todos los nombres",
+  nth: "Nombre {n} de 99",
+};
+
+export const names: Record<Locale, NamesMessages> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so, sw, "ku-Arab": kuArab, "ku-Latn": kuLatn, ml, de, es };

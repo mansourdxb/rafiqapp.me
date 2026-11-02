@@ -2,8 +2,9 @@
 import type { Place } from "./compute";
 
 /** Like the app: non-Arabic-script languages fall back to English for places with no local name. */
-// OSM tags Shahmukhi names name:pnb; Urdu names are the closest fallback in the same script.
-const accept = (lang: string) => (["ar", "ur", "fa", "en"].includes(lang) ? lang : lang === "pnb" ? "pnb,ur,en" : `${lang},en`);
+// OSM tags Shahmukhi names name:pnb; Urdu names are the closest fallback in the same script. Kurdish names are
+// tagged name:ckb (Sorani) and name:ku (Kurmanji).
+const accept = (lang: string) => (["ar", "ur", "fa", "en"].includes(lang) ? lang : lang === "pnb" ? "pnb,ur,en" : lang === "ku-Arab" ? "ckb,en" : lang === "ku-Latn" ? "ku,en" : `${lang},en`);
 
 type NomAddress = {
   city?: string;

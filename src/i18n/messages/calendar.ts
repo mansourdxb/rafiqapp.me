@@ -359,4 +359,112 @@ const so: CalendarMsg = {
   note: "Kalandarka Umm al-Qura. Bilowga bishu wuxuu ku kala duwanaan karaa hal maalin iyadoo ku xiran muuqashada dayaxa ee dalkaaga.",
 };
 
-export const calendarMsg: Record<Locale, CalendarMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so };
+const sw: CalendarMsg = {
+  title: "Kalenda ya Hijria",
+  description:
+    "Kalenda ya Hijria (Umm al-Qura) mwezi kwa mwezi pamoja na tarehe za Miladia, matukio ya Kiislamu kama Ramadhani, Idi mbili, Arafa na Ashura, na kibadilishaji cha tarehe za Hijria na Miladia.",
+  prevMonth: "Mwezi uliopita",
+  nextMonth: "Mwezi ujao",
+  occasionsMonth: "Mwezi huu",
+  noOccasions: "Hakuna matukio mwezi huu",
+  converter: "Kibadilishaji cha tarehe",
+  gToH: "Miladia kwenda Hijria",
+  hToG: "Hijria kwenda Miladia",
+  day: "Siku",
+  month: "Mwezi",
+  year: "Mwaka",
+  invalid: "Tarehe hii haipo katika kalenda ya Umm al-Qura.",
+  note: "Kalenda ya Umm al-Qura. Mwanzo wa mwezi unaweza kutofautiana kwa siku moja kulingana na kuonekana kwa mwezi katika nchi yako.",
+};
+
+const kuArab: CalendarMsg = {
+  title: "ڕۆژژمێری کۆچی",
+  description:
+    "ڕۆژژمێری کۆچی (ئوم ئەلقورا) مانگ بە مانگ لەگەڵ بەروارە زایینییەکان، بۆنە ئیسلامییەکانی وەک ڕەمەزان، هەردوو جەژن، عەرەفە و عاشوورا، و گۆڕەری بەرواری کۆچی و زایینی.",
+  prevMonth: "مانگی پێشوو",
+  nextMonth: "مانگی داهاتوو",
+  occasionsMonth: "ئەم مانگە",
+  noOccasions: "لەم مانگەدا هیچ بۆنەیەک نییە",
+  converter: "گۆڕەری بەروار",
+  gToH: "زایینی بۆ کۆچی",
+  hToG: "کۆچی بۆ زایینی",
+  day: "ڕۆژ",
+  month: "مانگ",
+  year: "ساڵ",
+  invalid: "ئەم بەروارە لە ڕۆژژمێری ئوم ئەلقورادا نییە.",
+  note: "ڕۆژژمێری ئوم ئەلقورا. سەرەتای مانگ لەوانەیە بەپێی بینینی مانگی نوێ لە وڵاتەکەتدا یەک ڕۆژ جیاواز بێت.",
+};
+
+const kuLatn: CalendarMsg = {
+  title: "Salnameya koçî",
+  description:
+    "Salnameya koçî (Ummul-Qura) meh bi meh bi dîrokên zayînî, bûyerên îslamî yên wek Remezan, her du Cejn, Erefe û Aşûra, û veguherînera dîroka koçî û zayînî.",
+  prevMonth: "Meha berê",
+  nextMonth: "Meha bê",
+  occasionsMonth: "Vê mehê",
+  noOccasions: "Vê mehê tu bûyer tune ne",
+  converter: "Veguherînera dîrokê",
+  gToH: "Zayînî bo koçî",
+  hToG: "Koçî bo zayînî",
+  day: "Roj",
+  month: "Meh",
+  year: "Sal",
+  invalid: "Ev dîrok di salnameya Ummul-Qura de tune.",
+  note: "Salnameya Ummul-Qura. Destpêka mehê li gorî dîtina hîvê li welatê te dikare rojekê cuda be.",
+};
+
+const ml: CalendarMsg = {
+  title: "ഹിജ്റ കലണ്ടർ",
+  description:
+    "ഗ്രിഗോറിയൻ തീയതികളോടു കൂടിയ മാസാടിസ്ഥാനത്തിലുള്ള ഹിജ്റ കലണ്ടർ (ഉമ്മുൽ ഖുറാ), റമദാൻ, രണ്ട് പെരുന്നാളുകൾ, അറഫാ ദിനം, ആശൂറാഅ് തുടങ്ങിയ ഇസ്‌ലാമിക സന്ദർഭങ്ങൾ, ഹിജ്റ–ഗ്രിഗോറിയൻ തീയതി കൺവെർട്ടർ.",
+  prevMonth: "മുൻ മാസം",
+  nextMonth: "അടുത്ത മാസം",
+  occasionsMonth: "ഈ മാസം",
+  noOccasions: "ഈ മാസം സന്ദർഭങ്ങളൊന്നുമില്ല",
+  converter: "തീയതി കൺവെർട്ടർ",
+  gToH: "ഗ്രിഗോറിയനിൽ നിന്ന് ഹിജ്റയിലേക്ക്",
+  hToG: "ഹിജ്റയിൽ നിന്ന് ഗ്രിഗോറിയനിലേക്ക്",
+  day: "ദിവസം",
+  month: "മാസം",
+  year: "വർഷം",
+  invalid: "ഈ തീയതി ഉമ്മുൽ ഖുറാ കലണ്ടറിലില്ല.",
+  note: "ഉമ്മുൽ ഖുറാ കലണ്ടർ. നിങ്ങളുടെ രാജ്യത്തെ ചന്ദ്രദർശനമനുസരിച്ച് മാസാരംഭം ഒരു ദിവസം വ്യത്യാസപ്പെടാം.",
+};
+
+const de: CalendarMsg = {
+  title: "Hidschri-Kalender",
+  description:
+    "Der Hidschri-Kalender (Umm al-Qura) Monat für Monat mit gregorianischen Daten, islamischen Anlässen wie Ramadan, den beiden Festen, dem Tag von Arafa und Aschura sowie einem Umrechner zwischen Hidschri- und gregorianischem Datum.",
+  prevMonth: "Vorheriger Monat",
+  nextMonth: "Nächster Monat",
+  occasionsMonth: "Diesen Monat",
+  noOccasions: "Keine Anlässe in diesem Monat",
+  converter: "Datumsumrechner",
+  gToH: "Gregorianisch zu Hidschri",
+  hToG: "Hidschri zu Gregorianisch",
+  day: "Tag",
+  month: "Monat",
+  year: "Jahr",
+  invalid: "Dieses Datum gibt es im Umm-al-Qura-Kalender nicht.",
+  note: "Umm-al-Qura-Kalender. Der Monatsbeginn kann je nach Mondsichtung in deinem Land um einen Tag abweichen.",
+};
+
+const es: CalendarMsg = {
+  title: "Calendario de la Hégira",
+  description:
+    "El calendario de la Hégira (Umm al-Qura) mes a mes con las fechas gregorianas, las ocasiones islámicas como Ramadán, los dos Eid, el día de Arafat y Ashura, y un conversor de fechas Hégira–gregoriano.",
+  prevMonth: "Mes anterior",
+  nextMonth: "Mes siguiente",
+  occasionsMonth: "Este mes",
+  noOccasions: "No hay ocasiones este mes",
+  converter: "Conversor de fechas",
+  gToH: "De gregoriano a Hégira",
+  hToG: "De Hégira a gregoriano",
+  day: "Día",
+  month: "Mes",
+  year: "Año",
+  invalid: "Esta fecha no existe en el calendario Umm al-Qura.",
+  note: "Calendario Umm al-Qura. El inicio de un mes puede variar un día según el avistamiento de la luna en tu país.",
+};
+
+export const calendarMsg: Record<Locale, CalendarMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so, sw, "ku-Arab": kuArab, "ku-Latn": kuLatn, ml, de, es };

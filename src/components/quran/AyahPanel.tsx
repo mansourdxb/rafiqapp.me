@@ -98,7 +98,9 @@ export function AyahPanel({ lang, sel, onClose, onStep }: { lang: Locale; sel: A
   };
 
   const title = arabic ? `سورة ${SURAHS[sel.s - 1]?.ar} - الآية ${arabicIndic(sel.a)}` : appT(lang, "quranIndex.surahAyah").replace("{0}", surahName(lang, sel.s)).replace("{1}", localDigits(lang, sel.a));
-  const trDir = isRtl(lang) ? "rtl" : "ltr";
+  // Kurmanji shows the Sorani translation (Arabic script, right to left)
+  const trDir = isRtl(lang) || lang === "ku-Latn" ? "rtl" : "ltr";
+  const trLang = lang === "ku-Latn" ? "ckb" : undefined;
   const ayahCount = SURAHS[sel.s - 1]?.ayahs ?? 0;
   const canPrev = sel.s > 1 || sel.a > 1;
   const canNext = sel.s < 114 || sel.a < ayahCount;
@@ -143,7 +145,7 @@ export function AyahPanel({ lang, sel, onClose, onStep }: { lang: Locale; sel: A
               >
                 {RECITERS.map((r) => (
                   <option key={r.folder} value={r.folder}>
-                    {arabic || lang === "ur" || lang === "fa" || lang === "ps" || lang === "pnb" ? r.ar : r.lat}
+                    {arabic || lang === "ur" || lang === "fa" || lang === "ps" || lang === "pnb" || lang === "ku-Arab" ? r.ar : r.lat}
                   </option>
                 ))}
               </select>
@@ -190,7 +192,7 @@ export function AyahPanel({ lang, sel, onClose, onStep }: { lang: Locale; sel: A
                 </button>
               </div>
             ) : body.text || arabic ? (
-              <p dir={trDir} className="whitespace-pre-line text-start text-[16px] leading-8 text-navy-2 dark:text-ink">
+              <p dir={trDir} lang={trLang} className="whitespace-pre-line text-start text-[16px] leading-8 text-navy-2 dark:text-ink">
                 {body.text}
               </p>
             ) : (

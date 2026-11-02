@@ -1,7 +1,7 @@
 // Hijri (Umm al-Qura) dates via Intl, like the app's src/utils/hijriDate.ts. Calendar days are
 // handled as UTC-noon instants so no local time zone or DST can shift a day.
 import { appT } from "@/i18n/app";
-import type { Locale } from "@/i18n/config";
+import { intlTag, type Locale } from "@/i18n/config";
 import { localDigits } from "@/lib/digits";
 
 export type Ymd = { y: number; m: number; d: number };
@@ -118,13 +118,13 @@ function formatUzbek(lang: "uz" | "uz-Cyrl", g: Ymd, opts: Intl.DateTimeFormatOp
 /** Gregorian date in the site language (Latin digits from Intl, then the app's digit style). Pashto asks for
  * the Gregorian calendar by name: CLDR's default calendar for "ps" is the Persian solar one. Gurmukhi uses
  * CLDR "pa"; Shahmukhi ("pa-Arab") is built from CLDR's pa-Arab names (formatShahmukhi), Uzbek from CLDR's
- * uz and uz-Cyrl names (formatUzbek). */
+ * uz and uz-Cyrl names (formatUzbek). Kurdish asks Intl for "ckb" (Sorani) and "ku" (Kurmanji). */
 export function formatGregorian(lang: Locale, g: Ymd, opts: Intl.DateTimeFormatOptions = { day: "numeric", month: "long", year: "numeric" }) {
   try {
     if (lang === "ha") return formatHausa(g, opts);
     if (lang === "pnb") return localDigits(lang, formatShahmukhi(g, opts));
     if (lang === "uz" || lang === "uz-Cyrl") return formatUzbek(lang, g, opts);
-    return localDigits(lang, new Intl.DateTimeFormat(`${lang}-u-${lang === "ps" ? "ca-gregory-" : ""}nu-latn`, { ...opts, timeZone: "UTC" }).format(utcNoon(g.y, g.m, g.d)));
+    return localDigits(lang, new Intl.DateTimeFormat(`${intlTag(lang)}-u-${lang === "ps" ? "ca-gregory-" : ""}nu-latn`, { ...opts, timeZone: "UTC" }).format(utcNoon(g.y, g.m, g.d)));
   } catch {
     return `${g.y}-${g.m}-${g.d}`;
   }

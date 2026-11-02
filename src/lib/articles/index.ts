@@ -19,6 +19,12 @@ import pnb from "@/generated/articles-pnb.json";
 import uz from "@/generated/articles-uz.json";
 import uzCyrl from "@/generated/articles-uz-Cyrl.json";
 import so from "@/generated/articles-so.json";
+import sw from "@/generated/articles-sw.json";
+import kuArab from "@/generated/articles-ku-Arab.json";
+import kuLatn from "@/generated/articles-ku-Latn.json";
+import ml from "@/generated/articles-ml.json";
+import de from "@/generated/articles-de.json";
+import es from "@/generated/articles-es.json";
 import { localePath, type Locale } from "@/i18n/config";
 import { articles as msgs, type CategoryId } from "@/i18n/messages/articles";
 
@@ -34,7 +40,7 @@ export type Block =
 export type Article = { c: CategoryId; s: string; t: string; k?: string; x: string; m: number; b: Block[] };
 type Library = { categories: { id: CategoryId; name?: string; n: number }[]; articles: Article[] };
 
-const DATA = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so } as unknown as Record<Locale, Library>;
+const DATA = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so, sw, "ku-Arab": kuArab, "ku-Latn": kuLatn, ml, de, es } as unknown as Record<Locale, Library>;
 
 export const CATEGORY_IDS: CategoryId[] = ["seerah", "prophets", "fiqh", "hajj", "prayer", "duas", "ruqyah", "tajweed"];
 export const isCategory = (v: string): v is CategoryId => (CATEGORY_IDS as string[]).includes(v);

@@ -53,6 +53,12 @@ const LOADERS: Record<Locale, () => Promise<{ default: unknown }>> = {
   uz: () => import("@/generated/athkar-uz.json"),
   "uz-Cyrl": () => import("@/generated/athkar-uz-Cyrl.json"),
   so: () => import("@/generated/athkar-so.json"),
+  sw: () => import("@/generated/athkar-sw.json"),
+  "ku-Arab": () => import("@/generated/athkar-ku-Arab.json"),
+  "ku-Latn": () => import("@/generated/athkar-ku-Latn.json"),
+  ml: () => import("@/generated/athkar-ml.json"),
+  de: () => import("@/generated/athkar-de.json"),
+  es: () => import("@/generated/athkar-es.json"),
 };
 
 export async function loadCategory(lang: Locale, id: number) {
