@@ -11,6 +11,8 @@
 //   public/data/quran/{sw,ku-Arab,ml,de,es}/{p}.json — QuranEnc swahili_rwwad (Rowwad), kurdish_bamoki (Sorani),
 //     malayalam_kunhi (ZWJ chillu → atomic chillu, ൻറ → ന്റ), german_bubenheim, spanish_garcia, cleaned the same way;
 //     Kurmanji (ku-Latn) has no translation of its own and reads the Sorani pages, as the app
+//   public/data/quran/{az-Latn,om,am,kk-Cyrl,ta,gu}/{p}.json — QuranEnc Musayev, Rowwad, Africa Academy, Khalifa Altay, Omar Sharif,
+//     Rabila Al-Umry, cleaned the same way; Burmese (my) has no translation and the reader shows English with a note
 //   public/data/quran/fonts, frame    — medallion / surah-title / basmala fonts and the page frame artwork
 // The 604 QCF page fonts are not copied: the reader loads them from the assets repo (then quran.com).
 import { copyFileSync, mkdirSync, readdirSync, readFileSync, rmSync } from "node:fs";
@@ -41,6 +43,12 @@ export default async function quranData(ctx) {
     ml: readJson(join(ctx.root, "scripts", "data", "translations", "ml-kunhi.json")),
     de: readJson(join(ctx.root, "scripts", "data", "translations", "de-bubenheim.json")),
     es: readJson(join(ctx.root, "scripts", "data", "translations", "es-garcia.json")),
+    "az-Latn": readJson(join(ctx.root, "scripts", "data", "translations", "az-musayev.json")),
+    om: readJson(join(ctx.root, "scripts", "data", "translations", "om-rwwad.json")),
+    am: readJson(join(ctx.root, "scripts", "data", "translations", "am-sadiq.json")),
+    "kk-Cyrl": readJson(join(ctx.root, "scripts", "data", "translations", "kk-altay.json")),
+    ta: readJson(join(ctx.root, "scripts", "data", "translations", "ta-omar.json")),
+    gu: readJson(join(ctx.root, "scripts", "data", "translations", "gu-rabila.json")),
   };
   // page font URLs (bases tried in order) + SHA-256 of every page font: a font is used only if it matches
   const fonts = readJson(app("data", "mushaf", "qcf-v1-fonts.json"));
@@ -63,6 +71,13 @@ export default async function quranData(ctx) {
   localized.ml = namesOf("ML");
   localized.de = namesOf("DE");
   localized.es = namesOf("ES");
+  localized["az-Latn"] = namesOf("AZ");
+  localized.om = namesOf("OM");
+  localized.am = namesOf("AM");
+  localized["kk-Cyrl"] = namesOf("KK");
+  localized.ta = namesOf("TA");
+  localized.gu = namesOf("GU");
+  localized.my = namesOf("MY");
 
   // ── page / juz lookups (binary search over the start lists, as the app does) ──
   const cmp = (a, b) => (a.sura !== b.sura ? a.sura - b.sura : a.aya - b.aya);
