@@ -1,4 +1,4 @@
-# rafiqapp.me
+# rafiqalmuslim.org
 
 Website of **Rafiq Al-Muslim (رفيق المسلم)** — Next.js static site in 13 languages, published to GitHub Pages.
 

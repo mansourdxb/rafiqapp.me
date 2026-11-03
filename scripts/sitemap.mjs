@@ -3,7 +3,7 @@ import { readdirSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const OUT = "out";
-const SITE = "https://rafiqapp.me";
+const SITE = "https://rafiqalmuslim.org";
 const LANGS = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh"];
 const TAG = { zh: "zh-CN" }; // hreflang, as <html lang> (src/i18n/config.ts langTag)
 

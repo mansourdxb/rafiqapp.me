@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-// Static export for GitHub Pages (rafiqapp.me). Every route is pre-rendered to out/.
+// Static export for GitHub Pages (rafiqalmuslim.org). Every route is pre-rendered to out/.
 const nextConfig: NextConfig = {
   output: "export",
   // A separate build folder per dev server, so several can run side by side.

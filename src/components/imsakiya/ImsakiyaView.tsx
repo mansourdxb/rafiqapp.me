@@ -150,7 +150,7 @@ export function ImsakiyaView({ lang }: { lang: Locale }) {
 
         <div className="flex flex-wrap items-center justify-between gap-3 px-5 py-4 text-xs" style={{ color: th.text, background: th.alt }}>
           <p className="max-w-xl">
-            {t.imsakNote} · {appT(lang, METHOD_LABEL[effectiveMethod(place, s)])} · {place.tz} · {appT(lang, "app.name")} — rafiqapp.me
+            {t.imsakNote} · {appT(lang, METHOD_LABEL[effectiveMethod(place, s)])} · {place.tz} · {appT(lang, "app.name")} — rafiqalmuslim.org
           </p>
           <button type="button" onClick={() => window.print()} className="no-print inline-flex h-10 items-center gap-1.5 rounded-full bg-navy px-6 text-sm font-bold text-white ring-1 ring-white/30 hover:bg-section">
             {prayerMsg[lang].print}
