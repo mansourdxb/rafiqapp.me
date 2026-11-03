@@ -1,4 +1,4 @@
-# Builds the static site and publishes it to GitHub Pages (rafiqapp.me) on every push to main.
+# Builds the static site and publishes it to GitHub Pages (rafiqalmuslim.org) on every push to main.
 name: Deploy site
 
 on:

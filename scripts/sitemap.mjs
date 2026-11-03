@@ -3,7 +3,7 @@ import { readdirSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const OUT = "out";
-const SITE = "https://rafiqapp.me";
+const SITE = "https://rafiqalmuslim.org";
 const LANGS = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh", "ps", "pa", "pnb", "uz", "uz-Cyrl", "so", "sw", "ku-Arab", "ku-Latn", "ml", "de", "es", "az-Latn", "om", "am", "kk-Cyrl", "ta", "gu", "my"];
 const TAG = { zh: "zh-CN", pa: "pa-Guru", pnb: "pa-Arab", "ku-Arab": "ckb", "ku-Latn": "ku", "az-Latn": "az", "kk-Cyrl": "kk" }; // hreflang, as <html lang> (src/i18n/config.ts langTag)
 

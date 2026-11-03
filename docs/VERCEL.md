@@ -1,4 +1,4 @@
-# Moving rafiqapp.me from GitHub Pages to Vercel
+# Moving rafiqalmuslim.org from GitHub Pages to Vercel
 
 The site is a Next.js static export (`output: "export"` in `next.config.ts`). Everything the build needs
 is committed: `src/generated/` and `public/data/` are written by `npm run data` from the app and assets
@@ -20,8 +20,8 @@ you switch it off (step 5).
 
 ## 1. Import the repo
 
-1. Sign in at https://vercel.com with the GitHub account that owns `mansourdxb/rafiqapp.me`.
-2. **Add New… → Project → Import Git Repository** → pick `rafiqapp.me` (grant the Vercel GitHub app access
+1. Sign in at https://vercel.com with the GitHub account that owns `mansourdxb/rafiqalmuslim.org`.
+2. **Add New… → Project → Import Git Repository** → pick `rafiqalmuslim.org` (grant the Vercel GitHub app access
    to that repo if asked).
 3. On the configure screen:
    - Framework Preset: **Next.js** (read from `vercel.json`).
@@ -39,8 +39,8 @@ Production branch: `main` (Settings → Git). Every pull request also gets its o
 
 **Settings → Domains → Add**:
 
-1. `rafiqapp.me` — production.
-2. `www.rafiqapp.me` — Vercel offers to redirect it to `rafiqapp.me`; accept.
+1. `rafiqalmuslim.org` — production.
+2. `www.rafiqalmuslim.org` — Vercel offers to redirect it to `rafiqalmuslim.org`; accept.
 
 Vercel then shows the exact DNS records it expects. Use the values it shows; at the time of writing they are:
 
@@ -51,7 +51,7 @@ Vercel then shows the exact DNS records it expects. Use the values it shows; at 
 
 ## 3. Change DNS at the registrar
 
-At the registrar's DNS panel for `rafiqapp.me`:
+At the registrar's DNS panel for `rafiqalmuslim.org`:
 
 1. **Delete** the GitHub Pages records:
    - A `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
@@ -69,10 +69,10 @@ If you prefer Vercel to run the whole DNS zone, set the registrar's nameservers 
 
 ## 4. Check the live site
 
-- `https://rafiqapp.me/` opens the saved/browser language; `http://` goes to `https://`.
+- `https://rafiqalmuslim.org/` opens the saved/browser language; `http://` goes to `https://`.
 - `/pa/` is `<html lang="pa-Guru" dir="ltr">`, `/pnb/` is `<html lang="pa-Arab" dir="rtl">`.
 - `/privacy.html` loads (it is linked from the app stores — it must keep this exact URL).
-- Search Console: resubmit `https://rafiqapp.me/sitemap.xml`.
+- Search Console: resubmit `https://rafiqalmuslim.org/sitemap.xml`.
 
 ## 5. Switch off GitHub Pages (after the domain works on Vercel)
 
