@@ -78,8 +78,8 @@ export function Footer({ lang }: { lang: Locale }) {
             </li>
             <li className={item}>
               {t.footer.website}:{" "}
-              <a href="https://rafiqapp.me" className="hover:text-primary" dir="ltr">
-                rafiqapp.me
+              <a href="https://rafiqalmuslim.org" className="hover:text-primary" dir="ltr">
+                rafiqalmuslim.org
               </a>
             </li>
           </ul>

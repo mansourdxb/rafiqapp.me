@@ -288,7 +288,7 @@ function MonthlyTable({ lang, place, s, today }: { lang: Locale; place: Place & 
           </table>
         </div>
         <p className="px-5 py-3 text-xs text-ink-2 sm:px-6">
-          {appT(lang, METHOD_LABEL[effectiveMethod(place, s)])} · {place.tz} · {appT(lang, "app.name")} — rafiqapp.me
+          {appT(lang, METHOD_LABEL[effectiveMethod(place, s)])} · {place.tz} · {appT(lang, "app.name")} — rafiqalmuslim.org
         </p>
       </div>
       {/* month navigation: round sky buttons around the month, like the reference */}
