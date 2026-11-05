@@ -9,10 +9,10 @@ nothing outside this repo.
 
 | Setting | Value |
 | --- | --- |
-| Framework | Next.js |
+| Framework | Other (plain static hosting of `out/`) — the Next.js builder rewrites `privacy.html` to `/privacy` and drops `sitemap.xml`, which the build script writes after `next build` |
 | Install command | `npm ci` |
 | Build command | `npm run build` (= `next build` + `scripts/trim-out.mjs` + `scripts/sitemap.mjs`; no data step) |
-| Output | `out/` — Vercel picks it up automatically for `output: "export"`, so no output directory is set |
+| Output | `out/` (`outputDirectory` in `vercel.json`) |
 | Trailing slashes | `trailingSlash: true`, same as `next.config.ts` (`/en` → `/en/`) |
 
 `public/CNAME` and `.github/workflows/deploy.yml` are left as they are, so GitHub Pages keeps working until
