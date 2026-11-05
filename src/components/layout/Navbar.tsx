@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useSyncExternalStore } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { AuthButton } from "@/components/auth/AuthButton";
 import { Icon } from "@/components/ui/Icon";
 import { flag, isRtl, locales, localePath, nativeName, type Locale } from "@/i18n/config";
@@ -47,6 +47,29 @@ export function Navbar({ lang }: { lang: Locale }) {
   const [picked, setPicked] = useState<boolean | null>(null);
   const dark = picked ?? domDark;
 
+  // a click or tap anywhere outside an open dropdown (or Escape) closes it
+  useEffect(() => {
+    if (!langOpen && !moreOpen) return;
+    const away = (e: PointerEvent) => {
+      if (!(e.target as Element | null)?.closest?.("[data-menu]")) {
+        setLangOpen(false);
+        setMoreOpen(false);
+      }
+    };
+    const esc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setLangOpen(false);
+        setMoreOpen(false);
+      }
+    };
+    document.addEventListener("pointerdown", away);
+    document.addEventListener("keydown", esc);
+    return () => {
+      document.removeEventListener("pointerdown", away);
+      document.removeEventListener("keydown", esc);
+    };
+  }, [langOpen, moreOpen]);
+
   // close the menus when the page changes
   const [shownPath, setShownPath] = useState(pathname);
   if (shownPath !== pathname) {
@@ -78,7 +101,7 @@ export function Navbar({ lang }: { lang: Locale }) {
     }`;
 
   const langMenu = (
-    <div className="relative">
+    <div className="relative" data-menu>
       <button onClick={() => setLangOpen((v) => !v)} aria-expanded={langOpen} aria-label={t.language} title={t.language} className="flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-[13px] font-bold text-white ring-1 ring-white/30 hover:bg-white/10">
         <Icon name="globe" className="size-4.5" />
         {nativeName[lang]}
@@ -157,7 +180,7 @@ export function Navbar({ lang }: { lang: Locale }) {
                 </Link>
               </li>
             ))}
-            <li className="relative">
+            <li className="relative" data-menu>
               <button onClick={() => setMoreOpen((v) => !v)} aria-expanded={moreOpen} className={`${link(NAV_MORE.some((n) => active(n.href)))} flex items-center gap-1`}>
                 {t.nav.more}
                 <Icon name="chevron" className={`size-3.5 transition ${moreOpen ? "-rotate-90" : "rotate-90"}`} />
