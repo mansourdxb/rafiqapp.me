@@ -135,4 +135,4 @@ export function localePath(lang: Locale, path = "/") {
   return `/${lang}${p.endsWith("/") || p.includes("#") || p.includes("?") ? p : `${p}/`}`;
 }
 
-export const SITE_URL = "https://rafiqapp.me";
+export const SITE_URL = "https://rafiqalmuslim.org";

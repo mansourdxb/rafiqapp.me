@@ -3,4 +3,4 @@ export const STORES = {
   googlePlay: "https://play.google.com/store/apps/details?id=com.mansour.rafiqalmuslim",
   appGallery: "https://appgallery.huawei.com/app/C117517559",
 };
-export const CONTACT_EMAIL = "support@rafiqapp.me";
+export const CONTACT_EMAIL = "support@rafiqalmuslim.org";
