@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import type { Locale } from "@/i18n/config";
+import { intlTag, type Locale } from "@/i18n/config";
 import { prayerMsg } from "@/i18n/messages/prayer";
 import { MAKKAH, type Place } from "@/lib/prayer/compute";
 import { reversePlace } from "@/lib/prayer/location";
@@ -11,9 +11,13 @@ export type ShownPlace = Place & { isDefault: boolean; label: string; countryLab
 function regionName(lang: Locale, cc?: string) {
   try {
     if (!cc) return undefined;
+    // Shahmukhi: CLDR's pa-Arab has almost no country names (Saudi Arabia is "SA"), so the Urdu ones, same script.
+    if (lang === "pnb") return new Intl.DisplayNames(["ur"], { type: "region" }).of(cc.toUpperCase());
     // Chrome has no Hausa names (it would say "Saudi Arabia"): name the default place, otherwise no country name.
-    if (!Intl.DisplayNames.supportedLocalesOf([lang]).length) return lang === "ha" && cc.toLowerCase() === "sa" ? "Saudiyya" : undefined;
-    return new Intl.DisplayNames([lang], { type: "region" }).of(cc.toUpperCase());
+    // Sorani asks for "ckb", Kurmanji for "ku" (Intl reads "ku-Arab" as Kurmanji).
+    const tag = intlTag(lang);
+    if (!Intl.DisplayNames.supportedLocalesOf([tag]).length) return lang === "ha" && cc.toLowerCase() === "sa" ? "Saudiyya" : undefined;
+    return new Intl.DisplayNames([tag], { type: "region" }).of(cc.toUpperCase());
   } catch {
     return undefined;
   }

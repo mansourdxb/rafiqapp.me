@@ -106,7 +106,7 @@ export function NowPlaying({ lang }: { lang: Locale }) {
                   {shown.ayah} <span className="text-orange">{arabicIndic(p.ayah)}</span>
                 </p>
                 {shown.tr ? (
-                  <p dir={isRtl(lang) ? "rtl" : "ltr"} className="mt-1.5 text-[13px] leading-6 text-white/85">
+                  <p dir={isRtl(lang) || lang === "ku-Latn" ? "rtl" : "ltr"} lang={lang === "ku-Latn" ? "ckb" : undefined} className="mt-1.5 text-[13px] leading-6 text-white/85">
                     {shown.tr}
                   </p>
                 ) : null}

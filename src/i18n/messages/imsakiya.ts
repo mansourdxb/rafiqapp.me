@@ -138,4 +138,185 @@ const zh: ImsakiyaMsg = {
   started: "斋月吉庆",
 };
 
-export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };
+const ps: ImsakiyaMsg = {
+  description: "ستاسو د ښار لپاره د رمضان امساکیه: امساک، سهار، ماسپښین، مازدیګر، ماښام (روژه ماتی) او ماسخوتن د رمضان د هرې ورځې لپاره، د چاپ لپاره چمتو.",
+  theme: "رنګ",
+  themes: { night: "شپه", sunset: "لمر لوېدل", day: "ورځ" },
+  imsakNote: "امساک د احتیاط لپاره د سهار له اذان 10 دقیقې مخکې ښودل شوی؛ روژه د سهار په اذان پیلېږي.",
+  daysLeft: "رمضان به {{n}} ورځې وروسته پیل شي",
+  started: "رمضان مو مبارک شه",
+};
+
+const pa: ImsakiyaMsg = {
+  description:
+    "ਤੁਹਾਡੇ ਸ਼ਹਿਰ ਲਈ ਰਮਜ਼ਾਨ ਦੀ ਇਮਸਾਕੀਆ: ਰਮਜ਼ਾਨ ਦੇ ਹਰ ਦਿਨ ਲਈ ਇਮਸਾਕ, ਫ਼ਜਰ, ਜ਼ੁਹਰ, ਅਸਰ, ਮਗ਼ਰਿਬ (ਇਫ਼ਤਾਰ) ਅਤੇ ਇਸ਼ਾ, ਛਾਪਣ ਲਈ ਤਿਆਰ।",
+  theme: "ਰੰਗ",
+  themes: { night: "ਰਾਤ", sunset: "ਸੂਰਜ ਡੁੱਬਣਾ", day: "ਦਿਨ" },
+  imsakNote: "ਇਹਤਿਆਤ ਵਜੋਂ ਇਮਸਾਕ ਫ਼ਜਰ ਤੋਂ 10 ਮਿੰਟ ਪਹਿਲਾਂ ਵਿਖਾਇਆ ਗਿਆ ਹੈ; ਰੋਜ਼ਾ ਫ਼ਜਰ ਤੋਂ ਸ਼ੁਰੂ ਹੁੰਦਾ ਹੈ।",
+  daysLeft: "ਰਮਜ਼ਾਨ {{n}} ਦਿਨਾਂ ਵਿੱਚ ਸ਼ੁਰੂ ਹੋਵੇਗਾ",
+  started: "ਰਮਜ਼ਾਨ ਮੁਬਾਰਕ",
+};
+const pnb: ImsakiyaMsg = {
+  description:
+    "تہاڈے شہر لئی رمضان دی امساکیہ: رمضان دے ہر دن لئی امساک، فجر، ظہر، عصر، مغرب (افطاری) تے عشاء، چھاپن لئی تیار۔",
+  theme: "رنگ",
+  themes: { night: "رات", sunset: "سورج ڈُبنا", day: "دن" },
+  imsakNote: "احتیاط لئی امساک فجر توں 10 منٹ پہلاں وکھایا جاندا اے؛ روزہ فجر ویلے شروع ہوندا اے۔",
+  daysLeft: "رمضان {{n}} دناں بعد شروع ہووے گا",
+  started: "رمضان مبارک",
+};
+
+const uz: ImsakiyaMsg = {
+  description:
+    "Shahringiz uchun Ramazon taqvimi (imsakiya): Ramazonning har bir kuni uchun saharlik (imsak), Bomdod, Peshin, Asr, Shom (iftorlik) va Xufton vaqtlari, chop etishga tayyor.",
+  theme: "Rang",
+  themes: { night: "Tun", sunset: "Quyosh botishi", day: "Kun" },
+  imsakNote: "Ehtiyot uchun imsak (saharlik tugashi) Bomdoddan 10 daqiqa oldin koʻrsatiladi; roʻza Bomdod vaqtidan boshlanadi.",
+  daysLeft: "Ramazon {{n}} kundan soʻng boshlanadi",
+  started: "Ramazon muborak",
+};
+const uzCyrl: ImsakiyaMsg = {
+  description:
+    "Шаҳрингиз учун Рамазон тақвими (имсакия): Рамазоннинг ҳар бир куни учун саҳарлик (имсак), Бомдод, Пешин, Аср, Шом (ифторлик) ва Хуфтон вақтлари, чоп этишга тайёр.",
+  theme: "Ранг",
+  themes: { night: "Тун", sunset: "Қуёш ботиши", day: "Кун" },
+  imsakNote: "Эҳтиёт учун имсак (саҳарлик тугаши) Бомдоддан 10 дақиқа олдин кўрсатилади; рўза Бомдод вақтидан бошланади.",
+  daysLeft: "Рамазон {{n}} кундан сўнг бошланади",
+  started: "Рамазон муборак",
+};
+
+const so: ImsakiyaMsg = {
+  description:
+    "Jadwalka Ramadaan ee magaaladaada: Imsaakka, Subax, Duhur, Casar, Maqrib (afurka) iyo Cishaa maalin kasta oo Ramadaan ah, oo diyaar u ah daabacaad.",
+  theme: "Midab",
+  themes: { night: "Habeen", sunset: "Qorrax dhac", day: "Maalin" },
+  imsakNote: "Imsaakka waxaa la muujiyaa 10 daqiiqo ka hor Subax, taxaddar ahaan; soonku wuxuu bilaabmaa waqtiga Subax.",
+  daysLeft: "Ramadaan wuxuu bilaabmayaa {{n}} maalmood kadib",
+  started: "Ramadaan Mubaarak",
+};
+
+const sw: ImsakiyaMsg = {
+  description:
+    "Ratiba ya Ramadhani ya mji wako: Imsaki, Alfajiri, Adhuhuri, Alasiri, Magharibi (futari) na Isha kwa kila siku ya Ramadhani, tayari kuchapishwa.",
+  theme: "Rangi",
+  themes: { night: "Usiku", sunset: "Machweo", day: "Mchana" },
+  imsakNote: "Imsaki inaonyeshwa dakika 10 kabla ya Alfajiri, kwa tahadhari; funga huanza wakati wa Alfajiri.",
+  daysLeft: "Ramadhani inaanza baada ya siku {{n}}",
+  started: "Ramadhani Mubarak",
+};
+
+const kuArab: ImsakiyaMsg = {
+  description:
+    "خشتەی ڕەمەزانی شارەکەت: ئیمساک، بەیانی، نیوەڕۆ، عەسر، ئێوارە (بەربانگ) و خەوتنان بۆ هەموو ڕۆژێکی ڕەمەزان، ئامادە بۆ چاپکردن.",
+  theme: "ڕەنگ",
+  themes: { night: "شەو", sunset: "خۆرئاوابوون", day: "ڕۆژ" },
+  imsakNote: "ئیمساک بۆ وریایی 10 خولەک پێش بانگی بەیانی پیشان دەدرێت؛ ڕۆژوو بە بانگی بەیانی دەست پێدەکات.",
+  daysLeft: "ڕەمەزان {{n}} ڕۆژی تر دەست پێدەکات",
+  started: "ڕەمەزانتان پیرۆز بێت",
+};
+
+const kuLatn: ImsakiyaMsg = {
+  description:
+    "Îmsakiyeya Remezanê ji bo bajarê te: Îmsak, Sibeh, Nîvro, Esir, Mexrib (fitar) û Eşa ji bo her roja Remezanê, amade ji bo çapkirinê.",
+  theme: "Reng",
+  themes: { night: "Şev", sunset: "Rojava", day: "Roj" },
+  imsakNote: "Îmsak ji bo hişyariyê 10 deqe berî Sibehê tê nîşandan; rojî bi dema Sibehê dest pê dike.",
+  daysLeft: "Remezan piştî {{n}} rojan dest pê dike",
+  started: "Remezana we pîroz be",
+};
+
+const ml: ImsakiyaMsg = {
+  description:
+    "നിങ്ങളുടെ നഗരത്തിലെ റമദാൻ ഇംസാകിയ്യ: റമദാനിലെ ഓരോ ദിവസത്തെയും ഇംസാക്, സുബ്ഹ്, ളുഹ്ർ, അസ്ർ, മഗ്‌രിബ് (നോമ്പുതുറ), ഇശാ സമയങ്ങൾ, അച്ചടിക്കാൻ തയ്യാറായി.",
+  theme: "നിറം",
+  themes: { night: "രാത്രി", sunset: "സൂര്യാസ്തമയം", day: "പകൽ" },
+  imsakNote: "മുൻകരുതലായി സുബ്ഹിന് 10 മിനിറ്റ് മുമ്പാണ് ഇംസാക് കാണിക്കുന്നത്; നോമ്പ് ആരംഭിക്കുന്നത് സുബ്ഹിന്റെ സമയത്താണ്.",
+  daysLeft: "{{n}} ദിവസത്തിനുള്ളിൽ റമദാൻ ആരംഭിക്കും",
+  started: "റമദാൻ മുബാറക്",
+};
+
+const de: ImsakiyaMsg = {
+  description:
+    "Ramadan-Imsakiya für deine Stadt: Imsak, Fadschr, Dhuhr, Asr, Maghrib (Iftar) und Ischa für jeden Tag des Ramadan, druckfertig.",
+  theme: "Farbe",
+  themes: { night: "Nacht", sunset: "Sonnenuntergang", day: "Tag" },
+  imsakNote: "Imsak wird zur Vorsicht 10 Minuten vor Fadschr angezeigt; das Fasten beginnt mit Fadschr.",
+  daysLeft: "Der Ramadan beginnt in {{n}} Tagen",
+  started: "Ramadan Mubarak",
+};
+
+const es: ImsakiyaMsg = {
+  description:
+    "Imsakiya de Ramadán para tu ciudad: Imsak, Fayr, Dhuhr, Asr, Magrib (iftar) e Isha de cada día de Ramadán, lista para imprimir.",
+  theme: "Color",
+  themes: { night: "Noche", sunset: "Atardecer", day: "Día" },
+  imsakNote: "El Imsak se muestra 10 minutos antes del Fayr, como precaución; el ayuno comienza con el Fayr.",
+  daysLeft: "Ramadán comienza en {{n}} días",
+  started: "Ramadán Mubarak",
+};
+
+export const imsakiyaMsg: Record<Locale, ImsakiyaMsg> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so, sw, "ku-Arab": kuArab, "ku-Latn": kuLatn, ml, de, es,
+"az-Latn": {
+  description:
+    "Şəhəriniz üçün Ramazan imsakiyyəsi: Ramazanın hər günü üçün İmsak, Sübh, Zöhr, Əsr, Məğrib (iftar) və İşa vaxtları, çapa hazırdır.",
+  theme: "Rəng",
+  themes: { night: "Gecə", sunset: "Qürub", day: "Gündüz" },
+  imsakNote: "İmsak ehtiyat üçün Sübhdən 10 dəqiqə əvvəl göstərilir; oruc Sübhlə başlayır.",
+  daysLeft: "Ramazan {{n}} gündən sonra başlayır",
+  started: "Ramazanınız mübarək",
+},
+"om": {
+  description:
+    "Imsaakiyyaa Ramadaanaa magaalaa keetiif: Imsaak, Fajrii, Zuhrii, Asrii, Magriba (iftaara) fi Ishaa guyyaa Ramadaanaa hundaaf, maxxansuuf qophaa'e.",
+  theme: "Halluu",
+  themes: { night: "Halkan", sunset: "Lixa aduu", day: "Guyyaa" },
+  imsakNote: "Imsaak akka of-eeggannootti daqiiqaa 10 Fajrii dura agarsiifama; soomni Fajriidhaan jalqaba.",
+  daysLeft: "Ramadaanni guyyoota {{n}} booda jalqaba",
+  started: "Ramadaan Mubaarak",
+},
+"am": {
+  description:
+    "የረመዳን ኢምሳኪያ ለከተማዎ፦ ኢምሳክ፣ ፈጅር፣ ዙህር፣ ዐስር፣ መግሪብ (ኢፍጣር) እና ዒሻ ለእያንዳንዱ የረመዳን ቀን፣ ለህትመት ዝግጁ።",
+  theme: "ቀለም",
+  themes: { night: "ሌሊት", sunset: "ፀሐይ ስትጠልቅ", day: "ቀን" },
+  imsakNote: "ኢምሳክ ለጥንቃቄ ከፈጅር 10 ደቂቃ በፊት ይታያል፤ ጾም የሚጀምረው በፈጅር ነው።",
+  daysLeft: "ረመዳን በ{{n}} ቀናት ውስጥ ይጀምራል",
+  started: "ረመዳን ሙባረክ",
+},
+"kk-Cyrl": {
+  description:
+    "Қалаңыз үшін Рамазан имсакиясы: Рамазанның әр күніне имсак, таң, бесін, екінті, ақшам (ауызашар) және құптан уақыттары, басып шығаруға дайын.",
+  theme: "Түс",
+  themes: { night: "Түн", sunset: "Күн батуы", day: "Күндіз" },
+  imsakNote: "Имсак сақтық үшін таң намазынан 10 минут бұрын көрсетіледі; ораза таңнан басталады.",
+  daysLeft: "Рамазан {{n}} күннен кейін басталады",
+  started: "Рамазан мүбәрак болсын",
+},
+"ta": {
+  description:
+    "உங்கள் நகரத்துக்கான ரமலான் இம்ஸாக்கிய்யா: ரமலானின் ஒவ்வொரு நாளுக்கும் இம்ஸாக், ஃபஜ்ர், ளுஹர், அஸ்ர், மஃரிப் (இஃப்தார்), இஷா நேரங்கள் — அச்சிடத் தயாராக.",
+  theme: "நிறம்",
+  themes: { night: "இரவு", sunset: "அந்தி", day: "பகல்" },
+  imsakNote: "முன்னெச்சரிக்கையாக இம்ஸாக் நேரம் ஃபஜ்ருக்கு 10 நிமிடங்கள் முன்னதாகக் காட்டப்படுகிறது; நோன்பு ஃபஜ்ரில் தொடங்குகிறது.",
+  daysLeft: "ரமலான் {{n}} நாட்களில் தொடங்குகிறது",
+  started: "ரமலான் முபாரக்",
+},
+  "gu": {
+  description:
+    "તમારા શહેર માટે રમઝાનની ઇમ્સાકિયા: રમઝાનના દરેક દિવસ માટે ઇમ્સાક, ફજર, ઝોહર, અસર, મગરિબ (ઇફ્તાર) અને ઇશા, પ્રિન્ટ માટે તૈયાર.",
+  theme: "રંગ",
+  themes: { night: "રાત", sunset: "સૂર્યાસ્ત", day: "દિવસ" },
+  imsakNote: "સાવચેતી તરીકે ઇમ્સાક ફજરના 10 મિનિટ પહેલાં બતાવવામાં આવે છે; રોઝા ફજરથી શરૂ થાય છે.",
+  daysLeft: "રમઝાન {{n}} દિવસમાં શરૂ થશે",
+  started: "રમઝાન મુબારક",
+  },
+  my: {
+  description:
+    "သင့်မြို့အတွက် ရမဇာန် အင်မ်ဆာကီယာ — ရမဇာန်နေ့တိုင်းအတွက် အင်မ်ဆာက်၊ ဖဂျ်ရ်၊ ဇုဟ်ရ်၊ အဆ်ရ်၊ မဂ်ရိဗ် (အိဖ်တာရ်) နှင့် အီရှာ အချိန်များကို ပရင့်ထုတ်ရန် အဆင်သင့်ဖြစ်စေပါသည်။",
+  theme: "အရောင်",
+  themes: { night: "ည", sunset: "နေဝင်ချိန်", day: "နေ့" },
+  imsakNote: "ကြိုတင်ကာကွယ်ရန်အတွက် အင်မ်ဆာက်ကို ဖဂျ်ရ်မတိုင်မီ ၁၀ မိနစ်တွင် ပြထားသည်၊ ရိုဇာသည် ဖဂျ်ရ်မှ စတင်သည်။",
+  daysLeft: "ရမဇာန်သည် {{n}} ရက်အကြာတွင် စတင်မည်",
+  started: "ရမဇာန် မုဘာရက်",
+  },
+};

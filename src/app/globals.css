@@ -54,6 +54,68 @@ html[lang="ha"] body {
   font-family: var(--font-noto-latin), var(--font-roboto), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Pashto: Almarai has no Pashto letters (ټ ډ ړ ږ ښ ځ څ ڼ ګ ې ۍ), so Pashto is set in Noto Sans Arabic, which has them all. */
+html[lang="ps"] body {
+  font-family: var(--font-noto-ar), var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Punjabi in Shahmukhi: Almarai lacks ݨ ݪ, so Shahmukhi is set in Noto Sans Arabic, like Pashto. */
+html[lang="pa-Arab"] body {
+  font-family: var(--font-noto-ar), var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Punjabi in Gurmukhi: Latin from Roboto, Gurmukhi from Noto Sans Gurmukhi. */
+html[lang="pa-Guru"] body {
+  font-family: var(--font-roboto), var(--font-noto-guru), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Kurdish (Sorani): Almarai has no Sorani letters (ڕ ڵ ێ ۆ ە), so Sorani is set in Noto Sans Arabic, like Pashto —
+   also the Sorani Qur'an translation shown on Kurmanji pages (lang="ckb" inside a "ku" page). */
+html[lang="ckb"] body, html[lang="ku"] [lang="ckb"] {
+  font-family: var(--font-noto-ar), var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Kurdish (Kurmanji): Roboto's latin subset has no ş, so Kurmanji uses Noto Sans for the whole page, like Hausa. */
+html[lang="ku"] body {
+  font-family: var(--font-noto-latin), var(--font-roboto), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Malayalam: Latin from Roboto, Malayalam from Noto Sans Malayalam. */
+html[lang="ml"] body {
+  font-family: var(--font-roboto), var(--font-noto-mlym), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+}
+/* Malayalam menu words are wide: smaller, tighter items in the desktop menu bar so it fits from 1180px. */
+html[lang="ml"] nav > div > ul { column-gap: 0.5rem; }
+html[lang="ml"] nav > div > ul > li > a, html[lang="ml"] nav > div > ul > li > button { font-size: 12px; }
+
+/* Azerbaijani (ə) and Oromo (ʼ) are set in Noto Sans for the whole page, like Hausa; Kazakh's ә ғ қ ң ө ұ ү һ і come from Roboto's cyrillic-ext subset, like Uzbek Cyrillic. */
+html[lang="az-Latn"] body, html[lang="om"] body {
+  font-family: var(--font-noto-latin), var(--font-roboto), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+}
+html[lang="kk-Cyrl"] body {
+  font-family: var(--font-roboto), var(--font-roboto-cyrext), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Amharic, Tamil, Gujarati, Burmese: Latin from Roboto, the script from its Noto Sans. */
+html[lang="am"] body {
+  font-family: var(--font-roboto), var(--font-noto-ethi), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+}
+html[lang="ta"] body {
+  font-family: var(--font-roboto), var(--font-noto-taml), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+}
+html[lang="gu"] body {
+  font-family: var(--font-roboto), var(--font-noto-gujr), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+}
+html[lang="my"] body {
+  font-family: var(--font-roboto), var(--font-noto-mymr), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.75; /* Burmese stacks tall marks above and below the line */
+}
+
+/* Uzbek in Cyrillic: ғ қ ҳ from Roboto's cyrillic-ext subset, the rest from Roboto. */
+html[lang="uz-Cyrl"] body {
+  font-family: var(--font-roboto), var(--font-roboto-cyrext), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+}
+
 /* Chinese: Latin from Roboto, Chinese characters from the system's Simplified Chinese font (no CJK web font). */
 html[lang="zh-CN"] body {
   font-family: var(--font-roboto), "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "WenQuanYi Micro Hei", var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;

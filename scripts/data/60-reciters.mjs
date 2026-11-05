@@ -2,7 +2,7 @@
 // client/assets/<…>/reciterPhotos.ts):
 //   src/generated/reciters.json      — key, everyayah folder, category, photo, name in all 8 languages
 //   public/images/reciters/<id>.webp — the app's reciter photos, 200px webp
-// Names follow the app's getReciterLabel: Arabic labels for ar/ur/fa, the app's Latin labels otherwise.
+// Names follow the app's getReciterLabel: Arabic labels for ar/ur/fa/ps/pnb/ku-Arab, Gurmukhi labels for pa, Cyrillic labels for uz-Cyrl, the app's Latin labels otherwise.
 import { existsSync, mkdirSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { execFileSync } from "node:child_process";
@@ -54,6 +54,8 @@ export default async function (ctx) {
   const RECITERS = literalAfter(src, "export const RECITERS =");
   const AR = literalAfter(src, "const AR_LABELS: Record<string, string> =");
   const EN = literalAfter(src, "const EN_LABELS: Record<string, string> =");
+  const PA = literalAfter(src, "const PA_LABELS: Record<string, string> =");
+  const UZC = literalAfter(src, "const UZC_LABELS: Record<string, string> =");
 
   const photoDir = readdirSync(join(ctx.app, "client", "assets")).map((d) => join(ctx.app, "client", "assets", d)).find((d) => existsSync(join(d, "reciterPhotos.ts")));
   if (!photoDir) throw new Error("reciters: reciterPhotos.ts not found");
@@ -71,7 +73,7 @@ export default async function (ctx) {
     const en = EN[r.key];
     if (!en) throw new Error(`reciters: no Latin label for ${r.key}`);
     if (/[A-Za-z]/.test(ar)) throw new Error(`reciters: Arabic label for ${r.key} is Latin: ${ar}`);
-    const names = Object.fromEntries(LOCALES.map((l) => [l, l === "ar" || l === "ur" || l === "fa" ? ar : en]));
+    const names = Object.fromEntries(LOCALES.map((l) => [l, ["ar", "ur", "fa", "ps", "pnb", "ku-Arab"].includes(l) ? ar : l === "pa" ? PA[r.key] ?? en : l === "uz-Cyrl" ? UZC[r.key] ?? en : en]));
     const photo = byKey[r.key];
     if (photo) usedPhotos.add(photo);
     const cat = catOf(r);

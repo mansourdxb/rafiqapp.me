@@ -24,9 +24,28 @@ import bn from "@/generated/faq-bn.json";
 import ha from "@/generated/faq-ha.json";
 import fr from "@/generated/faq-fr.json";
 import zh from "@/generated/faq-zh.json";
+import ps from "@/generated/faq-ps.json";
+import pa from "@/generated/faq-pa.json";
+import pnb from "@/generated/faq-pnb.json";
+import uz from "@/generated/faq-uz.json";
+import uzCyrl from "@/generated/faq-uz-Cyrl.json";
+import so from "@/generated/faq-so.json";
+import sw from "@/generated/faq-sw.json";
+import kuArab from "@/generated/faq-ku-Arab.json";
+import kuLatn from "@/generated/faq-ku-Latn.json";
+import ml from "@/generated/faq-ml.json";
+import de from "@/generated/faq-de.json";
+import es from "@/generated/faq-es.json";
+import azLatn from "@/generated/faq-az-Latn.json";
+import om from "@/generated/faq-om.json";
+import am from "@/generated/faq-am.json";
+import kkCyrl from "@/generated/faq-kk-Cyrl.json";
+import ta from "@/generated/faq-ta.json";
+import gu from "@/generated/faq-gu.json";
+import my from "@/generated/faq-my.json";
 
 type FaqData = { title: string; items: { id: string; q: string; steps: string[] }[] };
-const DATA: Record<Locale, FaqData> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh };
+const DATA: Record<Locale, FaqData> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so, sw, "ku-Arab": kuArab, "ku-Latn": kuLatn, ml, de, es, "az-Latn": azLatn, om, am, "kk-Cyrl": kkCyrl, ta, gu, my };
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/faq">): Promise<Metadata> {
   const { lang } = await params;

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build",
+  "outputDirectory": "out",
+  "cleanUrls": false,
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html",
+      "permanent": true
+    },
+    {
+      "source": "/privacy/",
+      "destination": "/privacy.html",
+      "permanent": true
+    }
+  ]
+}

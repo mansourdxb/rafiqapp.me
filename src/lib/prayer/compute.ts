@@ -102,9 +102,9 @@ export function computeLive(place: Place, s: PrayerSettings, now = new Date()): 
   };
 }
 
-const ARABIC_SCRIPT = ["ar", "ur", "fa"];
+const ARABIC_SCRIPT = ["ar", "ur", "fa", "ps", "pnb", "ku-Arab"];
 
-/** Clock time in the place's zone, like the app's formatTimeInTZ: Latin digits, ص/م for ar/ur/fa. */
+/** Clock time in the place's zone, like the app's formatTimeInTZ: Latin digits, ص/م for ar/ur/fa/ps/pnb/ku-Arab. */
 export function formatTime(date: Date, tz: string, lang: string, choice?: boolean) {
   const hour12 = uses12h(lang, choice);
   try {

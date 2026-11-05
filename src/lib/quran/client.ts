@@ -40,7 +40,15 @@ export function useLastRead(): LastRead | null {
 }
 
 // ── translations: the app's quran.com translation per language (client/utils/translationBookCache.ts);
-// English is Saheeh International, bundled in the app (and in public/data/quran/en). ──
+// English is Saheeh International, bundled in the app (and in public/data/quran/en). Punjabi (Gurmukhi) is
+// Arif Haleem from QuranEnc, as the app; no Shahmukhi translation exists, so Shahmukhi shows the site's Urdu one.
+// Uzbek is Muhammad Sodiq Muhammad Yusuf in both scripts, bundled per page in public/data/quran/{uz,uz-Cyrl}.
+// Somali is Abdullah Hasan Yaqoub from QuranEnc (somali_yacob), as the app, bundled per page in public/data/quran/so.
+// Swahili (Rowwad), Sorani (Bamoki), Malayalam (Kunhi Muhammad), German (Bubenheim) and Spanish (García) are QuranEnc
+// editions, as the app, bundled per page in public/data/quran/<code>; Kurmanji has no translation of its own and shows
+// the Sorani one, as the app (its pages are read from public/data/quran/ku-Arab, not copied).
+// Azerbaijani (Musayev), Oromo (Rowwad), Amharic (Africa Academy), Kazakh (Khalifa Altay), Tamil (Omar Sharif) and Gujarati
+// (Rabila Al-Umry) are QuranEnc editions the same way. Burmese has no verified translation: it shows the English one with a note. ──
 export const TRANSLATION: Record<Exclude<Locale, "ar">, { id: number; name: string }> = {
   en: { id: 20, name: "Saheeh International" },
   ur: { id: 151, name: "تفسیرِ عثمانی — شیخ الہند محمود الحسن" },
@@ -54,6 +62,46 @@ export const TRANSLATION: Record<Exclude<Locale, "ar">, { id: number; name: stri
   ha: { id: 32, name: "Abubakar Mahmoud Gumi" },
   fr: { id: 31, name: "Muhammad Hamidullah" },
   zh: { id: 56, name: "马坚" },
+  ps: { id: 118, name: "زکریا عبدالسلام" },
+  pa: { id: 0, name: "ਆਰਿਫ਼ ਹਲੀਮ" }, // QuranEnc punjabi_arif (not on quran.com)
+  pnb: { id: 151, name: "تفسیرِ عثمانی — شیخ الہند محمود الحسن" }, // the Urdu translation (ur)
+  uz: { id: 55, name: "Muhammad Sodiq Muhammad Yusuf" },
+  "uz-Cyrl": { id: 127, name: "Муҳаммад Содиқ Муҳаммад Юсуф" },
+  so: { id: 0, name: "Abdullah Hasan Yaqoub (QuranEnc)" }, // QuranEnc somali_yacob (not on quran.com)
+  sw: { id: 0, name: "Rowwad Translation Center (QuranEnc)" }, // QuranEnc swahili_rwwad
+  "ku-Arab": { id: 0, name: "Muhammad Salih Bamoki (QuranEnc)" }, // QuranEnc kurdish_bamoki
+  "ku-Latn": { id: 0, name: "Muhammad Salih Bamoki (QuranEnc)" }, // the Sorani translation (ku-Arab)
+  ml: { id: 0, name: "Abdul Hamid Haidar & Kunhi Muhammad (QuranEnc)" }, // QuranEnc malayalam_kunhi
+  de: { id: 0, name: "Frank Bubenheim & Nadeem Elyas (QuranEnc)" }, // QuranEnc german_bubenheim
+  es: { id: 0, name: "Muhammad Isa García (QuranEnc)" }, // QuranEnc spanish_garcia
+  "az-Latn": { id: 0, name: "Alikhan Musayev (QuranEnc)" }, // QuranEnc azeri_musayev
+  om: { id: 0, name: "Rowwad Translation Center (QuranEnc)" }, // QuranEnc oromo_rwwad
+  am: { id: 0, name: "Africa Academy (QuranEnc)" }, // QuranEnc amharic_zain
+  "kk-Cyrl": { id: 0, name: "Khalifa Altay (QuranEnc)" }, // QuranEnc kazakh_altai_assoc
+  ta: { id: 0, name: "Omar Sharif (QuranEnc)" }, // QuranEnc tamil_omar
+  gu: { id: 0, name: "Rabila Al-Umry (QuranEnc)" }, // QuranEnc gujarati_omari
+  my: { id: 20, name: "Saheeh International" }, // no Burmese translation: the English one, with a note
+};
+
+/** Per-page translation files in public/data/quran/<dir> (Kurmanji reads the Sorani ones) and the QuranEnc edition used as the fallback. */
+const BUNDLED: Partial<Record<Exclude<Locale, "ar">, { dir: string; enc?: string }>> = {
+  en: { dir: "en" },
+  uz: { dir: "uz" },
+  "uz-Cyrl": { dir: "uz-Cyrl" },
+  so: { dir: "so", enc: "somali_yacob" },
+  sw: { dir: "sw", enc: "swahili_rwwad" },
+  "ku-Arab": { dir: "ku-Arab", enc: "kurdish_bamoki" },
+  "ku-Latn": { dir: "ku-Arab", enc: "kurdish_bamoki" },
+  ml: { dir: "ml", enc: "malayalam_kunhi" },
+  de: { dir: "de", enc: "german_bubenheim" },
+  es: { dir: "es", enc: "spanish_garcia" },
+  "az-Latn": { dir: "az-Latn", enc: "azeri_musayev" },
+  om: { dir: "om", enc: "oromo_rwwad" },
+  am: { dir: "am", enc: "amharic_zain" },
+  "kk-Cyrl": { dir: "kk-Cyrl", enc: "kazakh_altai_assoc" },
+  ta: { dir: "ta", enc: "tamil_omar" },
+  gu: { dir: "gu", enc: "gujarati_omari" },
+  my: { dir: "en" }, // no Burmese translation: the English pages
 };
 
 function stripHtml(html: string) {
@@ -110,13 +158,24 @@ async function maJian(key: string): Promise<string> {
   return quranCom(id, key);
 }
 
+/** A QuranEnc translation (Arif Haleem's Punjabi punjabi_arif, Yaqoub's Somali somali_yacob), one surah per request, footnote markers " [1]" dropped as the app does. */
+async function quranEnc(key: string, book = "punjabi_arif"): Promise<string> {
+  const [s, a] = key.split(":");
+  const data = await getJson<{ result?: { aya: string; translation: string }[] }>(`https://quranenc.com/api/v1/translation/sura/${book}/${s}`);
+  const row = data.result?.find((r) => r.aya === a);
+  return (row?.translation ?? "").replace(/\s*\[\d+\]/g, "").replace(/\s+/g, " ").trim();
+}
+
 /** The verse's translation in `lang`; "" when the translation has no text for it. */
 export async function fetchTranslation(lang: Exclude<Locale, "ar">, page: number, key: string): Promise<string> {
-  if (lang === "en") {
-    const m = await getJson<Record<string, string>>(`/data/quran/en/${page}.json`);
+  const bundled = BUNDLED[lang];
+  if (bundled) {
+    const m = await getJson<Record<string, string>>(`/data/quran/${bundled.dir}/${page}.json`);
     if (m[key]) return m[key];
   }
   if (lang === "zh") return maJian(key);
+  if (lang === "pa") return quranEnc(key);
+  if (bundled?.enc) return quranEnc(key, bundled.enc);
   return quranCom(TRANSLATION[lang].id, key);
 }
 

@@ -4,11 +4,11 @@ import { devices } from "@/i18n/messages/devices";
 
 // Real watch screenshots in public/devices/<lang>/. The App Store has no Persian or Hausa listing,
 // so those two pages show the English Apple Watch shot.
-const NO_APPLE_WATCH_SHOT: readonly Locale[] = ["fa", "ha"];
+export const NO_APPLE_WATCH_SHOT: readonly Locale[] = ["fa", "ha"];
 
 const WATCHES = ["appleWatch", "wearOs", "huaweiWatch"] as const;
 const CARS = ["carPlay", "androidAuto"] as const;
-const FILE: Record<(typeof WATCHES)[number], string> = { appleWatch: "apple-watch", wearOs: "wear-os", huaweiWatch: "huawei-watch" };
+export const FILE: Record<(typeof WATCHES)[number], string> = { appleWatch: "apple-watch", wearOs: "wear-os", huaweiWatch: "huawei-watch" };
 
 /** "Rafiq Al-Muslim in your car and on your wrist": watch screenshots in device frames, then the two car platforms. */
 export function HomeDevices({ lang, siteName }: { lang: Locale; siteName: string }) {
@@ -72,9 +72,9 @@ const METAL = "bg-gradient-to-br from-[#5b606b] via-[#202329] to-[#454a53]";
 const STRAP = "absolute left-1/2 -translate-x-1/2 bg-gradient-to-b from-[#2b2f36] to-[#1c1f24]";
 
 /** Apple Watch: rounded-rectangle case, Digital Crown and side button on the right, strap stubs. */
-function AppleWatchFrame({ src, alt }: { src: string; alt: string }) {
+export function AppleWatchFrame({ src, alt, width = "164px" }: { src: string; alt: string; width?: string }) {
   return (
-    <div className="relative w-[164px]">
+    <div className="relative" style={{ width }}>
       <span className={`${STRAP} -top-[30px] h-[44px] w-[70%] rounded-t-[14px]`} aria-hidden />
       <span className={`${STRAP} -bottom-[30px] h-[44px] w-[70%] rounded-b-[14px]`} aria-hidden />
       <span className="absolute -right-[7px] top-[24%] h-[17%] w-[9px] rounded-r-[4px] bg-gradient-to-r from-[#4a4f58] to-[#2a2d33]" aria-hidden />
@@ -90,9 +90,9 @@ function AppleWatchFrame({ src, alt }: { src: string; alt: string }) {
 }
 
 /** Round watch (Wear OS / HUAWEI WATCH): circular case and straps; the Huawei one has a ticked bezel and two buttons. */
-function RoundWatchFrame({ src, alt, huawei }: { src: string; alt: string; huawei: boolean }) {
+export function RoundWatchFrame({ src, alt, huawei, width = "184px" }: { src: string; alt: string; huawei: boolean; width?: string }) {
   return (
-    <div className="relative w-[184px]">
+    <div className="relative" style={{ width }}>
       <span className={`${STRAP} -top-[28px] h-[52px] w-[46%] rounded-t-[12px]`} aria-hidden />
       <span className={`${STRAP} -bottom-[28px] h-[52px] w-[46%] rounded-b-[12px]`} aria-hidden />
       {huawei ? (
@@ -119,7 +119,7 @@ function RoundWatchFrame({ src, alt, huawei }: { src: string; alt: string; huawe
 }
 
 /** Generic line drawing of a car dashboard (wheel + centre screen) — an icon, not a screenshot. */
-function Dashboard({ kind }: { kind: (typeof CARS)[number] }) {
+export function Dashboard({ kind }: { kind: (typeof CARS)[number] }) {
   return (
     <svg viewBox="0 0 240 120" className="h-auto w-full max-w-[260px] text-section dark:text-primary-light" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
       {/* dashboard outline */}

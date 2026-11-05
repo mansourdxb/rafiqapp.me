@@ -1,7 +1,7 @@
 // Hijri (Umm al-Qura) dates via Intl, like the app's src/utils/hijriDate.ts. Calendar days are
 // handled as UTC-noon instants so no local time zone or DST can shift a day.
 import { appT } from "@/i18n/app";
-import type { Locale } from "@/i18n/config";
+import { intlTag, type Locale } from "@/i18n/config";
 import { localDigits } from "@/lib/digits";
 
 export type Ymd = { y: number; m: number; d: number };
@@ -73,11 +73,58 @@ function formatHausa(g: Ymd, opts: Intl.DateTimeFormatOptions) {
   return [weekday, date].filter(Boolean).join(", ");
 }
 
-/** Gregorian date in the site language (Latin digits from Intl, then the app's digit style). */
+// Punjabi in Shahmukhi: CLDR "pa-Arab" month and weekday names (short = long in CLDR). Built here, in the Urdu
+// order (weekday، day month year), because CLDR's pa-Arab patterns are the root ones ("نومبر 1, اتوار") and
+// browsers without pa-Arab data would fall back to Gurmukhi.
+const PNB_MONTHS = ["جنوری", "فروری", "مارچ", "اپریل", "مئ", "جون", "جولائی", "اگست", "ستمبر", "اکتوبر", "نومبر", "دسمبر"];
+const PNB_DAYS = ["اتوار", "پیر", "منگل", "بُدھ", "جمعرات", "جمعہ", "ہفتہ"];
+
+/** "اتوار، 1 نومبر 2026" (digits localized by the caller) — the parts asked for in `opts`. */
+function formatShahmukhi(g: Ymd, opts: Intl.DateTimeFormatOptions) {
+  const date = [opts.day ? String(g.d) : "", opts.month ? PNB_MONTHS[g.m - 1] : "", opts.year ? String(g.y) : ""].filter(Boolean).join(" ");
+  const weekday = opts.weekday ? PNB_DAYS[utcNoon(g.y, g.m, g.d).getUTCDay()] : "";
+  return [weekday, date].filter(Boolean).join("، ");
+}
+
+// Uzbek month and weekday names (CLDR "uz" and "uz-Cyrl"), so both scripts read the same on the server and in
+// every browser (a browser without "uz-Cyrl" data would fall back to Latin or English).
+const UZ_NAMES = {
+  uz: {
+    months: ["yanvar", "fevral", "mart", "aprel", "may", "iyun", "iyul", "avgust", "sentabr", "oktabr", "noyabr", "dekabr"],
+    monthsShort: ["yan", "fev", "mar", "apr", "may", "iyn", "iyl", "avg", "sen", "okt", "noy", "dek"],
+    days: ["yakshanba", "dushanba", "seshanba", "chorshanba", "payshanba", "juma", "shanba"],
+    daysShort: ["Yak", "Dush", "Sesh", "Chor", "Pay", "Jum", "Shan"],
+  },
+  "uz-Cyrl": {
+    months: ["январ", "феврал", "март", "апрел", "май", "июн", "июл", "август", "сентябр", "октябр", "ноябр", "декабр"],
+    monthsShort: ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"],
+    days: ["якшанба", "душанба", "сешанба", "чоршанба", "пайшанба", "жума", "шанба"],
+    daysShort: ["якш", "душ", "сеш", "чор", "пай", "жум", "шан"],
+  },
+};
+
+/** "yakshanba, 1-noyabr, 2026" / "якшанба, 1 ноябр, 2026" — the parts asked for in `opts`, in CLDR's order. */
+function formatUzbek(lang: "uz" | "uz-Cyrl", g: Ymd, opts: Intl.DateTimeFormatOptions) {
+  const n = UZ_NAMES[lang];
+  const latin = lang === "uz";
+  let month = opts.month === "short" ? n.monthsShort[g.m - 1] : opts.month ? n.months[g.m - 1] : "";
+  if (latin && month && !opts.day && !opts.year) month = month[0].toUpperCase() + month.slice(1); // stand-alone: "Noyabr"
+  const dm = opts.day && month ? `${g.d}${latin ? "-" : " "}${month}` : opts.day ? String(g.d) : month;
+  const date = [dm, opts.year ? String(g.y) : ""].filter(Boolean).join(", ");
+  const weekday = opts.weekday === "short" ? n.daysShort[utcNoon(g.y, g.m, g.d).getUTCDay()] : opts.weekday ? n.days[utcNoon(g.y, g.m, g.d).getUTCDay()] : "";
+  return [weekday, date].filter(Boolean).join(", ");
+}
+
+/** Gregorian date in the site language (Latin digits from Intl, then the app's digit style). Pashto asks for
+ * the Gregorian calendar by name: CLDR's default calendar for "ps" is the Persian solar one. Gurmukhi uses
+ * CLDR "pa"; Shahmukhi ("pa-Arab") is built from CLDR's pa-Arab names (formatShahmukhi), Uzbek from CLDR's
+ * uz and uz-Cyrl names (formatUzbek). Kurdish asks Intl for "ckb" (Sorani) and "ku" (Kurmanji). */
 export function formatGregorian(lang: Locale, g: Ymd, opts: Intl.DateTimeFormatOptions = { day: "numeric", month: "long", year: "numeric" }) {
   try {
     if (lang === "ha") return formatHausa(g, opts);
-    return localDigits(lang, new Intl.DateTimeFormat(`${lang}-u-nu-latn`, { ...opts, timeZone: "UTC" }).format(utcNoon(g.y, g.m, g.d)));
+    if (lang === "pnb") return localDigits(lang, formatShahmukhi(g, opts));
+    if (lang === "uz" || lang === "uz-Cyrl") return formatUzbek(lang, g, opts);
+    return localDigits(lang, new Intl.DateTimeFormat(`${intlTag(lang)}-u-${lang === "ps" ? "ca-gregory-" : ""}nu-latn`, { ...opts, timeZone: "UTC" }).format(utcNoon(g.y, g.m, g.d)));
   } catch {
     return `${g.y}-${g.m}-${g.d}`;
   }

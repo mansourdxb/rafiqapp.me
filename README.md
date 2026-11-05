@@ -1,6 +1,6 @@
 # rafiqalmuslim.org
 
-Website of **Rafiq Al-Muslim (رفيق المسلم)** — Next.js static site in 13 languages, published to GitHub Pages.
+Website of **Rafiq Al-Muslim (رفيق المسلم)** — Next.js static site in 32 languages, published to GitHub Pages.
 
 - `npm run dev` — local dev server
 - `npm run data` — refresh data and strings from the app repo (`../Rafiq-Al-Muslim`) and the assets repo
