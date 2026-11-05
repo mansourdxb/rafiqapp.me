@@ -7,21 +7,20 @@ import type { Home } from "@/i18n/messages/home";
 /** Four slides that rotate like the reference hero: headline with an orange phrase, text, stores, art. */
 export function HeroSlider({ slides, getApp, getAppHref, badges, art }: { slides: Home["hero"]["slides"][number][]; getApp: string; getAppHref: string; badges: ReactNode; art: ReactNode[] }) {
   const [i, setI] = useState(0);
-  const [paused, setPaused] = useState(false);
   // only the first slide's phone screens load with the page; the others mount a moment later
   const [later, setLater] = useState(false);
   useEffect(() => {
     const id = setTimeout(() => setLater(true), 2500);
     return () => clearTimeout(id);
   }, []);
+  // always advances every 7 s; a manual pick restarts the count (no pause on hover: it left the slider stuck for visitors whose pointer rests on it)
   useEffect(() => {
-    if (paused) return;
-    const id = setInterval(() => setI((v) => (v + 1) % slides.length), 7000);
-    return () => clearInterval(id);
-  }, [paused, slides.length]);
+    const id = setTimeout(() => setI((v) => (v + 1) % slides.length), 7000);
+    return () => clearTimeout(id);
+  }, [i, slides.length]);
 
   return (
-    <div onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+    <div>
       <div className="grid">
         {slides.map((s, k) => (
           <div
