@@ -85,14 +85,14 @@ export function Navbar({ lang }: { lang: Locale }) {
         <Icon name="chevron" className={`size-3.5 transition ${langOpen ? "-rotate-90" : "rotate-90"}`} />
       </button>
       {langOpen && (
-        <ul className="absolute end-0 top-9 z-50 w-48 overflow-hidden rounded-xl bg-white py-1 text-navy-2 shadow-xl ring-1 ring-black/5">
+        <ul className="absolute end-0 top-9 z-50 grid w-[min(94vw,300px)] grid-cols-2 gap-x-1 overflow-hidden rounded-xl bg-white p-2 text-navy-2 shadow-xl ring-1 ring-black/5 sm:w-[min(94vw,560px)] sm:grid-cols-3 lg:w-[760px] lg:grid-cols-4">
           {locales.map((l) => (
             <li key={l}>
               <Link
                 href={switchLang(pathname, l)}
                 onClick={() => chooseLang(l)}
                 lang={l}
-                className={`flex items-center gap-2.5 px-4 py-2.5 text-sm hover:bg-tint ${l === lang ? "font-bold text-primary" : ""}`}
+                className={`flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm hover:bg-tint ${l === lang ? "font-bold text-primary" : ""}`}
               >
                 <Flag l={l} />
                 {nativeName[l]}
