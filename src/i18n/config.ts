@@ -1,5 +1,5 @@
-// The site's languages — the same twenty-five as the app, in the app's picker order.
-export const locales = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh", "ps", "pa", "pnb", "uz", "uz-Cyrl", "so", "sw", "ku-Arab", "ku-Latn", "ml", "de", "es"] as const;
+// The site's languages — the same thirty-two as the app, in the app's picker order.
+export const locales = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh", "ps", "pa", "pnb", "uz", "uz-Cyrl", "so", "sw", "ku-Arab", "ku-Latn", "ml", "de", "es", "az-Latn", "om", "am", "kk-Cyrl", "ta", "gu", "my"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "ar";
 
@@ -33,6 +33,13 @@ export const nativeName: Record<Locale, string> = {
   ml: "മലയാളം",
   de: "Deutsch",
   es: "Español",
+  "az-Latn": "Azərbaycanca",
+  om: "Afaan Oromoo",
+  am: "አማርኛ",
+  "kk-Cyrl": "Қазақша",
+  ta: "தமிழ்",
+  gu: "ગુજરાતી",
+  my: "မြန်မာ",
 };
 
 /** Flag shown next to each language in the language menu (public/flags/<code>.svg, from flag-icons, MIT). */
@@ -62,6 +69,13 @@ export const flag: Record<Locale, string> = {
   ml: "in",
   de: "de",
   es: "es",
+  "az-Latn": "az",
+  om: "et",
+  am: "et",
+  "kk-Cyrl": "kz",
+  ta: "in",
+  gu: "in",
+  my: "mm",
 };
 
 export const ogLocale: Record<Locale, string> = {
@@ -90,6 +104,13 @@ export const ogLocale: Record<Locale, string> = {
   ml: "ml_IN",
   de: "de_DE",
   es: "es_ES",
+  "az-Latn": "az_AZ",
+  om: "om_ET",
+  am: "am_ET",
+  "kk-Cyrl": "kk_KZ",
+  ta: "ta_IN",
+  gu: "gu_IN",
+  my: "my_MM",
 };
 
 /** BCP 47 tag for <html lang> and hreflang: Chinese is Simplified Chinese (zh-CN), so browsers pick Simplified glyphs;
@@ -100,8 +121,9 @@ export const ogLocale: Record<Locale, string> = {
 const TAGS: Partial<Record<Locale, string>> = { zh: "zh-CN", pa: "pa-Guru", pnb: "pa-Arab", "ku-Arab": "ckb", "ku-Latn": "ku" };
 export const langTag = (l: Locale) => TAGS[l] ?? l;
 
-/** Locale for Intl: the site code, except Kurdish — Intl reads "ku-Arab" as Kurmanji, so Sorani asks for "ckb". */
-export const intlTag = (l: Locale) => (l === "ku-Arab" ? "ckb" : l === "ku-Latn" ? "ku" : l);
+/** Locale for Intl: the site code, except Kurdish — Intl reads "ku-Arab" as Kurmanji, so Sorani asks for "ckb" —
+ * and Azerbaijani / Kazakh, which Intl knows without the script ("az", "kk"). */
+export const intlTag = (l: Locale) => (l === "ku-Arab" ? "ckb" : l === "ku-Latn" ? "ku" : l === "az-Latn" ? "az" : l === "kk-Cyrl" ? "kk" : l);
 
 export function isLocale(v: string): v is Locale {
   return (locales as readonly string[]).includes(v);

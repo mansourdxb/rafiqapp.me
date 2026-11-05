@@ -46,7 +46,9 @@ export function useLastRead(): LastRead | null {
 // Somali is Abdullah Hasan Yaqoub from QuranEnc (somali_yacob), as the app, bundled per page in public/data/quran/so.
 // Swahili (Rowwad), Sorani (Bamoki), Malayalam (Kunhi Muhammad), German (Bubenheim) and Spanish (García) are QuranEnc
 // editions, as the app, bundled per page in public/data/quran/<code>; Kurmanji has no translation of its own and shows
-// the Sorani one, as the app (its pages are read from public/data/quran/ku-Arab, not copied). ──
+// the Sorani one, as the app (its pages are read from public/data/quran/ku-Arab, not copied).
+// Azerbaijani (Musayev), Oromo (Rowwad), Amharic (Africa Academy), Kazakh (Khalifa Altay), Tamil (Omar Sharif) and Gujarati
+// (Rabila Al-Umry) are QuranEnc editions the same way. Burmese has no verified translation: it shows the English one with a note. ──
 export const TRANSLATION: Record<Exclude<Locale, "ar">, { id: number; name: string }> = {
   en: { id: 20, name: "Saheeh International" },
   ur: { id: 151, name: "تفسیرِ عثمانی — شیخ الہند محمود الحسن" },
@@ -72,6 +74,13 @@ export const TRANSLATION: Record<Exclude<Locale, "ar">, { id: number; name: stri
   ml: { id: 0, name: "Abdul Hamid Haidar & Kunhi Muhammad (QuranEnc)" }, // QuranEnc malayalam_kunhi
   de: { id: 0, name: "Frank Bubenheim & Nadeem Elyas (QuranEnc)" }, // QuranEnc german_bubenheim
   es: { id: 0, name: "Muhammad Isa García (QuranEnc)" }, // QuranEnc spanish_garcia
+  "az-Latn": { id: 0, name: "Alikhan Musayev (QuranEnc)" }, // QuranEnc azeri_musayev
+  om: { id: 0, name: "Rowwad Translation Center (QuranEnc)" }, // QuranEnc oromo_rwwad
+  am: { id: 0, name: "Africa Academy (QuranEnc)" }, // QuranEnc amharic_zain
+  "kk-Cyrl": { id: 0, name: "Khalifa Altay (QuranEnc)" }, // QuranEnc kazakh_altai_assoc
+  ta: { id: 0, name: "Omar Sharif (QuranEnc)" }, // QuranEnc tamil_omar
+  gu: { id: 0, name: "Rabila Al-Umry (QuranEnc)" }, // QuranEnc gujarati_omari
+  my: { id: 20, name: "Saheeh International" }, // no Burmese translation: the English one, with a note
 };
 
 /** Per-page translation files in public/data/quran/<dir> (Kurmanji reads the Sorani ones) and the QuranEnc edition used as the fallback. */
@@ -86,6 +95,13 @@ const BUNDLED: Partial<Record<Exclude<Locale, "ar">, { dir: string; enc?: string
   ml: { dir: "ml", enc: "malayalam_kunhi" },
   de: { dir: "de", enc: "german_bubenheim" },
   es: { dir: "es", enc: "spanish_garcia" },
+  "az-Latn": { dir: "az-Latn", enc: "azeri_musayev" },
+  om: { dir: "om", enc: "oromo_rwwad" },
+  am: { dir: "am", enc: "amharic_zain" },
+  "kk-Cyrl": { dir: "kk-Cyrl", enc: "kazakh_altai_assoc" },
+  ta: { dir: "ta", enc: "tamil_omar" },
+  gu: { dir: "gu", enc: "gujarati_omari" },
+  my: { dir: "en" }, // no Burmese translation: the English pages
 };
 
 function stripHtml(html: string) {

@@ -36,9 +36,16 @@ import kuLatn from "@/generated/faq-ku-Latn.json";
 import ml from "@/generated/faq-ml.json";
 import de from "@/generated/faq-de.json";
 import es from "@/generated/faq-es.json";
+import azLatn from "@/generated/faq-az-Latn.json";
+import om from "@/generated/faq-om.json";
+import am from "@/generated/faq-am.json";
+import kkCyrl from "@/generated/faq-kk-Cyrl.json";
+import ta from "@/generated/faq-ta.json";
+import gu from "@/generated/faq-gu.json";
+import my from "@/generated/faq-my.json";
 
 type FaqData = { title: string; items: { id: string; q: string; steps: string[] }[] };
-const DATA: Record<Locale, FaqData> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so, sw, "ku-Arab": kuArab, "ku-Latn": kuLatn, ml, de, es };
+const DATA: Record<Locale, FaqData> = { ar, en, ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so, sw, "ku-Arab": kuArab, "ku-Latn": kuLatn, ml, de, es, "az-Latn": azLatn, om, am, "kk-Cyrl": kkCyrl, ta, gu, my };
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/faq">): Promise<Metadata> {
   const { lang } = await params;

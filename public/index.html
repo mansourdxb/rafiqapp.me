@@ -16,14 +16,14 @@
       location.replace("https://" + location.host + location.pathname + location.search + location.hash);
       return;
     }
-    var langs = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh", "ps", "pa", "pnb", "uz", "uz-Cyrl", "so", "sw", "ku-Arab", "ku-Latn", "ml", "de", "es"];
+    var langs = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh", "ps", "pa", "pnb", "uz", "uz-Cyrl", "so", "sw", "ku-Arab", "ku-Latn", "ml", "de", "es", "az-Latn", "om", "am", "kk-Cyrl", "ta", "gu", "my"];
     var pick = null;
     try { pick = localStorage.getItem("lang"); } catch (e) {}
     if (langs.indexOf(pick) < 0) {
       var nav = (navigator.languages || [navigator.language || ""]);
       for (var i = 0; i < nav.length && !pick; i++) {
         var t = String(nav[i]).toLowerCase();
-        var c = /^pnb|^pa-(arab|pk)/.test(t) ? "pnb" : /^uz-cyrl/.test(t) ? "uz-Cyrl" : /^ckb|^ku-arab/.test(t) ? "ku-Arab" : /^ku\b/.test(t) ? "ku-Latn" : t.slice(0, 2); // Punjabi in Shahmukhi, else Gurmukhi; Uzbek in Cyrillic, else Latin; Kurdish: Sorani (ckb), else Kurmanji
+        var c = /^pnb|^pa-(arab|pk)/.test(t) ? "pnb" : /^uz-cyrl/.test(t) ? "uz-Cyrl" : /^ckb|^ku-arab/.test(t) ? "ku-Arab" : /^ku\b/.test(t) ? "ku-Latn" : /^az/.test(t) ? "az-Latn" : /^kk/.test(t) ? "kk-Cyrl" : t.slice(0, 2); // Punjabi in Shahmukhi, else Gurmukhi; Uzbek in Cyrillic, else Latin; Kurdish: Sorani (ckb), else Kurmanji; Azerbaijani (Latin) and Kazakh (Cyrillic) by their app codes
         if (langs.indexOf(c) >= 0) pick = c;
       }
     }

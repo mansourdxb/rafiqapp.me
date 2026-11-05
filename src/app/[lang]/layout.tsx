@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
-import { Almarai, Noto_Sans, Noto_Sans_Arabic, Noto_Sans_Bengali, Noto_Sans_Devanagari, Noto_Sans_Gurmukhi, Noto_Sans_Malayalam, Roboto } from "next/font/google";
+import { Almarai, Noto_Sans, Noto_Sans_Arabic, Noto_Sans_Bengali, Noto_Sans_Devanagari, Noto_Sans_Ethiopic, Noto_Sans_Gujarati, Noto_Sans_Gurmukhi, Noto_Sans_Malayalam, Noto_Sans_Myanmar, Noto_Sans_Tamil, Roboto } from "next/font/google";
 import "../globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -24,6 +24,11 @@ const notoBeng = Noto_Sans_Bengali({ subsets: ["bengali"], weight: ["400", "500"
 const notoGuru = Noto_Sans_Gurmukhi({ subsets: ["gurmukhi"], weight: ["400", "500", "700", "900"], variable: "--font-noto-guru", display: "swap", preload: false });
 // Malayalam — Roboto has no Malayalam letters (used only on Malayalam pages, globals.css).
 const notoMlym = Noto_Sans_Malayalam({ subsets: ["malayalam"], weight: ["400", "500", "700", "900"], variable: "--font-noto-mlym", display: "swap", preload: false });
+// Amharic (Ethiopic), Tamil, Gujarati, Burmese (Myanmar) — Roboto has none of these scripts (used only on their own pages, globals.css).
+const notoEthi = Noto_Sans_Ethiopic({ subsets: ["ethiopic"], weight: ["400", "500", "700", "900"], variable: "--font-noto-ethi", display: "swap", preload: false });
+const notoTaml = Noto_Sans_Tamil({ subsets: ["tamil"], weight: ["400", "500", "700", "900"], variable: "--font-noto-taml", display: "swap", preload: false });
+const notoGujr = Noto_Sans_Gujarati({ subsets: ["gujarati"], weight: ["400", "500", "700", "900"], variable: "--font-noto-gujr", display: "swap", preload: false });
+const notoMymr = Noto_Sans_Myanmar({ subsets: ["myanmar"], weight: ["400", "500", "700", "900"], variable: "--font-noto-mymr", display: "swap", preload: false });
 // Hausa — Roboto has no hooked letters (ɓ ɗ ƙ ƴ), so Hausa pages are set in Noto Sans, which has them.
 const notoLatin = Noto_Sans({ subsets: ["latin", "latin-ext"], weight: ["400", "500", "700", "900"], variable: "--font-noto-latin", display: "swap", preload: false });
 
@@ -73,7 +78,7 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
   if (!isLocale(lang)) notFound();
   const l = lang as Locale;
   return (
-    <html lang={langTag(l)} dir={dir(l)} className={`${roboto.variable} ${robotoCyrExt.variable} ${almarai.variable} ${notoAr.variable} ${notoDeva.variable} ${notoBeng.variable} ${notoGuru.variable} ${notoMlym.variable} ${notoLatin.variable}`} suppressHydrationWarning>
+    <html lang={langTag(l)} dir={dir(l)} className={`${roboto.variable} ${robotoCyrExt.variable} ${almarai.variable} ${notoAr.variable} ${notoDeva.variable} ${notoBeng.variable} ${notoGuru.variable} ${notoMlym.variable} ${notoEthi.variable} ${notoTaml.variable} ${notoGujr.variable} ${notoMymr.variable} ${notoLatin.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>

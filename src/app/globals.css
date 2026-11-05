@@ -88,6 +88,29 @@ html[lang="ml"] body {
 html[lang="ml"] nav > div > ul { column-gap: 0.5rem; }
 html[lang="ml"] nav > div > ul > li > a, html[lang="ml"] nav > div > ul > li > button { font-size: 12px; }
 
+/* Azerbaijani (ə) and Oromo (ʼ) are set in Noto Sans for the whole page, like Hausa; Kazakh's ә ғ қ ң ө ұ ү һ і come from Roboto's cyrillic-ext subset, like Uzbek Cyrillic. */
+html[lang="az-Latn"] body, html[lang="om"] body {
+  font-family: var(--font-noto-latin), var(--font-roboto), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+}
+html[lang="kk-Cyrl"] body {
+  font-family: var(--font-roboto), var(--font-roboto-cyrext), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Amharic, Tamil, Gujarati, Burmese: Latin from Roboto, the script from its Noto Sans. */
+html[lang="am"] body {
+  font-family: var(--font-roboto), var(--font-noto-ethi), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+}
+html[lang="ta"] body {
+  font-family: var(--font-roboto), var(--font-noto-taml), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+}
+html[lang="gu"] body {
+  font-family: var(--font-roboto), var(--font-noto-gujr), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+}
+html[lang="my"] body {
+  font-family: var(--font-roboto), var(--font-noto-mymr), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.75; /* Burmese stacks tall marks above and below the line */
+}
+
 /* Uzbek in Cyrillic: ғ қ ҳ from Roboto's cyrillic-ext subset, the rest from Roboto. */
 html[lang="uz-Cyrl"] body {
   font-family: var(--font-roboto), var(--font-roboto-cyrext), var(--font-almarai), var(--font-noto-ar), ui-sans-serif, system-ui, sans-serif;
