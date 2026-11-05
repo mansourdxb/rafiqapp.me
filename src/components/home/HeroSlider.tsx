@@ -5,7 +5,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import type { Home } from "@/i18n/messages/home";
 
 /** Four slides that rotate like the reference hero: headline with an orange phrase, text, stores, art. */
-export function HeroSlider({ slides, getApp, getAppHref, badges, art }: { slides: Home["hero"]["slides"]; getApp: string; getAppHref: string; badges: ReactNode; art: ReactNode[] }) {
+export function HeroSlider({ slides, getApp, getAppHref, badges, art }: { slides: Home["hero"]["slides"][number][]; getApp: string; getAppHref: string; badges: ReactNode; art: ReactNode[] }) {
   const [i, setI] = useState(0);
   const [paused, setPaused] = useState(false);
   // only the first slide's phone screens load with the page; the others mount a moment later

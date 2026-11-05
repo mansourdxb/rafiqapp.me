@@ -4,6 +4,7 @@ import { Icon, type IconName } from "@/components/ui/Icon";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 import { localePath, type Locale } from "@/i18n/config";
 import { common } from "@/i18n/messages/common";
+import { devices } from "@/i18n/messages/devices";
 import { home } from "@/i18n/messages/home";
 import { localDigits } from "@/lib/digits";
 import { STORES } from "@/lib/stores";
@@ -11,7 +12,7 @@ import { REVIEWS } from "@/data/reviews";
 import { ContactForm } from "./ContactForm";
 import { HeroArt } from "./HeroArt";
 import { HeroSlider } from "./HeroSlider";
-import { HomeDevices } from "./HomeDevices";
+import { HeroCarArt, HeroWatchArt } from "./HeroDevicesArt";
 import { HomeArticles } from "./HomeArticles";
 import { HomePrayer } from "./HomePrayer";
 
@@ -43,6 +44,7 @@ function Arrow() {
 export function HomeView({ lang }: { lang: Locale }) {
   const t = home[lang];
   const c = common[lang];
+  const dv = devices[lang];
   const shot = (n: string) => `/screens/${lang}/${n}.webp`;
   const download = `${localePath(lang)}#download`;
 
@@ -52,13 +54,21 @@ export function HomeView({ lang }: { lang: Locale }) {
       <section id="download" className="relative scroll-mt-24 overflow-hidden bg-white pb-6 pt-8 lg:pt-14 dark:bg-canvas">
         <div className="mx-auto max-w-6xl px-4">
           <HeroSlider
-            slides={t.hero.slides}
+            slides={[
+              ...t.hero.slides,
+              { before: "", highlight: dv.car, after: "", body: `${dv.text.carPlay} ${dv.text.androidAuto}` },
+              { before: "", highlight: dv.wrist, after: "", body: `${dv.text.appleWatch} ${dv.text.huaweiWatch}` },
+            ]}
             getApp={t.hero.getApp}
             getAppHref={download}
             badges={<StoreBadges lang={lang} className="justify-center lg:justify-start" />}
-            art={SLIDE_SHOTS.map(([f, l, r], k) => (
-              <HeroArt key={k} front={shot(f)} left={shot(l)} right={shot(r)} alt={c.siteName} priority={k === 0} />
-            ))}
+            art={[
+              ...SLIDE_SHOTS.map(([f, l, r], k) => (
+                <HeroArt key={k} front={shot(f)} left={shot(l)} right={shot(r)} alt={c.siteName} priority={k === 0} />
+              )),
+              <HeroCarArt key="car" t={dv} />,
+              <HeroWatchArt key="watch" lang={lang} t={dv} siteName={c.siteName} />,
+            ]}
           />
         </div>
       </section>
@@ -97,8 +107,6 @@ export function HomeView({ lang }: { lang: Locale }) {
           <StoreBadges lang={lang} className="mt-5" />
         </div>
       </section>
-
-      <HomeDevices lang={lang} siteName={c.siteName} />
 
       {/* stars band + about */}
       <section className="relative bg-white dark:bg-canvas">
