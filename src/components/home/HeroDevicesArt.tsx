@@ -1,4 +1,5 @@
-import { AppleWatchFrame, Dashboard, FILE, NO_APPLE_WATCH_SHOT, RoundWatchFrame } from "./HomeDevices";
+import Image from "next/image";
+import { AppleWatchFrame, FILE, NO_APPLE_WATCH_SHOT, RoundWatchFrame } from "./HomeDevices";
 import type { Locale } from "@/i18n/config";
 import type { Devices } from "@/i18n/messages/devices";
 
@@ -16,22 +17,32 @@ function Blob() {
   );
 }
 
-/** Hero slide: CarPlay and Android Auto dashboards. */
-export function HeroCarArt({ t }: { t: Devices }) {
+/** A car head-unit display: dark bezel around the screen. */
+function CarScreenFrame({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="relative aspect-[800/1280] rounded-[7%/4.4%] bg-gradient-to-br from-[#5b606b] via-[#202329] to-[#454a53] p-[3%] shadow-[0_24px_50px_-14px_rgba(20,35,78,0.55)]">
+      <div className="relative h-full w-full overflow-hidden rounded-[5%/3.2%] bg-black ring-[1.5px] ring-black">
+        <Image src={src} alt={alt} fill sizes="(max-width: 1024px) 40vw, 220px" className="object-cover" />
+        <span className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent from-55% to-white/10" aria-hidden />
+      </div>
+    </div>
+  );
+}
+
+/** Hero slide: the app's real Android Auto screens (Android Automotive emulator), fanned like the phone art. */
+export function HeroCarArt({ t, siteName }: { t: Devices; siteName: string }) {
+  const alt = `${t.names.androidAuto} — ${siteName}`;
   return (
     <div className="relative mx-auto mb-2 aspect-[1.2] w-full max-w-[580px]">
       <Blob />
-      <div className="absolute inset-x-[8%] top-[18%] flex flex-col gap-[7%]">
-        {(["carPlay", "androidAuto"] as const).map((p) => (
-          <div key={p} className="flex flex-col items-center rounded-2xl bg-white px-4 pb-3 pt-3 text-center shadow-[0_10px_30px_-12px_rgba(20,35,78,0.35)] dark:bg-canvas">
-            <div className="w-[48%]">
-              <Dashboard kind={p} />
-            </div>
-            <p className="mt-1 text-sm font-bold text-section dark:text-primary-light" dir="auto">
-              {t.names[p]}
-            </p>
-          </div>
-        ))}
+      <div className="absolute left-[8%] top-[17%] w-[28%] -rotate-[7deg]">
+        <CarScreenFrame src="/devices/car/android-auto-1.webp" alt="" />
+      </div>
+      <div className="absolute right-[8%] top-[17%] w-[28%] rotate-[7deg]">
+        <CarScreenFrame src="/devices/car/android-auto-3.webp" alt="" />
+      </div>
+      <div className="absolute left-1/2 top-[3%] w-[36%] -translate-x-1/2">
+        <CarScreenFrame src="/devices/car/android-auto-2.webp" alt={alt} />
       </div>
     </div>
   );

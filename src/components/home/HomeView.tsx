@@ -66,7 +66,7 @@ export function HomeView({ lang }: { lang: Locale }) {
               ...SLIDE_SHOTS.map(([f, l, r], k) => (
                 <HeroArt key={k} front={shot(f)} left={shot(l)} right={shot(r)} alt={c.siteName} priority={k === 0} />
               )),
-              <HeroCarArt key="car" t={dv} />,
+              <HeroCarArt key="car" t={dv} siteName={c.siteName} />,
               <HeroWatchArt key="watch" lang={lang} t={dv} siteName={c.siteName} />,
             ]}
           />
