@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isLocale } from "@/i18n/config";
-import { alternates } from "@/i18n/metadata";
+import { alternates, social } from "@/i18n/metadata";
 import { tasbeeh } from "@/i18n/messages/tasbeeh";
 import { TASBEEH } from "@/lib/athkar/data";
 import { Tasbeeh, type Preset } from "@/components/tasbeeh/Tasbeeh";
@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/tasbeeh">)
   const { lang } = await params;
   if (!isLocale(lang)) return {};
   const t = tasbeeh[lang];
-  return { title: t.title, description: t.description, alternates: alternates(lang, "/tasbeeh/") };
+  return { title: t.title, description: t.description, alternates: alternates(lang, "/tasbeeh/"), ...social(lang, "/tasbeeh/", t.title, t.description) };
 }
 
 export default async function TasbeehPage({ params }: PageProps<"/[lang]/tasbeeh">) {

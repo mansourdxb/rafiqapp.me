@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { dir, isLocale, localePath, locales } from "@/i18n/config";
-import { alternates } from "@/i18n/metadata";
+import { alternates, social } from "@/i18n/metadata";
 import { names } from "@/i18n/messages/names";
 import { NAMES, nameText } from "@/lib/athkar/data";
 import { localDigits } from "@/lib/digits";
@@ -20,7 +20,8 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/names/[n]"
   if (!isLocale(lang) || !x) return {};
   const { meaning, desc } = nameText(lang, x);
   const title = lang === "ar" ? x.ar : `${x.tl} (${x.ar}) — ${meaning}`;
-  return { title, description: desc.slice(0, 200), alternates: alternates(lang, `/names/${n}/`) };
+  const description = desc.slice(0, 200);
+  return { title, description, alternates: alternates(lang, `/names/${n}/`), ...social(lang, `/names/${n}/`, title, description) };
 }
 
 export default async function NamePage({ params }: PageProps<"/[lang]/names/[n]">) {

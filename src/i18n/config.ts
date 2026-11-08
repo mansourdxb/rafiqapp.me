@@ -121,6 +121,10 @@ export const ogLocale: Record<Locale, string> = {
 const TAGS: Partial<Record<Locale, string>> = { zh: "zh-CN", pa: "pa-Guru", pnb: "pa-Arab", "ku-Arab": "ckb", "ku-Latn": "ku" };
 export const langTag = (l: Locale) => TAGS[l] ?? l;
 
+/** hreflang value. Google accepts only ISO 639-1 languages (plus an ISO 15924 script / ISO 3166-1 region), so Kurdish
+ * can't use "ckb": it is "ku" with its script, matching the URL segments. Everything else is the same as langTag. */
+export const hreflangTag = (l: Locale) => (l === "ku-Arab" || l === "ku-Latn" ? l : langTag(l));
+
 /** Locale for Intl: the site code, except Kurdish — Intl reads "ku-Arab" as Kurmanji, so Sorani asks for "ckb" —
  * and Azerbaijani / Kazakh, which Intl knows without the script ("az", "kk"). */
 export const intlTag = (l: Locale) => (l === "ku-Arab" ? "ckb" : l === "ku-Latn" ? "ku" : l === "az-Latn" ? "az" : l === "kk-Cyrl" ? "kk" : l);

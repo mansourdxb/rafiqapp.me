@@ -8,7 +8,7 @@ import { isLocale, localePath, locales } from "@/i18n/config";
 import { appT } from "@/i18n/app";
 import { common } from "@/i18n/messages/common";
 import { fill, hadith } from "@/i18n/messages/hadith";
-import { alternates } from "@/i18n/metadata";
+import { alternates, social } from "@/i18n/metadata";
 import { localDigits } from "@/lib/digits";
 import { BOOKS, bookName, getBook } from "@/lib/hadith/books";
 
@@ -22,11 +22,8 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/hadith/[bo
   const b = getBook(book);
   if (!isLocale(lang) || !b) return {};
   const name = bookName(lang, b.key);
-  return {
-    title: name,
-    description: fill(hadith[lang].bookMeta, { book: name, n: localDigits(lang, b.count), k: localDigits(lang, b.chapters.length) }),
-    alternates: alternates(lang, `/hadith/${b.key}/`),
-  };
+  const description = fill(hadith[lang].bookMeta, { book: name, n: localDigits(lang, b.count), k: localDigits(lang, b.chapters.length) });
+  return { title: name, description, alternates: alternates(lang, `/hadith/${b.key}/`), ...social(lang, `/hadith/${b.key}/`, name, description) };
 }
 
 export default async function BookPage({ params }: PageProps<"/[lang]/hadith/[book]">) {
