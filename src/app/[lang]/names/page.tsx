@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isLocale } from "@/i18n/config";
-import { alternates } from "@/i18n/metadata";
+import { alternates, social } from "@/i18n/metadata";
 import { names, NAMES_VERSE } from "@/i18n/messages/names";
 import { NAMES, nameText } from "@/lib/athkar/data";
 import { NamesGrid } from "@/components/names/NamesGrid";
@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/names">): 
   const { lang } = await params;
   if (!isLocale(lang)) return {};
   const t = names[lang];
-  return { title: t.title, description: t.description, alternates: alternates(lang, "/names/") };
+  return { title: t.title, description: t.description, alternates: alternates(lang, "/names/"), ...social(lang, "/names/", t.title, t.description) };
 }
 
 export default async function NamesPage({ params }: PageProps<"/[lang]/names">) {

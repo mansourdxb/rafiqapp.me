@@ -6,9 +6,10 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { PlayerRoot } from "@/components/player/PlayerRoot";
 import { DownloadPrompt } from "@/components/layout/DownloadPrompt";
-import { dir, isLocale, langTag, locales, ogLocale, SITE_URL, type Locale } from "@/i18n/config";
+import { dir, isLocale, langTag, locales, SITE_URL, type Locale } from "@/i18n/config";
 import { common } from "@/i18n/messages/common";
-import { alternates } from "@/i18n/metadata";
+import { alternates, social } from "@/i18n/metadata";
+import { siteJsonLd } from "@/lib/jsonld";
 
 const roboto = Roboto({ subsets: ["latin", "cyrillic"], weight: ["400", "500", "700", "900"], variable: "--font-roboto", display: "swap" });
 // Uzbek Cyrillic letters ғ қ ҳ are in Roboto's cyrillic-ext subset (used only on uz-Cyrl pages, globals.css).
@@ -47,16 +48,9 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
     title: { default: title, template: `%s | ${t.siteName}` },
     description: t.description,
     alternates: alternates(lang, "/"),
-    openGraph: {
-      title,
-      description: t.description,
-      type: "website",
-      locale: ogLocale[lang],
-      siteName: t.siteName,
-      images: [{ url: "/og-image.png", width: 1200, height: 630 }],
-    },
-    twitter: { card: "summary_large_image", title, description: t.description, images: ["/og-image.png"] },
+    ...social(lang, "/", title, t.description),
     icons: { icon: "/logo.png", apple: "/logo.png" },
+    manifest: "/manifest.webmanifest",
     other: { "apple-itunes-app": "app-id=6759387456" },
   };
 }
@@ -81,6 +75,7 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
     <html lang={langTag(l)} dir={dir(l)} className={`${roboto.variable} ${robotoCyrExt.variable} ${almarai.variable} ${notoAr.variable} ${notoDeva.variable} ${notoBeng.variable} ${notoGuru.variable} ${notoMlym.variable} ${notoEthi.variable} ${notoTaml.variable} ${notoGujr.variable} ${notoMymr.variable} ${notoLatin.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }} />
       </head>
       <body className="min-h-dvh font-sans antialiased">
         <PlayerRoot lang={l}>

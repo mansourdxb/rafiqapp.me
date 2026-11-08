@@ -46,7 +46,7 @@ export type Common = {
 };
 
 const en: Common = {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "Your companion in worship",
   description:
     "Read the Holy Qur'an in the Madinah Mushaf, the nine hadith books, morning and evening adhkar, prayer times, Qibla and tasbeeh — free, in your language.",
@@ -73,7 +73,7 @@ const en: Common = {
   menu: "Menu",
   close: "Close",
   getApp: "Get the app",
-  getAppNow: "Get Rafiq Al-Muslim now!",
+  getAppNow: "Get Rafiq Al Muslim now!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",

@@ -4,13 +4,15 @@ import { Suspense } from "react";
 import { ListenHub, ListenHubRouted } from "@/components/player/ListenHub";
 import { isLocale } from "@/i18n/config";
 import { appT } from "@/i18n/app";
-import { alternates } from "@/i18n/metadata";
+import { alternates, social } from "@/i18n/metadata";
 import { player } from "@/i18n/messages/player";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/quran/listen">): Promise<Metadata> {
   const { lang } = await params;
   if (!isLocale(lang)) return {};
-  return { title: appT(lang, "qaudio.title"), description: player[lang].description, alternates: alternates(lang, "/quran/listen/") };
+  const title = appT(lang, "qaudio.title");
+  const description = player[lang].description;
+  return { title, description, alternates: alternates(lang, "/quran/listen/"), ...social(lang, "/quran/listen/", title, description) };
 }
 
 // One page per language: a reciter's surahs are ?r=<key> on the same page (no page per reciter).

@@ -2,14 +2,16 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isLocale } from "@/i18n/config";
 import { appT } from "@/i18n/app";
-import { alternates } from "@/i18n/metadata";
+import { alternates, social } from "@/i18n/metadata";
 import { imsakiyaMsg } from "@/i18n/messages/imsakiya";
 import { ImsakiyaView } from "@/components/imsakiya/ImsakiyaView";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/imsakiya">): Promise<Metadata> {
   const { lang } = await params;
   if (!isLocale(lang)) return {};
-  return { title: appT(lang, "more.imsakiya"), description: imsakiyaMsg[lang].description, alternates: alternates(lang, "/imsakiya/") };
+  const title = appT(lang, "more.imsakiya");
+  const description = imsakiyaMsg[lang].description;
+  return { title, description, alternates: alternates(lang, "/imsakiya/"), ...social(lang, "/imsakiya/", title, description) };
 }
 
 export default async function Page({ params }: PageProps<"/[lang]/imsakiya">) {

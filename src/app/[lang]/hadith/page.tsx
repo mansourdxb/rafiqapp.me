@@ -6,7 +6,7 @@ import { isLocale } from "@/i18n/config";
 import { appT } from "@/i18n/app";
 import { common } from "@/i18n/messages/common";
 import { hadith } from "@/i18n/messages/hadith";
-import { alternates } from "@/i18n/metadata";
+import { alternates, social } from "@/i18n/metadata";
 import { BOOKS, nameMap } from "@/lib/hadith/books";
 import { hadithLabels } from "@/lib/hadith/labels";
 
@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/hadith">):
   const { lang } = await params;
   if (!isLocale(lang)) return {};
   const h = hadith[lang];
-  return { title: h.metaTitle, description: h.metaDescription, alternates: alternates(lang, "/hadith/") };
+  return { title: h.metaTitle, description: h.metaDescription, alternates: alternates(lang, "/hadith/"), ...social(lang, "/hadith/", h.metaTitle, h.metaDescription) };
 }
 
 export default async function HadithPage({ params }: PageProps<"/[lang]/hadith">) {

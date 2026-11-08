@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { isLocale, locales, ogLocale, SITE_URL, type Locale } from "@/i18n/config";
-import { alternates } from "@/i18n/metadata";
+import { isLocale, langTag, locales, SITE_URL, type Locale } from "@/i18n/config";
+import { orgRef } from "@/lib/jsonld";
+import { alternates, social } from "@/i18n/metadata";
 import { common } from "@/i18n/messages/common";
 import { articles as msgs, fill } from "@/i18n/messages/articles";
 import { localDigits } from "@/lib/digits";
@@ -44,17 +45,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/articles/[
     title: `${a.t} — ${section}`,
     description: a.x,
     alternates: alternates(lang, `/articles/${a.c}/${a.s}/`),
-    openGraph: {
-      title: a.t,
-      description: a.x,
-      type: "article",
-      section,
-      locale: ogLocale[lang],
-      siteName: common[lang].siteName,
-      url: `${SITE_URL}${articlePath(lang, a)}`,
-      images: [{ url: "/og-image.png", width: 1200, height: 630 }],
-    },
-    twitter: { card: "summary_large_image", title: a.t, description: a.x, images: ["/og-image.png"] },
+    ...social(lang, `/articles/${a.c}/${a.s}/`, a.t, a.x, { type: "article", section }),
   };
 }
 
@@ -75,10 +66,10 @@ export default async function ArticlePage({ params }: PageProps<"/[lang]/article
     "@type": "Article",
     headline: a.t,
     description: a.x,
-    inLanguage: lang,
+    inLanguage: langTag(lang),
     articleSection: name,
     url: `${SITE_URL}${href}`,
-    publisher: { "@type": "Organization", name: common[lang].siteName, logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` } },
+    publisher: orgRef,
   };
 
   return (

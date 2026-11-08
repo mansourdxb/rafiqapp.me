@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isLocale } from "@/i18n/config";
 import { live } from "@/i18n/messages/live";
-import { alternates } from "@/i18n/metadata";
+import { alternates, social } from "@/i18n/metadata";
 import { Icon } from "@/components/ui/Icon";
 import { PageHeader } from "@/components/ui/PageHeader";
 
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/live">): P
   const { lang } = await params;
   if (!isLocale(lang)) return {};
   const t = live[lang];
-  return { title: t.title, description: t.subtitle, alternates: alternates(lang, "/live/") };
+  return { title: t.title, description: t.subtitle, alternates: alternates(lang, "/live/"), ...social(lang, "/live/", t.title, t.subtitle) };
 }
 
 export default async function LivePage({ params }: PageProps<"/[lang]/live">) {

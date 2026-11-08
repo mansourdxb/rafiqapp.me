@@ -113,12 +113,12 @@ const ms: Home = {
   strip: { tagline: "Teman anda dalam ibadah", sub: "Al-Quran · Hadis · Azkar · Solat — percuma, tanpa iklan" },
   hero: {
     slides: [
-      { before: "Ketahui ", highlight: "waktu solat", after: " harian dan bulanan mengikut lokasi anda dengan tepat", body: "Waktu solat yang tepat untuk bandar anda, dengan azan setiap waktu — bersama Rafiq Al-Muslim." },
+      { before: "Ketahui ", highlight: "waktu solat", after: " harian dan bulanan mengikut lokasi anda dengan tepat", body: "Waktu solat yang tepat untuk bandar anda, dengan azan setiap waktu — bersama Rafiq Al Muslim." },
       { before: "Terokai ", highlight: "zikir dan doa", after: " yang sahih dari Al-Quran dan Sunnah yang diperlukan setiap Muslim", body: "Zikir pagi dan petang, Hisnul Muslim dan tasbih, dengan audio dan pembilang." },
       { before: "Baca Al-Quran dengan ", highlight: "Mushaf Madinah", after: ", bersama tafsir, terjemahan dan bacaan", body: "Setiap halaman seperti cetakan Madinah, dengan makna ayat dalam bahasa anda." },
       { before: "Cari ", highlight: "arah kiblat", after: " dan dengar azan di mana sahaja anda berada", body: "Kompas, matahari dan bulan serta peta — dan azan skrin penuh setiap waktu solat." },
     ],
-    getApp: "Dapatkan Rafiq Al-Muslim sekarang",
+    getApp: "Dapatkan Rafiq Al Muslim sekarang",
   },
   prayer: { title: "Waktu solat", more: "Lagi", method: "Kaedah", next: "Solat seterusnya" },
   articles: { recent: "Artikel terkini", mostRead: "Paling banyak dibaca", viewMore: "Lihat lagi" },
@@ -130,7 +130,7 @@ const ms: Home = {
   },
   about: {
     title: "Semua keperluan seorang Muslim dalam satu aplikasi percuma",
-    body: "Rafiq Al-Muslim mengingatkan anda waktu solat, membantu anda berzikir, menghubungkan anda dengan Al-Quran dan mendorong anda melakukan lebih banyak kebaikan. Teman setiap Muslim.",
+    body: "Rafiq Al Muslim mengingatkan anda waktu solat, membantu anda berzikir, menghubungkan anda dengan Al-Quran dan mendorong anda melakukan lebih banyak kebaikan. Teman setiap Muslim.",
     stats: [
       { value: "9", label: "Kitab hadis" },
       { value: "32", label: "Bahasa" },
@@ -139,7 +139,7 @@ const ms: Home = {
   },
   reviews: {
     title: "Pendapat pengguna kami",
-    body: "Rafiq Al-Muslim mengingatkan waktu solat, membantu berzikir dan menghubungkan anda dengan Al-Quran.",
+    body: "Rafiq Al Muslim mengingatkan waktu solat, membantu berzikir dan menghubungkan anda dengan Al-Quran.",
     write: "Tulis ulasan anda",
   },
   contact: { title: "Hubungi kami", body: "Ada soalan, cadangan atau masalah? Tulis kepada kami — kami membaca setiap mesej.", message: "Kami gembira mendengar daripada anda", send: "Hantar" },
@@ -149,12 +149,12 @@ const tr: Home = {
   strip: { tagline: "İbadette yol arkadaşınız", sub: "Kur'an · Hadis · Zikir · Namaz — ücretsiz, reklamsız" },
   hero: {
     slides: [
-      { before: "Bulunduğunuz yere göre günlük ve aylık ", highlight: "namaz vakitlerini", after: " tam doğrulukla öğrenin", body: "Şehrinizin doğru namaz vakitleri ve her namazda ezan — Rafiq Al-Muslim ile." },
+      { before: "Bulunduğunuz yere göre günlük ve aylık ", highlight: "namaz vakitlerini", after: " tam doğrulukla öğrenin", body: "Şehrinizin doğru namaz vakitleri ve her namazda ezan — Rafiq Al Muslim ile." },
       { before: "Her Müslümanın ihtiyaç duyduğu, Kur'an ve Sünnet'ten sahih ", highlight: "zikir ve dualar", after: "", body: "Sabah ve akşam zikirleri, Hisnü'l-Müslim ve tesbih — sesli ve sayaçlı." },
       { before: "Kur'an-ı Kerim'i ", highlight: "Medine Mushafı", after: " ile okuyun; tefsir, meal ve tilavetle", body: "Her sayfa Medine baskısındaki gibi, ayetlerin anlamı kendi dilinizde." },
       { before: "Nerede olursanız olun ", highlight: "kıbleyi", after: " bulun ve ezanı dinleyin", body: "Pusula, güneş ve ay, harita — ve her namaz vaktinde tam ekran ezan." },
     ],
-    getApp: "Rafiq Al-Muslim'i hemen indirin",
+    getApp: "Rafiq Al Muslim'i hemen indirin",
   },
   prayer: { title: "Namaz vakitleri", more: "Daha fazla", method: "Hesaplama yöntemi", next: "Sıradaki namaz" },
   articles: { recent: "Son yazılar", mostRead: "En çok okunanlar", viewMore: "Daha fazla" },
@@ -166,7 +166,7 @@ const tr: Home = {
   },
   about: {
     title: "Bir Müslümanın ihtiyacı olan her şey tek bir ücretsiz uygulamada",
-    body: "Rafiq Al-Muslim size namaz vakitlerini hatırlatır, Allah'ı anmanıza yardım eder, sizi Kur'an'la buluşturur ve daha fazla iyiliğe teşvik eder. Her Müslümanın yol arkadaşı.",
+    body: "Rafiq Al Muslim size namaz vakitlerini hatırlatır, Allah'ı anmanıza yardım eder, sizi Kur'an'la buluşturur ve daha fazla iyiliğe teşvik eder. Her Müslümanın yol arkadaşı.",
     stats: [
       { value: "9", label: "Hadis kitabı" },
       { value: "32", label: "Dil" },
@@ -175,7 +175,7 @@ const tr: Home = {
   },
   reviews: {
     title: "Kullanıcılarımızın görüşleri",
-    body: "Rafiq Al-Muslim namaz vakitlerini hatırlatır, zikre yardım eder ve sizi Kur'an'la buluşturur.",
+    body: "Rafiq Al Muslim namaz vakitlerini hatırlatır, zikre yardım eder ve sizi Kur'an'la buluşturur.",
     write: "Yorumunuzu yazın",
   },
   contact: { title: "Bize ulaşın", body: "Sorunuz, öneriniz ya da bir sorununuz mu var? Bize yazın — her mesajı okuyoruz.", message: "Sizden haber almaktan mutluluk duyarız", send: "Gönder" },
@@ -185,12 +185,12 @@ const id: Home = {
   strip: { tagline: "Teman Anda dalam ibadah", sub: "Al-Quran · Hadis · Azkar · Shalat — gratis, tanpa iklan" },
   hero: {
     slides: [
-      { before: "Ketahui ", highlight: "jadwal shalat", after: " harian dan bulanan sesuai lokasi Anda dengan akurat", body: "Jadwal shalat yang tepat untuk kota Anda, dengan azan di setiap waktu — bersama Rafiq Al-Muslim." },
+      { before: "Ketahui ", highlight: "jadwal shalat", after: " harian dan bulanan sesuai lokasi Anda dengan akurat", body: "Jadwal shalat yang tepat untuk kota Anda, dengan azan di setiap waktu — bersama Rafiq Al Muslim." },
       { before: "Jelajahi ", highlight: "zikir dan doa", after: " sahih dari Al-Quran dan Sunnah yang dibutuhkan setiap Muslim", body: "Zikir pagi dan petang, Hisnul Muslim dan tasbih, dengan audio dan penghitung." },
       { before: "Baca Al-Quran dengan ", highlight: "Mushaf Madinah", after: ", lengkap dengan tafsir, terjemahan dan murattal", body: "Setiap halaman seperti cetakan Madinah, dengan makna ayat dalam bahasa Anda." },
       { before: "Temukan ", highlight: "arah kiblat", after: " dan dengarkan azan di mana pun Anda berada", body: "Kompas, matahari dan bulan serta peta — dan azan layar penuh di setiap waktu shalat." },
     ],
-    getApp: "Unduh Rafiq Al-Muslim sekarang",
+    getApp: "Unduh Rafiq Al Muslim sekarang",
   },
   prayer: { title: "Jadwal shalat", more: "Selengkapnya", method: "Metode", next: "Shalat berikutnya" },
   articles: { recent: "Artikel terbaru", mostRead: "Paling banyak dibaca", viewMore: "Lihat lainnya" },
@@ -202,7 +202,7 @@ const id: Home = {
   },
   about: {
     title: "Semua kebutuhan seorang Muslim dalam satu aplikasi gratis",
-    body: "Rafiq Al-Muslim mengingatkan Anda waktu shalat, membantu Anda berzikir, menghubungkan Anda dengan Al-Quran dan mendorong Anda berbuat lebih banyak kebaikan. Teman setiap Muslim.",
+    body: "Rafiq Al Muslim mengingatkan Anda waktu shalat, membantu Anda berzikir, menghubungkan Anda dengan Al-Quran dan mendorong Anda berbuat lebih banyak kebaikan. Teman setiap Muslim.",
     stats: [
       { value: "9", label: "Kitab hadis" },
       { value: "32", label: "Bahasa" },
@@ -211,7 +211,7 @@ const id: Home = {
   },
   reviews: {
     title: "Pendapat pengguna kami",
-    body: "Rafiq Al-Muslim mengingatkan waktu shalat, membantu berzikir dan menghubungkan Anda dengan Al-Quran.",
+    body: "Rafiq Al Muslim mengingatkan waktu shalat, membantu berzikir dan menghubungkan Anda dengan Al-Quran.",
     write: "Tulis ulasan Anda",
   },
   contact: { title: "Hubungi kami", body: "Ada pertanyaan, saran atau masalah? Kirimi kami pesan — kami membaca setiap pesan.", message: "Kami senang mendengar dari Anda", send: "Kirim" },
@@ -293,12 +293,12 @@ const ha: Home = {
   strip: { tagline: "Abokinka a cikin ibada", sub: "Alƙur'ani · Hadisi · Azkar · Sallah — kyauta, babu talla" },
   hero: {
     slides: [
-      { before: "San ", highlight: "lokutan sallah", after: " bisa wurin da kake, na yini da na wata, cikin cikakken daidaito", body: "San ainihin lokutan sallah na garinku, tare da kiran sallah a kowace sallah — tare da Rafiq Al-Muslim." },
+      { before: "San ", highlight: "lokutan sallah", after: " bisa wurin da kake, na yini da na wata, cikin cikakken daidaito", body: "San ainihin lokutan sallah na garinku, tare da kiran sallah a kowace sallah — tare da Rafiq Al Muslim." },
       { before: "Duba ingantattun ", highlight: "azkar da addu'o'i", after: " daga Alƙur'ani da Sunna waɗanda kowane Musulmi yake buƙata", body: "Azkar na safe da na yamma, Hisnul Muslim da tasbihi, tare da sauti da mai ƙirgawa." },
       { before: "Karanta Alƙur'ani a ", highlight: "Mushafin Madina", after: ", tare da tafsiri, fassara da karatu", body: "Kowane shafi kamar yadda aka buga shi a Madina, tare da ma'anonin ayoyi a harshenka." },
       { before: "Gano ", highlight: "alƙibla", after: " kuma ka ji kiran sallah a duk inda kake", body: "Kamfas, rana da wata da taswira — da kiran sallah mai cike da allo a kowane lokacin sallah." },
     ],
-    getApp: "Sauke Rafiq Al-Muslim yanzu",
+    getApp: "Sauke Rafiq Al Muslim yanzu",
   },
   prayer: { title: "Lokacin sallah", more: "Ƙari", method: "Hanyar lissafi", next: "Sallah mai zuwa" },
   articles: { recent: "Sababbin maƙaloli", mostRead: "Waɗanda aka fi karantawa", viewMore: "Duba ƙari" },
@@ -310,7 +310,7 @@ const ha: Home = {
   },
   about: {
     title: "Duk abin da Musulmi yake buƙata, a cikin manhaja ɗaya kyauta",
-    body: "Rafiq Al-Muslim yana tunatar da kai lokutan sallah, yana taimaka maka wajen ambaton Allah, yana haɗa ka da Alƙur'ani kuma yana ƙarfafa ka ka ƙara ayyukan alheri. Abokin kowane Musulmi.",
+    body: "Rafiq Al Muslim yana tunatar da kai lokutan sallah, yana taimaka maka wajen ambaton Allah, yana haɗa ka da Alƙur'ani kuma yana ƙarfafa ka ka ƙara ayyukan alheri. Abokin kowane Musulmi.",
     stats: [
       { value: "9", label: "Littattafan hadisi" },
       { value: "32", label: "Harsuna" },
@@ -319,7 +319,7 @@ const ha: Home = {
   },
   reviews: {
     title: "Ra'ayoyin masu amfani da mu",
-    body: "Rafiq Al-Muslim yana tunatar da kai lokutan sallah, yana taimaka maka wajen ambaton Allah kuma yana haɗa ka da Alƙur'ani.",
+    body: "Rafiq Al Muslim yana tunatar da kai lokutan sallah, yana taimaka maka wajen ambaton Allah kuma yana haɗa ka da Alƙur'ani.",
     write: "Rubuta ra'ayinka",
   },
   contact: { title: "Tuntuɓe mu", body: "Kana da tambaya, shawara ko matsala? Rubuto mana — muna karanta kowane saƙo.", message: "Muna farin cikin jin ta bakinka", send: "Aika" },
@@ -329,12 +329,12 @@ const fr: Home = {
   strip: { tagline: "Votre compagnon dans l’adoration", sub: "Coran · Hadiths · Adhkar · Prière — gratuit, sans publicité" },
   hero: {
     slides: [
-      { before: "Connaissez les ", highlight: "horaires de prière", after: " selon votre position, pour le jour et pour le mois, en toute précision", body: "Connaissez les horaires de prière exacts de votre ville, avec l’adhan à chaque prière — avec Rafiq Al-Muslim." },
+      { before: "Connaissez les ", highlight: "horaires de prière", after: " selon votre position, pour le jour et pour le mois, en toute précision", body: "Connaissez les horaires de prière exacts de votre ville, avec l’adhan à chaque prière — avec Rafiq Al Muslim." },
       { before: "Parcourez les ", highlight: "adhkar et douas", after: " authentiques du Coran et de la Sunna dont chaque musulman a besoin", body: "Adhkar du matin et du soir, Hisn al-Muslim et le tasbih, avec l’audio et un compteur." },
       { before: "Lisez le Coran dans le ", highlight: "Mushaf de Médine", after: ", avec tafsir, traduction et récitation", body: "Chaque page telle qu’imprimée à Médine, avec le sens des versets dans votre langue." },
       { before: "Trouvez la ", highlight: "qibla", after: " et écoutez l’adhan où que vous soyez", body: "Boussole, soleil et lune, et carte — et un adhan en plein écran à chaque heure de prière." },
     ],
-    getApp: "Téléchargez Rafiq Al-Muslim dès maintenant",
+    getApp: "Téléchargez Rafiq Al Muslim dès maintenant",
   },
   prayer: { title: "Heure de prière", more: "Plus", method: "Méthode", next: "Prochaine prière" },
   articles: { recent: "Articles récents", mostRead: "Les plus lus", viewMore: "Voir plus" },
@@ -346,7 +346,7 @@ const fr: Home = {
   },
   about: {
     title: "Tout ce dont un musulman a besoin, dans une seule application gratuite",
-    body: "Rafiq Al-Muslim vous rappelle les horaires de prière, vous aide à vous souvenir d’Allah, vous relie au Coran et vous encourage à faire davantage de bien. Le compagnon de chaque musulman.",
+    body: "Rafiq Al Muslim vous rappelle les horaires de prière, vous aide à vous souvenir d’Allah, vous relie au Coran et vous encourage à faire davantage de bien. Le compagnon de chaque musulman.",
     stats: [
       { value: "9", label: "Recueils de hadiths" },
       { value: "32", label: "Langues" },
@@ -355,7 +355,7 @@ const fr: Home = {
   },
   reviews: {
     title: "L’avis de nos utilisateurs",
-    body: "Rafiq Al-Muslim vous rappelle les horaires de prière, vous aide à vous souvenir d’Allah et vous relie au Coran.",
+    body: "Rafiq Al Muslim vous rappelle les horaires de prière, vous aide à vous souvenir d’Allah et vous relie au Coran.",
     write: "Donnez votre avis",
   },
   contact: {
@@ -370,12 +370,12 @@ const zh: Home = {
   strip: { tagline: "您的功修伙伴", sub: "古兰经 · 圣训 · 记念词 · 礼拜——免费，无广告" },
   hero: {
     slides: [
-      { before: "根据您的位置，精准掌握每天和每月的", highlight: "礼拜时间", after: "", body: "借助 Rafiq Al-Muslim，了解您所在城市准确的礼拜时间，每次礼拜都有宣礼提醒。" },
+      { before: "根据您的位置，精准掌握每天和每月的", highlight: "礼拜时间", after: "", body: "借助 Rafiq Al Muslim，了解您所在城市准确的礼拜时间，每次礼拜都有宣礼提醒。" },
       { before: "浏览每位穆斯林都需要的、出自《古兰经》和圣行的可靠", highlight: "记念词与都阿", after: "", body: "早晨和傍晚记念词、《穆斯林堡垒》和赞念，附音频和计数器。" },
       { before: "阅读", highlight: "麦地那版经本", after: "的《古兰经》，附经注、译文和诵读", body: "每一页都与麦地那印刷版一致，并附有您的语言的经文意义。" },
       { before: "无论身在何处，都能找到", highlight: "朝向", after: "并聆听宣礼", body: "指南针、太阳和月亮、地图——每到礼拜时间还有全屏宣礼。" },
     ],
-    getApp: "立即下载 Rafiq Al-Muslim",
+    getApp: "立即下载 Rafiq Al Muslim",
   },
   prayer: { title: "礼拜时间", more: "更多", method: "计算方法", next: "下一次礼拜" },
   articles: { recent: "最新文章", mostRead: "最多阅读", viewMore: "查看更多" },
@@ -387,7 +387,7 @@ const zh: Home = {
   },
   about: {
     title: "穆斯林所需的一切，尽在一款免费应用",
-    body: "Rafiq Al-Muslim 提醒您礼拜时间，帮助您记念真主，让您与《古兰经》相连，并鼓励您多行善功。每一位穆斯林的伙伴。",
+    body: "Rafiq Al Muslim 提醒您礼拜时间，帮助您记念真主，让您与《古兰经》相连，并鼓励您多行善功。每一位穆斯林的伙伴。",
     stats: [
       { value: "9", label: "部圣训集" },
       { value: "32", label: "种语言" },
@@ -396,7 +396,7 @@ const zh: Home = {
   },
   reviews: {
     title: "用户评价",
-    body: "Rafiq Al-Muslim 提醒您礼拜时间，帮助您记念真主，让您与《古兰经》相连。",
+    body: "Rafiq Al Muslim 提醒您礼拜时间，帮助您记念真主，让您与《古兰经》相连。",
     write: "写评价",
   },
   contact: {
@@ -523,12 +523,12 @@ const uz: Home = {
   strip: { tagline: "Ibodatdagi hamrohingiz", sub: "Qurʼon · Hadis · Zikrlar · Namoz — bepul, reklamasiz" },
   hero: {
     slides: [
-      { before: "Joylashuvingizga koʻra kunlik va oylik ", highlight: "namoz vaqtlari", after: "ni toʻliq aniqlikda bilib oling", body: "Rafiq Al-Muslim bilan shahringizdagi aniq namoz vaqtlarini bilib oling, har bir namozda azon bilan." },
+      { before: "Joylashuvingizga koʻra kunlik va oylik ", highlight: "namoz vaqtlari", after: "ni toʻliq aniqlikda bilib oling", body: "Rafiq Al Muslim bilan shahringizdagi aniq namoz vaqtlarini bilib oling, har bir namozda azon bilan." },
       { before: "Har bir musulmonga kerak boʻlgan, Qurʼon va Sunnatdan olingan sahih ", highlight: "zikr va duolar", after: "ni koʻrib chiqing", body: "Tonggi va kechki zikrlar, Hisnul Muslim va tasbeh — ovoz va hisoblagich bilan." },
       { before: "Qurʼonni ", highlight: "Madina mus-hafi", after: "da tafsir, tarjima va tilovat bilan oʻqing", body: "Har bir sahifa Madinada chop etilganidek, oyatlarning maʼnolari oʻz tilingizda." },
       { before: "Qayerda boʻlmang, ", highlight: "qibla", after: "ni toping va azonni eshiting", body: "Kompas, quyosh va oy hamda xarita — va har bir namoz vaqtida toʻliq ekranli azon." },
     ],
-    getApp: "Rafiq Al-Muslim ilovasini hozir yuklab oling",
+    getApp: "Rafiq Al Muslim ilovasini hozir yuklab oling",
   },
   prayer: { title: "Namoz vaqti", more: "Yana", method: "Hisoblash usuli", next: "Keyingi namoz" },
   articles: { recent: "Soʻnggi maqolalar", mostRead: "Eng koʻp oʻqilganlar", viewMore: "Koʻproq koʻrish" },
@@ -540,7 +540,7 @@ const uz: Home = {
   },
   about: {
     title: "Musulmonga kerak boʻlgan hamma narsa — bitta bepul ilovada",
-    body: "Rafiq Al-Muslim sizga namoz vaqtlarini eslatadi, Allohni zikr qilishingizga yordam beradi, sizni Qurʼon bilan bogʻlaydi va koʻproq yaxshilik qilishga undaydi. Har bir musulmonning hamrohi.",
+    body: "Rafiq Al Muslim sizga namoz vaqtlarini eslatadi, Allohni zikr qilishingizga yordam beradi, sizni Qurʼon bilan bogʻlaydi va koʻproq yaxshilik qilishga undaydi. Har bir musulmonning hamrohi.",
     stats: [
       { value: "9", label: "Hadis kitoblari" },
       { value: "32", label: "Til" },
@@ -549,7 +549,7 @@ const uz: Home = {
   },
   reviews: {
     title: "Foydalanuvchilarimiz fikrlari",
-    body: "Rafiq Al-Muslim sizga namoz vaqtlarini eslatadi, Allohni zikr qilishingizga yordam beradi va sizni Qurʼon bilan bogʻlaydi.",
+    body: "Rafiq Al Muslim sizga namoz vaqtlarini eslatadi, Allohni zikr qilishingizga yordam beradi va sizni Qurʼon bilan bogʻlaydi.",
     write: "Fikringizni yozing",
   },
   contact: {
@@ -604,12 +604,12 @@ const so: Home = {
   strip: { tagline: "Saaxiibkaaga cibaadada", sub: "Qur’aan · Xadiis · Adkaar · Salaad — bilaash, xayeysiis la’aan" },
   hero: {
     slides: [
-      { before: "Ogow ", highlight: "waqtiyada salaadda", after: " sida ay goobtaadu tahay, maalinta iyo bisha, si sax ah oo dhammaystiran", body: "Ogow waqtiyada saxda ah ee salaadda magaaladaada, oo leh aadaan salaad kasta — adigoo isticmaalaya Rafiq Al-Muslim." },
+      { before: "Ogow ", highlight: "waqtiyada salaadda", after: " sida ay goobtaadu tahay, maalinta iyo bisha, si sax ah oo dhammaystiran", body: "Ogow waqtiyada saxda ah ee salaadda magaaladaada, oo leh aadaan salaad kasta — adigoo isticmaalaya Rafiq Al Muslim." },
       { before: "Daalaco ", highlight: "adkaarta iyo ducooyinka", after: " saxiixa ah ee Qur’aanka iyo Sunnada ee uu Muslim kastaa u baahan yahay", body: "Adkaarta subaxa iyo galabta, Xisnul Muslim iyo tasbiixda, oo leh cod iyo tiriye." },
       { before: "Ku akhri Qur’aanka ", highlight: "Mushafka Madiina", after: ", oo leh tafsiir, tarjumaad iyo tilaawad", body: "Bog kasta sida loogu daabacay Madiina, oo leh macnaha aayadaha luqaddaada." },
       { before: "Hel ", highlight: "Qiblada", after: " oo maqal aadaanka meel kasta oo aad joogto", body: "Jiheeye, qorraxda iyo dayaxa iyo khariidad — iyo aadaan shaashadda buuxiya waqti kasta oo salaadeed." },
     ],
-    getApp: "Hadda soo deji Rafiq Al-Muslim",
+    getApp: "Hadda soo deji Rafiq Al Muslim",
   },
   prayer: { title: "Waqtiga salaadda", more: "Wax kale", method: "Habka xisaabinta", next: "Salaadda xigta" },
   articles: { recent: "Maqaallada ugu dambeeyay", mostRead: "Kuwa ugu badan ee la akhriyay", viewMore: "Arag wax kale" },
@@ -621,7 +621,7 @@ const so: Home = {
   },
   about: {
     title: "Wax kasta oo Muslimku u baahan yahay, hal barnaamij oo bilaash ah",
-    body: "Rafiq Al-Muslim wuxuu kugu xusuusiyaa waqtiyada salaadda, wuxuu kaa caawiyaa xusidda Allaah, wuxuu kugu xiraa Qur’aanka wuxuuna kugu dhiirrigeliyaa inaad samaysid khayr badan. Saaxiibka Muslim kasta.",
+    body: "Rafiq Al Muslim wuxuu kugu xusuusiyaa waqtiyada salaadda, wuxuu kaa caawiyaa xusidda Allaah, wuxuu kugu xiraa Qur’aanka wuxuuna kugu dhiirrigeliyaa inaad samaysid khayr badan. Saaxiibka Muslim kasta.",
     stats: [
       { value: "9", label: "Kutubta xadiiska" },
       { value: "32", label: "Luqadood" },
@@ -630,7 +630,7 @@ const so: Home = {
   },
   reviews: {
     title: "Fikradaha isticmaalayaashayada",
-    body: "Rafiq Al-Muslim wuxuu kugu xusuusiyaa waqtiyada salaadda, wuxuu kaa caawiyaa xusidda Allaah wuxuuna kugu xiraa Qur’aanka.",
+    body: "Rafiq Al Muslim wuxuu kugu xusuusiyaa waqtiyada salaadda, wuxuu kaa caawiyaa xusidda Allaah wuxuuna kugu xiraa Qur’aanka.",
     write: "Qor fikraddaada",
   },
   contact: {
@@ -645,12 +645,12 @@ const sw: Home = {
   strip: { tagline: "Mwenzako katika ibada", sub: "Qur'ani · Hadithi · Adhkari · Sala — bure, bila matangazo" },
   hero: {
     slides: [
-      { before: "Jua ", highlight: "nyakati za Sala", after: " kulingana na mahali ulipo, kwa siku na kwa mwezi, kwa usahihi kamili", body: "Jua nyakati sahihi za Sala katika mji wako, pamoja na adhana katika kila Sala — ukiwa na Rafiq Al-Muslim." },
+      { before: "Jua ", highlight: "nyakati za Sala", after: " kulingana na mahali ulipo, kwa siku na kwa mwezi, kwa usahihi kamili", body: "Jua nyakati sahihi za Sala katika mji wako, pamoja na adhana katika kila Sala — ukiwa na Rafiq Al Muslim." },
       { before: "Vinjari ", highlight: "adhkari na dua", after: " sahihi kutoka Qur'ani na Sunna ambazo kila Muislamu anazihitaji", body: "Adhkari za asubuhi na jioni, Hisnul Muslim na tasbihi, pamoja na sauti na kihesabu." },
       { before: "Soma Qur'ani katika ", highlight: "Msahafu wa Madina", after: ", pamoja na tafsiri ya maelezo, tafsiri ya maana na kisomo", body: "Kila ukurasa kama ulivyochapishwa Madina, pamoja na maana za aya kwa lugha yako." },
       { before: "Pata ", highlight: "Kibla", after: " na usikie adhana popote ulipo", body: "Dira, jua na mwezi na ramani — pamoja na adhana ya skrini nzima katika kila wakati wa Sala." },
     ],
-    getApp: "Pakua Rafiq Al-Muslim sasa",
+    getApp: "Pakua Rafiq Al Muslim sasa",
   },
   prayer: { title: "Wakati wa Sala", more: "Zaidi", method: "Njia ya kukokotoa", next: "Sala inayofuata" },
   articles: { recent: "Makala za hivi karibuni", mostRead: "Zinazosomwa zaidi", viewMore: "Tazama zaidi" },
@@ -662,7 +662,7 @@ const sw: Home = {
   },
   about: {
     title: "Kila anachohitaji Muislamu, katika programu moja ya bure",
-    body: "Rafiq Al-Muslim inakukumbusha nyakati za Sala, inakusaidia kumkumbuka Mwenyezi Mungu, inakuunganisha na Qur'ani na inakuhimiza kufanya mema zaidi. Mwenzi wa kila Muislamu.",
+    body: "Rafiq Al Muslim inakukumbusha nyakati za Sala, inakusaidia kumkumbuka Mwenyezi Mungu, inakuunganisha na Qur'ani na inakuhimiza kufanya mema zaidi. Mwenzi wa kila Muislamu.",
     stats: [
       { value: "9", label: "Vitabu vya Hadithi" },
       { value: "32", label: "Lugha" },
@@ -671,7 +671,7 @@ const sw: Home = {
   },
   reviews: {
     title: "Maoni ya watumiaji wetu",
-    body: "Rafiq Al-Muslim inakukumbusha nyakati za Sala, inakusaidia kumkumbuka Mwenyezi Mungu na inakuunganisha na Qur'ani.",
+    body: "Rafiq Al Muslim inakukumbusha nyakati za Sala, inakusaidia kumkumbuka Mwenyezi Mungu na inakuunganisha na Qur'ani.",
     write: "Andika maoni yako",
   },
   contact: {
@@ -727,12 +727,12 @@ const kuLatn: Home = {
   strip: { tagline: "Hevalê te di îbadetê de", sub: "Qur'an · Hedîs · Zikir · Nimêj — belaş, bê reklam" },
   hero: {
     slides: [
-      { before: "", highlight: "Demên nimêjê", after: " li gorî cihê xwe, ji bo rojê û mehê, bi rastiyeke temam bizane", body: "Demên rast ên nimêjê ji bo bajarê xwe, bi ezanê di her nimêjê de, bizane — bi Rafiq Al-Muslim." },
+      { before: "", highlight: "Demên nimêjê", after: " li gorî cihê xwe, ji bo rojê û mehê, bi rastiyeke temam bizane", body: "Demên rast ên nimêjê ji bo bajarê xwe, bi ezanê di her nimêjê de, bizane — bi Rafiq Al Muslim." },
       { before: "Li ", highlight: "zikir û diayên", after: " sehîh ên ji Qur'an û Sunnetê ku her misilman hewcedarê wan e binêre", body: "Zikirên sibehê û êvarê, Hisnul-Muslim û tesbîh, bi deng û hejmarker." },
       { before: "Qur'anê di ", highlight: "Mishefa Medîneyê", after: " de bixwîne, bi tefsîr, werger û tilawetê", body: "Her rûpel wek ku li Medîneyê hatiye çapkirin, bi wateyên ayetan bi zimanê te." },
       { before: "", highlight: "Qibleyê", after: " bibîne û li ku derê bî jî ezanê bibihîze", body: "Pûsle, roj û heyv û nexşe — û ezaneke tev-ekran di her dema nimêjê de." },
     ],
-    getApp: "Niha Rafiq Al-Muslim daxe",
+    getApp: "Niha Rafiq Al Muslim daxe",
   },
   prayer: { title: "Dema nimêjê", more: "Bêtir", method: "Rêbaz", next: "Nimêja bê" },
   articles: { recent: "Gotarên dawî", mostRead: "Yên herî zêde hatine xwendin", viewMore: "Bêtir bibîne" },
@@ -744,7 +744,7 @@ const kuLatn: Home = {
   },
   about: {
     title: "Her tiştê ku misilmanek hewce dike, di sepaneke belaş de",
-    body: "Rafiq Al-Muslim demên nimêjê bi bîra te tîne, alîkariya te dike ku Xwedê bi bîr bînî, te bi Qur'anê ve girê dide û te han dide ku bêtir xêrê bikî. Hevalê her misilmanî.",
+    body: "Rafiq Al Muslim demên nimêjê bi bîra te tîne, alîkariya te dike ku Xwedê bi bîr bînî, te bi Qur'anê ve girê dide û te han dide ku bêtir xêrê bikî. Hevalê her misilmanî.",
     stats: [
       { value: "9", label: "Pirtûkên hedîsan" },
       { value: "32", label: "Ziman" },
@@ -753,7 +753,7 @@ const kuLatn: Home = {
   },
   reviews: {
     title: "Ramanên bikarhênerên me",
-    body: "Rafiq Al-Muslim demên nimêjê bi bîra te tîne, alîkariya te dike ku Xwedê bi bîr bînî û te bi Qur'anê ve girê dide.",
+    body: "Rafiq Al Muslim demên nimêjê bi bîra te tîne, alîkariya te dike ku Xwedê bi bîr bînî û te bi Qur'anê ve girê dide.",
     write: "Nirxandina xwe binivîse",
   },
   contact: {
@@ -768,12 +768,12 @@ const ml: Home = {
   strip: { tagline: "ആരാധനയിൽ നിങ്ങളുടെ കൂട്ടുകാരൻ", sub: "ഖുർആൻ · ഹദീസ് · അദ്കാർ · നമസ്കാരം — സൗജന്യം, പരസ്യങ്ങളില്ല" },
   hero: {
     slides: [
-      { before: "നിങ്ങളുടെ സ്ഥലമനുസരിച്ച് ദിവസത്തെയും മാസത്തെയും ", highlight: "നമസ്കാര സമയങ്ങൾ", after: " പൂർണ കൃത്യതയോടെ അറിയുക", body: "നിങ്ങളുടെ നഗരത്തിലെ കൃത്യമായ നമസ്കാര സമയങ്ങൾ അറിയുക, ഓരോ നമസ്കാരത്തിനും ബാങ്കോടു കൂടി — Rafiq Al-Muslim-ലൂടെ." },
+      { before: "നിങ്ങളുടെ സ്ഥലമനുസരിച്ച് ദിവസത്തെയും മാസത്തെയും ", highlight: "നമസ്കാര സമയങ്ങൾ", after: " പൂർണ കൃത്യതയോടെ അറിയുക", body: "നിങ്ങളുടെ നഗരത്തിലെ കൃത്യമായ നമസ്കാര സമയങ്ങൾ അറിയുക, ഓരോ നമസ്കാരത്തിനും ബാങ്കോടു കൂടി — Rafiq Al Muslim-ലൂടെ." },
       { before: "ഓരോ മുസ്‌ലിമിനും ആവശ്യമായ ഖുർആനിൽ നിന്നും സുന്നത്തിൽ നിന്നുമുള്ള സ്വഹീഹായ ", highlight: "അദ്കാറും ദുആകളും", after: " കാണുക", body: "പ്രഭാത, സായാഹ്ന അദ്കാർ, ഹിസ്നുൽ മുസ്‌ലിം, തസ്ബീഹ് — ഓഡിയോയും കൗണ്ടറും സഹിതം." },
       { before: "തഫ്സീർ, പരിഭാഷ, പാരായണം എന്നിവയോടെ ", highlight: "മദീന മുസ്ഹഫിൽ", after: " ഖുർആൻ വായിക്കുക", body: "മദീനയിൽ അച്ചടിച്ചതുപോലെ ഓരോ പേജും, ആയത്തുകളുടെ അർത്ഥം നിങ്ങളുടെ ഭാഷയിൽ." },
       { before: "നിങ്ങൾ എവിടെയായിരുന്നാലും ", highlight: "ഖിബ്‌ല", after: " കണ്ടെത്തുക, ബാങ്ക് കേൾക്കുക", body: "കോമ്പസ്, സൂര്യനും ചന്ദ്രനും, മാപ്പ് — ഓരോ നമസ്കാര സമയത്തും പൂർണ സ്ക്രീൻ ബാങ്കും." },
     ],
-    getApp: "Rafiq Al-Muslim ഇപ്പോൾ ഡൗൺലോഡ് ചെയ്യുക",
+    getApp: "Rafiq Al Muslim ഇപ്പോൾ ഡൗൺലോഡ് ചെയ്യുക",
   },
   prayer: { title: "നമസ്കാര സമയം", more: "കൂടുതൽ", method: "കണക്കുകൂട്ടൽ രീതി", next: "അടുത്ത നമസ്കാരം" },
   articles: { recent: "പുതിയ ലേഖനങ്ങൾ", mostRead: "ഏറ്റവും കൂടുതൽ വായിച്ചവ", viewMore: "കൂടുതൽ കാണുക" },
@@ -785,7 +785,7 @@ const ml: Home = {
   },
   about: {
     title: "ഒരു മുസ്‌ലിമിന് ആവശ്യമായതെല്ലാം, ഒരു സൗജന്യ ആപ്പിൽ",
-    body: "Rafiq Al-Muslim നിങ്ങളെ നമസ്കാര സമയങ്ങൾ ഓർമിപ്പിക്കുന്നു, അല്ലാഹുവിനെ സ്മരിക്കാൻ സഹായിക്കുന്നു, ഖുർആനുമായി ബന്ധിപ്പിക്കുന്നു, കൂടുതൽ നന്മ ചെയ്യാൻ പ്രേരിപ്പിക്കുന്നു. ഓരോ മുസ്‌ലിമിന്റെയും കൂട്ടുകാരൻ.",
+    body: "Rafiq Al Muslim നിങ്ങളെ നമസ്കാര സമയങ്ങൾ ഓർമിപ്പിക്കുന്നു, അല്ലാഹുവിനെ സ്മരിക്കാൻ സഹായിക്കുന്നു, ഖുർആനുമായി ബന്ധിപ്പിക്കുന്നു, കൂടുതൽ നന്മ ചെയ്യാൻ പ്രേരിപ്പിക്കുന്നു. ഓരോ മുസ്‌ലിമിന്റെയും കൂട്ടുകാരൻ.",
     stats: [
       { value: "9", label: "ഹദീസ് ഗ്രന്ഥങ്ങൾ" },
       { value: "32", label: "ഭാഷകൾ" },
@@ -794,7 +794,7 @@ const ml: Home = {
   },
   reviews: {
     title: "ഞങ്ങളുടെ ഉപയോക്താക്കളുടെ അഭിപ്രായങ്ങൾ",
-    body: "Rafiq Al-Muslim നിങ്ങളെ നമസ്കാര സമയങ്ങൾ ഓർമിപ്പിക്കുന്നു, അല്ലാഹുവിനെ സ്മരിക്കാൻ സഹായിക്കുന്നു, ഖുർആനുമായി ബന്ധിപ്പിക്കുന്നു.",
+    body: "Rafiq Al Muslim നിങ്ങളെ നമസ്കാര സമയങ്ങൾ ഓർമിപ്പിക്കുന്നു, അല്ലാഹുവിനെ സ്മരിക്കാൻ സഹായിക്കുന്നു, ഖുർആനുമായി ബന്ധിപ്പിക്കുന്നു.",
     write: "നിങ്ങളുടെ അഭിപ്രായം എഴുതുക",
   },
   contact: {
@@ -809,12 +809,12 @@ const de: Home = {
   strip: { tagline: "Dein Begleiter im Gottesdienst", sub: "Koran · Hadith · Adhkar · Gebet – kostenlos und werbefrei" },
   hero: {
     slides: [
-      { before: "Kenne die ", highlight: "Gebetszeiten", after: " für deinen Standort, für den Tag und den Monat, ganz genau", body: "Kenne die genauen Gebetszeiten für deine Stadt, mit dem Adhan zu jedem Gebet – mit Rafiq Al-Muslim." },
+      { before: "Kenne die ", highlight: "Gebetszeiten", after: " für deinen Standort, für den Tag und den Monat, ganz genau", body: "Kenne die genauen Gebetszeiten für deine Stadt, mit dem Adhan zu jedem Gebet – mit Rafiq Al Muslim." },
       { before: "Entdecke authentische ", highlight: "Adhkar und Bittgebete", after: " aus dem Koran und der Sunna, die jeder Muslim braucht", body: "Morgen- und Abend-Adhkar, Hisn Al-Muslim und die Tasbih, mit Audio und Zähler." },
       { before: "Lies den Koran im ", highlight: "Madina-Mushaf", after: ", mit Tafsir, Übersetzung und Rezitation", body: "Jede Seite so, wie sie in Medina gedruckt wurde, mit den Bedeutungen der Verse in deiner Sprache." },
       { before: "Finde die ", highlight: "Qibla", after: " und höre den Adhan, wo immer du bist", body: "Kompass, Sonne und Mond und Karte – und ein Vollbild-Adhan zu jeder Gebetszeit." },
     ],
-    getApp: "Hol dir jetzt Rafiq Al-Muslim",
+    getApp: "Hol dir jetzt Rafiq Al Muslim",
   },
   prayer: { title: "Gebetszeit", more: "Mehr", method: "Methode", next: "Nächstes Gebet" },
   articles: { recent: "Neueste Artikel", mostRead: "Meistgelesen", viewMore: "Mehr ansehen" },
@@ -826,7 +826,7 @@ const de: Home = {
   },
   about: {
     title: "Alles, was ein Muslim braucht, in einer kostenlosen App",
-    body: "Rafiq Al-Muslim erinnert dich an die Gebetszeiten, hilft dir, Allahs zu gedenken, verbindet dich mit dem Koran und ermutigt dich, mehr Gutes zu tun. Der Begleiter jedes Muslims.",
+    body: "Rafiq Al Muslim erinnert dich an die Gebetszeiten, hilft dir, Allahs zu gedenken, verbindet dich mit dem Koran und ermutigt dich, mehr Gutes zu tun. Der Begleiter jedes Muslims.",
     stats: [
       { value: "9", label: "Hadith-Bücher" },
       { value: "32", label: "Sprachen" },
@@ -835,7 +835,7 @@ const de: Home = {
   },
   reviews: {
     title: "Meinungen unserer Nutzer",
-    body: "Rafiq Al-Muslim erinnert dich an die Gebetszeiten, hilft dir, Allahs zu gedenken, und verbindet dich mit dem Koran.",
+    body: "Rafiq Al Muslim erinnert dich an die Gebetszeiten, hilft dir, Allahs zu gedenken, und verbindet dich mit dem Koran.",
     write: "Schreibe deine Bewertung",
   },
   contact: {
@@ -850,12 +850,12 @@ const es: Home = {
   strip: { tagline: "Tu compañero en la adoración", sub: "Corán · Hadiz · Adhkar · Oración — gratis y sin anuncios" },
   hero: {
     slides: [
-      { before: "Conoce los ", highlight: "horarios de oración", after: " según tu ubicación, del día y del mes, con total precisión", body: "Conoce los horarios exactos de oración de tu ciudad, con el adhan en cada oración — con Rafiq Al-Muslim." },
+      { before: "Conoce los ", highlight: "horarios de oración", after: " según tu ubicación, del día y del mes, con total precisión", body: "Conoce los horarios exactos de oración de tu ciudad, con el adhan en cada oración — con Rafiq Al Muslim." },
       { before: "Consulta ", highlight: "adhkar y súplicas", after: " auténticos del Corán y de la Sunna que todo musulmán necesita", body: "Adhkar de la mañana y de la tarde, Hisn al-Muslim y el tasbih, con audio y contador." },
       { before: "Lee el Corán en el ", highlight: "Mushaf de Medina", after: ", con tafsir, traducción y recitación", body: "Cada página tal como se imprimió en Medina, con el significado de las aleyas en tu idioma." },
       { before: "Encuentra la ", highlight: "alquibla", after: " y escucha el adhan dondequiera que estés", body: "Brújula, sol y luna y mapa — y un adhan a pantalla completa en cada hora de oración." },
     ],
-    getApp: "Descarga Rafiq Al-Muslim ahora",
+    getApp: "Descarga Rafiq Al Muslim ahora",
   },
   prayer: { title: "Hora de la oración", more: "Más", method: "Método", next: "Próxima oración" },
   articles: { recent: "Artículos recientes", mostRead: "Los más leídos", viewMore: "Ver más" },
@@ -867,7 +867,7 @@ const es: Home = {
   },
   about: {
     title: "Todo lo que un musulmán necesita, en una aplicación gratuita",
-    body: "Rafiq Al-Muslim te recuerda los horarios de oración, te ayuda a recordar a Dios, te conecta con el Corán y te anima a hacer más bien. El compañero de todo musulmán.",
+    body: "Rafiq Al Muslim te recuerda los horarios de oración, te ayuda a recordar a Dios, te conecta con el Corán y te anima a hacer más bien. El compañero de todo musulmán.",
     stats: [
       { value: "9", label: "Libros de hadiz" },
       { value: "32", label: "Idiomas" },
@@ -876,7 +876,7 @@ const es: Home = {
   },
   reviews: {
     title: "Opiniones de nuestros usuarios",
-    body: "Rafiq Al-Muslim te recuerda los horarios de oración, te ayuda a recordar a Dios y te conecta con el Corán.",
+    body: "Rafiq Al Muslim te recuerda los horarios de oración, te ayuda a recordar a Dios y te conecta con el Corán.",
     write: "Escribe tu opinión",
   },
   contact: {
@@ -892,12 +892,12 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   strip: { tagline: "İbadətdə yol yoldaşınız", sub: "Quran · Hədis · Zikrlər · Namaz — pulsuz, reklamsız" },
   hero: {
     slides: [
-      { before: "Məkanınıza görə gün və ay üzrə ", highlight: "namaz vaxtlarını", after: " tam dəqiqliklə öyrənin", body: "Şəhəriniz üçün dəqiq namaz vaxtlarını öyrənin, hər namazda azanla birlikdə — Rafiq Al-Muslim ilə." },
+      { before: "Məkanınıza görə gün və ay üzrə ", highlight: "namaz vaxtlarını", after: " tam dəqiqliklə öyrənin", body: "Şəhəriniz üçün dəqiq namaz vaxtlarını öyrənin, hər namazda azanla birlikdə — Rafiq Al Muslim ilə." },
       { before: "Quran və sünnədən hər müsəlmanın ehtiyac duyduğu səhih ", highlight: "zikr və dualara", after: " baxın", body: "Səhər və axşam zikrləri, Hisnul-Müslim və təsbeh — səs və sayğacla." },
       { before: "Qurani-Kərimi ", highlight: "Mədinə Müshəfində", after: " təfsir, tərcümə və tilavətlə oxuyun", body: "Hər səhifə Mədinədə çap olunduğu kimi, ayələrin mənaları öz dilinizdə." },
       { before: "Harada olursunuzsa olun, ", highlight: "qibləni", after: " tapın və azanı dinləyin", body: "Kompas, Günəş və Ay, xəritə — və hər namaz vaxtında tam ekranlı azan." },
     ],
-    getApp: "Rafiq Al-Muslim tətbiqini indi əldə edin",
+    getApp: "Rafiq Al Muslim tətbiqini indi əldə edin",
   },
   prayer: { title: "Namaz vaxtı", more: "Daha çox", method: "Hesablama üsulu", next: "Növbəti namaz" },
   articles: { recent: "Son məqalələr", mostRead: "Ən çox oxunanlar", viewMore: "Daha çoxuna bax" },
@@ -909,7 +909,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   },
   about: {
     title: "Müsəlmanın ehtiyac duyduğu hər şey bir pulsuz tətbiqdə",
-    body: "Rafiq Al-Muslim sizə namaz vaxtlarını xatırladır, Allahı zikr etməyə kömək edir, sizi Quranla bağlayır və daha çox xeyir işlər görməyə təşviq edir. Hər müsəlmanın yoldaşı.",
+    body: "Rafiq Al Muslim sizə namaz vaxtlarını xatırladır, Allahı zikr etməyə kömək edir, sizi Quranla bağlayır və daha çox xeyir işlər görməyə təşviq edir. Hər müsəlmanın yoldaşı.",
     stats: [
       { value: "9", label: "Hədis kitabı" },
       { value: "32", label: "Dil" },
@@ -918,7 +918,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   },
   reviews: {
     title: "İstifadəçilərimizin rəyləri",
-    body: "Rafiq Al-Muslim sizə namaz vaxtlarını xatırladır, Allahı zikr etməyə kömək edir və sizi Quranla bağlayır.",
+    body: "Rafiq Al Muslim sizə namaz vaxtlarını xatırladır, Allahı zikr etməyə kömək edir və sizi Quranla bağlayır.",
     write: "Rəyinizi yazın",
   },
   contact: {
@@ -932,12 +932,12 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   strip: { tagline: "Hiriyyaa kee ibaadaa keessatti", sub: "Qur'aana · Hadiisa · Zikrii · Salaata — bilisaan, beeksisa daldalaa male" },
   hero: {
     slides: [
-      { before: "Bakka kee irratti hundaa'uun ", highlight: "yeroo salaataa", after: " guyyaa fi ji'aaf, sirrummaa guutuudhaan beeki", body: "Yeroo salaataa sirrii magaalaa keetiif beeki, azaanni yeroo salaata hundaatti wajjin — Rafiq Al-Muslim wajjin." },
+      { before: "Bakka kee irratti hundaa'uun ", highlight: "yeroo salaataa", after: " guyyaa fi ji'aaf, sirrummaa guutuudhaan beeki", body: "Yeroo salaataa sirrii magaalaa keetiif beeki, azaanni yeroo salaata hundaatti wajjin — Rafiq Al Muslim wajjin." },
       { before: "Muslimni hundi kan barbaadu ", highlight: "zikrii fi du'aa'ii", after: " Qur'aanaa fi Sunnaa irraa mirkanaa'e ilaali", body: "Zikrii ganamaa fi galgalaa, Hisnul Muslim fi tasbiihii, sagalee fi lakkaa'aa wajjin." },
       { before: "Qur'aana ", highlight: "Mushafa Madiinaa", after: " keessatti, tafsiira, hiikkaa fi qiraa'a wajjin dubbisi", body: "Fuulli hundi akkuma Madiinaatti maxxanfametti, hiikkaan aayatootaa afaan keetiin." },
       { before: "Bakka jirtu hundatti ", highlight: "Qiblaa", after: " argadhu, azaanas dhaga'i", body: "Kompaasii, aduu fi ji'a, kaartaa — azaanni iskiriinii guutuu yeroo salaataa hundatti." },
     ],
-    getApp: "Rafiq Al-Muslim amma buufadhu",
+    getApp: "Rafiq Al Muslim amma buufadhu",
   },
   prayer: { title: "Yeroo salaataa", more: "Dabalata", method: "Mala shallagaa", next: "Salaata itti aanu" },
   articles: { recent: "Barruulee haaraa", mostRead: "Kanneen baay'ee dubbifaman", viewMore: "Dabalata ilaali" },
@@ -949,7 +949,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   },
   about: {
     title: "Waan Muslimni hundi barbaadu, app bilisaa tokko keessatti",
-    body: "Rafiq Al-Muslim yeroo salaataa si yaadachiisa, Rabbiin yaadachuuf si gargaara, Qur'aana wajjin si wal-qunnamsiisa, wanta gaarii dabalataas hojjechuuf si kakaasa. Hiriyyaa Muslima hundaa.",
+    body: "Rafiq Al Muslim yeroo salaataa si yaadachiisa, Rabbiin yaadachuuf si gargaara, Qur'aana wajjin si wal-qunnamsiisa, wanta gaarii dabalataas hojjechuuf si kakaasa. Hiriyyaa Muslima hundaa.",
     stats: [
       { value: "9", label: "Kitaabota hadiisaa" },
       { value: "32", label: "Afaanota" },
@@ -958,7 +958,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   },
   reviews: {
     title: "Yaada fayyadamtoota keenyaa",
-    body: "Rafiq Al-Muslim yeroo salaataa si yaadachiisa, Rabbiin yaadachuuf si gargaara, Qur'aana wajjin si wal-qunnamsiisa.",
+    body: "Rafiq Al Muslim yeroo salaataa si yaadachiisa, Rabbiin yaadachuuf si gargaara, Qur'aana wajjin si wal-qunnamsiisa.",
     write: "Yaada kee barreessi",
   },
   contact: {
@@ -972,12 +972,12 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   strip: { tagline: "በዒባዳ ውስጥ ጓደኛዎ", sub: "ቁርኣን · ሐዲስ · ዚክሮች · ሶላት — በነጻ፣ ያለ ማስታወቂያ" },
   hero: {
     slides: [
-      { before: "", highlight: "የሶላት ወቅቶችን", after: " እንደ አካባቢዎ፣ ለቀኑም ለወሩም፣ በፍጹም ትክክለኛነት ይወቁ", body: "ለከተማዎ ትክክለኛውን የሶላት ወቅት ይወቁ፤ በእያንዳንዱ ሶላት አዛን ያዳምጡ — ከ Rafiq Al-Muslim ጋር።" },
+      { before: "", highlight: "የሶላት ወቅቶችን", after: " እንደ አካባቢዎ፣ ለቀኑም ለወሩም፣ በፍጹም ትክክለኛነት ይወቁ", body: "ለከተማዎ ትክክለኛውን የሶላት ወቅት ይወቁ፤ በእያንዳንዱ ሶላት አዛን ያዳምጡ — ከ Rafiq Al Muslim ጋር።" },
       { before: "እያንዳንዱ ሙስሊም የሚያስፈልገውን ከቁርኣንና ከሱና የተገኙ ትክክለኛ ", highlight: "ዚክሮችና ዱዓዎች", after: " ያስሱ", body: "የጧትና የማታ ዚክሮች፣ ሒስኑል ሙስሊምና ተስቢሕ፣ ከድምፅና ከቆጣሪ ጋር።" },
       { before: "ቁርኣንን በ", highlight: "መዲና ሙስሐፍ", after: " ከተፍሲር፣ ከትርጉምና ከንባብ ጋር ያንብቡ", body: "እያንዳንዱ ገጽ በመዲና እንደታተመው፣ የአንቀጾቹ ትርጉም በቋንቋዎ።" },
       { before: "በየትኛውም ቦታ ሆነው ", highlight: "ቂብላን", after: " ይፈልጉ፣ አዛንንም ያዳምጡ", body: "ኮምፓስ፣ ፀሐይና ጨረቃ እንዲሁም ካርታ — በእያንዳንዱ የሶላት ወቅት ሙሉ ስክሪን አዛን።" },
     ],
-    getApp: "Rafiq Al-Muslimን አሁኑኑ ያግኙ",
+    getApp: "Rafiq Al Muslimን አሁኑኑ ያግኙ",
   },
   prayer: { title: "የሶላት ወቅት", more: "ተጨማሪ", method: "ዘዴ", next: "ቀጣይ ሶላት" },
   articles: { recent: "የቅርብ ጊዜ ጽሑፎች", mostRead: "በብዛት የተነበቡ", viewMore: "ተጨማሪ ይመልከቱ" },
@@ -989,7 +989,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   },
   about: {
     title: "አንድ ሙስሊም የሚያስፈልገው ሁሉ፣ በአንድ ነጻ መተግበሪያ ውስጥ",
-    body: "Rafiq Al-Muslim የሶላት ወቅቶችን ያስታውሰዎታል፣ አላህን እንዲያወሱ ይረዳዎታል፣ ከቁርኣን ጋር ያገናኝዎታል፣ ተጨማሪ መልካም እንዲሠሩም ያበረታታዎታል። የእያንዳንዱ ሙስሊም ጓደኛ።",
+    body: "Rafiq Al Muslim የሶላት ወቅቶችን ያስታውሰዎታል፣ አላህን እንዲያወሱ ይረዳዎታል፣ ከቁርኣን ጋር ያገናኝዎታል፣ ተጨማሪ መልካም እንዲሠሩም ያበረታታዎታል። የእያንዳንዱ ሙስሊም ጓደኛ።",
     stats: [
       { value: "9", label: "የሐዲስ መጻሕፍት" },
       { value: "32", label: "ቋንቋዎች" },
@@ -998,7 +998,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   },
   reviews: {
     title: "የተጠቃሚዎቻችን አስተያየት",
-    body: "Rafiq Al-Muslim የሶላት ወቅቶችን ያስታውሰዎታል፣ አላህን እንዲያወሱ ይረዳዎታል፣ ከቁርኣንም ጋር ያገናኝዎታል።",
+    body: "Rafiq Al Muslim የሶላት ወቅቶችን ያስታውሰዎታል፣ አላህን እንዲያወሱ ይረዳዎታል፣ ከቁርኣንም ጋር ያገናኝዎታል።",
     write: "አስተያየትዎን ይጻፉ",
   },
   contact: {
@@ -1012,12 +1012,12 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   strip: { tagline: "Ғибадаттағы серігіңіз", sub: "Құран · Хадис · Зікірлер · Намаз — тегін, жарнамасыз" },
   hero: {
     slides: [
-      { before: "Орналасқан жеріңізге қарай күн мен ай бойынша ", highlight: "намаз уақыттарын", after: " толық дәлдікпен біліңіз", body: "Қалаңыздағы намаздың нақты уақыттарын, әр намазда азанмен бірге біліңіз — Rafiq Al-Muslim арқылы." },
+      { before: "Орналасқан жеріңізге қарай күн мен ай бойынша ", highlight: "намаз уақыттарын", after: " толық дәлдікпен біліңіз", body: "Қалаңыздағы намаздың нақты уақыттарын, әр намазда азанмен бірге біліңіз — Rafiq Al Muslim арқылы." },
       { before: "Әр мұсылманға қажет, Құран мен сүннеттегі сенімді ", highlight: "зікірлер мен дұғаларды", after: " қарап шығыңыз", body: "Таңертеңгі және кешкі зікірлер, Хисн әл-Муслим және тәспіх, дыбыспен және санауышпен." },
       { before: "Құранды ", highlight: "Мәдина мұсхафынан", after: " тәпсірімен, аудармасымен және қираатымен оқыңыз", body: "Әр бет Мәдинада басылғандай, аяттардың мағынасы өз тіліңізде." },
       { before: "Қайда болсаңыз да ", highlight: "құбыланы", after: " табыңыз және азанды тыңдаңыз", body: "Компас, күн мен ай және карта — әр намаз уақытында толық экранды азан." },
     ],
-    getApp: "Rafiq Al-Muslim қосымшасын қазір алыңыз",
+    getApp: "Rafiq Al Muslim қосымшасын қазір алыңыз",
   },
   prayer: { title: "Намаз уақыты", more: "Тағы", method: "Есептеу әдісі", next: "Келесі намаз" },
   articles: { recent: "Соңғы мақалалар", mostRead: "Ең көп оқылған", viewMore: "Тағы көру" },
@@ -1029,7 +1029,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   },
   about: {
     title: "Мұсылманға қажеттінің бәрі — бір тегін қосымшада",
-    body: "Rafiq Al-Muslim намаз уақыттарын еске салады, Аллаһты еске алуға көмектеседі, Құранмен байланыстырады және көбірек жақсылық жасауға ынталандырады. Әр мұсылманның серігі.",
+    body: "Rafiq Al Muslim намаз уақыттарын еске салады, Аллаһты еске алуға көмектеседі, Құранмен байланыстырады және көбірек жақсылық жасауға ынталандырады. Әр мұсылманның серігі.",
     stats: [
       { value: "9", label: "Хадис жинағы" },
       { value: "32", label: "Тіл" },
@@ -1038,7 +1038,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   },
   reviews: {
     title: "Пайдаланушыларымыздың пікірі",
-    body: "Rafiq Al-Muslim намаз уақыттарын еске салады, Аллаһты еске алуға көмектеседі және Құранмен байланыстырады.",
+    body: "Rafiq Al Muslim намаз уақыттарын еске салады, Аллаһты еске алуға көмектеседі және Құранмен байланыстырады.",
     write: "Пікір қалдыру",
   },
   contact: {
@@ -1052,12 +1052,12 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   strip: { tagline: "வழிபாட்டில் உங்கள் தோழன்", sub: "குர்ஆன் · ஹதீஸ் · அத்கார் · தொழுகை — இலவசம், விளம்பரங்கள் இன்றி" },
   hero: {
     slides: [
-      { before: "உங்கள் இருப்பிடத்துக்கேற்ப நாள், மாதத்துக்கான ", highlight: "தொழுகை நேரங்களை", after: " முழுமையான துல்லியத்துடன் அறியுங்கள்", body: "ஒவ்வொரு தொழுகையிலும் அதானுடன், உங்கள் நகரத்தின் சரியான தொழுகை நேரங்களை Rafiq Al-Muslim மூலம் அறியுங்கள்." },
+      { before: "உங்கள் இருப்பிடத்துக்கேற்ப நாள், மாதத்துக்கான ", highlight: "தொழுகை நேரங்களை", after: " முழுமையான துல்லியத்துடன் அறியுங்கள்", body: "ஒவ்வொரு தொழுகையிலும் அதானுடன், உங்கள் நகரத்தின் சரியான தொழுகை நேரங்களை Rafiq Al Muslim மூலம் அறியுங்கள்." },
       { before: "ஒவ்வொரு முஸ்லிமுக்கும் தேவையான, குர்ஆன் மற்றும் சுன்னாவிலிருந்து ஆதாரபூர்வமான ", highlight: "அத்கார்களையும் துஆக்களையும்", after: " பாருங்கள்", body: "காலை மாலை அத்கார், ஹிஸ்னுல் முஸ்லிம் மற்றும் தஸ்பீஹ் — ஒலி மற்றும் எண்ணியுடன்." },
       { before: "", highlight: "மதீனா முஸ்ஹஃபில்", after: " தஃப்ஸீர், மொழிபெயர்ப்பு, ஓதலுடன் திருக்குர்ஆனை வாசியுங்கள்", body: "மதீனாவில் அச்சிடப்பட்டவாறே ஒவ்வொரு பக்கமும், வசனங்களின் பொருள் உங்கள் மொழியில்." },
       { before: "நீங்கள் எங்கிருந்தாலும் ", highlight: "கிப்லாவைக்", after: " கண்டறிந்து அதானைக் கேளுங்கள்", body: "திசைகாட்டி, சூரியன் & சந்திரன், வரைபடம் — ஒவ்வொரு தொழுகை நேரத்திலும் முழுத்திரை அதான்." },
     ],
-    getApp: "இப்போதே Rafiq Al-Muslim ஐப் பெறுங்கள்",
+    getApp: "இப்போதே Rafiq Al Muslim ஐப் பெறுங்கள்",
   },
   prayer: { title: "தொழுகை நேரம்", more: "மேலும்", method: "கணக்கீட்டு முறை", next: "அடுத்த தொழுகை" },
   articles: { recent: "சமீபத்திய கட்டுரைகள்", mostRead: "அதிகம் வாசிக்கப்பட்டவை", viewMore: "மேலும் காண்க" },
@@ -1069,7 +1069,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   },
   about: {
     title: "ஒரு முஸ்லிமுக்குத் தேவையான அனைத்தும், ஒரே இலவசச் செயலியில்",
-    body: "Rafiq Al-Muslim தொழுகை நேரங்களை உங்களுக்கு நினைவூட்டுகிறது, அல்லாஹ்வை நினைவுகூர உதவுகிறது, திருக்குர்ஆனுடன் உங்களை இணைக்கிறது, மேலும் நன்மைகள் செய்ய ஊக்குவிக்கிறது. ஒவ்வொரு முஸ்லிமின் தோழன்.",
+    body: "Rafiq Al Muslim தொழுகை நேரங்களை உங்களுக்கு நினைவூட்டுகிறது, அல்லாஹ்வை நினைவுகூர உதவுகிறது, திருக்குர்ஆனுடன் உங்களை இணைக்கிறது, மேலும் நன்மைகள் செய்ய ஊக்குவிக்கிறது. ஒவ்வொரு முஸ்லிமின் தோழன்.",
     stats: [
       { value: "9", label: "ஹதீஸ் நூல்கள்" },
       { value: "32", label: "மொழிகள்" },
@@ -1078,7 +1078,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   },
   reviews: {
     title: "எங்கள் பயனர்களின் கருத்துகள்",
-    body: "Rafiq Al-Muslim தொழுகை நேரங்களை உங்களுக்கு நினைவூட்டுகிறது, அல்லாஹ்வை நினைவுகூர உதவுகிறது, திருக்குர்ஆனுடன் உங்களை இணைக்கிறது.",
+    body: "Rafiq Al Muslim தொழுகை நேரங்களை உங்களுக்கு நினைவூட்டுகிறது, அல்லாஹ்வை நினைவுகூர உதவுகிறது, திருக்குர்ஆனுடன் உங்களை இணைக்கிறது.",
     write: "உங்கள் கருத்தை எழுதுங்கள்",
   },
   contact: { title: "தொடர்பு கொள்ளுங்கள்", body: "ஏதேனும் கேள்வி, ஆலோசனை அல்லது சிக்கலா? எங்களுக்கு எழுதுங்கள் — ஒவ்வொரு செய்தியையும் நாங்கள் படிக்கிறோம்.", message: "உங்களிடமிருந்து கேட்க ஆவலாக இருக்கிறோம்", send: "அனுப்பு" },
@@ -1087,12 +1087,12 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   strip: { tagline: "ઇબાદતમાં તમારો સાથી", sub: "કુરઆન · હદીસ · અઝકાર · નમાઝ — મફત, જાહેરાત વગર" },
   hero: {
     slides: [
-      { before: "તમારા સ્થાન મુજબ દિવસ અને મહિનાના ", highlight: "નમાઝના સમય", after: " સંપૂર્ણ ચોકસાઈથી જાણો", body: "તમારા શહેરના નમાઝના ચોક્કસ સમય જાણો, દરેક નમાઝે અઝાન સાથે — Rafiq Al-Muslim સાથે." },
+      { before: "તમારા સ્થાન મુજબ દિવસ અને મહિનાના ", highlight: "નમાઝના સમય", after: " સંપૂર્ણ ચોકસાઈથી જાણો", body: "તમારા શહેરના નમાઝના ચોક્કસ સમય જાણો, દરેક નમાઝે અઝાન સાથે — Rafiq Al Muslim સાથે." },
       { before: "કુરઆન અને સુન્નતમાંથી દરેક મુસલમાનને જરૂરી પ્રમાણભૂત ", highlight: "અઝકાર અને દુઆઓ", after: " જુઓ", body: "સવાર-સાંજના અઝકાર, હિસ્નુલ મુસ્લિમ અને તસ્બીહ, ઑડિયો અને કાઉન્ટર સાથે." },
       { before: "કુરઆન ", highlight: "મદીના મુસ્હફ", after: " માં વાંચો, તફસીર, અનુવાદ અને પઠન સાથે", body: "દરેક પાનું મદીનામાં છપાયું છે તેમ જ, આયતોના અર્થ તમારી ભાષામાં." },
       { before: "તમે જ્યાં પણ હો ત્યાં ", highlight: "કિબલા", after: " શોધો અને અઝાન સાંભળો", body: "હોકાયંત્ર, સૂર્ય અને ચંદ્ર તથા નકશો — અને દરેક નમાઝના સમયે પૂર્ણ-સ્ક્રીન અઝાન." },
     ],
-    getApp: "હમણાં જ Rafiq Al-Muslim મેળવો",
+    getApp: "હમણાં જ Rafiq Al Muslim મેળવો",
   },
   prayer: { title: "નમાઝનો સમય", more: "વધુ", method: "પદ્ધતિ", next: "આગલી નમાઝ" },
   articles: { recent: "તાજેતરના લેખો", mostRead: "સૌથી વધુ વંચાયેલા", viewMore: "વધુ જુઓ" },
@@ -1104,7 +1104,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   },
   about: {
     title: "એક મુસલમાનને જોઈતું બધું, એક મફત એપમાં",
-    body: "Rafiq Al-Muslim તમને નમાઝના સમય યાદ અપાવે છે, અલ્લાહને યાદ કરવામાં મદદ કરે છે, કુરઆન સાથે જોડે છે અને વધુ નેકી કરવા પ્રેરે છે. દરેક મુસલમાનનો સાથી.",
+    body: "Rafiq Al Muslim તમને નમાઝના સમય યાદ અપાવે છે, અલ્લાહને યાદ કરવામાં મદદ કરે છે, કુરઆન સાથે જોડે છે અને વધુ નેકી કરવા પ્રેરે છે. દરેક મુસલમાનનો સાથી.",
     stats: [
       { value: "9", label: "હદીસની કિતાબો" },
       { value: "32", label: "ભાષાઓ" },
@@ -1113,7 +1113,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   },
   reviews: {
     title: "અમારા વપરાશકર્તાઓના અભિપ્રાય",
-    body: "Rafiq Al-Muslim તમને નમાઝના સમય યાદ અપાવે છે, અલ્લાહને યાદ કરવામાં મદદ કરે છે અને કુરઆન સાથે જોડે છે.",
+    body: "Rafiq Al Muslim તમને નમાઝના સમય યાદ અપાવે છે, અલ્લાહને યાદ કરવામાં મદદ કરે છે અને કુરઆન સાથે જોડે છે.",
     write: "તમારો અભિપ્રાય લખો",
   },
   contact: {
@@ -1127,12 +1127,12 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   strip: { tagline: "ဣဗာဒတ်တွင် သင်၏ အဖော်", sub: "ကုရ်အာန် · ဟဒီးဆ် · အဇ်ကာရ် · နမာဇ် — အခမဲ့၊ ကြော်ငြာမပါ" },
   hero: {
     slides: [
-      { before: "သင့်တည်နေရာအလိုက် နေ့စဉ်နှင့် လစဉ် ", highlight: "နမာဇ်ချိန်များ", after: " ကို တိကျစွာ သိရှိပါ", body: "သင့်မြို့အတွက် နမာဇ်ချိန်အတိအကျကို နမာဇ်တိုင်းတွင် အဇာန်ပါဝင်၍ သိရှိပါ — Rafiq Al-Muslim နှင့်အတူ။" },
+      { before: "သင့်တည်နေရာအလိုက် နေ့စဉ်နှင့် လစဉ် ", highlight: "နမာဇ်ချိန်များ", after: " ကို တိကျစွာ သိရှိပါ", body: "သင့်မြို့အတွက် နမာဇ်ချိန်အတိအကျကို နမာဇ်တိုင်းတွင် အဇာန်ပါဝင်၍ သိရှိပါ — Rafiq Al Muslim နှင့်အတူ။" },
       { before: "မူဆလင်တိုင်း လိုအပ်သော ကုရ်အာန်နှင့် ဆွန္နတ်မှ စစ်မှန်သည့် ", highlight: "အဇ်ကာရ်နှင့် ဒုအာများ", after: " ကို ကြည့်ရှုပါ", body: "နံနက်နှင့် ညနေ အဇ်ကာရ်၊ ဟိဆ်နုလ် မုဆ်လင်နှင့် တစ်ဘီဟ်တို့ကို အသံနှင့် ရေတွက်စက်ပါဝင်၍။" },
       { before: "တဖ်ဆီရ်၊ ဘာသာပြန်နှင့် ရွတ်ဖတ်သံတို့ဖြင့် ", highlight: "မဒီနာ မုဆ်ဟဖ်", after: " တွင် ကုရ်အာန်ကို ဖတ်ရှုပါ", body: "မဒီနာတွင် ပုံနှိပ်ထားသည့်အတိုင်း စာမျက်နှာတိုင်းကို အာယတ်များ၏ အဓိပ္ပာယ်ကို သင့်ဘာသာစကားဖြင့် ဖော်ပြထားသည်။" },
       { before: "သင်ရှိရာနေရာတိုင်းတွင် ", highlight: "ကိဗ်လာ", after: " ကို ရှာပြီး အဇာန်ကို ကြားပါ", body: "သံလိုက်အိမ်မြှောင်၊ နေနှင့်လ၊ မြေပုံ — နမာဇ်ချိန်တိုင်းတွင် စခရင်အပြည့် အဇာန်လည်း ပါဝင်သည်။" },
     ],
-    getApp: "Rafiq Al-Muslim ကို ယခုပင် ရယူလိုက်ပါ",
+    getApp: "Rafiq Al Muslim ကို ယခုပင် ရယူလိုက်ပါ",
   },
   prayer: { title: "နမာဇ်ချိန်", more: "ပိုမို", method: "တွက်ချက်နည်း", next: "နောက်နမာဇ်" },
   articles: { recent: "လတ်တလော ဆောင်းပါးများ", mostRead: "အများဆုံး ဖတ်ရှုသည့်", viewMore: "ပိုမိုကြည့်ရန်" },
@@ -1144,7 +1144,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   },
   about: {
     title: "မူဆလင်တစ်ဦး လိုအပ်သမျှ၊ အခမဲ့ အက်ပ်တစ်ခုတည်းတွင်",
-    body: "Rafiq Al-Muslim သည် သင့်အား နမာဇ်ချိန်များကို သတိပေးပြီး အလ္လာဟ်ကို အောက်မေ့ရန် ကူညီကာ ကုရ်အာန်နှင့် ချိတ်ဆက်ပေးပြီး ကောင်းမှုပိုမိုပြုလုပ်ရန် တိုက်တွန်းပေးပါသည်။ မူဆလင်တိုင်း၏ အဖော်။",
+    body: "Rafiq Al Muslim သည် သင့်အား နမာဇ်ချိန်များကို သတိပေးပြီး အလ္လာဟ်ကို အောက်မေ့ရန် ကူညီကာ ကုရ်အာန်နှင့် ချိတ်ဆက်ပေးပြီး ကောင်းမှုပိုမိုပြုလုပ်ရန် တိုက်တွန်းပေးပါသည်။ မူဆလင်တိုင်း၏ အဖော်။",
     stats: [
       { value: "9", label: "ဟဒီးဆ်ကျမ်းများ" },
       { value: "32", label: "ဘာသာစကားများ" },
@@ -1153,7 +1153,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Home> = { ur, fa, ru, ms
   },
   reviews: {
     title: "ကျွန်ုပ်တို့ အသုံးပြုသူများ၏ ထင်မြင်ချက်များ",
-    body: "Rafiq Al-Muslim သည် သင့်အား နမာဇ်ချိန်များကို သတိပေးပြီး အလ္လာဟ်ကို အောက်မေ့ရန် ကူညီကာ ကုရ်အာန်နှင့် ချိတ်ဆက်ပေးပါသည်။",
+    body: "Rafiq Al Muslim သည် သင့်အား နမာဇ်ချိန်များကို သတိပေးပြီး အလ္လာဟ်ကို အောက်မေ့ရန် ကူညီကာ ကုရ်အာန်နှင့် ချိတ်ဆက်ပေးပါသည်။",
     write: "သင်၏ သုံးသပ်ချက်ကို ရေးပါ",
   },
   contact: {

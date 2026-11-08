@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { isLocale, ogLocale, type Locale } from "@/i18n/config";
-import { alternates } from "@/i18n/metadata";
-import { common } from "@/i18n/messages/common";
+import { isLocale, type Locale } from "@/i18n/config";
+import { alternates, social } from "@/i18n/metadata";
 import { articles as msgs } from "@/i18n/messages/articles";
 import { latestArticles, mostRead } from "@/lib/articles";
 import { ArticleCard } from "@/components/articles/ArticleCard";
@@ -20,14 +19,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/articles">
     title,
     description: t.metaDescription,
     alternates: alternates(lang, "/articles/"),
-    openGraph: {
-      title,
-      description: t.metaDescription,
-      type: "website",
-      locale: ogLocale[lang],
-      siteName: common[lang].siteName,
-      images: [{ url: "/og-image.png", width: 1200, height: 630 }],
-    },
+    ...social(lang, "/articles/", title, t.metaDescription),
   };
 }
 

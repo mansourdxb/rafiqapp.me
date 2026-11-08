@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isLocale, localePath, locales } from "@/i18n/config";
-import { alternates } from "@/i18n/metadata";
+import { alternates, social } from "@/i18n/metadata";
 import { athkar, fill, READER_LABELS, type ReaderLabels } from "@/i18n/messages/athkar";
 import { CATEGORIES, categoryTitle, loadCategory } from "@/lib/athkar/data";
 import { AthkarReader } from "@/components/athkar/AthkarReader";
@@ -16,11 +16,8 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/athkar/[id
   const { lang, id } = await params;
   if (!isLocale(lang)) return {};
   const title = categoryTitle(lang, Number(id));
-  return {
-    title,
-    description: fill(athkar[lang].readerDescription, { title }),
-    alternates: alternates(lang, `/athkar/${id}/`),
-  };
+  const description = fill(athkar[lang].readerDescription, { title });
+  return { title, description, alternates: alternates(lang, `/athkar/${id}/`), ...social(lang, `/athkar/${id}/`, title, description) };
 }
 
 export default async function AthkarCategoryPage({ params }: PageProps<"/[lang]/athkar/[id]">) {

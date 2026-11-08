@@ -29,11 +29,11 @@ export function HeroSlider({ slides, getApp, getAppHref, badges, art }: { slides
             className={`col-start-1 row-start-1 grid items-center gap-6 transition-opacity duration-700 lg:grid-cols-[1fr_1.25fr] lg:gap-10 ${k === i ? "opacity-100" : "pointer-events-none opacity-0"}`}
           >
             <div className="order-2 text-center lg:order-1 lg:text-start">
-              <h1 className="text-[28px] font-extrabold leading-tight text-navy-2 sm:text-[34px] lg:text-[34px] dark:text-white">
+              <h2 className="text-[28px] font-extrabold leading-tight text-navy-2 sm:text-[34px] lg:text-[34px] dark:text-white">
                 {s.before}
                 <span className="text-orange">{s.highlight}</span>
                 {s.after}
-              </h1>
+              </h2>
               <p className="mx-auto mt-5 max-w-md text-base leading-7 text-navy-2 lg:mx-0 dark:text-ink-2">{s.body}</p>
               <Link href={getAppHref} className="mt-6 inline-flex items-center gap-2 text-base font-bold text-primary hover:text-primary-deep">
                 {getApp}

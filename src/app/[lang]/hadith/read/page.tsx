@@ -3,12 +3,12 @@ import { notFound } from "next/navigation";
 import { ChapterView } from "@/components/hadith/ChapterView";
 import { isLocale } from "@/i18n/config";
 import { common } from "@/i18n/messages/common";
-import { alternates } from "@/i18n/metadata";
+import { alternates, social } from "@/i18n/metadata";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/hadith/read">): Promise<Metadata> {
   const { lang } = await params;
   if (!isLocale(lang)) return {};
-  return { title: common[lang].nav.hadith, alternates: alternates(lang, "/hadith/read/") };
+  return { title: common[lang].nav.hadith, alternates: alternates(lang, "/hadith/read/"), ...social(lang, "/hadith/read/", common[lang].nav.hadith, common[lang].description) };
 }
 
 export default async function HadithReadPage({ params }: PageProps<"/[lang]/hadith/read">) {

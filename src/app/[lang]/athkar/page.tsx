@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLocale, localePath } from "@/i18n/config";
-import { alternates } from "@/i18n/metadata";
+import { alternates, social } from "@/i18n/metadata";
 import { athkar, fill } from "@/i18n/messages/athkar";
 import { CATEGORIES, FEATURED } from "@/lib/athkar/data";
 import { localDigits } from "@/lib/digits";
@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/athkar">):
   const { lang } = await params;
   if (!isLocale(lang)) return {};
   const t = athkar[lang];
-  return { title: t.title, description: t.description, alternates: alternates(lang, "/athkar/") };
+  return { title: t.title, description: t.description, alternates: alternates(lang, "/athkar/"), ...social(lang, "/athkar/", t.title, t.description) };
 }
 
 export default async function AthkarPage({ params }: PageProps<"/[lang]/athkar">) {

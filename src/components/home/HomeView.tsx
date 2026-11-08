@@ -6,6 +6,7 @@ import { localePath, type Locale } from "@/i18n/config";
 import { common } from "@/i18n/messages/common";
 import { devices } from "@/i18n/messages/devices";
 import { home } from "@/i18n/messages/home";
+import { seo } from "@/i18n/messages/seo";
 import { localDigits } from "@/lib/digits";
 import { STORES } from "@/lib/stores";
 import { REVIEWS } from "@/data/reviews";
@@ -53,6 +54,8 @@ export function HomeView({ lang }: { lang: Locale }) {
       {/* hero slider */}
       <section id="download" className="relative scroll-mt-24 overflow-hidden bg-white pb-6 pt-8 lg:pt-14 dark:bg-canvas">
         <div className="mx-auto max-w-6xl px-4">
+          {/* the page's one h1: the app's name and what it is for (the slides' headlines are h2) */}
+          <h1 className="mb-6 text-center text-sm font-bold text-primary sm:text-base lg:mb-8 lg:text-start dark:text-primary-light">{seo[lang].h1}</h1>
           <HeroSlider
             slides={[
               ...t.hero.slides,

@@ -19,12 +19,12 @@ const en: Home = {
   strip: { tagline: "Your companion in worship", sub: "Qur'an · Hadith · Adhkar · Prayer — free, without ads" },
   hero: {
     slides: [
-      { before: "Know ", highlight: "prayer times", after: " according to your location, for the day and the month, with complete accuracy", body: "Know the exact prayer times for your city, with the athan at every prayer — with Rafiq Al-Muslim." },
+      { before: "Know ", highlight: "prayer times", after: " according to your location, for the day and the month, with complete accuracy", body: "Know the exact prayer times for your city, with the athan at every prayer — with Rafiq Al Muslim." },
       { before: "Browse authentic ", highlight: "adhkar and duas", after: " from the Qur'an and Sunnah that every Muslim needs", body: "Morning and evening adhkar, Hisn al-Muslim and the tasbih, with audio and a counter." },
       { before: "Read the Qur'an in the ", highlight: "Madinah Mushaf", after: ", with tafsir, translation and recitation", body: "Every page as printed in Madinah, with the meanings of the verses in your language." },
       { before: "Find the ", highlight: "Qibla", after: " and hear the athan wherever you are", body: "Compass, sun and moon and map — and a full-screen athan at every prayer time." },
     ],
-    getApp: "Get Rafiq Al-Muslim now",
+    getApp: "Get Rafiq Al Muslim now",
   },
   prayer: { title: "Prayer time", more: "More", method: "Method", next: "Next prayer" },
   articles: { recent: "Recent articles", mostRead: "Most read", viewMore: "View more" },
@@ -36,7 +36,7 @@ const en: Home = {
   },
   about: {
     title: "Everything a Muslim needs, in one free app",
-    body: "Rafiq Al-Muslim reminds you of prayer times, helps you remember Allah, connects you with the Qur'an and encourages you to do more good. The companion of every Muslim.",
+    body: "Rafiq Al Muslim reminds you of prayer times, helps you remember Allah, connects you with the Qur'an and encourages you to do more good. The companion of every Muslim.",
     stats: [
       { value: "9", label: "Books of hadith" },
       { value: "32", label: "Languages" },
@@ -45,7 +45,7 @@ const en: Home = {
   },
   reviews: {
     title: "Our users' opinions",
-    body: "Rafiq Al-Muslim reminds you of prayer times, helps you remember Allah and connects you with the Qur'an.",
+    body: "Rafiq Al Muslim reminds you of prayer times, helps you remember Allah and connects you with the Qur'an.",
     write: "Write your review",
   },
   contact: {

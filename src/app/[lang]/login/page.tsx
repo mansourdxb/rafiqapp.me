@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { isLocale, ogLocale, type Locale } from "@/i18n/config";
-import { alternates } from "@/i18n/metadata";
-import { common } from "@/i18n/messages/common";
+import { isLocale, type Locale } from "@/i18n/config";
+import { alternates, social } from "@/i18n/metadata";
 import { auth as msgs } from "@/i18n/messages/auth";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { LoginForm } from "@/components/auth/LoginForm";
@@ -16,7 +15,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/login">): 
     description: t.loginMeta,
     alternates: alternates(lang, "/login/"),
     robots: { index: false, follow: true },
-    openGraph: { title: t.loginTitle, description: t.loginMeta, type: "website", locale: ogLocale[lang], siteName: common[lang].siteName, images: [{ url: "/og-image.png", width: 1200, height: 630 }] },
+    ...social(lang, "/login/", t.loginTitle, t.loginMeta),
   };
 }
 

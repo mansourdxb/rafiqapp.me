@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { isLocale, ogLocale, type Locale } from "@/i18n/config";
-import { alternates } from "@/i18n/metadata";
-import { common } from "@/i18n/messages/common";
+import { isLocale, langTag, type Locale } from "@/i18n/config";
+import { alternates, social } from "@/i18n/metadata";
 import { faq as msgs } from "@/i18n/messages/faq";
 import { localDigits } from "@/lib/digits";
 import { FaqList } from "@/components/faq/FaqList";
@@ -56,7 +55,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/faq">): Pr
     title,
     description,
     alternates: alternates(lang, "/faq/"),
-    openGraph: { title, description, type: "website", locale: ogLocale[lang], siteName: common[lang].siteName, images: [{ url: "/og-image.png", width: 1200, height: 630 }] },
+    ...social(lang, "/faq/", title, description),
   };
 }
 
@@ -71,7 +70,7 @@ export default async function FaqPage({ params }: PageProps<"/[lang]/faq">) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    inLanguage: lang,
+    inLanguage: langTag(lang),
     mainEntity: data.items.map((i) => ({
       "@type": "Question",
       name: i.q,
