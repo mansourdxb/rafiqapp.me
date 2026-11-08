@@ -10,7 +10,7 @@ const WATCHES = ["appleWatch", "wearOs", "huaweiWatch"] as const;
 const CARS = ["carPlay", "androidAuto"] as const;
 export const FILE: Record<(typeof WATCHES)[number], string> = { appleWatch: "apple-watch", wearOs: "wear-os", huaweiWatch: "huawei-watch" };
 
-/** "Rafiq Al-Muslim in your car and on your wrist": watch screenshots in device frames, then the two car platforms. */
+/** "Rafiq Al Muslim in your car and on your wrist": watch screenshots in device frames, then the two car platforms. */
 export function HomeDevices({ lang, siteName }: { lang: Locale; siteName: string }) {
   const t = devices[lang];
   const shot = (p: (typeof WATCHES)[number]) =>

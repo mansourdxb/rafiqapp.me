@@ -167,7 +167,7 @@ const ru: Common = {
 };
 
 const ms: Common = {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "Teman anda dalam ibadah",
   description:
     "Baca Al-Quran dengan Mushaf Madinah, sembilan kitab hadis, zikir pagi dan petang, waktu solat, kiblat dan tasbih — percuma, dalam bahasa anda.",
@@ -194,7 +194,7 @@ const ms: Common = {
   menu: "Menu",
   close: "Tutup",
   getApp: "Dapatkan aplikasi",
-  getAppNow: "Dapatkan Rafiq Al-Muslim sekarang!",
+  getAppNow: "Dapatkan Rafiq Al Muslim sekarang!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -222,7 +222,7 @@ const ms: Common = {
 };
 
 const tr: Common = {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "İbadette yol arkadaşınız",
   description:
     "Kur'an-ı Kerim'i Medine Mushafı ile okuyun; dokuz hadis kitabı, sabah ve akşam zikirleri, namaz vakitleri, kıble ve tesbih — ücretsiz ve kendi dilinizde.",
@@ -249,7 +249,7 @@ const tr: Common = {
   menu: "Menü",
   close: "Kapat",
   getApp: "Uygulamayı indir",
-  getAppNow: "Rafiq Al-Muslim'i hemen indirin!",
+  getAppNow: "Rafiq Al Muslim'i hemen indirin!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -277,7 +277,7 @@ const tr: Common = {
 };
 
 const id: Common = {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "Teman Anda dalam ibadah",
   description:
     "Baca Al-Quran dengan Mushaf Madinah, sembilan kitab hadis, zikir pagi dan petang, jadwal shalat, kiblat dan tasbih — gratis, dalam bahasa Anda.",
@@ -304,7 +304,7 @@ const id: Common = {
   menu: "Menu",
   close: "Tutup",
   getApp: "Unduh aplikasi",
-  getAppNow: "Unduh Rafiq Al-Muslim sekarang!",
+  getAppNow: "Unduh Rafiq Al Muslim sekarang!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -442,7 +442,7 @@ const bn: Common = {
 };
 
 const ha: Common = {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "Abokinka a cikin ibada",
   description:
     "Karanta Alƙur'ani Mai Girma a Mushafin Madina, littattafan hadisi tara, azkar na safe da na yamma, lokutan sallah, alƙibla da tasbihi — kyauta, a harshenka.",
@@ -469,7 +469,7 @@ const ha: Common = {
   menu: "Zaɓuɓɓuka",
   close: "Rufe",
   getApp: "Sauke manhajar",
-  getAppNow: "Sauke Rafiq Al-Muslim yanzu!",
+  getAppNow: "Sauke Rafiq Al Muslim yanzu!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -497,7 +497,7 @@ const ha: Common = {
 };
 
 const fr: Common = {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "Votre compagnon dans l’adoration",
   description:
     "Lisez le Saint Coran dans le Mushaf de Médine, les neuf recueils de hadiths, les adhkar du matin et du soir, les horaires de prière, la qibla et le tasbih — gratuitement, dans votre langue.",
@@ -524,7 +524,7 @@ const fr: Common = {
   menu: "Menu",
   close: "Fermer",
   getApp: "Obtenir l’application",
-  getAppNow: "Téléchargez Rafiq Al-Muslim dès maintenant !",
+  getAppNow: "Téléchargez Rafiq Al Muslim dès maintenant !",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -552,7 +552,7 @@ const fr: Common = {
 };
 
 const zh: Common = {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "您的功修伙伴",
   description:
     "阅读麦地那版经本的尊贵《古兰经》、九部圣训集、早晨和傍晚记念词，查看礼拜时间和朝向，使用赞念计数——免费，使用您的语言。",
@@ -579,7 +579,7 @@ const zh: Common = {
   menu: "菜单",
   close: "关闭",
   getApp: "下载应用",
-  getAppNow: "立即下载 Rafiq Al-Muslim！",
+  getAppNow: "立即下载 Rafiq Al Muslim！",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -771,7 +771,7 @@ const pnb: Common = {
 };
 
 const uz: Common = {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "Ibodatdagi hamrohingiz",
   description:
     "Qurʼoni karimni Madina mus-hafida oʻqing, toʻqqiz hadis kitobi, tonggi va kechki zikrlar, namoz vaqtlari, qibla va tasbeh — bepul, oʻz tilingizda.",
@@ -798,7 +798,7 @@ const uz: Common = {
   menu: "Menyu",
   close: "Yopish",
   getApp: "Ilovani yuklab olish",
-  getAppNow: "Rafiq Al-Muslim ilovasini hoziroq yuklab oling!",
+  getAppNow: "Rafiq Al Muslim ilovasini hoziroq yuklab oling!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -881,7 +881,7 @@ const uzCyrl: Common = {
 };
 
 const so: Common = {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "Saaxiibkaaga cibaadada",
   description:
     "Ku akhri Qur’aanka Kariimka ah Mushafka Madiina, sagaalka kitaab ee xadiiska, adkaarta subaxa iyo galabta, waqtiyada salaadda, Qiblada iyo tasbiixda — bilaash, luqaddaada.",
@@ -908,7 +908,7 @@ const so: Common = {
   menu: "Liiska",
   close: "Xir",
   getApp: "Soo deji barnaamijka",
-  getAppNow: "Hadda soo deji Rafiq Al-Muslim!",
+  getAppNow: "Hadda soo deji Rafiq Al Muslim!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -936,7 +936,7 @@ const so: Common = {
 };
 
 const sw: Common = {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "Mwenzako katika ibada",
   description:
     "Soma Qur'ani Tukufu katika Msahafu wa Madina, vitabu tisa vya Hadithi, adhkari za asubuhi na jioni, nyakati za Sala, Kibla na tasbihi — bure, kwa lugha yako.",
@@ -963,7 +963,7 @@ const sw: Common = {
   menu: "Menyu",
   close: "Funga",
   getApp: "Pakua programu",
-  getAppNow: "Pakua Rafiq Al-Muslim sasa!",
+  getAppNow: "Pakua Rafiq Al Muslim sasa!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -1046,7 +1046,7 @@ const kuArab: Common = {
 };
 
 const kuLatn: Common = {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "Hevalê te di îbadetê de",
   description:
     "Qur'ana Pîroz di Mishefa Medîneyê de bixwîne, neh pirtûkên hedîsan, zikirên sibehê û êvarê, demên nimêjê, Qible û tesbîh — belaş, bi zimanê te.",
@@ -1073,7 +1073,7 @@ const kuLatn: Common = {
   menu: "Menû",
   close: "Bigire",
   getApp: "Sepanê daxe",
-  getAppNow: "Niha Rafiq Al-Muslim daxe!",
+  getAppNow: "Niha Rafiq Al Muslim daxe!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -1101,7 +1101,7 @@ const kuLatn: Common = {
 };
 
 const ml: Common = {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "ആരാധനയിൽ നിങ്ങളുടെ കൂട്ടുകാരൻ",
   description:
     "വിശുദ്ധ ഖുർആൻ മദീന മുസ്ഹഫിൽ വായിക്കുക, ഒമ്പത് ഹദീസ് ഗ്രന്ഥങ്ങൾ, പ്രഭാത, സായാഹ്ന അദ്കാർ, നമസ്കാര സമയങ്ങൾ, ഖിബ്‌ല, തസ്ബീഹ് — സൗജന്യമായി, നിങ്ങളുടെ ഭാഷയിൽ.",
@@ -1128,7 +1128,7 @@ const ml: Common = {
   menu: "മെനു",
   close: "അടയ്ക്കുക",
   getApp: "ആപ്പ് ഡൗൺലോഡ് ചെയ്യുക",
-  getAppNow: "Rafiq Al-Muslim ഇപ്പോൾ തന്നെ ഡൗൺലോഡ് ചെയ്യുക!",
+  getAppNow: "Rafiq Al Muslim ഇപ്പോൾ തന്നെ ഡൗൺലോഡ് ചെയ്യുക!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -1156,7 +1156,7 @@ const ml: Common = {
 };
 
 const de: Common = {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "Dein Begleiter im Gottesdienst",
   description:
     "Lies den edlen Koran im Madina-Mushaf, die neun Hadith-Bücher, Morgen- und Abend-Adhkar, Gebetszeiten, Qibla und Tasbih – kostenlos, in deiner Sprache.",
@@ -1183,7 +1183,7 @@ const de: Common = {
   menu: "Menü",
   close: "Schließen",
   getApp: "App herunterladen",
-  getAppNow: "Hol dir jetzt Rafiq Al-Muslim!",
+  getAppNow: "Hol dir jetzt Rafiq Al Muslim!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -1211,7 +1211,7 @@ const de: Common = {
 };
 
 const es: Common = {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "Tu compañero en la adoración",
   description:
     "Lee el Sagrado Corán en el Mushaf de Medina, los nueve libros de hadiz, los adhkar de la mañana y de la tarde, los horarios de oración, la alquibla y el tasbih — gratis y en tu idioma.",
@@ -1238,7 +1238,7 @@ const es: Common = {
   menu: "Menú",
   close: "Cerrar",
   getApp: "Descarga la app",
-  getAppNow: "¡Descarga Rafiq Al-Muslim ahora!",
+  getAppNow: "¡Descarga Rafiq Al Muslim ahora!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -1267,7 +1267,7 @@ const es: Common = {
 
 export const more: Record<Exclude<Locale, "en" | "ar">, Common> = { ur, fa, ru, ms, tr, id, hi, bn, ha, fr, zh, ps, pa, pnb, uz, "uz-Cyrl": uzCyrl, so, sw, "ku-Arab": kuArab, "ku-Latn": kuLatn, ml, de, es,
 "az-Latn": {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "İbadətdə yol yoldaşınız",
   description:
     "Qurani-Kərimi Mədinə Müshəfində oxuyun, doqquz hədis kitabına, səhər və axşam zikrlərinə, namaz vaxtlarına, qiblə və təsbehə baxın — pulsuz, öz dilinizdə.",
@@ -1294,7 +1294,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Common> = { ur, fa, ru, 
   menu: "Menyu",
   close: "Bağla",
   getApp: "Tətbiqi əldə et",
-  getAppNow: "Rafiq Al-Muslim tətbiqini indi əldə edin!",
+  getAppNow: "Rafiq Al Muslim tətbiqini indi əldə edin!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -1321,7 +1321,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Common> = { ur, fa, ru, 
   noResults: "Nəticə yoxdur",
 },
 "om": {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "Hiriyyaa kee ibaadaa keessatti",
   description:
     "Qur'aana Qulqulluu Mushafa Madiinaa keessatti dubbisi, kitaabota hadiisaa sagal, zikrii ganamaa fi galgalaa, yeroo salaataa, Qiblaa fi tasbiihii — bilisaan, afaan keetiin.",
@@ -1348,7 +1348,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Common> = { ur, fa, ru, 
   menu: "Menuu",
   close: "Cufi",
   getApp: "App buufadhu",
-  getAppNow: "Rafiq Al-Muslim amma buufadhu!",
+  getAppNow: "Rafiq Al Muslim amma buufadhu!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -1375,7 +1375,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Common> = { ur, fa, ru, 
   noResults: "Bu'aan hin jiru",
 },
 "am": {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "በዒባዳ ውስጥ ጓደኛዎ",
   description:
     "ቅዱሱን ቁርኣን በመዲና ሙስሐፍ ያንብቡ፣ ዘጠኙን የሐዲስ መጻሕፍት፣ የጧትና የማታ ዚክሮችን፣ የሶላት ወቅቶችን፣ ቂብላንና ተስቢሕን ይጠቀሙ — በነጻ፣ በቋንቋዎ።",
@@ -1402,7 +1402,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Common> = { ur, fa, ru, 
   menu: "ምናሌ",
   close: "ዝጋ",
   getApp: "መተግበሪያውን አግኝ",
-  getAppNow: "Rafiq Al-Muslimን አሁኑኑ ያግኙ!",
+  getAppNow: "Rafiq Al Muslimን አሁኑኑ ያግኙ!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -1429,7 +1429,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Common> = { ur, fa, ru, 
   noResults: "ምንም ውጤት የለም",
 },
 "kk-Cyrl": {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "Ғибадаттағы серігіңіз",
   description:
     "Мәдина мұсхафындағы Құран Кәрімді, хадистің тоғыз жинағын, таңертеңгі және кешкі зікірлерді, намаз уақыттарын, құбыла мен тәспіхті оқыңыз — тегін, өз тіліңізде.",
@@ -1456,7 +1456,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Common> = { ur, fa, ru, 
   menu: "Мәзір",
   close: "Жабу",
   getApp: "Қосымшаны алу",
-  getAppNow: "Rafiq Al-Muslim қосымшасын қазір алыңыз!",
+  getAppNow: "Rafiq Al Muslim қосымшасын қазір алыңыз!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -1483,7 +1483,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Common> = { ur, fa, ru, 
   noResults: "Нәтиже жоқ",
 },
 "ta": {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "வழிபாட்டில் உங்கள் தோழன்",
   description:
     "திருக்குர்ஆனை மதீனா முஸ்ஹஃபில் வாசியுங்கள்; ஒன்பது ஹதீஸ் நூல்கள், காலை மாலை அத்கார், தொழுகை நேரங்கள், கிப்லா, தஸ்பீஹ் — இலவசமாக, உங்கள் மொழியில்.",
@@ -1510,7 +1510,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Common> = { ur, fa, ru, 
   menu: "பட்டி",
   close: "மூடு",
   getApp: "செயலியைப் பெறுங்கள்",
-  getAppNow: "இப்போதே Rafiq Al-Muslim ஐப் பெறுங்கள்!",
+  getAppNow: "இப்போதே Rafiq Al Muslim ஐப் பெறுங்கள்!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -1537,7 +1537,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Common> = { ur, fa, ru, 
   noResults: "முடிவுகள் இல்லை",
 },
   "gu": {
-  siteName: "Rafiq Al-Muslim",
+  siteName: "Rafiq Al Muslim",
   tagline: "ઇબાદતમાં તમારો સાથી",
   description:
     "મદીના મુસ્હફમાં પવિત્ર કુરઆન વાંચો, હદીસની નવ કિતાબો, સવાર-સાંજના અઝકાર, નમાઝના સમય, કિબલા અને તસ્બીહ — મફત, તમારી ભાષામાં.",
@@ -1564,7 +1564,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Common> = { ur, fa, ru, 
   menu: "મેનૂ",
   close: "બંધ કરો",
   getApp: "એપ મેળવો",
-  getAppNow: "હમણાં જ Rafiq Al-Muslim મેળવો!",
+  getAppNow: "હમણાં જ Rafiq Al Muslim મેળવો!",
   appStore: "App Store",
   googlePlay: "Google Play",
   appGallery: "AppGallery",
@@ -1591,7 +1591,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Common> = { ur, fa, ru, 
   noResults: "કોઈ પરિણામ નથી",
   },
   my: {
-    siteName: "Rafiq Al-Muslim",
+    siteName: "Rafiq Al Muslim",
     tagline: "ဣဗာဒတ်တွင် သင်၏ အဖော်",
     description:
       "မဒီနာ မုဆ်ဟဖ်ဖြင့် ကုရ်အာန်မြတ်၊ ဟဒီးဆ်ကျမ်း ကိုးစောင်၊ နံနက်နှင့် ညနေ အဇ်ကာရ်၊ နမာဇ်ချိန်များ၊ ကိဗ်လာနှင့် တစ်ဘီဟ်တို့ကို ဖတ်ရှုပါ — အခမဲ့၊ သင့်ဘာသာစကားဖြင့်။",
@@ -1618,7 +1618,7 @@ export const more: Record<Exclude<Locale, "en" | "ar">, Common> = { ur, fa, ru, 
     menu: "မီနူး",
     close: "ပိတ်ရန်",
     getApp: "အက်ပ် ရယူရန်",
-    getAppNow: "Rafiq Al-Muslim ကို ယခုပင် ရယူလိုက်ပါ!",
+    getAppNow: "Rafiq Al Muslim ကို ယခုပင် ရယူလိုက်ပါ!",
     appStore: "App Store",
     googlePlay: "Google Play",
     appGallery: "AppGallery",

@@ -7,10 +7,10 @@ export function readJson(p) {
   return JSON.parse(readFileSync(p, "utf8"));
 }
 
-/** Writes compact JSON, creating folders. */
+/** Writes compact JSON, creating folders. The app's strings spell the brand "Rafiq Al-Muslim"; the site uses the official "Rafiq Al Muslim". */
 export function writeJson(p, data) {
   mkdirSync(dirname(p), { recursive: true });
-  writeFileSync(p, JSON.stringify(data));
+  writeFileSync(p, JSON.stringify(data).replaceAll("Rafiq Al-Muslim", "Rafiq Al Muslim"));
 }
 
 const appStrings = new Map();
