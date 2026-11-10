@@ -54,23 +54,18 @@
 <link rel="manifest" href="/manifest.webmanifest">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://rafiqalmuslim.org/#organization","name":"Rafiq Al Muslim","alternateName":"رفيق المسلم","url":"https://rafiqalmuslim.org/","logo":{"@type":"ImageObject","url":"https://rafiqalmuslim.org/logo-512.png","width":512,"height":512},"email":"support@rafiqalmuslim.org"},{"@type":"WebSite","@id":"https://rafiqalmuslim.org/#website","name":"Rafiq Al Muslim","alternateName":"رفيق المسلم","url":"https://rafiqalmuslim.org/","inLanguage":["ar","en","ur","fa","ru","ms","tr","id","hi","bn","ha","fr","zh-CN","ps","pa-Guru","pa-Arab","uz","uz-Cyrl","so","sw","ckb","ku","ml","de","es","az-Latn","om","am","kk-Cyrl","ta","gu","my"],"publisher":{"@id":"https://rafiqalmuslim.org/#organization"}},{"@type":"MobileApplication","@id":"https://rafiqalmuslim.org/#app","name":"Rafiq Al Muslim","alternateName":"رفيق المسلم","url":"https://rafiqalmuslim.org/","image":"https://rafiqalmuslim.org/logo-512.png","operatingSystem":"iOS, Android","applicationCategory":"LifestyleApplication","inLanguage":["ar","en","ur","fa","ru","ms","tr","id","hi","bn","ha","fr","zh-CN","ps","pa-Guru","pa-Arab","uz","uz-Cyrl","so","sw","ckb","ku","ml","de","es","az-Latn","om","am","kk-Cyrl","ta","gu","my"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://apps.apple.com/app/id6759387456","https://play.google.com/store/apps/details?id=com.mansour.rafiqalmuslim","https://appgallery.huawei.com/app/C117517559"],"publisher":{"@id":"https://rafiqalmuslim.org/#organization"}}]}</script>
 <script>
-  // Returning visitors (a language saved in localStorage.lang) go straight to it. Everyone else, search engines
-  // included, sees this page: a suggested language from the browser settings, and all 32 languages.
+  // Opens the site in the saved language, else the browser's, else Arabic. Without JavaScript the page below is a
+  // language picker (it is also the x-default of every home page).
   (function () {
     if (location.protocol === "http:" && !/^(localhost|127\.|192\.168\.)/.test(location.hostname)) {
       location.replace("https://" + location.host + location.pathname + location.search + location.hash);
       return;
     }
     var langs = ["ar", "en", "ur", "fa", "ru", "ms", "tr", "id", "hi", "bn", "ha", "fr", "zh", "ps", "pa", "pnb", "uz", "uz-Cyrl", "so", "sw", "ku-Arab", "ku-Latn", "ml", "de", "es", "az-Latn", "om", "am", "kk-Cyrl", "ta", "gu", "my"];
-    var rest = location.search + location.hash;
-    var saved = null;
-    try { saved = localStorage.getItem("lang"); } catch (e) {}
-    if (langs.indexOf(saved) >= 0) {
-      location.replace("/" + saved + "/" + rest);
-      return;
-    }
-    // an unsupported saved value is ignored: the browser's languages decide, else Arabic
     var pick = null;
+    try { pick = localStorage.getItem("lang"); } catch (e) {}
+    // an unsupported saved value is ignored: the browser's languages decide, else Arabic
+    if (langs.indexOf(pick) < 0) pick = null;
     var nav = navigator.languages || [navigator.language || ""];
     for (var i = 0; i < nav.length && !pick; i++) {
       var t = String(nav[i]).toLowerCase();
@@ -78,22 +73,7 @@
       if (langs.indexOf(c) >= 0) pick = c;
     }
     if (!pick) pick = "ar";
-    // a picked language is remembered for the next visit to the root
-    document.addEventListener("click", function (e) {
-      var a = e.target.closest && e.target.closest("a[data-lang]");
-      if (a) try { localStorage.setItem("lang", a.getAttribute("data-lang")); } catch (err) {}
-    });
-    document.addEventListener("DOMContentLoaded", function () {
-      var links = document.querySelectorAll("a[data-lang]");
-      for (var k = 0; k < links.length; k++) links[k].setAttribute("href", "/" + links[k].getAttribute("data-lang") + "/" + rest);
-      var src = document.querySelector('#langs a[data-lang="' + pick + '"]');
-      var btn = document.getElementById("suggest");
-      btn.setAttribute("data-lang", pick);
-      btn.setAttribute("href", src.getAttribute("href"));
-      btn.setAttribute("lang", src.getAttribute("lang"));
-      btn.setAttribute("dir", src.getAttribute("dir"));
-      btn.textContent = src.textContent + (src.getAttribute("dir") === "rtl" ? " \u2190" : " \u2192");
-    });
+    location.replace("/" + pick + "/" + location.search + location.hash);
   })();
 </script>
 <style>body{margin:0;background:#0D245E;color:#fff;font-family:system-ui,sans-serif;text-align:center;padding:48px 16px}h1{font-size:24px}ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:720px;margin:24px auto}.suggest{display:inline-block;margin:4px 0 8px;padding:14px 32px;font-size:20px;font-weight:700;background:#fff;color:#0D245E;border-radius:14px;border:0}.hint{opacity:.75;font-size:14px;margin:20px 0 6px}ul a{color:#fff;display:inline-block;padding:8px 14px;border:1px solid rgba(255,255,255,.35);border-radius:10px;text-decoration:none}</style>
