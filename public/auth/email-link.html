@@ -29,6 +29,13 @@ a.btn{display:inline-block;margin-top:22px;background:#2F6E52;color:#fff;text-de
 </div>
 <script>
 (function () {
+  // This page is the Firebase email action URL. Only sign-in links go to the app; password reset
+  // and email verification keep using Firebase's own page.
+  var mode = new URLSearchParams(location.search).get("mode");
+  if (mode && mode !== "signIn") {
+    location.replace("https://rafiq-al-muslim-500506.firebaseapp.com/__/auth/action" + location.search);
+    return;
+  }
   // Hand the whole Firebase sign-in link (mode, oobCode, …) to the app; nothing is stored or sent elsewhere.
   var link = encodeURIComponent(location.href);
   var android = /android/i.test(navigator.userAgent);
