@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>رفيق المسلم — تسجيل الدخول</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Cairo',sans-serif;background:#FBF8F3;color:#1A1612;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;text-align:center}
+.card{max-width:420px;width:100%}
+img{width:96px;height:96px;border-radius:22px}
+h1{font-size:22px;color:#1A3C2A;margin:16px 0 6px}
+p{font-size:15px;color:#5C5248;margin:4px 0}
+.en{direction:ltr}
+a.btn{display:inline-block;margin-top:22px;background:#2F6E52;color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:14px 28px;border-radius:14px}
+</style>
+</head>
+<body>
+<div class="card">
+  <img src="/logo.png" alt="">
+  <h1>رفيق المسلم</h1>
+  <p>جارٍ العودة إلى التطبيق…</p>
+  <p class="en">Returning to the app…</p>
+  <a class="btn" id="open" href="#">فتح التطبيق · Open the app</a>
+</div>
+<script>
+(function () {
+  // Huawei ID returns ?code=&state= here; hand them to the app unchanged.
+  var data = location.hash.replace(/^#/, "") || location.search.replace(/^\?/, "");
+  history.replaceState(null, "", location.pathname);
+  var android = /android/i.test(navigator.userAgent);
+  var url = android
+    ? "intent://huawei-auth?" + data + "#Intent;scheme=rafiq-al-muslim;end"
+    : "rafiq-al-muslim://huawei-auth?" + data;
+  document.getElementById("open").href = url;
+  location.href = url;
+})();
+</script>
+</body>
+</html>
